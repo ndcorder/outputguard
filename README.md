@@ -4,7 +4,7 @@
 
 [![PyPI](https://img.shields.io/pypi/v/outputguard)](https://pypi.org/project/outputguard/)
 [![Python](https://img.shields.io/pypi/pyversions/outputguard)](https://pypi.org/project/outputguard/)
-[![CI](https://github.com/yourusername/outputguard/actions/workflows/ci.yml/badge.svg)](https://github.com/yourusername/outputguard/actions)
+[![CI](https://github.com/ndcorder/outputguard/actions/workflows/ci.yml/badge.svg)](https://github.com/ndcorder/outputguard/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Tests](https://img.shields.io/badge/tests-145-brightgreen)](#)
 
@@ -280,7 +280,7 @@ See the [`examples/`](examples/) directory for complete, runnable scripts:
 Contributions are welcome. Please open an issue first to discuss what you'd like to change.
 
 ```bash
-git clone https://github.com/yourusername/outputguard.git
+git clone https://github.com/ndcorder/outputguard.git
 cd outputguard
 uv sync --dev
 uv run pytest tests/ -v

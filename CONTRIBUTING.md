@@ -6,7 +6,7 @@ Thanks for your interest in contributing! Here's how to get started.
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourname/outputguard.git
+   git clone https://github.com/ndcorder/outputguard.git
    cd outputguard
    ```
 
