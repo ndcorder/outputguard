@@ -286,6 +286,10 @@ uv sync --dev
 uv run pytest tests/ -v
 ```
 
+## TypeScript / JavaScript
+
+Looking for a JS/TS version? See **[outputguard-js](https://github.com/ndcorder/outputguard-js)** — same 13 strategies, same API shape, TypeScript-native.
+
 ## License
 
 [MIT](LICENSE)
