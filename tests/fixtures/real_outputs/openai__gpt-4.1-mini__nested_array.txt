@@ -1,0 +1,20 @@
+{
+  "items": [
+    {
+      "name": "Laptop",
+      "price": 999.99
+    },
+    {
+      "name": "Headphones",
+      "price": 199.99
+    },
+    {
+      "name": "Mouse",
+      "price": 49.99
+    }
+  ],
+  "metadata": {
+    "total_count": 3,
+    "currency": "USD"
+  }
+}

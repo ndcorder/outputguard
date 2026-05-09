@@ -1,0 +1,13 @@
+```json
+{
+  "items": [
+    {"name": "Laptop", "price": 999.99},
+    {"name": "Coffee Mug", "price": 15.50},
+    {"name": "Notebook", "price": 8.75}
+  ],
+  "metadata": {
+    "total_count": 3,
+    "currency": "USD"
+  }
+}
+```

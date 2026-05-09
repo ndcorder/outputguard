@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "username": "admin",
+    "active": true,
+    "score": 100.0
+  },
+  {
+    "id": 2,
+    "username": "john_doe",
+    "active": false,
+    "score": 50.25
+  },
+  {
+    "id": 3,
+    "username": "jane_doe",
+    "active": true,
+    "score": 75.5
+  },
+  {
+    "id": 4,
+    "username": "guest",
+    "active": true,
+    "score": 0.0
+  },
+  {
+    "id": 5,
+    "username": "moderator",
+    "active": true,
+    "score": 200.0
+  },
+  {
+    "id": 6,
+    "username": "new_user",
+    "active": true,
+    "score": 10.0
+  },
+  {
+    "id": 7,
+    "username": "inactive_user",
+    "active": false,
+    "score": 25.0
+  },
+  {
+    "id": 8,
+    "username": "power_user",
+    "active": true,
+    "score": 500.0
+  },
+  {
+    "id": 9,
+    "username": "test_account",
+    "active": false,
+    "score": 0.0
+  },
+  {
+    "id": 10,
+    "username": "pro_user",
+    "active": true,
+    "score": 1000.0
+  }
+]

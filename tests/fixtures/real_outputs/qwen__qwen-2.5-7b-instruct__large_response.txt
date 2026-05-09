@@ -1,12 +1,62 @@
 [
-    {"id": 1, "username": "alice123", "active": true, "score": 5200},
-    {"id": 2, "username": "bob456", "active": false, "score": 3100},
-    {"id": 3, "username": "charlie789", "active": true, "score": 4500},
-    {"id": 4, "username": "dave007", "active": true, "score": 7800},
-    {"id": 5, "username": "eve111", "active": false, "score": 2400},
-    {"id": 6, "username": "frank222", "active": true, "score": 6300},
-    {"id": 7, "username": "grace333", "active": true, "score": 5900},
-    {"id": 8, "username": "henry444", "active": false, "score": 3800},
-    {"id": 9, "username": "ibrahim555", "active": true, "score": 4800},
-    {"id": 10, "username": "james666", "active": true, "score": 5700}
+    {
+        "id": 1,
+        "username": "john_doe",
+        "active": true,
+        "score": 5423.78
+    },
+    {
+        "id": 2,
+        "username": "janedoe_123",
+        "active": false,
+        "score": 1249.00
+    },
+    {
+        "id": 3,
+        "username": "bluebear78",
+        "active": true,
+        "score": 8762.34
+    },
+    {
+        "id": 4,
+        "username": "sunnyday1980",
+        "active": true,
+        "score": 3255.23
+    },
+    {
+        "id": 5,
+        "username": "ninja_master",
+        "active": false,
+        "score": 0.00
+    },
+    {
+        "id": 6,
+        "username": "skywalker22",
+        "active": true,
+        "score": 7654.89
+    },
+    {
+        "id": 7,
+        "username": "catlover99",
+        "active": true,
+        "score": 2345.67
+    },
+    {
+        "id": 8,
+        "username": "spaceexplorer",
+        "active": false,
+        "score": 4567.12
+    },
+    {
+        "id": 9,
+        "username": "rocketman88",
+        "active": true,
+        "score": 6789.01
+    },
+    {
+        "id": 10,
+        "username": "garden_gnome",
+        "active": true,
+        "score": 1234.56
+    }
 ]

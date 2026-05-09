@@ -1,12 +1,62 @@
 [
-    {"id": 1, "username": "sarah_m", "active": true, "score": 245.75},
-    {"id": 2, "username": "johndoe87", "active": false, "score": 102.50},
-    {"id": 3, "username": "tech_ninja", "active": true, "score": 678.25},
-    {"id": 4, "username": "emily_r", "active": true, "score": 412.90},
-    {"id": 5, "username": "max_power", "active": false, "score": 56.33},
-    {"id": 6, "username": "lisa_code", "active": true, "score": 834.60},
-    {"id": 7, "username": "alex_g", "active": true, "score": 221.45},
-    {"id": 8, "username": "ryan_dev", "active": false, "score": 167.80},
-    {"id": 9, "username": "katie_star", "active": true, "score": 512.20},
-    {"id": 10, "username": "mike_online", "active": true, "score": 301.75}
+    {
+        "id": 1,
+        "username": "johndoe87",
+        "active": true,
+        "score": 1245.6
+    },
+    {
+        "id": 2,
+        "username": "sarahsmith",
+        "active": false,
+        "score": 789.3
+    },
+    {
+        "id": 3,
+        "username": "mikebrown22",
+        "active": true,
+        "score": 2103.9
+    },
+    {
+        "id": 4,
+        "username": "emilywang",
+        "active": true,
+        "score": 456.2
+    },
+    {
+        "id": 5,
+        "username": "davidlee55",
+        "active": false,
+        "score": 1876.5
+    },
+    {
+        "id": 6,
+        "username": "alexnguyen",
+        "active": true,
+        "score": 934.7
+    },
+    {
+        "id": 7,
+        "username": "racheltaylor",
+        "active": true,
+        "score": 2456.1
+    },
+    {
+        "id": 8,
+        "username": "chrisrogers",
+        "active": false,
+        "score": 612.4
+    },
+    {
+        "id": 9,
+        "username": "jessicapark",
+        "active": true,
+        "score": 1543.8
+    },
+    {
+        "id": 10,
+        "username": "robertchen",
+        "active": true,
+        "score": 876.5
+    }
 ]

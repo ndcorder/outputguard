@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "username": "alex_chen",
+    "active": true,
+    "score": 87.5
+  },
+  {
+    "id": 2,
+    "username": "sarah_m",
+    "active": false,
+    "score": 42.1
+  },
+  {
+    "id": 3,
+    "username": "mike_rodriguez",
+    "active": true,
+    "score": 95.8
+  },
+  {
+    "id": 4,
+    "username": "emma_jones",
+    "active": true,
+    "score": 73.2
+  },
+  {
+    "id": 5,
+    "username": "dev_master",
+    "active": false,
+    "score": 28.7
+  },
+  {
+    "id": 6,
+    "username": "lisa_park",
+    "active": true,
+    "score": 91.4
+  },
+  {
+    "id": 7,
+    "username": "john_smith123",
+    "active": true,
+    "score": 65.9
+  },
+  {
+    "id": 8,
+    "username": "ninja_coder",
+    "active": false,
+    "score": 15.3
+  },
+  {
+    "id": 9,
+    "username": "maria_garcia",
+    "active": true,
+    "score": 82.6
+  },
+  {
+    "id": 10,
+    "username": "tech_guru_99",
+    "active": true,
+    "score": 98.1
+  }
+]

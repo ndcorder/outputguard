@@ -1,0 +1,6 @@
+{
+  "text": "I love sunny days",
+  "sentiment": "positive",
+  "confidence": 0.95,
+  "keywords": ["love", "sunny days"]
+}

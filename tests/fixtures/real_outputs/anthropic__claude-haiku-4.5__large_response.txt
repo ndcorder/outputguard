@@ -1,0 +1,64 @@
+```json
+[
+  {
+    "id": 1,
+    "username": "alex_chen",
+    "active": true,
+    "score": 8542.5
+  },
+  {
+    "id": 2,
+    "username": "jordan_smith",
+    "active": false,
+    "score": 6234.0
+  },
+  {
+    "id": 3,
+    "username": "maya_patel",
+    "active": true,
+    "score": 9876.25
+  },
+  {
+    "id": 4,
+    "username": "chris_taylor",
+    "active": true,
+    "score": 5421.75
+  },
+  {
+    "id": 5,
+    "username": "sam_rodriguez",
+    "active": false,
+    "score": 3892.5
+  },
+  {
+    "id": 6,
+    "username": "emma_johnson",
+    "active": true,
+    "score": 7654.0
+  },
+  {
+    "id": 7,
+    "username": "liam_williams",
+    "active": true,
+    "score": 8923.5
+  },
+  {
+    "id": 8,
+    "username": "sophia_brown",
+    "active": false,
+    "score": 4567.25
+  },
+  {
+    "id": 9,
+    "username": "oliver_davis",
+    "active": true,
+    "score": 9145.0
+  },
+  {
+    "id": 10,
+    "username": "ava_martinez",
+    "active": true,
+    "score": 6789.75
+  }
+]
+```

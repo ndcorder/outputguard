@@ -1,6 +1,1 @@
-{
-  "text": "I love sunny days",
-  "sentiment": "positive",
-  "confidence": 0.9,
-  "keywords": ["love", "sunny", "days"]
-}
+{"text": "I love sunny days", "sentiment": "positive", "confidence": 0.9, "keywords": ["love", "sunny", "days"]}

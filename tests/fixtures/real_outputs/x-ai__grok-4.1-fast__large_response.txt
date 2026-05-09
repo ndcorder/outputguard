@@ -1,0 +1,12 @@
+[
+  {"id":1,"username":"john_doe","active":true,"score":85.5},
+  {"id":2,"username":"alice_smith","active":false,"score":92.0},
+  {"id":3,"username":"bob_johnson","active":true,"score":67.8},
+  {"id":4,"username":"emma_wilson","active":true,"score":145.2},
+  {"id":5,"username":"mike_brown","active":false,"score":34.1},
+  {"id":6,"username":"sarah_davis","active":true,"score":278.9},
+  {"id":7,"username":"david_miller","active":true,"score":101.3},
+  {"id":8,"username":"lisa_garcia","active":false,"score":56.7},
+  {"id":9,"username":"tom_martinez","active":true,"score":399.0},
+  {"id":10,"username":"anna_lee","active":true,"score":23.4}
+]

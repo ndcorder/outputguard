@@ -1,0 +1,13 @@
+```json
+{
+  "items": [
+    {"name": "Apple", "price": 1.00},
+    {"name": "Banana", "price": 0.50},
+    {"name": "Orange", "price": 1.50}
+  ],
+  "metadata": {
+    "total_count": 3,
+    "currency": "USD"
+  }
+}
+```

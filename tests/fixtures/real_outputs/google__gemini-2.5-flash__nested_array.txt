@@ -1,0 +1,22 @@
+```json
+{
+  "items": [
+    {
+      "name": "Laptop",
+      "price": 1200.50
+    },
+    {
+      "name": "Mouse",
+      "price": 25.99
+    },
+    {
+      "name": "Keyboard",
+      "price": 75.00
+    }
+  ],
+  "metadata": {
+    "total_count": 3,
+    "currency": "USD"
+  }
+}
+```

@@ -1,0 +1,1 @@
+{"items":[{"name":"Laptop","price":999.99},{"name":"Mouse","price":29.99},{"name":"Keyboard","price":59.99}],"metadata":{"totalCount":3,"currency":"USD"}}

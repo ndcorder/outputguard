@@ -1,6 +1,8 @@
+```json
 {
-  "title": "Task 1",
+  "title": "Task Example",
   "completed": false,
   "priority": 3,
-  "tags": ["work", " urgent"]
+  "tags": ["tag1", "tag2"]
 }
+```

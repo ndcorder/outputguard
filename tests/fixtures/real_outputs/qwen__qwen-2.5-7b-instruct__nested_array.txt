@@ -1,16 +1,17 @@
+```json
 {
   "items": [
     {
       "name": "Apple",
-      "price": 0.75
+      "price": 1.2
     },
     {
       "name": "Banana",
-      "price": 0.50
+      "price": 0.5
     },
     {
       "name": "Cherry",
-      "price": 2.50
+      "price": 2.5
     }
   ],
   "metadata": {
@@ -18,3 +19,4 @@
     "currency": "USD"
   }
 }
+```

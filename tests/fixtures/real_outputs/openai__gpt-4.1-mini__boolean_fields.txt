@@ -1,0 +1,6 @@
+{
+  "title": "Organize project files",
+  "completed": false,
+  "priority": 3,
+  "tags": ["organization", "project", "files"]
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "username": "coder_gal",
+    "active": true,
+    "score": 1234.5
+  },
+  {
+    "id": 2,
+    "username": "gamer_dude99",
+    "active": false,
+    "score": 876.1
+  },
+  {
+    "id": 3,
+    "username": "artful_dodger",
+    "active": true,
+    "score": 2500.0
+  },
+  {
+    "id": 4,
+    "username": "bookworm_beth",
+    "active": true,
+    "score": 150.75
+  },
+  {
+    "id": 5,
+    "username": "night_owl",
+    "active": false,
+    "score": 42.0
+  },
+  {
+    "id": 6,
+    "username": "tech_wizkid",
+    "active": true,
+    "score": 3456.9
+  },
+  {
+    "id": 7,
+    "username": "sporty_spice",
+    "active": true,
+    "score": 999.99
+  },
+  {
+    "id": 8,
+    "username": "lazy_lizard",
+    "active": false,
+    "score": 10.0
+  },
+  {
+    "id": 9,
+    "username": "music_maniac",
+    "active": true,
+    "score": 765.43
+  },
+  {
+    "id": 10,
+    "username": "foodie_fanatic",
+    "active": true,
+    "score": 1800.2
+  }
+]

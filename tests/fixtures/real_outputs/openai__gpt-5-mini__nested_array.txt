@@ -1,0 +1,1 @@
+{"items":[{"name":"Widget A","price":19.99},{"name":"Gadget B","price":29.95},{"name":"Thingamajig C","price":9.5}],"metadata":{"total_count":3,"currency":"USD"}}

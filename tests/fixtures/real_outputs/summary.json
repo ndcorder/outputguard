@@ -1,107 +1,159 @@
 {
-  "timestamp": "2026-05-09T08:38:24.862247",
+  "timestamp": "2026-05-09T08:49:45.192926",
   "models": [
-    "openai/gpt-4o-mini",
-    "anthropic/claude-3.5-haiku",
-    "meta-llama/llama-3.1-8b-instruct",
-    "mistralai/mistral-7b-instruct",
-    "google/gemma-2-9b-it",
-    "deepseek/deepseek-chat",
-    "qwen/qwen-2.5-7b-instruct"
+    "openai/gpt-5-mini",
+    "anthropic/claude-sonnet-4.6",
+    "google/gemini-2.5-flash",
+    "mistralai/mistral-medium-3-5",
+    "deepseek/deepseek-v3.2",
+    "qwen/qwen3.6-flash",
+    "x-ai/grok-4.1-fast",
+    "openai/gpt-4.1-mini",
+    "anthropic/claude-haiku-4.5",
+    "meta-llama/llama-3.3-70b-instruct",
+    "deepseek/deepseek-chat-v3.1",
+    "qwen/qwen3-8b"
   ],
   "results": [
     {
-      "model": "openai/gpt-4o-mini",
+      "model": "openai/gpt-5-mini",
       "scenario": "simple_object",
-      "raw_length": 82,
+      "raw_length": 69,
       "valid_immediately": true,
       "repaired": false,
       "failed": false,
       "strategies": []
     },
     {
-      "model": "openai/gpt-4o-mini",
+      "model": "openai/gpt-5-mini",
       "scenario": "nested_array",
-      "raw_length": 257,
-      "valid_immediately": false,
+      "raw_length": 162,
+      "valid_immediately": true,
       "repaired": false,
-      "failed": true,
+      "failed": false,
       "strategies": []
     },
     {
-      "model": "openai/gpt-4o-mini",
+      "model": "openai/gpt-5-mini",
       "scenario": "enum_values",
-      "raw_length": 123,
+      "raw_length": 104,
       "valid_immediately": true,
       "repaired": false,
       "failed": false,
       "strategies": []
     },
     {
-      "model": "openai/gpt-4o-mini",
+      "model": "openai/gpt-5-mini",
       "scenario": "boolean_fields",
-      "raw_length": 119,
+      "raw_length": 114,
       "valid_immediately": true,
       "repaired": false,
       "failed": false,
       "strategies": []
     },
     {
-      "model": "openai/gpt-4o-mini",
+      "model": "openai/gpt-5-mini",
       "scenario": "large_response",
-      "raw_length": 716,
+      "raw_length": 611,
       "valid_immediately": true,
       "repaired": false,
       "failed": false,
       "strategies": []
     },
     {
-      "model": "anthropic/claude-3.5-haiku",
+      "model": "anthropic/claude-sonnet-4.6",
       "scenario": "simple_object",
-      "raw_length": 90,
+      "raw_length": 71,
       "valid_immediately": true,
       "repaired": false,
       "failed": false,
       "strategies": []
     },
     {
-      "model": "anthropic/claude-3.5-haiku",
+      "model": "anthropic/claude-sonnet-4.6",
       "scenario": "nested_array",
-      "raw_length": 368,
-      "valid_immediately": false,
+      "raw_length": 183,
+      "valid_immediately": true,
       "repaired": false,
-      "failed": true,
+      "failed": false,
       "strategies": []
     },
     {
-      "model": "anthropic/claude-3.5-haiku",
+      "model": "anthropic/claude-sonnet-4.6",
       "scenario": "enum_values",
-      "raw_length": 142,
+      "raw_length": 104,
       "valid_immediately": true,
       "repaired": false,
       "failed": false,
       "strategies": []
     },
     {
-      "model": "anthropic/claude-3.5-haiku",
+      "model": "anthropic/claude-sonnet-4.6",
       "scenario": "boolean_fields",
-      "raw_length": 141,
+      "raw_length": 118,
       "valid_immediately": true,
       "repaired": false,
       "failed": false,
       "strategies": []
     },
     {
-      "model": "anthropic/claude-3.5-haiku",
+      "model": "anthropic/claude-sonnet-4.6",
       "scenario": "large_response",
-      "raw_length": 731,
+      "raw_length": 715,
       "valid_immediately": true,
       "repaired": false,
       "failed": false,
       "strategies": []
     },
     {
-      "model": "meta-llama/llama-3.1-8b-instruct",
+      "model": "google/gemini-2.5-flash",
+      "scenario": "simple_object",
+      "raw_length": 70,
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "google/gemini-2.5-flash",
+      "scenario": "nested_array",
+      "raw_length": 273,
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "google/gemini-2.5-flash",
+      "scenario": "enum_values",
+      "raw_length": 110,
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "google/gemini-2.5-flash",
+      "scenario": "boolean_fields",
+      "raw_length": 91,
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "google/gemini-2.5-flash",
+      "scenario": "large_response",
+      "raw_length": 937,
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "mistralai/mistral-medium-3-5",
       "scenario": "simple_object",
       "raw_length": 72,
       "valid_immediately": true,
@@ -110,47 +162,45 @@
       "strategies": []
     },
     {
-      "model": "meta-llama/llama-3.1-8b-instruct",
+      "model": "mistralai/mistral-medium-3-5",
       "scenario": "nested_array",
-      "raw_length": 202,
-      "valid_immediately": false,
+      "raw_length": 215,
+      "valid_immediately": true,
       "repaired": false,
-      "failed": true,
+      "failed": false,
       "strategies": []
     },
     {
-      "model": "meta-llama/llama-3.1-8b-instruct",
+      "model": "mistralai/mistral-medium-3-5",
       "scenario": "enum_values",
-      "raw_length": 391,
-      "valid_immediately": false,
-      "repaired": true,
+      "raw_length": 113,
+      "valid_immediately": true,
+      "repaired": false,
       "failed": false,
-      "strategies": [
-        "strip_fences"
-      ]
+      "strategies": []
     },
     {
-      "model": "meta-llama/llama-3.1-8b-instruct",
+      "model": "mistralai/mistral-medium-3-5",
       "scenario": "boolean_fields",
-      "raw_length": 93,
+      "raw_length": 118,
       "valid_immediately": true,
       "repaired": false,
       "failed": false,
       "strategies": []
     },
     {
-      "model": "meta-llama/llama-3.1-8b-instruct",
+      "model": "mistralai/mistral-medium-3-5",
       "scenario": "large_response",
-      "raw_length": 649,
+      "raw_length": 681,
       "valid_immediately": true,
       "repaired": false,
       "failed": false,
       "strategies": []
     },
     {
-      "model": "deepseek/deepseek-chat",
+      "model": "deepseek/deepseek-v3.2",
       "scenario": "simple_object",
-      "raw_length": 94,
+      "raw_length": 92,
       "valid_immediately": false,
       "repaired": true,
       "failed": false,
@@ -159,16 +209,18 @@
       ]
     },
     {
-      "model": "deepseek/deepseek-chat",
+      "model": "deepseek/deepseek-v3.2",
       "scenario": "nested_array",
-      "raw_length": 269,
+      "raw_length": 222,
       "valid_immediately": false,
-      "repaired": false,
-      "failed": true,
-      "strategies": []
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
     },
     {
-      "model": "deepseek/deepseek-chat",
+      "model": "deepseek/deepseek-v3.2",
       "scenario": "enum_values",
       "raw_length": 135,
       "valid_immediately": false,
@@ -179,9 +231,9 @@
       ]
     },
     {
-      "model": "deepseek/deepseek-chat",
+      "model": "deepseek/deepseek-v3.2",
       "scenario": "boolean_fields",
-      "raw_length": 118,
+      "raw_length": 142,
       "valid_immediately": false,
       "repaired": true,
       "failed": false,
@@ -190,56 +242,338 @@
       ]
     },
     {
-      "model": "deepseek/deepseek-chat",
+      "model": "deepseek/deepseek-v3.2",
       "scenario": "large_response",
-      "raw_length": 870,
-      "valid_immediately": false,
-      "repaired": true,
-      "failed": false,
-      "strategies": [
-        "strip_fences"
-      ]
-    },
-    {
-      "model": "qwen/qwen-2.5-7b-instruct",
-      "scenario": "simple_object",
-      "raw_length": 71,
+      "raw_length": 699,
       "valid_immediately": true,
       "repaired": false,
       "failed": false,
       "strategies": []
     },
     {
-      "model": "qwen/qwen-2.5-7b-instruct",
+      "model": "qwen/qwen3.6-flash",
+      "scenario": "simple_object",
+      "raw_length": 74,
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen3.6-flash",
       "scenario": "nested_array",
-      "raw_length": 254,
+      "raw_length": 154,
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen3.6-flash",
+      "scenario": "enum_values",
+      "raw_length": 113,
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen3.6-flash",
+      "scenario": "boolean_fields",
+      "raw_length": 112,
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen3.6-flash",
+      "scenario": "large_response",
+      "raw_length": 611,
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "x-ai/grok-4.1-fast",
+      "scenario": "simple_object",
+      "raw_length": 67,
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "x-ai/grok-4.1-fast",
+      "scenario": "nested_array",
+      "raw_length": 149,
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "x-ai/grok-4.1-fast",
+      "scenario": "enum_values",
+      "raw_length": 103,
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "x-ai/grok-4.1-fast",
+      "scenario": "boolean_fields",
+      "raw_length": 85,
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "x-ai/grok-4.1-fast",
+      "scenario": "large_response",
+      "raw_length": 645,
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/gpt-4.1-mini",
+      "scenario": "simple_object",
+      "raw_length": 82,
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/gpt-4.1-mini",
+      "scenario": "nested_array",
+      "raw_length": 263,
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/gpt-4.1-mini",
+      "scenario": "enum_values",
+      "raw_length": 120,
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/gpt-4.1-mini",
+      "scenario": "boolean_fields",
+      "raw_length": 126,
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/gpt-4.1-mini",
+      "scenario": "large_response",
+      "raw_length": 898,
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "anthropic/claude-haiku-4.5",
+      "scenario": "simple_object",
+      "raw_length": 94,
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "anthropic/claude-haiku-4.5",
+      "scenario": "nested_array",
+      "raw_length": 292,
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "anthropic/claude-haiku-4.5",
+      "scenario": "enum_values",
+      "raw_length": 135,
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "anthropic/claude-haiku-4.5",
+      "scenario": "boolean_fields",
+      "raw_length": 134,
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "anthropic/claude-haiku-4.5",
+      "scenario": "large_response",
+      "raw_length": 959,
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "meta-llama/llama-3.3-70b-instruct",
+      "scenario": "simple_object",
+      "raw_length": 63,
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "meta-llama/llama-3.3-70b-instruct",
+      "scenario": "nested_array",
+      "raw_length": 268,
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "meta-llama/llama-3.3-70b-instruct",
+      "scenario": "enum_values",
+      "raw_length": 104,
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "meta-llama/llama-3.3-70b-instruct",
+      "scenario": "boolean_fields",
+      "raw_length": 88,
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "meta-llama/llama-3.3-70b-instruct",
+      "scenario": "large_response",
+      "raw_length": 896,
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "deepseek/deepseek-chat-v3.1",
+      "scenario": "simple_object",
+      "raw_length": 72,
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "deepseek/deepseek-chat-v3.1",
+      "scenario": "nested_array",
+      "raw_length": 164,
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "deepseek/deepseek-chat-v3.1",
+      "scenario": "enum_values",
+      "raw_length": 116,
       "valid_immediately": false,
       "repaired": false,
       "failed": true,
       "strategies": []
     },
     {
-      "model": "qwen/qwen-2.5-7b-instruct",
-      "scenario": "enum_values",
-      "raw_length": 122,
-      "valid_immediately": true,
-      "repaired": false,
-      "failed": false,
-      "strategies": []
-    },
-    {
-      "model": "qwen/qwen-2.5-7b-instruct",
+      "model": "deepseek/deepseek-chat-v3.1",
       "scenario": "boolean_fields",
-      "raw_length": 70,
+      "raw_length": 106,
       "valid_immediately": true,
       "repaired": false,
       "failed": false,
       "strategies": []
     },
     {
-      "model": "qwen/qwen-2.5-7b-instruct",
+      "model": "deepseek/deepseek-chat-v3.1",
       "scenario": "large_response",
-      "raw_length": 705,
+      "raw_length": 693,
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen3-8b",
+      "scenario": "simple_object",
+      "raw_length": 74,
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen3-8b",
+      "scenario": "nested_array",
+      "raw_length": 215,
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen3-8b",
+      "scenario": "enum_values",
+      "raw_length": 113,
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen3-8b",
+      "scenario": "boolean_fields",
+      "raw_length": 87,
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen3-8b",
+      "scenario": "large_response",
+      "raw_length": 609,
       "valid_immediately": true,
       "repaired": false,
       "failed": false,

@@ -1,0 +1,22 @@
+```json
+{
+  "items": [
+    {
+      "name": "Item 1",
+      "price": 10.99
+    },
+    {
+      "name": "Item 2",
+      "price": 5.49
+    },
+    {
+      "name": "Item 3",
+      "price": 7.99
+    }
+  ],
+  "metadata": {
+    "total_count": 3,
+    "currency": "USD"
+  }
+}
+```

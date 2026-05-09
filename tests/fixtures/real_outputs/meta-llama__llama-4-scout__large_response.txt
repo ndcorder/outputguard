@@ -1,0 +1,14 @@
+```json
+[
+  {"id": 1, "username": "johndoe", "active": true, "score": 85.5},
+  {"id": 2, "username": "janeuser", "active": false, "score": 42.1},
+  {"id": 3, "username": "meta_llama", "active": true, "score": 99.9},
+  {"id": 4, "username": "newbie2022", "active": true, "score": 12.8},
+  {"id": 5, "username": "expert22", "active": false, "score": 91.2},
+  {"id": 6, "username": "learner101", "active": true, "score": 67.3},
+  {"id": 7, "username": "prouser2000", "active": true, "score": 88.1},
+  {"id": 8, "username": "inactiveuser", "active": false, "score": 0.0},
+  {"id": 9, "username": "beginner11", "active": true, "score": 25.6},
+  {"id": 10, "username": "master85", "active": true, "score": 95.6}
+]
+```

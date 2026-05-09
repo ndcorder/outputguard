@@ -1,8 +1,8 @@
 ```json
 {
-  "title": "Complete the project",
+  "title": "Complete JSON task",
   "completed": false,
   "priority": 3,
-  "tags": ["work", "urgent"]
+  "tags": ["json", "programming", "task"]
 }
 ```

@@ -1,6 +1,6 @@
 {
-    "title": "Organize home office",
+    "title": "Complete project proposal",
     "completed": false,
     "priority": 3,
-    "tags": ["productivity", "organization", "workspace"]
+    "tags": ["work", "planning", "deadline"]
 }

@@ -22,13 +22,20 @@ OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY", "")
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 
 MODELS = [
-    "openai/gpt-4o-mini",
-    "anthropic/claude-3.5-haiku",
-    "meta-llama/llama-3.1-8b-instruct",
-    "mistralai/mistral-7b-instruct",
-    "google/gemma-2-9b-it",
-    "deepseek/deepseek-chat",
-    "qwen/qwen-2.5-7b-instruct",
+    # Latest gen (2025-2026)
+    "openai/gpt-5-mini",
+    "anthropic/claude-sonnet-4.6",
+    "google/gemini-2.5-flash",
+    "mistralai/mistral-medium-3-5",
+    "deepseek/deepseek-v3.2",
+    "qwen/qwen3.6-flash",
+    "x-ai/grok-4.1-fast",
+    # Previous gen (keep for coverage)
+    "openai/gpt-4.1-mini",
+    "anthropic/claude-haiku-4.5",
+    "meta-llama/llama-3.3-70b-instruct",
+    "deepseek/deepseek-chat-v3.1",
+    "qwen/qwen3-8b",
 ]
 
 SCENARIOS = [

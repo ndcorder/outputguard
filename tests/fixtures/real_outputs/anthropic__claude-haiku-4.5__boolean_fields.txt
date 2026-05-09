@@ -1,0 +1,8 @@
+```json
+{
+  "title": "Review project proposal",
+  "completed": false,
+  "priority": 3,
+  "tags": ["work", "review", "important"]
+}
+```

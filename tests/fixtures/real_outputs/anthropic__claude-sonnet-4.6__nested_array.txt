@@ -1,0 +1,1 @@
+{"items":[{"name":"Wireless Headphones","price":79.99},{"name":"Mechanical Keyboard","price":129.99},{"name":"USB-C Hub","price":49.99}],"metadata":{"total_count":3,"currency":"USD"}}

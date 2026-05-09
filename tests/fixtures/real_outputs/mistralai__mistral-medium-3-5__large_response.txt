@@ -1,0 +1,12 @@
+[
+  {"id": 1, "username": "alex_2023", "active": true, "score": 87.5},
+  {"id": 2, "username": "sarah_m", "active": false, "score": 42.0},
+  {"id": 3, "username": "dev_john", "active": true, "score": 95.3},
+  {"id": 4, "username": "lisa_k", "active": true, "score": 68.2},
+  {"id": 5, "username": "mike_91", "active": false, "score": 33.7},
+  {"id": 6, "username": "emma_lee", "active": true, "score": 76.1},
+  {"id": 7, "username": "peter_g", "active": false, "score": 55.0},
+  {"id": 8, "username": "nina_x", "active": true, "score": 89.9},
+  {"id": 9, "username": "tommy_b", "active": true, "score": 61.4},
+  {"id": 10, "username": "zoe_queen", "active": false, "score": 22.8}
+]

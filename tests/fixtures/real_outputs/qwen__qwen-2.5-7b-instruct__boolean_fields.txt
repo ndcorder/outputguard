@@ -1,5 +1,5 @@
 {
-  "title": "",
+  "title": "Sample Task",
   "completed": false,
   "priority": 3,
   "tags": []
