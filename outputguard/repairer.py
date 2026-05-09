@@ -1,14 +1,27 @@
 """JSON repair engine — applies strategies in sequence to fix malformed JSON."""
 
+from __future__ import annotations
+
 import json
+from typing import Literal, overload
 
 from outputguard.models import RepairResult
 from outputguard.report import RepairReport, StrategyApplication
 from outputguard.strategies import get_strategies
 
 
+@overload
+def repair(text: str, strategies: list[str] | None = ...) -> RepairResult: ...
+
+
+@overload
 def repair(
-    text: str, strategies: list[str] | None = None, report: bool = False
+    text: str, strategies: list[str] | None = ..., *, report: Literal[True]
+) -> tuple[RepairResult, RepairReport]: ...
+
+
+def repair(
+    text: str, strategies: list[str] | None = None, *, report: bool = False
 ) -> RepairResult | tuple[RepairResult, RepairReport]:
     """Apply repair strategies in order, try to parse after each one.
 

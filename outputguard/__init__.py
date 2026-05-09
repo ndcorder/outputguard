@@ -17,7 +17,7 @@ def validate(text: str, schema: dict) -> ValidationResult:
 
 
 def repair(text: str) -> RepairResult:
-    return _default_guard.repair(text)
+    return _default_guard.repair(text)  # type: ignore[return-value]
 
 
 def validate_and_repair(text: str, schema: dict) -> ValidationResult:

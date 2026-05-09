@@ -1,5 +1,7 @@
 """Strategy registry for JSON repair strategies."""
 
+from collections.abc import Callable
+
 from outputguard.strategies import (
     extract_json,
     fix_booleans,
@@ -17,7 +19,9 @@ from outputguard.strategies import (
     strip_fences,
 )
 
-ALL_STRATEGIES: list[tuple[str, callable]] = [
+Strategy = Callable[[str], str]
+
+ALL_STRATEGIES: list[tuple[str, Strategy]] = [
     (strip_fences.NAME, strip_fences.apply),
     (extract_json.NAME, extract_json.apply),
     (remove_comments.NAME, remove_comments.apply),
@@ -52,14 +56,14 @@ STRATEGY_DESCRIPTIONS: dict[str, str] = {
 }
 
 
-def get_strategy(name: str) -> callable:
+def get_strategy(name: str) -> Strategy:
     for n, fn in ALL_STRATEGIES:
         if n == name:
             return fn
     raise ValueError(f"Unknown strategy: {name}")
 
 
-def get_strategies(names: list[str] | None = None) -> list[tuple[str, callable]]:
+def get_strategies(names: list[str] | None = None) -> list[tuple[str, Strategy]]:
     if names is None:
         return list(ALL_STRATEGIES)
     return [(n, fn) for n, fn in ALL_STRATEGIES if n in names]

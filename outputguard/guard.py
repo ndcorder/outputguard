@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from typing import Literal, overload
+
 from outputguard import repairer as _repairer
 from outputguard import retry as _retry
 from outputguard import validator as _validator
@@ -20,10 +22,18 @@ class OutputGuard:
     def validate(self, text: str, schema: dict) -> ValidationResult:
         return _validator.validate(text, schema)
 
+    @overload
+    def repair(self, text: str) -> RepairResult: ...
+
+    @overload
+    def repair(self, text: str, *, report: Literal[True]) -> tuple[RepairResult, RepairReport]: ...
+
     def repair(
         self, text: str, *, report: bool = False
     ) -> RepairResult | tuple[RepairResult, RepairReport]:
-        return _repairer.repair(text, self.strategies, report=report)
+        if report:
+            return _repairer.repair(text, self.strategies, report=True)
+        return _repairer.repair(text, self.strategies)
 
     def validate_and_repair(self, text: str, schema: dict) -> ValidationResult:
         """Validate, and if invalid, attempt repair then re-validate."""
@@ -61,6 +71,7 @@ class OutputGuard:
         """
         result = self.validate_and_repair(text, schema)
         if result.valid:
+            assert result.data is not None
             return result.data
 
         if result.data is None:

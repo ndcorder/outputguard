@@ -114,7 +114,7 @@ def _show_repair_details(original: str, result: ValidationResult, verbose: bool)
     """Show diff/verbose output for a repair."""
     if not result.repaired:
         return
-    _, report = _repair(original, report=True)
+    _result, report = _repair(original, report=True)
     if verbose:
         step_diffs = report.step_diffs()
         if step_diffs:
@@ -156,11 +156,10 @@ def repair(
 
     guard = OutputGuard(strategies=strategy_list)
     need_report = show_diff or verbose
-    raw = guard.repair(text, report=need_report)
     if need_report:
-        result, report = raw
+        result, report = guard.repair(text, report=True)
     else:
-        result = raw
+        result = guard.repair(text)
         report = None
 
     if fmt == "json":
