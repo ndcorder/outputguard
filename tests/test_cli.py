@@ -88,3 +88,39 @@ def test_quiet_mode(runner, schema_path, valid_json_file):
     result = runner.invoke(cli, ["validate", valid_json_file, "-s", schema_path, "-q"])
     assert result.exit_code == 0
     assert result.output.strip() == ""
+
+
+def test_version_command(runner):
+    result = runner.invoke(cli, ["version"])
+    assert result.exit_code == 0
+    assert "outputguard" in result.output
+
+
+def test_repair_with_diff(runner, tmp_path):
+    f = tmp_path / "fenced.json"
+    f.write_text('```json\n{"a": 1}\n```')
+    result = runner.invoke(cli, ["repair", str(f), "--diff"])
+    assert result.exit_code == 0
+    assert "Diff" in result.output or "---" in result.output
+
+
+def test_repair_with_verbose(runner, tmp_path):
+    f = tmp_path / "fenced.json"
+    f.write_text('```json\n{"a": 1}\n```')
+    result = runner.invoke(cli, ["repair", str(f), "--verbose"])
+    assert result.exit_code == 0
+    assert "strip_fences" in result.output
+
+
+def test_strategies_shows_descriptions(runner):
+    result = runner.invoke(cli, ["strategies"])
+    assert result.exit_code == 0
+    assert "Remove markdown" in result.output
+    assert "fix_truncated" in result.output
+
+
+def test_repair_with_strategies_filter(runner, tmp_path):
+    f = tmp_path / "test.json"
+    f.write_text('```json\n{"a": 1}\n```')
+    result = runner.invoke(cli, ["repair", str(f), "--strategies", "strip_fences"])
+    assert result.exit_code == 0
