@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {"type": "string"},
+          "price": {"type": "number"}
+        },
+        "required": ["name", "price"]
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "total": {"type": "integer"},
+        "timestamp": {"type": "string"}
+      },
+      "required": ["total", "timestamp"]
+    }
+  },
+  "required": ["items", "metadata"]
+}

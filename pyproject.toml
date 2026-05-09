@@ -1,0 +1,25 @@
+[project]
+name = "outputguard"
+version = "0.1.0"
+description = "Validate, repair, and retry LLM structured outputs"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+dependencies = [
+    "click>=8.1",
+    "jsonschema>=4.20",
+    "rich>=13.0",
+]
+
+[project.scripts]
+outputguard = "outputguard.cli:cli"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=5.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
