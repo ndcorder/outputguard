@@ -3,6 +3,7 @@
 import re
 
 NAME = "fix_commas"
+DESCRIPTION = "Remove trailing commas before } and ]"
 
 _TRAILING_COMMA_RE = re.compile(r",\s*([}\]])")
 

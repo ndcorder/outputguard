@@ -1,6 +1,7 @@
 """Escape unescaped newlines, carriage returns, and tabs inside JSON string values."""
 
 NAME = "fix_newlines"
+DESCRIPTION = "Escape unescaped newlines/tabs inside string values"
 
 
 def apply(text: str) -> str:

@@ -3,6 +3,7 @@
 import re
 
 NAME = "strip_fences"
+DESCRIPTION = "Remove markdown code fences (```json ... ```)"
 
 _FENCE_RE = re.compile(
     r"```[a-zA-Z]*\s*\n(.*?)\n\s*```",

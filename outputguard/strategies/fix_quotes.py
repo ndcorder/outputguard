@@ -1,6 +1,7 @@
 """Replace single-quoted strings with double-quoted in JSON-like text."""
 
 NAME = "fix_quotes"
+DESCRIPTION = "Replace single-quoted strings with double-quoted"
 
 
 def apply(text: str) -> str:

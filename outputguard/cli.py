@@ -10,7 +10,7 @@ from rich.table import Table
 
 import outputguard
 from outputguard.models import ValidationResult, RepairResult
-from outputguard.strategies import ALL_STRATEGIES
+from outputguard.strategies import ALL_STRATEGIES, STRATEGY_DESCRIPTIONS
 
 console = Console(stderr=True)
 
@@ -148,9 +148,10 @@ def strategies() -> None:
     table = Table(title="Repair Strategies")
     table.add_column("#", style="dim", width=4)
     table.add_column("Name", style="cyan")
+    table.add_column("Description")
 
     for i, (name, _fn) in enumerate(ALL_STRATEGIES, 1):
-        table.add_row(str(i), name)
+        table.add_row(str(i), name, STRATEGY_DESCRIPTIONS.get(name, ""))
 
     console.print(table)
     sys.exit(0)

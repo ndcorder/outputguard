@@ -1,6 +1,7 @@
 """Strip JS-style comments from JSON-like text, preserving strings."""
 
 NAME = "remove_comments"
+DESCRIPTION = "Strip JS-style // and /* */ comments"
 
 
 def apply(text: str) -> str:

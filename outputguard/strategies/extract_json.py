@@ -1,6 +1,7 @@
 """Extract the first balanced JSON object or array from surrounding text."""
 
 NAME = "extract_json"
+DESCRIPTION = "Extract JSON object/array from surrounding text"
 
 
 def apply(text: str) -> str:

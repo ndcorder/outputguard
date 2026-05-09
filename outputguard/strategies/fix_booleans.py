@@ -1,20 +1,18 @@
-"""Replace JavaScript-specific values with JSON-compatible equivalents."""
+"""Replace Python-style booleans and None with JSON equivalents."""
 
 import re
 
-NAME = "fix_values"
-DESCRIPTION = "Replace NaN, Infinity, undefined with null"
+NAME = "fix_booleans"
+DESCRIPTION = "Replace Python True/False/None with true/false/null"
 
 _PATTERNS = [
-    (re.compile(r"-Infinity"), "null"),
-    (re.compile(r"\bInfinity\b"), "null"),
-    (re.compile(r"\bNaN\b"), "null"),
-    (re.compile(r"\bundefined\b"), "null"),
+    (re.compile(r"\bTrue\b"), "true"),
+    (re.compile(r"\bFalse\b"), "false"),
+    (re.compile(r"\bNone\b"), "null"),
 ]
 
 
 def _count_unescaped_quotes(text: str, end: int) -> int:
-    """Count unescaped double quotes in text[:end]."""
     count = 0
     i = 0
     while i < end:
@@ -29,11 +27,8 @@ def _count_unescaped_quotes(text: str, end: int) -> int:
 
 def apply(text: str) -> str:
     for pattern, replacement in _PATTERNS:
-        # Process matches from right to left so indices stay valid
         matches = list(pattern.finditer(text))
         for m in reversed(matches):
-            # If the number of unescaped quotes before this match is even,
-            # we're outside a string.
             if _count_unescaped_quotes(text, m.start()) % 2 == 0:
                 text = text[: m.start()] + replacement + text[m.end() :]
     return text

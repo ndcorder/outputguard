@@ -97,6 +97,7 @@ echo '{name: "Alice", age: 30,}' | outputguard repair -
 | `fix_quotes` | Replace single quotes with double quotes |
 | `fix_keys` | Add double quotes to unquoted object keys |
 | `fix_values` | Replace `NaN`, `Infinity`, `undefined` with `null` |
+| `fix_booleans` | Replace Python `True`/`False`/`None` with `true`/`false`/`null` |
 | `fix_closers` | Balance missing closing braces and brackets |
 | `fix_newlines` | Escape unescaped newlines inside string values |
 

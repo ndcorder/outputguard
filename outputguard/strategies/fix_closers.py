@@ -1,6 +1,7 @@
 """Balance missing closing braces/brackets."""
 
 NAME = "fix_closers"
+DESCRIPTION = "Balance missing closing braces and brackets"
 
 _MATCH = {"{": "}", "[": "]"}
 

@@ -3,6 +3,7 @@
 import re
 
 NAME = "fix_keys"
+DESCRIPTION = "Add double quotes to unquoted object keys"
 
 # Match unquoted keys after { or , (with optional whitespace/newlines)
 _UNQUOTED_KEY_RE = re.compile(

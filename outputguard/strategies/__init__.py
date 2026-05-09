@@ -2,6 +2,7 @@
 
 from outputguard.strategies import (
     extract_json,
+    fix_booleans,
     fix_closers,
     fix_commas,
     fix_keys,
@@ -20,9 +21,23 @@ ALL_STRATEGIES: list[tuple[str, callable]] = [
     (fix_quotes.NAME, fix_quotes.apply),
     (fix_keys.NAME, fix_keys.apply),
     (fix_values.NAME, fix_values.apply),
+    (fix_booleans.NAME, fix_booleans.apply),
     (fix_closers.NAME, fix_closers.apply),
     (fix_newlines.NAME, fix_newlines.apply),
 ]
+
+STRATEGY_DESCRIPTIONS: dict[str, str] = {
+    strip_fences.NAME: strip_fences.DESCRIPTION,
+    extract_json.NAME: extract_json.DESCRIPTION,
+    remove_comments.NAME: remove_comments.DESCRIPTION,
+    fix_commas.NAME: fix_commas.DESCRIPTION,
+    fix_quotes.NAME: fix_quotes.DESCRIPTION,
+    fix_keys.NAME: fix_keys.DESCRIPTION,
+    fix_values.NAME: fix_values.DESCRIPTION,
+    fix_booleans.NAME: fix_booleans.DESCRIPTION,
+    fix_closers.NAME: fix_closers.DESCRIPTION,
+    fix_newlines.NAME: fix_newlines.DESCRIPTION,
+}
 
 
 def get_strategy(name: str) -> callable:
