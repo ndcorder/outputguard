@@ -18,9 +18,7 @@ def repair(
         json.loads(text)
         result = RepairResult(repaired=False, text=text)
         if report:
-            return result, RepairReport(
-                original_text=text, final_text=text, success=True
-            )
+            return result, RepairReport(original_text=text, final_text=text, success=True)
         return result
     except json.JSONDecodeError:
         pass
@@ -39,17 +37,15 @@ def repair(
         except Exception:
             current = before
         changed = current != before
-        steps.append(StrategyApplication(
-            name=name, changed=changed, input_text=before, output_text=current
-        ))
+        steps.append(
+            StrategyApplication(name=name, changed=changed, input_text=before, output_text=current)
+        )
         if changed:
             applied.append(name)
 
     try:
         json.loads(current)
-        result = RepairResult(
-            repaired=True, text=current, strategies_applied=applied
-        )
+        result = RepairResult(repaired=True, text=current, strategies_applied=applied)
         if report:
             return result, RepairReport(
                 original_text=text, final_text=current, success=True, steps=steps
@@ -69,16 +65,14 @@ def repair(
         except Exception:
             current = before
         changed = current != before
-        steps.append(StrategyApplication(
-            name=name, changed=changed, input_text=before, output_text=current
-        ))
+        steps.append(
+            StrategyApplication(name=name, changed=changed, input_text=before, output_text=current)
+        )
         if changed:
             applied.append(name)
         try:
             json.loads(current)
-            result = RepairResult(
-                repaired=True, text=current, strategies_applied=applied
-            )
+            result = RepairResult(repaired=True, text=current, strategies_applied=applied)
             if report:
                 return result, RepairReport(
                     original_text=text, final_text=current, success=True, steps=steps
@@ -90,7 +84,6 @@ def repair(
     result = RepairResult(repaired=False, text=text, parse_error=last_error)
     if report:
         return result, RepairReport(
-            original_text=text, final_text=text, success=False,
-            steps=steps, parse_error=last_error
+            original_text=text, final_text=text, success=False, steps=steps, parse_error=last_error
         )
     return result

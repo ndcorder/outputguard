@@ -89,6 +89,7 @@ def test_truncated_json(nested_schema):
 
 def test_parse_convenience():
     import outputguard
+
     schema = {"type": "object", "properties": {"x": {"type": "integer"}}, "required": ["x"]}
     data = outputguard.parse('```json\n{"x": 42}\n```', schema)
     assert data == {"x": 42}
@@ -98,12 +99,14 @@ def test_parse_raises_on_garbage():
     import outputguard
     from outputguard.exceptions import ParseError
     import pytest
+
     with pytest.raises(ParseError):
         outputguard.parse("not json", {"type": "object"})
 
 
 def test_repair_report_integration():
     from outputguard.repairer import repair
+
     result, report = repair('```json\n{"a": 1,}\n```', report=True)
     assert result.repaired is True
     assert report.success is True
@@ -126,15 +129,18 @@ def test_kitchen_sink(simple_schema):
 ```
 
 Let me know if you need anything else!"""
-    result = validate_and_repair(text, {
-        "type": "object",
-        "properties": {
-            "name": {"type": "string"},
-            "age": {"type": "integer"},
-            "active": {"type": "boolean"},
+    result = validate_and_repair(
+        text,
+        {
+            "type": "object",
+            "properties": {
+                "name": {"type": "string"},
+                "age": {"type": "integer"},
+                "active": {"type": "boolean"},
+            },
+            "required": ["name", "age"],
         },
-        "required": ["name", "age"],
-    })
+    )
     assert result.valid is True
     assert result.data["name"] == "Zara"
     assert result.data["age"] == 28

@@ -78,7 +78,5 @@ class OutputGuard:
             schema=schema,
         )
 
-    def retry_prompt(
-        self, text: str, schema: dict, errors: list[ValidationError]
-    ) -> str:
+    def retry_prompt(self, text: str, schema: dict, errors: list[ValidationError]) -> str:
         return _retry.retry_prompt(text, schema, errors)

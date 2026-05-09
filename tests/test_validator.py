@@ -37,25 +37,24 @@ def test_missing_required(simple_schema):
 
 
 def test_invalid_json():
-    result = validate('not json at all', {"type": "object"})
+    result = validate("not json at all", {"type": "object"})
     assert result.valid is False
     assert result.errors[0].path == "$"
 
 
 def test_nested_schema_valid(nested_schema):
-    text = json.dumps({
-        "items": [{"name": "Widget", "price": 9.99}],
-        "metadata": {"total": 1, "timestamp": "2024-01-01"}
-    })
+    text = json.dumps(
+        {
+            "items": [{"name": "Widget", "price": 9.99}],
+            "metadata": {"total": 1, "timestamp": "2024-01-01"},
+        }
+    )
     result = validate(text, nested_schema)
     assert result.valid is True
 
 
 def test_nested_schema_errors(nested_schema):
-    text = json.dumps({
-        "items": [{"name": "Widget", "price": "nine"}],
-        "metadata": {"total": 1}
-    })
+    text = json.dumps({"items": [{"name": "Widget", "price": "nine"}], "metadata": {"total": 1}})
     result = validate(text, nested_schema)
     assert result.valid is False
     assert len(result.errors) >= 2

@@ -25,8 +25,8 @@ def apply(text: str) -> str:
 
         # We hit a ". Determine if this opens a string value.
         # Check if preceded by : (with optional whitespace) — that means it's a value string.
-        prefix = ''.join(result).rstrip()
-        is_value = prefix.endswith(':')
+        prefix = "".join(result).rstrip()
+        is_value = prefix.endswith(":")
 
         # Consume the opening quote
         result.append('"')
@@ -36,7 +36,7 @@ def apply(text: str) -> str:
             # It's a key string or other — consume normally until closing quote
             while i < n:
                 c = text[i]
-                if c == '\\':
+                if c == "\\":
                     result.append(c)
                     if i + 1 < n:
                         result.append(text[i + 1])
@@ -58,7 +58,7 @@ def apply(text: str) -> str:
         content_start = len(result)
         while i < n:
             c = text[i]
-            if c == '\\':
+            if c == "\\":
                 result.append(c)
                 if i + 1 < n:
                     result.append(text[i + 1])
@@ -69,9 +69,9 @@ def apply(text: str) -> str:
             if c == '"':
                 # Look ahead: is this the real closing quote?
                 j = i + 1
-                while j < n and text[j] in ' \t\r\n':
+                while j < n and text[j] in " \t\r\n":
                     j += 1
-                if j >= n or text[j] in ',}]:':
+                if j >= n or text[j] in ",}]:":
                     # Real closing quote
                     result.append('"')
                     i += 1
@@ -84,4 +84,4 @@ def apply(text: str) -> str:
             result.append(c)
             i += 1
 
-    return ''.join(result)
+    return "".join(result)

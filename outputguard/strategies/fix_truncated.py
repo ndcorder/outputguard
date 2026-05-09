@@ -63,7 +63,7 @@ def apply(text: str) -> str:  # noqa: C901
             return text
 
         # Only attempt repair on text that looks like JSON
-        if stripped[0] not in '{[':
+        if stripped[0] not in "{[":
             return text
 
         # Step 1: Close an open string if we have an odd number of
@@ -104,10 +104,10 @@ def apply(text: str) -> str:  # noqa: C901
         if m:
             # Check if what follows the last comma is just a bare key
             # (no colon after it).  If so, strip it.
-            after_comma = w[m.start() + 1:].strip()
+            after_comma = w[m.start() + 1 :].strip()
             if re.fullmatch(r'"[^"]*"', after_comma):
                 # It's a lone key with no colon — remove it
-                working = w[:m.start()]
+                working = w[: m.start()]
 
         # Step 4: Balance closers
         working = _balance_closers(working)

@@ -8,7 +8,7 @@ def test_trailing_comma_object():
 
 
 def test_trailing_comma_array():
-    assert json.loads(apply('[1, 2, 3,]')) == [1, 2, 3]
+    assert json.loads(apply("[1, 2, 3,]")) == [1, 2, 3]
 
 
 def test_nested_trailing_commas():

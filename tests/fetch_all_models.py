@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Fetch all instruct models from OpenRouter and generate the model list."""
+
 import json
 import os
 import urllib.request
@@ -16,11 +17,28 @@ with urllib.request.urlopen(req, timeout=30) as resp:
 models = data.get("data", [])
 
 SKIP_PATTERNS = [
-    ":free", ":extended", "embed", "tts", "whisper", "transcribe",
-    "guard", "image", "audio", "lyria", "chirp", "video",
-    "search-preview", "deep-research", "multi-agent",
-    "router", "openrouter/", "switchpoint", "relace",
-    "safeguard", "ui-tars", "customtools",
+    ":free",
+    ":extended",
+    "embed",
+    "tts",
+    "whisper",
+    "transcribe",
+    "guard",
+    "image",
+    "audio",
+    "lyria",
+    "chirp",
+    "video",
+    "search-preview",
+    "deep-research",
+    "multi-agent",
+    "router",
+    "openrouter/",
+    "switchpoint",
+    "relace",
+    "safeguard",
+    "ui-tars",
+    "customtools",
 ]
 
 text_models = []

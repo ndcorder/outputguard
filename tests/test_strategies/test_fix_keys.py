@@ -9,7 +9,7 @@ def test_unquoted_key():
 
 
 def test_underscore_key():
-    result = apply('{my_key: 1}')
+    result = apply("{my_key: 1}")
     assert json.loads(result) == {"my_key": 1}
 
 

@@ -129,13 +129,15 @@ SCENARIOS = [
 
 def call_openrouter(model: str, prompt: str) -> str:
     """Call OpenRouter API and return the raw text response."""
-    body = json.dumps({
-        "model": model,
-        "messages": [
-            {"role": "user", "content": prompt},
-        ],
-        "temperature": 0.7,
-    }).encode()
+    body = json.dumps(
+        {
+            "model": model,
+            "messages": [
+                {"role": "user", "content": prompt},
+            ],
+            "temperature": 0.7,
+        }
+    ).encode()
 
     req = urllib.request.Request(
         OPENROUTER_URL,
@@ -170,7 +172,7 @@ def main():
     current = 0
 
     for model in MODELS:
-        model_slug = model.replace("/", "__")
+        model_slug = model.replace("/", "__").replace(":", "-")
         for scenario in SCENARIOS:
             current += 1
             name = f"{model_slug}__{scenario['name']}"
@@ -201,18 +203,20 @@ def main():
             )
             print(status)
 
-            results.append({
-                "model": model,
-                "scenario": scenario["name"],
-                "raw_length": len(raw),
-                "valid_immediately": result.valid and not result.repaired,
-                "repaired": result.valid and result.repaired,
-                "failed": not result.valid,
-                "strategies": result.strategies_applied if result.repaired else [],
-            })
+            results.append(
+                {
+                    "model": model,
+                    "scenario": scenario["name"],
+                    "raw_length": len(raw),
+                    "valid_immediately": result.valid and not result.repaired,
+                    "repaired": result.valid and result.repaired,
+                    "failed": not result.valid,
+                    "strategies": result.strategies_applied if result.repaired else [],
+                }
+            )
 
     # Summary
-    print(f"\n{'='*60}")
+    print(f"\n{'=' * 60}")
     print(f"SUMMARY: {len(results)} tests")
     valid = sum(1 for r in results if r["valid_immediately"])
     repaired = sum(1 for r in results if r["repaired"])
@@ -271,7 +275,7 @@ def sweep():
     print(f"Sweeping {total} models with '{scenario['name']}' scenario...\n")
 
     for i, model in enumerate(all_models, 1):
-        model_slug = model.replace("/", "__")
+        model_slug = model.replace("/", "__").replace(":", "-")
         name = f"{model_slug}__{scenario['name']}"
         # Skip if fixture already exists
         output_file = output_dir / f"{name}.txt"
@@ -279,13 +283,15 @@ def sweep():
             print(f"[{i}/{total}] {model}... CACHED")
             raw = output_file.read_text()
             result = validate_and_repair(raw, scenario["schema"])
-            results.append({
-                "model": model,
-                "valid_immediately": result.valid and not result.repaired,
-                "repaired": result.valid and result.repaired,
-                "failed": not result.valid,
-                "strategies": result.strategies_applied if result.repaired else [],
-            })
+            results.append(
+                {
+                    "model": model,
+                    "valid_immediately": result.valid and not result.repaired,
+                    "repaired": result.valid and result.repaired,
+                    "failed": not result.valid,
+                    "strategies": result.strategies_applied if result.repaired else [],
+                }
+            )
             continue
 
         print(f"[{i}/{total}] {model}...", end=" ", flush=True)
@@ -299,21 +305,27 @@ def sweep():
         output_file.write_text(raw)
 
         result = validate_and_repair(raw, scenario["schema"])
-        status = "VALID" if result.valid and not result.repaired else \
-                 f"REPAIRED ({', '.join(result.strategies_applied)})" if result.valid else \
-                 "FAILED"
+        status = (
+            "VALID"
+            if result.valid and not result.repaired
+            else f"REPAIRED ({', '.join(result.strategies_applied)})"
+            if result.valid
+            else "FAILED"
+        )
         print(status)
 
-        results.append({
-            "model": model,
-            "valid_immediately": result.valid and not result.repaired,
-            "repaired": result.valid and result.repaired,
-            "failed": not result.valid,
-            "strategies": result.strategies_applied if result.repaired else [],
-        })
+        results.append(
+            {
+                "model": model,
+                "valid_immediately": result.valid and not result.repaired,
+                "repaired": result.valid and result.repaired,
+                "failed": not result.valid,
+                "strategies": result.strategies_applied if result.repaired else [],
+            }
+        )
 
     # Summary
-    print(f"\n{'='*60}")
+    print(f"\n{'=' * 60}")
     print(f"SWEEP RESULTS: {len(results)} models tested")
     valid = sum(1 for r in results if r["valid_immediately"])
     repaired = sum(1 for r in results if r["repaired"])
@@ -331,6 +343,7 @@ def sweep():
 
     if repaired > 0:
         from collections import Counter
+
         strategies = Counter()
         for r in results:
             for s in r["strategies"]:
@@ -341,22 +354,28 @@ def sweep():
 
     # Save results
     sweep_file = output_dir / "sweep_results.json"
-    sweep_file.write_text(json.dumps({
-        "timestamp": datetime.now().isoformat(),
-        "scenario": scenario["name"],
-        "total_models": total,
-        "tested": len(results),
-        "valid": valid,
-        "repaired": repaired,
-        "failed": failed,
-        "success_rate": f"{(valid + repaired) / max(len(results), 1):.0%}",
-        "results": results,
-    }, indent=2))
+    sweep_file.write_text(
+        json.dumps(
+            {
+                "timestamp": datetime.now().isoformat(),
+                "scenario": scenario["name"],
+                "total_models": total,
+                "tested": len(results),
+                "valid": valid,
+                "repaired": repaired,
+                "failed": failed,
+                "success_rate": f"{(valid + repaired) / max(len(results), 1):.0%}",
+                "results": results,
+            },
+            indent=2,
+        )
+    )
     print(f"\nResults saved to {sweep_file}")
 
 
 if __name__ == "__main__":
     import sys
+
     if len(sys.argv) > 1 and sys.argv[1] == "sweep":
         sweep()
     else:

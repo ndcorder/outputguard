@@ -4,9 +4,13 @@ from outputguard.models import ValidationError
 
 def test_contains_errors():
     errors = [
-        ValidationError(message="expected number", path="$.price", schema_path="properties.price.type"),
+        ValidationError(
+            message="expected number", path="$.price", schema_path="properties.price.type"
+        ),
     ]
-    prompt = retry_prompt('{"price": "free"}', {"type": "object", "properties": {"price": {"type": "number"}}}, errors)
+    prompt = retry_prompt(
+        '{"price": "free"}', {"type": "object", "properties": {"price": {"type": "number"}}}, errors
+    )
     assert "$.price" in prompt
     assert "expected number" in prompt
 
@@ -15,10 +19,10 @@ def test_contains_schema_summary():
     schema = {
         "type": "object",
         "properties": {"name": {"type": "string"}, "age": {"type": "integer"}},
-        "required": ["name", "age"]
+        "required": ["name", "age"],
     }
     errors = [ValidationError(message="missing", path="$", schema_path="required")]
-    prompt = retry_prompt('{}', schema, errors)
+    prompt = retry_prompt("{}", schema, errors)
     assert "name" in prompt
     assert "age" in prompt
 

@@ -95,9 +95,9 @@ class TestChatGPTPatterns:
     def test_multiple_json_blocks_with_explanations(self):
         """GPT returning multiple JSON blocks with explanations between them."""
         text = (
-            'Here is the first result:\n\n'
+            "Here is the first result:\n\n"
             '```json\n{"name": "Grace", "age": 31}\n```\n\n'
-            'And here is another variant:\n\n'
+            "And here is another variant:\n\n"
             '```json\n{"name": "Hank", "age": 45}\n```'
         )
         result = repair(text)
@@ -183,8 +183,7 @@ class TestClaudePatterns:
 
     def test_ill_create_preamble(self):
         """Claude adding 'I'll create...' before JSON."""
-        text = "I'll create a JSON object with the requested fields:\n\n" \
-               '{"name": "Bob", "age": 25}'
+        text = 'I\'ll create a JSON object with the requested fields:\n\n{"name": "Bob", "age": 25}'
         result = repair(text)
         data = json.loads(result.text)
         assert data["name"] == "Bob"
@@ -214,8 +213,7 @@ class TestClaudePatterns:
 
     def test_heres_the_json_response(self):
         """Claude adding 'Here\'s the JSON response:' before fenced JSON."""
-        text = "Here's the JSON response:\n\n```json\n" \
-               '{"name": "Frank", "age": 40}\n```'
+        text = 'Here\'s the JSON response:\n\n```json\n{"name": "Frank", "age": 40}\n```'
         result = repair(text)
         data = json.loads(result.text)
         assert data["name"] == "Frank"
@@ -289,8 +287,7 @@ class TestClaudePatterns:
 
     def test_claude_heres_what_i_came_up_with(self):
         """Claude with conversational lead-in."""
-        text = "Here's what I came up with:\n\n" \
-               '{"name": "Oscar", "age": 50}'
+        text = 'Here\'s what I came up with:\n\n{"name": "Oscar", "age": 50}'
         result = repair(text)
         data = json.loads(result.text)
         assert data["name"] == "Oscar"
@@ -349,7 +346,9 @@ class TestLlamaPatterns:
 
     def test_truncated_mid_string(self):
         """Llama truncating mid-string on long outputs."""
-        text = '{"name": "Frank", "description": "This is a very long description that goes on and on'
+        text = (
+            '{"name": "Frank", "description": "This is a very long description that goes on and on'
+        )
         result = repair(text)
         data = json.loads(result.text)
         assert data["name"] == "Frank"
@@ -372,10 +371,7 @@ class TestLlamaPatterns:
 
     def test_prompt_repeated_before_answer(self):
         """Llama repeating the prompt before the answer."""
-        text = (
-            "Generate a JSON object with name and age fields.\n\n"
-            '{"name": "Ivy", "age": 27}'
-        )
+        text = 'Generate a JSON object with name and age fields.\n\n{"name": "Ivy", "age": 27}'
         result = repair(text)
         data = json.loads(result.text)
         assert data["name"] == "Ivy"
@@ -611,8 +607,7 @@ class TestGeminiPatterns:
 
     def test_heres_the_result_preamble(self):
         """Gemini adding 'Here\'s the result:' preamble."""
-        text = "Here's the result:\n\n" \
-               '{"name": "Dave", "age": 28}'
+        text = 'Here\'s the result:\n\n{"name": "Dave", "age": 28}'
         result = repair(text)
         data = json.loads(result.text)
         assert data["name"] == "Dave"
@@ -647,10 +642,7 @@ class TestGeminiPatterns:
 
     def test_gemini_bold_key_labels(self):
         """Gemini wrapping key names in bold in surrounding text."""
-        text = (
-            "The **name** and **age** fields are:\n\n"
-            '{"name": "Grace", "age": 31}'
-        )
+        text = 'The **name** and **age** fields are:\n\n{"name": "Grace", "age": 31}'
         result = repair(text)
         data = json.loads(result.text)
         assert data["name"] == "Grace"
@@ -721,8 +713,8 @@ class TestLocalModelPatterns:
         """JSON followed by Python-style explanation."""
         text = (
             '{"name": "Dave", "age": 28}\n\n'
-            '# The above JSON contains the user info\n'
-            '# name: str, age: int'
+            "# The above JSON contains the user info\n"
+            "# name: str, age: int"
         )
         result = repair(text)
         data = json.loads(result.text)
@@ -827,7 +819,7 @@ class TestRealWorldPromptResponses:
             '    {"name": "John Smith", "type": "person"},\n'
             '    {"name": "Acme Corp", "type": "organization"},\n'
             '    {"name": "New York", "type": "location"}\n'
-            ']}\n\n'
+            "]}\n\n"
             "I identified 3 entities in the text."
         )
         result = repair(text)
@@ -848,15 +840,15 @@ class TestRealWorldPromptResponses:
         text = (
             "Let me analyze this code carefully.\n\n"
             "The main issues I found are:\n\n"
-            '```json\n'
-            '{\n'
+            "```json\n"
+            "{\n"
             '    "issues": [\n'
             '        {"severity": "high", "line": 42, "message": "SQL injection vulnerability"},\n'
             '        {"severity": "medium", "line": 15, "message": "Missing null check"},\n'
-            '    ],\n'
+            "    ],\n"
             '    "overall_quality": "needs improvement"\n'
-            '}\n'
-            '```\n\n'
+            "}\n"
+            "```\n\n"
             "I recommend addressing the SQL injection issue first."
         )
         result = repair(text)
@@ -883,9 +875,9 @@ class TestRealWorldPromptResponses:
 
     def test_function_call_response_fenced(self):
         text = (
-            '```json\n'
+            "```json\n"
             '{"function": "get_weather", "arguments": {"location": "San Francisco", "unit": "celsius"}}\n'
-            '```'
+            "```"
         )
         result = repair(text)
         data = json.loads(result.text)
@@ -920,12 +912,12 @@ class TestRealWorldPromptResponses:
 
     def test_quiz_generation_with_comments(self):
         text = (
-            '{\n'
+            "{\n"
             '  "question": "What is the capital of France?", // geography\n'
             '  "options": ["London", "Paris", "Berlin", "Madrid"],\n'
             '  "correct_answer": "Paris", // correct\n'
             '  "difficulty": "easy"\n'
-            '}'
+            "}"
         )
         result = repair(text)
         data = json.loads(result.text)
@@ -950,15 +942,15 @@ class TestRealWorldPromptResponses:
 
     def test_product_description_mixed_issues(self):
         text = (
-            'Here is the product listing:\n\n'
-            '```json\n'
-            '{\n'
+            "Here is the product listing:\n\n"
+            "```json\n"
+            "{\n"
             '  name: "Wireless Headphones",\n'
-            '  price: 79.99,\n'
+            "  price: 79.99,\n"
             '  "in_stock": True,\n'
             '  "features": ["noise canceling", "bluetooth 5.0", "30hr battery",],\n'
-            '}\n'
-            '```'
+            "}\n"
+            "```"
         )
         result = repair(text)
         data = json.loads(result.text)
@@ -982,15 +974,15 @@ class TestRealWorldPromptResponses:
 
     def test_email_parsing_response(self):
         text = (
-            '```json\n'
-            '{\n'
+            "```json\n"
+            "{\n"
             '  "from": "alice@example.com",\n'
             '  "to": ["bob@example.com"],\n'
             '  "subject": "Q2 Report",\n'
             '  "has_attachments": true,\n'
             '  "priority": "high",\n'
-            '}\n'
-            '```'
+            "}\n"
+            "```"
         )
         result = repair(text)
         data = json.loads(result.text)
@@ -1000,12 +992,12 @@ class TestRealWorldPromptResponses:
 
     def test_api_schema_unquoted_keys_and_comments(self):
         text = (
-            '{\n'
+            "{\n"
             '  endpoint: "/api/users", // REST endpoint\n'
             '  method: "GET",\n'
             '  "response_type": "json",\n'
             '  "paginated": true\n'
-            '}'
+            "}"
         )
         result = repair(text)
         data = json.loads(result.text)
@@ -1051,15 +1043,15 @@ class TestRealWorldPromptResponses:
     def test_config_generation_with_all_issues(self):
         """Config with fences, comments, trailing commas, unquoted keys."""
         text = (
-            '```json\n'
-            '{\n'
-            '  // Database configuration\n'
+            "```json\n"
+            "{\n"
+            "  // Database configuration\n"
             '  host: "localhost",\n'
-            '  port: 5432,\n'
+            "  port: 5432,\n"
             '  "database": "myapp",\n'
             '  "ssl": True, /* enable in production */\n'
-            '}\n'
-            '```'
+            "}\n"
+            "```"
         )
         result = repair(text)
         data = json.loads(result.text)
@@ -1116,13 +1108,7 @@ class TestValidateAndRepairIntegration:
         assert len(result.data["items"]) == 3
 
     def test_preamble_and_comments_with_schema(self):
-        text = (
-            'Here is the result:\n\n'
-            '{\n'
-            '  "name": "Carol", // first\n'
-            '  "age": 35 // years\n'
-            '}'
-        )
+        text = 'Here is the result:\n\n{\n  "name": "Carol", // first\n  "age": 35 // years\n}'
         result = validate_and_repair(text, SIMPLE_SCHEMA)
         assert result.valid
         assert result.data["age"] == 35
@@ -1147,15 +1133,15 @@ class TestValidateAndRepairIntegration:
     def test_full_pipeline_complex(self):
         """Complex case requiring multiple strategies with schema validation."""
         text = (
-            'Sure! Here is the JSON:\n\n'
-            '```json\n'
-            '{\n'
-            '  // User profile\n'
+            "Sure! Here is the JSON:\n\n"
+            "```json\n"
+            "{\n"
+            "  // User profile\n"
             "  name: 'Frank',\n"
-            '  age: 40, /* years old */\n'
-            '}\n'
-            '```\n\n'
-            'Let me know if you need anything else!'
+            "  age: 40, /* years old */\n"
+            "}\n"
+            "```\n\n"
+            "Let me know if you need anything else!"
         )
         result = validate_and_repair(text, SIMPLE_SCHEMA)
         assert result.valid

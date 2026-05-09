@@ -31,5 +31,5 @@ def test_multiple_issues():
 
 
 def test_unrepairable():
-    result = repair('this is not json at all and has no structure')
+    result = repair("this is not json at all and has no structure")
     assert result.repaired is False

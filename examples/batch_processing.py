@@ -18,13 +18,13 @@ schema = {
 # Simulate a batch of LLM outputs with various issues
 batch = [
     '{"category": "tech", "score": 0.9, "tags": ["ai", "ml"]}',  # Valid
-    '```json\n{"category": "science", "score": 0.85}\n```',       # Fenced
-    "{category: 'sports', score: 0.7}",                            # Unquoted keys + single quotes
-    '{"category": "music", "score": 0.6,}',                       # Trailing comma
-    "Here is the result: {\"category\": \"art\", \"score\": 0.5}", # Commentary
-    "not json at all",                                              # Unrepairable
-    '{"category": "food", "score": NaN}',                          # NaN value
-    '{"category": "travel", "score": 0.8, "tags": ["beach",]}',   # Trailing comma in array
+    '```json\n{"category": "science", "score": 0.85}\n```',  # Fenced
+    "{category: 'sports', score: 0.7}",  # Unquoted keys + single quotes
+    '{"category": "music", "score": 0.6,}',  # Trailing comma
+    'Here is the result: {"category": "art", "score": 0.5}',  # Commentary
+    "not json at all",  # Unrepairable
+    '{"category": "food", "score": NaN}',  # NaN value
+    '{"category": "travel", "score": 0.8, "tags": ["beach",]}',  # Trailing comma in array
 ]
 
 
@@ -56,14 +56,14 @@ def process_batch(outputs: list[str], schema: dict) -> tuple[list[dict], BatchSt
                 stats.repaired += 1
                 for strategy in result.strategies_applied:
                     stats.strategies_used[strategy] += 1
-                print(f"  [{i+1}] Repaired ({', '.join(result.strategies_applied)})")
+                print(f"  [{i + 1}] Repaired ({', '.join(result.strategies_applied)})")
             else:
                 stats.valid_immediately += 1
-                print(f"  [{i+1}] Valid")
+                print(f"  [{i + 1}] Valid")
         else:
             stats.failed += 1
             errors = "; ".join(e.message[:50] for e in result.errors)
-            print(f"  [{i+1}] Failed: {errors}")
+            print(f"  [{i + 1}] Failed: {errors}")
 
     return results, stats
 

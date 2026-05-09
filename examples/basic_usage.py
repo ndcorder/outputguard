@@ -30,8 +30,8 @@ print(f"Valid without repair: {result.valid}")  # False
 
 # Option 2: Validate and auto-repair (handles all the issues)
 result = outputguard.validate_and_repair(llm_output, schema)
-print(f"Valid after repair: {result.valid}")      # True
-print(f"Repaired: {result.repaired}")             # True
+print(f"Valid after repair: {result.valid}")  # True
+print(f"Repaired: {result.repaired}")  # True
 print(f"Strategies used: {result.strategies_applied}")
 print(f"Clean data: {result.data}")
 # {'name': 'Alice', 'age': 30, 'hobbies': ['reading', 'hiking']}

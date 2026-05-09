@@ -15,12 +15,12 @@ def test_ellipsis_array():
 
 
 def test_ellipsis_standalone_array():
-    result = apply('[...]')
+    result = apply("[...]")
     assert json.loads(result) == []
 
 
 def test_ellipsis_standalone_object():
-    result = apply('{...}')
+    result = apply("{...}")
     assert json.loads(result) == {}
 
 

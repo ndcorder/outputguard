@@ -2,8 +2,7 @@
 
 **Stop wrestling with broken LLM JSON.** Validate, repair, and retry — automatically.
 
-[![PyPI](https://img.shields.io/pypi/v/outputguard)](https://pypi.org/project/outputguard/)
-[![Python](https://img.shields.io/pypi/pyversions/outputguard)](https://pypi.org/project/outputguard/)
+[![Python](https://img.shields.io/badge/python-3.10+-blue)](https://github.com/ndcorder/outputguard)
 [![CI](https://github.com/ndcorder/outputguard/actions/workflows/ci.yml/badge.svg)](https://github.com/ndcorder/outputguard/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Tests](https://img.shields.io/badge/tests-1,881-brightgreen)](#tested-against-290-real-llm-models)

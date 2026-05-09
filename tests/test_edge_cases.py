@@ -80,6 +80,7 @@ I hope this helps! Let me know if you need anything else."""
         # sees this as valid JSON.  The repair strategy correctly replaces
         # them with null when invoked directly.
         from outputguard.strategies.fix_values import apply
+
         repaired = apply(text)
         data = json.loads(repaired)
         assert data["a"] is None
@@ -95,9 +96,7 @@ I hope this helps! Let me know if you need anything else."""
                     "properties": {
                         "level2": {
                             "type": "object",
-                            "properties": {
-                                "value": {"type": "string"}
-                            },
+                            "properties": {"value": {"type": "string"}},
                         }
                     },
                 }
@@ -155,7 +154,7 @@ class TestAdversarialInputs:
         assert result.repaired is False
 
     def test_very_deep_nesting(self):
-        text = '{"a": ' * 20 + '1' + '}' * 20
+        text = '{"a": ' * 20 + "1" + "}" * 20
         result = repair(text)
         assert result.repaired is False  # Already valid
         data = json.loads(result.text)
@@ -275,29 +274,34 @@ class TestEdgeCasesInStrategies:
 
     def test_single_quote_with_escaped_apostrophe(self):
         from outputguard.strategies.fix_quotes import apply
+
         result = apply("{'key': 'it\\'s fine'}")
         data = json.loads(result)
         assert data["key"] == "it's fine"
 
     def test_single_quote_with_inner_double_quote(self):
         from outputguard.strategies.fix_quotes import apply
+
         result = apply("{'key': 'say \"hello\"'}")
         data = json.loads(result)
         assert data["key"] == 'say "hello"'
 
     def test_comment_in_url_string(self):
         from outputguard.strategies.remove_comments import apply
+
         text = '{"url": "https://api.example.com/v1/users"}'
         assert apply(text) == text
 
     def test_keys_with_dollar_sign(self):
         from outputguard.strategies.fix_keys import apply
+
         result = apply('{$id: 1, $type: "test"}')
         data = json.loads(result)
         assert data["$id"] == 1
 
     def test_closers_with_strings_containing_braces(self):
         from outputguard.strategies.fix_closers import apply
+
         # Use a raw string so \{ stays as literal backslash + brace in the text;
         # JSON requires valid escape sequences, so use a regex that json.loads
         # can actually parse (double-escaped backslashes).
@@ -308,6 +312,7 @@ class TestEdgeCasesInStrategies:
 
     def test_values_nan_in_string(self):
         from outputguard.strategies.fix_values import apply
+
         text = '{"msg": "NaN means Not a Number", "val": NaN}'
         result = apply(text)
         data = json.loads(result)
@@ -316,6 +321,7 @@ class TestEdgeCasesInStrategies:
 
     def test_commas_in_strings_preserved(self):
         from outputguard.strategies.fix_commas import apply
+
         text = '{"msg": "a, b, c,", "x": 1,}'
         result = apply(text)
         data = json.loads(result)

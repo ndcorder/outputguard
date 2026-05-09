@@ -49,7 +49,7 @@ class TestStripFences:
         ],
     )
     def test_every_language_tag(self, lang_tag):
-        text = f"```{lang_tag}\n{{\"a\": 1}}\n```"
+        text = f'```{lang_tag}\n{{"a": 1}}\n```'
         assert strip_fences(text) == '{"a": 1}'
 
     def test_nested_fences(self):
@@ -80,14 +80,14 @@ class TestStripFences:
         assert '"second"' not in result
 
     def test_fence_with_empty_content(self):
-        text = '```json\n\n```'
+        text = "```json\n\n```"
         result = strip_fences(text)
-        assert result.strip() == ''
+        assert result.strip() == ""
 
     def test_fence_with_only_whitespace_content(self):
-        text = '```json\n   \n```'
+        text = "```json\n   \n```"
         result = strip_fences(text)
-        assert result.strip() == ''
+        assert result.strip() == ""
 
 
 # ─── extract_json (17 cases) ─────────────────────────────────────────────────
@@ -135,7 +135,7 @@ class TestExtractJson:
         inner = '{"l10": true}'
         for i in range(9, 0, -1):
             inner = f'{{"l{i}": {inner}}}'
-        text = f'Deeply nested: {inner}'
+        text = f"Deeply nested: {inner}"
         result = extract_json(text)
         parsed = json.loads(result)
         assert parsed["l1"]["l2"]["l3"]["l4"]["l5"]["l6"]["l7"]["l8"]["l9"]["l10"] is True
@@ -159,7 +159,7 @@ class TestExtractJson:
         assert extract_json(text) == text
 
     def test_array_only(self):
-        text = '[1, 2, 3]'
+        text = "[1, 2, 3]"
         assert json.loads(extract_json(text)) == [1, 2, 3]
 
     def test_json_with_newlines_inside(self):
@@ -173,12 +173,12 @@ class TestExtractJson:
         assert json.loads(result) == {"arr": "[not an array]"}
 
     def test_empty_object(self):
-        text = 'Result: {}'
-        assert extract_json(text) == '{}'
+        text = "Result: {}"
+        assert extract_json(text) == "{}"
 
     def test_empty_array(self):
-        text = 'Result: []'
-        assert extract_json(text) == '[]'
+        text = "Result: []"
+        assert extract_json(text) == "[]"
 
 
 # ─── remove_comments (12 cases) ──────────────────────────────────────────────
@@ -271,10 +271,10 @@ class TestFixCommas:
         assert json.loads(result) == {"a": 1}
 
     def test_multiple_trailing_commas_in_array(self):
-        text = '[1, 2,,]'
+        text = "[1, 2,,]"
         result = fix_commas(text)
         # Same single-pass behavior: ,,] -> ,]
-        assert result == '[1, 2,]'
+        assert result == "[1, 2,]"
 
     def test_comma_in_string_values_preserved(self):
         text = '{"a": "1,2,3,"}'
@@ -322,7 +322,7 @@ class TestFixQuotes:
         text = "{'key': 'say \"hello\"'}"
         result = fix_quotes(text)
         assert '"key"' in result
-        assert '\\"hello\\"' in result or 'say' in result
+        assert '\\"hello\\"' in result or "say" in result
 
     def test_mixed_quoting_styles(self):
         text = "{'a': 1, \"b\": 2, 'c': 3}"
@@ -361,7 +361,7 @@ class TestFixQuotes:
         text = "{'count': 42, 'active': true}"
         result = fix_quotes(text)
         assert '"count"' in result
-        assert '42' in result
+        assert "42" in result
 
     def test_all_double_quoted_unchanged(self):
         text = '{"a": "b"}'
@@ -399,7 +399,7 @@ class TestFixKeys:
         assert expected_key in result
 
     def test_js_keyword_keys(self):
-        text = '{class: 1, function: 2, return: 3}'
+        text = "{class: 1, function: 2, return: 3}"
         result = fix_keys(text)
         assert '"class"' in result
         assert '"function"' in result
@@ -415,11 +415,11 @@ class TestFixKeys:
 
     def test_unicode_key(self):
         # café starts with 'c' which matches [a-zA-Z_$]
-        text = '{café: 1}'
+        text = "{café: 1}"
         result = fix_keys(text)
         # The regex uses [a-zA-Z0-9_.$-]* for continuation
         # so non-ASCII after first char won't fully match
-        assert result.startswith('{')
+        assert result.startswith("{")
 
     def test_already_quoted_mixed_with_unquoted(self):
         text = '{"quoted": 1, unquoted: 2}'
@@ -428,7 +428,7 @@ class TestFixKeys:
         assert '"unquoted"' in result
 
     def test_deeply_nested_unquoted_keys(self):
-        text = '{outer: {inner: {deep: 1}}}'
+        text = "{outer: {inner: {deep: 1}}}"
         result = fix_keys(text)
         assert '"outer"' in result
         assert '"inner"' in result
@@ -458,7 +458,7 @@ class TestFixValues:
         assert parsed == {"a": None, "b": None, "c": None}
 
     def test_nan_in_array(self):
-        text = '[1, NaN, 3]'
+        text = "[1, NaN, 3]"
         result = fix_values(text)
         assert json.loads(result) == [1, None, 3]
 
@@ -483,7 +483,7 @@ class TestFixValues:
         assert json.loads(result)["msg"] == "undefined behavior"
 
     def test_undefined_in_array(self):
-        text = '[undefined, 1, undefined]'
+        text = "[undefined, 1, undefined]"
         result = fix_values(text)
         assert json.loads(result) == [None, 1, None]
 
@@ -504,7 +504,7 @@ class TestFixValues:
 
 class TestFixBooleans:
     def test_true_false_none_in_arrays(self):
-        text = '[True, False, None]'
+        text = "[True, False, None]"
         result = fix_booleans(text)
         assert json.loads(result) == [True, False, None]
 
@@ -544,7 +544,7 @@ class TestFixBooleans:
         assert json.loads(result) == {"data": [True, [False, [None]]]}
 
     def test_true_false_adjacent_to_punctuation(self):
-        text = '[True,False,None]'
+        text = "[True,False,None]"
         result = fix_booleans(text)
         assert json.loads(result) == [True, False, None]
 
@@ -562,60 +562,60 @@ class TestFixTruncated:
         text = '{"price": 19.'
         result = fix_truncated(text)
         # Should close the structure
-        assert result.endswith('}')
+        assert result.endswith("}")
 
     def test_truncated_in_middle_of_boolean(self):
         text = '{"active": tru'
         result = fix_truncated(text)
-        assert result.endswith('}')
+        assert result.endswith("}")
 
     def test_truncated_in_middle_of_null(self):
         text = '{"val": nu'
         result = fix_truncated(text)
-        assert result.endswith('}')
+        assert result.endswith("}")
 
     def test_truncated_inside_array_element(self):
         text = '{"tags": ["hello", "wor'
         result = fix_truncated(text)
-        assert result.endswith(']}')
+        assert result.endswith("]}")
 
     def test_truncated_with_nothing_after_key(self):
         text = '{"name":'
         result = fix_truncated(text)
-        assert result.endswith('}')
+        assert result.endswith("}")
 
     def test_truncated_inside_nested_object_key(self):
         text = '{"data": {"inne'
         result = fix_truncated(text)
-        assert result.count('}') >= 2
+        assert result.count("}") >= 2
 
     def test_only_opening_brace(self):
-        text = '{'
+        text = "{"
         result = fix_truncated(text)
-        assert result == '{}'
+        assert result == "{}"
 
     def test_opening_brace_and_key(self):
         text = '{"key"'
         result = fix_truncated(text)
-        assert result.endswith('}')
+        assert result.endswith("}")
 
     def test_truncated_string_value(self):
         text = '{"msg": "hello wor'
         result = fix_truncated(text)
-        assert result.endswith('}')
+        assert result.endswith("}")
         # Should have balanced quotes
 
     def test_truncated_after_comma(self):
         text = '{"a": 1,'
         result = fix_truncated(text)
-        assert result.endswith('}')
+        assert result.endswith("}")
         parsed = json.loads(result)
         assert parsed == {"a": 1}
 
     def test_truncated_nested_array(self):
         text = '{"matrix": [[1, 2], [3'
         result = fix_truncated(text)
-        assert result.endswith(']}')  # close inner array, outer array, object
+        assert result.endswith("]}")  # close inner array, outer array, object
 
     def test_valid_json_unchanged(self):
         text = '{"a": 1}'
@@ -630,7 +630,7 @@ class TestFixClosers:
     def test_missing_3_levels_of_closers(self):
         text = '{"a": {"b": [1, 2, 3'
         result = fix_closers(text)
-        assert result.endswith(']}}')
+        assert result.endswith("]}}")
 
     def test_missing_bracket_but_not_brace(self):
         text = '{"arr": [1, 2, 3}'
@@ -642,7 +642,7 @@ class TestFixClosers:
     def test_missing_brace_but_not_bracket(self):
         text = '{"a": 1'
         result = fix_closers(text)
-        assert result.endswith('}')
+        assert result.endswith("}")
 
     def test_braces_inside_strings_dont_count(self):
         text = '{"pattern": "{[("}'
@@ -658,17 +658,17 @@ class TestFixClosers:
     def test_deeply_nested_missing_closers(self):
         text = '{"a": {"b": {"c": {"d": 1'
         result = fix_closers(text)
-        assert result.endswith('}}}}')
+        assert result.endswith("}}}}")
 
     def test_missing_array_closer_only(self):
-        text = '[1, 2, 3'
+        text = "[1, 2, 3"
         result = fix_closers(text)
-        assert result == '[1, 2, 3]'
+        assert result == "[1, 2, 3]"
 
     def test_empty_nested_structures(self):
         text = '{"a": {"b": ['
         result = fix_closers(text)
-        assert result.endswith(']}}')
+        assert result.endswith("]}}")
 
 
 # ─── fix_newlines (8 cases) ──────────────────────────────────────────────────
@@ -696,7 +696,7 @@ class TestFixNewlines:
         # Weird but possible
         text = '{"key\nwith\nnewline": "value"}'
         result = fix_newlines(text)
-        assert '\n' not in json.dumps(json.loads(result))
+        assert "\n" not in json.dumps(json.loads(result))
 
     def test_multiple_strings_with_newlines(self):
         text = '{"a": "line1\nline2", "b": "line3\nline4"}'
@@ -733,14 +733,14 @@ class TestFixEllipsis:
         assert parsed["b"] is None
 
     def test_ellipsis_as_array_element_among_valid(self):
-        text = '[1, ..., 3]'
+        text = "[1, ..., 3]"
         result = fix_ellipsis(text)
         parsed = json.loads(result)
         assert 1 in parsed
         assert 3 in parsed
 
     def test_ellipsis_with_comment(self):
-        text = '[1, 2, ... // more items\n]'
+        text = "[1, 2, ... // more items\n]"
         result = fix_ellipsis(text)
         parsed = json.loads(result)
         assert 1 in parsed
@@ -754,12 +754,12 @@ class TestFixEllipsis:
         assert "..." in parsed["msg"]
 
     def test_ellipsis_only_in_object(self):
-        text = '{...}'
+        text = "{...}"
         result = fix_ellipsis(text)
         assert json.loads(result) == {}
 
     def test_ellipsis_only_in_array(self):
-        text = '[...]'
+        text = "[...]"
         result = fix_ellipsis(text)
         assert json.loads(result) == []
 
@@ -770,7 +770,7 @@ class TestFixEllipsis:
         assert parsed["placeholder"] is None
 
     def test_ellipsis_at_end_of_array(self):
-        text = '[1, 2, ...]'
+        text = "[1, 2, ...]"
         result = fix_ellipsis(text)
         parsed = json.loads(result)
         assert 1 in parsed
@@ -791,7 +791,7 @@ class TestFixUnicode:
         text = '{"data": "test\\x00end"}'
         result = fix_unicode(text)
         # \x00 is handled — should not crash
-        assert '{' in result and '}' in result
+        assert "{" in result and "}" in result
 
     def test_printable_ascii_hex(self):
         # \x41 = 'A'
@@ -817,12 +817,12 @@ class TestFixUnicode:
         text = '{"val": "\\u00"}'
         result = fix_unicode(text)
         # Should pad to 4 hex digits
-        assert '\\u00' in result or '"' in result
+        assert "\\u00" in result or '"' in result
 
     def test_valid_unicode_unchanged(self):
         text = '{"emoji": "\\u2764"}'
         result = fix_unicode(text)
-        assert '\\u2764' in result or '❤' in result
+        assert "\\u2764" in result or "❤" in result
 
     def test_no_escapes_unchanged(self):
         text = '{"plain": "hello world"}'

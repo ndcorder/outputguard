@@ -238,14 +238,36 @@ class TestBoundaryConditions:
 
     @pytest.mark.parametrize(
         "char",
-        ["{", "}", "[", "]", '"', "'", ",", ":", "\\", "/", ".", "!", "?", "#", "@", " ", "\n", "\t", "\r", "\0"],
+        [
+            "{",
+            "}",
+            "[",
+            "]",
+            '"',
+            "'",
+            ",",
+            ":",
+            "\\",
+            "/",
+            ".",
+            "!",
+            "?",
+            "#",
+            "@",
+            " ",
+            "\n",
+            "\t",
+            "\r",
+            "\0",
+        ],
     )
     def test_single_char(self, char: str) -> None:
         result = repair(char)
         assert isinstance(result.text, str)
 
     @pytest.mark.parametrize(
-        "minimal", ["0", "1", "-1", "0.5", '""', "null", "true", "false", "{}", "[]", '"x"'],
+        "minimal",
+        ["0", "1", "-1", "0.5", '""', "null", "true", "false", "{}", "[]", '"x"'],
     )
     def test_minimal_valid_json(self, minimal: str) -> None:
         result = repair(minimal)
@@ -298,7 +320,7 @@ class TestBoundaryConditions:
         assert not result.repaired
 
     def test_only_whitespace_between_brackets(self) -> None:
-        result = repair('{  \n\t  }')
+        result = repair("{  \n\t  }")
         assert not result.repaired
 
     def test_max_int(self) -> None:
@@ -448,10 +470,10 @@ class TestConcurrentSafety:
         """Different strategy paths concurrently should not interfere."""
         inputs = [
             '{"a": True}',  # fix_booleans
-            "{'b': 2}",     # fix_quotes
-            "{c: 3}",       # fix_keys
-            '{"d": 1,}',    # fix_commas
-            '{"e": 1,}',    # fix_commas
+            "{'b': 2}",  # fix_quotes
+            "{c: 3}",  # fix_keys
+            '{"d": 1,}',  # fix_commas
+            '{"e": 1,}',  # fix_commas
         ] * 10
 
         with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
@@ -512,7 +534,7 @@ class TestSpecialPatterns:
 
     def test_very_long_key(self) -> None:
         key = "a" * 1000
-        text = f'{{"{ key }": 1}}'
+        text = f'{{"{key}": 1}}'
         result = repair(text)
         assert not result.repaired
 
@@ -656,7 +678,7 @@ class TestFuzzingPatterns:
         assert isinstance(result.text, str)
 
     def test_triple_quoted_value(self) -> None:
-        text = '{"a": \"\"\"hello world\"\"\"}'
+        text = '{"a": """hello world"""}'
         result = repair(text)
         assert isinstance(result.text, str)
 
@@ -718,7 +740,7 @@ class TestRobustnessInvariants:
         """Repairing valid JSON should return it unchanged."""
         valid_texts = [
             '{"a": 1}',
-            '[1, 2, 3]',
+            "[1, 2, 3]",
             '"hello"',
             "42",
             "true",
@@ -757,7 +779,7 @@ class TestRobustnessInvariants:
             '{"a": 1,}',
             "{'a': 1}",
             '```json\n{"a": 1}\n```',
-            '{a: 1}',
+            "{a: 1}",
             '{"a": True}',
         ]
         for text in fixable:

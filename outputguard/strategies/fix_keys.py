@@ -6,9 +6,7 @@ NAME = "fix_keys"
 DESCRIPTION = "Add double quotes to unquoted object keys"
 
 # Match unquoted keys after { or , (with optional whitespace/newlines)
-_UNQUOTED_KEY_RE = re.compile(
-    r'([{,]\s*)([a-zA-Z_$][a-zA-Z0-9_.$-]*)\s*:'
-)
+_UNQUOTED_KEY_RE = re.compile(r"([{,]\s*)([a-zA-Z_$][a-zA-Z0-9_.$-]*)\s*:")
 
 
 def apply(text: str) -> str:

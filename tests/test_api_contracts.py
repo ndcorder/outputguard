@@ -107,7 +107,7 @@ class TestParseFunction:
         assert data == {"a": 1}
 
     def test_parse_returns_list(self):
-        data = parse('[1, 2, 3]', ARRAY_SCHEMA)
+        data = parse("[1, 2, 3]", ARRAY_SCHEMA)
         assert isinstance(data, list)
         assert data == [1, 2, 3]
 
@@ -211,7 +211,14 @@ class TestParseFunction:
     def test_parse_deeply_nested(self):
         schema = {
             "type": "object",
-            "properties": {"a": {"type": "object", "properties": {"b": {"type": "object", "properties": {"c": {"type": "integer"}}}}}},
+            "properties": {
+                "a": {
+                    "type": "object",
+                    "properties": {
+                        "b": {"type": "object", "properties": {"c": {"type": "integer"}}}
+                    },
+                }
+            },
         }
         data = parse('{"a": {"b": {"c": 42}}}', schema)
         assert data["a"]["b"]["c"] == 42
@@ -619,7 +626,7 @@ class TestOutputGuardClass:
     def test_retry_prompt_method(self):
         guard = OutputGuard()
         errors = [ValidationError(message="missing field", path="$.name", schema_path="required")]
-        prompt = guard.retry_prompt('{}', SIMPLE_SCHEMA, errors)
+        prompt = guard.retry_prompt("{}", SIMPLE_SCHEMA, errors)
         assert "name" in prompt
         assert "missing" in prompt.lower()
 
@@ -670,14 +677,16 @@ class TestRetryPrompt:
     """Tests for the retry_prompt() function."""
 
     def test_prompt_contains_errors(self):
-        errors = [ValidationError(message="wrong type", path="$.age", schema_path="properties.age.type")]
+        errors = [
+            ValidationError(message="wrong type", path="$.age", schema_path="properties.age.type")
+        ]
         prompt = retry_prompt('{"age": "thirty"}', OBJECT_SCHEMA, errors)
         assert "$.age" in prompt
         assert "wrong type" in prompt
 
     def test_prompt_contains_schema_info(self):
         errors = [ValidationError(message="missing", path="$", schema_path="required")]
-        prompt = retry_prompt('{}', SIMPLE_SCHEMA, errors)
+        prompt = retry_prompt("{}", SIMPLE_SCHEMA, errors)
         assert "name" in prompt
 
     def test_prompt_truncates_long_input(self):
@@ -688,12 +697,12 @@ class TestRetryPrompt:
 
     def test_prompt_has_return_instruction(self):
         errors = [ValidationError(message="err", path="$", schema_path="")]
-        prompt = retry_prompt('{}', OBJECT_SCHEMA, errors)
+        prompt = retry_prompt("{}", OBJECT_SCHEMA, errors)
         assert "Return ONLY" in prompt or "return only" in prompt.lower()
 
     def test_prompt_is_string(self):
         errors = [ValidationError(message="err", path="$", schema_path="")]
-        prompt = retry_prompt('{}', OBJECT_SCHEMA, errors)
+        prompt = retry_prompt("{}", OBJECT_SCHEMA, errors)
         assert isinstance(prompt, str)
 
     def test_prompt_multiple_errors(self):
@@ -701,12 +710,12 @@ class TestRetryPrompt:
             ValidationError(message="err1", path="$.a", schema_path="p1"),
             ValidationError(message="err2", path="$.b", schema_path="p2"),
         ]
-        prompt = retry_prompt('{}', OBJECT_SCHEMA, errors)
+        prompt = retry_prompt("{}", OBJECT_SCHEMA, errors)
         assert "err1" in prompt
         assert "err2" in prompt
 
     def test_prompt_empty_errors(self):
-        prompt = retry_prompt('{}', OBJECT_SCHEMA, [])
+        prompt = retry_prompt("{}", OBJECT_SCHEMA, [])
         assert isinstance(prompt, str)
 
     def test_prompt_includes_original_output(self):
@@ -722,13 +731,13 @@ class TestRetryPrompt:
 
     def test_prompt_with_nested_schema(self):
         errors = [ValidationError(message="missing items", path="$", schema_path="required")]
-        prompt = retry_prompt('{}', NESTED_SCHEMA, errors)
+        prompt = retry_prompt("{}", NESTED_SCHEMA, errors)
         assert "items" in prompt
 
     def test_prompt_with_array_schema(self):
         schema = {"type": "array", "items": {"type": "integer"}}
         errors = [ValidationError(message="not array", path="$", schema_path="type")]
-        prompt = retry_prompt('{}', schema, errors)
+        prompt = retry_prompt("{}", schema, errors)
         assert "array" in prompt.lower()
 
     def test_prompt_numbered_errors(self):
@@ -736,7 +745,7 @@ class TestRetryPrompt:
             ValidationError(message="a", path="$.x", schema_path=""),
             ValidationError(message="b", path="$.y", schema_path=""),
         ]
-        prompt = retry_prompt('{}', OBJECT_SCHEMA, errors)
+        prompt = retry_prompt("{}", OBJECT_SCHEMA, errors)
         assert "1." in prompt
         assert "2." in prompt
 
@@ -882,7 +891,8 @@ class TestCLIEdgeCases:
             schema_path = sf.name
         try:
             result = self.runner.invoke(
-                cli, ["validate", "-", "-s", schema_path, "--repair"],
+                cli,
+                ["validate", "-", "-s", schema_path, "--repair"],
                 input='```json\n{"a": 1}\n```',
             )
             assert result.exit_code == 0
@@ -896,7 +906,8 @@ class TestCLIEdgeCases:
             schema_path = sf.name
         try:
             result = self.runner.invoke(
-                cli, ["validate", "-", "-s", schema_path, "-f", "json"],
+                cli,
+                ["validate", "-", "-s", schema_path, "-f", "json"],
                 input='{"a": 1}',
             )
             assert result.exit_code == 0
@@ -912,7 +923,8 @@ class TestCLIEdgeCases:
             schema_path = sf.name
         try:
             result = self.runner.invoke(
-                cli, ["retry-prompt", "-", "-s", schema_path],
+                cli,
+                ["retry-prompt", "-", "-s", schema_path],
                 input='{"wrong": true}',
             )
             assert result.exit_code == 0

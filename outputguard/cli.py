@@ -62,8 +62,17 @@ def cli() -> None:
 @cli.command()
 @click.argument("input_path", metavar="INPUT")
 @click.option("-s", "--schema", "schema_path", required=True, help="Path to JSON Schema file.")
-@click.option("-r", "--repair", "do_repair", is_flag=True, help="Attempt repair if validation fails.")
-@click.option("-f", "--format", "fmt", type=click.Choice(["text", "json"]), default="text", help="Output format.")
+@click.option(
+    "-r", "--repair", "do_repair", is_flag=True, help="Attempt repair if validation fails."
+)
+@click.option(
+    "-f",
+    "--format",
+    "fmt",
+    type=click.Choice(["text", "json"]),
+    default="text",
+    help="Output format.",
+)
 @click.option("-q", "--quiet", is_flag=True, help="Exit code only, no output.")
 @click.option("-o", "--output", "output_path", default=None, help="Write result to file.")
 @click.option("-d", "--diff", "show_diff", is_flag=True, help="Show diff of repairs.")
@@ -101,9 +110,7 @@ def validate(
     sys.exit(0 if result.valid else 1)
 
 
-def _show_repair_details(
-    original: str, result: ValidationResult, verbose: bool
-) -> None:
+def _show_repair_details(original: str, result: ValidationResult, verbose: bool) -> None:
     """Show diff/verbose output for a repair."""
     if not result.repaired:
         return
@@ -123,7 +130,14 @@ def _show_repair_details(
 
 @cli.command()
 @click.argument("input_path", metavar="INPUT")
-@click.option("-f", "--format", "fmt", type=click.Choice(["text", "json"]), default="text", help="Output format.")
+@click.option(
+    "-f",
+    "--format",
+    "fmt",
+    type=click.Choice(["text", "json"]),
+    default="text",
+    help="Output format.",
+)
 @click.option("-o", "--output", "output_path", default=None, help="Write result to file.")
 @click.option("--strategies", default=None, help="Comma-separated strategy names.")
 @click.option("-d", "--diff", "show_diff", is_flag=True, help="Show diff of repairs.")
@@ -154,8 +168,7 @@ def repair(
     else:
         if result.repaired:
             console.print(
-                "[yellow]⚠ Repaired[/yellow]  "
-                f"strategies: {', '.join(result.strategies_applied)}"
+                f"[yellow]⚠ Repaired[/yellow]  strategies: {', '.join(result.strategies_applied)}"
             )
             if report and verbose:
                 step_diffs = report.step_diffs()

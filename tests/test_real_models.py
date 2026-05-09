@@ -106,7 +106,8 @@ fixture_files = get_fixture_files()
 
 
 @pytest.mark.skipif(
-    not fixture_files, reason="No real output fixtures found. Run: python -m tests.real_model_runner"
+    not fixture_files,
+    reason="No real output fixtures found. Run: python -m tests.real_model_runner",
 )
 class TestRealModelFixtures:
     """Test outputguard against saved real LLM outputs."""
@@ -118,9 +119,7 @@ class TestRealModelFixtures:
         "qwen__qwen-2.5-coder-32b-instruct__simple_object",
     }
 
-    @pytest.mark.parametrize(
-        "fixture_path", fixture_files, ids=[f.stem for f in fixture_files]
-    )
+    @pytest.mark.parametrize("fixture_path", fixture_files, ids=[f.stem for f in fixture_files])
     def test_repair_produces_valid_json(self, fixture_path: Path):
         """Every real LLM output should be repairable to valid JSON."""
         if fixture_path.stem in self.KNOWN_REPAIR_FAILURES:
@@ -143,9 +142,7 @@ class TestRealModelFixtures:
         "qwen__qwen-2.5-coder-32b-instruct__simple_object",  # truncated inside unclosed fence
     }
 
-    @pytest.mark.parametrize(
-        "fixture_path", fixture_files, ids=[f.stem for f in fixture_files]
-    )
+    @pytest.mark.parametrize("fixture_path", fixture_files, ids=[f.stem for f in fixture_files])
     def test_validate_and_repair_against_schema(self, fixture_path: Path):
         """Every real LLM output should validate against its intended schema after repair."""
         raw = fixture_path.read_text()
@@ -162,9 +159,7 @@ class TestRealModelFixtures:
         if not result.valid:
             errors = "; ".join(f"{e.path}: {e.message}" for e in result.errors[:3])
             pytest.fail(
-                f"Failed for {model} / {scenario}\n"
-                f"Errors: {errors}\n"
-                f"Raw output: {raw[:300]}"
+                f"Failed for {model} / {scenario}\nErrors: {errors}\nRaw output: {raw[:300]}"
             )
 
 
@@ -186,11 +181,13 @@ LIVE_MODELS = [
 
 def call_model(model: str, prompt: str) -> str:
     """Call OpenRouter API and return the raw text response."""
-    body = json.dumps({
-        "model": model,
-        "messages": [{"role": "user", "content": prompt}],
-        "temperature": 0.7,
-    }).encode()
+    body = json.dumps(
+        {
+            "model": model,
+            "messages": [{"role": "user", "content": prompt}],
+            "temperature": 0.7,
+        }
+    ).encode()
     req = urllib.request.Request(
         OPENROUTER_URL,
         data=body,

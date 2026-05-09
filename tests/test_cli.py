@@ -80,7 +80,9 @@ def test_json_format(runner, schema_path, valid_json_file):
 
 
 def test_stdin_input(runner, schema_path):
-    result = runner.invoke(cli, ["validate", "-", "-s", schema_path], input='{"name": "Alice", "age": 30}')
+    result = runner.invoke(
+        cli, ["validate", "-", "-s", schema_path], input='{"name": "Alice", "age": 30}'
+    )
     assert result.exit_code == 0
 
 

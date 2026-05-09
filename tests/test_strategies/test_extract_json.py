@@ -8,7 +8,7 @@ def test_extract_object():
 
 
 def test_extract_array():
-    assert apply('[1,2,3]') == '[1,2,3]'
+    assert apply("[1,2,3]") == "[1,2,3]"
 
 
 def test_nested_braces():
@@ -17,7 +17,7 @@ def test_nested_braces():
 
 
 def test_no_json():
-    assert apply('no json here') == 'no json here'
+    assert apply("no json here") == "no json here"
 
 
 def test_with_preceding_text():

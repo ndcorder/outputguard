@@ -36,9 +36,7 @@ def _describe_schema(schema: dict, depth: int = 0, max_depth: int = 2) -> list[s
                     f"{indent}- A root {schema_type} with properties: {', '.join(prop_descriptions)}",
                 )
             else:
-                lines.append(
-                    f"{indent}- Contains properties: {', '.join(prop_descriptions)}"
-                )
+                lines.append(f"{indent}- Contains properties: {', '.join(prop_descriptions)}")
 
     elif schema_type == "array":
         items_schema = schema.get("items", {})
@@ -59,9 +57,7 @@ def _truncate(text: str, max_len: int = 500) -> str:
     return text[:half] + "\n...\n" + text[-half:]
 
 
-def retry_prompt(
-    text: str, schema: dict, errors: list[ValidationError]
-) -> str:
+def retry_prompt(text: str, schema: dict, errors: list[ValidationError]) -> str:
     """Generate a correction prompt for the LLM."""
     parts: list[str] = [
         "The JSON output you provided does not match the required schema. "

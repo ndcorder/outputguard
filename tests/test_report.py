@@ -59,7 +59,9 @@ def test_report_failure():
         final_text="garbage",
         success=False,
         steps=[
-            StrategyApplication(name="strip_fences", changed=False, input_text="garbage", output_text="garbage"),
+            StrategyApplication(
+                name="strip_fences", changed=False, input_text="garbage", output_text="garbage"
+            ),
         ],
         parse_error="Expecting value",
     )

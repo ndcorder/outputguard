@@ -22,7 +22,7 @@ def test_validate_and_repair_repairable(simple_schema):
 
 def test_validate_and_repair_unrepairable(simple_schema):
     guard = OutputGuard()
-    result = guard.validate_and_repair('totally broken nonsense', simple_schema)
+    result = guard.validate_and_repair("totally broken nonsense", simple_schema)
     assert result.valid is False
 
 

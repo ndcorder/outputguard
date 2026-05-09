@@ -23,7 +23,7 @@ class TestTwoStrategyCombinations:
             # fences + quotes
             pytest.param("```json\n{'a': 'b'}\n```", id="fences+quotes"),
             # fences + keys
-            pytest.param('```json\n{a: 1}\n```', id="fences+keys"),
+            pytest.param("```json\n{a: 1}\n```", id="fences+keys"),
             # fences + booleans
             pytest.param('```json\n{"a": True}\n```', id="fences+booleans"),
             # fences + closers
@@ -51,7 +51,7 @@ class TestTwoStrategyCombinations:
             # comments + commas
             pytest.param('{"a": 1, // x\n"b": 2,}', id="comments+commas"),
             # comments + keys
-            pytest.param('{key: 1 // comment\n}', id="comments+keys"),
+            pytest.param("{key: 1 // comment\n}", id="comments+keys"),
             # comments + quotes
             pytest.param("{'a': 1 // comment\n}", id="comments+quotes"),
             # comments + booleans
@@ -67,9 +67,9 @@ class TestTwoStrategyCombinations:
             # keys + commas
             pytest.param('{key: "val", other: 2,}', id="keys+commas"),
             # keys + booleans
-            pytest.param('{active: True, deleted: False}', id="keys+booleans"),
+            pytest.param("{active: True, deleted: False}", id="keys+booleans"),
             # keys + values
-            pytest.param('{score: NaN, count: Infinity}', id="keys+values"),
+            pytest.param("{score: NaN, count: Infinity}", id="keys+values"),
             # values + closers
             pytest.param('{"a": NaN, "b": [1, 2', id="values+closers"),
             # booleans + commas
@@ -129,7 +129,7 @@ class TestThreeStrategyCombinations:
             ),
             # fences + keys + values
             pytest.param(
-                '```json\n{score: NaN, active: True}\n```',
+                "```json\n{score: NaN, active: True}\n```",
                 id="fences+keys+values",
             ),
             # extract + quotes + keys
@@ -139,7 +139,7 @@ class TestThreeStrategyCombinations:
             ),
             # extract + keys + booleans
             pytest.param(
-                'Output: {active: True, deleted: False} done',
+                "Output: {active: True, deleted: False} done",
                 id="extract+keys+booleans",
             ),
             # extract + quotes + commas
@@ -154,12 +154,12 @@ class TestThreeStrategyCombinations:
             ),
             # comments + keys + values
             pytest.param(
-                '{key: NaN // not real\n}',
+                "{key: NaN // not real\n}",
                 id="comments+keys+values",
             ),
             # comments + keys + commas
             pytest.param(
-                '{key: 1, // x\nother: 2,}',
+                "{key: 1, // x\nother: 2,}",
                 id="comments+keys+commas",
             ),
             # quotes + keys + commas
@@ -174,17 +174,17 @@ class TestThreeStrategyCombinations:
             ),
             # keys + booleans + commas
             pytest.param(
-                '{active: True, deleted: False,}',
+                "{active: True, deleted: False,}",
                 id="keys+booleans+commas",
             ),
             # keys + values + commas
             pytest.param(
-                '{score: NaN, count: Infinity,}',
+                "{score: NaN, count: Infinity,}",
                 id="keys+values+commas",
             ),
             # fences + comments + keys
             pytest.param(
-                '```json\n{key: 1 // comment\n}\n```',
+                "```json\n{key: 1 // comment\n}\n```",
                 id="fences+comments+keys",
             ),
             # extract + comments + commas
@@ -204,7 +204,7 @@ class TestThreeStrategyCombinations:
             ),
             # fences + keys + commas + values (four!)
             pytest.param(
-                '```json\n{score: NaN, count: Infinity,}\n```',
+                "```json\n{score: NaN, count: Infinity,}\n```",
                 id="fences+keys+commas+values",
             ),
             # fences + quotes + keys + booleans + commas (five!)
@@ -334,7 +334,7 @@ class TestStrategyOrdering:
 
     def test_comments_then_keys_then_values(self):
         """Comments removed, then keys quoted, then values fixed."""
-        text = '{score: NaN // not real\n}'
+        text = "{score: NaN // not real\n}"
         result = repair(text)
         data = json.loads(result.text)
         assert "score" in data
@@ -443,10 +443,19 @@ class TestCustomStrategySelection:
     def test_all_strategies_explicit(self):
         """Explicitly listing all strategies should work like default."""
         all_names = [
-            "strip_fences", "extract_json", "remove_comments",
-            "fix_commas", "fix_quotes", "fix_keys", "fix_values",
-            "fix_booleans", "fix_truncated", "fix_ellipsis",
-            "fix_unicode", "fix_inner_quotes", "fix_closers",
+            "strip_fences",
+            "extract_json",
+            "remove_comments",
+            "fix_commas",
+            "fix_quotes",
+            "fix_keys",
+            "fix_values",
+            "fix_booleans",
+            "fix_truncated",
+            "fix_ellipsis",
+            "fix_unicode",
+            "fix_inner_quotes",
+            "fix_closers",
             "fix_newlines",
         ]
         guard = OutputGuard(strategies=all_names)
@@ -480,7 +489,7 @@ class TestRepairIdempotency:
                 id="fenced_kitchen_sink",
             ),
             pytest.param('{"a": True, "b": False}', id="python_bools"),
-            pytest.param('{x: NaN}', id="keys+nan_value"),
+            pytest.param("{x: NaN}", id="keys+nan_value"),
             pytest.param('{"a": undefined}', id="undefined_value"),
             pytest.param(
                 '```json\n{"items": [1, 2, 3,]}\n```',
@@ -495,7 +504,7 @@ class TestRepairIdempotency:
                 id="keys+comments",
             ),
             pytest.param(
-                '{active: True, deleted: False,}',
+                "{active: True, deleted: False,}",
                 id="keys+bools+commas",
             ),
             pytest.param(

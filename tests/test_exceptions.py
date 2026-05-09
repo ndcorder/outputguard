@@ -30,7 +30,9 @@ def test_schema_validation_error():
 
 
 def test_repair_error():
-    err = RepairError("failed", strategies_tried=["strip_fences", "fix_commas"], original_text="{bad}")
+    err = RepairError(
+        "failed", strategies_tried=["strip_fences", "fix_commas"], original_text="{bad}"
+    )
     assert isinstance(err, OutputGuardError)
     assert err.strategies_tried == ["strip_fences", "fix_commas"]
 
