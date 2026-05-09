@@ -1,5 +1,5 @@
-from outputguard.retry import retry_prompt
 from outputguard.models import ValidationError
+from outputguard.retry import retry_prompt
 
 
 def test_contains_errors():

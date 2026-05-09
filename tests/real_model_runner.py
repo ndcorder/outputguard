@@ -8,10 +8,10 @@ Requires: OPENROUTER_API_KEY environment variable
 import json
 import os
 import sys
-import urllib.request
 import urllib.error
-from pathlib import Path
+import urllib.request
 from datetime import datetime
+from pathlib import Path
 
 # Add project root to path
 sys.path.insert(0, str(Path(__file__).parent.parent))
@@ -336,7 +336,7 @@ def sweep():
     print(f"  Success rate:      {(valid + repaired) / max(len(results), 1):.0%}")
 
     if failed > 0:
-        print(f"\nFailed models:")
+        print("\nFailed models:")
         for r in results:
             if r["failed"]:
                 print(f"  {r['model']}")
@@ -348,7 +348,7 @@ def sweep():
         for r in results:
             for s in r["strategies"]:
                 strategies[s] += 1
-        print(f"\nRepair strategies used:")
+        print("\nRepair strategies used:")
         for s, c in strategies.most_common():
             print(f"  {s}: {c}")
 

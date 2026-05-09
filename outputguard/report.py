@@ -71,7 +71,7 @@ class RepairReport:
         if not self.success:
             return 0.0
 
-        total_strategies = len(self.steps)
+        len(self.steps)
         applied_count = len(self.strategies_applied)
 
         if applied_count == 0:

@@ -1,6 +1,7 @@
 """Retry loop pattern — send correction prompts back to the LLM."""
 
 import json
+
 import outputguard
 
 schema = {
@@ -50,7 +51,7 @@ def get_structured_output(
             if result.repaired:
                 print(f"  ✓ Valid after repair (strategies: {result.strategies_applied})")
             else:
-                print(f"  ✓ Valid")
+                print("  ✓ Valid")
             return result.data
 
         # Generate a correction prompt and retry

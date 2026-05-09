@@ -32,9 +32,8 @@ def apply(text: str) -> str:
         elif ch == "}":
             if stack and stack[-1] == "{":
                 stack.pop()
-        elif ch == "]":
-            if stack and stack[-1] == "[":
-                stack.pop()
+        elif ch == "]" and stack and stack[-1] == "[":
+            stack.pop()
 
     if not stack:
         return text

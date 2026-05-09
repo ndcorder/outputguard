@@ -1,8 +1,9 @@
 """Batch processing — validate multiple LLM outputs with statistics."""
 
 import json
-from dataclasses import dataclass
 from collections import Counter
+from dataclasses import dataclass
+
 import outputguard
 
 schema = {
@@ -72,7 +73,7 @@ print("Processing batch of LLM outputs...")
 print()
 results, stats = process_batch(batch, schema)
 
-print(f"\n--- Batch Summary ---")
+print("\n--- Batch Summary ---")
 print(f"Total:             {stats.total}")
 print(f"Valid immediately:  {stats.valid_immediately}")
 print(f"Repaired:          {stats.repaired}")
@@ -80,10 +81,10 @@ print(f"Failed:            {stats.failed}")
 print(f"Success rate:      {(stats.valid_immediately + stats.repaired) / stats.total:.0%}")
 
 if stats.strategies_used:
-    print(f"\nMost-used strategies:")
+    print("\nMost-used strategies:")
     for strategy, count in stats.strategies_used.most_common():
         print(f"  {strategy}: {count}")
 
-print(f"\nValid results:")
+print("\nValid results:")
 for r in results:
     print(f"  {json.dumps(r)}")

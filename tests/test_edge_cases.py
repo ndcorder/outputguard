@@ -1,7 +1,7 @@
 """Edge-case tests -- adversarial inputs and real-world LLM failure patterns."""
 
 import json
-import pytest
+
 import outputguard
 from outputguard.repairer import repair
 
@@ -74,7 +74,6 @@ I hope this helps! Let me know if you need anything else."""
         assert result.data["name"] == "First"
 
     def test_json_with_nan_and_infinity(self):
-        schema = {"type": "object", "properties": {"a": {}, "b": {}, "c": {}}}
         text = '{"a": NaN, "b": Infinity, "c": -Infinity}'
         # Python's json.loads accepts NaN/Infinity natively, so validate
         # sees this as valid JSON.  The repair strategy correctly replaces

@@ -9,11 +9,11 @@ To run live tests against OpenRouter (requires API key):
 
 import json
 import os
-import urllib.request
 import urllib.error
+import urllib.request
+from pathlib import Path
 
 import pytest
-from pathlib import Path
 
 from outputguard import repair, validate_and_repair
 

@@ -22,7 +22,6 @@ from outputguard.strategies.fix_values import apply as fix_values
 from outputguard.strategies.remove_comments import apply as remove_comments
 from outputguard.strategies.strip_fences import apply as strip_fences
 
-
 # ─── strip_fences (18 cases) ─────────────────────────────────────────────────
 
 

@@ -23,7 +23,7 @@ def _read_input(input_path: str) -> str:
 
 
 def _load_schema(schema_path: str) -> dict:
-    with open(schema_path, "r") as f:
+    with open(schema_path) as f:
         return json.load(f)
 
 

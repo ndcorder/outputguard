@@ -1,7 +1,7 @@
 import json
+from pathlib import Path
 
 import pytest
-from pathlib import Path
 
 from outputguard import validate_and_repair
 
@@ -96,9 +96,10 @@ def test_parse_convenience():
 
 
 def test_parse_raises_on_garbage():
+    import pytest
+
     import outputguard
     from outputguard.exceptions import ParseError
-    import pytest
 
     with pytest.raises(ParseError):
         outputguard.parse("not json", {"type": "object"})

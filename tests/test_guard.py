@@ -1,10 +1,10 @@
 import json
-
-import pytest
 from pathlib import Path
 
-from outputguard.guard import OutputGuard
+import pytest
+
 from outputguard.exceptions import ParseError, SchemaValidationError
+from outputguard.guard import OutputGuard
 
 
 @pytest.fixture

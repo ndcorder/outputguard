@@ -31,10 +31,9 @@ def _describe_schema(schema: dict, depth: int = 0, max_depth: int = 2) -> list[s
 
         if prop_descriptions:
             if depth == 0:
-                lines.insert(
-                    0,
-                    f"{indent}- A root {schema_type} with properties: {', '.join(prop_descriptions)}",
-                )
+                desc = f"{indent}- A root {schema_type} with properties: "
+                desc += ", ".join(prop_descriptions)
+                lines.insert(0, desc)
             else:
                 lines.append(f"{indent}- Contains properties: {', '.join(prop_descriptions)}")
 

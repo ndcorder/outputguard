@@ -3,10 +3,7 @@ different models and providers observed in production."""
 
 import json
 
-import pytest
-
 from outputguard import repair, validate_and_repair
-
 
 # ---------------------------------------------------------------------------
 # Shared schemas

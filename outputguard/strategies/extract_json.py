@@ -7,17 +7,14 @@ DESCRIPTION = "Extract JSON object/array from surrounding text"
 def apply(text: str) -> str:
     # Find the first { or [
     start = -1
-    opener = ""
     for i, ch in enumerate(text):
         if ch in "{[":
             start = i
-            opener = ch
             break
 
     if start == -1:
         return text
 
-    closer = "}" if opener == "{" else "]"
     stack = 0
     in_string = False
     escape = False

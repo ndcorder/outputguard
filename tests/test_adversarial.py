@@ -16,7 +16,6 @@ from outputguard import parse, repair, validate_and_repair
 from outputguard.repairer import repair as raw_repair
 from outputguard.strategies import ALL_STRATEGIES
 
-
 # ---------------------------------------------------------------------------
 # Shared chaotic inputs
 # ---------------------------------------------------------------------------
@@ -150,7 +149,7 @@ class TestPerformance:
     def test_deeply_nested_performance(self) -> None:
         text = '{"a": ' * 50 + "1" + "}" * 50
         start = time.time()
-        result = repair(text)
+        repair(text)
         elapsed = time.time() - start
         assert elapsed < 2.0, f"Took {elapsed:.2f}s"
 
@@ -174,14 +173,14 @@ class TestPerformance:
     def test_long_string_with_newlines_performance(self) -> None:
         text = '{"text": "' + "line\\n" * 10_000 + '"}'
         start = time.time()
-        result = repair(text)
+        repair(text)
         elapsed = time.time() - start
         assert elapsed < 5.0, f"Took {elapsed:.2f}s"
 
     def test_many_trailing_commas_performance(self) -> None:
         text = "{" + ",".join(f'"k{i}": {i}' for i in range(2000)) + ",}"
         start = time.time()
-        result = repair(text)
+        repair(text)
         elapsed = time.time() - start
         assert elapsed < 3.0, f"Took {elapsed:.2f}s"
 
@@ -197,7 +196,7 @@ class TestPerformance:
         pairs = ", ".join(f"'k{i}': {i}" for i in range(500))
         text = "{" + pairs + "}"
         start = time.time()
-        result = repair(text)
+        repair(text)
         elapsed = time.time() - start
         assert elapsed < 3.0, f"Took {elapsed:.2f}s"
 

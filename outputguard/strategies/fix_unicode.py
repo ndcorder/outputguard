@@ -1,7 +1,5 @@
 """Fix malformed Unicode escape sequences."""
 
-import re
-
 NAME = "fix_unicode"
 DESCRIPTION = "Fix malformed Unicode escape sequences"
 

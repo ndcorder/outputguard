@@ -1,6 +1,5 @@
 """Custom pipeline configuration — pick strategies for your use case."""
 
-import outputguard
 from outputguard import OutputGuard
 
 # Use case 1: Strict mode — only fix formatting, not content

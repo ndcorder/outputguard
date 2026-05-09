@@ -55,7 +55,7 @@ def apply(text: str) -> str:
         # It's a value string — find where it really ends.
         # The real closing quote is followed by , or } or ] or end-of-object whitespace.
         # Any " NOT followed by one of those delimiters is an inner quote to escape.
-        content_start = len(result)
+        len(result)
         while i < n:
             c = text[i]
             if c == "\\":
