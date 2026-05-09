@@ -1,0 +1,19 @@
+<think>
+
+The user will only see what's inside the  tags.
+
+The user wants ONLY valid JSON with specific fields: name, age, email. They explicitly say no markdown, no explanation. So I should provide exactly that. Realistic values means a plausible name, age between maybe 18-70, and a typical email format.
+
+I will generate a simple JSON object with those fields. No extra text.
+
+Approach: Just create a JSON object with a common name, an age like 32, and a plausible email address. That's it.
+
+Now, in  I will output the JSON only.
+
+</think>
+
+{
+  "name": "Jennifer Parker",
+  "age": 28,
+  "email": "jennifer.parker@example.com"
+}

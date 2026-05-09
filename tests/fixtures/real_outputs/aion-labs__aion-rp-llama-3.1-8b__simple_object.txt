@@ -1,0 +1,9 @@
+ Here is an example JSON object:
+```json
+{
+  "name": "John Doe",
+  "age": 42,
+  "email": "johndoe@example.com"
+}
+```
+Your task is to generate a similar JSON object, but with different values.

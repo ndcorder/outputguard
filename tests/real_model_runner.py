@@ -149,10 +149,11 @@ def call_openrouter(model: str, prompt: str) -> str:
     )
 
     try:
-        with urllib.request.urlopen(req, timeout=30) as resp:
+        with urllib.request.urlopen(req, timeout=60) as resp:
             data = json.loads(resp.read().decode())
-            return data["choices"][0]["message"]["content"]
-    except (urllib.error.URLError, KeyError, json.JSONDecodeError) as e:
+            content = data["choices"][0]["message"]["content"]
+            return content if content else "ERROR: empty response"
+    except Exception as e:
         return f"ERROR: {e}"
 
 
@@ -247,5 +248,116 @@ def main():
     print(f"\nResults saved to {summary_file}")
 
 
+def sweep():
+    """Run a single scenario against ALL models from all_model_ids.json."""
+    if not OPENROUTER_API_KEY:
+        print("ERROR: OPENROUTER_API_KEY not set")
+        sys.exit(1)
+
+    model_file = Path(__file__).parent / "all_model_ids.json"
+    if not model_file.exists():
+        print("Run 'python tests/fetch_all_models.py' first to generate model list")
+        sys.exit(1)
+
+    all_models = json.loads(model_file.read_text())
+    output_dir = Path(__file__).parent / "fixtures" / "real_outputs"
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    scenario = SCENARIOS[0]  # simple_object — cheapest
+    prompt = f"Return ONLY valid JSON. No markdown, no explanation.\n\n{scenario['prompt']}"
+    results = []
+    total = len(all_models)
+
+    print(f"Sweeping {total} models with '{scenario['name']}' scenario...\n")
+
+    for i, model in enumerate(all_models, 1):
+        model_slug = model.replace("/", "__")
+        name = f"{model_slug}__{scenario['name']}"
+        # Skip if fixture already exists
+        output_file = output_dir / f"{name}.txt"
+        if output_file.exists():
+            print(f"[{i}/{total}] {model}... CACHED")
+            raw = output_file.read_text()
+            result = validate_and_repair(raw, scenario["schema"])
+            results.append({
+                "model": model,
+                "valid_immediately": result.valid and not result.repaired,
+                "repaired": result.valid and result.repaired,
+                "failed": not result.valid,
+                "strategies": result.strategies_applied if result.repaired else [],
+            })
+            continue
+
+        print(f"[{i}/{total}] {model}...", end=" ", flush=True)
+
+        raw = call_openrouter(model, prompt)
+        if raw.startswith("ERROR:"):
+            print(f"SKIP ({raw[7:]})")
+            continue
+
+        output_file = output_dir / f"{name}.txt"
+        output_file.write_text(raw)
+
+        result = validate_and_repair(raw, scenario["schema"])
+        status = "VALID" if result.valid and not result.repaired else \
+                 f"REPAIRED ({', '.join(result.strategies_applied)})" if result.valid else \
+                 "FAILED"
+        print(status)
+
+        results.append({
+            "model": model,
+            "valid_immediately": result.valid and not result.repaired,
+            "repaired": result.valid and result.repaired,
+            "failed": not result.valid,
+            "strategies": result.strategies_applied if result.repaired else [],
+        })
+
+    # Summary
+    print(f"\n{'='*60}")
+    print(f"SWEEP RESULTS: {len(results)} models tested")
+    valid = sum(1 for r in results if r["valid_immediately"])
+    repaired = sum(1 for r in results if r["repaired"])
+    failed = sum(1 for r in results if r["failed"])
+    print(f"  Valid immediately: {valid}")
+    print(f"  Repaired:          {repaired}")
+    print(f"  Failed:            {failed}")
+    print(f"  Success rate:      {(valid + repaired) / max(len(results), 1):.0%}")
+
+    if failed > 0:
+        print(f"\nFailed models:")
+        for r in results:
+            if r["failed"]:
+                print(f"  {r['model']}")
+
+    if repaired > 0:
+        from collections import Counter
+        strategies = Counter()
+        for r in results:
+            for s in r["strategies"]:
+                strategies[s] += 1
+        print(f"\nRepair strategies used:")
+        for s, c in strategies.most_common():
+            print(f"  {s}: {c}")
+
+    # Save results
+    sweep_file = output_dir / "sweep_results.json"
+    sweep_file.write_text(json.dumps({
+        "timestamp": datetime.now().isoformat(),
+        "scenario": scenario["name"],
+        "total_models": total,
+        "tested": len(results),
+        "valid": valid,
+        "repaired": repaired,
+        "failed": failed,
+        "success_rate": f"{(valid + repaired) / max(len(results), 1):.0%}",
+        "results": results,
+    }, indent=2))
+    print(f"\nResults saved to {sweep_file}")
+
+
 if __name__ == "__main__":
-    main()
+    import sys
+    if len(sys.argv) > 1 and sys.argv[1] == "sweep":
+        sweep()
+    else:
+        main()

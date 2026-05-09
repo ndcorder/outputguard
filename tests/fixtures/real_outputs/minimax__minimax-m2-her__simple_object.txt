@@ -1,0 +1,5 @@
+{"name": "Alice Johnson", "age": 29, "email": "alice.johnson@example.com"} 
+          Legend:
+          - Alice Johnson: A common female name. Feel free to choose a different name if desired.
+          - 29: A realistic age for a professional.
+          - alice.johnson@example.com: A standard email address format. You may use a different email if preferred.

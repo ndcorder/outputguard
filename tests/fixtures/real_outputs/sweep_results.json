@@ -1,0 +1,2164 @@
+{
+  "timestamp": "2026-05-09T11:27:40.631207",
+  "scenario": "simple_object",
+  "total_models": 305,
+  "tested": 290,
+  "valid": 225,
+  "repaired": 61,
+  "failed": 4,
+  "success_rate": "99%",
+  "results": [
+    {
+      "model": "ai21/jamba-large-1.7",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "aion-labs/aion-1.0",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "extract_json"
+      ]
+    },
+    {
+      "model": "aion-labs/aion-1.0-mini",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "extract_json"
+      ]
+    },
+    {
+      "model": "aion-labs/aion-2.0",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "aion-labs/aion-rp-llama-3.1-8b",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "alibaba/tongyi-deepresearch-30b-a3b",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "alpindale/goliath-120b",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "amazon/nova-2-lite-v1",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "amazon/nova-lite-v1",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "amazon/nova-micro-v1",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "amazon/nova-premier-v1",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "amazon/nova-pro-v1",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "anthracite-org/magnum-v4-72b",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "anthropic/claude-3-haiku",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "anthropic/claude-3.5-haiku",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "anthropic/claude-3.7-sonnet",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "anthropic/claude-3.7-sonnet:thinking",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "anthropic/claude-haiku-4.5",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "anthropic/claude-opus-4",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "anthropic/claude-opus-4.1",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "anthropic/claude-opus-4.5",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "anthropic/claude-opus-4.6",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "anthropic/claude-opus-4.6-fast",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "anthropic/claude-opus-4.7",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "anthropic/claude-sonnet-4",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "anthropic/claude-sonnet-4.5",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "anthropic/claude-sonnet-4.6",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "arcee-ai/trinity-large-preview",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "arcee-ai/trinity-large-thinking",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "arcee-ai/trinity-mini",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "baidu/ernie-4.5-300b-a47b",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "baidu/ernie-4.5-vl-424b-a47b",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "bytedance-seed/seed-1.6",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "bytedance-seed/seed-1.6-flash",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "bytedance-seed/seed-2.0-lite",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "bytedance-seed/seed-2.0-mini",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "cohere/command-a",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "cohere/command-r-08-2024",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "cohere/command-r-plus-08-2024",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "cohere/command-r7b-12-2024",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "deepcogito/cogito-v2.1-671b",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "deepseek/deepseek-chat",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "deepseek/deepseek-chat-v3-0324",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "deepseek/deepseek-chat-v3.1",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "deepseek/deepseek-r1",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "deepseek/deepseek-r1-0528",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "deepseek/deepseek-r1-distill-llama-70b",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "deepseek/deepseek-r1-distill-qwen-32b",
+      "valid_immediately": false,
+      "repaired": false,
+      "failed": true,
+      "strategies": []
+    },
+    {
+      "model": "deepseek/deepseek-v3.1-terminus",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "deepseek/deepseek-v3.2",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "deepseek/deepseek-v3.2-exp",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "deepseek/deepseek-v3.2-speciale",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "deepseek/deepseek-v4-flash",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "deepseek/deepseek-v4-pro",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "essentialai/rnj-1-instruct",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "google/gemini-2.0-flash-001",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "google/gemini-2.0-flash-lite-001",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "google/gemini-2.5-flash",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "google/gemini-2.5-flash-lite",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "google/gemini-2.5-flash-lite-preview-09-2025",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "google/gemini-2.5-pro",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "google/gemini-2.5-pro-preview",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "google/gemini-2.5-pro-preview-05-06",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "google/gemini-3-flash-preview",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "google/gemini-3.1-flash-lite",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "google/gemini-3.1-flash-lite-preview",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "google/gemini-3.1-pro-preview",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "google/gemma-2-27b-it",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "extract_json"
+      ]
+    },
+    {
+      "model": "google/gemma-3-12b-it",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "google/gemma-3-27b-it",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "google/gemma-3-4b-it",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "google/gemma-3n-e4b-it",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "google/gemma-4-26b-a4b-it",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "google/gemma-4-31b-it",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "gryphe/mythomax-l2-13b",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "ibm-granite/granite-4.0-h-micro",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "ibm-granite/granite-4.1-8b",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "inception/mercury-2",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "inclusionai/ling-2.6-1t",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "inclusionai/ling-2.6-flash",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "inflection/inflection-3-pi",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "inflection/inflection-3-productivity",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "kwaipilot/kat-coder-pro-v2",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "liquid/lfm-2-24b-a2b",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "mancer/weaver",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "meta-llama/llama-3-70b-instruct",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "meta-llama/llama-3-8b-instruct",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "fix_truncated"
+      ]
+    },
+    {
+      "model": "meta-llama/llama-3.1-70b-instruct",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "meta-llama/llama-3.1-8b-instruct",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "meta-llama/llama-3.2-11b-vision-instruct",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "meta-llama/llama-3.2-1b-instruct",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "fix_truncated"
+      ]
+    },
+    {
+      "model": "meta-llama/llama-3.2-3b-instruct",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "meta-llama/llama-3.3-70b-instruct",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "meta-llama/llama-4-maverick",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "meta-llama/llama-4-scout",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "microsoft/phi-4",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "microsoft/phi-4-mini-instruct",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "microsoft/wizardlm-2-8x22b",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "minimax/minimax-m1",
+      "valid_immediately": false,
+      "repaired": false,
+      "failed": true,
+      "strategies": []
+    },
+    {
+      "model": "minimax/minimax-m2",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "minimax/minimax-m2-her",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "extract_json"
+      ]
+    },
+    {
+      "model": "minimax/minimax-m2.1",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "minimax/minimax-m2.5",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "minimax/minimax-m2.7",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "mistralai/codestral-2508",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "mistralai/devstral-2512",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "mistralai/devstral-medium",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "mistralai/devstral-small",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "mistralai/ministral-14b-2512",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "mistralai/ministral-3b-2512",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "mistralai/ministral-8b-2512",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "mistralai/mistral-7b-instruct-v0.1",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "mistralai/mistral-large",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "mistralai/mistral-large-2407",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "mistralai/mistral-large-2411",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "mistralai/mistral-large-2512",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "mistralai/mistral-medium-3",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "mistralai/mistral-medium-3-5",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "mistralai/mistral-medium-3.1",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "mistralai/mistral-nemo",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "mistralai/mistral-saba",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "mistralai/mistral-small-24b-instruct-2501",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "mistralai/mistral-small-2603",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "mistralai/mistral-small-3.1-24b-instruct",
+      "valid_immediately": false,
+      "repaired": false,
+      "failed": true,
+      "strategies": []
+    },
+    {
+      "model": "mistralai/mistral-small-3.2-24b-instruct",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "mistralai/mixtral-8x22b-instruct",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "mistralai/pixtral-large-2411",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "mistralai/voxtral-small-24b-2507",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "moonshotai/kimi-k2",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "moonshotai/kimi-k2-0905",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "moonshotai/kimi-k2-thinking",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "moonshotai/kimi-k2.5",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "moonshotai/kimi-k2.6",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "morph/morph-v3-fast",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "morph/morph-v3-large",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "nex-agi/deepseek-v3.1-nex-n1",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "nousresearch/hermes-2-pro-llama-3-8b",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "nousresearch/hermes-3-llama-3.1-405b",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "nousresearch/hermes-3-llama-3.1-70b",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "nousresearch/hermes-4-405b",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "nousresearch/hermes-4-70b",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "nvidia/llama-3.3-nemotron-super-49b-v1.5",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "nvidia/nemotron-3-nano-30b-a3b",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "nvidia/nemotron-3-super-120b-a12b",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "nvidia/nemotron-nano-9b-v2",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/gpt-3.5-turbo",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/gpt-3.5-turbo-0613",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/gpt-3.5-turbo-16k",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/gpt-3.5-turbo-instruct",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/gpt-4",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/gpt-4-turbo",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/gpt-4.1",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/gpt-4.1-mini",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/gpt-4.1-nano",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/gpt-4o",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "openai/gpt-4o-2024-05-13",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/gpt-4o-2024-08-06",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "openai/gpt-4o-2024-11-20",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/gpt-4o-mini",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/gpt-4o-mini-2024-07-18",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/gpt-5",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/gpt-5-chat",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/gpt-5-codex",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/gpt-5-mini",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/gpt-5-nano",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/gpt-5-pro",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/gpt-5.1",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/gpt-5.1-chat",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/gpt-5.1-codex",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/gpt-5.1-codex-max",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/gpt-5.1-codex-mini",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/gpt-5.2",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/gpt-5.2-chat",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/gpt-5.2-codex",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/gpt-5.2-pro",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/gpt-5.3-chat",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/gpt-5.3-codex",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/gpt-5.4",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/gpt-5.4-mini",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/gpt-5.4-nano",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/gpt-5.4-pro",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/gpt-5.5",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/gpt-5.5-pro",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/gpt-chat-latest",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/gpt-oss-120b",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/gpt-oss-20b",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/o1",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/o1-pro",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/o3",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/o3-mini",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/o3-mini-high",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/o3-pro",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/o4-mini",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/o4-mini-high",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "perplexity/sonar",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "perplexity/sonar-pro",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "perplexity/sonar-pro-search",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "perplexity/sonar-reasoning-pro",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "prime-intellect/intellect-3",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen-2.5-7b-instruct",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen-2.5-coder-32b-instruct",
+      "valid_immediately": false,
+      "repaired": false,
+      "failed": true,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen-max",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen-plus",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen-plus-2025-07-28",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen-plus-2025-07-28:thinking",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen-turbo",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen-vl-max",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen-vl-plus",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "qwen/qwen2.5-vl-72b-instruct",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen3-14b",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen3-235b-a22b",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen3-235b-a22b-2507",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen3-235b-a22b-thinking-2507",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen3-30b-a3b",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen3-30b-a3b-instruct-2507",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen3-30b-a3b-thinking-2507",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen3-32b",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen3-8b",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen3-coder",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen3-coder-30b-a3b-instruct",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen3-coder-flash",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen3-coder-next",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen3-coder-plus",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen3-max",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen3-max-thinking",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen3-next-80b-a3b-instruct",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen3-next-80b-a3b-thinking",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen3-vl-235b-a22b-instruct",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen3-vl-235b-a22b-thinking",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen3-vl-30b-a3b-instruct",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen3-vl-30b-a3b-thinking",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen3-vl-32b-instruct",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen3-vl-8b-instruct",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen3-vl-8b-thinking",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen3.5-122b-a10b",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen3.5-27b",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen3.5-35b-a3b",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen3.5-9b",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen3.5-flash-02-23",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen3.5-plus-02-15",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen3.5-plus-20260420",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen3.6-27b",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen3.6-35b-a3b",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen3.6-flash",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen3.6-max-preview",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen3.6-plus",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "rekaai/reka-edge",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "rekaai/reka-flash-3",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "sao10k/l3-euryale-70b",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "sao10k/l3-lunaris-8b",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "sao10k/l3.1-70b-hanami-x1",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "sao10k/l3.1-euryale-70b",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "sao10k/l3.3-euryale-70b",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "stepfun/step-3.5-flash",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "tencent/hunyuan-a13b-instruct",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "tencent/hy3-preview",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "thedrummer/cydonia-24b-v4.1",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "thedrummer/rocinante-12b",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "thedrummer/skyfall-36b-v2",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "thedrummer/unslopnemo-12b",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "undi95/remm-slerp-l2-13b",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "writer/palmyra-x5",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "x-ai/grok-3",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "x-ai/grok-3-beta",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "x-ai/grok-3-mini",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "x-ai/grok-3-mini-beta",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "x-ai/grok-4",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "x-ai/grok-4-fast",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "x-ai/grok-4.1-fast",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "x-ai/grok-4.20",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "x-ai/grok-4.3",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "x-ai/grok-code-fast-1",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "xiaomi/mimo-v2-flash",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "xiaomi/mimo-v2-omni",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "xiaomi/mimo-v2-pro",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "xiaomi/mimo-v2.5",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "xiaomi/mimo-v2.5-pro",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "z-ai/glm-4-32b",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "z-ai/glm-4.5",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "z-ai/glm-4.5-air",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "z-ai/glm-4.5v",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "z-ai/glm-4.6",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "z-ai/glm-4.6v",
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "z-ai/glm-4.7",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "z-ai/glm-4.7-flash",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "z-ai/glm-5",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "z-ai/glm-5-turbo",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "z-ai/glm-5.1",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "z-ai/glm-5v-turbo",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    }
+  ]
+}

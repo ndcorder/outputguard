@@ -1,0 +1,7 @@
+```json
+{
+  "name": "Sarah Johnson",
+  "age": 28,
+  "email": "sarah.johnson@email.com"
+}
+```

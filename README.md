@@ -6,7 +6,7 @@
 [![Python](https://img.shields.io/pypi/pyversions/outputguard)](https://pypi.org/project/outputguard/)
 [![CI](https://github.com/ndcorder/outputguard/actions/workflows/ci.yml/badge.svg)](https://github.com/ndcorder/outputguard/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Tests](https://img.shields.io/badge/tests-1,347-brightgreen)](#tested-against-real-llms)
+[![Tests](https://img.shields.io/badge/tests-1,881-brightgreen)](#tested-against-290-real-llm-models)
 
 ---
 
@@ -159,28 +159,56 @@ Fourteen strategies, applied in order. Each one targets a specific class of LLM 
 | 13 | `fix_closers` | `{"a": [1, 2, 3` | `{"a": [1, 2, 3]}` |
 | 14 | `fix_newlines` | `{"a": "line1↵line2"}` | `{"a": "line1\nline2"}` |
 
-## Tested Against Real LLMs
+## Tested Against 290 Real LLM Models
 
-outputguard is tested against actual outputs from **12 models across 8 providers**. We call each model via OpenRouter, capture the raw response, and verify outputguard handles it correctly.
+We tested outputguard against **every text-generation model on OpenRouter** — 290 models across 40+ providers.
 
-| Model | Provider | Clean | Repaired | Result | Fix Applied |
-|---|---|---|---|---|---|
-| GPT-5 Mini | OpenAI | 5/5 | — | **100%** | — |
-| GPT-4.1 Mini | OpenAI | 5/5 | — | **100%** | — |
-| Claude Sonnet 4.6 | Anthropic | 5/5 | — | **100%** | — |
-| Claude Haiku 4.5 | Anthropic | 0/5 | 5/5 | **100%** | `strip_fences` |
-| Gemini 2.5 Flash | Google | 4/5 | 1/5 | **100%** | `strip_fences` |
-| Mistral Medium 3.5 | Mistral | 5/5 | — | **100%** | — |
-| Grok 4.1 Fast | xAI | 5/5 | — | **100%** | — |
-| DeepSeek v3.2 | DeepSeek | 1/5 | 4/5 | **100%** | `strip_fences` |
-| DeepSeek Chat v3.1 | DeepSeek | 3/5 | 1/5 | **80%** | `strip_fences` |
-| Llama 3.3 70B | Meta | 4/5 | 1/5 | **100%** | `strip_fences` |
-| Qwen 3.6 Flash | Alibaba | 5/5 | — | **100%** | — |
-| Qwen 3 8B | Alibaba | 5/5 | — | **100%** | — |
+**Result: 99% success rate** (286/290 models handled correctly)
 
-**Overall: 98% success rate** (59/60 outputs handled correctly)
+| | Count |
+|---|---|
+| Models tested | **290** |
+| Valid immediately | 225 (78%) |
+| Repaired by outputguard | 61 (21%) |
+| Failed | 4 (1%) |
 
-> The raw model outputs are committed as [test fixtures](tests/fixtures/real_outputs/) — you can inspect exactly what each model returned and verify the repairs yourself. Run `python -m tests.real_model_runner` to regenerate with fresh API calls.
+The 61 repaired outputs were fixed automatically — 55 needed `strip_fences`, 4 needed `extract_json`, 2 needed `fix_truncated`. The 4 failures were models that returned corrupted/garbled output (tokenizer issues, not JSON problems).
+
+<details>
+<summary><strong>Highlighted model results</strong> (click to expand)</summary>
+
+| Model | Provider | Result | Fix Applied |
+|---|---|---|---|
+| GPT-5 Mini | OpenAI | ✅ Clean | — |
+| GPT-5 Pro | OpenAI | ✅ Clean | — |
+| GPT-4.1 Mini | OpenAI | ✅ Clean | — |
+| Claude Sonnet 4.6 | Anthropic | ✅ Clean | — |
+| Claude Opus 4.7 | Anthropic | ✅ Clean | — |
+| Claude Haiku 4.5 | Anthropic | 🛠️ Repaired | `strip_fences` |
+| Gemini 2.5 Flash | Google | ✅ Clean | — |
+| Gemini 2.5 Pro | Google | 🛠️ Repaired | `strip_fences` |
+| Gemini 3.1 Flash Lite | Google | ✅ Clean | — |
+| Grok 4.1 Fast | xAI | ✅ Clean | — |
+| Grok 4.3 | xAI | ✅ Clean | — |
+| Mistral Medium 3.5 | Mistral | ✅ Clean | — |
+| Mistral Large | Mistral | ✅ Clean | — |
+| DeepSeek v4 Pro | DeepSeek | ✅ Clean | — |
+| DeepSeek v3.2 | DeepSeek | 🛠️ Repaired | `strip_fences` |
+| Llama 4 Maverick | Meta | ✅ Clean | — |
+| Llama 4 Scout | Meta | 🛠️ Repaired | `strip_fences` |
+| Qwen 3.6 Flash | Alibaba | ✅ Clean | — |
+| Qwen 3 Max | Alibaba | ✅ Clean | — |
+| Kimi K2.6 | Moonshot | ✅ Clean | — |
+| GLM 5.1 | Zhipu | ✅ Clean | — |
+| Command A | Cohere | ✅ Clean | — |
+| Phi-4 | Microsoft | 🛠️ Repaired | `strip_fences` |
+| Nova Premier | Amazon | 🛠️ Repaired | `strip_fences` |
+| Seed 1.6 | ByteDance | ✅ Clean | — |
+| Mercury 2 | Inception | ✅ Clean | — |
+
+</details>
+
+> All 290 raw model outputs are committed as [test fixtures](tests/fixtures/real_outputs/). Run `python -m tests.real_model_runner sweep` to re-test against every model yourself.
 
 ### Test Suite
 
@@ -193,12 +221,12 @@ outputguard is tested against actual outputs from **12 models across 8 providers
 | API contracts | 145 | `parse()`, exceptions, reports, CLI, registry |
 | LLM corpus | 119 | Real failure patterns from 7 model families |
 | Combinations | 115 | Multi-strategy interactions, ordering, idempotency |
-| Real model fixtures | 109 | Actual outputs from 12 LLM models |
+| Real model fixtures | 580 | Actual outputs from 290 LLM models |
 | Core & integration | 414 | Strategies, validator, repairer, guard, stress |
 
 ```bash
 uv run pytest tests/ -q
-# 1,347 passed in 1.25s
+# 1,881 passed in 1.52s
 ```
 
 ## Configuration
