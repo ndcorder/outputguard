@@ -6,7 +6,7 @@
 [![Python](https://img.shields.io/pypi/pyversions/outputguard)](https://pypi.org/project/outputguard/)
 [![CI](https://github.com/ndcorder/outputguard/actions/workflows/ci.yml/badge.svg)](https://github.com/ndcorder/outputguard/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Tests](https://img.shields.io/badge/tests-145-brightgreen)](#)
+[![Tests](https://img.shields.io/badge/tests-1,347-brightgreen)](#tested-against-real-llms)
 
 ---
 
@@ -39,7 +39,7 @@ print(result.data)               # {'name': 'Alice', 'age': 30}
 print(result.strategies_applied) # ['strip_fences', 'fix_quotes', 'fix_commas']
 ```
 
-Thirteen repair strategies, JSON Schema validation, retry prompt generation, and a CLI — in one tiny package with three dependencies.
+Fourteen repair strategies, JSON Schema validation, retry prompt generation, and a CLI — in one tiny package with three dependencies.
 
 ## Installation
 
@@ -140,7 +140,7 @@ outputguard strategies
 
 ## What It Fixes
 
-Thirteen strategies, applied in order. Each one targets a specific class of LLM JSON malformation:
+Fourteen strategies, applied in order. Each one targets a specific class of LLM JSON malformation:
 
 | # | Strategy | Before | After |
 |---|---|---|---|
@@ -155,8 +155,51 @@ Thirteen strategies, applied in order. Each one targets a specific class of LLM 
 | 9 | `fix_truncated` | `{"a": 1, "b": "hel` | `{"a": 1, "b": "hel"}` |
 | 10 | `fix_ellipsis` | `{"items": [1, 2, ...]}` | `{"items": [1, 2]}` |
 | 11 | `fix_unicode` | `{"a": "\u00"}` | `{"a": "�"}` |
-| 12 | `fix_closers` | `{"a": [1, 2, 3` | `{"a": [1, 2, 3]}` |
-| 13 | `fix_newlines` | `{"a": "line1↵line2"}` | `{"a": "line1\nline2"}` |
+| 12 | `fix_inner_quotes` | `{"a": " "hello" "}` | `{"a": " \"hello\" "}` |
+| 13 | `fix_closers` | `{"a": [1, 2, 3` | `{"a": [1, 2, 3]}` |
+| 14 | `fix_newlines` | `{"a": "line1↵line2"}` | `{"a": "line1\nline2"}` |
+
+## Tested Against Real LLMs
+
+outputguard is tested against actual outputs from **12 models across 8 providers**. We call each model via OpenRouter, capture the raw response, and verify outputguard handles it correctly.
+
+| Model | Provider | Clean | Repaired | Result | Fix Applied |
+|---|---|---|---|---|---|
+| GPT-5 Mini | OpenAI | 5/5 | — | **100%** | — |
+| GPT-4.1 Mini | OpenAI | 5/5 | — | **100%** | — |
+| Claude Sonnet 4.6 | Anthropic | 5/5 | — | **100%** | — |
+| Claude Haiku 4.5 | Anthropic | 0/5 | 5/5 | **100%** | `strip_fences` |
+| Gemini 2.5 Flash | Google | 4/5 | 1/5 | **100%** | `strip_fences` |
+| Mistral Medium 3.5 | Mistral | 5/5 | — | **100%** | — |
+| Grok 4.1 Fast | xAI | 5/5 | — | **100%** | — |
+| DeepSeek v3.2 | DeepSeek | 1/5 | 4/5 | **100%** | `strip_fences` |
+| DeepSeek Chat v3.1 | DeepSeek | 3/5 | 1/5 | **80%** | `strip_fences` |
+| Llama 3.3 70B | Meta | 4/5 | 1/5 | **100%** | `strip_fences` |
+| Qwen 3.6 Flash | Alibaba | 5/5 | — | **100%** | — |
+| Qwen 3 8B | Alibaba | 5/5 | — | **100%** | — |
+
+**Overall: 98% success rate** (59/60 outputs handled correctly)
+
+> The raw model outputs are committed as [test fixtures](tests/fixtures/real_outputs/) — you can inspect exactly what each model returned and verify the repairs yourself. Run `python -m tests.real_model_runner` to regenerate with fresh API calls.
+
+### Test Suite
+
+**1,347 tests** across 7 testing dimensions:
+
+| Category | Tests | What it covers |
+|---|---|---|
+| Strategy exhaustive | 159 | Every strategy pushed to edge cases |
+| Adversarial & fuzzing | 286 | 141 chaotic inputs, concurrency, performance |
+| API contracts | 145 | `parse()`, exceptions, reports, CLI, registry |
+| LLM corpus | 119 | Real failure patterns from 7 model families |
+| Combinations | 115 | Multi-strategy interactions, ordering, idempotency |
+| Real model fixtures | 109 | Actual outputs from 12 LLM models |
+| Core & integration | 414 | Strategies, validator, repairer, guard, stress |
+
+```bash
+uv run pytest tests/ -q
+# 1,347 passed in 1.25s
+```
 
 ## Configuration
 
@@ -256,11 +299,12 @@ All commands accept `-f json` for machine-readable output, `-o FILE` to write to
 
 | | `json.loads()` + regex | outputguard |
 |---|---|---|
-| Repair strategies | Roll your own | 13, tested and ordered |
+| Repair strategies | Roll your own | 14, tested and ordered |
 | Schema validation | Separate library | Built in (jsonschema) |
 | Retry prompts | Write your own | One function call |
 | Confidence scoring | No | Yes |
 | Truncated JSON | Breaks | Recovers |
+| Tests | Probably zero | **1,347** (including real LLM outputs) |
 | LLM dependencies | — | None (works with any provider) |
 | Footprint | — | 3 deps: click, jsonschema, rich |
 
