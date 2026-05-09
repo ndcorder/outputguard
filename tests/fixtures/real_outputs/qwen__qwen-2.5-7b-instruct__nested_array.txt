@@ -1,0 +1,20 @@
+{
+  "items": [
+    {
+      "name": "Apple",
+      "price": 0.75
+    },
+    {
+      "name": "Banana",
+      "price": 0.50
+    },
+    {
+      "name": "Cherry",
+      "price": 2.50
+    }
+  ],
+  "metadata": {
+    "total_count": 3,
+    "currency": "USD"
+  }
+}

@@ -1,0 +1,20 @@
+{
+    "items": [
+        {
+            "name": "Wireless Headphones",
+            "price": 129.99
+        },
+        {
+            "name": "Bluetooth Speaker",
+            "price": 79.50
+        },
+        {
+            "name": "Portable Charger",
+            "price": 45.25
+        }
+    ],
+    "metadata": {
+        "totalCount": 3,
+        "currency": "USD"
+    }
+}

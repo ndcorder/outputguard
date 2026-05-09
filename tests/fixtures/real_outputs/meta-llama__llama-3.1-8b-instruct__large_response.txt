@@ -1,0 +1,12 @@
+[
+  {"id": 1, "username": "user1", "active": true, "score": 100},
+  {"id": 2, "username": "user2", "active": false, "score": 500},
+  {"id": 3, "username": "admin", "active": true, "score": 200},
+  {"id": 4, "username": "guest", "active": false, "score": 50},
+  {"id": 5, "username": "devuser", "active": true, "score": 300},
+  {"id": 6, "username": "user123", "active": true, "score": 600},
+  {"id": 7, "username": "bot", "active": false, "score": 80},
+  {"id": 8, "username": "testuser", "active": true, "score": 700},
+  {"id": 9, "username": "user4", "active": false, "score": 40},
+  {"id": 10, "username": "user5", "active": true, "score": 120}
+]

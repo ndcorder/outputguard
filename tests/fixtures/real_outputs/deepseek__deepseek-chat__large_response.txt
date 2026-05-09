@@ -1,0 +1,64 @@
+```json
+[
+  {
+    "id": 1,
+    "username": "johndoe",
+    "active": true,
+    "score": 85.5
+  },
+  {
+    "id": 2,
+    "username": "janedoe",
+    "active": false,
+    "score": 92.3
+  },
+  {
+    "id": 3,
+    "username": "alice",
+    "active": true,
+    "score": 78.9
+  },
+  {
+    "id": 4,
+    "username": "bob",
+    "active": true,
+    "score": 65.2
+  },
+  {
+    "id": 5,
+    "username": "charlie",
+    "active": false,
+    "score": 45.7
+  },
+  {
+    "id": 6,
+    "username": "dave",
+    "active": true,
+    "score": 88.1
+  },
+  {
+    "id": 7,
+    "username": "eve",
+    "active": false,
+    "score": 72.4
+  },
+  {
+    "id": 8,
+    "username": "frank",
+    "active": true,
+    "score": 95.0
+  },
+  {
+    "id": 9,
+    "username": "grace",
+    "active": true,
+    "score": 81.6
+  },
+  {
+    "id": 10,
+    "username": "heidi",
+    "active": false,
+    "score": 53.8
+  }
+]
+```

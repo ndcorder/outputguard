@@ -1,0 +1,6 @@
+{
+    "title": "Organize home office",
+    "completed": false,
+    "priority": 3,
+    "tags": ["productivity", "organization", "workspace"]
+}

@@ -1,0 +1,8 @@
+```json
+{
+  "title": "Complete the project",
+  "completed": false,
+  "priority": 3,
+  "tags": ["work", "urgent"]
+}
+```

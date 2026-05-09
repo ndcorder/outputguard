@@ -1,0 +1,249 @@
+{
+  "timestamp": "2026-05-09T08:38:24.862247",
+  "models": [
+    "openai/gpt-4o-mini",
+    "anthropic/claude-3.5-haiku",
+    "meta-llama/llama-3.1-8b-instruct",
+    "mistralai/mistral-7b-instruct",
+    "google/gemma-2-9b-it",
+    "deepseek/deepseek-chat",
+    "qwen/qwen-2.5-7b-instruct"
+  ],
+  "results": [
+    {
+      "model": "openai/gpt-4o-mini",
+      "scenario": "simple_object",
+      "raw_length": 82,
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/gpt-4o-mini",
+      "scenario": "nested_array",
+      "raw_length": 257,
+      "valid_immediately": false,
+      "repaired": false,
+      "failed": true,
+      "strategies": []
+    },
+    {
+      "model": "openai/gpt-4o-mini",
+      "scenario": "enum_values",
+      "raw_length": 123,
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/gpt-4o-mini",
+      "scenario": "boolean_fields",
+      "raw_length": 119,
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "openai/gpt-4o-mini",
+      "scenario": "large_response",
+      "raw_length": 716,
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "anthropic/claude-3.5-haiku",
+      "scenario": "simple_object",
+      "raw_length": 90,
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "anthropic/claude-3.5-haiku",
+      "scenario": "nested_array",
+      "raw_length": 368,
+      "valid_immediately": false,
+      "repaired": false,
+      "failed": true,
+      "strategies": []
+    },
+    {
+      "model": "anthropic/claude-3.5-haiku",
+      "scenario": "enum_values",
+      "raw_length": 142,
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "anthropic/claude-3.5-haiku",
+      "scenario": "boolean_fields",
+      "raw_length": 141,
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "anthropic/claude-3.5-haiku",
+      "scenario": "large_response",
+      "raw_length": 731,
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "meta-llama/llama-3.1-8b-instruct",
+      "scenario": "simple_object",
+      "raw_length": 72,
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "meta-llama/llama-3.1-8b-instruct",
+      "scenario": "nested_array",
+      "raw_length": 202,
+      "valid_immediately": false,
+      "repaired": false,
+      "failed": true,
+      "strategies": []
+    },
+    {
+      "model": "meta-llama/llama-3.1-8b-instruct",
+      "scenario": "enum_values",
+      "raw_length": 391,
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "meta-llama/llama-3.1-8b-instruct",
+      "scenario": "boolean_fields",
+      "raw_length": 93,
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "meta-llama/llama-3.1-8b-instruct",
+      "scenario": "large_response",
+      "raw_length": 649,
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "deepseek/deepseek-chat",
+      "scenario": "simple_object",
+      "raw_length": 94,
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "deepseek/deepseek-chat",
+      "scenario": "nested_array",
+      "raw_length": 269,
+      "valid_immediately": false,
+      "repaired": false,
+      "failed": true,
+      "strategies": []
+    },
+    {
+      "model": "deepseek/deepseek-chat",
+      "scenario": "enum_values",
+      "raw_length": 135,
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "deepseek/deepseek-chat",
+      "scenario": "boolean_fields",
+      "raw_length": 118,
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "deepseek/deepseek-chat",
+      "scenario": "large_response",
+      "raw_length": 870,
+      "valid_immediately": false,
+      "repaired": true,
+      "failed": false,
+      "strategies": [
+        "strip_fences"
+      ]
+    },
+    {
+      "model": "qwen/qwen-2.5-7b-instruct",
+      "scenario": "simple_object",
+      "raw_length": 71,
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen-2.5-7b-instruct",
+      "scenario": "nested_array",
+      "raw_length": 254,
+      "valid_immediately": false,
+      "repaired": false,
+      "failed": true,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen-2.5-7b-instruct",
+      "scenario": "enum_values",
+      "raw_length": 122,
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen-2.5-7b-instruct",
+      "scenario": "boolean_fields",
+      "raw_length": 70,
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen-2.5-7b-instruct",
+      "scenario": "large_response",
+      "raw_length": 705,
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    }
+  ]
+}

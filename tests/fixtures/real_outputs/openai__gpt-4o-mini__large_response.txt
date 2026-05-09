@@ -1,0 +1,12 @@
+[
+    {"id": 1, "username": "user_one", "active": true, "score": 87.5},
+    {"id": 2, "username": "user_two", "active": false, "score": 45.0},
+    {"id": 3, "username": "user_three", "active": true, "score": 92.3},
+    {"id": 4, "username": "user_four", "active": true, "score": 65.7},
+    {"id": 5, "username": "user_five", "active": false, "score": 30.2},
+    {"id": 6, "username": "user_six", "active": true, "score": 78.9},
+    {"id": 7, "username": "user_seven", "active": false, "score": 50.1},
+    {"id": 8, "username": "user_eight", "active": true, "score": 99.9},
+    {"id": 9, "username": "user_nine", "active": true, "score": 61.4},
+    {"id": 10, "username": "user_ten", "active": false, "score": 22.8}
+]

@@ -1,0 +1,12 @@
+[
+    {"id": 1, "username": "sarah_m", "active": true, "score": 245.75},
+    {"id": 2, "username": "johndoe87", "active": false, "score": 102.50},
+    {"id": 3, "username": "tech_ninja", "active": true, "score": 678.25},
+    {"id": 4, "username": "emily_r", "active": true, "score": 412.90},
+    {"id": 5, "username": "max_power", "active": false, "score": 56.33},
+    {"id": 6, "username": "lisa_code", "active": true, "score": 834.60},
+    {"id": 7, "username": "alex_g", "active": true, "score": 221.45},
+    {"id": 8, "username": "ryan_dev", "active": false, "score": 167.80},
+    {"id": 9, "username": "katie_star", "active": true, "score": 512.20},
+    {"id": 10, "username": "mike_online", "active": true, "score": 301.75}
+]
