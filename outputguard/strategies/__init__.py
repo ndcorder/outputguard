@@ -6,6 +6,7 @@ from outputguard.strategies import (
     fix_closers,
     fix_commas,
     fix_ellipsis,
+    fix_inner_quotes,
     fix_keys,
     fix_newlines,
     fix_quotes,
@@ -28,6 +29,7 @@ ALL_STRATEGIES: list[tuple[str, callable]] = [
     (fix_truncated.NAME, fix_truncated.apply),
     (fix_ellipsis.NAME, fix_ellipsis.apply),
     (fix_unicode.NAME, fix_unicode.apply),
+    (fix_inner_quotes.NAME, fix_inner_quotes.apply),
     (fix_closers.NAME, fix_closers.apply),
     (fix_newlines.NAME, fix_newlines.apply),
 ]
@@ -44,6 +46,7 @@ STRATEGY_DESCRIPTIONS: dict[str, str] = {
     fix_truncated.NAME: fix_truncated.DESCRIPTION,
     fix_ellipsis.NAME: fix_ellipsis.DESCRIPTION,
     fix_unicode.NAME: fix_unicode.DESCRIPTION,
+    fix_inner_quotes.NAME: fix_inner_quotes.DESCRIPTION,
     fix_closers.NAME: fix_closers.DESCRIPTION,
     fix_newlines.NAME: fix_newlines.DESCRIPTION,
 }

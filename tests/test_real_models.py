@@ -111,17 +111,11 @@ fixture_files = get_fixture_files()
 class TestRealModelFixtures:
     """Test outputguard against saved real LLM outputs."""
 
-    KNOWN_REPAIR_FAILURES = {
-        "deepseek__deepseek-chat-v3.1__enum_values",  # unescaped quotes inside string value
-    }
-
     @pytest.mark.parametrize(
         "fixture_path", fixture_files, ids=[f.stem for f in fixture_files]
     )
     def test_repair_produces_valid_json(self, fixture_path: Path):
         """Every real LLM output should be repairable to valid JSON."""
-        if fixture_path.stem in self.KNOWN_REPAIR_FAILURES:
-            pytest.xfail("Known unhandled edge case (unescaped inner quotes)")
         raw = fixture_path.read_text()
         result = repair(raw)
         if result.parse_error:
@@ -134,7 +128,6 @@ class TestRealModelFixtures:
     # Model outputs that returned a completely wrong structure (not an outputguard bug)
     KNOWN_MODEL_MISMATCHES = {
         "google__gemini-2.5-flash__nested_array",  # returns bare array instead of {items, metadata}
-        "deepseek__deepseek-chat-v3.1__enum_values",  # unescaped quotes inside string value
     }
 
     @pytest.mark.parametrize(
