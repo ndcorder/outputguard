@@ -5,7 +5,7 @@
 [![Python](https://img.shields.io/badge/python-3.10+-blue)](https://github.com/ndcorder/outputguard)
 [![CI](https://github.com/ndcorder/outputguard/actions/workflows/ci.yml/badge.svg)](https://github.com/ndcorder/outputguard/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Tests](https://img.shields.io/badge/tests-1,996-brightgreen)](#tested-against-288-real-llm-models)
+[![Tests](https://img.shields.io/badge/tests-2,001-brightgreen)](#tested-against-288-real-llm-models)
 
 ---
 
@@ -59,6 +59,10 @@ need exact behavior, API signatures, or command examples:
 
 - [API guide](docs/api.md) - choose the right function and understand result
   objects.
+- [Getting started](docs/getting-started.md) - first validation, repair, retry,
+  guarded generation, and CLI workflows.
+- [Concepts](docs/concepts.md) - the mental model behind parsing, validation,
+  repair, retries, and formats.
 - [Formats guide](docs/formats.md) - JSON, YAML, TOML, Python literals, `auto`,
   and `forced-json-off`.
 - [Guarded generation guide](docs/guarded-generation.md) - wrap an LLM call with
@@ -66,6 +70,11 @@ need exact behavior, API signatures, or command examples:
 - [Batch processing guide](docs/batch-processing.md) - validate or repair many
   outputs in one call or from the CLI.
 - [CLI guide](docs/cli.md) - commands, flags, examples, and exit codes.
+- [Recipes](docs/recipes.md) - copy-paste patterns for apps, evals, CI, and
+  privacy-sensitive retries.
+- [Troubleshooting](docs/troubleshooting.md) - common symptoms and fixes.
+- [Migration to 2.0](docs/migration-2.0.md) - compatibility notes and adoption
+  checklist.
 - [Changelog](CHANGELOG.md) - release notes and 2.0 migration notes.
 
 ## What's New in 2.0
@@ -154,7 +163,7 @@ def get_structured_output(llm, prompt, schema, max_retries=3):
     raise RuntimeError("Failed to get valid output")
 ```
 
-The retry prompt tells the LLM exactly what went wrong — which fields are missing, which types are incorrect, and what the schema expects. Works with any LLM provider.
+The retry prompt tells the LLM exactly what went wrong — which fields are missing, which types are incorrect, and what the schema expects. Works with any LLM provider. By default it includes the previous model output under `Original output:`; pass `include_message_history=False` when you want retry prompts without that message history.
 
 ### Guarded Generation
 
@@ -177,7 +186,7 @@ else:
     print(result.errors)
 ```
 
-`guarded_generate()` validates each generation, repairs when possible, feeds targeted retry prompts back to the generator, and returns every attempt for observability. Pass `repair=False` for strict validation-only loops or `throw_on_failure=True` when invalid output should raise `GuardedGenerationError`.
+`guarded_generate()` validates each generation, repairs when possible, feeds targeted retry prompts back to the generator, and returns every attempt for observability. Pass `repair=False` for strict validation-only loops, `include_message_history=False` to omit prior model output from retry prompts, or `throw_on_failure=True` when invalid output should raise `GuardedGenerationError`.
 
 Async clients can use `guarded_generate_async()` with the same options.
 
@@ -321,7 +330,7 @@ The 63 repaired outputs were fixed automatically — mostly `strip_fences` (mark
 
 ### Test Suite
 
-**1,996 tests** across 9 testing dimensions:
+**2,001 tests** across 9 testing dimensions:
 
 | Category | Tests | What it covers |
 |---|---|---|
@@ -337,7 +346,7 @@ The 63 repaired outputs were fixed automatically — mostly `strip_fences` (mark
 
 ```bash
 uv run pytest tests/ -q
-# 1,996 passed
+# 2,001 passed
 ```
 
 ## Configuration
@@ -400,7 +409,7 @@ print(report.step_diffs()) # Per-strategy diffs for verbose logging
 | `repair(text, format="json")` | `RepairResult` | Auto-repair malformed structured output |
 | `validate_and_repair(text, schema, format="json")` | `ValidationResult` | Validate, repair if needed, re-validate |
 | `parse(text, schema, format="json")` | `dict | list | scalar` | Validate, repair, and return parsed data |
-| `retry_prompt(text, schema, errors, format="json")` | `str` | Generate a correction prompt for the LLM |
+| `retry_prompt(text, schema, errors, format="json", include_message_history=True)` | `str` | Generate a correction prompt for the LLM |
 | `guarded_generate(...)` | `GuardedGenerateResult` | Retry an arbitrary generator until output validates |
 | `guarded_generate_async(...)` | `GuardedGenerateResult` | Async variant for async LLM clients |
 | `validate_batch(texts, schema, ...)` | `BatchValidationResult` | Validate many outputs and return aggregate diagnostics |
@@ -444,7 +453,7 @@ outputguard [COMMAND] [OPTIONS]
 | `repair INPUT --strategies strip_fences,fix_commas` | Repair with specific strategies |
 | `repair INPUT --input-format forced-json-off` | Repair auto-detected non-JSON output |
 | `batch INPUT -s SCHEMA --repair` | Validate a JSON array of output strings |
-| `retry-prompt INPUT -s SCHEMA` | Generate a correction prompt |
+| `retry-prompt INPUT -s SCHEMA [--no-message-history]` | Generate a correction prompt |
 | `strategies` | List all available strategies |
 
 All commands accept `--input-format` for the data format, `-f json` for machine-readable command output, `-o FILE` to write to a file, and `-` as INPUT to read from stdin.
@@ -460,7 +469,7 @@ All commands accept `--input-format` for the data format, `-f json` for machine-
 | Batch processing | Ad hoc scripts | `validate_batch()`, `repair_batch()`, CLI `batch` |
 | Confidence scoring | No | Yes |
 | Truncated JSON | Breaks | Recovers |
-| Tests | Probably zero | **1,996** (incl. 288 real LLM models and format matrix coverage) |
+| Tests | Probably zero | **2,001** (incl. 288 real LLM models and format matrix coverage) |
 | LLM dependencies | — | None (works with any provider) |
 | Footprint | — | Small runtime set: click, jsonschema, PyYAML, rich, plus tomli on Python 3.10 |
 

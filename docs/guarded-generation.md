@@ -95,6 +95,22 @@ For each attempt, OutputGuard:
 The original prompt remains yours. OutputGuard only builds retry feedback when
 an attempt fails validation or repair.
 
+## Message History in Retry Prompts
+
+Retry prompts include the previous model output by default. That gives the model
+more context for fixing its own response, but it can add tokens or repeat data
+you do not want to send again. Pass `include_message_history=False` to omit the
+`Original output:` section from generated retry prompts.
+
+```python
+result = guarded_generate(
+    prompt="Return a JSON object with name and score.",
+    schema=schema,
+    generate=generate,
+    include_message_history=False,
+)
+```
+
 ## Result Fields
 
 Guarded generation returns `GuardedGenerateResult`.
@@ -148,4 +164,3 @@ result = guarded_generate(
     on_attempt=observe,
 )
 ```
-

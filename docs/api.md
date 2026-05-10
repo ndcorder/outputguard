@@ -166,6 +166,19 @@ if not result.valid:
 The returned string explains what failed and asks the model to try again with
 schema-compatible structured output.
 
+By default, the retry prompt includes the previous model output in an
+`Original output:` section. Turn that off when the prior output is too large or
+should not be sent back to the model:
+
+```python
+prompt = retry_prompt(
+    raw_text,
+    schema,
+    result.errors,
+    include_message_history=False,
+)
+```
+
 ## `guarded_generate()`
 
 Use this when you want OutputGuard to coordinate generation, validation, repair,
@@ -183,6 +196,7 @@ result = guarded_generate(
     generate=generate,
     format="yaml",
     max_retries=2,
+    include_message_history=False,
 )
 
 print(result.valid)
