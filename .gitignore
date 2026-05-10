@@ -6,3 +6,8 @@ build/
 .venv/
 .pytest_cache/
 .coverage
+MARKETING.md
+PROMPT.md
+SPEC.md
+tests/all_model_ids.json
+tests/fetch_all_models.py
