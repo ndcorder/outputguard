@@ -1,6 +1,6 @@
 [project]
 name = "outputguard"
-version = "0.2.0"
+version = "1.0.0"
 description = "Validate, repair, and retry LLM structured outputs"
 readme = "README.md"
 requires-python = ">=3.10"
