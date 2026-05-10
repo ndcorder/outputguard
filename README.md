@@ -207,7 +207,7 @@ The 61 repaired outputs were fixed automatically — 55 needed `strip_fences`, 4
 
 </details>
 
-> All 290 raw model outputs are committed as [test fixtures](tests/fixtures/real_outputs/). Run `python -m tests.real_model_runner sweep` to re-test against every model yourself.
+> All 290 raw model outputs are committed as [test fixtures](https://github.com/ndcorder/outputguard/tree/master/tests/fixtures/real_outputs). Run `python -m tests.real_model_runner sweep` to re-test against every model yourself.
 
 ### Test Suite
 
@@ -339,7 +339,7 @@ outputguard has no opinion about which LLM you use. It operates on strings and s
 
 ## Examples
 
-See the [`examples/`](examples/) directory for complete, runnable scripts:
+See the [`examples/`](https://github.com/ndcorder/outputguard/tree/master/examples) directory for complete, runnable scripts:
 
 - **[basic_usage.py](examples/basic_usage.py)** — Core validate/repair workflow
 - **[retry_loop.py](examples/retry_loop.py)** — Retry pattern with correction prompts
