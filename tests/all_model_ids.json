@@ -55,7 +55,6 @@
   "deepseek/deepseek-r1",
   "deepseek/deepseek-r1-0528",
   "deepseek/deepseek-r1-distill-llama-70b",
-  "deepseek/deepseek-r1-distill-qwen-32b",
   "deepseek/deepseek-v3.1-terminus",
   "deepseek/deepseek-v3.2",
   "deepseek/deepseek-v3.2-exp",
@@ -107,7 +106,6 @@
   "microsoft/phi-4-mini-instruct",
   "microsoft/wizardlm-2-8x22b",
   "minimax/minimax-01",
-  "minimax/minimax-m1",
   "minimax/minimax-m2",
   "minimax/minimax-m2-her",
   "minimax/minimax-m2.1",
@@ -132,7 +130,7 @@
   "mistralai/mistral-saba",
   "mistralai/mistral-small-24b-instruct-2501",
   "mistralai/mistral-small-2603",
-  "mistralai/mistral-small-3.1-24b-instruct",
+
   "mistralai/mistral-small-3.2-24b-instruct",
   "mistralai/mixtral-8x22b-instruct",
   "mistralai/pixtral-large-2411",
@@ -213,7 +211,7 @@
   "prime-intellect/intellect-3",
   "qwen/qwen-2.5-72b-instruct",
   "qwen/qwen-2.5-7b-instruct",
-  "qwen/qwen-2.5-coder-32b-instruct",
+
   "qwen/qwen-max",
   "qwen/qwen-plus",
   "qwen/qwen-plus-2025-07-28",

@@ -10,9 +10,17 @@ _FENCE_RE = re.compile(
     re.DOTALL,
 )
 
+_UNCLOSED_FENCE_RE = re.compile(
+    r"```[a-zA-Z]*\s*\n(.*)",
+    re.DOTALL,
+)
+
 
 def apply(text: str) -> str:
     m = _FENCE_RE.search(text)
+    if m:
+        return m.group(1).strip()
+    m = _UNCLOSED_FENCE_RE.search(text)
     if m:
         return m.group(1).strip()
     return text

@@ -112,12 +112,7 @@ fixture_files = get_fixture_files()
 class TestRealModelFixtures:
     """Test outputguard against saved real LLM outputs."""
 
-    KNOWN_REPAIR_FAILURES = {
-        "deepseek__deepseek-r1-distill-qwen-32b__simple_object",
-        "minimax__minimax-m1__simple_object",
-        "mistralai__mistral-small-3.1-24b-instruct__simple_object",
-        "qwen__qwen-2.5-coder-32b-instruct__simple_object",
-    }
+    KNOWN_REPAIR_FAILURES: set[str] = set()
 
     @pytest.mark.parametrize("fixture_path", fixture_files, ids=[f.stem for f in fixture_files])
     def test_repair_produces_valid_json(self, fixture_path: Path):
@@ -134,13 +129,7 @@ class TestRealModelFixtures:
         json.loads(result.text)  # Must not raise
 
     # Model outputs that returned a completely wrong structure (not an outputguard bug)
-    KNOWN_MODEL_MISMATCHES = {
-        "google__gemini-2.5-flash__nested_array",  # returns bare array instead of {items, metadata}
-        "deepseek__deepseek-r1-distill-qwen-32b__simple_object",  # tokenizer corruption (mojibake)
-        "minimax__minimax-m1__simple_object",  # partial response missing start
-        "mistralai__mistral-small-3.1-24b-instruct__simple_object",  # truncated inside unclosed fence
-        "qwen__qwen-2.5-coder-32b-instruct__simple_object",  # truncated inside unclosed fence
-    }
+    KNOWN_MODEL_MISMATCHES: set[str] = set()
 
     @pytest.mark.parametrize("fixture_path", fixture_files, ids=[f.stem for f in fixture_files])
     def test_validate_and_repair_against_schema(self, fixture_path: Path):

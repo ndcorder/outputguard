@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-05-09T11:27:40.631207",
+  "timestamp": "2026-05-09T20:47:29.390586",
   "scenario": "simple_object",
-  "total_models": 305,
-  "tested": 290,
-  "valid": 225,
+  "total_models": 303,
+  "tested": 289,
+  "valid": 226,
   "repaired": 61,
-  "failed": 4,
+  "failed": 2,
   "success_rate": "99%",
   "results": [
     {
@@ -368,13 +368,6 @@
       ]
     },
     {
-      "model": "deepseek/deepseek-r1-distill-qwen-32b",
-      "valid_immediately": false,
-      "repaired": false,
-      "failed": true,
-      "strategies": []
-    },
-    {
       "model": "deepseek/deepseek-v3.1-terminus",
       "valid_immediately": false,
       "repaired": true,
@@ -531,6 +524,7 @@
       "repaired": true,
       "failed": false,
       "strategies": [
+        "strip_fences",
         "extract_json"
       ]
     },
@@ -764,13 +758,6 @@
       "valid_immediately": true,
       "repaired": false,
       "failed": false,
-      "strategies": []
-    },
-    {
-      "model": "minimax/minimax-m1",
-      "valid_immediately": false,
-      "repaired": false,
-      "failed": true,
       "strategies": []
     },
     {
@@ -1777,6 +1764,13 @@
     },
     {
       "model": "qwen/qwen3.5-35b-a3b",
+      "valid_immediately": true,
+      "repaired": false,
+      "failed": false,
+      "strategies": []
+    },
+    {
+      "model": "qwen/qwen3.5-397b-a17b",
       "valid_immediately": true,
       "repaired": false,
       "failed": false,

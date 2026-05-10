@@ -525,7 +525,7 @@ class TestStrategyRegistry:
     """Tests for strategy module: ALL_STRATEGIES, get_strategy, etc."""
 
     def test_all_strategies_count(self):
-        assert len(ALL_STRATEGIES) == 14
+        assert len(ALL_STRATEGIES) == 15
 
     def test_all_strategies_have_descriptions(self):
         for name, _fn in ALL_STRATEGIES:
@@ -542,7 +542,7 @@ class TestStrategyRegistry:
 
     def test_get_strategies_none_returns_all(self):
         strategies = get_strategies(None)
-        assert len(strategies) == 14
+        assert len(strategies) == 15
 
     def test_get_strategies_subset(self):
         strategies = get_strategies(["strip_fences", "fix_commas"])
@@ -577,7 +577,7 @@ class TestStrategyRegistry:
         assert strategy_names == desc_names
 
     def test_strategy_order_strip_fences_first(self):
-        assert ALL_STRATEGIES[0][0] == "strip_fences"
+        assert ALL_STRATEGIES[0][0] == "fix_encoding"
 
 
 # ═════════════════════════════════════════════════════════════════════

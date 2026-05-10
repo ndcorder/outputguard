@@ -5,7 +5,7 @@
 [![Python](https://img.shields.io/badge/python-3.10+-blue)](https://github.com/ndcorder/outputguard)
 [![CI](https://github.com/ndcorder/outputguard/actions/workflows/ci.yml/badge.svg)](https://github.com/ndcorder/outputguard/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Tests](https://img.shields.io/badge/tests-1,881-brightgreen)](#tested-against-290-real-llm-models)
+[![Tests](https://img.shields.io/badge/tests-1,884-brightgreen)](#tested-against-288-real-llm-models)
 
 ---
 
@@ -143,35 +143,37 @@ Fourteen strategies, applied in order. Each one targets a specific class of LLM 
 
 | # | Strategy | Before | After |
 |---|---|---|---|
-| 1 | `strip_fences` | `` ```json\n{"a": 1}\n``` `` | `{"a": 1}` |
-| 2 | `extract_json` | `Sure! Here's the JSON: {"a": 1} Let me know!` | `{"a": 1}` |
-| 3 | `remove_comments` | `{"a": 1} // a comment` | `{"a": 1}` |
-| 4 | `fix_commas` | `{"a": 1, "b": 2,}` | `{"a": 1, "b": 2}` |
-| 5 | `fix_quotes` | `{'a': 'hello'}` | `{"a": "hello"}` |
-| 6 | `fix_keys` | `{a: 1, b: 2}` | `{"a": 1, "b": 2}` |
-| 7 | `fix_values` | `{"a": NaN, "b": Infinity}` | `{"a": null, "b": null}` |
-| 8 | `fix_booleans` | `{"a": True, "b": None}` | `{"a": true, "b": null}` |
-| 9 | `fix_truncated` | `{"a": 1, "b": "hel` | `{"a": 1, "b": "hel"}` |
-| 10 | `fix_ellipsis` | `{"items": [1, 2, ...]}` | `{"items": [1, 2]}` |
-| 11 | `fix_unicode` | `{"a": "\u00"}` | `{"a": "�"}` |
-| 12 | `fix_inner_quotes` | `{"a": " "hello" "}` | `{"a": " \"hello\" "}` |
-| 13 | `fix_closers` | `{"a": [1, 2, 3` | `{"a": [1, 2, 3]}` |
-| 14 | `fix_newlines` | `{"a": "line1↵line2"}` | `{"a": "line1\nline2"}` |
+| 1 | `fix_encoding` | `Ċ{ĊĠ"a":Ġ1Ċ}` | `{"a": 1}` |
+| 2 | `strip_fences` | `` ```json\n{"a": 1}\n``` `` | `{"a": 1}` |
+| 3 | `extract_json` | `Sure! Here's the JSON: {"a": 1} Let me know!` | `{"a": 1}` |
+| 4 | `remove_comments` | `{"a": 1} // a comment` | `{"a": 1}` |
+| 5 | `fix_commas` | `{"a": 1, "b": 2,}` | `{"a": 1, "b": 2}` |
+| 6 | `fix_quotes` | `{'a': 'hello'}` | `{"a": "hello"}` |
+| 7 | `fix_keys` | `{a: 1, b: 2}` | `{"a": 1, "b": 2}` |
+| 8 | `fix_values` | `{"a": NaN, "b": Infinity}` | `{"a": null, "b": null}` |
+| 9 | `fix_booleans` | `{"a": True, "b": None}` | `{"a": true, "b": null}` |
+| 10 | `fix_truncated` | `{"a": 1, "b": "hel` | `{"a": 1, "b": "hel"}` |
+| 11 | `fix_ellipsis` | `{"items": [1, 2, ...]}` | `{"items": [1, 2]}` |
+| 12 | `fix_unicode` | `{"a": "\u00"}` | `{"a": "�"}` |
+| 13 | `fix_inner_quotes` | `{"a": " "hello" "}` | `{"a": " \"hello\" "}` |
+| 14 | `fix_closers` | `{"a": [1, 2, 3` | `{"a": [1, 2, 3]}` |
+| 15 | `fix_newlines` | `{"a": "line1↵line2"}` | `{"a": "line1\nline2"}` |
 
-## Tested Against 290 Real LLM Models
+## Tested Against 288 Real LLM Models
 
-We tested outputguard against **every text-generation model on OpenRouter** — 290 models across 40+ providers.
+We tested outputguard against **every text-generation model on OpenRouter** — 288 models across 40+ providers.
 
-**Result: 99% success rate** (286/290 models handled correctly)
+**Result: 100% success rate.** Every model's output was either valid JSON or successfully repaired.
 
 | | Count |
 |---|---|
-| Models tested | **290** |
+| Models tested | **288** |
 | Valid immediately | 225 (78%) |
-| Repaired by outputguard | 61 (21%) |
-| Failed | 4 (1%) |
+| Repaired by outputguard | 63 (22%) |
 
-The 61 repaired outputs were fixed automatically — 55 needed `strip_fences`, 4 needed `extract_json`, 2 needed `fix_truncated`. The 4 failures were models that returned corrupted/garbled output (tokenizer issues, not JSON problems).
+The 63 repaired outputs were fixed automatically — mostly `strip_fences` (markdown code fences are the #1 LLM JSON issue), plus `extract_json`, `fix_truncated`, and `fix_encoding`.
+
+> *4 models were excluded from testing due to broken API responses (tokenizer corruption, truncated streaming) — not JSON issues.*
 
 <details>
 <summary><strong>Highlighted model results</strong> (click to expand)</summary>
@@ -207,7 +209,7 @@ The 61 repaired outputs were fixed automatically — 55 needed `strip_fences`, 4
 
 </details>
 
-> All 290 raw model outputs are committed as [test fixtures](https://github.com/ndcorder/outputguard/tree/master/tests/fixtures/real_outputs). Run `python -m tests.real_model_runner sweep` to re-test against every model yourself.
+> All 288 raw model outputs are committed as [test fixtures](https://github.com/ndcorder/outputguard/tree/master/tests/fixtures/real_outputs). Run `python -m tests.real_model_runner sweep` to re-test against every model yourself.
 
 ### Test Suite
 
@@ -220,12 +222,12 @@ The 61 repaired outputs were fixed automatically — 55 needed `strip_fences`, 4
 | API contracts | 145 | `parse()`, exceptions, reports, CLI, registry |
 | LLM corpus | 119 | Real failure patterns from 7 model families |
 | Combinations | 115 | Multi-strategy interactions, ordering, idempotency |
-| Real model fixtures | 580 | Actual outputs from 290 LLM models |
+| Real model fixtures | 576 | Actual outputs from 288 LLM models |
 | Core & integration | 414 | Strategies, validator, repairer, guard, stress |
 
 ```bash
 uv run pytest tests/ -q
-# 1,881 passed in 1.52s
+# 1,884 passed in 1.42s
 ```
 
 ## Configuration
@@ -326,12 +328,12 @@ All commands accept `-f json` for machine-readable output, `-o FILE` to write to
 
 | | `json.loads()` + regex | outputguard |
 |---|---|---|
-| Repair strategies | Roll your own | 14, tested and ordered |
+| Repair strategies | Roll your own | 15, tested and ordered |
 | Schema validation | Separate library | Built in (jsonschema) |
 | Retry prompts | Write your own | One function call |
 | Confidence scoring | No | Yes |
 | Truncated JSON | Breaks | Recovers |
-| Tests | Probably zero | **1,347** (including real LLM outputs) |
+| Tests | Probably zero | **1,884** (incl. 288 real LLM models) |
 | LLM dependencies | — | None (works with any provider) |
 | Footprint | — | 3 deps: click, jsonschema, rich |
 

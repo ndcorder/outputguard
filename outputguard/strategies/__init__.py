@@ -8,6 +8,7 @@ from outputguard.strategies import (
     fix_closers,
     fix_commas,
     fix_ellipsis,
+    fix_encoding,
     fix_inner_quotes,
     fix_keys,
     fix_newlines,
@@ -22,6 +23,7 @@ from outputguard.strategies import (
 Strategy = Callable[[str], str]
 
 ALL_STRATEGIES: list[tuple[str, Strategy]] = [
+    (fix_encoding.NAME, fix_encoding.apply),
     (strip_fences.NAME, strip_fences.apply),
     (extract_json.NAME, extract_json.apply),
     (remove_comments.NAME, remove_comments.apply),
@@ -49,6 +51,7 @@ STRATEGY_DESCRIPTIONS: dict[str, str] = {
     fix_booleans.NAME: fix_booleans.DESCRIPTION,
     fix_truncated.NAME: fix_truncated.DESCRIPTION,
     fix_ellipsis.NAME: fix_ellipsis.DESCRIPTION,
+    fix_encoding.NAME: fix_encoding.DESCRIPTION,
     fix_unicode.NAME: fix_unicode.DESCRIPTION,
     fix_inner_quotes.NAME: fix_inner_quotes.DESCRIPTION,
     fix_closers.NAME: fix_closers.DESCRIPTION,
