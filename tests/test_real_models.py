@@ -162,7 +162,7 @@ LIVE_MODELS = [
     "anthropic/claude-sonnet-4.6",
     "google/gemini-2.5-flash",
     "mistralai/mistral-medium-3-5",
-    "deepseek/deepseek-v3.2",
+    "deepseek/deepseek-chat",
     "qwen/qwen3.6-flash",
     "x-ai/grok-4.1-fast",
 ]
@@ -174,7 +174,7 @@ def call_model(model: str, prompt: str) -> str:
         {
             "model": model,
             "messages": [{"role": "user", "content": prompt}],
-            "temperature": 0.7,
+            "temperature": 0,
         }
     ).encode()
     req = urllib.request.Request(
