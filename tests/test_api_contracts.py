@@ -723,6 +723,31 @@ class TestRetryPrompt:
         prompt = retry_prompt('{"key": "value"}', OBJECT_SCHEMA, errors)
         assert "key" in prompt
 
+    def test_prompt_can_omit_original_output(self):
+        errors = [ValidationError(message="err", path="$", schema_path="")]
+        prompt = retry_prompt(
+            '{"key": "sensitive"}',
+            OBJECT_SCHEMA,
+            errors,
+            include_message_history=False,
+        )
+        assert "Original output:" not in prompt
+        assert "sensitive" not in prompt
+        assert "err" in prompt
+
+    def test_guard_method_can_omit_original_output(self):
+        guard = OutputGuard()
+        errors = [ValidationError(message="err", path="$", schema_path="")]
+        prompt = guard.retry_prompt(
+            '{"key": "sensitive"}',
+            OBJECT_SCHEMA,
+            errors,
+            include_message_history=False,
+        )
+        assert "Original output:" not in prompt
+        assert "sensitive" not in prompt
+        assert "err" in prompt
+
     def test_prompt_short_input_not_truncated(self):
         short_text = '{"a": 1}'
         errors = [ValidationError(message="err", path="$", schema_path="")]

@@ -48,9 +48,19 @@ def parse(text: str, schema: dict, format: str = "json"):
 
 
 def retry_prompt(
-    text: str, schema: dict, errors: list[ValidationError], format: str = "json"
+    text: str,
+    schema: dict,
+    errors: list[ValidationError],
+    format: str = "json",
+    include_message_history: bool = True,
 ) -> str:
-    return _default_guard.retry_prompt(text, schema, errors, format=format)
+    return _default_guard.retry_prompt(
+        text,
+        schema,
+        errors,
+        format=format,
+        include_message_history=include_message_history,
+    )
 
 
 __all__ = [

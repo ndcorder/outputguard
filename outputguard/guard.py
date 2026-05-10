@@ -100,6 +100,17 @@ class OutputGuard:
         )
 
     def retry_prompt(
-        self, text: str, schema: dict, errors: list[ValidationError], format: str | None = None
+        self,
+        text: str,
+        schema: dict,
+        errors: list[ValidationError],
+        format: str | None = None,
+        include_message_history: bool = True,
     ) -> str:
-        return _retry.retry_prompt(text, schema, errors, format or self.format)
+        return _retry.retry_prompt(
+            text,
+            schema,
+            errors,
+            format or self.format,
+            include_message_history=include_message_history,
+        )

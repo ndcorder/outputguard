@@ -58,7 +58,11 @@ def _truncate(text: str, max_len: int = 500) -> str:
 
 
 def retry_prompt(
-    text: str, schema: dict, errors: list[ValidationError], format: str = "json"
+    text: str,
+    schema: dict,
+    errors: list[ValidationError],
+    format: str = "json",
+    include_message_history: bool = True,
 ) -> str:
     """Generate a correction prompt for the LLM."""
     label = format_label(format)
@@ -79,9 +83,10 @@ def retry_prompt(
         parts.append("The expected schema requires:")
         parts.extend(schema_summary)
 
-    parts.append("")
-    parts.append("Original output:")
-    parts.append(_truncate(text))
+    if include_message_history:
+        parts.append("")
+        parts.append("Original output:")
+        parts.append(_truncate(text))
     parts.append("")
     parts.append(f"Return ONLY the corrected {label}.")
 

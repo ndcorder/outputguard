@@ -33,3 +33,16 @@ def test_long_output_truncated():
     prompt = retry_prompt(long_text, {"type": "object"}, errors)
     assert "..." in prompt
     assert len(prompt) < len(long_text) + 500
+
+
+def test_can_omit_message_history():
+    errors = [ValidationError(message="err", path="$", schema_path="")]
+    prompt = retry_prompt(
+        '{"secret": "do not repeat"}',
+        {"type": "object"},
+        errors,
+        include_message_history=False,
+    )
+    assert "Original output:" not in prompt
+    assert "do not repeat" not in prompt
+    assert "err" in prompt

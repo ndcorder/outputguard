@@ -72,6 +72,17 @@ def test_retry_prompt_command(runner, schema_path, invalid_json_file):
     assert "error" in result.output.lower() or "Error" in result.output
 
 
+def test_retry_prompt_command_can_omit_message_history(runner, schema_path, invalid_json_file):
+    result = runner.invoke(
+        cli,
+        ["retry-prompt", invalid_json_file, "-s", schema_path, "--no-message-history"],
+    )
+    assert result.exit_code == 0
+    assert "Original output:" not in result.output
+    assert "not a number" not in result.output
+    assert "error" in result.output.lower() or "Error" in result.output
+
+
 def test_json_format(runner, schema_path, valid_json_file):
     result = runner.invoke(cli, ["validate", valid_json_file, "-s", schema_path, "-f", "json"])
     assert result.exit_code == 0

@@ -73,6 +73,27 @@ def test_guarded_generate_can_disable_repair_for_strict_validation() -> None:
     assert result.errors[0].path == "$"
 
 
+def test_guarded_generate_can_omit_message_history_from_retry_prompt() -> None:
+    prompts: list[str] = []
+
+    def generate(prompt: str, _context: outputguard.GuardedGenerateContext) -> str:
+        prompts.append(prompt)
+        return '{"name": "Sensitive Name"}'
+
+    outputguard.guarded_generate(
+        prompt="Return user JSON",
+        schema=SIMPLE_SCHEMA,
+        generate=generate,
+        max_retries=1,
+        include_message_history=False,
+    )
+
+    assert len(prompts) == 2
+    assert "age" in prompts[1]
+    assert "Original output:" not in prompts[1]
+    assert "Sensitive Name" not in prompts[1]
+
+
 def test_guarded_generate_uses_output_guard_defaults_and_observer() -> None:
     seen_attempts: list[int] = []
     guard = OutputGuard(format="yaml")

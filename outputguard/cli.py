@@ -278,13 +278,30 @@ def batch(input_path: str, schema_path: str, do_repair: bool, input_format: str,
     show_default=True,
     help="Structured data format to parse.",
 )
-def retry_prompt(input_path: str, schema_path: str, input_format: str) -> None:
+@click.option(
+    "--message-history/--no-message-history",
+    default=True,
+    show_default=True,
+    help="Include the original output in the retry prompt.",
+)
+def retry_prompt(
+    input_path: str,
+    schema_path: str,
+    input_format: str,
+    message_history: bool,
+) -> None:
     """Generate a retry prompt for invalid structured output from INPUT."""
     text = _read_input(input_path)
     schema = _load_schema(schema_path)
 
     result = outputguard.validate(text, schema, format=input_format)
-    prompt = outputguard.retry_prompt(text, schema, result.errors, format=input_format)
+    prompt = outputguard.retry_prompt(
+        text,
+        schema,
+        result.errors,
+        format=input_format,
+        include_message_history=message_history,
+    )
     click.echo(prompt)
     sys.exit(0)
 

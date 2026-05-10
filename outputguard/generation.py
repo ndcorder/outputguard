@@ -62,6 +62,7 @@ def guarded_generate(
     max_retries: int = 2,
     format: str | None = None,
     repair: bool = True,
+    include_message_history: bool = True,
     throw_on_failure: bool = False,
     on_attempt: AttemptObserver | None = None,
 ) -> GuardedGenerateResult:
@@ -110,7 +111,11 @@ def guarded_generate(
         previous_result = result
         if attempt_number < max_retries:
             current_prompt = active_guard.retry_prompt(
-                previous_text, schema, result.errors, data_format
+                previous_text,
+                schema,
+                result.errors,
+                data_format,
+                include_message_history=include_message_history,
             )
 
     failed = GuardedGenerateResult(
@@ -141,6 +146,7 @@ async def guarded_generate_async(
     max_retries: int = 2,
     format: str | None = None,
     repair: bool = True,
+    include_message_history: bool = True,
     throw_on_failure: bool = False,
     on_attempt: AsyncAttemptObserver | None = None,
 ) -> GuardedGenerateResult:
@@ -191,7 +197,11 @@ async def guarded_generate_async(
         previous_result = result
         if attempt_number < max_retries:
             current_prompt = active_guard.retry_prompt(
-                previous_text, schema, result.errors, data_format
+                previous_text,
+                schema,
+                result.errors,
+                data_format,
+                include_message_history=include_message_history,
             )
 
     failed = GuardedGenerateResult(
