@@ -1,8 +1,8 @@
-import json
 from collections import deque
 
 import jsonschema
 
+from outputguard.formats import FormatParseError, parse_document
 from outputguard.models import ValidationError, ValidationResult
 
 
@@ -17,11 +17,11 @@ def _deque_to_json_path(path: deque) -> str:
     return "".join(parts)
 
 
-def validate(text: str, schema: dict) -> ValidationResult:
-    """Parse text as JSON, validate against schema."""
+def validate(text: str, schema: dict, format: str = "json") -> ValidationResult:
+    """Parse text as a structured format, then validate against a JSON Schema."""
     try:
-        data = json.loads(text)
-    except json.JSONDecodeError as e:
+        data = parse_document(text, format)
+    except FormatParseError as e:
         return ValidationResult(
             valid=False,
             data=None,
@@ -33,6 +33,7 @@ def validate(text: str, schema: dict) -> ValidationResult:
                 )
             ],
             original_text=text,
+            format=format,
         )
 
     validator = jsonschema.Draft7Validator(schema)
@@ -53,4 +54,5 @@ def validate(text: str, schema: dict) -> ValidationResult:
         data=data,
         errors=errors,
         original_text=text,
+        format=format,
     )

@@ -1,6 +1,8 @@
 from dataclasses import dataclass, field
 from difflib import unified_diff
 
+from outputguard.formats import format_label
+
 
 @dataclass
 class StrategyApplication:
@@ -36,6 +38,7 @@ class RepairReport:
     success: bool
     steps: list[StrategyApplication] = field(default_factory=list)
     parse_error: str | None = None
+    format: str = "json"
 
     @property
     def strategies_applied(self) -> list[str]:
@@ -96,7 +99,7 @@ class RepairReport:
             return f"Repair failed after trying {len(self.steps)} strategies"
         applied = self.strategies_applied
         if not applied:
-            return "No repair needed — JSON was already valid"
+            return f"No repair needed — {format_label(self.format)} was already valid"
         return f"Repaired using {len(applied)} strategy(ies): {', '.join(applied)}"
 
     def step_diffs(self) -> str:

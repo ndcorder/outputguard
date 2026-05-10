@@ -13,12 +13,13 @@ class ValidationError:
 @dataclass
 class ValidationResult:
     valid: bool
-    data: dict | list | None = None
+    data: Any = None
     errors: list[ValidationError] = field(default_factory=list)
     repaired: bool = False
     strategies_applied: list[str] = field(default_factory=list)
     original_text: str = ""
     repaired_text: str = ""
+    format: str = "json"
 
 
 @dataclass
@@ -27,3 +28,4 @@ class RepairResult:
     text: str
     strategies_applied: list[str] = field(default_factory=list)
     parse_error: str | None = None
+    format: str = "json"

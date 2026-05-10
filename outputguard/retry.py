@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from outputguard.formats import format_label
 from outputguard.models import ValidationError
 
 
@@ -56,11 +57,14 @@ def _truncate(text: str, max_len: int = 500) -> str:
     return text[:half] + "\n...\n" + text[-half:]
 
 
-def retry_prompt(text: str, schema: dict, errors: list[ValidationError]) -> str:
+def retry_prompt(
+    text: str, schema: dict, errors: list[ValidationError], format: str = "json"
+) -> str:
     """Generate a correction prompt for the LLM."""
+    label = format_label(format)
     parts: list[str] = [
-        "The JSON output you provided does not match the required schema. "
-        "Please fix the following errors and return ONLY valid JSON with "
+        f"The {label} output you provided does not match the required schema. "
+        f"Please fix the following errors and return ONLY valid {label} with "
         "no additional text or markdown formatting:",
         "",
         "Errors found:",
@@ -79,6 +83,6 @@ def retry_prompt(text: str, schema: dict, errors: list[ValidationError]) -> str:
     parts.append("Original output:")
     parts.append(_truncate(text))
     parts.append("")
-    parts.append("Return ONLY the corrected JSON.")
+    parts.append(f"Return ONLY the corrected {label}.")
 
     return "\n".join(parts)

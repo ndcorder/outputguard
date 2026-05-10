@@ -1,23 +1,41 @@
+from typing import Any
+
+
 class OutputGuardError(Exception):
     """Base exception for all outputguard errors."""
 
 
 class ParseError(OutputGuardError):
-    """JSON could not be parsed even after repair attempts."""
+    """Structured output could not be parsed even after repair attempts."""
 
-    def __init__(self, message: str, original_text: str, parse_error: str | None = None):
+    def __init__(
+        self,
+        message: str,
+        original_text: str,
+        parse_error: str | None = None,
+        format: str = "json",
+    ):
         self.original_text = original_text
         self.parse_error = parse_error
+        self.format = format
         super().__init__(message)
 
 
 class SchemaValidationError(OutputGuardError):
-    """JSON parsed but doesn't match the schema, even after repair."""
+    """Structured output parsed but doesn't match the schema, even after repair."""
 
-    def __init__(self, message: str, data: dict | list, errors: list, schema: dict):
+    def __init__(
+        self,
+        message: str,
+        data: Any,
+        errors: list,
+        schema: dict,
+        format: str = "json",
+    ):
         self.data = data
         self.validation_errors = errors
         self.schema = schema
+        self.format = format
         super().__init__(message)
 
 

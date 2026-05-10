@@ -1,11 +1,24 @@
 [project]
 name = "outputguard"
-version = "1.0.0"
+version = "2.0.0"
 description = "Validate, repair, and retry LLM structured outputs"
 readme = "README.md"
 requires-python = ">=3.10"
 license = "MIT"
-keywords = ["llm", "json", "validation", "repair", "schema", "structured-output"]
+keywords = [
+    "llm",
+    "json",
+    "yaml",
+    "toml",
+    "python-literal",
+    "validation",
+    "repair",
+    "schema",
+    "structured-output",
+    "guardrails",
+    "batch-processing",
+    "forced-json-off",
+]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
@@ -22,7 +35,9 @@ classifiers = [
 dependencies = [
     "click>=8.1",
     "jsonschema>=4.20",
+    "pyyaml>=6.0",
     "rich>=13.0",
+    "tomli>=2.0; python_version < '3.11'",
 ]
 
 [project.urls]
@@ -41,6 +56,8 @@ dev = [
     "pytest-cov>=5.0",
     "ruff>=0.8",
     "mypy>=1.13",
+    "types-jsonschema>=4.20",
+    "types-PyYAML>=6.0",
 ]
 
 [tool.ruff.format]
