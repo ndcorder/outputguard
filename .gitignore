@@ -6,6 +6,7 @@ build/
 .venv/
 .pytest_cache/
 .coverage
+.idea/
 MARKETING.md
 PROMPT.md
 SPEC.md
