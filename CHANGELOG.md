@@ -5,6 +5,60 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.0] - Unreleased
+
+### Added
+
+- Format-aware validation and repair for JSON, YAML, TOML, and Python literal
+  outputs.
+- Format aliases for common user input: `yaml`/`yml`, `python-literal`/`python`
+  /`py`/`literal`, and `forced-json-off`/`forced_json_off`.
+- `auto` format detection for mixed structured-output workflows.
+- `forced-json-off` mode for prompts that explicitly prohibit JSON output.
+- `guarded_generate()` for wrapping synchronous LLM calls with generation,
+  validation, optional repair, retry feedback, and attempt history.
+- `guarded_generate_async()` for the same guarded-generation workflow with async
+  model clients.
+- `GuardedGenerationError` for guarded generation runs that exhaust their retry
+  budget when configured to throw.
+- `validate_batch()` for validating many model outputs in one call.
+- `repair_batch()` for repairing many model outputs in one call.
+- `outputguard batch` CLI command for validating or repairing a JSON array of
+  strings.
+- Dedicated docs for formats, API choices, guarded generation, batch
+  processing, and CLI usage.
+- Guarded-generation and batch-processing examples.
+
+### Changed
+
+- JSON remains the default format, so existing 1.x calls continue to use the
+  original JSON workflow unless a different `format` is passed.
+- README examples now show the main 2.0 workflows instead of only single-output
+  JSON repair.
+- The batch-processing example now uses the first-class batch APIs.
+- Package metadata now advertises YAML and TOML support.
+- Test coverage now includes format-specific behavior, guarded generation, batch
+  APIs, and CLI batch behavior.
+
+### Compatibility and Migration Notes
+
+- Existing calls such as `validate_and_repair(text, schema)`, `repair(text)`,
+  `validate(text, schema)`, and `parse(text, schema)` continue to default to
+  JSON.
+- To validate non-JSON output, pass `format="yaml"`, `format="toml"`,
+  `format="python-literal"`, `format="auto"`, or `format="forced-json-off"`.
+- Guarded generation does not add an LLM provider dependency. Pass your own sync
+  or async generation callable.
+- Batch CLI input must be a JSON array of strings. Use `--input-format` to choose
+  how each item should be interpreted.
+- For CI and evals, prefer explicit formats and strict validation so invalid
+  outputs fail loudly.
+
+### Verification
+
+- Python tests: 1,996 passing.
+- Static checks: `ruff check`, `ruff format --check`, and `mypy`.
+
 ## [0.2.0] - Unreleased
 
 ### Added

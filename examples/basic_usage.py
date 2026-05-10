@@ -1,4 +1,4 @@
-"""Basic outputguard usage — validate and repair LLM JSON output."""
+"""Basic outputguard usage — validate and repair LLM structured output."""
 
 import outputguard
 
@@ -39,3 +39,18 @@ print(f"Clean data: {result.data}")
 # Option 3: Repair without schema validation
 repair_result = outputguard.repair(llm_output)
 print(f"\nRepair-only result: {repair_result.text}")
+
+# YAML, TOML, Python literals, and forced-JSON-off outputs use the same API.
+yaml_output = """```yaml
+name: Alice
+age: 30
+hobbies:
+  - reading
+  - hiking
+```"""
+yaml_result = outputguard.validate_and_repair(yaml_output, schema, format="yaml")
+print(f"\nYAML valid after repair: {yaml_result.valid}")  # True
+
+python_output = "{'name': 'Alice', 'age': 30, 'hobbies': ['reading', 'hiking']}"
+python_result = outputguard.validate_and_repair(python_output, schema, format="forced-json-off")
+print(f"Forced-JSON-off valid: {python_result.valid}")  # True

@@ -1,8 +1,6 @@
-"""Batch processing — validate multiple LLM outputs with statistics."""
+"""Batch processing — validate multiple LLM outputs with built-in statistics."""
 
 import json
-from collections import Counter
-from dataclasses import dataclass
 
 import outputguard
 
@@ -29,62 +27,36 @@ batch = [
 ]
 
 
-@dataclass
-class BatchStats:
-    total: int = 0
-    valid_immediately: int = 0
-    repaired: int = 0
-    failed: int = 0
-    strategies_used: Counter = None
-
-    def __post_init__(self):
-        if self.strategies_used is None:
-            self.strategies_used = Counter()
-
-
-def process_batch(outputs: list[str], schema: dict) -> tuple[list[dict], BatchStats]:
-    """Process a batch of LLM outputs, collecting valid results and stats."""
-    stats = BatchStats()
-    results = []
-
-    for i, text in enumerate(outputs):
-        stats.total += 1
-        result = outputguard.validate_and_repair(text, schema)
-
-        if result.valid:
-            results.append(result.data)
-            if result.repaired:
-                stats.repaired += 1
-                for strategy in result.strategies_applied:
-                    stats.strategies_used[strategy] += 1
-                print(f"  [{i + 1}] Repaired ({', '.join(result.strategies_applied)})")
-            else:
-                stats.valid_immediately += 1
-                print(f"  [{i + 1}] Valid")
-        else:
-            stats.failed += 1
-            errors = "; ".join(e.message[:50] for e in result.errors)
-            print(f"  [{i + 1}] Failed: {errors}")
-
-    return results, stats
-
-
 print("Processing batch of LLM outputs...")
 print()
-results, stats = process_batch(batch, schema)
+batch_result = outputguard.validate_batch(batch, schema, repair=True)
+
+for result in batch_result.results:
+    number = result.index + 1
+    if result.valid and result.repaired:
+        print(f"  [{number}] Repaired ({', '.join(result.strategies_applied)})")
+    elif result.valid:
+        print(f"  [{number}] Valid")
+    else:
+        errors = "; ".join(error.message[:50] for error in result.errors)
+        print(f"  [{number}] Failed: {errors}")
 
 print("\n--- Batch Summary ---")
-print(f"Total:             {stats.total}")
-print(f"Valid immediately:  {stats.valid_immediately}")
-print(f"Repaired:          {stats.repaired}")
-print(f"Failed:            {stats.failed}")
-print(f"Success rate:      {(stats.valid_immediately + stats.repaired) / stats.total:.0%}")
+summary = batch_result.summary
+print(f"Total:        {summary.total}")
+print(f"Valid:        {summary.valid}")
+print(f"Repaired:     {summary.repaired}")
+print(f"Failed:       {summary.invalid}")
+print(f"Success rate: {summary.success_rate:.0%}")
 
-if stats.strategies_used:
+if summary.strategy_counts:
     print("\nMost-used strategies:")
-    for strategy, count in stats.strategies_used.most_common():
+    for strategy, count in sorted(
+        summary.strategy_counts.items(), key=lambda item: item[1], reverse=True
+    ):
         print(f"  {strategy}: {count}")
 
 print("\nValid results:")
-for r in results:
-    print(f"  {json.dumps(r)}")
+for result in batch_result.results:
+    if result.valid:
+        print(f"  {json.dumps(result.data)}")
