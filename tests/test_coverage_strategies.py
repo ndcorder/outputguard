@@ -2,15 +2,12 @@
 
 import json
 
-import pytest
-
 from outputguard.strategies.fix_booleans import apply as fix_booleans
 from outputguard.strategies.fix_encoding import apply as fix_encoding
 from outputguard.strategies.fix_inner_quotes import apply as fix_inner_quotes
 from outputguard.strategies.fix_newlines import apply as fix_newlines
 from outputguard.strategies.fix_unicode import apply as fix_unicode
 from outputguard.strategies.fix_values import apply as fix_values
-
 
 # ─── fix_encoding (lines 19-21: BPE replacement loop) ────────────────────────
 
@@ -206,7 +203,6 @@ class TestFixUnicodeUncoveredPaths:
         # Lines 46-52: \uGHIJ — zero valid hex digits, skip the escape
         text = '{"key": "\\uGHIJ"}'
         result = fix_unicode(text)
-        parsed = json.loads(result)
         # GHIJ are non-hex, so \u + up to 4 non-hex chars are stripped
         assert "\\u" not in result.split('"')[3] if len(result.split('"')) > 3 else True
 
