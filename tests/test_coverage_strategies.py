@@ -31,7 +31,7 @@ class TestFixEncodingBPEReplacement:
         assert fix_encoding('"ačb"') == '"a\rb"'
 
     def test_all_bpe_tokens_together(self):
-        assert fix_encoding('ĠĊĉč') == ' \n\t\r'
+        assert fix_encoding("ĠĊĉč") == " \n\t\r"
 
 
 # ─── fix_booleans (lines 20-21: backslash skip in _count_unescaped_quotes) ───
@@ -45,7 +45,7 @@ class TestFixBooleansEscapedQuotes:
     def test_escaped_quote_before_boolean(self):
         # String value contains \" (escaped quote) — the backslash before
         # the quote triggers the i+=2 skip in _count_unescaped_quotes
-        text = '{"val": "test\\\"", "flag": True}'
+        text = '{"val": "test\\"", "flag": True}'
         result = fix_booleans(text)
         assert "true" in result
         assert "True" not in result
@@ -65,7 +65,7 @@ class TestFixValuesEscapedQuotes:
     """Same pattern as fix_booleans — backslash skip in quote counter."""
 
     def test_escaped_quote_before_nan(self):
-        text = '{"val": "test\\\"", "x": NaN}'
+        text = '{"val": "test\\"", "x": NaN}'
         result = fix_values(text)
         assert "null" in result
         assert "NaN" not in result
@@ -100,7 +100,7 @@ class TestFixInnerQuotesEscapedAndClosing:
         # as the very last character of the entire text while inside a key string.
         text = '"key\\'
         result = fix_inner_quotes(text)
-        assert '\\' in result
+        assert "\\" in result
 
     def test_backslash_escape_in_value_string(self):
         # Value string with backslash escape — hits lines 61-65
@@ -130,7 +130,7 @@ class TestFixInnerQuotesEscapedAndClosing:
         # char of the entire text while scanning a value string (i+1 >= n).
         text = '{"key": "value\\'
         result = fix_inner_quotes(text)
-        assert 'value' in result
+        assert "value" in result
 
 
 # ─── fix_newlines (line 31: in-string closing quote; lines 26-29 escape pass-through) ─
@@ -200,7 +200,7 @@ class TestFixUnicodeUncoveredPaths:
         text = '{"key": "\\u0041"}'
         result = fix_unicode(text)
         # A is valid, should be preserved
-        assert '\\u0041' in result
+        assert "\\u0041" in result
 
     def test_no_hex_digits_unicode_escape(self):
         # Lines 46-52: \uGHIJ — zero valid hex digits, skip the escape
@@ -215,7 +215,7 @@ class TestFixUnicodeUncoveredPaths:
         text = '{"key": "\\u41z"}'
         result = fix_unicode(text)
         # \u41 has only 2 hex digits → padded to A
-        assert '\\u0041' in result
+        assert "\\u0041" in result
 
     def test_hex_escape_x41(self):
         # Lines 69-72: \x41 with 2 valid hex digits → chr(0x41) = 'A'
@@ -255,8 +255,8 @@ class TestFixUnicodeUncoveredPaths:
         # Lines 82-83: \n, \t etc. kept as-is
         text = '{"key": "line1\\nline2\\ttab"}'
         result = fix_unicode(text)
-        assert '\\n' in result
-        assert '\\t' in result
+        assert "\\n" in result
+        assert "\\t" in result
 
     def test_lone_backslash_at_string_end(self):
         # Lines 20-22: backslash at very end of string content (i+1 >= n)
@@ -280,7 +280,7 @@ class TestFixUnicodeUncoveredPaths:
         # Then _fix_string_content sees backslash at the end → lines 20-22.
         text = '"test\\'
         result = fix_unicode(text)
-        assert 'test' in result
+        assert "test" in result
 
     def test_mixed_unicode_issues(self):
         text = '{"key": "\\x41\\0\\uGHIJ"}'

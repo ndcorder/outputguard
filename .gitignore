@@ -10,5 +10,8 @@ build/
 MARKETING.md
 PROMPT.md
 SPEC.md
+.claude/
+docs/blog-post.md
+docs/launch-posts.md
 tests/all_model_ids.json
 tests/fetch_all_models.py

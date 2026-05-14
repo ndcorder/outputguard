@@ -50,6 +50,7 @@ class TestParseAutoAllFail:
     def test_auto_detect_fails_all_formats(self):
         from outputguard.formats import parse_document
         from outputguard.exceptions import ParseError
+
         # Text that is not valid JSON, TOML, Python literal, or YAML-parseable-to-a-dict
         # Actually, YAML will parse almost anything as a string. We need something that
         # fails all four. The auto path tries json -> toml -> python -> yaml.
@@ -114,7 +115,13 @@ class TestRetryPromptArraySchema:
             },
             "required": ["items"],
         }
-        errors = [ValidationError(message="Wrong type", path="$.items[0].id", schema_path="properties/items/items/properties/id/type")]
+        errors = [
+            ValidationError(
+                message="Wrong type",
+                path="$.items[0].id",
+                schema_path="properties/items/items/properties/id/type",
+            )
+        ]
         prompt = retry_prompt('{"items": []}', schema, errors)
         assert "items" in prompt
         assert "Wrong type" in prompt

@@ -85,9 +85,7 @@ def test_validate_repair_writes_repaired_text_to_file(
 # --- _show_repair_details verbose path (L121, L132-139) ---
 
 
-def test_validate_repair_verbose_shows_strategy_details(
-    runner, schema_path, repairable_json_file
-):
+def test_validate_repair_verbose_shows_strategy_details(runner, schema_path, repairable_json_file):
     """validate --repair --verbose prints strategy details and confidence."""
     result = runner.invoke(
         cli,
@@ -252,7 +250,7 @@ def test_batch_rejects_non_array_input(runner, schema_path, tmp_path):
 def test_batch_rejects_non_string_items(runner, schema_path, tmp_path):
     """batch errors when array contains non-string items."""
     batch_file = tmp_path / "bad_batch.json"
-    batch_file.write_text('[1, 2, 3]')
+    batch_file.write_text("[1, 2, 3]")
     result = runner.invoke(
         cli,
         ["batch", str(batch_file), "-s", schema_path],
