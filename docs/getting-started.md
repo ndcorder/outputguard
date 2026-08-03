@@ -116,6 +116,7 @@ repairs it, and retries with validation feedback.
 def generate(prompt: str, context) -> str:
     return llm.generate(prompt)
 
+
 result = outputguard.guarded_generate(
     prompt="Return a JSON object with name and age.",
     schema=schema,

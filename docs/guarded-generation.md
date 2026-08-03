@@ -22,8 +22,7 @@ model output and do not need OutputGuard to call the model.
 Your sync generator receives the current prompt and a context object.
 
 ```python
-def generate(prompt: str, context) -> str:
-    ...
+def generate(prompt: str, context) -> str: ...
 ```
 
 The context contains:
@@ -44,11 +43,13 @@ schema = {
     "required": ["name", "score"],
 }
 
+
 def generate(prompt: str, context) -> str:
     return client.responses.create(
         model="example-model",
         input=prompt,
     ).output_text
+
 
 result = guarded_generate(
     prompt="Return a JSON object with name and score.",
@@ -67,12 +68,14 @@ print(result.data)
 ```python
 from outputguard import guarded_generate_async
 
+
 async def generate(prompt: str, context) -> str:
     response = await client.responses.create(
         model="example-model",
         input=prompt,
     )
     return response.output_text
+
 
 result = await guarded_generate_async(
     prompt="Return a YAML object with name and score.",
@@ -156,6 +159,7 @@ Use `on_attempt` to log each attempt.
 ```python
 def observe(attempt) -> None:
     print(attempt.attempt, attempt.result.valid)
+
 
 result = guarded_generate(
     prompt="Return a JSON object with name and score.",

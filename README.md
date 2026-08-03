@@ -20,22 +20,19 @@ import outputguard
 
 schema = {
     "type": "object",
-    "properties": {
-        "name": {"type": "string"},
-        "age": {"type": "integer"}
-    },
-    "required": ["name", "age"]
+    "properties": {"name": {"type": "string"}, "age": {"type": "integer"}},
+    "required": ["name", "age"],
 }
 
 # Typical LLM output — fenced, trailing comma, single quotes
-llm_output = '''```json
+llm_output = """```json
 {'name': 'Alice', 'age': 30,}
-```'''
+```"""
 
 result = outputguard.validate_and_repair(llm_output, schema)
-print(result.valid)              # True
-print(result.data)               # {'name': 'Alice', 'age': 30}
-print(result.strategies_applied) # ['strip_fences', 'fix_quotes', 'fix_commas']
+print(result.valid)  # True
+print(result.data)  # {'name': 'Alice', 'age': 30}
+print(result.strategies_applied)  # ['strip_fences', 'fix_quotes', 'fix_commas']
 ```
 
 Fifteen repair strategies, JSON Schema validation, retry prompt generation, and a CLI — now for JSON, YAML, TOML, Python literals, and auto-detected forced-JSON-off output.
@@ -114,11 +111,11 @@ import outputguard
 result = outputguard.validate_and_repair(llm_output, schema)
 
 if result.valid:
-    process(result.data)                  # Clean, validated dict
+    process(result.data)  # Clean, validated dict
     if result.repaired:
-        log(result.strategies_applied)    # What was fixed
+        log(result.strategies_applied)  # What was fixed
 else:
-    handle_errors(result.errors)          # Detailed error paths
+    handle_errors(result.errors)  # Detailed error paths
 ```
 
 ### Repair Only
@@ -127,7 +124,7 @@ When you just need parseable structured output and don't have a schema:
 
 ```python
 result = outputguard.repair(broken_json)
-print(result.text)                # Clean JSON string by default
+print(result.text)  # Clean JSON string by default
 print(result.strategies_applied)  # ['fix_booleans', 'fix_commas']
 ```
 
@@ -148,6 +145,7 @@ When repair is not enough, generate a correction prompt and send it back to the 
 
 ```python
 import outputguard
+
 
 def get_structured_output(llm, prompt, schema, max_retries=3):
     for attempt in range(max_retries + 1):
@@ -365,7 +363,7 @@ result = strict.validate_and_repair(text, schema)
 
 # Aggressive mode — all strategies, more attempts
 aggressive = OutputGuard(
-    strategies=None,          # All 15 strategies (default)
+    strategies=None,  # All 15 strategies (default)
     max_repair_attempts=5,
 )
 result = aggressive.validate_and_repair(text, schema)
@@ -392,9 +390,9 @@ report = RepairReport(
 print(report.summary)
 # Repaired using 2 strategy(ies): strip_fences, fix_commas
 
-print(report.confidence)   # 0.8 — fewer strategies = higher confidence
-print(report.diff)         # Unified diff from original to repaired
-print(report.step_diffs()) # Per-strategy diffs for verbose logging
+print(report.confidence)  # 0.8 — fewer strategies = higher confidence
+print(report.diff)  # Unified diff from original to repaired
+print(report.step_diffs())  # Per-strategy diffs for verbose logging
 ```
 
 **Confidence scoring** is a heuristic from 0.0 to 1.0. It decreases as more strategies are needed and as the text changes more. Useful for deciding whether to trust a repair or escalate to a retry.

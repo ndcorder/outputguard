@@ -187,8 +187,10 @@ and retry in one call.
 ```python
 from outputguard import guarded_generate
 
+
 def generate(prompt: str, context) -> str:
     return call_model(prompt)
+
 
 result = guarded_generate(
     prompt="Return a YAML object with name and score.",
@@ -214,8 +216,10 @@ Use this with async model clients.
 ```python
 from outputguard import guarded_generate_async
 
+
 async def generate(prompt: str, context) -> str:
     return await call_model_async(prompt)
+
 
 result = await guarded_generate_async(
     prompt="Return a JSON object with id and status.",

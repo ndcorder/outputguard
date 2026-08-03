@@ -41,6 +41,7 @@ outputguard's architecture makes it easy to add new repair strategies:
    NAME = "your_strategy"
    DESCRIPTION = "What this strategy does"
 
+
    def apply(text: str) -> str:
        # Your repair logic here
        # MUST: return text unchanged if nothing to fix
