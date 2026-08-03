@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.1.2] - 2026-07-15
+
+### Changed
+
+- Refreshed the locked dependency set for the 2.1.2 maintenance release.
+
 ## [2.1.1] - 2026-05-14
 
 ### Fixed
@@ -177,7 +183,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Configurable `OutputGuard` class**: Strategy selection, max repair attempts,
   default format.
 
-[Unreleased]: https://github.com/ndcorder/outputguard/compare/v2.1.1...HEAD
+[Unreleased]: https://github.com/ndcorder/outputguard/compare/v2.1.2...HEAD
+[2.1.2]: https://github.com/ndcorder/outputguard/compare/v2.1.1...v2.1.2
 [2.1.1]: https://github.com/ndcorder/outputguard/compare/v2.1.0...v2.1.1
 [2.1.0]: https://github.com/ndcorder/outputguard/compare/v2.0.0...v2.1.0
 [2.0.0]: https://github.com/ndcorder/outputguard/compare/v1.0.0...v2.0.0
