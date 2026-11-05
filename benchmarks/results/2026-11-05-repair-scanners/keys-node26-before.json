@@ -1,0 +1,166 @@
+{
+  "runtime": "Node v26.13.0",
+  "platform": "darwin arm64",
+  "iterations": 200,
+  "samples": 7,
+  "warmup_iterations": 50,
+  "clock": "cpu",
+  "environment": {
+    "start": {
+      "logical_cpus": 16,
+      "load_average": [
+        14.46923828125,
+        14.5810546875,
+        13.68408203125
+      ]
+    },
+    "end": {
+      "logical_cpus": 16,
+      "load_average": [
+        14.46923828125,
+        14.5810546875,
+        13.68408203125
+      ]
+    }
+  },
+  "measurements": [
+    {
+      "name": "clean_json",
+      "schema_mode": "reused",
+      "median_us": 1.335,
+      "min_us": 0.43
+    },
+    {
+      "name": "evaluation_cost_integer_valid",
+      "schema_mode": "reused",
+      "median_us": 0.34,
+      "min_us": 0.225
+    },
+    {
+      "name": "keys_cost_clean_numbers_1",
+      "schema_mode": "none",
+      "median_us": 0.595,
+      "min_us": 0.33
+    },
+    {
+      "name": "keys_cost_quoted_objects_1",
+      "schema_mode": "none",
+      "median_us": 0.57,
+      "min_us": 0.555
+    },
+    {
+      "name": "keys_cost_bare_objects_1",
+      "schema_mode": "none",
+      "median_us": 0.435,
+      "min_us": 0.43
+    },
+    {
+      "name": "keys_cost_nested_1",
+      "schema_mode": "none",
+      "median_us": 0.67,
+      "min_us": 0.485
+    },
+    {
+      "name": "keys_cost_long_key_1",
+      "schema_mode": "none",
+      "median_us": 0.305,
+      "min_us": 0.3
+    },
+    {
+      "name": "keys_cost_protected_strings_1",
+      "schema_mode": "none",
+      "median_us": 0.55,
+      "min_us": 0.525
+    },
+    {
+      "name": "keys_cost_padding_1",
+      "schema_mode": "none",
+      "median_us": 0.345,
+      "min_us": 0.345
+    },
+    {
+      "name": "keys_cost_clean_numbers_100",
+      "schema_mode": "none",
+      "median_us": 4.01,
+      "min_us": 3.665
+    },
+    {
+      "name": "keys_cost_quoted_objects_100",
+      "schema_mode": "none",
+      "median_us": 22.315,
+      "min_us": 22.11
+    },
+    {
+      "name": "keys_cost_bare_objects_100",
+      "schema_mode": "none",
+      "median_us": 11.58,
+      "min_us": 11.42
+    },
+    {
+      "name": "keys_cost_nested_100",
+      "schema_mode": "none",
+      "median_us": 27.425,
+      "min_us": 27.35
+    },
+    {
+      "name": "keys_cost_long_key_100",
+      "schema_mode": "none",
+      "median_us": 1.1,
+      "min_us": 1.085
+    },
+    {
+      "name": "keys_cost_protected_strings_100",
+      "schema_mode": "none",
+      "median_us": 33.965,
+      "min_us": 33.72
+    },
+    {
+      "name": "keys_cost_padding_100",
+      "schema_mode": "none",
+      "median_us": 3.265,
+      "min_us": 3.255
+    },
+    {
+      "name": "keys_cost_clean_numbers_1000",
+      "schema_mode": "none",
+      "median_us": 46.745,
+      "min_us": 46.495
+    },
+    {
+      "name": "keys_cost_quoted_objects_1000",
+      "schema_mode": "none",
+      "median_us": 252.66,
+      "min_us": 248.78
+    },
+    {
+      "name": "keys_cost_bare_objects_1000",
+      "schema_mode": "none",
+      "median_us": 130.31,
+      "min_us": 129.99
+    },
+    {
+      "name": "keys_cost_nested_1000",
+      "schema_mode": "none",
+      "median_us": 279.45,
+      "min_us": 273.465
+    },
+    {
+      "name": "keys_cost_long_key_1000",
+      "schema_mode": "none",
+      "median_us": 8.925,
+      "min_us": 8.44
+    },
+    {
+      "name": "keys_cost_protected_strings_1000",
+      "schema_mode": "none",
+      "median_us": 337.13,
+      "min_us": 333.31
+    },
+    {
+      "name": "keys_cost_padding_1000",
+      "schema_mode": "none",
+      "median_us": 32.005,
+      "min_us": 30.905
+    }
+  ]
+}

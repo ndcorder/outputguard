@@ -1,0 +1,59 @@
+{
+  "date": "2026-11-05",
+  "strategy_sources": {
+    "python": {
+      "revision": "bcded93aafb7502329a5398d622d245c270d1386",
+      "baseline_revision": "cfcdf87",
+      "strategies": {
+        "keys": {
+          "path": "outputguard/strategies/fix_keys.py",
+          "before_sha256": "3069f6ed655f154f954c8cd1a58fb0398b440c5341279d67052362372a82cfbd",
+          "after_sha256": "6aba2fd4a5b9ff84a4bdcfcfb1af657a659818587f356b5ccbe5304f0f63bf0a"
+        },
+        "inner": {
+          "path": "outputguard/strategies/fix_inner_quotes.py",
+          "before_sha256": "8ac0923e7ce5197ee3e3d4119a72bc684ba907b9706faaa144e33b819f0c7427",
+          "after_sha256": "4c278906ef7ce55cd04b057e060971e0e3e91b75d1dfdc85bb5e009398c91120"
+        }
+      }
+    },
+    "javascript": {
+      "revision": "bedc7e8c95e4f8e5d5d5c2c675ae519103afaa73",
+      "baseline_revision": "fa3a770",
+      "strategies": {
+        "keys": {
+          "path": "src/strategies/fixKeys.ts",
+          "before_sha256": "e26d098aac0f84adbb6b009fcc9c4779dd61dc16fd69774c0f39349e82d27eee",
+          "after_sha256": "36d00964b364f4080dbb25a61b8e34a66d3e52e3ae8fee7f536c2f0d5d1cbb7f"
+        },
+        "inner": {
+          "path": "src/strategies/fixInnerQuotes.ts",
+          "before_sha256": "8df2ad58e3c59c9214a7e0eafab97b4340f1c8d3ecb9744d6316ef5998346a2a",
+          "after_sha256": "5b63098f44c6bd6d083e8e9b7b61e23211b67a056d54b5266584fbb6a6e07e65"
+        }
+      }
+    }
+  },
+  "cases_sha256": "77265abc5308f47e8f37fb3ced86b34b5d3093ec2b8dbc1d4c008e2caa4bc540",
+  "string_repairs_sha256": "1899d73fb7c4c66c1eb3c8599f27f9db3f8f3b6a24ddac73ca59d3852a80d756",
+  "method": "Run each runtime and phase serially; validate all selected outputs before timing. Replace only the saved Python strategy for each baseline. JavaScript baselines use a pre-change package whose source map matches the baseline strategy; other strategy files are unchanged within each comparison.",
+  "keys": {
+    "iterations": 200,
+    "samples": 7,
+    "warmup_iterations": 50,
+    "before_workloads": 23,
+    "after_workloads": 29
+  },
+  "inner": {
+    "iterations": 5,
+    "samples": 7,
+    "warmup_iterations": 50,
+    "before_workloads": 17,
+    "after_workloads": 26
+  },
+  "notes": [
+    "Feature-changing workloads appear only in after reports.",
+    "CPU time excludes blocking time. Results are specific to these workloads, machine, and runtimes.",
+    "Five iterations per sample in the inner-quote study limit precision for sub-microsecond cases."
+  ]
+}

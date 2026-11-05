@@ -1,0 +1,202 @@
+{
+  "runtime": "Python 3.10.19",
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "iterations": 200,
+  "samples": 7,
+  "warmup_iterations": 50,
+  "clock": "cpu",
+  "environment": {
+    "start": {
+      "logical_cpus": 16,
+      "load_average": [
+        15.18115234375,
+        13.359375,
+        13.68359375
+      ]
+    },
+    "end": {
+      "logical_cpus": 16,
+      "load_average": [
+        14.2978515625,
+        13.2314453125,
+        13.6337890625
+      ]
+    }
+  },
+  "measurements": [
+    {
+      "name": "clean_json",
+      "schema_mode": "reused",
+      "median_us": 12.11,
+      "min_us": 11.07
+    },
+    {
+      "name": "evaluation_cost_integer_valid",
+      "schema_mode": "reused",
+      "median_us": 6.675,
+      "min_us": 6.64
+    },
+    {
+      "name": "keys_cost_clean_numbers_1",
+      "schema_mode": "none",
+      "median_us": 0.335,
+      "min_us": 0.32
+    },
+    {
+      "name": "keys_cost_quoted_objects_1",
+      "schema_mode": "none",
+      "median_us": 0.515,
+      "min_us": 0.49
+    },
+    {
+      "name": "keys_cost_bare_objects_1",
+      "schema_mode": "none",
+      "median_us": 1.485,
+      "min_us": 1.46
+    },
+    {
+      "name": "keys_cost_nested_1",
+      "schema_mode": "none",
+      "median_us": 2.435,
+      "min_us": 2.41
+    },
+    {
+      "name": "keys_cost_long_key_1",
+      "schema_mode": "none",
+      "median_us": 1.47,
+      "min_us": 1.45
+    },
+    {
+      "name": "keys_cost_protected_strings_1",
+      "schema_mode": "none",
+      "median_us": 1.125,
+      "min_us": 1.095
+    },
+    {
+      "name": "keys_cost_single_literals_1",
+      "schema_mode": "none",
+      "median_us": 1.54,
+      "min_us": 1.535
+    },
+    {
+      "name": "keys_cost_comment_keys_1",
+      "schema_mode": "none",
+      "median_us": 2.55,
+      "min_us": 2.315
+    },
+    {
+      "name": "keys_cost_padding_1",
+      "schema_mode": "none",
+      "median_us": 1.355,
+      "min_us": 1.345
+    },
+    {
+      "name": "keys_cost_clean_numbers_100",
+      "schema_mode": "none",
+      "median_us": 0.295,
+      "min_us": 0.295
+    },
+    {
+      "name": "keys_cost_quoted_objects_100",
+      "schema_mode": "none",
+      "median_us": 5.25,
+      "min_us": 5.205
+    },
+    {
+      "name": "keys_cost_bare_objects_100",
+      "schema_mode": "none",
+      "median_us": 67.98,
+      "min_us": 67.885
+    },
+    {
+      "name": "keys_cost_nested_100",
+      "schema_mode": "none",
+      "median_us": 157.545,
+      "min_us": 155.46
+    },
+    {
+      "name": "keys_cost_long_key_100",
+      "schema_mode": "none",
+      "median_us": 1.855,
+      "min_us": 1.85
+    },
+    {
+      "name": "keys_cost_protected_strings_100",
+      "schema_mode": "none",
+      "median_us": 34.825,
+      "min_us": 34.585
+    },
+    {
+      "name": "keys_cost_single_literals_100",
+      "schema_mode": "none",
+      "median_us": 77.75,
+      "min_us": 76.955
+    },
+    {
+      "name": "keys_cost_comment_keys_100",
+      "schema_mode": "none",
+      "median_us": 200.985,
+      "min_us": 198.62
+    },
+    {
+      "name": "keys_cost_padding_100",
+      "schema_mode": "none",
+      "median_us": 2.525,
+      "min_us": 2.48
+    },
+    {
+      "name": "keys_cost_clean_numbers_1000",
+      "schema_mode": "none",
+      "median_us": 0.405,
+      "min_us": 0.38
+    },
+    {
+      "name": "keys_cost_quoted_objects_1000",
+      "schema_mode": "none",
+      "median_us": 58.68,
+      "min_us": 57.94
+    },
+    {
+      "name": "keys_cost_bare_objects_1000",
+      "schema_mode": "none",
+      "median_us": 691.105,
+      "min_us": 676.25
+    },
+    {
+      "name": "keys_cost_nested_1000",
+      "schema_mode": "none",
+      "median_us": 1564.345,
+      "min_us": 1538.925
+    },
+    {
+      "name": "keys_cost_long_key_1000",
+      "schema_mode": "none",
+      "median_us": 4.255,
+      "min_us": 4.17
+    },
+    {
+      "name": "keys_cost_protected_strings_1000",
+      "schema_mode": "none",
+      "median_us": 336.28,
+      "min_us": 332.625
+    },
+    {
+      "name": "keys_cost_single_literals_1000",
+      "schema_mode": "none",
+      "median_us": 777.41,
+      "min_us": 761.53
+    },
+    {
+      "name": "keys_cost_comment_keys_1000",
+      "schema_mode": "none",
+      "median_us": 2032.505,
+      "min_us": 2011.67
+    },
+    {
+      "name": "keys_cost_padding_1000",
+      "schema_mode": "none",
+      "median_us": 9.395,
+      "min_us": 9.29
+    }
+  ]
+}

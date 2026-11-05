@@ -1,0 +1,184 @@
+{
+  "runtime": "Python 3.10.19",
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "iterations": 5,
+  "samples": 7,
+  "warmup_iterations": 50,
+  "clock": "cpu",
+  "environment": {
+    "start": {
+      "logical_cpus": 16,
+      "load_average": [
+        10.2177734375,
+        13.11328125,
+        13.39208984375
+      ]
+    },
+    "end": {
+      "logical_cpus": 16,
+      "load_average": [
+        10.2177734375,
+        13.11328125,
+        13.39208984375
+      ]
+    }
+  },
+  "measurements": [
+    {
+      "name": "clean_json",
+      "schema_mode": "reused",
+      "median_us": 14.2,
+      "min_us": 13.8
+    },
+    {
+      "name": "evaluation_cost_integer_valid",
+      "schema_mode": "reused",
+      "median_us": 8.6,
+      "min_us": 8.2
+    },
+    {
+      "name": "inner_cost_no_quotes_1",
+      "schema_mode": "none",
+      "median_us": 0.4,
+      "min_us": 0.4
+    },
+    {
+      "name": "inner_cost_clean_objects_1",
+      "schema_mode": "none",
+      "median_us": 4.6,
+      "min_us": 4.4
+    },
+    {
+      "name": "inner_cost_object_repairs_1",
+      "schema_mode": "none",
+      "median_us": 3.8,
+      "min_us": 3.8
+    },
+    {
+      "name": "inner_cost_long_value_1",
+      "schema_mode": "none",
+      "median_us": 2.6,
+      "min_us": 2.4
+    },
+    {
+      "name": "inner_cost_escaped_1",
+      "schema_mode": "none",
+      "median_us": 4.4,
+      "min_us": 4.2
+    },
+    {
+      "name": "inner_cost_array_repairs_1",
+      "schema_mode": "none",
+      "median_us": 3.0,
+      "min_us": 2.8
+    },
+    {
+      "name": "inner_cost_root_dense_1",
+      "schema_mode": "none",
+      "median_us": 2.2,
+      "min_us": 2.2
+    },
+    {
+      "name": "inner_cost_comments_1",
+      "schema_mode": "none",
+      "median_us": 3.2,
+      "min_us": 3.0
+    },
+    {
+      "name": "inner_cost_no_quotes_100",
+      "schema_mode": "none",
+      "median_us": 0.6,
+      "min_us": 0.4
+    },
+    {
+      "name": "inner_cost_clean_objects_100",
+      "schema_mode": "none",
+      "median_us": 375.0,
+      "min_us": 362.4
+    },
+    {
+      "name": "inner_cost_object_repairs_100",
+      "schema_mode": "none",
+      "median_us": 316.4,
+      "min_us": 304.4
+    },
+    {
+      "name": "inner_cost_long_value_100",
+      "schema_mode": "none",
+      "median_us": 2.4,
+      "min_us": 2.4
+    },
+    {
+      "name": "inner_cost_escaped_100",
+      "schema_mode": "none",
+      "median_us": 343.4,
+      "min_us": 342.0
+    },
+    {
+      "name": "inner_cost_array_repairs_100",
+      "schema_mode": "none",
+      "median_us": 189.8,
+      "min_us": 188.0
+    },
+    {
+      "name": "inner_cost_root_dense_100",
+      "schema_mode": "none",
+      "median_us": 95.6,
+      "min_us": 91.4
+    },
+    {
+      "name": "inner_cost_comments_100",
+      "schema_mode": "none",
+      "median_us": 4.6,
+      "min_us": 4.2
+    },
+    {
+      "name": "inner_cost_no_quotes_1000",
+      "schema_mode": "none",
+      "median_us": 0.6,
+      "min_us": 0.4
+    },
+    {
+      "name": "inner_cost_clean_objects_1000",
+      "schema_mode": "none",
+      "median_us": 3601.4,
+      "min_us": 3526.0
+    },
+    {
+      "name": "inner_cost_object_repairs_1000",
+      "schema_mode": "none",
+      "median_us": 3089.2,
+      "min_us": 3044.4
+    },
+    {
+      "name": "inner_cost_long_value_1000",
+      "schema_mode": "none",
+      "median_us": 2.8,
+      "min_us": 2.6
+    },
+    {
+      "name": "inner_cost_escaped_1000",
+      "schema_mode": "none",
+      "median_us": 3679.8,
+      "min_us": 3571.8
+    },
+    {
+      "name": "inner_cost_array_repairs_1000",
+      "schema_mode": "none",
+      "median_us": 1983.2,
+      "min_us": 1961.2
+    },
+    {
+      "name": "inner_cost_root_dense_1000",
+      "schema_mode": "none",
+      "median_us": 956.6,
+      "min_us": 924.0
+    },
+    {
+      "name": "inner_cost_comments_1000",
+      "schema_mode": "none",
+      "median_us": 21.0,
+      "min_us": 17.4
+    }
+  ]
+}

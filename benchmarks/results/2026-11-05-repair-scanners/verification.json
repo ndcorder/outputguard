@@ -1,0 +1,127 @@
+{
+  "date": "2026-11-05",
+  "source_revisions": {
+    "python": "bcded93",
+    "javascript": "bedc7e8"
+  },
+  "full_suites": {
+    "python": {
+      "runtime": "3.10.19",
+      "passed": 40214,
+      "skipped": 28,
+      "environment": "Clean detached checkout of bcded93; pre-existing local conftest changes absent"
+    },
+    "javascript": {
+      "runtime": "26.13.0",
+      "passed": 34976,
+      "test_files": 81
+    }
+  },
+  "static_checks": [
+    "Ruff lint and format",
+    "mypy runtime sources and Python type contracts",
+    "ESLint",
+    "TypeScript type contracts"
+  ],
+  "parity": {
+    "runtimes": [
+      "Node 18.20.8",
+      "Node 26.13.0"
+    ],
+    "main_cases": 3493,
+    "string_repair_contracts": 11843,
+    "all_other_shared_corpora": "passed"
+  },
+  "installed_packages": {
+    "python_runtime": "3.14.3",
+    "javascript_runtimes": [
+      "18.20.8",
+      "26.13.0"
+    ],
+    "string_repair_contracts_per_runtime": 11843,
+    "cli_repairs_per_runtime": 8,
+    "cli_schema_failure": "passed",
+    "cli_unsupported_context_rejection": "passed",
+    "python_optional_parsers_absent": [
+      "PyYAML",
+      "tomli"
+    ],
+    "npm_build_dependencies_absent": [
+      "smol-toml",
+      "tsup",
+      "typescript"
+    ]
+  },
+  "artifact_audit": {
+    "wheel_runtime_files": 52,
+    "sdist_source_files": 604,
+    "npm_files": 23,
+    "source_mapped_js_files": 43
+  },
+  "identical_shared_json_files": [
+    "cases.json",
+    "cli_cases.json",
+    "configuration_cases.json",
+    "diff_cases.json",
+    "evaluation_failures.json",
+    "generation_cases.json",
+    "input_cases.json",
+    "numeric_cases.json",
+    "python_numbers.json",
+    "python_strings.json",
+    "regex_cases.json",
+    "repair_cases.json",
+    "report_comparisons.json",
+    "schema_formats.json",
+    "schema_mutations.json",
+    "string_repairs.json",
+    "toml_cases.json",
+    "truncation_cases.json",
+    "unicode_repairs.json",
+    "yaml_cases.json"
+  ],
+  "artifacts": {
+    "wheel": {
+      "filename": "outputguard-2.1.2-py3-none-any.whl",
+      "sha256": "9602a39ce68da69e0505ec896b19f432ccbd5230adb17f8b4afbaf0fba7d8c1f"
+    },
+    "sdist": {
+      "filename": "outputguard-2.1.2.tar.gz",
+      "sha256": "58b4a683497ac46d72251234d313d87114330959683b09aa191c774619c919fc"
+    },
+    "npm": {
+      "filename": "outputguard-2.1.2.tgz",
+      "sha256": "74b1e5835ca8dcec974c2eb0b5a557c829a0dee991b37e06584788bbb13dbb63"
+    }
+  },
+  "source_hashes": {
+    "python/outputguard/strategies/fix_truncated.py": "e879382c13fb14eeab69ab26cf78bcb15db56cde90d0be0bb22c8a4c5bbc77f3",
+    "python/outputguard/strategies/extract_json.py": "ad76c2932fe0923d8f855021f7524f10da99a64a1f135272b9a277ac028b2b19",
+    "javascript/src/strategies/fixTruncated.ts": "243fa9176a292e1cf113bba440ec0236f4560765a33562f3e51ca3daa6b5c22f",
+    "javascript/src/strategies/extractJson.ts": "82f25a624c9f7fdf74bfb4b1e4a1d76df44b4e2ab1e4ceebc07a177c5bfca8a4",
+    "python/benchmarks/cases.json": "77265abc5308f47e8f37fb3ced86b34b5d3093ec2b8dbc1d4c008e2caa4bc540",
+    "python/benchmarks/truncation_cases.json": "f24722ffe06384bcc3a3fddf6c9cee8c78ce90b97c74c0f927db67fe52cbb507",
+    "javascript/src/exceptions.ts": "187542a75c84dbb02f71a7f8f1bd3289464f47ca2126d38146c97edd396693aa",
+    "javascript/src/index.ts": "cb8c03f55e8adf222c8743064c04e5097d67e4f7cf5456fd74cc6be08176501d",
+    "python/benchmarks/repair_cases.json": "e2f3a860ab39511c42f6455c5206675d463d0d1c214171058497905ed22eb2b3",
+    "python/benchmarks/repair_cases.py": "a2f2b882aa1cda3aeb6eb23d04e8c02074dd13ec3429dc734edcd9b0a2abb4d0",
+    "javascript/benchmarks/repairCases.mjs": "97ba7cb8a912388debcbc11c46853f999c3470ac03cdbe24176a113fb69d5467",
+    "python/outputguard/strategies/fix_commas.py": "a1906a29c0e66a7b8501131ceca42160db29adbc202dd3a5cf03c97d3f3dd6bc",
+    "python/outputguard/strategies/fix_ellipsis.py": "ac32a174b979de48c07b31cff7145342c8aa23543ff815e560ee22127af98272",
+    "javascript/src/strategies/fixCommas.ts": "98d319280eeea4529a40fb4e9e26c7a2154ffc9235d60007e737a093dcc0996c",
+    "javascript/src/strategies/fixEllipsis.ts": "c5c2282a12d45e8c8d8b26c962fe1165093d54caa75bd6429bdd900900659ff0",
+    "python/benchmarks/string_repairs.json": "1899d73fb7c4c66c1eb3c8599f27f9db3f8f3b6a24ddac73ca59d3852a80d756",
+    "python/outputguard/strategies/_lexical.py": "fcc7891f04963aff2fa7350e5f2ecba537ea754fbcd743f140700d0cad042db9",
+    "python/outputguard/strategies/remove_comments.py": "9cad1538ad4ce0355c69006b31a58b6acd33d90c9b186867b6f534cd916ffcb4",
+    "javascript/src/strategies/lexical.ts": "303578930313ed92121c91fcf33a4b7b939c837f3761c90ca7e57e2356ac7b22",
+    "javascript/src/strategies/removeComments.ts": "1f0608c3304864936e492f05a5ee5cfd53e69f65e804d3ce5af5fb0a87e440b1",
+    "python/outputguard/strategies/fix_quotes.py": "f6360e32178d62c58bcb4ea4f1d6b5fe63d0cd83ded9a33df3bac3d137951190",
+    "javascript/src/strategies/fixQuotes.ts": "36cf1fb3c98159fba19ffc307cc6b70e4904924411fc60818eef6580716fec31",
+    "python/outputguard/strategies/fix_newlines.py": "df5b1c0239ecb465fc909e6565109d6fee00449a0f1de5c5ef1bc1294f9feca2",
+    "javascript/src/strategies/fixNewlines.ts": "f12e54a1fae4dc4d3fce25fa5d593637ae1ad80072a860df3f5fc963c4665bcc",
+    "python/outputguard/strategies/fix_keys.py": "6aba2fd4a5b9ff84a4bdcfcfb1af657a659818587f356b5ccbe5304f0f63bf0a",
+    "javascript/src/strategies/fixKeys.ts": "36d00964b364f4080dbb25a61b8e34a66d3e52e3ae8fee7f536c2f0d5d1cbb7f",
+    "python/outputguard/strategies/fix_inner_quotes.py": "4c278906ef7ce55cd04b057e060971e0e3e91b75d1dfdc85bb5e009398c91120",
+    "javascript/src/strategies/fixInnerQuotes.ts": "5b63098f44c6bd6d083e8e9b7b61e23211b67a056d54b5266584fbb6a6e07e65"
+  }
+}

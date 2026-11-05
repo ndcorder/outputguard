@@ -1,0 +1,130 @@
+{
+  "runtime": "Node v18.20.8",
+  "platform": "darwin arm64",
+  "iterations": 5,
+  "samples": 7,
+  "warmup_iterations": 50,
+  "clock": "cpu",
+  "environment": {
+    "start": {
+      "logical_cpus": 16,
+      "load_average": [
+        9.90380859375,
+        12.35693359375,
+        13.0751953125
+      ]
+    },
+    "end": {
+      "logical_cpus": 16,
+      "load_average": [
+        18.51513671875,
+        15.3837890625,
+        14.2109375
+      ]
+    }
+  },
+  "measurements": [
+    {
+      "name": "clean_json",
+      "schema_mode": "reused",
+      "median_us": 1.4,
+      "min_us": 1
+    },
+    {
+      "name": "evaluation_cost_integer_valid",
+      "schema_mode": "reused",
+      "median_us": 0.8,
+      "min_us": 0.6
+    },
+    {
+      "name": "inner_cost_no_quotes_1",
+      "schema_mode": "none",
+      "median_us": 0.6,
+      "min_us": 0.4
+    },
+    {
+      "name": "inner_cost_clean_objects_1",
+      "schema_mode": "none",
+      "median_us": 1,
+      "min_us": 0.8
+    },
+    {
+      "name": "inner_cost_object_repairs_1",
+      "schema_mode": "none",
+      "median_us": 0.6,
+      "min_us": 0.6
+    },
+    {
+      "name": "inner_cost_long_value_1",
+      "schema_mode": "none",
+      "median_us": 0.6,
+      "min_us": 0.6
+    },
+    {
+      "name": "inner_cost_escaped_1",
+      "schema_mode": "none",
+      "median_us": 1.4,
+      "min_us": 1.2
+    },
+    {
+      "name": "inner_cost_no_quotes_100",
+      "schema_mode": "none",
+      "median_us": 2.4,
+      "min_us": 2.2
+    },
+    {
+      "name": "inner_cost_clean_objects_100",
+      "schema_mode": "none",
+      "median_us": 3289.2,
+      "min_us": 3266.6
+    },
+    {
+      "name": "inner_cost_object_repairs_100",
+      "schema_mode": "none",
+      "median_us": 1273.6,
+      "min_us": 1165
+    },
+    {
+      "name": "inner_cost_long_value_100",
+      "schema_mode": "none",
+      "median_us": 12.8,
+      "min_us": 12.6
+    },
+    {
+      "name": "inner_cost_escaped_100",
+      "schema_mode": "none",
+      "median_us": 6150.8,
+      "min_us": 6048.6
+    },
+    {
+      "name": "inner_cost_no_quotes_1000",
+      "schema_mode": "none",
+      "median_us": 21.2,
+      "min_us": 20.8
+    },
+    {
+      "name": "inner_cost_clean_objects_1000",
+      "schema_mode": "none",
+      "median_us": 373225.4,
+      "min_us": 372380.4
+    },
+    {
+      "name": "inner_cost_object_repairs_1000",
+      "schema_mode": "none",
+      "median_us": 127101.6,
+      "min_us": 126147.6
+    },
+    {
+      "name": "inner_cost_long_value_1000",
+      "schema_mode": "none",
+      "median_us": 126,
+      "min_us": 116.2
+    },
+    {
+      "name": "inner_cost_escaped_1000",
+      "schema_mode": "none",
+      "median_us": 740776,
+      "min_us": 731335.6
+    }
+  ]
+}
