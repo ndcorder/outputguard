@@ -190,6 +190,12 @@ comments, nested objects, missing internal closers, and unsupported mismatch
 runs from 1 to 1,000 entries or levels. Truncation attempts mismatch balancing
 once per scan, including when recovery cannot produce a candidate.
 
+Fence contracts distinguish wrappers from literal code blocks in object values,
+array items, quoted roots, and comments. They also check prose introductions,
+closed/unclosed wrappers, language tags, shared padding, and preservation through
+the default repair sequence. Workloads scale wrappers, long bodies, quoted
+literal blocks, prose, and escaped markers from 1 to 1,000 repetitions.
+
 Comparisons preserve JSON types: booleans never equal numbers. Numbers compare
 by value, so `1` equals `1.0` and `0` equals `-0`. Object property order is
 ignored; array order is preserved. Non-JSON values such as non-finite numbers

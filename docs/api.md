@@ -520,6 +520,18 @@ This bounds search work and trace memory for dissimilar or repetitive output.
 Report diffs are empty for identical texts. Strategy diffs are also empty for
 a step marked unchanged.
 
+### Markdown fences
+
+`strip_fences` selects the first wrapper outside quoted strings, structured
+containers, and comments. Literal fenced code inside a JSON value remains part
+of that value; other strategies can repair its surrounding keys or raw line
+breaks. Quoted roots are protected too. Ordinary prose, including apostrophes
+and balanced bracketed phrases, may precede a wrapper.
+
+Both ports use the same repair padding around the wrapper and body, including
+BOM and Unicode separators. Language tags contain ASCII letters. A wrapper
+without a closing fence retains its remaining body for later repairs.
+
 ### Closing delimiters
 
 `fix_closers` balances braces and brackets while preserving both quote styles

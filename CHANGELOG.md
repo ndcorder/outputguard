@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Preserve fenced code inside quoted data and comments when stripping Markdown
+  wrappers. Recognize wrappers through ordinary prose, align repair padding,
+  and add shared literal-preservation contracts and fence scaling workloads.
 - Balance missing inner delimiters before existing outer closers, and reuse
   that recovery in truncation repair. Preserve both quote styles and comments,
   place EOF closers before trailing comments, and retain unfinished strings

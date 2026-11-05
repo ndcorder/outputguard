@@ -5,7 +5,7 @@
 [![Python](https://img.shields.io/badge/python-3.10+-blue)](https://github.com/ndcorder/outputguard)
 [![CI](https://github.com/ndcorder/outputguard/actions/workflows/ci.yml/badge.svg)](https://github.com/ndcorder/outputguard/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Tests](https://img.shields.io/badge/tests-25k%2B-brightgreen)](#tested-against-288-real-llm-models)
+[![Tests](https://img.shields.io/badge/tests-42k%2B-brightgreen)](#tested-against-288-real-llm-models)
 
 ---
 
@@ -32,7 +32,7 @@ llm_output = """```json
 result = outputguard.validate_and_repair(llm_output, schema)
 print(result.valid)  # True
 print(result.data)  # {'name': 'Alice', 'age': 30}
-print(result.strategies_applied)  # ['strip_fences', 'fix_quotes', 'fix_commas']
+print(result.strategies_applied)  # ['strip_fences', 'fix_commas', 'fix_quotes']
 ```
 
 Fifteen repair strategies, JSON Schema validation, retry prompt generation, and a CLI — now for JSON, YAML, TOML, Python literals, and auto-detected forced-JSON-off output.

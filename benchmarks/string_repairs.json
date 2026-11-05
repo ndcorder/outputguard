@@ -109758,5 +109758,3561 @@
         }
       }
     }
+  },
+  {
+    "name": "fences-literal-0-object",
+    "strategy": "strip_fences",
+    "text": "{\"v\":\"literal ```json\n[1,2]\n``` done\"}",
+    "expected_text": "{\"v\":\"literal ```json\n[1,2]\n``` done\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "literal ```json\n[1,2]\n``` done"
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"literal ```json\\n[1,2]\\n``` done\"}",
+      "strategies": [
+        "fix_newlines"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-valid-0-object",
+    "strategy": "strip_fences",
+    "text": "{\"v\":\"literal ```json\\n[1,2]\\n``` done\"}",
+    "expected_text": "{\"v\":\"literal ```json\\n[1,2]\\n``` done\"}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "v": "literal ```json\n[1,2]\n``` done"
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "literal ```json\n[1,2]\n``` done"
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-literal-0-bare",
+    "strategy": "strip_fences",
+    "text": "{v:\"literal ```json\n[1,2]\n``` done\"}",
+    "expected_text": "{v:\"literal ```json\n[1,2]\n``` done\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "literal ```json\n[1,2]\n``` done"
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"literal ```json\\n[1,2]\\n``` done\"}",
+      "strategies": [
+        "fix_keys",
+        "fix_newlines"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-literal-0-array",
+    "strategy": "strip_fences",
+    "text": "[\"literal ```json\n[1,2]\n``` done\"]",
+    "expected_text": "[\"literal ```json\n[1,2]\n``` done\"]",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": [
+        "literal ```json\n[1,2]\n``` done"
+      ],
+      "repaired": true,
+      "repaired_text": "[\"literal ```json\\n[1,2]\\n``` done\"]",
+      "strategies": [
+        "fix_newlines"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-valid-0-array",
+    "strategy": "strip_fences",
+    "text": "[\"literal ```json\\n[1,2]\\n``` done\"]",
+    "expected_text": "[\"literal ```json\\n[1,2]\\n``` done\"]",
+    "source_valid": true,
+    "valid": true,
+    "data": [
+      "literal ```json\n[1,2]\n``` done"
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        "literal ```json\n[1,2]\n``` done"
+      ],
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-literal-0-root",
+    "strategy": "strip_fences",
+    "text": "\"literal ```json\n[1,2]\n``` done\"",
+    "expected_text": "\"literal ```json\n[1,2]\n``` done\"",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": "literal ```json\n[1,2]\n``` done",
+      "repaired": true,
+      "repaired_text": "\"literal ```json\\n[1,2]\\n``` done\"",
+      "strategies": [
+        "fix_newlines"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-valid-0-root",
+    "strategy": "strip_fences",
+    "text": "\"literal ```json\\n[1,2]\\n``` done\"",
+    "expected_text": "\"literal ```json\\n[1,2]\\n``` done\"",
+    "source_valid": true,
+    "valid": true,
+    "data": "literal ```json\n[1,2]\n``` done",
+    "public": {
+      "valid": true,
+      "data": "literal ```json\n[1,2]\n``` done",
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-literal-0-single",
+    "strategy": "strip_fences",
+    "text": "{'v':'literal ```json\n[1,2]\n``` done'}",
+    "expected_text": "{'v':'literal ```json\n[1,2]\n``` done'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "literal ```json\n[1,2]\n``` done"
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"literal ```json\\n[1,2]\\n``` done\"}",
+      "strategies": [
+        "fix_quotes",
+        "fix_newlines"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-literal-1-object",
+    "strategy": "strip_fences",
+    "text": "{\"v\":\"literal ```json\n{}\n``` done\"}",
+    "expected_text": "{\"v\":\"literal ```json\n{}\n``` done\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "literal ```json\n{}\n``` done"
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"literal ```json\\n{}\\n``` done\"}",
+      "strategies": [
+        "fix_newlines"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-valid-1-object",
+    "strategy": "strip_fences",
+    "text": "{\"v\":\"literal ```json\\n{}\\n``` done\"}",
+    "expected_text": "{\"v\":\"literal ```json\\n{}\\n``` done\"}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "v": "literal ```json\n{}\n``` done"
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "literal ```json\n{}\n``` done"
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-literal-1-bare",
+    "strategy": "strip_fences",
+    "text": "{v:\"literal ```json\n{}\n``` done\"}",
+    "expected_text": "{v:\"literal ```json\n{}\n``` done\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "literal ```json\n{}\n``` done"
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"literal ```json\\n{}\\n``` done\"}",
+      "strategies": [
+        "fix_keys",
+        "fix_newlines"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-literal-1-array",
+    "strategy": "strip_fences",
+    "text": "[\"literal ```json\n{}\n``` done\"]",
+    "expected_text": "[\"literal ```json\n{}\n``` done\"]",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": [
+        "literal ```json\n{}\n``` done"
+      ],
+      "repaired": true,
+      "repaired_text": "[\"literal ```json\\n{}\\n``` done\"]",
+      "strategies": [
+        "fix_newlines"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-valid-1-array",
+    "strategy": "strip_fences",
+    "text": "[\"literal ```json\\n{}\\n``` done\"]",
+    "expected_text": "[\"literal ```json\\n{}\\n``` done\"]",
+    "source_valid": true,
+    "valid": true,
+    "data": [
+      "literal ```json\n{}\n``` done"
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        "literal ```json\n{}\n``` done"
+      ],
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-literal-1-root",
+    "strategy": "strip_fences",
+    "text": "\"literal ```json\n{}\n``` done\"",
+    "expected_text": "\"literal ```json\n{}\n``` done\"",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": "literal ```json\n{}\n``` done",
+      "repaired": true,
+      "repaired_text": "\"literal ```json\\n{}\\n``` done\"",
+      "strategies": [
+        "fix_newlines"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-valid-1-root",
+    "strategy": "strip_fences",
+    "text": "\"literal ```json\\n{}\\n``` done\"",
+    "expected_text": "\"literal ```json\\n{}\\n``` done\"",
+    "source_valid": true,
+    "valid": true,
+    "data": "literal ```json\n{}\n``` done",
+    "public": {
+      "valid": true,
+      "data": "literal ```json\n{}\n``` done",
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-literal-1-single",
+    "strategy": "strip_fences",
+    "text": "{'v':'literal ```json\n{}\n``` done'}",
+    "expected_text": "{'v':'literal ```json\n{}\n``` done'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "literal ```json\n{}\n``` done"
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"literal ```json\\n{}\\n``` done\"}",
+      "strategies": [
+        "fix_quotes",
+        "fix_newlines"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-literal-2-object",
+    "strategy": "strip_fences",
+    "text": "{\"v\":\"literal ```json\nnull\n``` done\"}",
+    "expected_text": "{\"v\":\"literal ```json\nnull\n``` done\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "literal ```json\nnull\n``` done"
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"literal ```json\\nnull\\n``` done\"}",
+      "strategies": [
+        "fix_newlines"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-valid-2-object",
+    "strategy": "strip_fences",
+    "text": "{\"v\":\"literal ```json\\nnull\\n``` done\"}",
+    "expected_text": "{\"v\":\"literal ```json\\nnull\\n``` done\"}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "v": "literal ```json\nnull\n``` done"
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "literal ```json\nnull\n``` done"
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-literal-2-bare",
+    "strategy": "strip_fences",
+    "text": "{v:\"literal ```json\nnull\n``` done\"}",
+    "expected_text": "{v:\"literal ```json\nnull\n``` done\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "literal ```json\nnull\n``` done"
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"literal ```json\\nnull\\n``` done\"}",
+      "strategies": [
+        "fix_keys",
+        "fix_newlines"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-literal-2-array",
+    "strategy": "strip_fences",
+    "text": "[\"literal ```json\nnull\n``` done\"]",
+    "expected_text": "[\"literal ```json\nnull\n``` done\"]",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": [
+        "literal ```json\nnull\n``` done"
+      ],
+      "repaired": true,
+      "repaired_text": "[\"literal ```json\\nnull\\n``` done\"]",
+      "strategies": [
+        "fix_newlines"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-valid-2-array",
+    "strategy": "strip_fences",
+    "text": "[\"literal ```json\\nnull\\n``` done\"]",
+    "expected_text": "[\"literal ```json\\nnull\\n``` done\"]",
+    "source_valid": true,
+    "valid": true,
+    "data": [
+      "literal ```json\nnull\n``` done"
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        "literal ```json\nnull\n``` done"
+      ],
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-literal-2-root",
+    "strategy": "strip_fences",
+    "text": "\"literal ```json\nnull\n``` done\"",
+    "expected_text": "\"literal ```json\nnull\n``` done\"",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": "literal ```json\nnull\n``` done",
+      "repaired": true,
+      "repaired_text": "\"literal ```json\\nnull\\n``` done\"",
+      "strategies": [
+        "fix_newlines"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-valid-2-root",
+    "strategy": "strip_fences",
+    "text": "\"literal ```json\\nnull\\n``` done\"",
+    "expected_text": "\"literal ```json\\nnull\\n``` done\"",
+    "source_valid": true,
+    "valid": true,
+    "data": "literal ```json\nnull\n``` done",
+    "public": {
+      "valid": true,
+      "data": "literal ```json\nnull\n``` done",
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-literal-2-single",
+    "strategy": "strip_fences",
+    "text": "{'v':'literal ```json\nnull\n``` done'}",
+    "expected_text": "{'v':'literal ```json\nnull\n``` done'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "literal ```json\nnull\n``` done"
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"literal ```json\\nnull\\n``` done\"}",
+      "strategies": [
+        "fix_quotes",
+        "fix_newlines"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-literal-3-object",
+    "strategy": "strip_fences",
+    "text": "{\"v\":\"literal ```json\ntrue\n``` done\"}",
+    "expected_text": "{\"v\":\"literal ```json\ntrue\n``` done\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "literal ```json\ntrue\n``` done"
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"literal ```json\\ntrue\\n``` done\"}",
+      "strategies": [
+        "fix_newlines"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-valid-3-object",
+    "strategy": "strip_fences",
+    "text": "{\"v\":\"literal ```json\\ntrue\\n``` done\"}",
+    "expected_text": "{\"v\":\"literal ```json\\ntrue\\n``` done\"}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "v": "literal ```json\ntrue\n``` done"
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "literal ```json\ntrue\n``` done"
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-literal-3-bare",
+    "strategy": "strip_fences",
+    "text": "{v:\"literal ```json\ntrue\n``` done\"}",
+    "expected_text": "{v:\"literal ```json\ntrue\n``` done\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "literal ```json\ntrue\n``` done"
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"literal ```json\\ntrue\\n``` done\"}",
+      "strategies": [
+        "fix_keys",
+        "fix_newlines"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-literal-3-array",
+    "strategy": "strip_fences",
+    "text": "[\"literal ```json\ntrue\n``` done\"]",
+    "expected_text": "[\"literal ```json\ntrue\n``` done\"]",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": [
+        "literal ```json\ntrue\n``` done"
+      ],
+      "repaired": true,
+      "repaired_text": "[\"literal ```json\\ntrue\\n``` done\"]",
+      "strategies": [
+        "fix_newlines"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-valid-3-array",
+    "strategy": "strip_fences",
+    "text": "[\"literal ```json\\ntrue\\n``` done\"]",
+    "expected_text": "[\"literal ```json\\ntrue\\n``` done\"]",
+    "source_valid": true,
+    "valid": true,
+    "data": [
+      "literal ```json\ntrue\n``` done"
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        "literal ```json\ntrue\n``` done"
+      ],
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-literal-3-root",
+    "strategy": "strip_fences",
+    "text": "\"literal ```json\ntrue\n``` done\"",
+    "expected_text": "\"literal ```json\ntrue\n``` done\"",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": "literal ```json\ntrue\n``` done",
+      "repaired": true,
+      "repaired_text": "\"literal ```json\\ntrue\\n``` done\"",
+      "strategies": [
+        "fix_newlines"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-valid-3-root",
+    "strategy": "strip_fences",
+    "text": "\"literal ```json\\ntrue\\n``` done\"",
+    "expected_text": "\"literal ```json\\ntrue\\n``` done\"",
+    "source_valid": true,
+    "valid": true,
+    "data": "literal ```json\ntrue\n``` done",
+    "public": {
+      "valid": true,
+      "data": "literal ```json\ntrue\n``` done",
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-literal-3-single",
+    "strategy": "strip_fences",
+    "text": "{'v':'literal ```json\ntrue\n``` done'}",
+    "expected_text": "{'v':'literal ```json\ntrue\n``` done'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "literal ```json\ntrue\n``` done"
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"literal ```json\\ntrue\\n``` done\"}",
+      "strategies": [
+        "fix_quotes",
+        "fix_newlines"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-literal-4-object",
+    "strategy": "strip_fences",
+    "text": "{\"v\":\"literal ```json\n123\n``` done\"}",
+    "expected_text": "{\"v\":\"literal ```json\n123\n``` done\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "literal ```json\n123\n``` done"
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"literal ```json\\n123\\n``` done\"}",
+      "strategies": [
+        "fix_newlines"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-valid-4-object",
+    "strategy": "strip_fences",
+    "text": "{\"v\":\"literal ```json\\n123\\n``` done\"}",
+    "expected_text": "{\"v\":\"literal ```json\\n123\\n``` done\"}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "v": "literal ```json\n123\n``` done"
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "literal ```json\n123\n``` done"
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-literal-4-bare",
+    "strategy": "strip_fences",
+    "text": "{v:\"literal ```json\n123\n``` done\"}",
+    "expected_text": "{v:\"literal ```json\n123\n``` done\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "literal ```json\n123\n``` done"
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"literal ```json\\n123\\n``` done\"}",
+      "strategies": [
+        "fix_keys",
+        "fix_newlines"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-literal-4-array",
+    "strategy": "strip_fences",
+    "text": "[\"literal ```json\n123\n``` done\"]",
+    "expected_text": "[\"literal ```json\n123\n``` done\"]",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": [
+        "literal ```json\n123\n``` done"
+      ],
+      "repaired": true,
+      "repaired_text": "[\"literal ```json\\n123\\n``` done\"]",
+      "strategies": [
+        "fix_newlines"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-valid-4-array",
+    "strategy": "strip_fences",
+    "text": "[\"literal ```json\\n123\\n``` done\"]",
+    "expected_text": "[\"literal ```json\\n123\\n``` done\"]",
+    "source_valid": true,
+    "valid": true,
+    "data": [
+      "literal ```json\n123\n``` done"
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        "literal ```json\n123\n``` done"
+      ],
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-literal-4-root",
+    "strategy": "strip_fences",
+    "text": "\"literal ```json\n123\n``` done\"",
+    "expected_text": "\"literal ```json\n123\n``` done\"",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": "literal ```json\n123\n``` done",
+      "repaired": true,
+      "repaired_text": "\"literal ```json\\n123\\n``` done\"",
+      "strategies": [
+        "fix_newlines"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-valid-4-root",
+    "strategy": "strip_fences",
+    "text": "\"literal ```json\\n123\\n``` done\"",
+    "expected_text": "\"literal ```json\\n123\\n``` done\"",
+    "source_valid": true,
+    "valid": true,
+    "data": "literal ```json\n123\n``` done",
+    "public": {
+      "valid": true,
+      "data": "literal ```json\n123\n``` done",
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-literal-4-single",
+    "strategy": "strip_fences",
+    "text": "{'v':'literal ```json\n123\n``` done'}",
+    "expected_text": "{'v':'literal ```json\n123\n``` done'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "literal ```json\n123\n``` done"
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"literal ```json\\n123\\n``` done\"}",
+      "strategies": [
+        "fix_quotes",
+        "fix_newlines"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-literal-5-object",
+    "strategy": "strip_fences",
+    "text": "{\"v\":\"literal ```json\n{\\\"x\\\":1}\n``` done\"}",
+    "expected_text": "{\"v\":\"literal ```json\n{\\\"x\\\":1}\n``` done\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "literal ```json\n{\"x\":1}\n``` done"
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"literal ```json\\n{\\\"x\\\":1}\\n``` done\"}",
+      "strategies": [
+        "fix_newlines"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-valid-5-object",
+    "strategy": "strip_fences",
+    "text": "{\"v\":\"literal ```json\\n{\\\"x\\\":1}\\n``` done\"}",
+    "expected_text": "{\"v\":\"literal ```json\\n{\\\"x\\\":1}\\n``` done\"}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "v": "literal ```json\n{\"x\":1}\n``` done"
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "literal ```json\n{\"x\":1}\n``` done"
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-literal-5-bare",
+    "strategy": "strip_fences",
+    "text": "{v:\"literal ```json\n{\\\"x\\\":1}\n``` done\"}",
+    "expected_text": "{v:\"literal ```json\n{\\\"x\\\":1}\n``` done\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "literal ```json\n{\"x\":1}\n``` done"
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"literal ```json\\n{\\\"x\\\":1}\\n``` done\"}",
+      "strategies": [
+        "fix_keys",
+        "fix_newlines"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-literal-5-array",
+    "strategy": "strip_fences",
+    "text": "[\"literal ```json\n{\\\"x\\\":1}\n``` done\"]",
+    "expected_text": "[\"literal ```json\n{\\\"x\\\":1}\n``` done\"]",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": [
+        "literal ```json\n{\"x\":1}\n``` done"
+      ],
+      "repaired": true,
+      "repaired_text": "[\"literal ```json\\n{\\\"x\\\":1}\\n``` done\"]",
+      "strategies": [
+        "fix_newlines"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-valid-5-array",
+    "strategy": "strip_fences",
+    "text": "[\"literal ```json\\n{\\\"x\\\":1}\\n``` done\"]",
+    "expected_text": "[\"literal ```json\\n{\\\"x\\\":1}\\n``` done\"]",
+    "source_valid": true,
+    "valid": true,
+    "data": [
+      "literal ```json\n{\"x\":1}\n``` done"
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        "literal ```json\n{\"x\":1}\n``` done"
+      ],
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-literal-5-root",
+    "strategy": "strip_fences",
+    "text": "\"literal ```json\n{\\\"x\\\":1}\n``` done\"",
+    "expected_text": "\"literal ```json\n{\\\"x\\\":1}\n``` done\"",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": "literal ```json\n{\"x\":1}\n``` done",
+      "repaired": true,
+      "repaired_text": "\"literal ```json\\n{\\\"x\\\":1}\\n``` done\"",
+      "strategies": [
+        "fix_newlines"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-valid-5-root",
+    "strategy": "strip_fences",
+    "text": "\"literal ```json\\n{\\\"x\\\":1}\\n``` done\"",
+    "expected_text": "\"literal ```json\\n{\\\"x\\\":1}\\n``` done\"",
+    "source_valid": true,
+    "valid": true,
+    "data": "literal ```json\n{\"x\":1}\n``` done",
+    "public": {
+      "valid": true,
+      "data": "literal ```json\n{\"x\":1}\n``` done",
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-literal-5-single",
+    "strategy": "strip_fences",
+    "text": "{'v':'literal ```json\n{\\\"x\\\":1}\n``` done'}",
+    "expected_text": "{'v':'literal ```json\n{\\\"x\\\":1}\n``` done'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "literal ```json\n{\"x\":1}\n``` done"
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"literal ```json\\n{\\\"x\\\":1}\\n``` done\"}",
+      "strategies": [
+        "fix_quotes",
+        "fix_newlines"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-literal-6-object",
+    "strategy": "strip_fences",
+    "text": "{\"v\":\"literal ```json\nliteral \\\\\\\"quote\\\\\\\"\n``` done\"}",
+    "expected_text": "{\"v\":\"literal ```json\nliteral \\\\\\\"quote\\\\\\\"\n``` done\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "literal ```json\nliteral \\\"quote\\\"\n``` done"
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"literal ```json\\nliteral \\\\\\\"quote\\\\\\\"\\n``` done\"}",
+      "strategies": [
+        "fix_newlines"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-valid-6-object",
+    "strategy": "strip_fences",
+    "text": "{\"v\":\"literal ```json\\nliteral \\\\\\\"quote\\\\\\\"\\n``` done\"}",
+    "expected_text": "{\"v\":\"literal ```json\\nliteral \\\\\\\"quote\\\\\\\"\\n``` done\"}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "v": "literal ```json\nliteral \\\"quote\\\"\n``` done"
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "literal ```json\nliteral \\\"quote\\\"\n``` done"
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-literal-6-bare",
+    "strategy": "strip_fences",
+    "text": "{v:\"literal ```json\nliteral \\\\\\\"quote\\\\\\\"\n``` done\"}",
+    "expected_text": "{v:\"literal ```json\nliteral \\\\\\\"quote\\\\\\\"\n``` done\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "literal ```json\nliteral \\\"quote\\\"\n``` done"
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"literal ```json\\nliteral \\\\\\\"quote\\\\\\\"\\n``` done\"}",
+      "strategies": [
+        "fix_keys",
+        "fix_newlines"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-literal-6-array",
+    "strategy": "strip_fences",
+    "text": "[\"literal ```json\nliteral \\\\\\\"quote\\\\\\\"\n``` done\"]",
+    "expected_text": "[\"literal ```json\nliteral \\\\\\\"quote\\\\\\\"\n``` done\"]",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": [
+        "literal ```json\nliteral \\\"quote\\\"\n``` done"
+      ],
+      "repaired": true,
+      "repaired_text": "[\"literal ```json\\nliteral \\\\\\\"quote\\\\\\\"\\n``` done\"]",
+      "strategies": [
+        "fix_newlines"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-valid-6-array",
+    "strategy": "strip_fences",
+    "text": "[\"literal ```json\\nliteral \\\\\\\"quote\\\\\\\"\\n``` done\"]",
+    "expected_text": "[\"literal ```json\\nliteral \\\\\\\"quote\\\\\\\"\\n``` done\"]",
+    "source_valid": true,
+    "valid": true,
+    "data": [
+      "literal ```json\nliteral \\\"quote\\\"\n``` done"
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        "literal ```json\nliteral \\\"quote\\\"\n``` done"
+      ],
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-literal-6-root",
+    "strategy": "strip_fences",
+    "text": "\"literal ```json\nliteral \\\\\\\"quote\\\\\\\"\n``` done\"",
+    "expected_text": "\"literal ```json\nliteral \\\\\\\"quote\\\\\\\"\n``` done\"",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": "literal ```json\nliteral \\\"quote\\\"\n``` done",
+      "repaired": true,
+      "repaired_text": "\"literal ```json\\nliteral \\\\\\\"quote\\\\\\\"\\n``` done\"",
+      "strategies": [
+        "fix_newlines"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-valid-6-root",
+    "strategy": "strip_fences",
+    "text": "\"literal ```json\\nliteral \\\\\\\"quote\\\\\\\"\\n``` done\"",
+    "expected_text": "\"literal ```json\\nliteral \\\\\\\"quote\\\\\\\"\\n``` done\"",
+    "source_valid": true,
+    "valid": true,
+    "data": "literal ```json\nliteral \\\"quote\\\"\n``` done",
+    "public": {
+      "valid": true,
+      "data": "literal ```json\nliteral \\\"quote\\\"\n``` done",
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-literal-6-single",
+    "strategy": "strip_fences",
+    "text": "{'v':'literal ```json\nliteral \\\\\\\"quote\\\\\\\"\n``` done'}",
+    "expected_text": "{'v':'literal ```json\nliteral \\\\\\\"quote\\\\\\\"\n``` done'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "literal ```json\nliteral \\\"quote\\\"\n``` done"
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"literal ```json\\nliteral \\\\\\\"quote\\\\\\\"\\n``` done\"}",
+      "strategies": [
+        "fix_quotes",
+        "fix_newlines"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-literal-7-object",
+    "strategy": "strip_fences",
+    "text": "{\"v\":\"literal ```json\n\u03bb \ud83d\ude80\n``` done\"}",
+    "expected_text": "{\"v\":\"literal ```json\n\u03bb \ud83d\ude80\n``` done\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "literal ```json\n\u03bb \ud83d\ude80\n``` done"
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"literal ```json\\n\u03bb \ud83d\ude80\\n``` done\"}",
+      "strategies": [
+        "fix_newlines"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-valid-7-object",
+    "strategy": "strip_fences",
+    "text": "{\"v\":\"literal ```json\\n\u03bb \ud83d\ude80\\n``` done\"}",
+    "expected_text": "{\"v\":\"literal ```json\\n\u03bb \ud83d\ude80\\n``` done\"}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "v": "literal ```json\n\u03bb \ud83d\ude80\n``` done"
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "literal ```json\n\u03bb \ud83d\ude80\n``` done"
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-literal-7-bare",
+    "strategy": "strip_fences",
+    "text": "{v:\"literal ```json\n\u03bb \ud83d\ude80\n``` done\"}",
+    "expected_text": "{v:\"literal ```json\n\u03bb \ud83d\ude80\n``` done\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "literal ```json\n\u03bb \ud83d\ude80\n``` done"
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"literal ```json\\n\u03bb \ud83d\ude80\\n``` done\"}",
+      "strategies": [
+        "fix_keys",
+        "fix_newlines"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-literal-7-array",
+    "strategy": "strip_fences",
+    "text": "[\"literal ```json\n\u03bb \ud83d\ude80\n``` done\"]",
+    "expected_text": "[\"literal ```json\n\u03bb \ud83d\ude80\n``` done\"]",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": [
+        "literal ```json\n\u03bb \ud83d\ude80\n``` done"
+      ],
+      "repaired": true,
+      "repaired_text": "[\"literal ```json\\n\u03bb \ud83d\ude80\\n``` done\"]",
+      "strategies": [
+        "fix_newlines"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-valid-7-array",
+    "strategy": "strip_fences",
+    "text": "[\"literal ```json\\n\u03bb \ud83d\ude80\\n``` done\"]",
+    "expected_text": "[\"literal ```json\\n\u03bb \ud83d\ude80\\n``` done\"]",
+    "source_valid": true,
+    "valid": true,
+    "data": [
+      "literal ```json\n\u03bb \ud83d\ude80\n``` done"
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        "literal ```json\n\u03bb \ud83d\ude80\n``` done"
+      ],
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-literal-7-root",
+    "strategy": "strip_fences",
+    "text": "\"literal ```json\n\u03bb \ud83d\ude80\n``` done\"",
+    "expected_text": "\"literal ```json\n\u03bb \ud83d\ude80\n``` done\"",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": "literal ```json\n\u03bb \ud83d\ude80\n``` done",
+      "repaired": true,
+      "repaired_text": "\"literal ```json\\n\u03bb \ud83d\ude80\\n``` done\"",
+      "strategies": [
+        "fix_newlines"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-valid-7-root",
+    "strategy": "strip_fences",
+    "text": "\"literal ```json\\n\u03bb \ud83d\ude80\\n``` done\"",
+    "expected_text": "\"literal ```json\\n\u03bb \ud83d\ude80\\n``` done\"",
+    "source_valid": true,
+    "valid": true,
+    "data": "literal ```json\n\u03bb \ud83d\ude80\n``` done",
+    "public": {
+      "valid": true,
+      "data": "literal ```json\n\u03bb \ud83d\ude80\n``` done",
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-literal-7-single",
+    "strategy": "strip_fences",
+    "text": "{'v':'literal ```json\n\u03bb \ud83d\ude80\n``` done'}",
+    "expected_text": "{'v':'literal ```json\n\u03bb \ud83d\ude80\n``` done'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "literal ```json\n\u03bb \ud83d\ude80\n``` done"
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"literal ```json\\n\u03bb \ud83d\ude80\\n``` done\"}",
+      "strategies": [
+        "fix_quotes",
+        "fix_newlines"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-wrapper-0",
+    "strategy": "strip_fences",
+    "text": "```json\n{\"a\":1}\n```",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-wrapper-1",
+    "strategy": "strip_fences",
+    "text": "Here's your JSON:\n```json\n{\"a\":1}\n```",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-wrapper-2",
+    "strategy": "strip_fences",
+    "text": "See [example] and {help}:\n```json\n{\"a\":1}\n```",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-wrapper-3",
+    "strategy": "strip_fences",
+    "text": "The word \"JSON\" means:\n```json\n{\"a\":1}\n```",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-wrapper-4",
+    "strategy": "strip_fences",
+    "text": "https://example.test/\n```json\n{\"a\":1}\n```",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-wrapper-5",
+    "strategy": "strip_fences",
+    "text": "/* comment ```json\n[9]\n``` */\n```json\n{\"a\":1}\n```",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-wrapper-6",
+    "strategy": "strip_fences",
+    "text": "// ```json\n```json\n{\"a\":1}\n```",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-wrapper-7",
+    "strategy": "strip_fences",
+    "text": "\"```json\n[9]\n```\"\n```json\n{\"a\":1}\n```",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-tag-0",
+    "strategy": "strip_fences",
+    "text": "```\n{\"a\":1}\n```",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-unclosed-0",
+    "strategy": "strip_fences",
+    "text": "```\n{\"a\":1}",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-tag-1",
+    "strategy": "strip_fences",
+    "text": "```json\n{\"a\":1}\n```",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-unclosed-1",
+    "strategy": "strip_fences",
+    "text": "```json\n{\"a\":1}",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-tag-2",
+    "strategy": "strip_fences",
+    "text": "```JSON\n{\"a\":1}\n```",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-unclosed-2",
+    "strategy": "strip_fences",
+    "text": "```JSON\n{\"a\":1}",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-tag-3",
+    "strategy": "strip_fences",
+    "text": "```jsonc\n{\"a\":1}\n```",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-unclosed-3",
+    "strategy": "strip_fences",
+    "text": "```jsonc\n{\"a\":1}",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-tag-4",
+    "strategy": "strip_fences",
+    "text": "```javascript\n{\"a\":1}\n```",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-unclosed-4",
+    "strategy": "strip_fences",
+    "text": "```javascript\n{\"a\":1}",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-tag-5",
+    "strategy": "strip_fences",
+    "text": "```js\n{\"a\":1}\n```",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-unclosed-5",
+    "strategy": "strip_fences",
+    "text": "```js\n{\"a\":1}",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-tag-6",
+    "strategy": "strip_fences",
+    "text": "```typescript\n{\"a\":1}\n```",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-unclosed-6",
+    "strategy": "strip_fences",
+    "text": "```typescript\n{\"a\":1}",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-tag-7",
+    "strategy": "strip_fences",
+    "text": "```yaml\n{\"a\":1}\n```",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-unclosed-7",
+    "strategy": "strip_fences",
+    "text": "```yaml\n{\"a\":1}",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-tag-8",
+    "strategy": "strip_fences",
+    "text": "```toml\n{\"a\":1}\n```",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-unclosed-8",
+    "strategy": "strip_fences",
+    "text": "```toml\n{\"a\":1}",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-tag-9",
+    "strategy": "strip_fences",
+    "text": "```python\n{\"a\":1}\n```",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-unclosed-9",
+    "strategy": "strip_fences",
+    "text": "```python\n{\"a\":1}",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-0009-closed",
+    "strategy": "strip_fences",
+    "text": "```json\t\n\t{\"a\":1}\t\n\t```",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-0009-open",
+    "strategy": "strip_fences",
+    "text": "```json\t\n\t{\"a\":1}\t",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-000a-closed",
+    "strategy": "strip_fences",
+    "text": "```json\n\n\n{\"a\":1}\n\n\n```",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-000a-open",
+    "strategy": "strip_fences",
+    "text": "```json\n\n\n{\"a\":1}\n",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-000b-closed",
+    "strategy": "strip_fences",
+    "text": "```json\u000b\n\u000b{\"a\":1}\u000b\n\u000b```",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-000b-open",
+    "strategy": "strip_fences",
+    "text": "```json\u000b\n\u000b{\"a\":1}\u000b",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-000c-closed",
+    "strategy": "strip_fences",
+    "text": "```json\f\n\f{\"a\":1}\f\n\f```",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-000c-open",
+    "strategy": "strip_fences",
+    "text": "```json\f\n\f{\"a\":1}\f",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-000d-closed",
+    "strategy": "strip_fences",
+    "text": "```json\r\n\r{\"a\":1}\r\n\r```",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-000d-open",
+    "strategy": "strip_fences",
+    "text": "```json\r\n\r{\"a\":1}\r",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-001c-closed",
+    "strategy": "strip_fences",
+    "text": "```json\u001c\n\u001c{\"a\":1}\u001c\n\u001c```",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-001c-open",
+    "strategy": "strip_fences",
+    "text": "```json\u001c\n\u001c{\"a\":1}\u001c",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-001d-closed",
+    "strategy": "strip_fences",
+    "text": "```json\u001d\n\u001d{\"a\":1}\u001d\n\u001d```",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-001d-open",
+    "strategy": "strip_fences",
+    "text": "```json\u001d\n\u001d{\"a\":1}\u001d",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-001e-closed",
+    "strategy": "strip_fences",
+    "text": "```json\u001e\n\u001e{\"a\":1}\u001e\n\u001e```",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-001e-open",
+    "strategy": "strip_fences",
+    "text": "```json\u001e\n\u001e{\"a\":1}\u001e",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-001f-closed",
+    "strategy": "strip_fences",
+    "text": "```json\u001f\n\u001f{\"a\":1}\u001f\n\u001f```",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-001f-open",
+    "strategy": "strip_fences",
+    "text": "```json\u001f\n\u001f{\"a\":1}\u001f",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-0020-closed",
+    "strategy": "strip_fences",
+    "text": "```json \n {\"a\":1} \n ```",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-0020-open",
+    "strategy": "strip_fences",
+    "text": "```json \n {\"a\":1} ",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-0085-closed",
+    "strategy": "strip_fences",
+    "text": "```json\u0085\n\u0085{\"a\":1}\u0085\n\u0085```",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-0085-open",
+    "strategy": "strip_fences",
+    "text": "```json\u0085\n\u0085{\"a\":1}\u0085",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-00a0-closed",
+    "strategy": "strip_fences",
+    "text": "```json\u00a0\n\u00a0{\"a\":1}\u00a0\n\u00a0```",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-00a0-open",
+    "strategy": "strip_fences",
+    "text": "```json\u00a0\n\u00a0{\"a\":1}\u00a0",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-1680-closed",
+    "strategy": "strip_fences",
+    "text": "```json\u1680\n\u1680{\"a\":1}\u1680\n\u1680```",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-1680-open",
+    "strategy": "strip_fences",
+    "text": "```json\u1680\n\u1680{\"a\":1}\u1680",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-2000-closed",
+    "strategy": "strip_fences",
+    "text": "```json\u2000\n\u2000{\"a\":1}\u2000\n\u2000```",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-2000-open",
+    "strategy": "strip_fences",
+    "text": "```json\u2000\n\u2000{\"a\":1}\u2000",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-2001-closed",
+    "strategy": "strip_fences",
+    "text": "```json\u2001\n\u2001{\"a\":1}\u2001\n\u2001```",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-2001-open",
+    "strategy": "strip_fences",
+    "text": "```json\u2001\n\u2001{\"a\":1}\u2001",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-2002-closed",
+    "strategy": "strip_fences",
+    "text": "```json\u2002\n\u2002{\"a\":1}\u2002\n\u2002```",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-2002-open",
+    "strategy": "strip_fences",
+    "text": "```json\u2002\n\u2002{\"a\":1}\u2002",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-2003-closed",
+    "strategy": "strip_fences",
+    "text": "```json\u2003\n\u2003{\"a\":1}\u2003\n\u2003```",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-2003-open",
+    "strategy": "strip_fences",
+    "text": "```json\u2003\n\u2003{\"a\":1}\u2003",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-2004-closed",
+    "strategy": "strip_fences",
+    "text": "```json\u2004\n\u2004{\"a\":1}\u2004\n\u2004```",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-2004-open",
+    "strategy": "strip_fences",
+    "text": "```json\u2004\n\u2004{\"a\":1}\u2004",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-2005-closed",
+    "strategy": "strip_fences",
+    "text": "```json\u2005\n\u2005{\"a\":1}\u2005\n\u2005```",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-2005-open",
+    "strategy": "strip_fences",
+    "text": "```json\u2005\n\u2005{\"a\":1}\u2005",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-2006-closed",
+    "strategy": "strip_fences",
+    "text": "```json\u2006\n\u2006{\"a\":1}\u2006\n\u2006```",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-2006-open",
+    "strategy": "strip_fences",
+    "text": "```json\u2006\n\u2006{\"a\":1}\u2006",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-2007-closed",
+    "strategy": "strip_fences",
+    "text": "```json\u2007\n\u2007{\"a\":1}\u2007\n\u2007```",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-2007-open",
+    "strategy": "strip_fences",
+    "text": "```json\u2007\n\u2007{\"a\":1}\u2007",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-2008-closed",
+    "strategy": "strip_fences",
+    "text": "```json\u2008\n\u2008{\"a\":1}\u2008\n\u2008```",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-2008-open",
+    "strategy": "strip_fences",
+    "text": "```json\u2008\n\u2008{\"a\":1}\u2008",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-2009-closed",
+    "strategy": "strip_fences",
+    "text": "```json\u2009\n\u2009{\"a\":1}\u2009\n\u2009```",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-2009-open",
+    "strategy": "strip_fences",
+    "text": "```json\u2009\n\u2009{\"a\":1}\u2009",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-200a-closed",
+    "strategy": "strip_fences",
+    "text": "```json\u200a\n\u200a{\"a\":1}\u200a\n\u200a```",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-200a-open",
+    "strategy": "strip_fences",
+    "text": "```json\u200a\n\u200a{\"a\":1}\u200a",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-2028-closed",
+    "strategy": "strip_fences",
+    "text": "```json\u2028\n\u2028{\"a\":1}\u2028\n\u2028```",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-2028-open",
+    "strategy": "strip_fences",
+    "text": "```json\u2028\n\u2028{\"a\":1}\u2028",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-2029-closed",
+    "strategy": "strip_fences",
+    "text": "```json\u2029\n\u2029{\"a\":1}\u2029\n\u2029```",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-2029-open",
+    "strategy": "strip_fences",
+    "text": "```json\u2029\n\u2029{\"a\":1}\u2029",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-202f-closed",
+    "strategy": "strip_fences",
+    "text": "```json\u202f\n\u202f{\"a\":1}\u202f\n\u202f```",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-202f-open",
+    "strategy": "strip_fences",
+    "text": "```json\u202f\n\u202f{\"a\":1}\u202f",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-205f-closed",
+    "strategy": "strip_fences",
+    "text": "```json\u205f\n\u205f{\"a\":1}\u205f\n\u205f```",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-205f-open",
+    "strategy": "strip_fences",
+    "text": "```json\u205f\n\u205f{\"a\":1}\u205f",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-3000-closed",
+    "strategy": "strip_fences",
+    "text": "```json\u3000\n\u3000{\"a\":1}\u3000\n\u3000```",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-3000-open",
+    "strategy": "strip_fences",
+    "text": "```json\u3000\n\u3000{\"a\":1}\u3000",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-feff-closed",
+    "strategy": "strip_fences",
+    "text": "```json\ufeff\n\ufeff{\"a\":1}\ufeff\n\ufeff```",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-padding-feff-open",
+    "strategy": "strip_fences",
+    "text": "```json\ufeff\n\ufeff{\"a\":1}\ufeff",
+    "expected_text": "{\"a\":1}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-truncated-value",
+    "strategy": "strip_fences",
+    "text": "```json\n{\"a\":1",
+    "expected_text": "{\"a\":1",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "strip_fences",
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "fences-protected-0",
+    "strategy": "strip_fences",
+    "text": "{\"v\":\"```json\n[1,2]\n```",
+    "expected_text": "{\"v\":\"```json\n[1,2]\n```",
+    "source_valid": false,
+    "valid": false,
+    "data": null
+  },
+  {
+    "name": "fences-protected-1",
+    "strategy": "strip_fences",
+    "text": "{'v':'```json\n[1,2]\n```",
+    "expected_text": "{'v':'```json\n[1,2]\n```",
+    "source_valid": false,
+    "valid": false,
+    "data": null
+  },
+  {
+    "name": "fences-protected-2",
+    "strategy": "strip_fences",
+    "text": "/* ```json\n[1,2]\n``` */",
+    "expected_text": "/* ```json\n[1,2]\n``` */",
+    "source_valid": false,
+    "valid": false,
+    "data": null
+  },
+  {
+    "name": "fences-protected-3",
+    "strategy": "strip_fences",
+    "text": "// ```json\n",
+    "expected_text": "// ```json\n",
+    "source_valid": false,
+    "valid": false,
+    "data": null
+  },
+  {
+    "name": "fences-protected-4",
+    "strategy": "strip_fences",
+    "text": "```json5\n{\"a\":1}\n```",
+    "expected_text": "```json5\n{\"a\":1}\n```",
+    "source_valid": false,
+    "valid": false,
+    "data": null
   }
 ]
