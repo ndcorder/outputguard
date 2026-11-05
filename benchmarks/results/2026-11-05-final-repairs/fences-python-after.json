@@ -1,0 +1,148 @@
+{
+  "runtime": "Python 3.10.19",
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "iterations": 200,
+  "samples": 7,
+  "warmup_iterations": 50,
+  "clock": "cpu",
+  "environment": {
+    "start": {
+      "logical_cpus": 16,
+      "load_average": [
+        10.095703125,
+        11.21142578125,
+        11.04248046875
+      ]
+    },
+    "end": {
+      "logical_cpus": 16,
+      "load_average": [
+        9.6875,
+        11.10791015625,
+        11.0068359375
+      ]
+    }
+  },
+  "measurements": [
+    {
+      "name": "clean_json",
+      "schema_mode": "reused",
+      "median_us": 12.745,
+      "min_us": 11.695
+    },
+    {
+      "name": "evaluation_cost_integer_valid",
+      "schema_mode": "reused",
+      "median_us": 7.16,
+      "min_us": 7.105
+    },
+    {
+      "name": "fences_cost_clean_numbers_1",
+      "schema_mode": "none",
+      "median_us": 0.27,
+      "min_us": 0.265
+    },
+    {
+      "name": "fences_cost_wrapper_1",
+      "schema_mode": "none",
+      "median_us": 0.8,
+      "min_us": 0.79
+    },
+    {
+      "name": "fences_cost_long_wrapper_1",
+      "schema_mode": "none",
+      "median_us": 0.87,
+      "min_us": 0.855
+    },
+    {
+      "name": "fences_cost_quoted_literal_1",
+      "schema_mode": "none",
+      "median_us": 1.96,
+      "min_us": 1.93
+    },
+    {
+      "name": "fences_cost_prose_1",
+      "schema_mode": "none",
+      "median_us": 1.095,
+      "min_us": 1.08
+    },
+    {
+      "name": "fences_cost_escaped_literal_1",
+      "schema_mode": "none",
+      "median_us": 1.5,
+      "min_us": 1.485
+    },
+    {
+      "name": "fences_cost_clean_numbers_100",
+      "schema_mode": "none",
+      "median_us": 0.365,
+      "min_us": 0.36
+    },
+    {
+      "name": "fences_cost_wrapper_100",
+      "schema_mode": "none",
+      "median_us": 1.905,
+      "min_us": 1.86
+    },
+    {
+      "name": "fences_cost_long_wrapper_100",
+      "schema_mode": "none",
+      "median_us": 3.33,
+      "min_us": 3.3
+    },
+    {
+      "name": "fences_cost_quoted_literal_100",
+      "schema_mode": "none",
+      "median_us": 109.245,
+      "min_us": 105.87
+    },
+    {
+      "name": "fences_cost_prose_100",
+      "schema_mode": "none",
+      "median_us": 24.67,
+      "min_us": 24.17
+    },
+    {
+      "name": "fences_cost_escaped_literal_100",
+      "schema_mode": "none",
+      "median_us": 1.485,
+      "min_us": 1.475
+    },
+    {
+      "name": "fences_cost_clean_numbers_1000",
+      "schema_mode": "none",
+      "median_us": 0.625,
+      "min_us": 0.62
+    },
+    {
+      "name": "fences_cost_wrapper_1000",
+      "schema_mode": "none",
+      "median_us": 10.355,
+      "min_us": 10.325
+    },
+    {
+      "name": "fences_cost_long_wrapper_1000",
+      "schema_mode": "none",
+      "median_us": 24.945,
+      "min_us": 24.66
+    },
+    {
+      "name": "fences_cost_quoted_literal_1000",
+      "schema_mode": "none",
+      "median_us": 1080.93,
+      "min_us": 1032.49
+    },
+    {
+      "name": "fences_cost_prose_1000",
+      "schema_mode": "none",
+      "median_us": 237.625,
+      "min_us": 235.2
+    },
+    {
+      "name": "fences_cost_escaped_literal_1000",
+      "schema_mode": "none",
+      "median_us": 1.685,
+      "min_us": 1.645
+    }
+  ]
+}

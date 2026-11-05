@@ -1,0 +1,88 @@
+{
+  "date": "2026-11-05",
+  "after_revisions": {
+    "python": "e1833a9",
+    "javascript": "5a9ce65"
+  },
+  "studies": {
+    "encoding": {
+      "before_revisions": {
+        "python": "b631673",
+        "javascript": "43de422"
+      },
+      "strategies": [
+        {
+          "python": {
+            "path": "outputguard/strategies/fix_encoding.py",
+            "before_sha256": "3f054c830d2178b9d25b4fbbb064d8d72f0e6af0ee9dfc55311ab7c670d6d532",
+            "after_sha256": "f506dc2afa9c707e1b1ccdf35c8e96560c1109b258d2ead41553ba3b17e6d876"
+          },
+          "javascript": {
+            "path": "src/strategies/fixEncoding.ts",
+            "before_sha256": "8ed71318573b8b67c91e607f3a28ca67a7f7c6a061c65d6db1cc55e34ec6dfcd",
+            "after_sha256": "5c921a96564765988b7640cefc0e88dbad507b3a074daff5f7e3eb2ea5dd61db"
+          }
+        }
+      ]
+    },
+    "closers": {
+      "before_revisions": {
+        "python": "1110782",
+        "javascript": "7ae97ac"
+      },
+      "strategies": [
+        {
+          "python": {
+            "path": "outputguard/strategies/fix_closers.py",
+            "before_sha256": "d1b724815d6ca213e13532b85c3b3f3f33983a6b92d0ecef886bf4ba459e260a",
+            "after_sha256": "61397469f40594d9d44d02c2033bce5b8d0cc195b79d1697732797479aaead3a"
+          },
+          "javascript": {
+            "path": "src/strategies/fixClosers.ts",
+            "before_sha256": "1672875a2391449647a7b0e6dae345e62008f237e20d82bf306101e3d16f5cb6",
+            "after_sha256": "20a0665d56a18a93e97fdb22fd275cd9d7d6e9460f4d87e0ed3a7aed175af8b2"
+          }
+        },
+        {
+          "python": {
+            "path": "outputguard/strategies/fix_truncated.py",
+            "before_sha256": "e879382c13fb14eeab69ab26cf78bcb15db56cde90d0be0bb22c8a4c5bbc77f3",
+            "after_sha256": "ebf27d8228fd528c5f40a4840d765a9a4f5f6ab7657ee007697e4d9937078764"
+          },
+          "javascript": {
+            "path": "src/strategies/fixTruncated.ts",
+            "before_sha256": "243fa9176a292e1cf113bba440ec0236f4560765a33562f3e51ca3daa6b5c22f",
+            "after_sha256": "884393d62c65679f40951018b505cf3b9cbdc889b6f4c241b7e171889781b0bc"
+          }
+        }
+      ]
+    },
+    "fences": {
+      "before_revisions": {
+        "python": "44c4ff5",
+        "javascript": "5fee561"
+      },
+      "strategies": [
+        {
+          "python": {
+            "path": "outputguard/strategies/strip_fences.py",
+            "before_sha256": "6524d8c881881345d591b265d2d5b745d1964eb92254dc5cea6d127aa08aa3ef",
+            "after_sha256": "55b4ebaae3f861efa1304264c503b1bf54984534749b4a19b03c62d150e11c07"
+          },
+          "javascript": {
+            "path": "src/strategies/stripFences.ts",
+            "before_sha256": "cfabfaadbbca6e298f49aef8b9635a20b634cf564d3ceff797a707e1b75e7d6c",
+            "after_sha256": "ff07a21983f81312c6ed80a617d2cafdb1bee89d2e7f5690c82dc44627a6bb23"
+          }
+        }
+      ]
+    }
+  },
+  "cases_sha256": "f78f7df58556e80fa9e681d50241a83201e18c4d99a3277feb18a4892385a839",
+  "string_repairs_sha256": "7a4a99388b016304d3a966ac46e2ff04932e0921a78a2f70eb146ad708a02397",
+  "method": "Run each runtime and phase serially using CPU time, 200 iterations per sample, seven samples, and 50 warmups. Check selected outputs before timing. Python replaces only baseline strategy functions. JavaScript baseline source maps match the saved baseline strategies. Feature-changing workloads appear only in after reports.",
+  "notes": [
+    "Compare phases within one runtime; these are workload-specific measurements.",
+    "Late encoding signals require scanning preceding strings. Context-aware closer/fence detection adds work on some inputs to preserve literal data."
+  ]
+}

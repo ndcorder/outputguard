@@ -1,0 +1,112 @@
+{
+  "runtime": "Python 3.10.19",
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "iterations": 200,
+  "samples": 7,
+  "warmup_iterations": 50,
+  "clock": "cpu",
+  "environment": {
+    "start": {
+      "logical_cpus": 16,
+      "load_average": [
+        7.13720703125,
+        9.65625,
+        10.4404296875
+      ]
+    },
+    "end": {
+      "logical_cpus": 16,
+      "load_average": [
+        7.13720703125,
+        9.65625,
+        10.4404296875
+      ]
+    }
+  },
+  "measurements": [
+    {
+      "name": "clean_json",
+      "schema_mode": "reused",
+      "median_us": 12.77,
+      "min_us": 11.97
+    },
+    {
+      "name": "evaluation_cost_integer_valid",
+      "schema_mode": "reused",
+      "median_us": 7.13,
+      "min_us": 7.04
+    },
+    {
+      "name": "encoding_cost_clean_numbers_1",
+      "schema_mode": "none",
+      "median_us": 0.46,
+      "min_us": 0.455
+    },
+    {
+      "name": "encoding_cost_plain_value_1",
+      "schema_mode": "none",
+      "median_us": 0.46,
+      "min_us": 0.445
+    },
+    {
+      "name": "encoding_cost_framing_1",
+      "schema_mode": "none",
+      "median_us": 0.585,
+      "min_us": 0.575
+    },
+    {
+      "name": "encoding_cost_late_signal_1",
+      "schema_mode": "none",
+      "median_us": 0.65,
+      "min_us": 0.64
+    },
+    {
+      "name": "encoding_cost_clean_numbers_100",
+      "schema_mode": "none",
+      "median_us": 0.445,
+      "min_us": 0.44
+    },
+    {
+      "name": "encoding_cost_plain_value_100",
+      "schema_mode": "none",
+      "median_us": 0.44,
+      "min_us": 0.44
+    },
+    {
+      "name": "encoding_cost_framing_100",
+      "schema_mode": "none",
+      "median_us": 1.405,
+      "min_us": 1.385
+    },
+    {
+      "name": "encoding_cost_late_signal_100",
+      "schema_mode": "none",
+      "median_us": 4.85,
+      "min_us": 4.825
+    },
+    {
+      "name": "encoding_cost_clean_numbers_1000",
+      "schema_mode": "none",
+      "median_us": 0.445,
+      "min_us": 0.445
+    },
+    {
+      "name": "encoding_cost_plain_value_1000",
+      "schema_mode": "none",
+      "median_us": 0.445,
+      "min_us": 0.445
+    },
+    {
+      "name": "encoding_cost_framing_1000",
+      "schema_mode": "none",
+      "median_us": 8.365,
+      "min_us": 8.34
+    },
+    {
+      "name": "encoding_cost_late_signal_1000",
+      "schema_mode": "none",
+      "median_us": 44.94,
+      "min_us": 44.75
+    }
+  ]
+}

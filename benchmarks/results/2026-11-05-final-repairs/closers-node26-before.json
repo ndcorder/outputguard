@@ -1,0 +1,130 @@
+{
+  "runtime": "Node v26.13.0",
+  "platform": "darwin arm64",
+  "iterations": 200,
+  "samples": 7,
+  "warmup_iterations": 50,
+  "clock": "cpu",
+  "environment": {
+    "start": {
+      "logical_cpus": 16,
+      "load_average": [
+        5.63037109375,
+        7.783203125,
+        10.90478515625
+      ]
+    },
+    "end": {
+      "logical_cpus": 16,
+      "load_average": [
+        5.63037109375,
+        7.783203125,
+        10.90478515625
+      ]
+    }
+  },
+  "measurements": [
+    {
+      "name": "clean_json",
+      "schema_mode": "reused",
+      "median_us": 1.31,
+      "min_us": 0.33
+    },
+    {
+      "name": "evaluation_cost_integer_valid",
+      "schema_mode": "reused",
+      "median_us": 0.29,
+      "min_us": 0.2
+    },
+    {
+      "name": "closers_cost_clean_numbers_1",
+      "schema_mode": "none",
+      "median_us": 0.26,
+      "min_us": 0.175
+    },
+    {
+      "name": "closers_cost_quoted_objects_1",
+      "schema_mode": "none",
+      "median_us": 0.235,
+      "min_us": 0.18
+    },
+    {
+      "name": "closers_cost_nested_missing_1",
+      "schema_mode": "none",
+      "median_us": 0.145,
+      "min_us": 0.135
+    },
+    {
+      "name": "closers_cost_deep_objects_1",
+      "schema_mode": "none",
+      "median_us": 0.145,
+      "min_us": 0.14
+    },
+    {
+      "name": "closers_cost_unmatched_truncated_1",
+      "schema_mode": "none",
+      "median_us": 0.225,
+      "min_us": 0.205
+    },
+    {
+      "name": "closers_cost_clean_numbers_100",
+      "schema_mode": "none",
+      "median_us": 0.58,
+      "min_us": 0.57
+    },
+    {
+      "name": "closers_cost_quoted_objects_100",
+      "schema_mode": "none",
+      "median_us": 6.57,
+      "min_us": 6.47
+    },
+    {
+      "name": "closers_cost_nested_missing_100",
+      "schema_mode": "none",
+      "median_us": 2.6,
+      "min_us": 1.96
+    },
+    {
+      "name": "closers_cost_deep_objects_100",
+      "schema_mode": "none",
+      "median_us": 2.32,
+      "min_us": 2.295
+    },
+    {
+      "name": "closers_cost_unmatched_truncated_100",
+      "schema_mode": "none",
+      "median_us": 1.635,
+      "min_us": 1.55
+    },
+    {
+      "name": "closers_cost_clean_numbers_1000",
+      "schema_mode": "none",
+      "median_us": 4.1,
+      "min_us": 3.815
+    },
+    {
+      "name": "closers_cost_quoted_objects_1000",
+      "schema_mode": "none",
+      "median_us": 66.645,
+      "min_us": 65.215
+    },
+    {
+      "name": "closers_cost_nested_missing_1000",
+      "schema_mode": "none",
+      "median_us": 20.505,
+      "min_us": 19.59
+    },
+    {
+      "name": "closers_cost_deep_objects_1000",
+      "schema_mode": "none",
+      "median_us": 23.075,
+      "min_us": 21.6
+    },
+    {
+      "name": "closers_cost_unmatched_truncated_1000",
+      "schema_mode": "none",
+      "median_us": 18.5,
+      "min_us": 18.215
+    }
+  ]
+}

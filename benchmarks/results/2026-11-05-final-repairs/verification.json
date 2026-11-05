@@ -1,0 +1,205 @@
+{
+  "date": "2026-11-05",
+  "completion_scope": "Documented validation, syntax repair, retry, guarded generation, batch, reporting, CLI, typing, packaging, and Python/JavaScript parity. The user requested wrapping up once the reasonable library scope was complete.",
+  "source_revisions": {
+    "python_runtime": "e1833a9",
+    "python_packaging": "89e5f51",
+    "javascript": "c462891"
+  },
+  "full_suites": {
+    "python310": {
+      "passed": 42495,
+      "skipped": 28
+    },
+    "python314": {
+      "passed": 42495,
+      "skipped": 28,
+      "environment": "Clean detached checkout; local conftest modifications absent",
+      "warnings": "Two deliberate fork-reset tests emitted Python fork deprecation warnings"
+    },
+    "node26": {
+      "passed": 37257,
+      "files": 81
+    },
+    "node18": {
+      "passed": 37257,
+      "files": 81
+    }
+  },
+  "skipped_tests": "Live provider tests require OPENROUTER_API_KEY; recorded model-output fixtures remain covered.",
+  "static_checks": [
+    "Ruff lint and format",
+    "mypy runtime sources and type contracts",
+    "ESLint",
+    "TypeScript type contracts",
+    "Package checker syntax"
+  ],
+  "parity": {
+    "node_versions": [
+      "18.20.8",
+      "26.13.0"
+    ],
+    "main_cases": 3556,
+    "report_comparisons": 21,
+    "numeric": 31,
+    "schema_formats": 400,
+    "regex": 74,
+    "python_strings": 293,
+    "python_numbers": 523,
+    "yaml": 565,
+    "toml": 181,
+    "configuration": 1467,
+    "repair": 272,
+    "diff": 230,
+    "input": 3790,
+    "schema_mutation": 102,
+    "evaluation_failure": 441,
+    "generation": 72,
+    "unicode_repair": 1881,
+    "truncation_repair": 531,
+    "string_repair": 14060
+  },
+  "installed_packages": {
+    "python": {
+      "runtime": "3.14.3",
+      "main_api_cases": 3556,
+      "string_repair_contracts": 14060,
+      "optional_parsers_absent": [
+        "PyYAML",
+        "tomli"
+      ]
+    },
+    "javascript": {
+      "runtimes": [
+        "18.20.8",
+        "26.13.0"
+      ],
+      "contracts_per_runtime": 26437,
+      "contract_groups": {
+        "main": 3556,
+        "yaml": 1130,
+        "toml": 372,
+        "stringRepairs": 14060,
+        "unicodeRepairs": 1881,
+        "truncationCases": 531,
+        "schemaMutations": 102,
+        "evaluationFailures": 441,
+        "inputCases": 3790,
+        "diffCases": 230,
+        "generation": 72,
+        "repairs": 272
+      },
+      "fresh_dependencies": {
+        "ajv": "8.20.0",
+        "fast-uri": "3.1.9",
+        "yaml": "2.9.1"
+      },
+      "checkout_dependencies": {
+        "ajv": "8.20.0",
+        "fast-uri": "3.1.4",
+        "yaml": "2.9.0"
+      },
+      "ci_gate": "pnpm test:package; build CI checks independently installed production dependencies"
+    },
+    "cli_repairs_per_runtime": 8,
+    "cli_schema_failure": "passed",
+    "cli_unsupported_context_rejection": "passed"
+  },
+  "documentation": {
+    "python_snippets_syntax_checked": 75,
+    "typescript_javascript_snippets_syntax_checked": 74,
+    "readme_quickstarts_executed": 2,
+    "shipped_python_examples_executed": 5,
+    "local_link_targets": "passed"
+  },
+  "packaging": {
+    "python_source_built_from_clean_checkout": "89e5f51",
+    "local_instruction_and_environment_probes": "excluded",
+    "committed_conftest_in_sdist": "verified",
+    "wheel_runtime_files": 52,
+    "sdist_matching_source_files": 601,
+    "npm_files": 23,
+    "source_mapped_javascript_files": 43,
+    "identical_shared_json_files": [
+      "cases.json",
+      "cli_cases.json",
+      "configuration_cases.json",
+      "diff_cases.json",
+      "evaluation_failures.json",
+      "generation_cases.json",
+      "input_cases.json",
+      "numeric_cases.json",
+      "python_numbers.json",
+      "python_strings.json",
+      "regex_cases.json",
+      "repair_cases.json",
+      "report_comparisons.json",
+      "schema_formats.json",
+      "schema_mutations.json",
+      "string_repairs.json",
+      "toml_cases.json",
+      "truncation_cases.json",
+      "unicode_repairs.json",
+      "yaml_cases.json"
+    ],
+    "attestation_stage": "Verification records are added after the tested artifacts are built."
+  },
+  "artifacts": {
+    "wheel": {
+      "filename": "outputguard-2.1.2-py3-none-any.whl",
+      "sha256": "eb8221d682578185ffb846ce376c00632e31fae3bb7f07d93ed02817bc8a5acc"
+    },
+    "sdist": {
+      "filename": "outputguard-2.1.2.tar.gz",
+      "sha256": "2ec96c3c41a0c7b5dfbe93befee7d38900fb96aeeeb6932c2741b53658e704eb"
+    },
+    "npm": {
+      "filename": "outputguard-2.1.2.tgz",
+      "sha256": "eb9dc401c612644141f6427457f7cdb0ba7cc71f2ca01413bcfa1b50b45e8459"
+    }
+  },
+  "source_hashes": {
+    "python/outputguard/strategies/fix_truncated.py": "ebf27d8228fd528c5f40a4840d765a9a4f5f6ab7657ee007697e4d9937078764",
+    "python/outputguard/strategies/extract_json.py": "ad76c2932fe0923d8f855021f7524f10da99a64a1f135272b9a277ac028b2b19",
+    "javascript/src/strategies/fixTruncated.ts": "884393d62c65679f40951018b505cf3b9cbdc889b6f4c241b7e171889781b0bc",
+    "javascript/src/strategies/extractJson.ts": "82f25a624c9f7fdf74bfb4b1e4a1d76df44b4e2ab1e4ceebc07a177c5bfca8a4",
+    "python/benchmarks/cases.json": "f78f7df58556e80fa9e681d50241a83201e18c4d99a3277feb18a4892385a839",
+    "python/benchmarks/truncation_cases.json": "70a49463690a69b514c20df3e169d78f385d06ec5293f0c54476725e9d8a3fcf",
+    "javascript/src/exceptions.ts": "187542a75c84dbb02f71a7f8f1bd3289464f47ca2126d38146c97edd396693aa",
+    "javascript/src/index.ts": "cb8c03f55e8adf222c8743064c04e5097d67e4f7cf5456fd74cc6be08176501d",
+    "python/benchmarks/repair_cases.json": "e2f3a860ab39511c42f6455c5206675d463d0d1c214171058497905ed22eb2b3",
+    "python/benchmarks/repair_cases.py": "a2f2b882aa1cda3aeb6eb23d04e8c02074dd13ec3429dc734edcd9b0a2abb4d0",
+    "javascript/benchmarks/repairCases.mjs": "97ba7cb8a912388debcbc11c46853f999c3470ac03cdbe24176a113fb69d5467",
+    "python/outputguard/strategies/fix_commas.py": "a1906a29c0e66a7b8501131ceca42160db29adbc202dd3a5cf03c97d3f3dd6bc",
+    "python/outputguard/strategies/fix_ellipsis.py": "ac32a174b979de48c07b31cff7145342c8aa23543ff815e560ee22127af98272",
+    "javascript/src/strategies/fixCommas.ts": "98d319280eeea4529a40fb4e9e26c7a2154ffc9235d60007e737a093dcc0996c",
+    "javascript/src/strategies/fixEllipsis.ts": "c5c2282a12d45e8c8d8b26c962fe1165093d54caa75bd6429bdd900900659ff0",
+    "python/benchmarks/string_repairs.json": "7a4a99388b016304d3a966ac46e2ff04932e0921a78a2f70eb146ad708a02397",
+    "python/outputguard/strategies/_lexical.py": "fcc7891f04963aff2fa7350e5f2ecba537ea754fbcd743f140700d0cad042db9",
+    "python/outputguard/strategies/remove_comments.py": "9cad1538ad4ce0355c69006b31a58b6acd33d90c9b186867b6f534cd916ffcb4",
+    "javascript/src/strategies/lexical.ts": "303578930313ed92121c91fcf33a4b7b939c837f3761c90ca7e57e2356ac7b22",
+    "javascript/src/strategies/removeComments.ts": "1f0608c3304864936e492f05a5ee5cfd53e69f65e804d3ce5af5fb0a87e440b1",
+    "python/outputguard/strategies/fix_quotes.py": "f6360e32178d62c58bcb4ea4f1d6b5fe63d0cd83ded9a33df3bac3d137951190",
+    "javascript/src/strategies/fixQuotes.ts": "36cf1fb3c98159fba19ffc307cc6b70e4904924411fc60818eef6580716fec31",
+    "python/outputguard/strategies/fix_newlines.py": "df5b1c0239ecb465fc909e6565109d6fee00449a0f1de5c5ef1bc1294f9feca2",
+    "javascript/src/strategies/fixNewlines.ts": "f12e54a1fae4dc4d3fce25fa5d593637ae1ad80072a860df3f5fc963c4665bcc",
+    "python/outputguard/strategies/fix_keys.py": "6aba2fd4a5b9ff84a4bdcfcfb1af657a659818587f356b5ccbe5304f0f63bf0a",
+    "javascript/src/strategies/fixKeys.ts": "36d00964b364f4080dbb25a61b8e34a66d3e52e3ae8fee7f536c2f0d5d1cbb7f",
+    "python/outputguard/strategies/fix_inner_quotes.py": "4c278906ef7ce55cd04b057e060971e0e3e91b75d1dfdc85bb5e009398c91120",
+    "javascript/src/strategies/fixInnerQuotes.ts": "5b63098f44c6bd6d083e8e9b7b61e23211b67a056d54b5266584fbb6a6e07e65",
+    "python/outputguard/strategies/fix_encoding.py": "f506dc2afa9c707e1b1ccdf35c8e96560c1109b258d2ead41553ba3b17e6d876",
+    "python/outputguard/strategies/fix_closers.py": "61397469f40594d9d44d02c2033bce5b8d0cc195b79d1697732797479aaead3a",
+    "python/outputguard/strategies/strip_fences.py": "55b4ebaae3f861efa1304264c503b1bf54984534749b4a19b03c62d150e11c07",
+    "javascript/src/strategies/fixEncoding.ts": "5c921a96564765988b7640cefc0e88dbad507b3a074daff5f7e3eb2ea5dd61db",
+    "javascript/src/strategies/fixClosers.ts": "20a0665d56a18a93e97fdb22fd275cd9d7d6e9460f4d87e0ed3a7aed175af8b2",
+    "javascript/src/strategies/stripFences.ts": "ff07a21983f81312c6ed80a617d2cafdb1bee89d2e7f5690c82dc44627a6bb23",
+    "python/pyproject.toml": "104a0111a02d63fc37e5f0ca68cd6121f8d48f4415e0e45c981db3d9217c118e",
+    "javascript/src/references.ts": "1dd4ec901ae094903ce984f1e9c1b1dbf8075d31956c9f78ac97201dfa951b6c",
+    "javascript/benchmarks/check_package.mjs": "aa72045b4d66deeb60de0c7e5060f6b3b05f1aab19cb16c0d4ecf2680ca3d3af",
+    "javascript/.github/workflows/ci.yml": "602795a758d8861fa0db1cbaa38454904b10da3249f10a726f55fdbc25faa094"
+  },
+  "cli_process_parity": {
+    "contracts": 215,
+    "result": "passed"
+  }
+}

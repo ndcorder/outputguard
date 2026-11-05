@@ -1,0 +1,130 @@
+{
+  "runtime": "Node v18.20.8",
+  "platform": "darwin arm64",
+  "iterations": 200,
+  "samples": 7,
+  "warmup_iterations": 50,
+  "clock": "cpu",
+  "environment": {
+    "start": {
+      "logical_cpus": 16,
+      "load_average": [
+        9.6875,
+        11.10791015625,
+        11.0068359375
+      ]
+    },
+    "end": {
+      "logical_cpus": 16,
+      "load_average": [
+        9.6875,
+        11.10791015625,
+        11.0068359375
+      ]
+    }
+  },
+  "measurements": [
+    {
+      "name": "clean_json",
+      "schema_mode": "reused",
+      "median_us": 0.73,
+      "min_us": 0.695
+    },
+    {
+      "name": "evaluation_cost_integer_valid",
+      "schema_mode": "reused",
+      "median_us": 0.53,
+      "min_us": 0.495
+    },
+    {
+      "name": "fences_cost_clean_numbers_1",
+      "schema_mode": "none",
+      "median_us": 0.175,
+      "min_us": 0.15
+    },
+    {
+      "name": "fences_cost_wrapper_1",
+      "schema_mode": "none",
+      "median_us": 0.18,
+      "min_us": 0.175
+    },
+    {
+      "name": "fences_cost_long_wrapper_1",
+      "schema_mode": "none",
+      "median_us": 0.18,
+      "min_us": 0.17
+    },
+    {
+      "name": "fences_cost_prose_1",
+      "schema_mode": "none",
+      "median_us": 0.18,
+      "min_us": 0.16
+    },
+    {
+      "name": "fences_cost_escaped_literal_1",
+      "schema_mode": "none",
+      "median_us": 0.165,
+      "min_us": 0.145
+    },
+    {
+      "name": "fences_cost_clean_numbers_100",
+      "schema_mode": "none",
+      "median_us": 0.18,
+      "min_us": 0.175
+    },
+    {
+      "name": "fences_cost_wrapper_100",
+      "schema_mode": "none",
+      "median_us": 0.215,
+      "min_us": 0.21
+    },
+    {
+      "name": "fences_cost_long_wrapper_100",
+      "schema_mode": "none",
+      "median_us": 0.295,
+      "min_us": 0.285
+    },
+    {
+      "name": "fences_cost_prose_100",
+      "schema_mode": "none",
+      "median_us": 0.35,
+      "min_us": 0.35
+    },
+    {
+      "name": "fences_cost_escaped_literal_100",
+      "schema_mode": "none",
+      "median_us": 2.845,
+      "min_us": 2.75
+    },
+    {
+      "name": "fences_cost_clean_numbers_1000",
+      "schema_mode": "none",
+      "median_us": 0.605,
+      "min_us": 0.6
+    },
+    {
+      "name": "fences_cost_wrapper_1000",
+      "schema_mode": "none",
+      "median_us": 0.605,
+      "min_us": 0.6
+    },
+    {
+      "name": "fences_cost_long_wrapper_1000",
+      "schema_mode": "none",
+      "median_us": 1.375,
+      "min_us": 1.355
+    },
+    {
+      "name": "fences_cost_prose_1000",
+      "schema_mode": "none",
+      "median_us": 2.085,
+      "min_us": 2.065
+    },
+    {
+      "name": "fences_cost_escaped_literal_1000",
+      "schema_mode": "none",
+      "median_us": 25.86,
+      "min_us": 23.24
+    }
+  ]
+}
