@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Restrict source archives to distributable project files. Exclude local agent
+  instructions and environment files while retaining runtime resources, tests,
+  benchmark fixtures, docs, examples, and build metadata.
 - Preserve fenced code inside quoted data and comments when stripping Markdown
   wrappers. Recognize wrappers through ordinary prose, align repair padding,
   and add shared literal-preservation contracts and fence scaling workloads.

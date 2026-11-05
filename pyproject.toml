@@ -80,3 +80,25 @@ testpaths = ["tests"]
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/outputguard",
+    "/tests",
+    "/benchmarks",
+    "/docs",
+    "/examples",
+    "/.github/workflows",
+    "/README.md",
+    "/CHANGELOG.md",
+    "/LICENSE",
+    "/pyproject.toml",
+    "/uv.lock",
+]
+exclude = [
+    ".env",
+    ".env.*",
+    "AGENTS.md",
+    "CLAUDE.md",
+    "CLAUDE.local.md",
+]
