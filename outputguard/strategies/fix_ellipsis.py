@@ -1,106 +1,83 @@
-"""Replace ... placeholders with valid JSON values."""
+"""Repair standalone ellipsis placeholders while preserving quoted text."""
 
 import re
+
+from outputguard.strategies._lexical import quoted_end
+from outputguard.strategies.fix_commas import apply as fix_commas
+from outputguard.strategies.remove_comments import apply as remove_comments
 
 NAME = "fix_ellipsis"
 DESCRIPTION = "Replace ... placeholders with valid JSON values"
 
+_WHITESPACE = " \t\r\n"
+_START = _WHITESPACE + "[:,{"
+_END = _WHITESPACE + ",]}"
+_SPECIAL = "\"'[]{}:,."
+_NEXT_SPECIAL = re.compile(r"[\"'\[\]{}:,.]")
+
 
 def apply(text: str) -> str:
-    try:
-        result: list[str] = []
-        i = 0
-        n = len(text)
-        in_string = False
-
-        while i < n:
-            ch = text[i]
-
-            # Handle string state
-            if in_string:
-                result.append(ch)
-                if ch == "\\" and i + 1 < n:
-                    result.append(text[i + 1])
-                    i += 2
-                    continue
-                if ch == '"':
-                    in_string = False
-                i += 1
+    working = remove_comments(text)
+    if "..." not in working:
+        return fix_commas(working)
+    result: list[str] = []
+    stack: list[str] = []
+    index = 0
+    last = ""
+    last_index = 0
+    while index < len(working):
+        char = working[index]
+        if char in "\"'":
+            end = quoted_end(working, index)
+            result.append(working[index:end])
+            last, last_index = char, len(result) - 1
+            index = end
+            continue
+        if char not in _SPECIAL:
+            match = _NEXT_SPECIAL.search(working, index + 1)
+            end = match.start() if match else len(working)
+            chunk = working[index:end]
+            result.append(chunk)
+            significant = chunk.rstrip(_WHITESPACE)
+            if significant:
+                last, last_index = significant[-1], len(result) - 1
+            index = end
+            continue
+        if (
+            char == "."
+            and working.startswith("...", index)
+            and (index == 0 or working[index - 1] in _START)
+            and (index + 3 == len(working) or working[index + 3] in _END)
+        ):
+            end = index + 3
+            while end < len(working) and working[end] in _WHITESPACE:
+                end += 1
+            after = working[end] if end < len(working) else ""
+            container = stack[-1] if stack else ""
+            if (container == "{" and last == ":") or (not stack and not last and not after):
+                result.append("null")
+                last, last_index = "l", len(result) - 1
+                index += 3
                 continue
-
-            if ch == '"':
-                in_string = True
-                result.append(ch)
-                i += 1
-                continue
-
-            # Check for // single-line comments containing ...
-            if ch == "/" and i + 1 < n and text[i + 1] == "/":
-                # Skip the entire comment to end of line
-                while i < n and text[i] != "\n":
-                    i += 1
-                continue
-
-            # Check for /* multi-line comments containing ... */
-            if ch == "/" and i + 1 < n and text[i + 1] == "*":
-                i += 2
-                while i + 1 < n and not (text[i] == "*" and text[i + 1] == "/"):
-                    i += 1
-                i += 2  # skip */
-                continue
-
-            # Outside a string — check for ...
-            if ch == "." and i + 2 < n and text[i + 1] == "." and text[i + 2] == ".":
-                # Look at the character before the dots (skip whitespace)
-                before = "".join(result).rstrip()
-                # Look at the character after the dots
-                after_idx = i + 3
-                while after_idx < n and text[after_idx] in " \t\r\n":
-                    after_idx += 1
-                after_ch = text[after_idx] if after_idx < n else ""
-
-                if before.endswith("[") and after_ch == "]":
-                    # [...] -> [] — skip the dots
-                    i += 3
-                    continue
-                elif before.endswith("{") and after_ch == "}":
-                    # {...} -> {} — skip the dots
-                    i += 3
-                    continue
-                elif before.endswith(",") and after_ch in "],":
-                    # ... as a trailing array element after comma —
-                    # remove the dots AND the preceding comma
-                    joined = "".join(result)
-                    stripped = joined.rstrip()
-                    if stripped.endswith(","):
-                        result.clear()
-                        result.append(stripped[:-1])
-                    i += 3
-                    continue
+            if (
+                container
+                and last in (container, ",")
+                and after in (",", "}" if container == "{" else "]", "")
+            ):
+                if after == ",":
+                    index = end + 1
                 else:
-                    # Standalone ... as a value -> null
-                    result.append("null")
-                    i += 3
-                    continue
-
-            result.append(ch)
-            i += 1
-
-        output = "".join(result)
-
-        # Clean up trailing commas that may result from removing
-        # ellipsis elements (e.g. [1, 2, ...] -> [1, 2, null] is fine,
-        # but if the ... was already the trailing element we may have
-        # a dangling comma before a closer).
-        output = re.sub(r",\s*([\]\}])", r"\1", output)
-
-        # Also handle "...", as array element — the quotes were kept
-        # because it was inside a string; remove "..." elements.
-        # We need to be careful: only remove "..." that is an array
-        # element (preceded by , or [).
-        output = re.sub(r',\s*"\.\.\.(more[^"]*)?"', "", output)
-        output = re.sub(r'"\.\.\.(more[^"]*)?"\s*,\s*', "", output)
-
-        return output
-    except Exception:
-        return text
+                    if last == ",":
+                        del result[last_index:]
+                        last = ""
+                    index += 3
+                continue
+        result.append(char)
+        if char not in _WHITESPACE:
+            last, last_index = char, len(result) - 1
+            if char in "[{":
+                stack.append(char)
+            elif stack and char == ("}" if stack[-1] == "{" else "]"):
+                stack.pop()
+        index += 1
+    return fix_commas("".join(result))

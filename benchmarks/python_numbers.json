@@ -1,0 +1,1055 @@
+[
+  {
+    "name": "zero",
+    "text": "0",
+    "valid": true,
+    "number_type": "integer",
+    "value": 0
+  },
+  {
+    "name": "zero_run",
+    "text": "000",
+    "valid": true,
+    "number_type": "integer",
+    "value": 0
+  },
+  {
+    "name": "zero_underscore",
+    "text": "0_0_0",
+    "valid": true,
+    "number_type": "integer",
+    "value": 0
+  },
+  {
+    "name": "decimal",
+    "text": "42",
+    "valid": true,
+    "number_type": "integer",
+    "value": 42
+  },
+  {
+    "name": "decimal_underscores",
+    "text": "1_234_567",
+    "valid": true,
+    "number_type": "integer",
+    "value": 1234567
+  },
+  {
+    "name": "safe_integer_max",
+    "text": "9_007_199_254_740_991",
+    "valid": true,
+    "number_type": "integer",
+    "value": 9007199254740991
+  },
+  {
+    "name": "binary",
+    "text": "0b101010",
+    "valid": true,
+    "number_type": "integer",
+    "value": 42
+  },
+  {
+    "name": "binary_uppercase",
+    "text": "0B101010",
+    "valid": true,
+    "number_type": "integer",
+    "value": 42
+  },
+  {
+    "name": "binary_prefix_underscore",
+    "text": "0b_101010",
+    "valid": true,
+    "number_type": "integer",
+    "value": 42
+  },
+  {
+    "name": "binary_digit_underscores",
+    "text": "0b_10_10_10",
+    "valid": true,
+    "number_type": "integer",
+    "value": 42
+  },
+  {
+    "name": "octal",
+    "text": "0o52",
+    "valid": true,
+    "number_type": "integer",
+    "value": 42
+  },
+  {
+    "name": "octal_uppercase",
+    "text": "0O52",
+    "valid": true,
+    "number_type": "integer",
+    "value": 42
+  },
+  {
+    "name": "octal_prefix_underscore",
+    "text": "0o_52",
+    "valid": true,
+    "number_type": "integer",
+    "value": 42
+  },
+  {
+    "name": "octal_digit_underscores",
+    "text": "0o_5_2",
+    "valid": true,
+    "number_type": "integer",
+    "value": 42
+  },
+  {
+    "name": "hexadecimal",
+    "text": "0x2a",
+    "valid": true,
+    "number_type": "integer",
+    "value": 42
+  },
+  {
+    "name": "hexadecimal_uppercase",
+    "text": "0X2A",
+    "valid": true,
+    "number_type": "integer",
+    "value": 42
+  },
+  {
+    "name": "hexadecimal_prefix_underscore",
+    "text": "0x_2a",
+    "valid": true,
+    "number_type": "integer",
+    "value": 42
+  },
+  {
+    "name": "hexadecimal_digit_underscores",
+    "text": "0X_2_A",
+    "valid": true,
+    "number_type": "integer",
+    "value": 42
+  },
+  {
+    "name": "hexadecimal_e_is_digit",
+    "text": "0x1e2",
+    "valid": true,
+    "number_type": "integer",
+    "value": 482
+  },
+  {
+    "name": "hexadecimal_long",
+    "text": "0xDead_Beef",
+    "valid": true,
+    "number_type": "integer",
+    "value": 3735928559
+  },
+  {
+    "name": "positive_zero",
+    "text": "+0",
+    "valid": true,
+    "number_type": "integer",
+    "value": 0
+  },
+  {
+    "name": "negative_integer_zero",
+    "text": "-0",
+    "valid": true,
+    "number_type": "integer",
+    "value": 0
+  },
+  {
+    "name": "negative_zero_run",
+    "text": "-000",
+    "valid": true,
+    "number_type": "integer",
+    "value": 0
+  },
+  {
+    "name": "negative_binary_zero",
+    "text": "-0b0",
+    "valid": true,
+    "number_type": "integer",
+    "value": 0
+  },
+  {
+    "name": "negative_octal_zero",
+    "text": "-0o0",
+    "valid": true,
+    "number_type": "integer",
+    "value": 0
+  },
+  {
+    "name": "negative_hexadecimal_zero",
+    "text": "-0x0",
+    "valid": true,
+    "number_type": "integer",
+    "value": 0
+  },
+  {
+    "name": "negative_integer",
+    "text": "-42",
+    "valid": true,
+    "number_type": "integer",
+    "value": -42
+  },
+  {
+    "name": "positive_integer",
+    "text": "+42",
+    "valid": true,
+    "number_type": "integer",
+    "value": 42
+  },
+  {
+    "name": "negative_binary",
+    "text": "-0b101010",
+    "valid": true,
+    "number_type": "integer",
+    "value": -42
+  },
+  {
+    "name": "positive_hexadecimal",
+    "text": "+0x2A",
+    "valid": true,
+    "number_type": "integer",
+    "value": 42
+  },
+  {
+    "name": "negative_octal",
+    "text": "-0o_52",
+    "valid": true,
+    "number_type": "integer",
+    "value": -42
+  },
+  {
+    "name": "fraction_without_integer",
+    "text": ".5",
+    "valid": true,
+    "number_type": "float",
+    "value": 0.5
+  },
+  {
+    "name": "float_without_fraction",
+    "text": "1.",
+    "valid": true,
+    "number_type": "float",
+    "value": 1.0
+  },
+  {
+    "name": "float_with_exponent_without_fraction",
+    "text": "1.e2",
+    "valid": true,
+    "number_type": "float",
+    "value": 100.0
+  },
+  {
+    "name": "float_negative_exponent",
+    "text": "1.e-2",
+    "valid": true,
+    "number_type": "float",
+    "value": 0.01
+  },
+  {
+    "name": "fraction_exponent",
+    "text": ".5e+2",
+    "valid": true,
+    "number_type": "float",
+    "value": 50.0
+  },
+  {
+    "name": "integer_exponent",
+    "text": "42e0",
+    "valid": true,
+    "number_type": "float",
+    "value": 42.0
+  },
+  {
+    "name": "uppercase_exponent",
+    "text": "1E2",
+    "valid": true,
+    "number_type": "float",
+    "value": 100.0
+  },
+  {
+    "name": "float_leading_zero",
+    "text": "01.",
+    "valid": true,
+    "number_type": "float",
+    "value": 1.0
+  },
+  {
+    "name": "exponent_leading_zero",
+    "text": "01e2",
+    "valid": true,
+    "number_type": "float",
+    "value": 100.0
+  },
+  {
+    "name": "float_zero_underscores",
+    "text": "00_1.",
+    "valid": true,
+    "number_type": "float",
+    "value": 1.0
+  },
+  {
+    "name": "fraction_zero_underscores",
+    "text": "0_01.5",
+    "valid": true,
+    "number_type": "float",
+    "value": 1.5
+  },
+  {
+    "name": "fraction_underscores",
+    "text": "1_2.5_0",
+    "valid": true,
+    "number_type": "float",
+    "value": 12.5
+  },
+  {
+    "name": "exponent_underscores",
+    "text": "1_2.3_4e+0_2",
+    "valid": true,
+    "number_type": "float",
+    "value": 1234.0
+  },
+  {
+    "name": "leading_fraction_underscores",
+    "text": ".1_25",
+    "valid": true,
+    "number_type": "float",
+    "value": 0.125
+  },
+  {
+    "name": "trailing_point_underscores",
+    "text": "1_0.",
+    "valid": true,
+    "number_type": "float",
+    "value": 10.0
+  },
+  {
+    "name": "negative_float",
+    "text": "-1.25",
+    "valid": true,
+    "number_type": "float",
+    "value": -1.25
+  },
+  {
+    "name": "positive_float",
+    "text": "+1.25",
+    "valid": true,
+    "number_type": "float",
+    "value": 1.25
+  },
+  {
+    "name": "negative_float_zero",
+    "text": "-0.0",
+    "valid": true,
+    "number_type": "float",
+    "value": -0.0
+  },
+  {
+    "name": "negative_point_zero",
+    "text": "-0.",
+    "valid": true,
+    "number_type": "float",
+    "value": -0.0
+  },
+  {
+    "name": "negative_exponent_zero",
+    "text": "-0e0",
+    "valid": true,
+    "number_type": "float",
+    "value": -0.0
+  },
+  {
+    "name": "positive_float_zero",
+    "text": "+0.0",
+    "valid": true,
+    "number_type": "float",
+    "value": 0.0
+  },
+  {
+    "name": "underflow",
+    "text": "1e-4000",
+    "valid": true,
+    "number_type": "float",
+    "value": 0.0
+  },
+  {
+    "name": "negative_underflow",
+    "text": "-1e-4000",
+    "valid": true,
+    "number_type": "float",
+    "value": -0.0
+  },
+  {
+    "name": "zero_huge_exponent",
+    "text": "0e9999999",
+    "valid": true,
+    "number_type": "float",
+    "value": 0.0
+  },
+  {
+    "name": "negative_zero_huge_exponent",
+    "text": "-0e9999999",
+    "valid": true,
+    "number_type": "float",
+    "value": -0.0
+  },
+  {
+    "name": "smallest_subnormal",
+    "text": "5e-324",
+    "valid": true,
+    "number_type": "float",
+    "value": 5e-324
+  },
+  {
+    "name": "smallest_subnormal_long",
+    "text": "4.9406564584124654e-324",
+    "valid": true,
+    "number_type": "float",
+    "value": 5e-324
+  },
+  {
+    "name": "smallest_normal",
+    "text": "2.2250738585072014e-308",
+    "valid": true,
+    "number_type": "float",
+    "value": 2.2250738585072014e-308
+  },
+  {
+    "name": "largest_finite",
+    "text": "1.7976931348623157e308",
+    "valid": true,
+    "number_type": "float",
+    "value": 1.7976931348623157e+308
+  },
+  {
+    "name": "float_round_trip",
+    "text": "0.30000000000000004",
+    "valid": true,
+    "number_type": "float",
+    "value": 0.30000000000000004
+  },
+  {
+    "name": "positive_overflow",
+    "text": "1e400",
+    "valid": true,
+    "number_type": "float",
+    "value_kind": "positive_infinity"
+  },
+  {
+    "name": "negative_overflow",
+    "text": "-1e400",
+    "valid": true,
+    "number_type": "float",
+    "value_kind": "negative_infinity"
+  },
+  {
+    "name": "explicit_positive_overflow",
+    "text": "+1.e400",
+    "valid": true,
+    "number_type": "float",
+    "value_kind": "positive_infinity"
+  },
+  {
+    "name": "sign_with_space",
+    "text": "+ 42",
+    "valid": true,
+    "number_type": "integer",
+    "value": 42
+  },
+  {
+    "name": "sign_with_tab",
+    "text": "-\t42",
+    "valid": true,
+    "number_type": "integer",
+    "value": -42
+  },
+  {
+    "name": "sign_with_form_feed",
+    "text": "-\f42",
+    "valid": true,
+    "number_type": "integer",
+    "value": -42
+  },
+  {
+    "name": "sign_with_line_join",
+    "text": "-\\\n42",
+    "valid": true,
+    "number_type": "integer",
+    "value": -42
+  },
+  {
+    "name": "sign_with_crlf_join",
+    "text": "+\\\r\n42",
+    "valid": true,
+    "number_type": "integer",
+    "value": 42
+  },
+  {
+    "name": "grouped_constant",
+    "text": "(42)",
+    "valid": true,
+    "number_type": "integer",
+    "value": 42
+  },
+  {
+    "name": "grouped_signed",
+    "text": "(-42)",
+    "valid": true,
+    "number_type": "integer",
+    "value": -42
+  },
+  {
+    "name": "sign_grouped_operand",
+    "text": "-(42)",
+    "valid": true,
+    "number_type": "integer",
+    "value": -42
+  },
+  {
+    "name": "sign_nested_operand",
+    "text": "-((42))",
+    "valid": true,
+    "number_type": "integer",
+    "value": -42
+  },
+  {
+    "name": "sign_grouped_hexadecimal",
+    "text": "-(0x2a)",
+    "valid": true,
+    "number_type": "integer",
+    "value": -42
+  },
+  {
+    "name": "sign_grouped_float",
+    "text": "+(1.)",
+    "valid": true,
+    "number_type": "float",
+    "value": 1.0
+  },
+  {
+    "name": "sign_grouped_integer_zero",
+    "text": "-(0)",
+    "valid": true,
+    "number_type": "integer",
+    "value": 0
+  },
+  {
+    "name": "sign_grouped_float_zero",
+    "text": "-(0e0)",
+    "valid": true,
+    "number_type": "float",
+    "value": -0.0
+  },
+  {
+    "name": "sign_after_group_newline",
+    "text": "(-\n42)",
+    "valid": true,
+    "number_type": "integer",
+    "value": -42
+  },
+  {
+    "name": "sign_before_group_newline",
+    "text": "-(\n42\n)",
+    "valid": true,
+    "number_type": "integer",
+    "value": -42
+  },
+  {
+    "name": "sign_after_group_comment",
+    "text": "(- # ignored\n42)",
+    "valid": true,
+    "number_type": "integer",
+    "value": -42
+  },
+  {
+    "name": "sign_before_group_comment",
+    "text": "-(# ignored\n42)",
+    "valid": true,
+    "number_type": "integer",
+    "value": -42
+  },
+  {
+    "name": "root_comment",
+    "text": "42 # ignored",
+    "valid": true,
+    "number_type": "integer",
+    "value": 42,
+    "root_only": true
+  },
+  {
+    "name": "invalid_1__0",
+    "text": "1__0",
+    "valid": false
+  },
+  {
+    "name": "invalid_1_",
+    "text": "1_",
+    "valid": false
+  },
+  {
+    "name": "invalid_0_",
+    "text": "0_",
+    "valid": false
+  },
+  {
+    "name": "invalid_0__0",
+    "text": "0__0",
+    "valid": false
+  },
+  {
+    "name": "invalid_0123",
+    "text": "0123",
+    "valid": false
+  },
+  {
+    "name": "invalid_0_1",
+    "text": "0_1",
+    "valid": false
+  },
+  {
+    "name": "invalid_00_1",
+    "text": "00_1",
+    "valid": false
+  },
+  {
+    "name": "invalid_-01",
+    "text": "-01",
+    "valid": false
+  },
+  {
+    "name": "invalid_+0002",
+    "text": "+0002",
+    "valid": false
+  },
+  {
+    "name": "invalid_0_xff",
+    "text": "0_xff",
+    "valid": false
+  },
+  {
+    "name": "invalid_0b",
+    "text": "0b",
+    "valid": false
+  },
+  {
+    "name": "invalid_0B",
+    "text": "0B",
+    "valid": false
+  },
+  {
+    "name": "invalid_0o",
+    "text": "0o",
+    "valid": false
+  },
+  {
+    "name": "invalid_0x",
+    "text": "0x",
+    "valid": false
+  },
+  {
+    "name": "invalid_0b_",
+    "text": "0b_",
+    "valid": false
+  },
+  {
+    "name": "invalid_0b__1",
+    "text": "0b__1",
+    "valid": false
+  },
+  {
+    "name": "invalid_0b1_",
+    "text": "0b1_",
+    "valid": false
+  },
+  {
+    "name": "invalid_0b1__0",
+    "text": "0b1__0",
+    "valid": false
+  },
+  {
+    "name": "invalid_0b102",
+    "text": "0b102",
+    "valid": false
+  },
+  {
+    "name": "invalid_0o8",
+    "text": "0o8",
+    "valid": false
+  },
+  {
+    "name": "invalid_0o_8",
+    "text": "0o_8",
+    "valid": false
+  },
+  {
+    "name": "invalid_0o7_",
+    "text": "0o7_",
+    "valid": false
+  },
+  {
+    "name": "invalid_0xg",
+    "text": "0xg",
+    "valid": false
+  },
+  {
+    "name": "invalid_0x__ff",
+    "text": "0x__ff",
+    "valid": false
+  },
+  {
+    "name": "invalid_0x1__f",
+    "text": "0x1__f",
+    "valid": false
+  },
+  {
+    "name": "invalid_0x1_",
+    "text": "0x1_",
+    "valid": false
+  },
+  {
+    "name": "invalid_0x1.2",
+    "text": "0x1.2",
+    "valid": false
+  },
+  {
+    "name": "invalid_0x1p2",
+    "text": "0x1p2",
+    "valid": false
+  },
+  {
+    "name": "invalid__1",
+    "text": "_1",
+    "valid": false
+  },
+  {
+    "name": "invalid_\u0661\u0662",
+    "text": "\u0661\u0662",
+    "valid": false
+  },
+  {
+    "name": "invalid_\uff11\uff12",
+    "text": "\uff11\uff12",
+    "valid": false
+  },
+  {
+    "name": "invalid_1\u0662",
+    "text": "1\u0662",
+    "valid": false
+  },
+  {
+    "name": "invalid_0x\uff26\uff26",
+    "text": "0x\uff26\uff26",
+    "valid": false
+  },
+  {
+    "name": "invalid_.",
+    "text": ".",
+    "valid": false
+  },
+  {
+    "name": "invalid_.e2",
+    "text": ".e2",
+    "valid": false
+  },
+  {
+    "name": "invalid_._1",
+    "text": "._1",
+    "valid": false
+  },
+  {
+    "name": "invalid_1_.0",
+    "text": "1_.0",
+    "valid": false
+  },
+  {
+    "name": "invalid_1._0",
+    "text": "1._0",
+    "valid": false
+  },
+  {
+    "name": "invalid_1.0_",
+    "text": "1.0_",
+    "valid": false
+  },
+  {
+    "name": "invalid_1..",
+    "text": "1..",
+    "valid": false
+  },
+  {
+    "name": "invalid_1.2.3",
+    "text": "1.2.3",
+    "valid": false
+  },
+  {
+    "name": "invalid_1e",
+    "text": "1e",
+    "valid": false
+  },
+  {
+    "name": "invalid_1e+",
+    "text": "1e+",
+    "valid": false
+  },
+  {
+    "name": "invalid_1e-",
+    "text": "1e-",
+    "valid": false
+  },
+  {
+    "name": "invalid_1_e2",
+    "text": "1_e2",
+    "valid": false
+  },
+  {
+    "name": "invalid_1e_2",
+    "text": "1e_2",
+    "valid": false
+  },
+  {
+    "name": "invalid_1e+_2",
+    "text": "1e+_2",
+    "valid": false
+  },
+  {
+    "name": "invalid_1e2_",
+    "text": "1e2_",
+    "valid": false
+  },
+  {
+    "name": "invalid_1e2__0",
+    "text": "1e2__0",
+    "valid": false
+  },
+  {
+    "name": "invalid_1e 2",
+    "text": "1e 2",
+    "valid": false
+  },
+  {
+    "name": "invalid_1e+ 2",
+    "text": "1e+ 2",
+    "valid": false
+  },
+  {
+    "name": "invalid_1e2.0",
+    "text": "1e2.0",
+    "valid": false
+  },
+  {
+    "name": "invalid_--1",
+    "text": "--1",
+    "valid": false
+  },
+  {
+    "name": "invalid_-+1",
+    "text": "-+1",
+    "valid": false
+  },
+  {
+    "name": "invalid_++1",
+    "text": "++1",
+    "valid": false
+  },
+  {
+    "name": "invalid_+-1",
+    "text": "+-1",
+    "valid": false
+  },
+  {
+    "name": "invalid_-(-1)",
+    "text": "-(-1)",
+    "valid": false
+  },
+  {
+    "name": "invalid_-(+1)",
+    "text": "-(+1)",
+    "valid": false
+  },
+  {
+    "name": "invalid_+(+1)",
+    "text": "+(+1)",
+    "valid": false
+  },
+  {
+    "name": "invalid_-(((-1)))",
+    "text": "-(((-1)))",
+    "valid": false
+  },
+  {
+    "name": "invalid_-(-0.)",
+    "text": "-(-0.)",
+    "valid": false
+  },
+  {
+    "name": "invalid_-True",
+    "text": "-True",
+    "valid": false
+  },
+  {
+    "name": "invalid_+False",
+    "text": "+False",
+    "valid": false
+  },
+  {
+    "name": "invalid_-None",
+    "text": "-None",
+    "valid": false
+  },
+  {
+    "name": "invalid_-'1'",
+    "text": "-'1'",
+    "valid": false
+  },
+  {
+    "name": "invalid_-[]",
+    "text": "-[]",
+    "valid": false
+  },
+  {
+    "name": "invalid_-{}",
+    "text": "-{}",
+    "valid": false
+  },
+  {
+    "name": "invalid_-()",
+    "text": "-()",
+    "valid": false
+  },
+  {
+    "name": "invalid_-(1,)",
+    "text": "-(1,)",
+    "valid": false
+  },
+  {
+    "name": "invalid_-(1+1)",
+    "text": "-(1+1)",
+    "valid": false
+  },
+  {
+    "name": "invalid_1 2",
+    "text": "1 2",
+    "valid": false
+  },
+  {
+    "name": "invalid_1\t2",
+    "text": "1\t2",
+    "valid": false
+  },
+  {
+    "name": "invalid_1\\\n2",
+    "text": "1\\\n2",
+    "valid": false
+  },
+  {
+    "name": "invalid_0x\\\nff",
+    "text": "0x\\\nff",
+    "valid": false
+  },
+  {
+    "name": "invalid_1e\\\n2",
+    "text": "1e\\\n2",
+    "valid": false
+  },
+  {
+    "name": "invalid_1e+\\\n2",
+    "text": "1e+\\\n2",
+    "valid": false
+  },
+  {
+    "name": "invalid_1\\\n.0",
+    "text": "1\\\n.0",
+    "valid": false
+  },
+  {
+    "name": "invalid_NaN",
+    "text": "NaN",
+    "valid": false
+  },
+  {
+    "name": "invalid_nan",
+    "text": "nan",
+    "valid": false
+  },
+  {
+    "name": "invalid_inf",
+    "text": "inf",
+    "valid": false
+  },
+  {
+    "name": "invalid_Infinity",
+    "text": "Infinity",
+    "valid": false
+  },
+  {
+    "name": "invalid_-Infinity",
+    "text": "-Infinity",
+    "valid": false
+  },
+  {
+    "name": "invalid_1+1",
+    "text": "1+1",
+    "valid": false
+  },
+  {
+    "name": "invalid_1-1",
+    "text": "1-1",
+    "valid": false
+  },
+  {
+    "name": "invalid_1*2",
+    "text": "1*2",
+    "valid": false
+  },
+  {
+    "name": "invalid_1/2",
+    "text": "1/2",
+    "valid": false
+  },
+  {
+    "name": "invalid_2**3",
+    "text": "2**3",
+    "valid": false
+  },
+  {
+    "name": "invalid_~1",
+    "text": "~1",
+    "valid": false
+  },
+  {
+    "name": "invalid_-\u000b42",
+    "text": "-\u000b42",
+    "valid": false
+  },
+  {
+    "name": "invalid_-\u00a042",
+    "text": "-\u00a042",
+    "valid": false
+  },
+  {
+    "name": "invalid_+",
+    "text": "+",
+    "valid": false
+  },
+  {
+    "name": "invalid_-",
+    "text": "-",
+    "valid": false
+  },
+  {
+    "name": "root_newline_-\n42",
+    "text": "-\n42",
+    "valid": false,
+    "root_only": true
+  },
+  {
+    "name": "root_newline_+ # ignored\n42",
+    "text": "+ # ignored\n42",
+    "valid": false,
+    "root_only": true
+  },
+  {
+    "name": "root_newline_-\r\n42",
+    "text": "-\r\n42",
+    "valid": false,
+    "root_only": true
+  }
+]

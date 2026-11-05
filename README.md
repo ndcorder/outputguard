@@ -5,7 +5,7 @@
 [![Python](https://img.shields.io/badge/python-3.10+-blue)](https://github.com/ndcorder/outputguard)
 [![CI](https://github.com/ndcorder/outputguard/actions/workflows/ci.yml/badge.svg)](https://github.com/ndcorder/outputguard/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Tests](https://img.shields.io/badge/tests-2,001-brightgreen)](#tested-against-288-real-llm-models)
+[![Tests](https://img.shields.io/badge/tests-25k%2B-brightgreen)](#tested-against-288-real-llm-models)
 
 ---
 
@@ -49,6 +49,11 @@ Or with [uv](https://docs.astral.sh/uv/):
 uv add outputguard
 ```
 
+Python installs [QuickJS-NG](https://github.com/genotrance/quickjs-ng) for
+ECMAScript schema regex matching and the shared YAML/TOML parsers. Node.js is not
+required at runtime. See [regular expressions](docs/api.md#regular-expressions)
+and the [formats guide](docs/formats.md) for syntax and compatibility details.
+
 ## Documentation
 
 Start with the README for a fast overview, then use the focused guides when you
@@ -70,6 +75,8 @@ need exact behavior, API signatures, or command examples:
 - [Recipes](docs/recipes.md) - copy-paste patterns for apps, evals, CI, and
   privacy-sensitive retries.
 - [Troubleshooting](docs/troubleshooting.md) - common symptoms and fixes.
+- [Benchmarks and parity checks](docs/benchmarks.md) - measure the APIs and
+  compare Python and JavaScript behavior on shared fixtures.
 - [Migration to 2.0](docs/migration-2.0.md) - compatibility notes and adoption
   checklist.
 - [Changelog](CHANGELOG.md) - release notes and 2.0 migration notes.
@@ -208,6 +215,10 @@ auto_data = outputguard.parse("name: Alice\nage: 30", schema, format="forced-jso
 
 Supported input formats are `json`, `yaml`/`yml`, `toml`, `python`/`python-literal`, `auto`, and `forced-json-off`.
 
+TOML 1.1 dates and times return strings with their fractional digits and offsets
+preserved. See the [TOML profile](docs/formats.md#toml) for normalization rules
+and native integer limits.
+
 ### Batch Processing
 
 Use batch helpers when validating fixture sets, eval outputs, or logs:
@@ -274,6 +285,14 @@ Fifteen strategies, applied in order. Most target JSON-family malformations; gen
 | 14 | `fix_closers` | `{"a": [1, 2, 3` | `{"a": [1, 2, 3]}` |
 | 15 | `fix_newlines` | `{"a": "line1↵line2"}` | `{"a": "line1\nline2"}` |
 
+`↵` marks a raw line break in the example. `fix_newlines` also escapes other
+raw C0 characters, including NUL, backspace, and form feed, inside quoted strings.
+
+Unquoted-key repair follows the ASCII label syntax in the
+[API reference](docs/api.md#unquoted-object-keys) and preserves quoted strings and comments.
+Inner-quote repair also supports array items and root strings; see its
+[boundary rules](docs/api.md#inner-quotes).
+
 ## Tested Against 288 Real LLM Models
 
 We tested outputguard against **every text-generation model on OpenRouter** — 288 models across 40+ providers.
@@ -328,23 +347,22 @@ The 63 repaired outputs were fixed automatically — mostly `strip_fences` (mark
 
 ### Test Suite
 
-**2,001 tests** across 9 testing dimensions:
+**10,000+ tests** cover:
 
-| Category | Tests | What it covers |
-|---|---|---|
-| Strategy exhaustive | 159 | Every strategy pushed to edge cases |
-| Adversarial & fuzzing | 286 | 141 chaotic inputs, concurrency, performance |
-| API contracts | 145 | `parse()`, exceptions, reports, CLI, registry |
-| LLM corpus | 119 | Real failure patterns from 7 model families |
-| Combinations | 115 | Multi-strategy interactions, ordering, idempotency |
-| Real model fixtures | 576 | Actual outputs from 288 LLM models |
-| Core & integration | 414 | Strategies, validator, repairer, guard, stress |
-| Format matrix | 74 | Every public JSON API surface repeated for YAML, TOML, Python literals, auto, aliases, and forced-JSON-off |
-| 2.0 orchestration | 10 | Guarded generation, async generation, batch helpers, and batch CLI |
+| Coverage | What it checks |
+|---|---|
+| Repair strategies | Individual strategies, edge cases, combinations, ordering, and idempotency |
+| API workflows | Parsing, exceptions, reports, guards, generation, batch helpers, and CLI behavior |
+| Model output corpus | Committed real outputs and model failure patterns |
+| Input formats | JSON, YAML, TOML, Python literals, auto detection, and aliases |
+| Schema assertions | Types, booleans, formats, numeric constraints, regexes, and literal equality |
+| References and scopes | Encoded pointers, embedded resources, keyword evaluation, and native lookup failures |
+| Isolation | Caller ownership, native validators, thread-local contexts, and fork resets |
+| Cross-port parity | Explicit fixtures and seeded document/data checks against JavaScript |
+| Benchmark tooling | Timers, report comparisons, metadata, and opt-in regression gates |
 
 ```bash
 uv run pytest tests/ -q
-# 2,001 passed
 ```
 
 ## Configuration
@@ -373,29 +391,38 @@ yaml_guard = OutputGuard(format="yaml")
 result = yaml_guard.validate_and_repair("```yaml\nname: Alice\nage: 30\n```", schema)
 ```
 
+Selections are copied and validated on construction. Names are case-sensitive;
+unknown names and non-string elements raise errors. `strategies=[]` disables
+repair. Selected strategies run once in registry order; `guard.strategy_names`
+returns a fresh list of those names. See [strategy selection](docs/api.md#strategy-selection).
+
 ## RepairReport
 
-For debugging and observability, `RepairReport` gives you a full breakdown of what happened:
+For debugging, `RepairReport` records the accepted repair pass or the final failed attempt:
 
 ```python
-from outputguard.report import RepairReport
+from outputguard import repair
 
-report = RepairReport(
-    original_text=original,
-    final_text=repaired,
-    success=True,
-    steps=steps,
-)
+result, report = repair(text, report=True)
 
 print(report.summary)
 # Repaired using 2 strategy(ies): strip_fences, fix_commas
 
-print(report.confidence)  # 0.8 — fewer strategies = higher confidence
+print(report.confidence)  # Heuristic confidence score
 print(report.diff)  # Unified diff from original to repaired
 print(report.step_diffs())  # Per-strategy diffs for verbose logging
+print(report.strategies_tried)  # Every strategy in the recorded pass
 ```
 
-**Confidence scoring** is a heuristic from 0.0 to 1.0. It decreases as more strategies are needed and as the text changes more. Useful for deciding whether to trust a repair or escalate to a retry.
+Failed repairs return the original text. Inspect `report.candidate_text` for
+discarded edits and `step.error` for failed strategy calls. Non-string returns
+and ordinary strategy exceptions preserve the current text so later fixes can run.
+
+Report and strategy diffs use matching unified-patch formatting in both ports,
+with three context lines, exact line endings, and missing-final-newline markers.
+A bounded matcher keeps dissimilar documents from causing unbounded searches.
+
+**Confidence scoring** is a heuristic from 0.0 to 1.0. It decreases as more strategies are needed and as the text changes more. Lengths count Unicode code points, with exact half-up rounding to two decimals.
 
 ## API Reference
 
@@ -420,7 +447,8 @@ print(report.step_diffs())  # Per-strategy diffs for verbose logging
 | `OutputGuard` | Configurable pipeline with strategy selection, retry limits, and default `format` |
 | `GuardedGenerateResult` | Result with `valid`, `data`, `text`, `attempts`, `errors`, `repaired`, `strategies_applied`, `exhausted`, `format` |
 | `BatchSummary` | Summary with `total`, `valid`, `invalid`, `repaired`, `parse_failures`, `schema_failures`, `success_rate`, `strategy_counts`, `formats` |
-| `ValidationResult` | Result with `valid`, `data`, `errors`, `repaired`, `strategies_applied`, `format` |
+| `ValidationResult` | Result with `valid`, `data`, `errors`, `parse_error`, `repaired`, `strategies_applied`, `format` |
+| `Schema` | JSON Schema dictionary or boolean schema |
 | `RepairResult` | Result with `repaired`, `text`, `strategies_applied`, `parse_error`, `format` |
 | `ValidationError` | Error detail with `message`, `path`, `schema_path`, `value` |
 | `RepairReport` | Detailed report with `diff`, `confidence`, `summary`, `step_diffs()` |
@@ -432,6 +460,7 @@ print(report.step_diffs())  # Per-strategy diffs for verbose logging
 | `OutputGuardError` | Base exception |
 | `ParseError` | Structured output could not be parsed even after repair |
 | `SchemaValidationError` | Structured output parsed but does not match the schema |
+| `SchemaEvaluationError` | Recursive schema evaluation could not complete |
 | `GuardedGenerationError` | `guarded_generate(..., throw_on_failure=True)` could not get valid output |
 | `RepairError` | Repair was attempted but failed |
 | `StrategyError` | A specific repair strategy encountered an error |
@@ -467,9 +496,9 @@ All commands accept `--input-format` for the data format, `-f json` for machine-
 | Batch processing | Ad hoc scripts | `validate_batch()`, `repair_batch()`, CLI `batch` |
 | Confidence scoring | No | Yes |
 | Truncated JSON | Breaks | Recovers |
-| Tests | Probably zero | **2,001** (incl. 288 real LLM models and format matrix coverage) |
+| Tests | Probably zero | **10,000+**, including model outputs, format workflows, schema assertions, and cross-port parity |
 | LLM dependencies | — | None (works with any provider) |
-| Footprint | — | Small runtime set: click, jsonschema, PyYAML, rich, plus tomli on Python 3.10 |
+| Footprint | — | Runtime dependencies: click, jsonschema, quickjs-ng, rich; YAML and TOML parsers bundled |
 
 outputguard has no opinion about which LLM you use or whether JSON mode is available. It operates on strings and schemas — plug it into OpenAI, Anthropic, local models, or anything else.
 

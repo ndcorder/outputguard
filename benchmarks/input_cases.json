@@ -1,0 +1,331 @@
+{
+  "invalid_texts": [
+    {
+      "name": "null",
+      "value": null
+    },
+    {
+      "name": "true",
+      "value": true
+    },
+    {
+      "name": "false",
+      "value": false
+    },
+    {
+      "name": "zero",
+      "value": 0
+    },
+    {
+      "name": "integer",
+      "value": 1
+    },
+    {
+      "name": "negative",
+      "value": -1
+    },
+    {
+      "name": "fraction",
+      "value": 1.5
+    },
+    {
+      "name": "empty-array",
+      "value": []
+    },
+    {
+      "name": "array",
+      "value": [
+        "{}"
+      ]
+    },
+    {
+      "name": "empty-object",
+      "value": {}
+    },
+    {
+      "name": "object",
+      "value": {
+        "value": 1
+      }
+    }
+  ],
+  "formats": [
+    "json",
+    "yaml",
+    "toml",
+    "python",
+    "auto",
+    "forced-json-off",
+    " PY "
+  ],
+  "documents": [
+    {
+      "name": "json-null",
+      "format": "json",
+      "text": "null",
+      "data": null,
+      "parse_failure": false
+    },
+    {
+      "name": "json-false",
+      "format": "json",
+      "text": "false",
+      "data": false,
+      "parse_failure": false
+    },
+    {
+      "name": "json-zero",
+      "format": "json",
+      "text": "0",
+      "data": 0,
+      "parse_failure": false
+    },
+    {
+      "name": "json-object",
+      "format": "json",
+      "text": "{\"value\":\"\ud83d\ude00\u03bb\"}",
+      "data": {
+        "value": "\ud83d\ude00\u03bb"
+      },
+      "parse_failure": false
+    },
+    {
+      "name": "json-empty",
+      "format": "json",
+      "text": "",
+      "data": null,
+      "parse_failure": true
+    },
+    {
+      "name": "json-whitespace",
+      "format": "json",
+      "text": " \r\n\t",
+      "data": null,
+      "parse_failure": true
+    },
+    {
+      "name": "json-malformed",
+      "format": "json",
+      "text": "[",
+      "data": null,
+      "parse_failure": true
+    },
+    {
+      "name": "yaml-empty",
+      "format": "yaml",
+      "text": "",
+      "data": null,
+      "parse_failure": false
+    },
+    {
+      "name": "yaml-null",
+      "format": "yaml",
+      "text": "null",
+      "data": null,
+      "parse_failure": false
+    },
+    {
+      "name": "yaml-object",
+      "format": "yaml",
+      "text": "value: 1",
+      "data": {
+        "value": 1
+      },
+      "parse_failure": false
+    },
+    {
+      "name": "toml-empty",
+      "format": "toml",
+      "text": "",
+      "data": {},
+      "parse_failure": false
+    },
+    {
+      "name": "toml-object",
+      "format": "toml",
+      "text": "value=1",
+      "data": {
+        "value": 1
+      },
+      "parse_failure": false
+    },
+    {
+      "name": "python-object",
+      "format": "python",
+      "text": "{'value':1}",
+      "data": {
+        "value": 1
+      },
+      "parse_failure": false
+    },
+    {
+      "name": "python-null",
+      "format": " PY ",
+      "text": "None",
+      "data": null,
+      "parse_failure": false
+    },
+    {
+      "name": "python-empty",
+      "format": "python",
+      "text": "",
+      "data": null,
+      "parse_failure": true
+    },
+    {
+      "name": "auto-empty",
+      "format": "auto",
+      "text": "",
+      "data": {},
+      "parse_failure": false
+    },
+    {
+      "name": "auto-object",
+      "format": "auto",
+      "text": "{\"value\":1}",
+      "data": {
+        "value": 1
+      },
+      "parse_failure": false
+    },
+    {
+      "name": "forced-object",
+      "format": "forced-json-off",
+      "text": "{\"value\":1}",
+      "data": {
+        "value": 1
+      },
+      "parse_failure": false
+    }
+  ],
+  "invalid_batch_containers": [
+    {
+      "name": "null",
+      "value": null
+    },
+    {
+      "name": "true",
+      "value": true
+    },
+    {
+      "name": "false",
+      "value": false
+    },
+    {
+      "name": "zero",
+      "value": 0
+    },
+    {
+      "name": "integer",
+      "value": 1
+    },
+    {
+      "name": "negative",
+      "value": -1
+    },
+    {
+      "name": "fraction",
+      "value": 1.5
+    },
+    {
+      "name": "empty-object",
+      "value": {}
+    },
+    {
+      "name": "object",
+      "value": {
+        "value": 1
+      }
+    },
+    {
+      "name": "string",
+      "value": "{}"
+    },
+    {
+      "name": "empty-string",
+      "value": ""
+    }
+  ],
+  "valid_prompts": [
+    "",
+    " \r\n",
+    "Return JSON",
+    "\ud83d\ude00\u03bb"
+  ],
+  "invalid_schemas": [
+    {
+      "name": "null",
+      "value": null
+    },
+    {
+      "name": "zero",
+      "value": 0
+    },
+    {
+      "name": "integer",
+      "value": 1
+    },
+    {
+      "name": "negative",
+      "value": -1
+    },
+    {
+      "name": "fraction",
+      "value": 1.5
+    },
+    {
+      "name": "empty-string",
+      "value": ""
+    },
+    {
+      "name": "string",
+      "value": "object"
+    },
+    {
+      "name": "empty-array",
+      "value": []
+    },
+    {
+      "name": "array",
+      "value": [
+        {}
+      ]
+    }
+  ],
+  "valid_schemas": [
+    {
+      "name": "true",
+      "value": true,
+      "valid": true
+    },
+    {
+      "name": "false",
+      "value": false,
+      "valid": false
+    },
+    {
+      "name": "empty-object",
+      "value": {},
+      "valid": true
+    },
+    {
+      "name": "object",
+      "value": {
+        "type": "object"
+      },
+      "valid": true
+    },
+    {
+      "name": "literal-arrays",
+      "value": {
+        "default": [],
+        "examples": [
+          true,
+          false,
+          1
+        ]
+      },
+      "valid": true
+    }
+  ]
+}

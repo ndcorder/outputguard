@@ -1,5 +1,7 @@
 from typing import Any
 
+from outputguard.models import Schema
+
 
 class OutputGuardError(Exception):
     """Base exception for all outputguard errors."""
@@ -29,11 +31,21 @@ class SchemaValidationError(OutputGuardError):
         message: str,
         data: Any,
         errors: list,
-        schema: dict,
+        schema: Schema,
         format: str = "json",
     ):
         self.data = data
         self.validation_errors = errors
+        self.schema = schema
+        self.format = format
+        super().__init__(message)
+
+
+class SchemaEvaluationError(OutputGuardError):
+    """Recursive schema evaluation could not complete."""
+
+    def __init__(self, message: str, data: Any, schema: Schema, format: str = "json"):
+        self.data = data
         self.schema = schema
         self.format = format
         super().__init__(message)

@@ -1,5 +1,7 @@
 import json
 
+import pytest
+
 from outputguard.strategies.extract_json import apply
 
 
@@ -24,3 +26,14 @@ def test_with_preceding_text():
     text = 'Sure! Here is what you asked for:\n{"name": "test"}\nLet me know!'
     result = apply(text)
     assert json.loads(result) == {"name": "test"}
+
+
+@pytest.mark.parametrize(
+    "text", ['"{}"', ' "[]" \t', "'[literal]'", '"unfinished [', '"escaped \\" []"']
+)
+def test_quoted_roots_are_not_container_fragments(text):
+    assert apply(text) == text
+
+
+def test_quoted_introduction_does_not_hide_a_following_fragment():
+    assert apply('"[ignore]" prefix {"a":1') == '{"a":1'

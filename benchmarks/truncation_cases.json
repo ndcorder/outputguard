@@ -1,0 +1,5030 @@
+[
+  {
+    "name": "empty-object",
+    "text": "{",
+    "expected_text": "{}",
+    "valid": true,
+    "data": {},
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {},
+      "repaired": true,
+      "repaired_text": "{}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "empty-array",
+    "text": "[",
+    "expected_text": "[]",
+    "valid": true,
+    "data": [],
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": [],
+      "repaired": true,
+      "repaired_text": "[]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "first-partial-key",
+    "text": "{\"unfinished",
+    "expected_text": "{}",
+    "valid": true,
+    "data": {},
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {},
+      "repaired": true,
+      "repaired_text": "{}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "first-closed-key",
+    "text": "{\"unfinished\"",
+    "expected_text": "{}",
+    "valid": true,
+    "data": {},
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {},
+      "repaired": true,
+      "repaired_text": "{}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "later-partial-key",
+    "text": "{\"keep\":1,\"unfinished",
+    "expected_text": "{\"keep\":1}",
+    "valid": true,
+    "data": {
+      "keep": 1
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "keep": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"keep\":1}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "later-closed-key",
+    "text": "{\"keep\":1,\"unfinished\"",
+    "expected_text": "{\"keep\":1}",
+    "valid": true,
+    "data": {
+      "keep": 1
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "keep": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"keep\":1}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "missing-value",
+    "text": "{\"keep\":1,\"age\":",
+    "expected_text": "{\"keep\":1,\"age\": null}",
+    "valid": true,
+    "data": {
+      "keep": 1,
+      "age": null
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "keep": 1,
+        "age": null
+      },
+      "repaired": true,
+      "repaired_text": "{\"keep\":1,\"age\": null}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "null-still-fails-schema",
+    "text": "{\"age\":",
+    "expected_text": "{\"age\": null}",
+    "valid": true,
+    "data": {
+      "age": null
+    },
+    "source_valid": false,
+    "public": {
+      "valid": false,
+      "data": {
+        "age": null
+      },
+      "repaired": true,
+      "repaired_text": "{\"age\": null}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": [
+        "$.age"
+      ]
+    },
+    "schema": {
+      "properties": {
+        "age": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "age"
+      ]
+    }
+  },
+  {
+    "name": "array-last-string",
+    "text": "[1,\"last\"",
+    "expected_text": "[1,\"last\"]",
+    "valid": true,
+    "data": [
+      1,
+      "last"
+    ],
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": [
+        1,
+        "last"
+      ],
+      "repaired": true,
+      "repaired_text": "[1,\"last\"]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "array-open-last-string",
+    "text": "[1,\"last",
+    "expected_text": "[1,\"last\"]",
+    "valid": true,
+    "data": [
+      1,
+      "last"
+    ],
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": [
+        1,
+        "last"
+      ],
+      "repaired": true,
+      "repaired_text": "[1,\"last\"]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "nested-array-last-string",
+    "text": "{\"values\":[1,\"last\"",
+    "expected_text": "{\"values\":[1,\"last\"]}",
+    "valid": true,
+    "data": {
+      "values": [
+        1,
+        "last"
+      ]
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "values": [
+          1,
+          "last"
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"values\":[1,\"last\"]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "nested-first-key",
+    "text": "{\"child\":{\"unfinished",
+    "expected_text": "{\"child\":{}}",
+    "valid": true,
+    "data": {
+      "child": {}
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "child": {}
+      },
+      "repaired": true,
+      "repaired_text": "{\"child\":{}}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "nested-dangling-key",
+    "text": "[{\"keep\":1,\"unfinished",
+    "expected_text": "[{\"keep\":1}]",
+    "valid": true,
+    "data": [
+      {
+        "keep": 1
+      }
+    ],
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "keep": 1
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"keep\":1}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "array-empty-nested",
+    "text": "[[ \n",
+    "expected_text": "[[]]",
+    "valid": true,
+    "data": [
+      []
+    ],
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": [
+        []
+      ],
+      "repaired": true,
+      "repaired_text": "[[]]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "trailing-space-value",
+    "text": "{\"v\":\"ends with space ",
+    "expected_text": "{\"v\":\"ends with space \"}",
+    "valid": true,
+    "data": {
+      "v": "ends with space "
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "ends with space "
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"ends with space \"}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "string-15-root",
+    "text": "\"",
+    "expected_text": "\"\"",
+    "valid": true,
+    "data": "",
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": "",
+      "repaired": true,
+      "repaired_text": "\"\"",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "string-16-object",
+    "text": "{\"v\":\"",
+    "expected_text": "{\"v\":\"\"}",
+    "valid": true,
+    "data": {
+      "v": ""
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": ""
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"\"}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "string-17-array",
+    "text": "[1,\"",
+    "expected_text": "[1,\"\"]",
+    "valid": true,
+    "data": [
+      1,
+      ""
+    ],
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": [
+        1,
+        ""
+      ],
+      "repaired": true,
+      "repaired_text": "[1,\"\"]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "string-18-nested",
+    "text": "{\"values\":[\"",
+    "expected_text": "{\"values\":[\"\"]}",
+    "valid": true,
+    "data": {
+      "values": [
+        ""
+      ]
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "values": [
+          ""
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"values\":[\"\"]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "string-19-root",
+    "text": "\"hello",
+    "expected_text": "\"hello\"",
+    "valid": true,
+    "data": "hello",
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": "hello",
+      "repaired": true,
+      "repaired_text": "\"hello\"",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "string-20-object",
+    "text": "{\"v\":\"hello",
+    "expected_text": "{\"v\":\"hello\"}",
+    "valid": true,
+    "data": {
+      "v": "hello"
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "hello"
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"hello\"}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "string-21-array",
+    "text": "[1,\"hello",
+    "expected_text": "[1,\"hello\"]",
+    "valid": true,
+    "data": [
+      1,
+      "hello"
+    ],
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": [
+        1,
+        "hello"
+      ],
+      "repaired": true,
+      "repaired_text": "[1,\"hello\"]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "string-22-nested",
+    "text": "{\"values\":[\"hello",
+    "expected_text": "{\"values\":[\"hello\"]}",
+    "valid": true,
+    "data": {
+      "values": [
+        "hello"
+      ]
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "values": [
+          "hello"
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"values\":[\"hello\"]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "string-23-root",
+    "text": "\"trailing  ",
+    "expected_text": "\"trailing  \"",
+    "valid": true,
+    "data": "trailing  ",
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": "trailing  ",
+      "repaired": true,
+      "repaired_text": "\"trailing  \"",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "string-24-object",
+    "text": "{\"v\":\"trailing  ",
+    "expected_text": "{\"v\":\"trailing  \"}",
+    "valid": true,
+    "data": {
+      "v": "trailing  "
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "trailing  "
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"trailing  \"}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "string-25-array",
+    "text": "[1,\"trailing  ",
+    "expected_text": "[1,\"trailing  \"]",
+    "valid": true,
+    "data": [
+      1,
+      "trailing  "
+    ],
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": [
+        1,
+        "trailing  "
+      ],
+      "repaired": true,
+      "repaired_text": "[1,\"trailing  \"]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "string-26-nested",
+    "text": "{\"values\":[\"trailing  ",
+    "expected_text": "{\"values\":[\"trailing  \"]}",
+    "valid": true,
+    "data": {
+      "values": [
+        "trailing  "
+      ]
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "values": [
+          "trailing  "
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"values\":[\"trailing  \"]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "string-27-root",
+    "text": "\"\ud83d\ude00\u03bb\u00e9",
+    "expected_text": "\"\ud83d\ude00\u03bb\u00e9\"",
+    "valid": true,
+    "data": "\ud83d\ude00\u03bb\u00e9",
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": "\ud83d\ude00\u03bb\u00e9",
+      "repaired": true,
+      "repaired_text": "\"\ud83d\ude00\u03bb\u00e9\"",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "string-28-object",
+    "text": "{\"v\":\"\ud83d\ude00\u03bb\u00e9",
+    "expected_text": "{\"v\":\"\ud83d\ude00\u03bb\u00e9\"}",
+    "valid": true,
+    "data": {
+      "v": "\ud83d\ude00\u03bb\u00e9"
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "\ud83d\ude00\u03bb\u00e9"
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"\ud83d\ude00\u03bb\u00e9\"}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "string-29-array",
+    "text": "[1,\"\ud83d\ude00\u03bb\u00e9",
+    "expected_text": "[1,\"\ud83d\ude00\u03bb\u00e9\"]",
+    "valid": true,
+    "data": [
+      1,
+      "\ud83d\ude00\u03bb\u00e9"
+    ],
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": [
+        1,
+        "\ud83d\ude00\u03bb\u00e9"
+      ],
+      "repaired": true,
+      "repaired_text": "[1,\"\ud83d\ude00\u03bb\u00e9\"]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "string-30-nested",
+    "text": "{\"values\":[\"\ud83d\ude00\u03bb\u00e9",
+    "expected_text": "{\"values\":[\"\ud83d\ude00\u03bb\u00e9\"]}",
+    "valid": true,
+    "data": {
+      "values": [
+        "\ud83d\ude00\u03bb\u00e9"
+      ]
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "values": [
+          "\ud83d\ude00\u03bb\u00e9"
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"values\":[\"\ud83d\ude00\u03bb\u00e9\"]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "string-31-root",
+    "text": "\"quote \\\" here",
+    "expected_text": "\"quote \\\" here\"",
+    "valid": true,
+    "data": "quote \" here",
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": "quote \" here",
+      "repaired": true,
+      "repaired_text": "\"quote \\\" here\"",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "string-32-object",
+    "text": "{\"v\":\"quote \\\" here",
+    "expected_text": "{\"v\":\"quote \\\" here\"}",
+    "valid": true,
+    "data": {
+      "v": "quote \" here"
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "quote \" here"
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"quote \\\" here\"}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "string-33-array",
+    "text": "[1,\"quote \\\" here",
+    "expected_text": "[1,\"quote \\\" here\"]",
+    "valid": true,
+    "data": [
+      1,
+      "quote \" here"
+    ],
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": [
+        1,
+        "quote \" here"
+      ],
+      "repaired": true,
+      "repaired_text": "[1,\"quote \\\" here\"]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "string-34-nested",
+    "text": "{\"values\":[\"quote \\\" here",
+    "expected_text": "{\"values\":[\"quote \\\" here\"]}",
+    "valid": true,
+    "data": {
+      "values": [
+        "quote \" here"
+      ]
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "values": [
+          "quote \" here"
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"values\":[\"quote \\\" here\"]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "string-35-root",
+    "text": "\"path\\\\",
+    "expected_text": "\"path\\\\\"",
+    "valid": true,
+    "data": "path\\",
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": "path\\",
+      "repaired": true,
+      "repaired_text": "\"path\\\\\"",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "string-36-object",
+    "text": "{\"v\":\"path\\\\",
+    "expected_text": "{\"v\":\"path\\\\\"}",
+    "valid": true,
+    "data": {
+      "v": "path\\"
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "path\\"
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"path\\\\\"}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "string-37-array",
+    "text": "[1,\"path\\\\",
+    "expected_text": "[1,\"path\\\\\"]",
+    "valid": true,
+    "data": [
+      1,
+      "path\\"
+    ],
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": [
+        1,
+        "path\\"
+      ],
+      "repaired": true,
+      "repaired_text": "[1,\"path\\\\\"]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "string-38-nested",
+    "text": "{\"values\":[\"path\\\\",
+    "expected_text": "{\"values\":[\"path\\\\\"]}",
+    "valid": true,
+    "data": {
+      "values": [
+        "path\\"
+      ]
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "values": [
+          "path\\"
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"values\":[\"path\\\\\"]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "string-39-root",
+    "text": "\"[]{}:,",
+    "expected_text": "\"[]{}:,\"",
+    "valid": true,
+    "data": "[]{}:,",
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": "[]{}:,",
+      "repaired": true,
+      "repaired_text": "\"[]{}:,\"",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "string-40-object",
+    "text": "{\"v\":\"[]{}:,",
+    "expected_text": "{\"v\":\"[]{}:,\"}",
+    "valid": true,
+    "data": {
+      "v": "[]{}:,"
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "[]{}:,"
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"[]{}:,\"}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "string-41-array",
+    "text": "[1,\"[]{}:,",
+    "expected_text": "[1,\"[]{}:,\"]",
+    "valid": true,
+    "data": [
+      1,
+      "[]{}:,"
+    ],
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": [
+        1,
+        "[]{}:,"
+      ],
+      "repaired": true,
+      "repaired_text": "[1,\"[]{}:,\"]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "string-42-nested",
+    "text": "{\"values\":[\"[]{}:,",
+    "expected_text": "{\"values\":[\"[]{}:,\"]}",
+    "valid": true,
+    "data": {
+      "values": [
+        "[]{}:,"
+      ]
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "values": [
+          "[]{}:,"
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"values\":[\"[]{}:,\"]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "string-43-root",
+    "text": "\"literal \\\\u12",
+    "expected_text": "\"literal \\\\u12\"",
+    "valid": true,
+    "data": "literal \\u12",
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": "literal \\u12",
+      "repaired": true,
+      "repaired_text": "\"literal \\\\u12\"",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "string-44-object",
+    "text": "{\"v\":\"literal \\\\u12",
+    "expected_text": "{\"v\":\"literal \\\\u12\"}",
+    "valid": true,
+    "data": {
+      "v": "literal \\u12"
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "literal \\u12"
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"literal \\\\u12\"}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "string-45-array",
+    "text": "[1,\"literal \\\\u12",
+    "expected_text": "[1,\"literal \\\\u12\"]",
+    "valid": true,
+    "data": [
+      1,
+      "literal \\u12"
+    ],
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": [
+        1,
+        "literal \\u12"
+      ],
+      "repaired": true,
+      "repaired_text": "[1,\"literal \\\\u12\"]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "string-46-nested",
+    "text": "{\"values\":[\"literal \\\\u12",
+    "expected_text": "{\"values\":[\"literal \\\\u12\"]}",
+    "valid": true,
+    "data": {
+      "values": [
+        "literal \\u12"
+      ]
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "values": [
+          "literal \\u12"
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"values\":[\"literal \\\\u12\"]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "backslash-tail-1",
+    "text": "{\"v\":\"path\\",
+    "expected_text": "{\"v\":\"path\\\\\"}",
+    "valid": true,
+    "data": {
+      "v": "path\\"
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "path\\"
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"path\\\\\"}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "backslash-tail-2",
+    "text": "{\"v\":\"path\\\\",
+    "expected_text": "{\"v\":\"path\\\\\"}",
+    "valid": true,
+    "data": {
+      "v": "path\\"
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "path\\"
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"path\\\\\"}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "backslash-tail-3",
+    "text": "{\"v\":\"path\\\\\\",
+    "expected_text": "{\"v\":\"path\\\\\\\\\"}",
+    "valid": true,
+    "data": {
+      "v": "path\\\\"
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "path\\\\"
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"path\\\\\\\\\"}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "backslash-tail-4",
+    "text": "{\"v\":\"path\\\\\\\\",
+    "expected_text": "{\"v\":\"path\\\\\\\\\"}",
+    "valid": true,
+    "data": {
+      "v": "path\\\\"
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "path\\\\"
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"path\\\\\\\\\"}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "backslash-tail-7",
+    "text": "{\"v\":\"path\\\\\\\\\\\\\\",
+    "expected_text": "{\"v\":\"path\\\\\\\\\\\\\\\\\"}",
+    "valid": true,
+    "data": {
+      "v": "path\\\\\\\\"
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "path\\\\\\\\"
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"path\\\\\\\\\\\\\\\\\"}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "backslash-tail-8",
+    "text": "{\"v\":\"path\\\\\\\\\\\\\\\\",
+    "expected_text": "{\"v\":\"path\\\\\\\\\\\\\\\\\"}",
+    "valid": true,
+    "data": {
+      "v": "path\\\\\\\\"
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "path\\\\\\\\"
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"path\\\\\\\\\\\\\\\\\"}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "key-53",
+    "text": "{\"keep\":1,\"",
+    "expected_text": "{\"keep\":1}",
+    "valid": true,
+    "data": {
+      "keep": 1
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "keep": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"keep\":1}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "key-54",
+    "text": "{\"",
+    "expected_text": "{}",
+    "valid": true,
+    "data": {},
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {},
+      "repaired": true,
+      "repaired_text": "{}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "key-55",
+    "text": "{\"keep\":1,\"\"",
+    "expected_text": "{\"keep\":1}",
+    "valid": true,
+    "data": {
+      "keep": 1
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "keep": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"keep\":1}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "key-56",
+    "text": "{\"\"",
+    "expected_text": "{}",
+    "valid": true,
+    "data": {},
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {},
+      "repaired": true,
+      "repaired_text": "{}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "key-57",
+    "text": "{\"keep\":1,\"plain",
+    "expected_text": "{\"keep\":1}",
+    "valid": true,
+    "data": {
+      "keep": 1
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "keep": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"keep\":1}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "key-58",
+    "text": "{\"plain",
+    "expected_text": "{}",
+    "valid": true,
+    "data": {},
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {},
+      "repaired": true,
+      "repaired_text": "{}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "key-59",
+    "text": "{\"keep\":1,\"plain\"",
+    "expected_text": "{\"keep\":1}",
+    "valid": true,
+    "data": {
+      "keep": 1
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "keep": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"keep\":1}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "key-60",
+    "text": "{\"plain\"",
+    "expected_text": "{}",
+    "valid": true,
+    "data": {},
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {},
+      "repaired": true,
+      "repaired_text": "{}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "key-61",
+    "text": "{\"keep\":1,\"quote\\\"key",
+    "expected_text": "{\"keep\":1}",
+    "valid": true,
+    "data": {
+      "keep": 1
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "keep": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"keep\":1}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "key-62",
+    "text": "{\"quote\\\"key",
+    "expected_text": "{}",
+    "valid": true,
+    "data": {},
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {},
+      "repaired": true,
+      "repaired_text": "{}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "key-63",
+    "text": "{\"keep\":1,\"quote\\\"key\"",
+    "expected_text": "{\"keep\":1}",
+    "valid": true,
+    "data": {
+      "keep": 1
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "keep": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"keep\":1}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "key-64",
+    "text": "{\"quote\\\"key\"",
+    "expected_text": "{}",
+    "valid": true,
+    "data": {},
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {},
+      "repaired": true,
+      "repaired_text": "{}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "key-65",
+    "text": "{\"keep\":1,\"slash\\\\key",
+    "expected_text": "{\"keep\":1}",
+    "valid": true,
+    "data": {
+      "keep": 1
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "keep": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"keep\":1}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "key-66",
+    "text": "{\"slash\\\\key",
+    "expected_text": "{}",
+    "valid": true,
+    "data": {},
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {},
+      "repaired": true,
+      "repaired_text": "{}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "key-67",
+    "text": "{\"keep\":1,\"slash\\\\key\"",
+    "expected_text": "{\"keep\":1}",
+    "valid": true,
+    "data": {
+      "keep": 1
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "keep": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"keep\":1}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "key-68",
+    "text": "{\"slash\\\\key\"",
+    "expected_text": "{}",
+    "valid": true,
+    "data": {},
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {},
+      "repaired": true,
+      "repaired_text": "{}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "key-69",
+    "text": "{\"keep\":1,\"\ud83d\ude00 key",
+    "expected_text": "{\"keep\":1}",
+    "valid": true,
+    "data": {
+      "keep": 1
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "keep": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"keep\":1}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "key-70",
+    "text": "{\"\ud83d\ude00 key",
+    "expected_text": "{}",
+    "valid": true,
+    "data": {},
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {},
+      "repaired": true,
+      "repaired_text": "{}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "key-71",
+    "text": "{\"keep\":1,\"\ud83d\ude00 key\"",
+    "expected_text": "{\"keep\":1}",
+    "valid": true,
+    "data": {
+      "keep": 1
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "keep": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"keep\":1}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "key-72",
+    "text": "{\"\ud83d\ude00 key\"",
+    "expected_text": "{}",
+    "valid": true,
+    "data": {},
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {},
+      "repaired": true,
+      "repaired_text": "{}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "key-73",
+    "text": "{\"keep\":1,\"__proto__",
+    "expected_text": "{\"keep\":1}",
+    "valid": true,
+    "data": {
+      "keep": 1
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "keep": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"keep\":1}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "key-74",
+    "text": "{\"__proto__",
+    "expected_text": "{}",
+    "valid": true,
+    "data": {},
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {},
+      "repaired": true,
+      "repaired_text": "{}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "key-75",
+    "text": "{\"keep\":1,\"__proto__\"",
+    "expected_text": "{\"keep\":1}",
+    "valid": true,
+    "data": {
+      "keep": 1
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "keep": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"keep\":1}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "key-76",
+    "text": "{\"__proto__\"",
+    "expected_text": "{}",
+    "valid": true,
+    "data": {},
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {},
+      "repaired": true,
+      "repaired_text": "{}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "key-77",
+    "text": "{\"keep\":1,\"constructor",
+    "expected_text": "{\"keep\":1}",
+    "valid": true,
+    "data": {
+      "keep": 1
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "keep": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"keep\":1}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "key-78",
+    "text": "{\"constructor",
+    "expected_text": "{}",
+    "valid": true,
+    "data": {},
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {},
+      "repaired": true,
+      "repaired_text": "{}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "key-79",
+    "text": "{\"keep\":1,\"constructor\"",
+    "expected_text": "{\"keep\":1}",
+    "valid": true,
+    "data": {
+      "keep": 1
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "keep": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"keep\":1}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "key-80",
+    "text": "{\"constructor\"",
+    "expected_text": "{}",
+    "valid": true,
+    "data": {},
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {},
+      "repaired": true,
+      "repaired_text": "{}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "key-81",
+    "text": "{\"keep\":1,\"toString",
+    "expected_text": "{\"keep\":1}",
+    "valid": true,
+    "data": {
+      "keep": 1
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "keep": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"keep\":1}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "key-82",
+    "text": "{\"toString",
+    "expected_text": "{}",
+    "valid": true,
+    "data": {},
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {},
+      "repaired": true,
+      "repaired_text": "{}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "key-83",
+    "text": "{\"keep\":1,\"toString\"",
+    "expected_text": "{\"keep\":1}",
+    "valid": true,
+    "data": {
+      "keep": 1
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "keep": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"keep\":1}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "key-84",
+    "text": "{\"toString\"",
+    "expected_text": "{}",
+    "valid": true,
+    "data": {},
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {},
+      "repaired": true,
+      "repaired_text": "{}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "key-85",
+    "text": "{\"keep\":1,\"]},:",
+    "expected_text": "{\"keep\":1}",
+    "valid": true,
+    "data": {
+      "keep": 1
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "keep": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"keep\":1}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "key-86",
+    "text": "{\"]},:",
+    "expected_text": "{}",
+    "valid": true,
+    "data": {},
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {},
+      "repaired": true,
+      "repaired_text": "{}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "key-87",
+    "text": "{\"keep\":1,\"]},:\"",
+    "expected_text": "{\"keep\":1}",
+    "valid": true,
+    "data": {
+      "keep": 1
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "keep": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"keep\":1}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "key-88",
+    "text": "{\"]},:\"",
+    "expected_text": "{}",
+    "valid": true,
+    "data": {},
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {},
+      "repaired": true,
+      "repaired_text": "{}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "colon-89",
+    "text": "{\"plain\":",
+    "expected_text": "{\"plain\": null}",
+    "valid": true,
+    "data": {
+      "plain": null
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "plain": null
+      },
+      "repaired": true,
+      "repaired_text": "{\"plain\": null}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "colon-90",
+    "text": "{\"plain\": ",
+    "expected_text": "{\"plain\": null}",
+    "valid": true,
+    "data": {
+      "plain": null
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "plain": null
+      },
+      "repaired": true,
+      "repaired_text": "{\"plain\": null}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "colon-91",
+    "text": "{\"plain\":\t\r\n",
+    "expected_text": "{\"plain\": null}",
+    "valid": true,
+    "data": {
+      "plain": null
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "plain": null
+      },
+      "repaired": true,
+      "repaired_text": "{\"plain\": null}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "colon-92",
+    "text": "{\"quote\\\"key\":",
+    "expected_text": "{\"quote\\\"key\": null}",
+    "valid": true,
+    "data": {
+      "quote\"key": null
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "quote\"key": null
+      },
+      "repaired": true,
+      "repaired_text": "{\"quote\\\"key\": null}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "colon-93",
+    "text": "{\"quote\\\"key\": ",
+    "expected_text": "{\"quote\\\"key\": null}",
+    "valid": true,
+    "data": {
+      "quote\"key": null
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "quote\"key": null
+      },
+      "repaired": true,
+      "repaired_text": "{\"quote\\\"key\": null}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "colon-94",
+    "text": "{\"quote\\\"key\":\t\r\n",
+    "expected_text": "{\"quote\\\"key\": null}",
+    "valid": true,
+    "data": {
+      "quote\"key": null
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "quote\"key": null
+      },
+      "repaired": true,
+      "repaired_text": "{\"quote\\\"key\": null}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "colon-95",
+    "text": "{\"slash\\\\key\":",
+    "expected_text": "{\"slash\\\\key\": null}",
+    "valid": true,
+    "data": {
+      "slash\\key": null
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "slash\\key": null
+      },
+      "repaired": true,
+      "repaired_text": "{\"slash\\\\key\": null}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "colon-96",
+    "text": "{\"slash\\\\key\": ",
+    "expected_text": "{\"slash\\\\key\": null}",
+    "valid": true,
+    "data": {
+      "slash\\key": null
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "slash\\key": null
+      },
+      "repaired": true,
+      "repaired_text": "{\"slash\\\\key\": null}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "colon-97",
+    "text": "{\"slash\\\\key\":\t\r\n",
+    "expected_text": "{\"slash\\\\key\": null}",
+    "valid": true,
+    "data": {
+      "slash\\key": null
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "slash\\key": null
+      },
+      "repaired": true,
+      "repaired_text": "{\"slash\\\\key\": null}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "colon-98",
+    "text": "{\"\ud83d\ude00 key\":",
+    "expected_text": "{\"\ud83d\ude00 key\": null}",
+    "valid": true,
+    "data": {
+      "\ud83d\ude00 key": null
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "\ud83d\ude00 key": null
+      },
+      "repaired": true,
+      "repaired_text": "{\"\ud83d\ude00 key\": null}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "colon-99",
+    "text": "{\"\ud83d\ude00 key\": ",
+    "expected_text": "{\"\ud83d\ude00 key\": null}",
+    "valid": true,
+    "data": {
+      "\ud83d\ude00 key": null
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "\ud83d\ude00 key": null
+      },
+      "repaired": true,
+      "repaired_text": "{\"\ud83d\ude00 key\": null}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "colon-100",
+    "text": "{\"\ud83d\ude00 key\":\t\r\n",
+    "expected_text": "{\"\ud83d\ude00 key\": null}",
+    "valid": true,
+    "data": {
+      "\ud83d\ude00 key": null
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "\ud83d\ude00 key": null
+      },
+      "repaired": true,
+      "repaired_text": "{\"\ud83d\ude00 key\": null}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "colon-101",
+    "text": "{\"__proto__\":",
+    "expected_text": "{\"__proto__\": null}",
+    "valid": true,
+    "data": {
+      "__proto__": null
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "__proto__": null
+      },
+      "repaired": true,
+      "repaired_text": "{\"__proto__\": null}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "colon-102",
+    "text": "{\"__proto__\": ",
+    "expected_text": "{\"__proto__\": null}",
+    "valid": true,
+    "data": {
+      "__proto__": null
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "__proto__": null
+      },
+      "repaired": true,
+      "repaired_text": "{\"__proto__\": null}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "colon-103",
+    "text": "{\"__proto__\":\t\r\n",
+    "expected_text": "{\"__proto__\": null}",
+    "valid": true,
+    "data": {
+      "__proto__": null
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "__proto__": null
+      },
+      "repaired": true,
+      "repaired_text": "{\"__proto__\": null}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "colon-104",
+    "text": "{\"constructor\":",
+    "expected_text": "{\"constructor\": null}",
+    "valid": true,
+    "data": {
+      "constructor": null
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "constructor": null
+      },
+      "repaired": true,
+      "repaired_text": "{\"constructor\": null}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "colon-105",
+    "text": "{\"constructor\": ",
+    "expected_text": "{\"constructor\": null}",
+    "valid": true,
+    "data": {
+      "constructor": null
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "constructor": null
+      },
+      "repaired": true,
+      "repaired_text": "{\"constructor\": null}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "colon-106",
+    "text": "{\"constructor\":\t\r\n",
+    "expected_text": "{\"constructor\": null}",
+    "valid": true,
+    "data": {
+      "constructor": null
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "constructor": null
+      },
+      "repaired": true,
+      "repaired_text": "{\"constructor\": null}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "colon-107",
+    "text": "{\"toString\":",
+    "expected_text": "{\"toString\": null}",
+    "valid": true,
+    "data": {
+      "toString": null
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "toString": null
+      },
+      "repaired": true,
+      "repaired_text": "{\"toString\": null}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "colon-108",
+    "text": "{\"toString\": ",
+    "expected_text": "{\"toString\": null}",
+    "valid": true,
+    "data": {
+      "toString": null
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "toString": null
+      },
+      "repaired": true,
+      "repaired_text": "{\"toString\": null}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "colon-109",
+    "text": "{\"toString\":\t\r\n",
+    "expected_text": "{\"toString\": null}",
+    "valid": true,
+    "data": {
+      "toString": null
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "toString": null
+      },
+      "repaired": true,
+      "repaired_text": "{\"toString\": null}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "commas-array-1-0",
+    "text": "[1,",
+    "expected_text": "[1]",
+    "valid": true,
+    "data": [
+      1
+    ],
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": [
+        1
+      ],
+      "repaired": true,
+      "repaired_text": "[1]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "commas-object-1-0",
+    "text": "{\"a\":1,",
+    "expected_text": "{\"a\":1}",
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "commas-array-1-3",
+    "text": "[1, \t\n",
+    "expected_text": "[1]",
+    "valid": true,
+    "data": [
+      1
+    ],
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": [
+        1
+      ],
+      "repaired": true,
+      "repaired_text": "[1]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "commas-object-1-3",
+    "text": "{\"a\":1, \t\n",
+    "expected_text": "{\"a\":1}",
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "commas-array-2-0",
+    "text": "[1,,",
+    "expected_text": "[1]",
+    "valid": true,
+    "data": [
+      1
+    ],
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": [
+        1
+      ],
+      "repaired": true,
+      "repaired_text": "[1]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "commas-object-2-0",
+    "text": "{\"a\":1,,",
+    "expected_text": "{\"a\":1}",
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "commas-array-2-3",
+    "text": "[1, \t\n, \t\n",
+    "expected_text": "[1]",
+    "valid": true,
+    "data": [
+      1
+    ],
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": [
+        1
+      ],
+      "repaired": true,
+      "repaired_text": "[1]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "commas-object-2-3",
+    "text": "{\"a\":1, \t\n, \t\n",
+    "expected_text": "{\"a\":1}",
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "commas-array-3-0",
+    "text": "[1,,,",
+    "expected_text": "[1]",
+    "valid": true,
+    "data": [
+      1
+    ],
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": [
+        1
+      ],
+      "repaired": true,
+      "repaired_text": "[1]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "commas-object-3-0",
+    "text": "{\"a\":1,,,",
+    "expected_text": "{\"a\":1}",
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "commas-array-3-3",
+    "text": "[1, \t\n, \t\n, \t\n",
+    "expected_text": "[1]",
+    "valid": true,
+    "data": [
+      1
+    ],
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": [
+        1
+      ],
+      "repaired": true,
+      "repaired_text": "[1]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "commas-object-3-3",
+    "text": "{\"a\":1, \t\n, \t\n, \t\n",
+    "expected_text": "{\"a\":1}",
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "commas-array-100-0",
+    "text": "[1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+    "expected_text": "[1]",
+    "valid": true,
+    "data": [
+      1
+    ],
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": [
+        1
+      ],
+      "repaired": true,
+      "repaired_text": "[1]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "commas-object-100-0",
+    "text": "{\"a\":1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+    "expected_text": "{\"a\":1}",
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "commas-array-100-3",
+    "text": "[1, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n",
+    "expected_text": "[1]",
+    "valid": true,
+    "data": [
+      1
+    ],
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": [
+        1
+      ],
+      "repaired": true,
+      "repaired_text": "[1]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "commas-object-100-3",
+    "text": "{\"a\":1, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n",
+    "expected_text": "{\"a\":1}",
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "commas-array-1000-0",
+    "text": "[1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+    "expected_text": "[1]",
+    "valid": true,
+    "data": [
+      1
+    ],
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": [
+        1
+      ],
+      "repaired": true,
+      "repaired_text": "[1]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "commas-object-1000-0",
+    "text": "{\"a\":1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+    "expected_text": "{\"a\":1}",
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "commas-array-1000-3",
+    "text": "[1, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n",
+    "expected_text": "[1]",
+    "valid": true,
+    "data": [
+      1
+    ],
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": [
+        1
+      ],
+      "repaired": true,
+      "repaired_text": "[1]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "commas-object-1000-3",
+    "text": "{\"a\":1, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n, \t\n",
+    "expected_text": "{\"a\":1}",
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "leading-whitespace-130",
+    "text": " {\"v\":1",
+    "expected_text": " {\"v\":1}",
+    "valid": true,
+    "data": {
+      "v": 1
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":1}",
+      "strategies": [
+        "extract_json",
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "leading-whitespace-131",
+    "text": "\t\r\n{\"v\":1",
+    "expected_text": "\t\r\n{\"v\":1}",
+    "valid": true,
+    "data": {
+      "v": 1
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":1}",
+      "strategies": [
+        "extract_json",
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "leading-whitespace-132",
+    "text": "  \n  {\"v\":1",
+    "expected_text": "  \n  {\"v\":1}",
+    "valid": true,
+    "data": {
+      "v": 1
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":1}",
+      "strategies": [
+        "extract_json",
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "array-depth-1",
+    "text": "[1",
+    "expected_text": "[1]",
+    "valid": true,
+    "data": [
+      1
+    ],
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": [
+        1
+      ],
+      "repaired": true,
+      "repaired_text": "[1]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "object-depth-1",
+    "text": "{\"child\":1",
+    "expected_text": "{\"child\":1}",
+    "valid": true,
+    "data": {
+      "child": 1
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "child": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"child\":1}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "array-depth-2",
+    "text": "[[1",
+    "expected_text": "[[1]]",
+    "valid": true,
+    "data": [
+      [
+        1
+      ]
+    ],
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": [
+        [
+          1
+        ]
+      ],
+      "repaired": true,
+      "repaired_text": "[[1]]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "object-depth-2",
+    "text": "{\"child\":{\"child\":1",
+    "expected_text": "{\"child\":{\"child\":1}}",
+    "valid": true,
+    "data": {
+      "child": {
+        "child": 1
+      }
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "child": {
+          "child": 1
+        }
+      },
+      "repaired": true,
+      "repaired_text": "{\"child\":{\"child\":1}}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "array-depth-4",
+    "text": "[[[[1",
+    "expected_text": "[[[[1]]]]",
+    "valid": true,
+    "data": [
+      [
+        [
+          [
+            1
+          ]
+        ]
+      ]
+    ],
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": [
+        [
+          [
+            [
+              1
+            ]
+          ]
+        ]
+      ],
+      "repaired": true,
+      "repaired_text": "[[[[1]]]]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "object-depth-4",
+    "text": "{\"child\":{\"child\":{\"child\":{\"child\":1",
+    "expected_text": "{\"child\":{\"child\":{\"child\":{\"child\":1}}}}",
+    "valid": true,
+    "data": {
+      "child": {
+        "child": {
+          "child": {
+            "child": 1
+          }
+        }
+      }
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "child": {
+          "child": {
+            "child": {
+              "child": 1
+            }
+          }
+        }
+      },
+      "repaired": true,
+      "repaired_text": "{\"child\":{\"child\":{\"child\":{\"child\":1}}}}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "array-depth-8",
+    "text": "[[[[[[[[1",
+    "expected_text": "[[[[[[[[1]]]]]]]]",
+    "valid": true,
+    "data": [
+      [
+        [
+          [
+            [
+              [
+                [
+                  [
+                    1
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ],
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": [
+        [
+          [
+            [
+              [
+                [
+                  [
+                    [
+                      1
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ],
+      "repaired": true,
+      "repaired_text": "[[[[[[[[1]]]]]]]]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "object-depth-8",
+    "text": "{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":1",
+    "expected_text": "{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":1}}}}}}}}",
+    "valid": true,
+    "data": {
+      "child": {
+        "child": {
+          "child": {
+            "child": {
+              "child": {
+                "child": {
+                  "child": {
+                    "child": 1
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "child": {
+          "child": {
+            "child": {
+              "child": {
+                "child": {
+                  "child": {
+                    "child": {
+                      "child": 1
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "repaired": true,
+      "repaired_text": "{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":1}}}}}}}}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "array-depth-16",
+    "text": "[[[[[[[[[[[[[[[[1",
+    "expected_text": "[[[[[[[[[[[[[[[[1]]]]]]]]]]]]]]]]",
+    "valid": true,
+    "data": [
+      [
+        [
+          [
+            [
+              [
+                [
+                  [
+                    [
+                      [
+                        [
+                          [
+                            [
+                              [
+                                [
+                                  [
+                                    1
+                                  ]
+                                ]
+                              ]
+                            ]
+                          ]
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ],
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": [
+        [
+          [
+            [
+              [
+                [
+                  [
+                    [
+                      [
+                        [
+                          [
+                            [
+                              [
+                                [
+                                  [
+                                    [
+                                      1
+                                    ]
+                                  ]
+                                ]
+                              ]
+                            ]
+                          ]
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ],
+      "repaired": true,
+      "repaired_text": "[[[[[[[[[[[[[[[[1]]]]]]]]]]]]]]]]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "object-depth-16",
+    "text": "{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":1",
+    "expected_text": "{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":1}}}}}}}}}}}}}}}}",
+    "valid": true,
+    "data": {
+      "child": {
+        "child": {
+          "child": {
+            "child": {
+              "child": {
+                "child": {
+                  "child": {
+                    "child": {
+                      "child": {
+                        "child": {
+                          "child": {
+                            "child": {
+                              "child": {
+                                "child": {
+                                  "child": {
+                                    "child": 1
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "child": {
+          "child": {
+            "child": {
+              "child": {
+                "child": {
+                  "child": {
+                    "child": {
+                      "child": {
+                        "child": {
+                          "child": {
+                            "child": {
+                              "child": {
+                                "child": {
+                                  "child": {
+                                    "child": {
+                                      "child": 1
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "repaired": true,
+      "repaired_text": "{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":1}}}}}}}}}}}}}}}}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "array-depth-64",
+    "text": "[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[1",
+    "expected_text": "[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[1]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]",
+    "valid": true,
+    "data": [
+      [
+        [
+          [
+            [
+              [
+                [
+                  [
+                    [
+                      [
+                        [
+                          [
+                            [
+                              [
+                                [
+                                  [
+                                    [
+                                      [
+                                        [
+                                          [
+                                            [
+                                              [
+                                                [
+                                                  [
+                                                    [
+                                                      [
+                                                        [
+                                                          [
+                                                            [
+                                                              [
+                                                                [
+                                                                  [
+                                                                    [
+                                                                      [
+                                                                        [
+                                                                          [
+                                                                            [
+                                                                              [
+                                                                                [
+                                                                                  [
+                                                                                    [
+                                                                                      [
+                                                                                        [
+                                                                                          [
+                                                                                            [
+                                                                                              [
+                                                                                                [
+                                                                                                  [
+                                                                                                    [
+                                                                                                      [
+                                                                                                        [
+                                                                                                          [
+                                                                                                            [
+                                                                                                              [
+                                                                                                                [
+                                                                                                                  [
+                                                                                                                    [
+                                                                                                                      [
+                                                                                                                        [
+                                                                                                                          [
+                                                                                                                            [
+                                                                                                                              [
+                                                                                                                                [
+                                                                                                                                  [
+                                                                                                                                    1
+                                                                                                                                  ]
+                                                                                                                                ]
+                                                                                                                              ]
+                                                                                                                            ]
+                                                                                                                          ]
+                                                                                                                        ]
+                                                                                                                      ]
+                                                                                                                    ]
+                                                                                                                  ]
+                                                                                                                ]
+                                                                                                              ]
+                                                                                                            ]
+                                                                                                          ]
+                                                                                                        ]
+                                                                                                      ]
+                                                                                                    ]
+                                                                                                  ]
+                                                                                                ]
+                                                                                              ]
+                                                                                            ]
+                                                                                          ]
+                                                                                        ]
+                                                                                      ]
+                                                                                    ]
+                                                                                  ]
+                                                                                ]
+                                                                              ]
+                                                                            ]
+                                                                          ]
+                                                                        ]
+                                                                      ]
+                                                                    ]
+                                                                  ]
+                                                                ]
+                                                              ]
+                                                            ]
+                                                          ]
+                                                        ]
+                                                      ]
+                                                    ]
+                                                  ]
+                                                ]
+                                              ]
+                                            ]
+                                          ]
+                                        ]
+                                      ]
+                                    ]
+                                  ]
+                                ]
+                              ]
+                            ]
+                          ]
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ],
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": [
+        [
+          [
+            [
+              [
+                [
+                  [
+                    [
+                      [
+                        [
+                          [
+                            [
+                              [
+                                [
+                                  [
+                                    [
+                                      [
+                                        [
+                                          [
+                                            [
+                                              [
+                                                [
+                                                  [
+                                                    [
+                                                      [
+                                                        [
+                                                          [
+                                                            [
+                                                              [
+                                                                [
+                                                                  [
+                                                                    [
+                                                                      [
+                                                                        [
+                                                                          [
+                                                                            [
+                                                                              [
+                                                                                [
+                                                                                  [
+                                                                                    [
+                                                                                      [
+                                                                                        [
+                                                                                          [
+                                                                                            [
+                                                                                              [
+                                                                                                [
+                                                                                                  [
+                                                                                                    [
+                                                                                                      [
+                                                                                                        [
+                                                                                                          [
+                                                                                                            [
+                                                                                                              [
+                                                                                                                [
+                                                                                                                  [
+                                                                                                                    [
+                                                                                                                      [
+                                                                                                                        [
+                                                                                                                          [
+                                                                                                                            [
+                                                                                                                              [
+                                                                                                                                [
+                                                                                                                                  [
+                                                                                                                                    [
+                                                                                                                                      1
+                                                                                                                                    ]
+                                                                                                                                  ]
+                                                                                                                                ]
+                                                                                                                              ]
+                                                                                                                            ]
+                                                                                                                          ]
+                                                                                                                        ]
+                                                                                                                      ]
+                                                                                                                    ]
+                                                                                                                  ]
+                                                                                                                ]
+                                                                                                              ]
+                                                                                                            ]
+                                                                                                          ]
+                                                                                                        ]
+                                                                                                      ]
+                                                                                                    ]
+                                                                                                  ]
+                                                                                                ]
+                                                                                              ]
+                                                                                            ]
+                                                                                          ]
+                                                                                        ]
+                                                                                      ]
+                                                                                    ]
+                                                                                  ]
+                                                                                ]
+                                                                              ]
+                                                                            ]
+                                                                          ]
+                                                                        ]
+                                                                      ]
+                                                                    ]
+                                                                  ]
+                                                                ]
+                                                              ]
+                                                            ]
+                                                          ]
+                                                        ]
+                                                      ]
+                                                    ]
+                                                  ]
+                                                ]
+                                              ]
+                                            ]
+                                          ]
+                                        ]
+                                      ]
+                                    ]
+                                  ]
+                                ]
+                              ]
+                            ]
+                          ]
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ],
+      "repaired": true,
+      "repaired_text": "[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[1]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "object-depth-64",
+    "text": "{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":1",
+    "expected_text": "{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":1}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}",
+    "valid": true,
+    "data": {
+      "child": {
+        "child": {
+          "child": {
+            "child": {
+              "child": {
+                "child": {
+                  "child": {
+                    "child": {
+                      "child": {
+                        "child": {
+                          "child": {
+                            "child": {
+                              "child": {
+                                "child": {
+                                  "child": {
+                                    "child": {
+                                      "child": {
+                                        "child": {
+                                          "child": {
+                                            "child": {
+                                              "child": {
+                                                "child": {
+                                                  "child": {
+                                                    "child": {
+                                                      "child": {
+                                                        "child": {
+                                                          "child": {
+                                                            "child": {
+                                                              "child": {
+                                                                "child": {
+                                                                  "child": {
+                                                                    "child": {
+                                                                      "child": {
+                                                                        "child": {
+                                                                          "child": {
+                                                                            "child": {
+                                                                              "child": {
+                                                                                "child": {
+                                                                                  "child": {
+                                                                                    "child": {
+                                                                                      "child": {
+                                                                                        "child": {
+                                                                                          "child": {
+                                                                                            "child": {
+                                                                                              "child": {
+                                                                                                "child": {
+                                                                                                  "child": {
+                                                                                                    "child": {
+                                                                                                      "child": {
+                                                                                                        "child": {
+                                                                                                          "child": {
+                                                                                                            "child": {
+                                                                                                              "child": {
+                                                                                                                "child": {
+                                                                                                                  "child": {
+                                                                                                                    "child": {
+                                                                                                                      "child": {
+                                                                                                                        "child": {
+                                                                                                                          "child": {
+                                                                                                                            "child": {
+                                                                                                                              "child": {
+                                                                                                                                "child": {
+                                                                                                                                  "child": {
+                                                                                                                                    "child": 1
+                                                                                                                                  }
+                                                                                                                                }
+                                                                                                                              }
+                                                                                                                            }
+                                                                                                                          }
+                                                                                                                        }
+                                                                                                                      }
+                                                                                                                    }
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              }
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    }
+                                                                                                  }
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "child": {
+          "child": {
+            "child": {
+              "child": {
+                "child": {
+                  "child": {
+                    "child": {
+                      "child": {
+                        "child": {
+                          "child": {
+                            "child": {
+                              "child": {
+                                "child": {
+                                  "child": {
+                                    "child": {
+                                      "child": {
+                                        "child": {
+                                          "child": {
+                                            "child": {
+                                              "child": {
+                                                "child": {
+                                                  "child": {
+                                                    "child": {
+                                                      "child": {
+                                                        "child": {
+                                                          "child": {
+                                                            "child": {
+                                                              "child": {
+                                                                "child": {
+                                                                  "child": {
+                                                                    "child": {
+                                                                      "child": {
+                                                                        "child": {
+                                                                          "child": {
+                                                                            "child": {
+                                                                              "child": {
+                                                                                "child": {
+                                                                                  "child": {
+                                                                                    "child": {
+                                                                                      "child": {
+                                                                                        "child": {
+                                                                                          "child": {
+                                                                                            "child": {
+                                                                                              "child": {
+                                                                                                "child": {
+                                                                                                  "child": {
+                                                                                                    "child": {
+                                                                                                      "child": {
+                                                                                                        "child": {
+                                                                                                          "child": {
+                                                                                                            "child": {
+                                                                                                              "child": {
+                                                                                                                "child": {
+                                                                                                                  "child": {
+                                                                                                                    "child": {
+                                                                                                                      "child": {
+                                                                                                                        "child": {
+                                                                                                                          "child": {
+                                                                                                                            "child": {
+                                                                                                                              "child": {
+                                                                                                                                "child": {
+                                                                                                                                  "child": {
+                                                                                                                                    "child": {
+                                                                                                                                      "child": 1
+                                                                                                                                    }
+                                                                                                                                  }
+                                                                                                                                }
+                                                                                                                              }
+                                                                                                                            }
+                                                                                                                          }
+                                                                                                                        }
+                                                                                                                      }
+                                                                                                                    }
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              }
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    }
+                                                                                                  }
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "repaired": true,
+      "repaired_text": "{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":{\"child\":1}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "wide-key-0",
+    "text": "{\"unfinished",
+    "expected_text": "{}",
+    "valid": true,
+    "data": {},
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {},
+      "repaired": true,
+      "repaired_text": "{}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "wide-colon-0",
+    "text": "{\"unfinished\":",
+    "expected_text": "{\"unfinished\": null}",
+    "valid": true,
+    "data": {
+      "unfinished": null
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "unfinished": null
+      },
+      "repaired": true,
+      "repaired_text": "{\"unfinished\": null}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "wide-key-1",
+    "text": "{\"k0\":0,\"unfinished",
+    "expected_text": "{\"k0\":0}",
+    "valid": true,
+    "data": {
+      "k0": 0
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "k0": 0
+      },
+      "repaired": true,
+      "repaired_text": "{\"k0\":0}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "wide-colon-1",
+    "text": "{\"k0\":0,\"unfinished\":",
+    "expected_text": "{\"k0\":0,\"unfinished\": null}",
+    "valid": true,
+    "data": {
+      "k0": 0,
+      "unfinished": null
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "k0": 0,
+        "unfinished": null
+      },
+      "repaired": true,
+      "repaired_text": "{\"k0\":0,\"unfinished\": null}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "wide-key-10",
+    "text": "{\"k0\":0,\"k1\":1,\"k2\":2,\"k3\":3,\"k4\":4,\"k5\":5,\"k6\":6,\"k7\":7,\"k8\":8,\"k9\":9,\"unfinished",
+    "expected_text": "{\"k0\":0,\"k1\":1,\"k2\":2,\"k3\":3,\"k4\":4,\"k5\":5,\"k6\":6,\"k7\":7,\"k8\":8,\"k9\":9}",
+    "valid": true,
+    "data": {
+      "k0": 0,
+      "k1": 1,
+      "k2": 2,
+      "k3": 3,
+      "k4": 4,
+      "k5": 5,
+      "k6": 6,
+      "k7": 7,
+      "k8": 8,
+      "k9": 9
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "k0": 0,
+        "k1": 1,
+        "k2": 2,
+        "k3": 3,
+        "k4": 4,
+        "k5": 5,
+        "k6": 6,
+        "k7": 7,
+        "k8": 8,
+        "k9": 9
+      },
+      "repaired": true,
+      "repaired_text": "{\"k0\":0,\"k1\":1,\"k2\":2,\"k3\":3,\"k4\":4,\"k5\":5,\"k6\":6,\"k7\":7,\"k8\":8,\"k9\":9}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "wide-colon-10",
+    "text": "{\"k0\":0,\"k1\":1,\"k2\":2,\"k3\":3,\"k4\":4,\"k5\":5,\"k6\":6,\"k7\":7,\"k8\":8,\"k9\":9,\"unfinished\":",
+    "expected_text": "{\"k0\":0,\"k1\":1,\"k2\":2,\"k3\":3,\"k4\":4,\"k5\":5,\"k6\":6,\"k7\":7,\"k8\":8,\"k9\":9,\"unfinished\": null}",
+    "valid": true,
+    "data": {
+      "k0": 0,
+      "k1": 1,
+      "k2": 2,
+      "k3": 3,
+      "k4": 4,
+      "k5": 5,
+      "k6": 6,
+      "k7": 7,
+      "k8": 8,
+      "k9": 9,
+      "unfinished": null
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "k0": 0,
+        "k1": 1,
+        "k2": 2,
+        "k3": 3,
+        "k4": 4,
+        "k5": 5,
+        "k6": 6,
+        "k7": 7,
+        "k8": 8,
+        "k9": 9,
+        "unfinished": null
+      },
+      "repaired": true,
+      "repaired_text": "{\"k0\":0,\"k1\":1,\"k2\":2,\"k3\":3,\"k4\":4,\"k5\":5,\"k6\":6,\"k7\":7,\"k8\":8,\"k9\":9,\"unfinished\": null}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "wide-key-100",
+    "text": "{\"k0\":0,\"k1\":1,\"k2\":2,\"k3\":3,\"k4\":4,\"k5\":5,\"k6\":6,\"k7\":7,\"k8\":8,\"k9\":9,\"k10\":10,\"k11\":11,\"k12\":12,\"k13\":13,\"k14\":14,\"k15\":15,\"k16\":16,\"k17\":17,\"k18\":18,\"k19\":19,\"k20\":20,\"k21\":21,\"k22\":22,\"k23\":23,\"k24\":24,\"k25\":25,\"k26\":26,\"k27\":27,\"k28\":28,\"k29\":29,\"k30\":30,\"k31\":31,\"k32\":32,\"k33\":33,\"k34\":34,\"k35\":35,\"k36\":36,\"k37\":37,\"k38\":38,\"k39\":39,\"k40\":40,\"k41\":41,\"k42\":42,\"k43\":43,\"k44\":44,\"k45\":45,\"k46\":46,\"k47\":47,\"k48\":48,\"k49\":49,\"k50\":50,\"k51\":51,\"k52\":52,\"k53\":53,\"k54\":54,\"k55\":55,\"k56\":56,\"k57\":57,\"k58\":58,\"k59\":59,\"k60\":60,\"k61\":61,\"k62\":62,\"k63\":63,\"k64\":64,\"k65\":65,\"k66\":66,\"k67\":67,\"k68\":68,\"k69\":69,\"k70\":70,\"k71\":71,\"k72\":72,\"k73\":73,\"k74\":74,\"k75\":75,\"k76\":76,\"k77\":77,\"k78\":78,\"k79\":79,\"k80\":80,\"k81\":81,\"k82\":82,\"k83\":83,\"k84\":84,\"k85\":85,\"k86\":86,\"k87\":87,\"k88\":88,\"k89\":89,\"k90\":90,\"k91\":91,\"k92\":92,\"k93\":93,\"k94\":94,\"k95\":95,\"k96\":96,\"k97\":97,\"k98\":98,\"k99\":99,\"unfinished",
+    "expected_text": "{\"k0\":0,\"k1\":1,\"k2\":2,\"k3\":3,\"k4\":4,\"k5\":5,\"k6\":6,\"k7\":7,\"k8\":8,\"k9\":9,\"k10\":10,\"k11\":11,\"k12\":12,\"k13\":13,\"k14\":14,\"k15\":15,\"k16\":16,\"k17\":17,\"k18\":18,\"k19\":19,\"k20\":20,\"k21\":21,\"k22\":22,\"k23\":23,\"k24\":24,\"k25\":25,\"k26\":26,\"k27\":27,\"k28\":28,\"k29\":29,\"k30\":30,\"k31\":31,\"k32\":32,\"k33\":33,\"k34\":34,\"k35\":35,\"k36\":36,\"k37\":37,\"k38\":38,\"k39\":39,\"k40\":40,\"k41\":41,\"k42\":42,\"k43\":43,\"k44\":44,\"k45\":45,\"k46\":46,\"k47\":47,\"k48\":48,\"k49\":49,\"k50\":50,\"k51\":51,\"k52\":52,\"k53\":53,\"k54\":54,\"k55\":55,\"k56\":56,\"k57\":57,\"k58\":58,\"k59\":59,\"k60\":60,\"k61\":61,\"k62\":62,\"k63\":63,\"k64\":64,\"k65\":65,\"k66\":66,\"k67\":67,\"k68\":68,\"k69\":69,\"k70\":70,\"k71\":71,\"k72\":72,\"k73\":73,\"k74\":74,\"k75\":75,\"k76\":76,\"k77\":77,\"k78\":78,\"k79\":79,\"k80\":80,\"k81\":81,\"k82\":82,\"k83\":83,\"k84\":84,\"k85\":85,\"k86\":86,\"k87\":87,\"k88\":88,\"k89\":89,\"k90\":90,\"k91\":91,\"k92\":92,\"k93\":93,\"k94\":94,\"k95\":95,\"k96\":96,\"k97\":97,\"k98\":98,\"k99\":99}",
+    "valid": true,
+    "data": {
+      "k0": 0,
+      "k1": 1,
+      "k2": 2,
+      "k3": 3,
+      "k4": 4,
+      "k5": 5,
+      "k6": 6,
+      "k7": 7,
+      "k8": 8,
+      "k9": 9,
+      "k10": 10,
+      "k11": 11,
+      "k12": 12,
+      "k13": 13,
+      "k14": 14,
+      "k15": 15,
+      "k16": 16,
+      "k17": 17,
+      "k18": 18,
+      "k19": 19,
+      "k20": 20,
+      "k21": 21,
+      "k22": 22,
+      "k23": 23,
+      "k24": 24,
+      "k25": 25,
+      "k26": 26,
+      "k27": 27,
+      "k28": 28,
+      "k29": 29,
+      "k30": 30,
+      "k31": 31,
+      "k32": 32,
+      "k33": 33,
+      "k34": 34,
+      "k35": 35,
+      "k36": 36,
+      "k37": 37,
+      "k38": 38,
+      "k39": 39,
+      "k40": 40,
+      "k41": 41,
+      "k42": 42,
+      "k43": 43,
+      "k44": 44,
+      "k45": 45,
+      "k46": 46,
+      "k47": 47,
+      "k48": 48,
+      "k49": 49,
+      "k50": 50,
+      "k51": 51,
+      "k52": 52,
+      "k53": 53,
+      "k54": 54,
+      "k55": 55,
+      "k56": 56,
+      "k57": 57,
+      "k58": 58,
+      "k59": 59,
+      "k60": 60,
+      "k61": 61,
+      "k62": 62,
+      "k63": 63,
+      "k64": 64,
+      "k65": 65,
+      "k66": 66,
+      "k67": 67,
+      "k68": 68,
+      "k69": 69,
+      "k70": 70,
+      "k71": 71,
+      "k72": 72,
+      "k73": 73,
+      "k74": 74,
+      "k75": 75,
+      "k76": 76,
+      "k77": 77,
+      "k78": 78,
+      "k79": 79,
+      "k80": 80,
+      "k81": 81,
+      "k82": 82,
+      "k83": 83,
+      "k84": 84,
+      "k85": 85,
+      "k86": 86,
+      "k87": 87,
+      "k88": 88,
+      "k89": 89,
+      "k90": 90,
+      "k91": 91,
+      "k92": 92,
+      "k93": 93,
+      "k94": 94,
+      "k95": 95,
+      "k96": 96,
+      "k97": 97,
+      "k98": 98,
+      "k99": 99
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "k0": 0,
+        "k1": 1,
+        "k2": 2,
+        "k3": 3,
+        "k4": 4,
+        "k5": 5,
+        "k6": 6,
+        "k7": 7,
+        "k8": 8,
+        "k9": 9,
+        "k10": 10,
+        "k11": 11,
+        "k12": 12,
+        "k13": 13,
+        "k14": 14,
+        "k15": 15,
+        "k16": 16,
+        "k17": 17,
+        "k18": 18,
+        "k19": 19,
+        "k20": 20,
+        "k21": 21,
+        "k22": 22,
+        "k23": 23,
+        "k24": 24,
+        "k25": 25,
+        "k26": 26,
+        "k27": 27,
+        "k28": 28,
+        "k29": 29,
+        "k30": 30,
+        "k31": 31,
+        "k32": 32,
+        "k33": 33,
+        "k34": 34,
+        "k35": 35,
+        "k36": 36,
+        "k37": 37,
+        "k38": 38,
+        "k39": 39,
+        "k40": 40,
+        "k41": 41,
+        "k42": 42,
+        "k43": 43,
+        "k44": 44,
+        "k45": 45,
+        "k46": 46,
+        "k47": 47,
+        "k48": 48,
+        "k49": 49,
+        "k50": 50,
+        "k51": 51,
+        "k52": 52,
+        "k53": 53,
+        "k54": 54,
+        "k55": 55,
+        "k56": 56,
+        "k57": 57,
+        "k58": 58,
+        "k59": 59,
+        "k60": 60,
+        "k61": 61,
+        "k62": 62,
+        "k63": 63,
+        "k64": 64,
+        "k65": 65,
+        "k66": 66,
+        "k67": 67,
+        "k68": 68,
+        "k69": 69,
+        "k70": 70,
+        "k71": 71,
+        "k72": 72,
+        "k73": 73,
+        "k74": 74,
+        "k75": 75,
+        "k76": 76,
+        "k77": 77,
+        "k78": 78,
+        "k79": 79,
+        "k80": 80,
+        "k81": 81,
+        "k82": 82,
+        "k83": 83,
+        "k84": 84,
+        "k85": 85,
+        "k86": 86,
+        "k87": 87,
+        "k88": 88,
+        "k89": 89,
+        "k90": 90,
+        "k91": 91,
+        "k92": 92,
+        "k93": 93,
+        "k94": 94,
+        "k95": 95,
+        "k96": 96,
+        "k97": 97,
+        "k98": 98,
+        "k99": 99
+      },
+      "repaired": true,
+      "repaired_text": "{\"k0\":0,\"k1\":1,\"k2\":2,\"k3\":3,\"k4\":4,\"k5\":5,\"k6\":6,\"k7\":7,\"k8\":8,\"k9\":9,\"k10\":10,\"k11\":11,\"k12\":12,\"k13\":13,\"k14\":14,\"k15\":15,\"k16\":16,\"k17\":17,\"k18\":18,\"k19\":19,\"k20\":20,\"k21\":21,\"k22\":22,\"k23\":23,\"k24\":24,\"k25\":25,\"k26\":26,\"k27\":27,\"k28\":28,\"k29\":29,\"k30\":30,\"k31\":31,\"k32\":32,\"k33\":33,\"k34\":34,\"k35\":35,\"k36\":36,\"k37\":37,\"k38\":38,\"k39\":39,\"k40\":40,\"k41\":41,\"k42\":42,\"k43\":43,\"k44\":44,\"k45\":45,\"k46\":46,\"k47\":47,\"k48\":48,\"k49\":49,\"k50\":50,\"k51\":51,\"k52\":52,\"k53\":53,\"k54\":54,\"k55\":55,\"k56\":56,\"k57\":57,\"k58\":58,\"k59\":59,\"k60\":60,\"k61\":61,\"k62\":62,\"k63\":63,\"k64\":64,\"k65\":65,\"k66\":66,\"k67\":67,\"k68\":68,\"k69\":69,\"k70\":70,\"k71\":71,\"k72\":72,\"k73\":73,\"k74\":74,\"k75\":75,\"k76\":76,\"k77\":77,\"k78\":78,\"k79\":79,\"k80\":80,\"k81\":81,\"k82\":82,\"k83\":83,\"k84\":84,\"k85\":85,\"k86\":86,\"k87\":87,\"k88\":88,\"k89\":89,\"k90\":90,\"k91\":91,\"k92\":92,\"k93\":93,\"k94\":94,\"k95\":95,\"k96\":96,\"k97\":97,\"k98\":98,\"k99\":99}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "wide-colon-100",
+    "text": "{\"k0\":0,\"k1\":1,\"k2\":2,\"k3\":3,\"k4\":4,\"k5\":5,\"k6\":6,\"k7\":7,\"k8\":8,\"k9\":9,\"k10\":10,\"k11\":11,\"k12\":12,\"k13\":13,\"k14\":14,\"k15\":15,\"k16\":16,\"k17\":17,\"k18\":18,\"k19\":19,\"k20\":20,\"k21\":21,\"k22\":22,\"k23\":23,\"k24\":24,\"k25\":25,\"k26\":26,\"k27\":27,\"k28\":28,\"k29\":29,\"k30\":30,\"k31\":31,\"k32\":32,\"k33\":33,\"k34\":34,\"k35\":35,\"k36\":36,\"k37\":37,\"k38\":38,\"k39\":39,\"k40\":40,\"k41\":41,\"k42\":42,\"k43\":43,\"k44\":44,\"k45\":45,\"k46\":46,\"k47\":47,\"k48\":48,\"k49\":49,\"k50\":50,\"k51\":51,\"k52\":52,\"k53\":53,\"k54\":54,\"k55\":55,\"k56\":56,\"k57\":57,\"k58\":58,\"k59\":59,\"k60\":60,\"k61\":61,\"k62\":62,\"k63\":63,\"k64\":64,\"k65\":65,\"k66\":66,\"k67\":67,\"k68\":68,\"k69\":69,\"k70\":70,\"k71\":71,\"k72\":72,\"k73\":73,\"k74\":74,\"k75\":75,\"k76\":76,\"k77\":77,\"k78\":78,\"k79\":79,\"k80\":80,\"k81\":81,\"k82\":82,\"k83\":83,\"k84\":84,\"k85\":85,\"k86\":86,\"k87\":87,\"k88\":88,\"k89\":89,\"k90\":90,\"k91\":91,\"k92\":92,\"k93\":93,\"k94\":94,\"k95\":95,\"k96\":96,\"k97\":97,\"k98\":98,\"k99\":99,\"unfinished\":",
+    "expected_text": "{\"k0\":0,\"k1\":1,\"k2\":2,\"k3\":3,\"k4\":4,\"k5\":5,\"k6\":6,\"k7\":7,\"k8\":8,\"k9\":9,\"k10\":10,\"k11\":11,\"k12\":12,\"k13\":13,\"k14\":14,\"k15\":15,\"k16\":16,\"k17\":17,\"k18\":18,\"k19\":19,\"k20\":20,\"k21\":21,\"k22\":22,\"k23\":23,\"k24\":24,\"k25\":25,\"k26\":26,\"k27\":27,\"k28\":28,\"k29\":29,\"k30\":30,\"k31\":31,\"k32\":32,\"k33\":33,\"k34\":34,\"k35\":35,\"k36\":36,\"k37\":37,\"k38\":38,\"k39\":39,\"k40\":40,\"k41\":41,\"k42\":42,\"k43\":43,\"k44\":44,\"k45\":45,\"k46\":46,\"k47\":47,\"k48\":48,\"k49\":49,\"k50\":50,\"k51\":51,\"k52\":52,\"k53\":53,\"k54\":54,\"k55\":55,\"k56\":56,\"k57\":57,\"k58\":58,\"k59\":59,\"k60\":60,\"k61\":61,\"k62\":62,\"k63\":63,\"k64\":64,\"k65\":65,\"k66\":66,\"k67\":67,\"k68\":68,\"k69\":69,\"k70\":70,\"k71\":71,\"k72\":72,\"k73\":73,\"k74\":74,\"k75\":75,\"k76\":76,\"k77\":77,\"k78\":78,\"k79\":79,\"k80\":80,\"k81\":81,\"k82\":82,\"k83\":83,\"k84\":84,\"k85\":85,\"k86\":86,\"k87\":87,\"k88\":88,\"k89\":89,\"k90\":90,\"k91\":91,\"k92\":92,\"k93\":93,\"k94\":94,\"k95\":95,\"k96\":96,\"k97\":97,\"k98\":98,\"k99\":99,\"unfinished\": null}",
+    "valid": true,
+    "data": {
+      "k0": 0,
+      "k1": 1,
+      "k2": 2,
+      "k3": 3,
+      "k4": 4,
+      "k5": 5,
+      "k6": 6,
+      "k7": 7,
+      "k8": 8,
+      "k9": 9,
+      "k10": 10,
+      "k11": 11,
+      "k12": 12,
+      "k13": 13,
+      "k14": 14,
+      "k15": 15,
+      "k16": 16,
+      "k17": 17,
+      "k18": 18,
+      "k19": 19,
+      "k20": 20,
+      "k21": 21,
+      "k22": 22,
+      "k23": 23,
+      "k24": 24,
+      "k25": 25,
+      "k26": 26,
+      "k27": 27,
+      "k28": 28,
+      "k29": 29,
+      "k30": 30,
+      "k31": 31,
+      "k32": 32,
+      "k33": 33,
+      "k34": 34,
+      "k35": 35,
+      "k36": 36,
+      "k37": 37,
+      "k38": 38,
+      "k39": 39,
+      "k40": 40,
+      "k41": 41,
+      "k42": 42,
+      "k43": 43,
+      "k44": 44,
+      "k45": 45,
+      "k46": 46,
+      "k47": 47,
+      "k48": 48,
+      "k49": 49,
+      "k50": 50,
+      "k51": 51,
+      "k52": 52,
+      "k53": 53,
+      "k54": 54,
+      "k55": 55,
+      "k56": 56,
+      "k57": 57,
+      "k58": 58,
+      "k59": 59,
+      "k60": 60,
+      "k61": 61,
+      "k62": 62,
+      "k63": 63,
+      "k64": 64,
+      "k65": 65,
+      "k66": 66,
+      "k67": 67,
+      "k68": 68,
+      "k69": 69,
+      "k70": 70,
+      "k71": 71,
+      "k72": 72,
+      "k73": 73,
+      "k74": 74,
+      "k75": 75,
+      "k76": 76,
+      "k77": 77,
+      "k78": 78,
+      "k79": 79,
+      "k80": 80,
+      "k81": 81,
+      "k82": 82,
+      "k83": 83,
+      "k84": 84,
+      "k85": 85,
+      "k86": 86,
+      "k87": 87,
+      "k88": 88,
+      "k89": 89,
+      "k90": 90,
+      "k91": 91,
+      "k92": 92,
+      "k93": 93,
+      "k94": 94,
+      "k95": 95,
+      "k96": 96,
+      "k97": 97,
+      "k98": 98,
+      "k99": 99,
+      "unfinished": null
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "k0": 0,
+        "k1": 1,
+        "k2": 2,
+        "k3": 3,
+        "k4": 4,
+        "k5": 5,
+        "k6": 6,
+        "k7": 7,
+        "k8": 8,
+        "k9": 9,
+        "k10": 10,
+        "k11": 11,
+        "k12": 12,
+        "k13": 13,
+        "k14": 14,
+        "k15": 15,
+        "k16": 16,
+        "k17": 17,
+        "k18": 18,
+        "k19": 19,
+        "k20": 20,
+        "k21": 21,
+        "k22": 22,
+        "k23": 23,
+        "k24": 24,
+        "k25": 25,
+        "k26": 26,
+        "k27": 27,
+        "k28": 28,
+        "k29": 29,
+        "k30": 30,
+        "k31": 31,
+        "k32": 32,
+        "k33": 33,
+        "k34": 34,
+        "k35": 35,
+        "k36": 36,
+        "k37": 37,
+        "k38": 38,
+        "k39": 39,
+        "k40": 40,
+        "k41": 41,
+        "k42": 42,
+        "k43": 43,
+        "k44": 44,
+        "k45": 45,
+        "k46": 46,
+        "k47": 47,
+        "k48": 48,
+        "k49": 49,
+        "k50": 50,
+        "k51": 51,
+        "k52": 52,
+        "k53": 53,
+        "k54": 54,
+        "k55": 55,
+        "k56": 56,
+        "k57": 57,
+        "k58": 58,
+        "k59": 59,
+        "k60": 60,
+        "k61": 61,
+        "k62": 62,
+        "k63": 63,
+        "k64": 64,
+        "k65": 65,
+        "k66": 66,
+        "k67": 67,
+        "k68": 68,
+        "k69": 69,
+        "k70": 70,
+        "k71": 71,
+        "k72": 72,
+        "k73": 73,
+        "k74": 74,
+        "k75": 75,
+        "k76": 76,
+        "k77": 77,
+        "k78": 78,
+        "k79": 79,
+        "k80": 80,
+        "k81": 81,
+        "k82": 82,
+        "k83": 83,
+        "k84": 84,
+        "k85": 85,
+        "k86": 86,
+        "k87": 87,
+        "k88": 88,
+        "k89": 89,
+        "k90": 90,
+        "k91": 91,
+        "k92": 92,
+        "k93": 93,
+        "k94": 94,
+        "k95": 95,
+        "k96": 96,
+        "k97": 97,
+        "k98": 98,
+        "k99": 99,
+        "unfinished": null
+      },
+      "repaired": true,
+      "repaired_text": "{\"k0\":0,\"k1\":1,\"k2\":2,\"k3\":3,\"k4\":4,\"k5\":5,\"k6\":6,\"k7\":7,\"k8\":8,\"k9\":9,\"k10\":10,\"k11\":11,\"k12\":12,\"k13\":13,\"k14\":14,\"k15\":15,\"k16\":16,\"k17\":17,\"k18\":18,\"k19\":19,\"k20\":20,\"k21\":21,\"k22\":22,\"k23\":23,\"k24\":24,\"k25\":25,\"k26\":26,\"k27\":27,\"k28\":28,\"k29\":29,\"k30\":30,\"k31\":31,\"k32\":32,\"k33\":33,\"k34\":34,\"k35\":35,\"k36\":36,\"k37\":37,\"k38\":38,\"k39\":39,\"k40\":40,\"k41\":41,\"k42\":42,\"k43\":43,\"k44\":44,\"k45\":45,\"k46\":46,\"k47\":47,\"k48\":48,\"k49\":49,\"k50\":50,\"k51\":51,\"k52\":52,\"k53\":53,\"k54\":54,\"k55\":55,\"k56\":56,\"k57\":57,\"k58\":58,\"k59\":59,\"k60\":60,\"k61\":61,\"k62\":62,\"k63\":63,\"k64\":64,\"k65\":65,\"k66\":66,\"k67\":67,\"k68\":68,\"k69\":69,\"k70\":70,\"k71\":71,\"k72\":72,\"k73\":73,\"k74\":74,\"k75\":75,\"k76\":76,\"k77\":77,\"k78\":78,\"k79\":79,\"k80\":80,\"k81\":81,\"k82\":82,\"k83\":83,\"k84\":84,\"k85\":85,\"k86\":86,\"k87\":87,\"k88\":88,\"k89\":89,\"k90\":90,\"k91\":91,\"k92\":92,\"k93\":93,\"k94\":94,\"k95\":95,\"k96\":96,\"k97\":97,\"k98\":98,\"k99\":99,\"unfinished\": null}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "root-brackets-153",
+    "text": "\t\"[literal",
+    "expected_text": "\t\"[literal\"",
+    "valid": true,
+    "data": "[literal",
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": "[literal",
+      "repaired": true,
+      "repaired_text": "\t\"[literal\"",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "root-brackets-154",
+    "text": "\t\"{literal} tail",
+    "expected_text": "\t\"{literal} tail\"",
+    "valid": true,
+    "data": "{literal} tail",
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": "{literal} tail",
+      "repaired": true,
+      "repaired_text": "\t\"{literal} tail\"",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "root-brackets-155",
+    "text": "\t\"keep [] as text",
+    "expected_text": "\t\"keep [] as text\"",
+    "valid": true,
+    "data": "keep [] as text",
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": "keep [] as text",
+      "repaired": true,
+      "repaired_text": "\t\"keep [] as text\"",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "root-brackets-156",
+    "text": "\t\"value, \\\"key\\\": [1]",
+    "expected_text": "\t\"value, \\\"key\\\": [1]\"",
+    "valid": true,
+    "data": "value, \"key\": [1]",
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": "value, \"key\": [1]",
+      "repaired": true,
+      "repaired_text": "\t\"value, \\\"key\\\": [1]\"",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "root-brackets-157",
+    "text": "\t\"\\\"quoted\\\"",
+    "expected_text": "\t\"\\\"quoted\\\"\"",
+    "valid": true,
+    "data": "\"quoted\"",
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": "\"quoted\"",
+      "repaired": true,
+      "repaired_text": "\t\"\\\"quoted\\\"\"",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "preserved-158",
+    "text": "{}",
+    "expected_text": "{}",
+    "valid": true,
+    "data": {},
+    "source_valid": true,
+    "public": {
+      "valid": true,
+      "data": {},
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "preserved-159",
+    "text": " [] \n",
+    "expected_text": " [] \n",
+    "valid": true,
+    "data": [],
+    "source_valid": true,
+    "public": {
+      "valid": true,
+      "data": [],
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "preserved-160",
+    "text": "\t{\"v\":1} \r\n",
+    "expected_text": "\t{\"v\":1} \r\n",
+    "valid": true,
+    "data": {
+      "v": 1
+    },
+    "source_valid": true,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": 1
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "preserved-161",
+    "text": "\"root\"",
+    "expected_text": "\"root\"",
+    "valid": true,
+    "data": "root",
+    "source_valid": true,
+    "public": {
+      "valid": true,
+      "data": "root",
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "preserved-162",
+    "text": " \"trailing \" ",
+    "expected_text": " \"trailing \" ",
+    "valid": true,
+    "data": "trailing ",
+    "source_valid": true,
+    "public": {
+      "valid": true,
+      "data": "trailing ",
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "preserved-163",
+    "text": "[1,\"last\"]",
+    "expected_text": "[1,\"last\"]",
+    "valid": true,
+    "data": [
+      1,
+      "last"
+    ],
+    "source_valid": true,
+    "public": {
+      "valid": true,
+      "data": [
+        1,
+        "last"
+      ],
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "preserved-164",
+    "text": "{\"v\":\"\\\\\",\"next\":1}",
+    "expected_text": "{\"v\":\"\\\\\",\"next\":1}",
+    "valid": true,
+    "data": {
+      "v": "\\",
+      "next": 1
+    },
+    "source_valid": true,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "\\",
+        "next": 1
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "preserved-165",
+    "text": "true",
+    "expected_text": "true",
+    "valid": true,
+    "data": true,
+    "source_valid": true,
+    "public": {
+      "valid": true,
+      "data": true,
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "preserved-166",
+    "text": "42",
+    "expected_text": "42",
+    "valid": true,
+    "data": 42,
+    "source_valid": true,
+    "public": {
+      "valid": true,
+      "data": 42,
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "preserved-167",
+    "text": "null",
+    "expected_text": "null",
+    "valid": true,
+    "data": null,
+    "source_valid": true,
+    "public": {
+      "valid": true,
+      "data": null,
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "unsupported-168",
+    "text": "",
+    "expected_text": "",
+    "valid": false,
+    "data": null,
+    "source_valid": false
+  },
+  {
+    "name": "unsupported-169",
+    "text": " \t\r\n",
+    "expected_text": " \t\r\n",
+    "valid": false,
+    "data": null,
+    "source_valid": false
+  },
+  {
+    "name": "unsupported-170",
+    "text": "plain text",
+    "expected_text": "plain text",
+    "valid": false,
+    "data": null,
+    "source_valid": false
+  },
+  {
+    "name": "unsupported-171",
+    "text": "plain text,",
+    "expected_text": "plain text,",
+    "valid": false,
+    "data": null,
+    "source_valid": false
+  },
+  {
+    "name": "unsupported-172",
+    "text": "prefix \"quote",
+    "expected_text": "prefix \"quote",
+    "valid": false,
+    "data": null,
+    "source_valid": false
+  },
+  {
+    "name": "unsupported-173",
+    "text": "{\"a\":tru",
+    "expected_text": "{\"a\":tru}",
+    "valid": false,
+    "data": null,
+    "source_valid": false
+  },
+  {
+    "name": "unsupported-174",
+    "text": "{\"a\":19.",
+    "expected_text": "{\"a\":19.}",
+    "valid": false,
+    "data": null,
+    "source_valid": false
+  },
+  {
+    "name": "unsupported-175",
+    "text": "{\"a\":nu",
+    "expected_text": "{\"a\":nu}",
+    "valid": false,
+    "data": null,
+    "source_valid": false
+  },
+  {
+    "name": "unsupported-176",
+    "text": "{\"a\":[1}",
+    "expected_text": "{\"a\":[1}]}",
+    "valid": false,
+    "data": null,
+    "source_valid": false
+  },
+  {
+    "name": "unsupported-177",
+    "text": "[1,2}",
+    "expected_text": "[1,2}]",
+    "valid": false,
+    "data": null,
+    "source_valid": false
+  },
+  {
+    "name": "quoted-introduction",
+    "text": "\"Answer\" {\"a\":1}",
+    "expected_text": "\"Answer\" {\"a\":1}",
+    "valid": false,
+    "data": null,
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "extract_json"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "quoted-introduction-brackets",
+    "text": "\"[ignore]\" {\"a\":1",
+    "expected_text": "\"[ignore]\" {\"a\":1}",
+    "valid": false,
+    "data": null,
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":1}",
+      "strategies": [
+        "extract_json",
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  }
+]

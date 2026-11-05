@@ -1,0 +1,446 @@
+[
+  {
+    "name": "ecma_pattern_0",
+    "pattern": "(?<word>a)\\k<word>",
+    "text": "aa",
+    "valid": true
+  },
+  {
+    "name": "ecma_pattern_1",
+    "pattern": "(?<word>a)\\k<word>",
+    "text": "a",
+    "valid": false
+  },
+  {
+    "name": "ecma_pattern_2",
+    "pattern": "(?<word>a)\\k<word>",
+    "text": "ab",
+    "valid": false
+  },
+  {
+    "name": "ecma_pattern_3",
+    "pattern": "(?<=a)b",
+    "text": "ab",
+    "valid": true
+  },
+  {
+    "name": "ecma_pattern_4",
+    "pattern": "(?<=a)b",
+    "text": "ac",
+    "valid": false
+  },
+  {
+    "name": "ecma_pattern_5",
+    "pattern": "(?<=a)b",
+    "text": "b",
+    "valid": false
+  },
+  {
+    "name": "ecma_pattern_6",
+    "pattern": "(?<!a)b",
+    "text": "b",
+    "valid": true
+  },
+  {
+    "name": "ecma_pattern_7",
+    "pattern": "(?<!a)b",
+    "text": "cb",
+    "valid": true
+  },
+  {
+    "name": "ecma_pattern_8",
+    "pattern": "(?<!a)b",
+    "text": "ab",
+    "valid": false
+  },
+  {
+    "name": "ecma_pattern_9",
+    "pattern": "^\\d+$",
+    "text": "123",
+    "valid": true
+  },
+  {
+    "name": "ecma_pattern_10",
+    "pattern": "^\\d+$",
+    "text": "\uff11\uff12",
+    "valid": false
+  },
+  {
+    "name": "ecma_pattern_11",
+    "pattern": "^\\d+$",
+    "text": "\u0661\u0662",
+    "valid": false
+  },
+  {
+    "name": "ecma_pattern_12",
+    "pattern": "^\\w+$",
+    "text": "hello_123",
+    "valid": true
+  },
+  {
+    "name": "ecma_pattern_13",
+    "pattern": "^\\w+$",
+    "text": "\u03a9",
+    "valid": false
+  },
+  {
+    "name": "ecma_pattern_14",
+    "pattern": "^\\w+$",
+    "text": "\u00e9",
+    "valid": false
+  },
+  {
+    "name": "ecma_pattern_15",
+    "pattern": "^\\s$",
+    "text": "\u00a0",
+    "valid": true
+  },
+  {
+    "name": "ecma_pattern_16",
+    "pattern": "^\\s$",
+    "text": "\ufeff",
+    "valid": true
+  },
+  {
+    "name": "ecma_pattern_17",
+    "pattern": "^\\s$",
+    "text": "\u2028",
+    "valid": true
+  },
+  {
+    "name": "ecma_pattern_18",
+    "pattern": "^\\s$",
+    "text": "\u0085",
+    "valid": false
+  },
+  {
+    "name": "ecma_pattern_19",
+    "pattern": "^\\s$",
+    "text": "\u001c",
+    "valid": false
+  },
+  {
+    "name": "ecma_pattern_20",
+    "pattern": "^.$",
+    "text": "\ud83d\ude00",
+    "valid": true
+  },
+  {
+    "name": "ecma_pattern_21",
+    "pattern": "^.$",
+    "text": "\u03a9",
+    "valid": true
+  },
+  {
+    "name": "ecma_pattern_22",
+    "pattern": "^.$",
+    "text": "a",
+    "valid": true
+  },
+  {
+    "name": "ecma_pattern_23",
+    "pattern": "^.$",
+    "text": "\ud800",
+    "valid": true
+  },
+  {
+    "name": "ecma_pattern_24",
+    "pattern": "^.$",
+    "text": "aa",
+    "valid": false
+  },
+  {
+    "name": "ecma_pattern_25",
+    "pattern": "^.$",
+    "text": "\r",
+    "valid": false
+  },
+  {
+    "name": "ecma_pattern_26",
+    "pattern": "^.$",
+    "text": "\n",
+    "valid": false
+  },
+  {
+    "name": "ecma_pattern_27",
+    "pattern": "^.$",
+    "text": "\u2028",
+    "valid": false
+  },
+  {
+    "name": "ecma_pattern_28",
+    "pattern": "^.$",
+    "text": "\u2029",
+    "valid": false
+  },
+  {
+    "name": "ecma_pattern_29",
+    "pattern": "^a$",
+    "text": "a",
+    "valid": true
+  },
+  {
+    "name": "ecma_pattern_30",
+    "pattern": "^a$",
+    "text": "a\n",
+    "valid": false
+  },
+  {
+    "name": "ecma_pattern_31",
+    "pattern": "^a$",
+    "text": "a\r",
+    "valid": false
+  },
+  {
+    "name": "ecma_pattern_32",
+    "pattern": "^a$",
+    "text": "a\u2028",
+    "valid": false
+  },
+  {
+    "name": "ecma_pattern_33",
+    "pattern": "^a$",
+    "text": "a\u2029",
+    "valid": false
+  },
+  {
+    "name": "ecma_pattern_34",
+    "pattern": "\\p{Letter}+",
+    "text": "\u03a9",
+    "valid": true
+  },
+  {
+    "name": "ecma_pattern_35",
+    "pattern": "\\p{Letter}+",
+    "text": "\u00e9",
+    "valid": true
+  },
+  {
+    "name": "ecma_pattern_36",
+    "pattern": "\\p{Letter}+",
+    "text": "a",
+    "valid": true
+  },
+  {
+    "name": "ecma_pattern_37",
+    "pattern": "\\p{Letter}+",
+    "text": "123",
+    "valid": false
+  },
+  {
+    "name": "ecma_pattern_38",
+    "pattern": "\\p{Letter}+",
+    "text": "\ud83d\ude00",
+    "valid": false
+  },
+  {
+    "name": "ecma_pattern_39",
+    "pattern": "^\\p{Script=Greek}+$",
+    "text": "\u03a9\u03b1",
+    "valid": true
+  },
+  {
+    "name": "ecma_pattern_40",
+    "pattern": "^\\p{Script=Greek}+$",
+    "text": "abc",
+    "valid": false
+  },
+  {
+    "name": "ecma_pattern_41",
+    "pattern": "^\\p{Script=Greek}+$",
+    "text": "\u03a9a",
+    "valid": false
+  },
+  {
+    "name": "ecma_pattern_42",
+    "pattern": "^\\p{Emoji}$",
+    "text": "\ud83d\ude00",
+    "valid": true
+  },
+  {
+    "name": "ecma_pattern_43",
+    "pattern": "^\\p{Emoji}$",
+    "text": "A",
+    "valid": false
+  },
+  {
+    "name": "ecma_pattern_44",
+    "pattern": "(a|(b))\\2",
+    "text": "a",
+    "valid": true
+  },
+  {
+    "name": "ecma_pattern_45",
+    "pattern": "(a|(b))\\2",
+    "text": "bb",
+    "valid": true
+  },
+  {
+    "name": "ecma_pattern_46",
+    "pattern": "(a|(b))\\2",
+    "text": "b",
+    "valid": false
+  },
+  {
+    "name": "ecma_pattern_47",
+    "pattern": "(a|(b))\\2",
+    "text": "c",
+    "valid": false
+  },
+  {
+    "name": "ecma_pattern_48",
+    "pattern": "[]",
+    "text": "",
+    "valid": false
+  },
+  {
+    "name": "ecma_pattern_49",
+    "pattern": "[]",
+    "text": "a",
+    "valid": false
+  },
+  {
+    "name": "ecma_pattern_50",
+    "pattern": "[^]",
+    "text": "a",
+    "valid": true
+  },
+  {
+    "name": "ecma_pattern_51",
+    "pattern": "[^]",
+    "text": "\n",
+    "valid": true
+  },
+  {
+    "name": "ecma_pattern_52",
+    "pattern": "[^]",
+    "text": "\ud83d\ude00",
+    "valid": true
+  },
+  {
+    "name": "ecma_pattern_53",
+    "pattern": "[^]",
+    "text": "",
+    "valid": false
+  },
+  {
+    "name": "ecma_pattern_54",
+    "pattern": "^\\u{1F600}$",
+    "text": "\ud83d\ude00",
+    "valid": true
+  },
+  {
+    "name": "ecma_pattern_55",
+    "pattern": "^\\u{1F600}$",
+    "text": "a",
+    "valid": false
+  },
+  {
+    "name": "ecma_pattern_56",
+    "pattern": "^\\u{1F600}$",
+    "text": "\ud83d\ude00a",
+    "valid": false
+  },
+  {
+    "name": "ecma_pattern_57",
+    "pattern": "^\\uD83D\\uDE00$",
+    "text": "\ud83d\ude00",
+    "valid": true
+  },
+  {
+    "name": "ecma_pattern_58",
+    "pattern": "^\\uD83D\\uDE00$",
+    "text": "\ud83d",
+    "valid": false
+  },
+  {
+    "name": "ecma_pattern_59",
+    "pattern": "^\\uD83D\\uDE00$",
+    "text": "\ude00",
+    "valid": false
+  },
+  {
+    "name": "ecma_pattern_60",
+    "pattern": "^\\x00$",
+    "text": "\u0000",
+    "valid": true
+  },
+  {
+    "name": "ecma_pattern_61",
+    "pattern": "^\\x00$",
+    "text": "",
+    "valid": false
+  },
+  {
+    "name": "ecma_pattern_62",
+    "pattern": "(?<\u03a9>\u03a9)\\k<\u03a9>",
+    "text": "\u03a9\u03a9",
+    "valid": true
+  },
+  {
+    "name": "ecma_pattern_63",
+    "pattern": "(?<\u03a9>\u03a9)\\k<\u03a9>",
+    "text": "\u03a9",
+    "valid": false
+  },
+  {
+    "name": "ecma_pattern_64",
+    "pattern": "(?=a)a",
+    "text": "a",
+    "valid": true
+  },
+  {
+    "name": "ecma_pattern_65",
+    "pattern": "(?=a)a",
+    "text": "b",
+    "valid": false
+  },
+  {
+    "name": "ecma_pattern_66",
+    "pattern": "(?<=\\d+)a",
+    "text": "123a",
+    "valid": true
+  },
+  {
+    "name": "ecma_pattern_67",
+    "pattern": "(?<=\\d+)a",
+    "text": "a",
+    "valid": false
+  },
+  {
+    "name": "ecma_pattern_68",
+    "pattern": "(?<word>a)",
+    "text": null,
+    "valid": true
+  },
+  {
+    "name": "ecma_pattern_69",
+    "pattern": "(?<word>a)",
+    "text": true,
+    "valid": true
+  },
+  {
+    "name": "ecma_pattern_70",
+    "pattern": "(?<word>a)",
+    "text": false,
+    "valid": true
+  },
+  {
+    "name": "ecma_pattern_71",
+    "pattern": "(?<word>a)",
+    "text": 0,
+    "valid": true
+  },
+  {
+    "name": "ecma_pattern_72",
+    "pattern": "(?<word>a)",
+    "text": [],
+    "valid": true
+  },
+  {
+    "name": "ecma_pattern_73",
+    "pattern": "(?<word>a)",
+    "text": {},
+    "valid": true
+  }
+]

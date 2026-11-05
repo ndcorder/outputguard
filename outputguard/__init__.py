@@ -1,3 +1,5 @@
+from typing import Literal, overload
+
 from outputguard.batch import (
     BatchRepairResult,
     BatchSummary,
@@ -11,6 +13,7 @@ from outputguard.exceptions import (
     OutputGuardError,
     ParseError,
     RepairError,
+    SchemaEvaluationError,
     SchemaValidationError,
     StrategyError,
 )
@@ -24,34 +27,56 @@ from outputguard.generation import (
     guarded_generate_async,
 )
 from outputguard.guard import OutputGuard
-from outputguard.models import RepairResult, ValidationError, ValidationResult
+from outputguard.models import RepairResult, Schema, ValidationError, ValidationResult
 from outputguard.report import RepairReport, StrategyApplication
+from outputguard.validator import invalidate_schema
 
 _default_guard = OutputGuard()
 
 
-def validate(text: str, schema: dict, format: str = "json") -> ValidationResult:
+def validate(text: str, schema: Schema, format: str | None = "json") -> ValidationResult:
     return _default_guard.validate(text, schema, format=format)
 
 
-def repair(text: str, format: str = "json") -> RepairResult:
-    return _default_guard.repair(text, format=format)  # type: ignore[return-value]
+@overload
+def repair(
+    text: str, format: str | None = "json", *, report: Literal[False] = False
+) -> RepairResult: ...
 
 
-def validate_and_repair(text: str, schema: dict, format: str = "json") -> ValidationResult:
+@overload
+def repair(
+    text: str, format: str | None = "json", *, report: Literal[True]
+) -> tuple[RepairResult, RepairReport]: ...
+
+
+@overload
+def repair(
+    text: str, format: str | None = "json", *, report: bool
+) -> RepairResult | tuple[RepairResult, RepairReport]: ...
+
+
+def repair(
+    text: str, format: str | None = "json", *, report: bool = False
+) -> RepairResult | tuple[RepairResult, RepairReport]:
+    """Repair syntax, optionally returning the result and its detailed report."""
+    return _default_guard.repair(text, format=format, report=report)
+
+
+def validate_and_repair(text: str, schema: Schema, format: str | None = "json") -> ValidationResult:
     return _default_guard.validate_and_repair(text, schema, format=format)
 
 
-def parse(text: str, schema: dict, format: str = "json"):
+def parse(text: str, schema: Schema, format: str | None = "json"):
     """Validate, repair, and return parsed data. Raises on failure."""
     return _default_guard.parse(text, schema, format=format)
 
 
 def retry_prompt(
     text: str,
-    schema: dict,
+    schema: Schema,
     errors: list[ValidationError],
-    format: str = "json",
+    format: str | None = "json",
     include_message_history: bool = True,
 ) -> str:
     return _default_guard.retry_prompt(
@@ -80,6 +105,8 @@ __all__ = [
     "RepairReport",
     "RepairResult",
     "SUPPORTED_FORMATS",
+    "Schema",
+    "SchemaEvaluationError",
     "SchemaValidationError",
     "StrategyApplication",
     "StrategyError",
@@ -87,6 +114,7 @@ __all__ = [
     "ValidationResult",
     "guarded_generate",
     "guarded_generate_async",
+    "invalidate_schema",
     "parse",
     "repair",
     "repair_batch",

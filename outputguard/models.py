@@ -1,5 +1,7 @@
 from dataclasses import dataclass, field
-from typing import Any
+from typing import Any, TypeAlias
+
+Schema: TypeAlias = dict[str, Any] | bool
 
 
 @dataclass
@@ -20,6 +22,7 @@ class ValidationResult:
     original_text: str = ""
     repaired_text: str = ""
     format: str = "json"
+    parse_error: str | None = None
 
 
 @dataclass

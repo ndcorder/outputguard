@@ -31,17 +31,14 @@ class TestFixEncodingBPEReplacement:
         assert fix_encoding("ĠĊĉč") == " \n\t\r"
 
 
-# ─── fix_booleans (lines 20-21: backslash skip in _count_unescaped_quotes) ───
+# ─── fix_booleans: escaped JSON strings ─────────────────────────────────
 
 
 class TestFixBooleansEscapedQuotes:
-    """Lines 20-21: when _count_unescaped_quotes encounters a backslash,
-    it skips 2 chars (i += 2; continue).
-    Need an escaped quote/backslash before the boolean match position."""
+    """Escaped quotes and backslashes do not hide following bare booleans."""
 
     def test_escaped_quote_before_boolean(self):
-        # String value contains \" (escaped quote) — the backslash before
-        # the quote triggers the i+=2 skip in _count_unescaped_quotes
+        # A quote escaped inside a string does not end that string.
         text = '{"val": "test\\"", "flag": True}'
         result = fix_booleans(text)
         assert "true" in result
@@ -55,11 +52,11 @@ class TestFixBooleansEscapedQuotes:
         assert "False" not in result
 
 
-# ─── fix_values (lines 22-23: backslash skip in _count_unescaped_quotes) ────
+# ─── fix_values: escaped JSON strings ───────────────────────────────────
 
 
 class TestFixValuesEscapedQuotes:
-    """Same pattern as fix_booleans — backslash skip in quote counter."""
+    """Escaped quotes and backslashes do not hide following bare values."""
 
     def test_escaped_quote_before_nan(self):
         text = '{"val": "test\\"", "x": NaN}'

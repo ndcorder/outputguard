@@ -1,0 +1,1262 @@
+[
+  {
+    "name": "plain_string_yes",
+    "text": "yes",
+    "valid": true,
+    "value": "yes"
+  },
+  {
+    "name": "plain_string_Yes",
+    "text": "Yes",
+    "valid": true,
+    "value": "Yes"
+  },
+  {
+    "name": "plain_string_YES",
+    "text": "YES",
+    "valid": true,
+    "value": "YES"
+  },
+  {
+    "name": "plain_string_no",
+    "text": "no",
+    "valid": true,
+    "value": "no"
+  },
+  {
+    "name": "plain_string_No",
+    "text": "No",
+    "valid": true,
+    "value": "No"
+  },
+  {
+    "name": "plain_string_NO",
+    "text": "NO",
+    "valid": true,
+    "value": "NO"
+  },
+  {
+    "name": "plain_string_on",
+    "text": "on",
+    "valid": true,
+    "value": "on"
+  },
+  {
+    "name": "plain_string_On",
+    "text": "On",
+    "valid": true,
+    "value": "On"
+  },
+  {
+    "name": "plain_string_ON",
+    "text": "ON",
+    "valid": true,
+    "value": "ON"
+  },
+  {
+    "name": "plain_string_off",
+    "text": "off",
+    "valid": true,
+    "value": "off"
+  },
+  {
+    "name": "plain_string_Off",
+    "text": "Off",
+    "valid": true,
+    "value": "Off"
+  },
+  {
+    "name": "plain_string_OFF",
+    "text": "OFF",
+    "valid": true,
+    "value": "OFF"
+  },
+  {
+    "name": "plain_string_y",
+    "text": "y",
+    "valid": true,
+    "value": "y"
+  },
+  {
+    "name": "plain_string_n",
+    "text": "n",
+    "valid": true,
+    "value": "n"
+  },
+  {
+    "name": "plain_string_tRuE",
+    "text": "tRuE",
+    "valid": true,
+    "value": "tRuE"
+  },
+  {
+    "name": "plain_string_fAlSe",
+    "text": "fAlSe",
+    "valid": true,
+    "value": "fAlSe"
+  },
+  {
+    "name": "plain_string_nUlL",
+    "text": "nUlL",
+    "valid": true,
+    "value": "nUlL"
+  },
+  {
+    "name": "plain_string_1:20",
+    "text": "1:20",
+    "valid": true,
+    "value": "1:20"
+  },
+  {
+    "name": "plain_string_-1:20",
+    "text": "-1:20",
+    "valid": true,
+    "value": "-1:20"
+  },
+  {
+    "name": "plain_string_12:34:56",
+    "text": "12:34:56",
+    "valid": true,
+    "value": "12:34:56"
+  },
+  {
+    "name": "plain_string_2026-11-04",
+    "text": "2026-11-04",
+    "valid": true,
+    "value": "2026-11-04"
+  },
+  {
+    "name": "plain_string_2026-11-04T12:34:56Z",
+    "text": "2026-11-04T12:34:56Z",
+    "valid": true,
+    "value": "2026-11-04T12:34:56Z"
+  },
+  {
+    "name": "plain_string_2026-02-30",
+    "text": "2026-02-30",
+    "valid": true,
+    "value": "2026-02-30"
+  },
+  {
+    "name": "plain_string_NaN",
+    "text": "NaN",
+    "valid": true,
+    "value": "NaN"
+  },
+  {
+    "name": "plain_string_Infinity",
+    "text": "Infinity",
+    "valid": true,
+    "value": "Infinity"
+  },
+  {
+    "name": "plain_string_0b10",
+    "text": "0b10",
+    "valid": true,
+    "value": "0b10"
+  },
+  {
+    "name": "plain_string_0B10",
+    "text": "0B10",
+    "valid": true,
+    "value": "0B10"
+  },
+  {
+    "name": "plain_string_0O17",
+    "text": "0O17",
+    "valid": true,
+    "value": "0O17"
+  },
+  {
+    "name": "plain_string_0XFF",
+    "text": "0XFF",
+    "valid": true,
+    "value": "0XFF"
+  },
+  {
+    "name": "plain_string_-0o17",
+    "text": "-0o17",
+    "valid": true,
+    "value": "-0o17"
+  },
+  {
+    "name": "plain_string_+0xFF",
+    "text": "+0xFF",
+    "valid": true,
+    "value": "+0xFF"
+  },
+  {
+    "name": "plain_string_1_000",
+    "text": "1_000",
+    "valid": true,
+    "value": "1_000"
+  },
+  {
+    "name": "plain_string_0x_FF",
+    "text": "0x_FF",
+    "valid": true,
+    "value": "0x_FF"
+  },
+  {
+    "name": "plain_string_0o_17",
+    "text": "0o_17",
+    "valid": true,
+    "value": "0o_17"
+  },
+  {
+    "name": "plain_string_1.0_0",
+    "text": "1.0_0",
+    "valid": true,
+    "value": "1.0_0"
+  },
+  {
+    "name": "plain_string_1_e3",
+    "text": "1_e3",
+    "valid": true,
+    "value": "1_e3"
+  },
+  {
+    "name": "plain_string_\u0661\u0662",
+    "text": "\u0661\u0662",
+    "valid": true,
+    "value": "\u0661\u0662"
+  },
+  {
+    "name": "plain_string_\uff11\uff12",
+    "text": "\uff11\uff12",
+    "valid": true,
+    "value": "\uff11\uff12"
+  },
+  {
+    "name": "plain_string_.nAn",
+    "text": ".nAn",
+    "valid": true,
+    "value": ".nAn"
+  },
+  {
+    "name": "plain_string_.iNF",
+    "text": ".iNF",
+    "valid": true,
+    "value": ".iNF"
+  },
+  {
+    "name": "plain_string_+.nan",
+    "text": "+.nan",
+    "valid": true,
+    "value": "+.nan"
+  },
+  {
+    "name": "plain_string_-.NaN",
+    "text": "-.NaN",
+    "valid": true,
+    "value": "-.NaN"
+  },
+  {
+    "name": "core_true",
+    "text": "true",
+    "valid": true,
+    "value": true
+  },
+  {
+    "name": "core_True",
+    "text": "True",
+    "valid": true,
+    "value": true
+  },
+  {
+    "name": "core_TRUE",
+    "text": "TRUE",
+    "valid": true,
+    "value": true
+  },
+  {
+    "name": "core_false",
+    "text": "false",
+    "valid": true,
+    "value": false
+  },
+  {
+    "name": "core_False",
+    "text": "False",
+    "valid": true,
+    "value": false
+  },
+  {
+    "name": "core_FALSE",
+    "text": "FALSE",
+    "valid": true,
+    "value": false
+  },
+  {
+    "name": "core_null",
+    "text": "null",
+    "valid": true,
+    "value": null
+  },
+  {
+    "name": "core_Null",
+    "text": "Null",
+    "valid": true,
+    "value": null
+  },
+  {
+    "name": "core_NULL",
+    "text": "NULL",
+    "valid": true,
+    "value": null
+  },
+  {
+    "name": "core_~",
+    "text": "~",
+    "valid": true,
+    "value": null
+  },
+  {
+    "name": "core_",
+    "text": "",
+    "valid": true,
+    "value": null
+  },
+  {
+    "name": "core_# comment",
+    "text": "# comment",
+    "valid": true,
+    "value": null
+  },
+  {
+    "name": "number_0",
+    "text": "0",
+    "valid": true,
+    "value": 0,
+    "number_type": "integer"
+  },
+  {
+    "name": "number_00",
+    "text": "00",
+    "valid": true,
+    "value": 0,
+    "number_type": "integer"
+  },
+  {
+    "name": "number_0123",
+    "text": "0123",
+    "valid": true,
+    "value": 123,
+    "number_type": "integer"
+  },
+  {
+    "name": "number_+0123",
+    "text": "+0123",
+    "valid": true,
+    "value": 123,
+    "number_type": "integer"
+  },
+  {
+    "name": "number_-0123",
+    "text": "-0123",
+    "valid": true,
+    "value": -123,
+    "number_type": "integer"
+  },
+  {
+    "name": "number_-0",
+    "text": "-0",
+    "valid": true,
+    "value": 0,
+    "number_type": "integer"
+  },
+  {
+    "name": "number_0o17",
+    "text": "0o17",
+    "valid": true,
+    "value": 15,
+    "number_type": "integer"
+  },
+  {
+    "name": "number_0xFF",
+    "text": "0xFF",
+    "valid": true,
+    "value": 255,
+    "number_type": "integer"
+  },
+  {
+    "name": "number_42",
+    "text": "42",
+    "valid": true,
+    "value": 42,
+    "number_type": "integer"
+  },
+  {
+    "name": "number_1.0",
+    "text": "1.0",
+    "valid": true,
+    "value": 1.0,
+    "number_type": "float"
+  },
+  {
+    "name": "number_1.",
+    "text": "1.",
+    "valid": true,
+    "value": 1.0,
+    "number_type": "float"
+  },
+  {
+    "name": "number_.5",
+    "text": ".5",
+    "valid": true,
+    "value": 0.5,
+    "number_type": "float"
+  },
+  {
+    "name": "number_-.5",
+    "text": "-.5",
+    "valid": true,
+    "value": -0.5,
+    "number_type": "float"
+  },
+  {
+    "name": "number_1e3",
+    "text": "1e3",
+    "valid": true,
+    "value": 1000.0,
+    "number_type": "float"
+  },
+  {
+    "name": "number_1e-3",
+    "text": "1e-3",
+    "valid": true,
+    "value": 0.001,
+    "number_type": "float"
+  },
+  {
+    "name": "number_1e+3",
+    "text": "1e+3",
+    "valid": true,
+    "value": 1000.0,
+    "number_type": "float"
+  },
+  {
+    "name": "number_001e2",
+    "text": "001e2",
+    "valid": true,
+    "value": 100.0,
+    "number_type": "float"
+  },
+  {
+    "name": "number_01.2",
+    "text": "01.2",
+    "valid": true,
+    "value": 1.2,
+    "number_type": "float"
+  },
+  {
+    "name": "number_-0.0",
+    "text": "-0.0",
+    "valid": true,
+    "value": -0.0,
+    "number_type": "float"
+  },
+  {
+    "name": "number_1e-4000",
+    "text": "1e-4000",
+    "valid": true,
+    "value": 0.0,
+    "number_type": "float"
+  },
+  {
+    "name": "number_-1e-4000",
+    "text": "-1e-4000",
+    "valid": true,
+    "value": -0.0,
+    "number_type": "float"
+  },
+  {
+    "name": "number_5e-324",
+    "text": "5e-324",
+    "valid": true,
+    "value": 5e-324,
+    "number_type": "float"
+  },
+  {
+    "name": "special_.inf",
+    "text": ".inf",
+    "valid": true,
+    "value_kind": "positive_infinity",
+    "number_type": "float"
+  },
+  {
+    "name": "special_+.Inf",
+    "text": "+.Inf",
+    "valid": true,
+    "value_kind": "positive_infinity",
+    "number_type": "float"
+  },
+  {
+    "name": "special_-.INF",
+    "text": "-.INF",
+    "valid": true,
+    "value_kind": "negative_infinity",
+    "number_type": "float"
+  },
+  {
+    "name": "special_.nan",
+    "text": ".nan",
+    "valid": true,
+    "value_kind": "nan",
+    "number_type": "float"
+  },
+  {
+    "name": "special_.NaN",
+    "text": ".NaN",
+    "valid": true,
+    "value_kind": "nan",
+    "number_type": "float"
+  },
+  {
+    "name": "special_.NAN",
+    "text": ".NAN",
+    "valid": true,
+    "value_kind": "nan",
+    "number_type": "float"
+  },
+  {
+    "name": "special_1e400",
+    "text": "1e400",
+    "valid": true,
+    "value_kind": "positive_infinity",
+    "number_type": "float"
+  },
+  {
+    "name": "special_-1e400",
+    "text": "-1e400",
+    "valid": true,
+    "value_kind": "negative_infinity",
+    "number_type": "float"
+  },
+  {
+    "name": "special_!!float .inf",
+    "text": "!!float .inf",
+    "valid": true,
+    "value_kind": "positive_infinity",
+    "number_type": "float"
+  },
+  {
+    "name": "special_!!float .nan",
+    "text": "!!float .nan",
+    "valid": true,
+    "value_kind": "nan",
+    "number_type": "float"
+  },
+  {
+    "name": "quoted_boolean",
+    "text": "\"true\"",
+    "valid": true,
+    "value": "true"
+  },
+  {
+    "name": "quoted_null",
+    "text": "'null'",
+    "valid": true,
+    "value": "null"
+  },
+  {
+    "name": "quoted_zero",
+    "text": "\"0123\"",
+    "valid": true,
+    "value": "0123"
+  },
+  {
+    "name": "quoted_empty",
+    "text": "\"\"",
+    "valid": true,
+    "value": ""
+  },
+  {
+    "name": "single_quote_escape",
+    "text": "'it''s fine'",
+    "valid": true,
+    "value": "it's fine"
+  },
+  {
+    "name": "unicode",
+    "text": "caf\u00e9 \u03a9 \ud83d\ude00",
+    "valid": true,
+    "value": "caf\u00e9 \u03a9 \ud83d\ude00"
+  },
+  {
+    "name": "escape_unicode",
+    "text": "\"\\u03A9\\U0001F600\"",
+    "valid": true,
+    "value": "\u03a9\ud83d\ude00"
+  },
+  {
+    "name": "escape_controls",
+    "text": "\"\\0\\a\\b\\t\\n\\v\\f\\r\\e\\ \\N\\_\\L\\P\"",
+    "valid": true,
+    "value": "\u0000\u0007\b\t\n\u000b\f\r\u001b \u0085\u00a0\u2028\u2029"
+  },
+  {
+    "name": "raw_tab_in_quote",
+    "text": "\"a\tb\"",
+    "valid": true,
+    "value": "a\tb"
+  },
+  {
+    "name": "raw_nel_in_quote",
+    "text": "\"a\u0085b\"",
+    "valid": true,
+    "value": "a\u0085b"
+  },
+  {
+    "name": "raw_nel_plain",
+    "text": "a\u0085b",
+    "valid": true,
+    "value": "a\u0085b"
+  },
+  {
+    "name": "raw_line_separator_plain",
+    "text": "a\u2028b",
+    "valid": true,
+    "value": "a\u2028b"
+  },
+  {
+    "name": "raw_paragraph_separator_plain",
+    "text": "a\u2029b",
+    "valid": true,
+    "value": "a\u2029b"
+  },
+  {
+    "name": "literal_clip",
+    "text": "|\n  a\n  b\n",
+    "valid": true,
+    "value": "a\nb\n"
+  },
+  {
+    "name": "literal_strip",
+    "text": "|-\n  a\n  b\n",
+    "valid": true,
+    "value": "a\nb"
+  },
+  {
+    "name": "literal_keep",
+    "text": "|+\n  a\n\n",
+    "valid": true,
+    "value": "a\n\n"
+  },
+  {
+    "name": "folded_strip",
+    "text": ">-\n  a\n  b\n",
+    "valid": true,
+    "value": "a b"
+  },
+  {
+    "name": "literal_indent",
+    "text": "|2-\n  a\n",
+    "valid": true,
+    "value": "a",
+    "root_only": true
+  },
+  {
+    "name": "literal_unicode_separators",
+    "text": "|-\n  a\u0085b\u2028c\u2029d",
+    "valid": true,
+    "value": "a\u0085b\u2028c\u2029d"
+  },
+  {
+    "name": "multiline_quoted",
+    "text": "\"a\n  b\"",
+    "valid": true,
+    "value": "a b"
+  },
+  {
+    "name": "multiline_plain",
+    "text": "a\n  b",
+    "valid": true,
+    "value": "a b"
+  },
+  {
+    "name": "bom_inside_plain",
+    "text": "a\ufeffb",
+    "valid": true,
+    "value": "a\ufeffb"
+  },
+  {
+    "name": "explicit_string",
+    "text": "!!str 123",
+    "valid": true,
+    "value": "123"
+  },
+  {
+    "name": "non_specific_string",
+    "text": "! true",
+    "valid": true,
+    "value": "true"
+  },
+  {
+    "name": "explicit_bool",
+    "text": "!!bool TRUE",
+    "valid": true,
+    "value": true
+  },
+  {
+    "name": "explicit_null",
+    "text": "!!null \"~\"",
+    "valid": true,
+    "value": null
+  },
+  {
+    "name": "explicit_int",
+    "text": "!!int \"0123\"",
+    "valid": true,
+    "value": 123
+  },
+  {
+    "name": "explicit_octal",
+    "text": "!!int 0o17",
+    "valid": true,
+    "value": 15
+  },
+  {
+    "name": "non_specific_sequence",
+    "text": "! [1, true]",
+    "valid": true,
+    "value": [
+      1,
+      true
+    ]
+  },
+  {
+    "name": "non_specific_map",
+    "text": "! {yes: on}",
+    "valid": true,
+    "value": {
+      "yes": "on"
+    }
+  },
+  {
+    "name": "literal_keys",
+    "text": "true: yes\n01: on\n1: off\n1.0: kept",
+    "valid": true,
+    "value": {
+      "true": "yes",
+      "01": "on",
+      "1": "off",
+      "1.0": "kept"
+    }
+  },
+  {
+    "name": "null_keys",
+    "text": "null: 1\n~: 2",
+    "valid": true,
+    "value": {
+      "null": 1,
+      "~": 2
+    }
+  },
+  {
+    "name": "empty_key",
+    "text": ": value",
+    "valid": true,
+    "value": {
+      "": "value"
+    }
+  },
+  {
+    "name": "empty_explicit_key",
+    "text": "?\n: value",
+    "valid": true,
+    "value": {
+      "": "value"
+    }
+  },
+  {
+    "name": "empty_value",
+    "text": "value:",
+    "valid": true,
+    "value": {
+      "value": null
+    }
+  },
+  {
+    "name": "escaped_key",
+    "text": "\"a\\u002fb\": 1",
+    "valid": true,
+    "value": {
+      "a/b": 1
+    }
+  },
+  {
+    "name": "explicit_string_key",
+    "text": "!!str 123: value",
+    "valid": true,
+    "value": {
+      "123": "value"
+    }
+  },
+  {
+    "name": "non_specific_key",
+    "text": "! true: value",
+    "valid": true,
+    "value": {
+      "true": "value"
+    }
+  },
+  {
+    "name": "prototype_keys",
+    "text": "__proto__: {age: 42}\nconstructor: saved\ntoString: retained\nvalueOf: kept",
+    "valid": true,
+    "value": {
+      "__proto__": {
+        "age": 42
+      },
+      "constructor": "saved",
+      "toString": "retained",
+      "valueOf": "kept"
+    }
+  },
+  {
+    "name": "anchored_sequence",
+    "text": "first: &one [1, {a: true}]\nsecond: *one",
+    "valid": true,
+    "value": {
+      "first": [
+        1,
+        {
+          "a": true
+        }
+      ],
+      "second": [
+        1,
+        {
+          "a": true
+        }
+      ]
+    }
+  },
+  {
+    "name": "anchored_mapping",
+    "text": "first: &one {yes: on}\nsecond: *one",
+    "valid": true,
+    "value": {
+      "first": {
+        "yes": "on"
+      },
+      "second": {
+        "yes": "on"
+      }
+    }
+  },
+  {
+    "name": "anchored_key",
+    "text": "&key true: 1\ncopy: *key",
+    "valid": true,
+    "value": {
+      "true": 1,
+      "copy": "true"
+    }
+  },
+  {
+    "name": "prototype_anchor",
+    "text": "first: &__proto__ {a: 1}\nsecond: *__proto__",
+    "valid": true,
+    "value": {
+      "first": {
+        "a": 1
+      },
+      "second": {
+        "a": 1
+      }
+    }
+  },
+  {
+    "name": "literal_merge_key",
+    "text": "base: &base {a: 1}\ncopy: {<<: *base, b: 2}",
+    "valid": true,
+    "value": {
+      "base": {
+        "a": 1
+      },
+      "copy": {
+        "<<": {
+          "a": 1
+        },
+        "b": 2
+      }
+    }
+  },
+  {
+    "name": "crlf_lines",
+    "text": "value:\r\n  a\r\n",
+    "valid": true,
+    "value": {
+      "value": "a"
+    }
+  },
+  {
+    "name": "cr_lines",
+    "text": "value:\r  a\r",
+    "valid": true,
+    "value": {
+      "value": "a"
+    }
+  },
+  {
+    "name": "typed_!!float 123",
+    "text": "!!float 123",
+    "valid": true,
+    "value": 123.0,
+    "number_type": "float"
+  },
+  {
+    "name": "typed_!!float -0",
+    "text": "!!float -0",
+    "valid": true,
+    "value": -0.0,
+    "number_type": "float"
+  },
+  {
+    "name": "typed_!!float 0123",
+    "text": "!!float 0123",
+    "valid": true,
+    "value": 123.0,
+    "number_type": "float"
+  },
+  {
+    "name": "version_12",
+    "text": "%YAML 1.2\n---\nyes",
+    "valid": true,
+    "value": "yes",
+    "root_only": true
+  },
+  {
+    "name": "tag_directive",
+    "text": "%TAG !e! tag:yaml.org,2002:\n---\n!e!str 123",
+    "valid": true,
+    "value": "123",
+    "root_only": true
+  },
+  {
+    "name": "document_markers",
+    "text": "---\n[true, 0123]\n...\n",
+    "valid": true,
+    "value": [
+      true,
+      123
+    ],
+    "root_only": true
+  },
+  {
+    "name": "document_end",
+    "text": "hello\n...\n",
+    "valid": true,
+    "value": "hello",
+    "root_only": true
+  },
+  {
+    "name": "leading_bom",
+    "text": "\ufeffa: 1",
+    "valid": true,
+    "value": {
+      "a": 1
+    },
+    "root_only": true
+  },
+  {
+    "name": "duplicate_key",
+    "text": "a: 1\na: 2",
+    "valid": false
+  },
+  {
+    "name": "duplicate_quoted_key",
+    "text": "a: 1\n\"a\": 2",
+    "valid": false
+  },
+  {
+    "name": "duplicate_decoded_key",
+    "text": "\"a\": 1\n\"\\u0061\": 2",
+    "valid": false
+  },
+  {
+    "name": "duplicate_empty_key",
+    "text": ": 1\n\"\": 2",
+    "valid": false
+  },
+  {
+    "name": "duplicate_prototype_key",
+    "text": "__proto__: 1\n__proto__: 2",
+    "valid": false
+  },
+  {
+    "name": "sequence_key",
+    "text": "? [a, b]\n: value",
+    "valid": false
+  },
+  {
+    "name": "mapping_key",
+    "text": "? {a: b}\n: value",
+    "valid": false
+  },
+  {
+    "name": "alias_key",
+    "text": "anchor: &a value\n*a : other",
+    "valid": false
+  },
+  {
+    "name": "integer_tag_key",
+    "text": "!!int 123: value",
+    "valid": false
+  },
+  {
+    "name": "boolean_tag_key",
+    "text": "!!bool true: value",
+    "valid": false
+  },
+  {
+    "name": "null_tag_key",
+    "text": "!!null null: value",
+    "valid": false
+  },
+  {
+    "name": "duplicate_anchor",
+    "text": "a: &x 1\nb: &x 2",
+    "valid": false
+  },
+  {
+    "name": "cyclic_sequence",
+    "text": "&a [*a]",
+    "valid": false
+  },
+  {
+    "name": "cyclic_mapping",
+    "text": "&a {x: *a}",
+    "valid": false
+  },
+  {
+    "name": "forward_alias",
+    "text": "a: *later\nb: &later value",
+    "valid": false
+  },
+  {
+    "name": "undefined_alias",
+    "text": "*missing",
+    "valid": false
+  },
+  {
+    "name": "binary_tag",
+    "text": "!!binary SGVsbG8=",
+    "valid": false
+  },
+  {
+    "name": "timestamp_tag",
+    "text": "!!timestamp 2026-11-04",
+    "valid": false
+  },
+  {
+    "name": "set_tag",
+    "text": "!!set {a: null}",
+    "valid": false
+  },
+  {
+    "name": "pairs_tag",
+    "text": "!!pairs [{a: 1}]",
+    "valid": false
+  },
+  {
+    "name": "omap_tag",
+    "text": "!!omap [{a: 1}]",
+    "valid": false
+  },
+  {
+    "name": "local_scalar_tag",
+    "text": "!widget value",
+    "valid": false
+  },
+  {
+    "name": "local_collection_tag",
+    "text": "!widget [1]",
+    "valid": false
+  },
+  {
+    "name": "python_tag",
+    "text": "!!python/object/apply:os.system ['echo injected']",
+    "valid": false
+  },
+  {
+    "name": "bad_bool_tag",
+    "text": "!!bool tRuE",
+    "valid": false
+  },
+  {
+    "name": "bad_int_tag",
+    "text": "!!int 1_000",
+    "valid": false
+  },
+  {
+    "name": "bad_hex_tag",
+    "text": "!!int -0xFF",
+    "valid": false
+  },
+  {
+    "name": "bad_float_tag",
+    "text": "!!float 1_000",
+    "valid": false
+  },
+  {
+    "name": "bad_null_tag",
+    "text": "!!null \"wrong\"",
+    "valid": false
+  },
+  {
+    "name": "newline_in_number_tag",
+    "text": "!!int \"42\\n\"",
+    "valid": false
+  },
+  {
+    "name": "wrong_scalar_collection_tag",
+    "text": "!!str [1]",
+    "valid": false
+  },
+  {
+    "name": "wrong_map_sequence_tag",
+    "text": "!!map [1]",
+    "valid": false
+  },
+  {
+    "name": "wrong_sequence_map_tag",
+    "text": "!!seq {a: 1}",
+    "valid": false
+  },
+  {
+    "name": "unterminated_sequence",
+    "text": "[1, 2",
+    "valid": false
+  },
+  {
+    "name": "unterminated_mapping",
+    "text": "{a: 1",
+    "valid": false
+  },
+  {
+    "name": "invalid_escape",
+    "text": "\"\\xzz\"",
+    "valid": false
+  },
+  {
+    "name": "bad_indentation",
+    "text": "a:\n b: 1\n  c: 2",
+    "valid": false
+  },
+  {
+    "name": "tab_indentation",
+    "text": "\tkey: value",
+    "valid": false
+  },
+  {
+    "name": "unsupported_version_1.0",
+    "text": "%YAML 1.0\n---\nyes",
+    "valid": false,
+    "root_only": true
+  },
+  {
+    "name": "unsupported_version_1.1",
+    "text": "%YAML 1.1\n---\nyes",
+    "valid": false,
+    "root_only": true
+  },
+  {
+    "name": "unsupported_version_1.3",
+    "text": "%YAML 1.3\n---\nyes",
+    "valid": false,
+    "root_only": true
+  },
+  {
+    "name": "unsupported_version_2.0",
+    "text": "%YAML 2.0\n---\nyes",
+    "valid": false,
+    "root_only": true
+  },
+  {
+    "name": "unknown_directive",
+    "text": "%FOO bar\n---\na: 1",
+    "valid": false,
+    "root_only": true
+  },
+  {
+    "name": "multiple_documents",
+    "text": "---\n1\n---\n2",
+    "valid": false,
+    "root_only": true
+  },
+  {
+    "name": "empty_second_document",
+    "text": "{}\n---\n",
+    "valid": false,
+    "root_only": true
+  },
+  {
+    "name": "invalid_source_0",
+    "text": "\"a\u0000b\"",
+    "valid": false
+  },
+  {
+    "name": "invalid_source_1",
+    "text": "\"a\u0001b\"",
+    "valid": false
+  },
+  {
+    "name": "invalid_source_7f",
+    "text": "\"a\u007fb\"",
+    "valid": false
+  },
+  {
+    "name": "invalid_source_84",
+    "text": "\"a\u0084b\"",
+    "valid": false
+  },
+  {
+    "name": "invalid_source_86",
+    "text": "\"a\u0086b\"",
+    "valid": false
+  },
+  {
+    "name": "invalid_source_9f",
+    "text": "\"a\u009fb\"",
+    "valid": false
+  },
+  {
+    "name": "invalid_source_d800",
+    "text": "\"a\ud800b\"",
+    "valid": false
+  },
+  {
+    "name": "invalid_source_dfff",
+    "text": "\"a\udfffb\"",
+    "valid": false
+  },
+  {
+    "name": "invalid_source_fffe",
+    "text": "\"a\ufffeb\"",
+    "valid": false
+  },
+  {
+    "name": "invalid_source_ffff",
+    "text": "\"a\uffffb\"",
+    "valid": false
+  },
+  {
+    "name": "nested_explicit_indent_map",
+    "text": "holder: |2-\n  a\n",
+    "valid": true,
+    "value": {
+      "holder": "a"
+    }
+  },
+  {
+    "name": "nested_explicit_indent_list",
+    "text": "- |2-\n  a\n",
+    "valid": true,
+    "value": [
+      "a"
+    ]
+  }
+]

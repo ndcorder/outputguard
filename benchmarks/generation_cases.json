@@ -1,0 +1,864 @@
+[
+  {
+    "name": "clean-null-stops-early",
+    "schema": true,
+    "responses": [
+      "null",
+      "unused"
+    ],
+    "format": "json",
+    "repair": true,
+    "max_retries": 2,
+    "include_message_history": true,
+    "expected": {
+      "valid": true,
+      "data": null,
+      "text": "null",
+      "repaired": false,
+      "strategies": [],
+      "exhausted": false,
+      "format": "json",
+      "error_paths": [],
+      "attempts": [
+        {
+          "raw_text": "null",
+          "valid": true,
+          "data": null,
+          "repaired": false,
+          "repaired_text": "",
+          "strategies": [],
+          "parse_failure": false,
+          "error_paths": []
+        }
+      ],
+      "provider_calls": 1,
+      "observer_calls": 1
+    }
+  },
+  {
+    "name": "repaired-success",
+    "schema": {
+      "type": "integer"
+    },
+    "responses": [
+      "```json\n1\n```"
+    ],
+    "format": "json",
+    "repair": true,
+    "max_retries": 0,
+    "include_message_history": true,
+    "expected": {
+      "valid": true,
+      "data": 1,
+      "text": "1",
+      "repaired": true,
+      "strategies": [
+        "strip_fences"
+      ],
+      "exhausted": false,
+      "format": "json",
+      "error_paths": [],
+      "attempts": [
+        {
+          "raw_text": "```json\n1\n```",
+          "valid": true,
+          "data": 1,
+          "repaired": true,
+          "repaired_text": "1",
+          "strategies": [
+            "strip_fences"
+          ],
+          "parse_failure": false,
+          "error_paths": []
+        }
+      ],
+      "provider_calls": 1,
+      "observer_calls": 1
+    }
+  },
+  {
+    "name": "schema-retry-success",
+    "schema": {
+      "type": "integer"
+    },
+    "responses": [
+      "\"wrong\"",
+      "2"
+    ],
+    "format": "json",
+    "repair": true,
+    "max_retries": 2,
+    "include_message_history": true,
+    "expected": {
+      "valid": true,
+      "data": 2,
+      "text": "2",
+      "repaired": false,
+      "strategies": [],
+      "exhausted": false,
+      "format": "json",
+      "error_paths": [],
+      "attempts": [
+        {
+          "raw_text": "\"wrong\"",
+          "valid": false,
+          "data": "wrong",
+          "repaired": false,
+          "repaired_text": "",
+          "strategies": [],
+          "parse_failure": false,
+          "error_paths": [
+            "$"
+          ]
+        },
+        {
+          "raw_text": "2",
+          "valid": true,
+          "data": 2,
+          "repaired": false,
+          "repaired_text": "",
+          "strategies": [],
+          "parse_failure": false,
+          "error_paths": []
+        }
+      ],
+      "provider_calls": 2,
+      "observer_calls": 2
+    }
+  },
+  {
+    "name": "repaired-schema-retry-success",
+    "schema": {
+      "type": "integer"
+    },
+    "responses": [
+      "```json\n\"wrong\"\n```",
+      "2"
+    ],
+    "format": "json",
+    "repair": true,
+    "max_retries": 2,
+    "include_message_history": true,
+    "expected": {
+      "valid": true,
+      "data": 2,
+      "text": "2",
+      "repaired": true,
+      "strategies": [
+        "strip_fences"
+      ],
+      "exhausted": false,
+      "format": "json",
+      "error_paths": [],
+      "attempts": [
+        {
+          "raw_text": "```json\n\"wrong\"\n```",
+          "valid": false,
+          "data": "wrong",
+          "repaired": true,
+          "repaired_text": "\"wrong\"",
+          "strategies": [
+            "strip_fences"
+          ],
+          "parse_failure": false,
+          "error_paths": [
+            "$"
+          ]
+        },
+        {
+          "raw_text": "2",
+          "valid": true,
+          "data": 2,
+          "repaired": false,
+          "repaired_text": "",
+          "strategies": [],
+          "parse_failure": false,
+          "error_paths": []
+        }
+      ],
+      "provider_calls": 2,
+      "observer_calls": 2
+    }
+  },
+  {
+    "name": "parse-retry-success",
+    "schema": {
+      "type": "integer"
+    },
+    "responses": [
+      "[",
+      "3"
+    ],
+    "format": "json",
+    "repair": false,
+    "max_retries": 2,
+    "include_message_history": true,
+    "expected": {
+      "valid": true,
+      "data": 3,
+      "text": "3",
+      "repaired": false,
+      "strategies": [],
+      "exhausted": false,
+      "format": "json",
+      "error_paths": [],
+      "attempts": [
+        {
+          "raw_text": "[",
+          "valid": false,
+          "data": null,
+          "repaired": false,
+          "repaired_text": "",
+          "strategies": [],
+          "parse_failure": true,
+          "error_paths": [
+            "$"
+          ]
+        },
+        {
+          "raw_text": "3",
+          "valid": true,
+          "data": 3,
+          "repaired": false,
+          "repaired_text": "",
+          "strategies": [],
+          "parse_failure": false,
+          "error_paths": []
+        }
+      ],
+      "provider_calls": 2,
+      "observer_calls": 2
+    }
+  },
+  {
+    "name": "schema-exhausted",
+    "schema": {
+      "type": "integer"
+    },
+    "responses": [
+      "\"a\"",
+      "\"b\"",
+      "\"c\""
+    ],
+    "format": "json",
+    "repair": true,
+    "max_retries": 2,
+    "include_message_history": true,
+    "expected": {
+      "valid": false,
+      "data": null,
+      "text": "\"c\"",
+      "repaired": false,
+      "strategies": [],
+      "exhausted": true,
+      "format": "json",
+      "error_paths": [
+        "$"
+      ],
+      "attempts": [
+        {
+          "raw_text": "\"a\"",
+          "valid": false,
+          "data": "a",
+          "repaired": false,
+          "repaired_text": "",
+          "strategies": [],
+          "parse_failure": false,
+          "error_paths": [
+            "$"
+          ]
+        },
+        {
+          "raw_text": "\"b\"",
+          "valid": false,
+          "data": "b",
+          "repaired": false,
+          "repaired_text": "",
+          "strategies": [],
+          "parse_failure": false,
+          "error_paths": [
+            "$"
+          ]
+        },
+        {
+          "raw_text": "\"c\"",
+          "valid": false,
+          "data": "c",
+          "repaired": false,
+          "repaired_text": "",
+          "strategies": [],
+          "parse_failure": false,
+          "error_paths": [
+            "$"
+          ]
+        }
+      ],
+      "provider_calls": 3,
+      "observer_calls": 3
+    }
+  },
+  {
+    "name": "empty-parse-exhausted",
+    "schema": {
+      "type": "integer"
+    },
+    "responses": [
+      ""
+    ],
+    "format": "json",
+    "repair": false,
+    "max_retries": 0,
+    "include_message_history": true,
+    "expected": {
+      "valid": false,
+      "data": null,
+      "text": "",
+      "repaired": false,
+      "strategies": [],
+      "exhausted": true,
+      "format": "json",
+      "error_paths": [
+        "$"
+      ],
+      "attempts": [
+        {
+          "raw_text": "",
+          "valid": false,
+          "data": null,
+          "repaired": false,
+          "repaired_text": "",
+          "strategies": [],
+          "parse_failure": true,
+          "error_paths": [
+            "$"
+          ]
+        }
+      ],
+      "provider_calls": 1,
+      "observer_calls": 1
+    }
+  },
+  {
+    "name": "repaired-schema-exhausted",
+    "schema": {
+      "type": "integer"
+    },
+    "responses": [
+      "```json\n\"x\"\n```"
+    ],
+    "format": "json",
+    "repair": true,
+    "max_retries": 0,
+    "include_message_history": true,
+    "expected": {
+      "valid": false,
+      "data": null,
+      "text": "\"x\"",
+      "repaired": true,
+      "strategies": [
+        "strip_fences"
+      ],
+      "exhausted": true,
+      "format": "json",
+      "error_paths": [
+        "$"
+      ],
+      "attempts": [
+        {
+          "raw_text": "```json\n\"x\"\n```",
+          "valid": false,
+          "data": "x",
+          "repaired": true,
+          "repaired_text": "\"x\"",
+          "strategies": [
+            "strip_fences"
+          ],
+          "parse_failure": false,
+          "error_paths": [
+            "$"
+          ]
+        }
+      ],
+      "provider_calls": 1,
+      "observer_calls": 1
+    }
+  },
+  {
+    "name": "strict-fence-exhausted",
+    "schema": {
+      "type": "integer"
+    },
+    "responses": [
+      "```json\n1\n```"
+    ],
+    "format": "json",
+    "repair": false,
+    "max_retries": 0,
+    "include_message_history": true,
+    "expected": {
+      "valid": false,
+      "data": null,
+      "text": "```json\n1\n```",
+      "repaired": false,
+      "strategies": [],
+      "exhausted": true,
+      "format": "json",
+      "error_paths": [
+        "$"
+      ],
+      "attempts": [
+        {
+          "raw_text": "```json\n1\n```",
+          "valid": false,
+          "data": null,
+          "repaired": false,
+          "repaired_text": "",
+          "strategies": [],
+          "parse_failure": true,
+          "error_paths": [
+            "$"
+          ]
+        }
+      ],
+      "provider_calls": 1,
+      "observer_calls": 1
+    }
+  },
+  {
+    "name": "yaml-alias-exhausted",
+    "schema": {
+      "type": "integer"
+    },
+    "responses": [
+      "word"
+    ],
+    "format": " YML ",
+    "repair": true,
+    "max_retries": 0,
+    "include_message_history": true,
+    "expected": {
+      "valid": false,
+      "data": null,
+      "text": "word",
+      "repaired": false,
+      "strategies": [],
+      "exhausted": true,
+      "format": " YML ",
+      "error_paths": [
+        "$"
+      ],
+      "attempts": [
+        {
+          "raw_text": "word",
+          "valid": false,
+          "data": "word",
+          "repaired": false,
+          "repaired_text": "",
+          "strategies": [],
+          "parse_failure": false,
+          "error_paths": [
+            "$"
+          ]
+        }
+      ],
+      "provider_calls": 1,
+      "observer_calls": 1
+    }
+  },
+  {
+    "name": "toml-exhausted",
+    "schema": {
+      "required": [
+        "needed"
+      ]
+    },
+    "responses": [
+      "value=1"
+    ],
+    "format": "toml",
+    "repair": true,
+    "max_retries": 0,
+    "include_message_history": true,
+    "expected": {
+      "valid": false,
+      "data": null,
+      "text": "value=1",
+      "repaired": false,
+      "strategies": [],
+      "exhausted": true,
+      "format": "toml",
+      "error_paths": [
+        "$"
+      ],
+      "attempts": [
+        {
+          "raw_text": "value=1",
+          "valid": false,
+          "data": {
+            "value": 1
+          },
+          "repaired": false,
+          "repaired_text": "",
+          "strategies": [],
+          "parse_failure": false,
+          "error_paths": [
+            "$"
+          ]
+        }
+      ],
+      "provider_calls": 1,
+      "observer_calls": 1
+    }
+  },
+  {
+    "name": "python-alias-exhausted",
+    "schema": {
+      "type": "integer"
+    },
+    "responses": [
+      "{'value':1}"
+    ],
+    "format": " PY ",
+    "repair": true,
+    "max_retries": 0,
+    "include_message_history": true,
+    "expected": {
+      "valid": false,
+      "data": null,
+      "text": "{'value':1}",
+      "repaired": false,
+      "strategies": [],
+      "exhausted": true,
+      "format": " PY ",
+      "error_paths": [
+        "$"
+      ],
+      "attempts": [
+        {
+          "raw_text": "{'value':1}",
+          "valid": false,
+          "data": {
+            "value": 1
+          },
+          "repaired": false,
+          "repaired_text": "",
+          "strategies": [],
+          "parse_failure": false,
+          "error_paths": [
+            "$"
+          ]
+        }
+      ],
+      "provider_calls": 1,
+      "observer_calls": 1
+    }
+  },
+  {
+    "name": "auto-exhausted",
+    "schema": {
+      "required": [
+        "needed"
+      ]
+    },
+    "responses": [
+      "value: 1"
+    ],
+    "format": "auto",
+    "repair": true,
+    "max_retries": 0,
+    "include_message_history": true,
+    "expected": {
+      "valid": false,
+      "data": null,
+      "text": "value: 1",
+      "repaired": false,
+      "strategies": [],
+      "exhausted": true,
+      "format": "auto",
+      "error_paths": [
+        "$"
+      ],
+      "attempts": [
+        {
+          "raw_text": "value: 1",
+          "valid": false,
+          "data": {
+            "value": 1
+          },
+          "repaired": false,
+          "repaired_text": "",
+          "strategies": [],
+          "parse_failure": false,
+          "error_paths": [
+            "$"
+          ]
+        }
+      ],
+      "provider_calls": 1,
+      "observer_calls": 1
+    }
+  },
+  {
+    "name": "forced-json-off-exhausted",
+    "schema": false,
+    "responses": [
+      "word"
+    ],
+    "format": "forced-json-off",
+    "repair": true,
+    "max_retries": 0,
+    "include_message_history": true,
+    "expected": {
+      "valid": false,
+      "data": null,
+      "text": "word",
+      "repaired": false,
+      "strategies": [],
+      "exhausted": true,
+      "format": "forced-json-off",
+      "error_paths": [
+        "$"
+      ],
+      "attempts": [
+        {
+          "raw_text": "word",
+          "valid": false,
+          "data": "word",
+          "repaired": false,
+          "repaired_text": "",
+          "strategies": [],
+          "parse_failure": false,
+          "error_paths": [
+            "$"
+          ]
+        }
+      ],
+      "provider_calls": 1,
+      "observer_calls": 1
+    }
+  },
+  {
+    "name": "distinct-repairs-then-success",
+    "schema": {
+      "type": "integer"
+    },
+    "responses": [
+      "```json\n\"x\"\n```",
+      "[\"y\",]",
+      "4"
+    ],
+    "format": "json",
+    "repair": true,
+    "max_retries": 2,
+    "include_message_history": true,
+    "expected": {
+      "valid": true,
+      "data": 4,
+      "text": "4",
+      "repaired": true,
+      "strategies": [
+        "strip_fences",
+        "fix_commas"
+      ],
+      "exhausted": false,
+      "format": "json",
+      "error_paths": [],
+      "attempts": [
+        {
+          "raw_text": "```json\n\"x\"\n```",
+          "valid": false,
+          "data": "x",
+          "repaired": true,
+          "repaired_text": "\"x\"",
+          "strategies": [
+            "strip_fences"
+          ],
+          "parse_failure": false,
+          "error_paths": [
+            "$"
+          ]
+        },
+        {
+          "raw_text": "[\"y\",]",
+          "valid": false,
+          "data": [
+            "y"
+          ],
+          "repaired": true,
+          "repaired_text": "[\"y\"]",
+          "strategies": [
+            "fix_commas"
+          ],
+          "parse_failure": false,
+          "error_paths": [
+            "$"
+          ]
+        },
+        {
+          "raw_text": "4",
+          "valid": true,
+          "data": 4,
+          "repaired": false,
+          "repaired_text": "",
+          "strategies": [],
+          "parse_failure": false,
+          "error_paths": []
+        }
+      ],
+      "provider_calls": 3,
+      "observer_calls": 3
+    }
+  },
+  {
+    "name": "repeated-repair-then-exhausted",
+    "schema": {
+      "type": "integer"
+    },
+    "responses": [
+      "```json\n\"x\"\n```",
+      "```json\n\"y\"\n```"
+    ],
+    "format": "json",
+    "repair": true,
+    "max_retries": 1,
+    "include_message_history": true,
+    "expected": {
+      "valid": false,
+      "data": null,
+      "text": "\"y\"",
+      "repaired": true,
+      "strategies": [
+        "strip_fences"
+      ],
+      "exhausted": true,
+      "format": "json",
+      "error_paths": [
+        "$"
+      ],
+      "attempts": [
+        {
+          "raw_text": "```json\n\"x\"\n```",
+          "valid": false,
+          "data": "x",
+          "repaired": true,
+          "repaired_text": "\"x\"",
+          "strategies": [
+            "strip_fences"
+          ],
+          "parse_failure": false,
+          "error_paths": [
+            "$"
+          ]
+        },
+        {
+          "raw_text": "```json\n\"y\"\n```",
+          "valid": false,
+          "data": "y",
+          "repaired": true,
+          "repaired_text": "\"y\"",
+          "strategies": [
+            "strip_fences"
+          ],
+          "parse_failure": false,
+          "error_paths": [
+            "$"
+          ]
+        }
+      ],
+      "provider_calls": 2,
+      "observer_calls": 2
+    }
+  },
+  {
+    "name": "history-disabled-retry",
+    "schema": {
+      "type": "integer"
+    },
+    "responses": [
+      "[",
+      "4"
+    ],
+    "format": "json",
+    "repair": false,
+    "max_retries": 2,
+    "include_message_history": false,
+    "expected": {
+      "valid": true,
+      "data": 4,
+      "text": "4",
+      "repaired": false,
+      "strategies": [],
+      "exhausted": false,
+      "format": "json",
+      "error_paths": [],
+      "attempts": [
+        {
+          "raw_text": "[",
+          "valid": false,
+          "data": null,
+          "repaired": false,
+          "repaired_text": "",
+          "strategies": [],
+          "parse_failure": true,
+          "error_paths": [
+            "$"
+          ]
+        },
+        {
+          "raw_text": "4",
+          "valid": true,
+          "data": 4,
+          "repaired": false,
+          "repaired_text": "",
+          "strategies": [],
+          "parse_failure": false,
+          "error_paths": []
+        }
+      ],
+      "provider_calls": 2,
+      "observer_calls": 2
+    }
+  },
+  {
+    "name": "zero-retries-ignores-valid-response",
+    "schema": {
+      "type": "integer"
+    },
+    "responses": [
+      "[",
+      "5"
+    ],
+    "format": "json",
+    "repair": false,
+    "max_retries": 0,
+    "include_message_history": true,
+    "expected": {
+      "valid": false,
+      "data": null,
+      "text": "[",
+      "repaired": false,
+      "strategies": [],
+      "exhausted": true,
+      "format": "json",
+      "error_paths": [
+        "$"
+      ],
+      "attempts": [
+        {
+          "raw_text": "[",
+          "valid": false,
+          "data": null,
+          "repaired": false,
+          "repaired_text": "",
+          "strategies": [],
+          "parse_failure": true,
+          "error_paths": [
+            "$"
+          ]
+        }
+      ],
+      "provider_calls": 1,
+      "observer_calls": 1
+    }
+  }
+]

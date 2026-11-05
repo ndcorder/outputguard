@@ -1,116 +1,116 @@
 """Recover truncated JSON from token-limit cutoffs."""
 
-import re
+from dataclasses import dataclass
+from typing import Literal
 
 NAME = "fix_truncated"
 DESCRIPTION = "Recover truncated JSON from token-limit cutoffs"
 
-_MATCH = {"{": "}", "[": "]"}
+_WHITESPACE = " \t\r\n"
+_DELIMITERS = '{}[]:,"' + _WHITESPACE
+_TRAILING = _WHITESPACE + ","
 
 
-def _count_unescaped_quotes(text: str) -> int:
-    """Count unescaped double quotes in the full text."""
-    count = 0
-    i = 0
-    while i < len(text):
-        if text[i] == "\\":
-            i += 2
-            continue
-        if text[i] == '"':
-            count += 1
-        i += 1
-    return count
+@dataclass(slots=True)
+class _Object:
+    phase: Literal["key", "colon", "value", "comma", "other"] = "key"
+    entry_start: int = 0
+    comma: int | None = None
 
 
-def _balance_closers(text: str) -> str:
-    """Append closing braces/brackets for any unmatched openers."""
-    stack: list[str] = []
-    in_string = False
-    escape = False
-
-    for ch in text:
-        if escape:
-            escape = False
-            continue
-        if ch == "\\" and in_string:
-            escape = True
-            continue
-        if ch == '"':
-            in_string = not in_string
-            continue
-        if in_string:
-            continue
-        if ch in "{[":
-            stack.append(ch)
-        elif ch == "}":
-            if stack and stack[-1] == "{":
-                stack.pop()
-        elif ch == "]" and stack and stack[-1] == "[":
-            stack.pop()
-
-    if not stack:
-        return text
-
-    closers = "".join(_MATCH[opener] for opener in reversed(stack))
-    return text + closers
+def _start_value(frame: _Object) -> None:
+    frame.phase = "comma" if frame.phase == "value" else "other"
+    frame.comma = None
 
 
-def apply(text: str) -> str:  # noqa: C901
+def apply(text: str) -> str:
     try:
-        stripped = text.rstrip()
-        if not stripped:
+        start = 0
+        while start < len(text) and text[start] in _WHITESPACE:
+            start += 1
+        if start == len(text) or text[start] not in '{["':
             return text
 
-        # Only attempt repair on text that looks like JSON
-        if stripped[0] not in "{[":
+        # Arrays need only a closing bracket; object members need key/value state.
+        stack: list[_Object | None] = []
+        in_string = escaped = False
+        key_owner: _Object | None = None
+        i = start
+        while i < len(text):
+            ch = text[i]
+            if in_string:
+                if escaped:
+                    escaped = False
+                elif ch == "\\":
+                    escaped = True
+                elif ch == '"':
+                    in_string = False
+                    if key_owner is not None:
+                        key_owner.phase = "colon"
+                        key_owner = None
+                i += 1
+                continue
+
+            if ch in _WHITESPACE:
+                i += 1
+                continue
+            frame = stack[-1] if stack else None
+            if ch == '"':
+                in_string = True
+                if frame is not None and frame.phase == "key":
+                    frame.entry_start = frame.comma if frame.comma is not None else i
+                    key_owner = frame
+                elif frame is not None:
+                    _start_value(frame)
+            elif ch in "{[":
+                if frame is not None:
+                    _start_value(frame)
+                stack.append(_Object() if ch == "{" else None)
+            elif ch in "}]":
+                if stack and ("}" if frame is not None else "]") == ch:
+                    stack.pop()
+            elif ch == ":":
+                if frame is not None:
+                    frame.phase = "value" if frame.phase == "colon" else "other"
+            elif ch == ",":
+                if frame is not None and frame.phase == "comma":
+                    frame.phase = "key"
+                    frame.comma = i
+            else:
+                if frame is not None:
+                    _start_value(frame)
+                i += 1
+                while i < len(text) and text[i] not in _DELIMITERS:
+                    i += 1
+                continue
+            i += 1
+
+        if not stack and not in_string:
             return text
 
-        # Step 1: Close an open string if we have an odd number of
-        # unescaped quotes.
-        working = stripped
-        if _count_unescaped_quotes(working) % 2 != 0:
-            working += '"'
+        working = text
+        end = len(text)
+        if in_string:
+            if key_owner is not None:
+                end = key_owner.entry_start
+            else:
+                # Retain a final literal backslash without letting it escape
+                # the closing quote. Other incomplete escapes remain for later strategies.
+                working += ("\\" if escaped else "") + '"'
+                end = len(working)
+        elif (frame := stack[-1]) is not None and frame.phase == "colon":
+            end = frame.entry_start
 
-        # Step 2: Clean up trailing structural problems.
-        # Apply these in a loop because fixing one may reveal another.
-        changed = True
-        while changed:
-            changed = False
-            w = working.rstrip()
-
-            # Trailing comma  ->  remove it
-            if w.endswith(","):
-                working = w[:-1]
-                changed = True
-                continue
-
-            # Trailing colon (key with no value)  ->  add null
-            if w.endswith(":"):
-                working = w + " null"
-                changed = True
-                continue
-
-            # A key-value where the value was never finished:
-            # e.g. `"key": "` — the step-1 quote-close turned it into
-            # `"key": ""` which is actually valid, so nothing extra needed.
-
-        # Step 3: If truncation happened inside a partial key that was
-        # never given a colon (e.g. `{"name": "Alice", "em"`), we now
-        # have a dangling quoted key.  Remove it so the JSON can close.
-        w = working.rstrip()
-        # Pattern: trailing `"somekey"` that is preceded by a comma
-        m = re.search(r',\s*"[^"]*"\s*$', w)
-        if m:
-            # Check if what follows the last comma is just a bare key
-            # (no colon after it).  If so, strip it.
-            after_comma = w[m.start() + 1 :].strip()
-            if re.fullmatch(r'"[^"]*"', after_comma):
-                # It's a lone key with no colon — remove it
-                working = w[: m.start()]
-
-        # Step 4: Balance closers
-        working = _balance_closers(working)
-
-        return working
+        # Only syntax whitespace is trimmed here. Whitespace inside an open
+        # string was retained before its closing quote was added above.
+        while end > start and working[end - 1] in _TRAILING:
+            end -= 1
+        suffix = ""
+        frame = stack[-1] if stack else None
+        if frame is not None and frame.phase == "value" and end > start and working[end - 1] == ":":
+            suffix = " null"
+        return (
+            working[:end] + suffix + "".join("}" if f is not None else "]" for f in reversed(stack))
+        )
     except Exception:
         return text

@@ -1,6 +1,6 @@
 from dataclasses import dataclass, field
-from difflib import unified_diff
 
+from outputguard._diff import unified_diff
 from outputguard.formats import format_label
 
 
@@ -12,20 +12,18 @@ class StrategyApplication:
     changed: bool
     input_text: str
     output_text: str
+    error: str | None = None
 
     @property
     def diff(self) -> str:
         """Unified diff of this strategy's changes."""
         if not self.changed:
             return ""
-        return "\n".join(
-            unified_diff(
-                self.input_text.splitlines(keepends=True),
-                self.output_text.splitlines(keepends=True),
-                fromfile=f"before_{self.name}",
-                tofile=f"after_{self.name}",
-                lineterm="",
-            )
+        return unified_diff(
+            self.input_text,
+            self.output_text,
+            fromfile=f"before_{self.name}",
+            tofile=f"after_{self.name}",
         )
 
 
@@ -41,6 +39,11 @@ class RepairReport:
     format: str = "json"
 
     @property
+    def candidate_text(self) -> str:
+        """Last attempted text, including changes discarded after a failed repair."""
+        return self.steps[-1].output_text if self.steps else self.final_text
+
+    @property
     def strategies_applied(self) -> list[str]:
         """Names of strategies that actually changed the text."""
         return [s.name for s in self.steps if s.changed]
@@ -53,16 +56,11 @@ class RepairReport:
     @property
     def diff(self) -> str:
         """Unified diff from original to final text."""
-        if self.original_text == self.final_text:
-            return ""
-        return "\n".join(
-            unified_diff(
-                self.original_text.splitlines(keepends=True),
-                self.final_text.splitlines(keepends=True),
-                fromfile="original",
-                tofile="repaired",
-                lineterm="",
-            )
+        return unified_diff(
+            self.original_text,
+            self.final_text,
+            fromfile="original",
+            tofile="repaired",
         )
 
     @property
@@ -74,23 +72,20 @@ class RepairReport:
         if not self.success:
             return 0.0
 
-        len(self.steps)
         applied_count = len(self.strategies_applied)
 
         if applied_count == 0:
             return 1.0  # No repair needed, already valid
 
-        # Start at 1.0, reduce by:
-        # - Number of strategies needed (more = less confident)
-        # - Ratio of text changed (more change = less confident)
-        strategy_penalty = min(applied_count * 0.1, 0.5)
-
+        # Work in hundredths and round the exact ratio half up. Binary float
+        # ties otherwise differ from JavaScript's rounding (e.g. 0.865).
+        base = 100 - min(applied_count, 5) * 10
         orig_len = max(len(self.original_text), 1)
         final_len = max(len(self.final_text), 1)
-        change_ratio = abs(orig_len - final_len) / max(orig_len, final_len)
-        change_penalty = min(change_ratio * 0.5, 0.3)
-
-        return max(round(1.0 - strategy_penalty - change_penalty, 2), 0.1)
+        length = max(orig_len, final_len)
+        change = min(abs(orig_len - final_len) * 50, length * 30)
+        hundredths = (2 * (base * length - change) + length) // (2 * length)
+        return max(hundredths, 10) / 100
 
     @property
     def summary(self) -> str:
@@ -103,11 +98,11 @@ class RepairReport:
         return f"Repaired using {len(applied)} strategy(ies): {', '.join(applied)}"
 
     def step_diffs(self) -> str:
-        """Show diff for each strategy that made changes, useful for --verbose."""
+        """Show changes and strategy errors, useful for --verbose."""
         parts = []
         for step in self.steps:
-            if step.changed:
-                parts.append(f"=== {step.name} ===")
-                parts.append(step.diff)
-                parts.append("")
+            if step.error is not None:
+                parts.append(f"=== {step.name} ===\nError: {step.error}\n")
+            elif step.changed:
+                parts.append(f"=== {step.name} ===\n{step.diff}")
         return "\n".join(parts)

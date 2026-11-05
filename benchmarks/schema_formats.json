@@ -1,0 +1,2402 @@
+[
+  {
+    "name": "schema_format_email_0",
+    "format": "email",
+    "value": "ada@example.com",
+    "valid": true
+  },
+  {
+    "name": "schema_format_email_1",
+    "format": "email",
+    "value": "A.b+tag@EXAMPLE.COM",
+    "valid": true
+  },
+  {
+    "name": "schema_format_email_2",
+    "format": "email",
+    "value": "bad",
+    "valid": false
+  },
+  {
+    "name": "schema_format_email_3",
+    "format": "email",
+    "value": "a@b",
+    "valid": false
+  },
+  {
+    "name": "schema_format_email_4",
+    "format": "email",
+    "value": "a..b@example.com",
+    "valid": false
+  },
+  {
+    "name": "schema_format_email_5",
+    "format": "email",
+    "value": "a@-example.com",
+    "valid": false
+  },
+  {
+    "name": "schema_format_email_6",
+    "format": "email",
+    "value": "a@b.c\n",
+    "valid": false
+  },
+  {
+    "name": "schema_format_email_7",
+    "format": "email",
+    "value": "a@b.c\u0000",
+    "valid": false
+  },
+  {
+    "name": "schema_format_hostname_8",
+    "format": "hostname",
+    "value": "example.com",
+    "valid": true
+  },
+  {
+    "name": "schema_format_hostname_9",
+    "format": "hostname",
+    "value": "localhost",
+    "valid": true
+  },
+  {
+    "name": "schema_format_hostname_10",
+    "format": "hostname",
+    "value": "a.",
+    "valid": true
+  },
+  {
+    "name": "schema_format_hostname_11",
+    "format": "hostname",
+    "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.example",
+    "valid": true
+  },
+  {
+    "name": "schema_format_hostname_12",
+    "format": "hostname",
+    "value": "",
+    "valid": false
+  },
+  {
+    "name": "schema_format_hostname_13",
+    "format": "hostname",
+    "value": "-host",
+    "valid": false
+  },
+  {
+    "name": "schema_format_hostname_14",
+    "format": "hostname",
+    "value": "host-",
+    "valid": false
+  },
+  {
+    "name": "schema_format_hostname_15",
+    "format": "hostname",
+    "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.example",
+    "valid": false
+  },
+  {
+    "name": "schema_format_hostname_16",
+    "format": "hostname",
+    "value": "x\n",
+    "valid": false
+  },
+  {
+    "name": "schema_format_hostname_17",
+    "format": "hostname",
+    "value": "example..com",
+    "valid": false
+  },
+  {
+    "name": "schema_format_hostname_18",
+    "format": "hostname",
+    "value": "\u03a9.example",
+    "valid": false
+  },
+  {
+    "name": "schema_format_ipv4_19",
+    "format": "ipv4",
+    "value": "0.0.0.0",
+    "valid": true
+  },
+  {
+    "name": "schema_format_ipv4_20",
+    "format": "ipv4",
+    "value": "255.255.255.255",
+    "valid": true
+  },
+  {
+    "name": "schema_format_ipv4_21",
+    "format": "ipv4",
+    "value": "192.0.2.1",
+    "valid": true
+  },
+  {
+    "name": "schema_format_ipv4_22",
+    "format": "ipv4",
+    "value": "256.0.0.1",
+    "valid": false
+  },
+  {
+    "name": "schema_format_ipv4_23",
+    "format": "ipv4",
+    "value": "01.2.3.4",
+    "valid": false
+  },
+  {
+    "name": "schema_format_ipv4_24",
+    "format": "ipv4",
+    "value": "1.2.3",
+    "valid": false
+  },
+  {
+    "name": "schema_format_ipv4_25",
+    "format": "ipv4",
+    "value": "1.2.3.4\n",
+    "valid": false
+  },
+  {
+    "name": "schema_format_ipv4_26",
+    "format": "ipv4",
+    "value": "\u0661.2.3.4",
+    "valid": false
+  },
+  {
+    "name": "schema_format_ipv6_27",
+    "format": "ipv6",
+    "value": "::",
+    "valid": true
+  },
+  {
+    "name": "schema_format_ipv6_28",
+    "format": "ipv6",
+    "value": "::1",
+    "valid": true
+  },
+  {
+    "name": "schema_format_ipv6_29",
+    "format": "ipv6",
+    "value": "2001:db8::1",
+    "valid": true
+  },
+  {
+    "name": "schema_format_ipv6_30",
+    "format": "ipv6",
+    "value": "::ffff:192.0.2.1",
+    "valid": true
+  },
+  {
+    "name": "schema_format_ipv6_31",
+    "format": "ipv6",
+    "value": "2001:::1",
+    "valid": false
+  },
+  {
+    "name": "schema_format_ipv6_32",
+    "format": "ipv6",
+    "value": "fe80::1%eth0",
+    "valid": false
+  },
+  {
+    "name": "schema_format_ipv6_33",
+    "format": "ipv6",
+    "value": "gggg::1",
+    "valid": false
+  },
+  {
+    "name": "schema_format_ipv6_34",
+    "format": "ipv6",
+    "value": "::ffff:192.00.2.1",
+    "valid": false
+  },
+  {
+    "name": "schema_format_ipv6_35",
+    "format": "ipv6",
+    "value": "::1\n",
+    "valid": false
+  },
+  {
+    "name": "schema_format_date_36",
+    "format": "date",
+    "value": "2024-02-29",
+    "valid": true
+  },
+  {
+    "name": "schema_format_date_37",
+    "format": "date",
+    "value": "2000-02-29",
+    "valid": true
+  },
+  {
+    "name": "schema_format_date_38",
+    "format": "date",
+    "value": "0000-02-29",
+    "valid": true
+  },
+  {
+    "name": "schema_format_date_39",
+    "format": "date",
+    "value": "2024-12-31",
+    "valid": true
+  },
+  {
+    "name": "schema_format_date_40",
+    "format": "date",
+    "value": "1900-02-29",
+    "valid": false
+  },
+  {
+    "name": "schema_format_date_41",
+    "format": "date",
+    "value": "2023-02-29",
+    "valid": false
+  },
+  {
+    "name": "schema_format_date_42",
+    "format": "date",
+    "value": "2024-04-31",
+    "valid": false
+  },
+  {
+    "name": "schema_format_date_43",
+    "format": "date",
+    "value": "2024-13-01",
+    "valid": false
+  },
+  {
+    "name": "schema_format_date_44",
+    "format": "date",
+    "value": "2024-00-01",
+    "valid": false
+  },
+  {
+    "name": "schema_format_date_45",
+    "format": "date",
+    "value": "2024-01-00",
+    "valid": false
+  },
+  {
+    "name": "schema_format_date_46",
+    "format": "date",
+    "value": "2024-01-01\n",
+    "valid": false
+  },
+  {
+    "name": "schema_format_date_47",
+    "format": "date",
+    "value": "\uff12\uff10\uff12\uff14-01-01",
+    "valid": false
+  },
+  {
+    "name": "schema_format_time_48",
+    "format": "time",
+    "value": "00:00:00Z",
+    "valid": true
+  },
+  {
+    "name": "schema_format_time_49",
+    "format": "time",
+    "value": "23:59:59.999Z",
+    "valid": true
+  },
+  {
+    "name": "schema_format_time_50",
+    "format": "time",
+    "value": "23:59:60Z",
+    "valid": true
+  },
+  {
+    "name": "schema_format_time_51",
+    "format": "time",
+    "value": "00:29:60+00:30",
+    "valid": true
+  },
+  {
+    "name": "schema_format_time_52",
+    "format": "time",
+    "value": "23:29:60-00:30",
+    "valid": true
+  },
+  {
+    "name": "schema_format_time_53",
+    "format": "time",
+    "value": "00:59:60+01:00",
+    "valid": true
+  },
+  {
+    "name": "schema_format_time_54",
+    "format": "time",
+    "value": "22:59:60-01:00",
+    "valid": true
+  },
+  {
+    "name": "schema_format_time_55",
+    "format": "time",
+    "value": "12:34:56+05",
+    "valid": true
+  },
+  {
+    "name": "schema_format_time_56",
+    "format": "time",
+    "value": "12:34:56+0530",
+    "valid": true
+  },
+  {
+    "name": "schema_format_time_57",
+    "format": "time",
+    "value": "12:34:56",
+    "valid": false
+  },
+  {
+    "name": "schema_format_time_58",
+    "format": "time",
+    "value": "24:00:00Z",
+    "valid": false
+  },
+  {
+    "name": "schema_format_time_59",
+    "format": "time",
+    "value": "00:60:00Z",
+    "valid": false
+  },
+  {
+    "name": "schema_format_time_60",
+    "format": "time",
+    "value": "23:59:61Z",
+    "valid": false
+  },
+  {
+    "name": "schema_format_time_61",
+    "format": "time",
+    "value": "12:00:60Z",
+    "valid": false
+  },
+  {
+    "name": "schema_format_time_62",
+    "format": "time",
+    "value": "00:29:60-00:30",
+    "valid": false
+  },
+  {
+    "name": "schema_format_time_63",
+    "format": "time",
+    "value": "12:34:56+24:00",
+    "valid": false
+  },
+  {
+    "name": "schema_format_time_64",
+    "format": "time",
+    "value": "12:34:56+00:60",
+    "valid": false
+  },
+  {
+    "name": "schema_format_time_65",
+    "format": "time",
+    "value": "23:59:60Z\n",
+    "valid": false
+  },
+  {
+    "name": "schema_format_iso-time_66",
+    "format": "iso-time",
+    "value": "12:34:56",
+    "valid": true
+  },
+  {
+    "name": "schema_format_iso-time_67",
+    "format": "iso-time",
+    "value": "23:59:60",
+    "valid": true
+  },
+  {
+    "name": "schema_format_iso-time_68",
+    "format": "iso-time",
+    "value": "00:00:00Z",
+    "valid": true
+  },
+  {
+    "name": "schema_format_iso-time_69",
+    "format": "iso-time",
+    "value": "24:00:00",
+    "valid": false
+  },
+  {
+    "name": "schema_format_iso-time_70",
+    "format": "iso-time",
+    "value": "12:00:60",
+    "valid": false
+  },
+  {
+    "name": "schema_format_iso-time_71",
+    "format": "iso-time",
+    "value": "00:00:00\n",
+    "valid": false
+  },
+  {
+    "name": "schema_format_date-time_72",
+    "format": "date-time",
+    "value": "2024-02-29T12:00:00Z",
+    "valid": true
+  },
+  {
+    "name": "schema_format_date-time_73",
+    "format": "date-time",
+    "value": "2024-01-01 12:00:00+01:00",
+    "valid": true
+  },
+  {
+    "name": "schema_format_date-time_74",
+    "format": "date-time",
+    "value": "2024-01-01t23:59:60z",
+    "valid": true
+  },
+  {
+    "name": "schema_format_date-time_75",
+    "format": "date-time",
+    "value": "2024-01-01T00:29:60+00:30",
+    "valid": true
+  },
+  {
+    "name": "schema_format_date-time_76",
+    "format": "date-time",
+    "value": "2023-02-29T12:00:00Z",
+    "valid": false
+  },
+  {
+    "name": "schema_format_date-time_77",
+    "format": "date-time",
+    "value": "2024-01-01T12:00:00",
+    "valid": false
+  },
+  {
+    "name": "schema_format_date-time_78",
+    "format": "date-time",
+    "value": "2024-01-01\n12:00:00Z",
+    "valid": false
+  },
+  {
+    "name": "schema_format_date-time_79",
+    "format": "date-time",
+    "value": "2024-01-01\t12:00:00Z",
+    "valid": false
+  },
+  {
+    "name": "schema_format_date-time_80",
+    "format": "date-time",
+    "value": "2024-01-01T12:00:00Z\n",
+    "valid": false
+  },
+  {
+    "name": "schema_format_iso-date-time_81",
+    "format": "iso-date-time",
+    "value": "2024-02-29T12:00:00",
+    "valid": true
+  },
+  {
+    "name": "schema_format_iso-date-time_82",
+    "format": "iso-date-time",
+    "value": "2024-01-01 12:00:00Z",
+    "valid": true
+  },
+  {
+    "name": "schema_format_iso-date-time_83",
+    "format": "iso-date-time",
+    "value": "2023-02-29T12:00:00",
+    "valid": false
+  },
+  {
+    "name": "schema_format_iso-date-time_84",
+    "format": "iso-date-time",
+    "value": "2024-01-01\t12:00:00",
+    "valid": false
+  },
+  {
+    "name": "schema_format_duration_85",
+    "format": "duration",
+    "value": "P1Y2M3DT4H5M6S",
+    "valid": true
+  },
+  {
+    "name": "schema_format_duration_86",
+    "format": "duration",
+    "value": "P2W",
+    "valid": true
+  },
+  {
+    "name": "schema_format_duration_87",
+    "format": "duration",
+    "value": "PT0S",
+    "valid": true
+  },
+  {
+    "name": "schema_format_duration_88",
+    "format": "duration",
+    "value": "P0D",
+    "valid": true
+  },
+  {
+    "name": "schema_format_duration_89",
+    "format": "duration",
+    "value": "P",
+    "valid": false
+  },
+  {
+    "name": "schema_format_duration_90",
+    "format": "duration",
+    "value": "PT",
+    "valid": false
+  },
+  {
+    "name": "schema_format_duration_91",
+    "format": "duration",
+    "value": "P1.5Y",
+    "valid": false
+  },
+  {
+    "name": "schema_format_duration_92",
+    "format": "duration",
+    "value": "P1W2D",
+    "valid": false
+  },
+  {
+    "name": "schema_format_duration_93",
+    "format": "duration",
+    "value": "P1D\n",
+    "valid": false
+  },
+  {
+    "name": "schema_format_uri_94",
+    "format": "uri",
+    "value": "https://example.com/a?x=1#part",
+    "valid": true
+  },
+  {
+    "name": "schema_format_uri_95",
+    "format": "uri",
+    "value": "urn:example:animal:ferret:nose",
+    "valid": true
+  },
+  {
+    "name": "schema_format_uri_96",
+    "format": "uri",
+    "value": "mailto:ada@example.com",
+    "valid": true
+  },
+  {
+    "name": "schema_format_uri_97",
+    "format": "uri",
+    "value": "https://[::1]/",
+    "valid": true
+  },
+  {
+    "name": "schema_format_uri_98",
+    "format": "uri",
+    "value": "relative/path",
+    "valid": false
+  },
+  {
+    "name": "schema_format_uri_99",
+    "format": "uri",
+    "value": "https://exa mple.com",
+    "valid": false
+  },
+  {
+    "name": "schema_format_uri_100",
+    "format": "uri",
+    "value": "https://example.com/%GG",
+    "valid": false
+  },
+  {
+    "name": "schema_format_uri_101",
+    "format": "uri",
+    "value": "https://example.com/\n",
+    "valid": false
+  },
+  {
+    "name": "schema_format_uri-reference_102",
+    "format": "uri-reference",
+    "value": "",
+    "valid": true
+  },
+  {
+    "name": "schema_format_uri-reference_103",
+    "format": "uri-reference",
+    "value": "../part.json",
+    "valid": true
+  },
+  {
+    "name": "schema_format_uri-reference_104",
+    "format": "uri-reference",
+    "value": "#/definitions/x",
+    "valid": true
+  },
+  {
+    "name": "schema_format_uri-reference_105",
+    "format": "uri-reference",
+    "value": "https://example.com/x",
+    "valid": true
+  },
+  {
+    "name": "schema_format_uri-reference_106",
+    "format": "uri-reference",
+    "value": "//host/path",
+    "valid": true
+  },
+  {
+    "name": "schema_format_uri-reference_107",
+    "format": "uri-reference",
+    "value": "bad path",
+    "valid": false
+  },
+  {
+    "name": "schema_format_uri-reference_108",
+    "format": "uri-reference",
+    "value": "bad%xx",
+    "valid": false
+  },
+  {
+    "name": "schema_format_uri-reference_109",
+    "format": "uri-reference",
+    "value": "/foo\\bar",
+    "valid": false
+  },
+  {
+    "name": "schema_format_uri-reference_110",
+    "format": "uri-reference",
+    "value": "x\n",
+    "valid": false
+  },
+  {
+    "name": "schema_format_uri-template_111",
+    "format": "uri-template",
+    "value": "https://example.com/{id}",
+    "valid": true
+  },
+  {
+    "name": "schema_format_uri-template_112",
+    "format": "uri-template",
+    "value": "/search{?q,limit}",
+    "valid": true
+  },
+  {
+    "name": "schema_format_uri-template_113",
+    "format": "uri-template",
+    "value": "{+path}/here",
+    "valid": true
+  },
+  {
+    "name": "schema_format_uri-template_114",
+    "format": "uri-template",
+    "value": "{x:4}",
+    "valid": true
+  },
+  {
+    "name": "schema_format_uri-template_115",
+    "format": "uri-template",
+    "value": "{",
+    "valid": false
+  },
+  {
+    "name": "schema_format_uri-template_116",
+    "format": "uri-template",
+    "value": "{x:0}",
+    "valid": false
+  },
+  {
+    "name": "schema_format_uri-template_117",
+    "format": "uri-template",
+    "value": "{x:10000}",
+    "valid": false
+  },
+  {
+    "name": "schema_format_uri-template_118",
+    "format": "uri-template",
+    "value": "{x,}",
+    "valid": false
+  },
+  {
+    "name": "schema_format_uri-template_119",
+    "format": "uri-template",
+    "value": "/foo%xx",
+    "valid": false
+  },
+  {
+    "name": "schema_format_uri-template_120",
+    "format": "uri-template",
+    "value": "x\n",
+    "valid": false
+  },
+  {
+    "name": "schema_format_url_121",
+    "format": "url",
+    "value": "https://example.com/path",
+    "valid": true
+  },
+  {
+    "name": "schema_format_url_122",
+    "format": "url",
+    "value": "http://example.com",
+    "valid": true
+  },
+  {
+    "name": "schema_format_url_123",
+    "format": "url",
+    "value": "ftp://example.com/file",
+    "valid": true
+  },
+  {
+    "name": "schema_format_url_124",
+    "format": "url",
+    "value": "https://\u4f8b\u5b50.\u6d4b\u8bd5/path",
+    "valid": true
+  },
+  {
+    "name": "schema_format_url_125",
+    "format": "url",
+    "value": "relative",
+    "valid": false
+  },
+  {
+    "name": "schema_format_url_126",
+    "format": "url",
+    "value": "https://localhost",
+    "valid": false
+  },
+  {
+    "name": "schema_format_url_127",
+    "format": "url",
+    "value": "http://127.0.0.1/",
+    "valid": false
+  },
+  {
+    "name": "schema_format_url_128",
+    "format": "url",
+    "value": "https://example.com/\n",
+    "valid": false
+  },
+  {
+    "name": "schema_format_uuid_129",
+    "format": "uuid",
+    "value": "550e8400-e29b-41d4-a716-446655440000",
+    "valid": true
+  },
+  {
+    "name": "schema_format_uuid_130",
+    "format": "uuid",
+    "value": "urn:uuid:550e8400-e29b-41d4-a716-446655440000",
+    "valid": true
+  },
+  {
+    "name": "schema_format_uuid_131",
+    "format": "uuid",
+    "value": "550e8400e29b41d4a716446655440000",
+    "valid": false
+  },
+  {
+    "name": "schema_format_uuid_132",
+    "format": "uuid",
+    "value": "bad",
+    "valid": false
+  },
+  {
+    "name": "schema_format_uuid_133",
+    "format": "uuid",
+    "value": "550e8400-e29b-41d4-a716-446655440000\n",
+    "valid": false
+  },
+  {
+    "name": "schema_format_json-pointer_134",
+    "format": "json-pointer",
+    "value": "",
+    "valid": true
+  },
+  {
+    "name": "schema_format_json-pointer_135",
+    "format": "json-pointer",
+    "value": "/a~0b/a~1b",
+    "valid": true
+  },
+  {
+    "name": "schema_format_json-pointer_136",
+    "format": "json-pointer",
+    "value": "/",
+    "valid": true
+  },
+  {
+    "name": "schema_format_json-pointer_137",
+    "format": "json-pointer",
+    "value": "/\u03a9",
+    "valid": true
+  },
+  {
+    "name": "schema_format_json-pointer_138",
+    "format": "json-pointer",
+    "value": "/a\nb",
+    "valid": true
+  },
+  {
+    "name": "schema_format_json-pointer_139",
+    "format": "json-pointer",
+    "value": "a",
+    "valid": false
+  },
+  {
+    "name": "schema_format_json-pointer_140",
+    "format": "json-pointer",
+    "value": "/~2",
+    "valid": false
+  },
+  {
+    "name": "schema_format_json-pointer_141",
+    "format": "json-pointer",
+    "value": "/~",
+    "valid": false
+  },
+  {
+    "name": "schema_format_json-pointer_142",
+    "format": "json-pointer",
+    "value": "#/a",
+    "valid": false
+  },
+  {
+    "name": "schema_format_json-pointer-uri-fragment_143",
+    "format": "json-pointer-uri-fragment",
+    "value": "#",
+    "valid": true
+  },
+  {
+    "name": "schema_format_json-pointer-uri-fragment_144",
+    "format": "json-pointer-uri-fragment",
+    "value": "#/a~0b/a~1b",
+    "valid": true
+  },
+  {
+    "name": "schema_format_json-pointer-uri-fragment_145",
+    "format": "json-pointer-uri-fragment",
+    "value": "#/%CE%A9",
+    "valid": true
+  },
+  {
+    "name": "schema_format_json-pointer-uri-fragment_146",
+    "format": "json-pointer-uri-fragment",
+    "value": "/a",
+    "valid": false
+  },
+  {
+    "name": "schema_format_json-pointer-uri-fragment_147",
+    "format": "json-pointer-uri-fragment",
+    "value": "#/~2",
+    "valid": false
+  },
+  {
+    "name": "schema_format_json-pointer-uri-fragment_148",
+    "format": "json-pointer-uri-fragment",
+    "value": "#/\u03a9",
+    "valid": false
+  },
+  {
+    "name": "schema_format_json-pointer-uri-fragment_149",
+    "format": "json-pointer-uri-fragment",
+    "value": "#/%XX",
+    "valid": false
+  },
+  {
+    "name": "schema_format_json-pointer-uri-fragment_150",
+    "format": "json-pointer-uri-fragment",
+    "value": "#/a\n",
+    "valid": false
+  },
+  {
+    "name": "schema_format_relative-json-pointer_151",
+    "format": "relative-json-pointer",
+    "value": "0",
+    "valid": true
+  },
+  {
+    "name": "schema_format_relative-json-pointer_152",
+    "format": "relative-json-pointer",
+    "value": "0#",
+    "valid": true
+  },
+  {
+    "name": "schema_format_relative-json-pointer_153",
+    "format": "relative-json-pointer",
+    "value": "12/a~1b",
+    "valid": true
+  },
+  {
+    "name": "schema_format_relative-json-pointer_154",
+    "format": "relative-json-pointer",
+    "value": "1/",
+    "valid": true
+  },
+  {
+    "name": "schema_format_relative-json-pointer_155",
+    "format": "relative-json-pointer",
+    "value": "01",
+    "valid": false
+  },
+  {
+    "name": "schema_format_relative-json-pointer_156",
+    "format": "relative-json-pointer",
+    "value": "-1",
+    "valid": false
+  },
+  {
+    "name": "schema_format_relative-json-pointer_157",
+    "format": "relative-json-pointer",
+    "value": "+1",
+    "valid": false
+  },
+  {
+    "name": "schema_format_relative-json-pointer_158",
+    "format": "relative-json-pointer",
+    "value": "1/~2",
+    "valid": false
+  },
+  {
+    "name": "schema_format_relative-json-pointer_159",
+    "format": "relative-json-pointer",
+    "value": "1#x",
+    "valid": false
+  },
+  {
+    "name": "schema_format_relative-json-pointer_160",
+    "format": "relative-json-pointer",
+    "value": "1\n",
+    "valid": false
+  },
+  {
+    "name": "schema_format_relative-json-pointer_161",
+    "format": "relative-json-pointer",
+    "value": "\u0661",
+    "valid": false
+  },
+  {
+    "name": "schema_format_byte_162",
+    "format": "byte",
+    "value": "",
+    "valid": true
+  },
+  {
+    "name": "schema_format_byte_163",
+    "format": "byte",
+    "value": "Zg==",
+    "valid": true
+  },
+  {
+    "name": "schema_format_byte_164",
+    "format": "byte",
+    "value": "Zm8=",
+    "valid": true
+  },
+  {
+    "name": "schema_format_byte_165",
+    "format": "byte",
+    "value": "Zm9v",
+    "valid": true
+  },
+  {
+    "name": "schema_format_byte_166",
+    "format": "byte",
+    "value": "AA+/",
+    "valid": true
+  },
+  {
+    "name": "schema_format_byte_167",
+    "format": "byte",
+    "value": "Zg",
+    "valid": false
+  },
+  {
+    "name": "schema_format_byte_168",
+    "format": "byte",
+    "value": "Z===",
+    "valid": false
+  },
+  {
+    "name": "schema_format_byte_169",
+    "format": "byte",
+    "value": "Zm9v\n",
+    "valid": false
+  },
+  {
+    "name": "schema_format_byte_170",
+    "format": "byte",
+    "value": "bad\nAA==",
+    "valid": false
+  },
+  {
+    "name": "schema_format_byte_171",
+    "format": "byte",
+    "value": "?\n",
+    "valid": false
+  },
+  {
+    "name": "schema_format_byte_172",
+    "format": "byte",
+    "value": "Zm_9",
+    "valid": false
+  },
+  {
+    "name": "schema_format_regex_173",
+    "format": "regex",
+    "value": "",
+    "valid": true
+  },
+  {
+    "name": "schema_format_regex_174",
+    "format": "regex",
+    "value": "^[a-z]+$",
+    "valid": true
+  },
+  {
+    "name": "schema_format_regex_175",
+    "format": "regex",
+    "value": "(?:a|b){1,3}",
+    "valid": true
+  },
+  {
+    "name": "schema_format_regex_176",
+    "format": "regex",
+    "value": "(?=a)a",
+    "valid": true
+  },
+  {
+    "name": "schema_format_regex_177",
+    "format": "regex",
+    "value": "[",
+    "valid": false
+  },
+  {
+    "name": "schema_format_regex_178",
+    "format": "regex",
+    "value": "(",
+    "valid": false
+  },
+  {
+    "name": "schema_format_regex_179",
+    "format": "regex",
+    "value": "*",
+    "valid": false
+  },
+  {
+    "name": "schema_format_regex_180",
+    "format": "regex",
+    "value": "a{2,1}",
+    "valid": false
+  },
+  {
+    "name": "schema_format_password_181",
+    "format": "password",
+    "value": "",
+    "valid": true
+  },
+  {
+    "name": "schema_format_password_182",
+    "format": "password",
+    "value": "anything",
+    "valid": true
+  },
+  {
+    "name": "schema_format_password_183",
+    "format": "password",
+    "value": "a\nb",
+    "valid": true
+  },
+  {
+    "name": "schema_format_binary_184",
+    "format": "binary",
+    "value": "",
+    "valid": true
+  },
+  {
+    "name": "schema_format_binary_185",
+    "format": "binary",
+    "value": "anything",
+    "valid": true
+  },
+  {
+    "name": "schema_format_binary_186",
+    "format": "binary",
+    "value": "a\nb",
+    "valid": true
+  },
+  {
+    "name": "schema_format_int32_187",
+    "format": "int32",
+    "value": 0,
+    "valid": true
+  },
+  {
+    "name": "schema_format_int32_188",
+    "format": "int32",
+    "value": -2147483648,
+    "valid": true
+  },
+  {
+    "name": "schema_format_int32_189",
+    "format": "int32",
+    "value": 2147483647,
+    "valid": true
+  },
+  {
+    "name": "schema_format_int32_190",
+    "format": "int32",
+    "value": 2147483648,
+    "valid": false
+  },
+  {
+    "name": "schema_format_int32_191",
+    "format": "int32",
+    "value": -2147483649,
+    "valid": false
+  },
+  {
+    "name": "schema_format_int32_192",
+    "format": "int32",
+    "value": 0.5,
+    "valid": false
+  },
+  {
+    "name": "schema_format_int64_193",
+    "format": "int64",
+    "value": 0,
+    "valid": true
+  },
+  {
+    "name": "schema_format_int64_194",
+    "format": "int64",
+    "value": -9223372036854775808,
+    "valid": true
+  },
+  {
+    "name": "schema_format_int64_195",
+    "format": "int64",
+    "value": 9223372036854774784,
+    "valid": true
+  },
+  {
+    "name": "schema_format_int64_196",
+    "format": "int64",
+    "value": 9223372036854775808,
+    "valid": false
+  },
+  {
+    "name": "schema_format_int64_197",
+    "format": "int64",
+    "value": -9223372036854777856,
+    "valid": false
+  },
+  {
+    "name": "schema_format_int64_198",
+    "format": "int64",
+    "value": 0.5,
+    "valid": false
+  },
+  {
+    "name": "schema_format_float_199",
+    "format": "float",
+    "value": 0,
+    "valid": true
+  },
+  {
+    "name": "schema_format_float_200",
+    "format": "float",
+    "value": -1,
+    "valid": true
+  },
+  {
+    "name": "schema_format_float_201",
+    "format": "float",
+    "value": 0.5,
+    "valid": true
+  },
+  {
+    "name": "schema_format_float_202",
+    "format": "float",
+    "value": 1e+300,
+    "valid": true
+  },
+  {
+    "name": "schema_format_double_203",
+    "format": "double",
+    "value": 0,
+    "valid": true
+  },
+  {
+    "name": "schema_format_double_204",
+    "format": "double",
+    "value": -1,
+    "valid": true
+  },
+  {
+    "name": "schema_format_double_205",
+    "format": "double",
+    "value": 0.5,
+    "valid": true
+  },
+  {
+    "name": "schema_format_double_206",
+    "format": "double",
+    "value": 1e+300,
+    "valid": true
+  },
+  {
+    "name": "schema_format_email_207",
+    "format": "email",
+    "value": null,
+    "valid": true
+  },
+  {
+    "name": "schema_format_email_208",
+    "format": "email",
+    "value": true,
+    "valid": true
+  },
+  {
+    "name": "schema_format_email_209",
+    "format": "email",
+    "value": false,
+    "valid": true
+  },
+  {
+    "name": "schema_format_email_210",
+    "format": "email",
+    "value": [],
+    "valid": true
+  },
+  {
+    "name": "schema_format_email_211",
+    "format": "email",
+    "value": {},
+    "valid": true
+  },
+  {
+    "name": "schema_format_email_212",
+    "format": "email",
+    "value": 42,
+    "valid": true
+  },
+  {
+    "name": "schema_format_hostname_213",
+    "format": "hostname",
+    "value": null,
+    "valid": true
+  },
+  {
+    "name": "schema_format_hostname_214",
+    "format": "hostname",
+    "value": true,
+    "valid": true
+  },
+  {
+    "name": "schema_format_hostname_215",
+    "format": "hostname",
+    "value": false,
+    "valid": true
+  },
+  {
+    "name": "schema_format_hostname_216",
+    "format": "hostname",
+    "value": [],
+    "valid": true
+  },
+  {
+    "name": "schema_format_hostname_217",
+    "format": "hostname",
+    "value": {},
+    "valid": true
+  },
+  {
+    "name": "schema_format_hostname_218",
+    "format": "hostname",
+    "value": 42,
+    "valid": true
+  },
+  {
+    "name": "schema_format_ipv4_219",
+    "format": "ipv4",
+    "value": null,
+    "valid": true
+  },
+  {
+    "name": "schema_format_ipv4_220",
+    "format": "ipv4",
+    "value": true,
+    "valid": true
+  },
+  {
+    "name": "schema_format_ipv4_221",
+    "format": "ipv4",
+    "value": false,
+    "valid": true
+  },
+  {
+    "name": "schema_format_ipv4_222",
+    "format": "ipv4",
+    "value": [],
+    "valid": true
+  },
+  {
+    "name": "schema_format_ipv4_223",
+    "format": "ipv4",
+    "value": {},
+    "valid": true
+  },
+  {
+    "name": "schema_format_ipv4_224",
+    "format": "ipv4",
+    "value": 42,
+    "valid": true
+  },
+  {
+    "name": "schema_format_ipv6_225",
+    "format": "ipv6",
+    "value": null,
+    "valid": true
+  },
+  {
+    "name": "schema_format_ipv6_226",
+    "format": "ipv6",
+    "value": true,
+    "valid": true
+  },
+  {
+    "name": "schema_format_ipv6_227",
+    "format": "ipv6",
+    "value": false,
+    "valid": true
+  },
+  {
+    "name": "schema_format_ipv6_228",
+    "format": "ipv6",
+    "value": [],
+    "valid": true
+  },
+  {
+    "name": "schema_format_ipv6_229",
+    "format": "ipv6",
+    "value": {},
+    "valid": true
+  },
+  {
+    "name": "schema_format_ipv6_230",
+    "format": "ipv6",
+    "value": 42,
+    "valid": true
+  },
+  {
+    "name": "schema_format_date_231",
+    "format": "date",
+    "value": null,
+    "valid": true
+  },
+  {
+    "name": "schema_format_date_232",
+    "format": "date",
+    "value": true,
+    "valid": true
+  },
+  {
+    "name": "schema_format_date_233",
+    "format": "date",
+    "value": false,
+    "valid": true
+  },
+  {
+    "name": "schema_format_date_234",
+    "format": "date",
+    "value": [],
+    "valid": true
+  },
+  {
+    "name": "schema_format_date_235",
+    "format": "date",
+    "value": {},
+    "valid": true
+  },
+  {
+    "name": "schema_format_date_236",
+    "format": "date",
+    "value": 42,
+    "valid": true
+  },
+  {
+    "name": "schema_format_time_237",
+    "format": "time",
+    "value": null,
+    "valid": true
+  },
+  {
+    "name": "schema_format_time_238",
+    "format": "time",
+    "value": true,
+    "valid": true
+  },
+  {
+    "name": "schema_format_time_239",
+    "format": "time",
+    "value": false,
+    "valid": true
+  },
+  {
+    "name": "schema_format_time_240",
+    "format": "time",
+    "value": [],
+    "valid": true
+  },
+  {
+    "name": "schema_format_time_241",
+    "format": "time",
+    "value": {},
+    "valid": true
+  },
+  {
+    "name": "schema_format_time_242",
+    "format": "time",
+    "value": 42,
+    "valid": true
+  },
+  {
+    "name": "schema_format_iso-time_243",
+    "format": "iso-time",
+    "value": null,
+    "valid": true
+  },
+  {
+    "name": "schema_format_iso-time_244",
+    "format": "iso-time",
+    "value": true,
+    "valid": true
+  },
+  {
+    "name": "schema_format_iso-time_245",
+    "format": "iso-time",
+    "value": false,
+    "valid": true
+  },
+  {
+    "name": "schema_format_iso-time_246",
+    "format": "iso-time",
+    "value": [],
+    "valid": true
+  },
+  {
+    "name": "schema_format_iso-time_247",
+    "format": "iso-time",
+    "value": {},
+    "valid": true
+  },
+  {
+    "name": "schema_format_iso-time_248",
+    "format": "iso-time",
+    "value": 42,
+    "valid": true
+  },
+  {
+    "name": "schema_format_date-time_249",
+    "format": "date-time",
+    "value": null,
+    "valid": true
+  },
+  {
+    "name": "schema_format_date-time_250",
+    "format": "date-time",
+    "value": true,
+    "valid": true
+  },
+  {
+    "name": "schema_format_date-time_251",
+    "format": "date-time",
+    "value": false,
+    "valid": true
+  },
+  {
+    "name": "schema_format_date-time_252",
+    "format": "date-time",
+    "value": [],
+    "valid": true
+  },
+  {
+    "name": "schema_format_date-time_253",
+    "format": "date-time",
+    "value": {},
+    "valid": true
+  },
+  {
+    "name": "schema_format_date-time_254",
+    "format": "date-time",
+    "value": 42,
+    "valid": true
+  },
+  {
+    "name": "schema_format_iso-date-time_255",
+    "format": "iso-date-time",
+    "value": null,
+    "valid": true
+  },
+  {
+    "name": "schema_format_iso-date-time_256",
+    "format": "iso-date-time",
+    "value": true,
+    "valid": true
+  },
+  {
+    "name": "schema_format_iso-date-time_257",
+    "format": "iso-date-time",
+    "value": false,
+    "valid": true
+  },
+  {
+    "name": "schema_format_iso-date-time_258",
+    "format": "iso-date-time",
+    "value": [],
+    "valid": true
+  },
+  {
+    "name": "schema_format_iso-date-time_259",
+    "format": "iso-date-time",
+    "value": {},
+    "valid": true
+  },
+  {
+    "name": "schema_format_iso-date-time_260",
+    "format": "iso-date-time",
+    "value": 42,
+    "valid": true
+  },
+  {
+    "name": "schema_format_duration_261",
+    "format": "duration",
+    "value": null,
+    "valid": true
+  },
+  {
+    "name": "schema_format_duration_262",
+    "format": "duration",
+    "value": true,
+    "valid": true
+  },
+  {
+    "name": "schema_format_duration_263",
+    "format": "duration",
+    "value": false,
+    "valid": true
+  },
+  {
+    "name": "schema_format_duration_264",
+    "format": "duration",
+    "value": [],
+    "valid": true
+  },
+  {
+    "name": "schema_format_duration_265",
+    "format": "duration",
+    "value": {},
+    "valid": true
+  },
+  {
+    "name": "schema_format_duration_266",
+    "format": "duration",
+    "value": 42,
+    "valid": true
+  },
+  {
+    "name": "schema_format_uri_267",
+    "format": "uri",
+    "value": null,
+    "valid": true
+  },
+  {
+    "name": "schema_format_uri_268",
+    "format": "uri",
+    "value": true,
+    "valid": true
+  },
+  {
+    "name": "schema_format_uri_269",
+    "format": "uri",
+    "value": false,
+    "valid": true
+  },
+  {
+    "name": "schema_format_uri_270",
+    "format": "uri",
+    "value": [],
+    "valid": true
+  },
+  {
+    "name": "schema_format_uri_271",
+    "format": "uri",
+    "value": {},
+    "valid": true
+  },
+  {
+    "name": "schema_format_uri_272",
+    "format": "uri",
+    "value": 42,
+    "valid": true
+  },
+  {
+    "name": "schema_format_uri-reference_273",
+    "format": "uri-reference",
+    "value": null,
+    "valid": true
+  },
+  {
+    "name": "schema_format_uri-reference_274",
+    "format": "uri-reference",
+    "value": true,
+    "valid": true
+  },
+  {
+    "name": "schema_format_uri-reference_275",
+    "format": "uri-reference",
+    "value": false,
+    "valid": true
+  },
+  {
+    "name": "schema_format_uri-reference_276",
+    "format": "uri-reference",
+    "value": [],
+    "valid": true
+  },
+  {
+    "name": "schema_format_uri-reference_277",
+    "format": "uri-reference",
+    "value": {},
+    "valid": true
+  },
+  {
+    "name": "schema_format_uri-reference_278",
+    "format": "uri-reference",
+    "value": 42,
+    "valid": true
+  },
+  {
+    "name": "schema_format_uri-template_279",
+    "format": "uri-template",
+    "value": null,
+    "valid": true
+  },
+  {
+    "name": "schema_format_uri-template_280",
+    "format": "uri-template",
+    "value": true,
+    "valid": true
+  },
+  {
+    "name": "schema_format_uri-template_281",
+    "format": "uri-template",
+    "value": false,
+    "valid": true
+  },
+  {
+    "name": "schema_format_uri-template_282",
+    "format": "uri-template",
+    "value": [],
+    "valid": true
+  },
+  {
+    "name": "schema_format_uri-template_283",
+    "format": "uri-template",
+    "value": {},
+    "valid": true
+  },
+  {
+    "name": "schema_format_uri-template_284",
+    "format": "uri-template",
+    "value": 42,
+    "valid": true
+  },
+  {
+    "name": "schema_format_url_285",
+    "format": "url",
+    "value": null,
+    "valid": true
+  },
+  {
+    "name": "schema_format_url_286",
+    "format": "url",
+    "value": true,
+    "valid": true
+  },
+  {
+    "name": "schema_format_url_287",
+    "format": "url",
+    "value": false,
+    "valid": true
+  },
+  {
+    "name": "schema_format_url_288",
+    "format": "url",
+    "value": [],
+    "valid": true
+  },
+  {
+    "name": "schema_format_url_289",
+    "format": "url",
+    "value": {},
+    "valid": true
+  },
+  {
+    "name": "schema_format_url_290",
+    "format": "url",
+    "value": 42,
+    "valid": true
+  },
+  {
+    "name": "schema_format_uuid_291",
+    "format": "uuid",
+    "value": null,
+    "valid": true
+  },
+  {
+    "name": "schema_format_uuid_292",
+    "format": "uuid",
+    "value": true,
+    "valid": true
+  },
+  {
+    "name": "schema_format_uuid_293",
+    "format": "uuid",
+    "value": false,
+    "valid": true
+  },
+  {
+    "name": "schema_format_uuid_294",
+    "format": "uuid",
+    "value": [],
+    "valid": true
+  },
+  {
+    "name": "schema_format_uuid_295",
+    "format": "uuid",
+    "value": {},
+    "valid": true
+  },
+  {
+    "name": "schema_format_uuid_296",
+    "format": "uuid",
+    "value": 42,
+    "valid": true
+  },
+  {
+    "name": "schema_format_json-pointer_297",
+    "format": "json-pointer",
+    "value": null,
+    "valid": true
+  },
+  {
+    "name": "schema_format_json-pointer_298",
+    "format": "json-pointer",
+    "value": true,
+    "valid": true
+  },
+  {
+    "name": "schema_format_json-pointer_299",
+    "format": "json-pointer",
+    "value": false,
+    "valid": true
+  },
+  {
+    "name": "schema_format_json-pointer_300",
+    "format": "json-pointer",
+    "value": [],
+    "valid": true
+  },
+  {
+    "name": "schema_format_json-pointer_301",
+    "format": "json-pointer",
+    "value": {},
+    "valid": true
+  },
+  {
+    "name": "schema_format_json-pointer_302",
+    "format": "json-pointer",
+    "value": 42,
+    "valid": true
+  },
+  {
+    "name": "schema_format_json-pointer-uri-fragment_303",
+    "format": "json-pointer-uri-fragment",
+    "value": null,
+    "valid": true
+  },
+  {
+    "name": "schema_format_json-pointer-uri-fragment_304",
+    "format": "json-pointer-uri-fragment",
+    "value": true,
+    "valid": true
+  },
+  {
+    "name": "schema_format_json-pointer-uri-fragment_305",
+    "format": "json-pointer-uri-fragment",
+    "value": false,
+    "valid": true
+  },
+  {
+    "name": "schema_format_json-pointer-uri-fragment_306",
+    "format": "json-pointer-uri-fragment",
+    "value": [],
+    "valid": true
+  },
+  {
+    "name": "schema_format_json-pointer-uri-fragment_307",
+    "format": "json-pointer-uri-fragment",
+    "value": {},
+    "valid": true
+  },
+  {
+    "name": "schema_format_json-pointer-uri-fragment_308",
+    "format": "json-pointer-uri-fragment",
+    "value": 42,
+    "valid": true
+  },
+  {
+    "name": "schema_format_relative-json-pointer_309",
+    "format": "relative-json-pointer",
+    "value": null,
+    "valid": true
+  },
+  {
+    "name": "schema_format_relative-json-pointer_310",
+    "format": "relative-json-pointer",
+    "value": true,
+    "valid": true
+  },
+  {
+    "name": "schema_format_relative-json-pointer_311",
+    "format": "relative-json-pointer",
+    "value": false,
+    "valid": true
+  },
+  {
+    "name": "schema_format_relative-json-pointer_312",
+    "format": "relative-json-pointer",
+    "value": [],
+    "valid": true
+  },
+  {
+    "name": "schema_format_relative-json-pointer_313",
+    "format": "relative-json-pointer",
+    "value": {},
+    "valid": true
+  },
+  {
+    "name": "schema_format_relative-json-pointer_314",
+    "format": "relative-json-pointer",
+    "value": 42,
+    "valid": true
+  },
+  {
+    "name": "schema_format_byte_315",
+    "format": "byte",
+    "value": null,
+    "valid": true
+  },
+  {
+    "name": "schema_format_byte_316",
+    "format": "byte",
+    "value": true,
+    "valid": true
+  },
+  {
+    "name": "schema_format_byte_317",
+    "format": "byte",
+    "value": false,
+    "valid": true
+  },
+  {
+    "name": "schema_format_byte_318",
+    "format": "byte",
+    "value": [],
+    "valid": true
+  },
+  {
+    "name": "schema_format_byte_319",
+    "format": "byte",
+    "value": {},
+    "valid": true
+  },
+  {
+    "name": "schema_format_byte_320",
+    "format": "byte",
+    "value": 42,
+    "valid": true
+  },
+  {
+    "name": "schema_format_regex_321",
+    "format": "regex",
+    "value": null,
+    "valid": true
+  },
+  {
+    "name": "schema_format_regex_322",
+    "format": "regex",
+    "value": true,
+    "valid": true
+  },
+  {
+    "name": "schema_format_regex_323",
+    "format": "regex",
+    "value": false,
+    "valid": true
+  },
+  {
+    "name": "schema_format_regex_324",
+    "format": "regex",
+    "value": [],
+    "valid": true
+  },
+  {
+    "name": "schema_format_regex_325",
+    "format": "regex",
+    "value": {},
+    "valid": true
+  },
+  {
+    "name": "schema_format_regex_326",
+    "format": "regex",
+    "value": 42,
+    "valid": true
+  },
+  {
+    "name": "schema_format_password_327",
+    "format": "password",
+    "value": null,
+    "valid": true
+  },
+  {
+    "name": "schema_format_password_328",
+    "format": "password",
+    "value": true,
+    "valid": true
+  },
+  {
+    "name": "schema_format_password_329",
+    "format": "password",
+    "value": false,
+    "valid": true
+  },
+  {
+    "name": "schema_format_password_330",
+    "format": "password",
+    "value": [],
+    "valid": true
+  },
+  {
+    "name": "schema_format_password_331",
+    "format": "password",
+    "value": {},
+    "valid": true
+  },
+  {
+    "name": "schema_format_password_332",
+    "format": "password",
+    "value": 42,
+    "valid": true
+  },
+  {
+    "name": "schema_format_binary_333",
+    "format": "binary",
+    "value": null,
+    "valid": true
+  },
+  {
+    "name": "schema_format_binary_334",
+    "format": "binary",
+    "value": true,
+    "valid": true
+  },
+  {
+    "name": "schema_format_binary_335",
+    "format": "binary",
+    "value": false,
+    "valid": true
+  },
+  {
+    "name": "schema_format_binary_336",
+    "format": "binary",
+    "value": [],
+    "valid": true
+  },
+  {
+    "name": "schema_format_binary_337",
+    "format": "binary",
+    "value": {},
+    "valid": true
+  },
+  {
+    "name": "schema_format_binary_338",
+    "format": "binary",
+    "value": 42,
+    "valid": true
+  },
+  {
+    "name": "schema_format_int32_339",
+    "format": "int32",
+    "value": null,
+    "valid": true
+  },
+  {
+    "name": "schema_format_int32_340",
+    "format": "int32",
+    "value": true,
+    "valid": true
+  },
+  {
+    "name": "schema_format_int32_341",
+    "format": "int32",
+    "value": false,
+    "valid": true
+  },
+  {
+    "name": "schema_format_int32_342",
+    "format": "int32",
+    "value": [],
+    "valid": true
+  },
+  {
+    "name": "schema_format_int32_343",
+    "format": "int32",
+    "value": {},
+    "valid": true
+  },
+  {
+    "name": "schema_format_int32_344",
+    "format": "int32",
+    "value": "not a number",
+    "valid": true
+  },
+  {
+    "name": "schema_format_int64_345",
+    "format": "int64",
+    "value": null,
+    "valid": true
+  },
+  {
+    "name": "schema_format_int64_346",
+    "format": "int64",
+    "value": true,
+    "valid": true
+  },
+  {
+    "name": "schema_format_int64_347",
+    "format": "int64",
+    "value": false,
+    "valid": true
+  },
+  {
+    "name": "schema_format_int64_348",
+    "format": "int64",
+    "value": [],
+    "valid": true
+  },
+  {
+    "name": "schema_format_int64_349",
+    "format": "int64",
+    "value": {},
+    "valid": true
+  },
+  {
+    "name": "schema_format_int64_350",
+    "format": "int64",
+    "value": "not a number",
+    "valid": true
+  },
+  {
+    "name": "schema_format_float_351",
+    "format": "float",
+    "value": null,
+    "valid": true
+  },
+  {
+    "name": "schema_format_float_352",
+    "format": "float",
+    "value": true,
+    "valid": true
+  },
+  {
+    "name": "schema_format_float_353",
+    "format": "float",
+    "value": false,
+    "valid": true
+  },
+  {
+    "name": "schema_format_float_354",
+    "format": "float",
+    "value": [],
+    "valid": true
+  },
+  {
+    "name": "schema_format_float_355",
+    "format": "float",
+    "value": {},
+    "valid": true
+  },
+  {
+    "name": "schema_format_float_356",
+    "format": "float",
+    "value": "not a number",
+    "valid": true
+  },
+  {
+    "name": "schema_format_double_357",
+    "format": "double",
+    "value": null,
+    "valid": true
+  },
+  {
+    "name": "schema_format_double_358",
+    "format": "double",
+    "value": true,
+    "valid": true
+  },
+  {
+    "name": "schema_format_double_359",
+    "format": "double",
+    "value": false,
+    "valid": true
+  },
+  {
+    "name": "schema_format_double_360",
+    "format": "double",
+    "value": [],
+    "valid": true
+  },
+  {
+    "name": "schema_format_double_361",
+    "format": "double",
+    "value": {},
+    "valid": true
+  },
+  {
+    "name": "schema_format_double_362",
+    "format": "double",
+    "value": "not a number",
+    "valid": true
+  },
+  {
+    "name": "schema_format_unknown_363",
+    "format": "unknown",
+    "value": "bad",
+    "valid": true
+  },
+  {
+    "name": "schema_format_unknown_364",
+    "format": "unknown",
+    "value": null,
+    "valid": true
+  },
+  {
+    "name": "schema_format_unknown_365",
+    "format": "unknown",
+    "value": 42,
+    "valid": true
+  },
+  {
+    "name": "schema_format_constructor_366",
+    "format": "constructor",
+    "value": "bad",
+    "valid": true
+  },
+  {
+    "name": "schema_format_constructor_367",
+    "format": "constructor",
+    "value": null,
+    "valid": true
+  },
+  {
+    "name": "schema_format_constructor_368",
+    "format": "constructor",
+    "value": 42,
+    "valid": true
+  },
+  {
+    "name": "schema_format___proto___369",
+    "format": "__proto__",
+    "value": "bad",
+    "valid": true
+  },
+  {
+    "name": "schema_format___proto___370",
+    "format": "__proto__",
+    "value": null,
+    "valid": true
+  },
+  {
+    "name": "schema_format___proto___371",
+    "format": "__proto__",
+    "value": 42,
+    "valid": true
+  },
+  {
+    "name": "schema_format_toString_372",
+    "format": "toString",
+    "value": "bad",
+    "valid": true
+  },
+  {
+    "name": "schema_format_toString_373",
+    "format": "toString",
+    "value": null,
+    "valid": true
+  },
+  {
+    "name": "schema_format_toString_374",
+    "format": "toString",
+    "value": 42,
+    "valid": true
+  },
+  {
+    "name": "schema_format_idn-email_375",
+    "format": "idn-email",
+    "value": "bad",
+    "valid": true
+  },
+  {
+    "name": "schema_format_idn-email_376",
+    "format": "idn-email",
+    "value": null,
+    "valid": true
+  },
+  {
+    "name": "schema_format_idn-email_377",
+    "format": "idn-email",
+    "value": 42,
+    "valid": true
+  },
+  {
+    "name": "schema_format_idn-hostname_378",
+    "format": "idn-hostname",
+    "value": "bad",
+    "valid": true
+  },
+  {
+    "name": "schema_format_idn-hostname_379",
+    "format": "idn-hostname",
+    "value": null,
+    "valid": true
+  },
+  {
+    "name": "schema_format_idn-hostname_380",
+    "format": "idn-hostname",
+    "value": 42,
+    "valid": true
+  },
+  {
+    "name": "schema_format_iri_381",
+    "format": "iri",
+    "value": "bad",
+    "valid": true
+  },
+  {
+    "name": "schema_format_iri_382",
+    "format": "iri",
+    "value": null,
+    "valid": true
+  },
+  {
+    "name": "schema_format_iri_383",
+    "format": "iri",
+    "value": 42,
+    "valid": true
+  },
+  {
+    "name": "schema_format_iri-reference_384",
+    "format": "iri-reference",
+    "value": "bad",
+    "valid": true
+  },
+  {
+    "name": "schema_format_iri-reference_385",
+    "format": "iri-reference",
+    "value": null,
+    "valid": true
+  },
+  {
+    "name": "schema_format_iri-reference_386",
+    "format": "iri-reference",
+    "value": 42,
+    "valid": true
+  },
+  {
+    "name": "schema_format_url_whitespace_0",
+    "format": "url",
+    "value": "http\u017f://example.com",
+    "valid": false
+  },
+  {
+    "name": "schema_format_url_whitespace_1",
+    "format": "url",
+    "value": "https://example.com/a\u00a0b",
+    "valid": false
+  },
+  {
+    "name": "schema_format_url_whitespace_2",
+    "format": "url",
+    "value": "https://a\u1680.example",
+    "valid": false
+  },
+  {
+    "name": "schema_format_url_whitespace_3",
+    "format": "url",
+    "value": "https://example.com/a\ufeffb",
+    "valid": false
+  },
+  {
+    "name": "schema_format_ecma_regex_0",
+    "format": "regex",
+    "value": "(?<name>a)",
+    "valid": true
+  },
+  {
+    "name": "schema_format_ecma_regex_1",
+    "format": "regex",
+    "value": "(?P<name>a)",
+    "valid": false
+  },
+  {
+    "name": "schema_format_ecma_regex_2",
+    "format": "regex",
+    "value": "\\q",
+    "valid": true
+  },
+  {
+    "name": "schema_format_ecma_regex_3",
+    "format": "regex",
+    "value": "\\p{Letter}+",
+    "valid": true
+  },
+  {
+    "name": "schema_format_ecma_regex_4",
+    "format": "regex",
+    "value": "(?<=a)b",
+    "valid": true
+  },
+  {
+    "name": "schema_format_ecma_regex_5",
+    "format": "regex",
+    "value": "a\\Z",
+    "valid": false
+  },
+  {
+    "name": "schema_format_ecma_regex_6",
+    "format": "regex",
+    "value": "\\Z",
+    "valid": true
+  },
+  {
+    "name": "schema_format_ecma_regex_7",
+    "format": "regex",
+    "value": "[\\d-a]",
+    "valid": true
+  },
+  {
+    "name": "schema_format_ecma_regex_8",
+    "format": "regex",
+    "value": "a{9999999999999999999999999999999999999999999999999999}",
+    "valid": true
+  }
+]

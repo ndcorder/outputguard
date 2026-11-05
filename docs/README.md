@@ -23,6 +23,8 @@ OutputGuard into an application, an eval pipeline, or a command-line workflow.
 - [Recipes](recipes.md) gives copy-paste patterns for common application,
   eval, CI, and privacy workflows.
 - [Troubleshooting](troubleshooting.md) maps common symptoms to concrete fixes.
+- [Benchmarks and parity checks](benchmarks.md) covers performance measurements
+  and shared Python/JavaScript fixtures.
 - [Migration to 2.0](migration-2.0.md) explains what changed and how to adopt
   the new APIs safely.
 - [2.0 implementation plan](2.0-plan.md) records the design and verification

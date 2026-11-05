@@ -1,0 +1,641 @@
+[
+  {
+    "name": "unknown_path_escape",
+    "text": "'C:\\Documents\\notes'",
+    "valid": true,
+    "value": "C:\\Documents\notes"
+  },
+  {
+    "name": "unknown_regex_escapes",
+    "text": "'\\d+\\s\\w\\q'",
+    "valid": true,
+    "value": "\\d+\\s\\w\\q"
+  },
+  {
+    "name": "non_octal_digits",
+    "text": "'\\8\\9'",
+    "valid": true,
+    "value": "\\8\\9"
+  },
+  {
+    "name": "unknown_uppercase_escapes",
+    "text": "'\\X41\\V\\A'",
+    "valid": true,
+    "value": "\\X41\\V\\A"
+  },
+  {
+    "name": "escaped_punctuation",
+    "text": "'\\$\\?\\/'",
+    "valid": true,
+    "value": "\\$\\?\\/"
+  },
+  {
+    "name": "simple_escapes",
+    "text": "'\\a\\b\\f\\n\\r\\t\\v'",
+    "valid": true,
+    "value": "\u0007\b\f\n\r\t\u000b"
+  },
+  {
+    "name": "escaped_quotes_and_slash",
+    "text": "'\\\"\\'\\\\'",
+    "valid": true,
+    "value": "\"'\\"
+  },
+  {
+    "name": "hexadecimal_bytes",
+    "text": "'\\x00\\x41\\xff\\xAa0'",
+    "valid": true,
+    "value": "\u0000A\u00ff\u00aa0"
+  },
+  {
+    "name": "unicode_bmp",
+    "text": "'\\u0000\\u0041\\u03A9\\uffff'",
+    "valid": true,
+    "value": "\u0000A\u03a9\uffff"
+  },
+  {
+    "name": "unicode_supplementary",
+    "text": "'\\U0001F600\\U0010ffff'",
+    "valid": true,
+    "value": "\ud83d\ude00\udbff\udfff"
+  },
+  {
+    "name": "unicode_high_surrogate",
+    "text": "'\\ud800'",
+    "valid": true,
+    "value": "\ud800"
+  },
+  {
+    "name": "unicode_low_surrogate",
+    "text": "'\\U0000dfff'",
+    "valid": true,
+    "value": "\udfff"
+  },
+  {
+    "name": "octal_one_two_three_digits",
+    "text": "'\\0\\07\\101\\777'",
+    "valid": true,
+    "value": "\u0000\u0007A\u01ff"
+  },
+  {
+    "name": "octal_stops_at_three",
+    "text": "'\\1234'",
+    "valid": true,
+    "value": "S4"
+  },
+  {
+    "name": "octal_stops_at_non_octal",
+    "text": "'\\018'",
+    "valid": true,
+    "value": "\u00018"
+  },
+  {
+    "name": "hex_stops_at_width",
+    "text": "'\\x414\\u00412\\U000000413'",
+    "valid": true,
+    "value": "A4A2A3"
+  },
+  {
+    "name": "escaped_lf",
+    "text": "'a\\\nb'",
+    "valid": true,
+    "value": "ab"
+  },
+  {
+    "name": "escaped_crlf",
+    "text": "'a\\\r\nb'",
+    "valid": true,
+    "value": "ab"
+  },
+  {
+    "name": "escaped_cr",
+    "text": "'a\\\rb'",
+    "valid": true,
+    "value": "ab"
+  },
+  {
+    "name": "literal_unicode_and_controls",
+    "text": "'caf\u00e9 \u03a9 \ud83d\ude00\u2028\u2029\t\u000b\u0001'",
+    "valid": true,
+    "value": "caf\u00e9 \u03a9 \ud83d\ude00\u2028\u2029\t\u000b\u0001"
+  },
+  {
+    "name": "literal_backslash_unicode",
+    "text": "'\\\ud83d\ude00'",
+    "valid": true,
+    "value": "\\\ud83d\ude00"
+  },
+  {
+    "name": "raw_backslashes",
+    "text": "r\"C:\\Documents\\notes\\u0041\\x41\\101\\N{INVALID}\"",
+    "valid": true,
+    "value": "C:\\Documents\\notes\\u0041\\x41\\101\\N{INVALID}"
+  },
+  {
+    "name": "raw_escaped_quote",
+    "text": "r\"a\\\"b\"",
+    "valid": true,
+    "value": "a\\\"b"
+  },
+  {
+    "name": "raw_paired_slashes",
+    "text": "r'ends\\\\'",
+    "valid": true,
+    "value": "ends\\\\"
+  },
+  {
+    "name": "raw_escaped_lf",
+    "text": "r\"a\\\nb\"",
+    "valid": true,
+    "value": "a\\\nb"
+  },
+  {
+    "name": "raw_escaped_crlf",
+    "text": "r\"a\\\r\nb\"",
+    "valid": true,
+    "value": "a\\\nb"
+  },
+  {
+    "name": "raw_escaped_cr",
+    "text": "r\"a\\\rb\"",
+    "valid": true,
+    "value": "a\\\nb"
+  },
+  {
+    "name": "raw_uppercase_prefix",
+    "text": "R'\\n\\q'",
+    "valid": true,
+    "value": "\\n\\q"
+  },
+  {
+    "name": "unicode_prefix",
+    "text": "u'\\u03a9\\x41'",
+    "valid": true,
+    "value": "\u03a9A"
+  },
+  {
+    "name": "unicode_uppercase_prefix",
+    "text": "U'\\U0001f600'",
+    "valid": true,
+    "value": "\ud83d\ude00"
+  },
+  {
+    "name": "single_empty",
+    "text": "''",
+    "valid": true,
+    "value": ""
+  },
+  {
+    "name": "single_triple_empty",
+    "text": "''''''",
+    "valid": true,
+    "value": ""
+  },
+  {
+    "name": "single_triple_multiline",
+    "text": "'''one\ntwo\r\nthree\rfour'''",
+    "valid": true,
+    "value": "one\ntwo\nthree\nfour"
+  },
+  {
+    "name": "single_triple_one_two_quotes",
+    "text": "'''a'b''c'''",
+    "valid": true,
+    "value": "a'b''c"
+  },
+  {
+    "name": "single_triple_escaped_close",
+    "text": "'''a\\'''b'''",
+    "valid": true,
+    "value": "a'''b"
+  },
+  {
+    "name": "single_triple_decodes_escapes",
+    "text": "'''\\n\\x41\\U0001f600'''",
+    "valid": true,
+    "value": "\nA\ud83d\ude00"
+  },
+  {
+    "name": "single_raw_triple",
+    "text": "r'''a\nb\\n\\u0041'''",
+    "valid": true,
+    "value": "a\nb\\n\\u0041"
+  },
+  {
+    "name": "single_physical_lf",
+    "text": "'a\nb'",
+    "valid": false
+  },
+  {
+    "name": "single_physical_crlf",
+    "text": "'a\r\nb'",
+    "valid": false
+  },
+  {
+    "name": "single_raw_physical_lf",
+    "text": "r'a\nb'",
+    "valid": false
+  },
+  {
+    "name": "single_unterminated",
+    "text": "'a",
+    "valid": false
+  },
+  {
+    "name": "single_unterminated_triple",
+    "text": "'''a''",
+    "valid": false
+  },
+  {
+    "name": "single_dangling_escape",
+    "text": "'a\\",
+    "valid": false
+  },
+  {
+    "name": "single_raw_dangling_escape",
+    "text": "r'a\\'",
+    "valid": false
+  },
+  {
+    "name": "double_empty",
+    "text": "\"\"",
+    "valid": true,
+    "value": ""
+  },
+  {
+    "name": "double_triple_empty",
+    "text": "\"\"\"\"\"\"",
+    "valid": true,
+    "value": ""
+  },
+  {
+    "name": "double_triple_multiline",
+    "text": "\"\"\"one\ntwo\r\nthree\rfour\"\"\"",
+    "valid": true,
+    "value": "one\ntwo\nthree\nfour"
+  },
+  {
+    "name": "double_triple_one_two_quotes",
+    "text": "\"\"\"a\"b\"\"c\"\"\"",
+    "valid": true,
+    "value": "a\"b\"\"c"
+  },
+  {
+    "name": "double_triple_escaped_close",
+    "text": "\"\"\"a\\\"\"\"b\"\"\"",
+    "valid": true,
+    "value": "a\"\"\"b"
+  },
+  {
+    "name": "double_triple_decodes_escapes",
+    "text": "\"\"\"\\n\\x41\\U0001f600\"\"\"",
+    "valid": true,
+    "value": "\nA\ud83d\ude00"
+  },
+  {
+    "name": "double_raw_triple",
+    "text": "r\"\"\"a\nb\\n\\u0041\"\"\"",
+    "valid": true,
+    "value": "a\nb\\n\\u0041"
+  },
+  {
+    "name": "double_physical_lf",
+    "text": "\"a\nb\"",
+    "valid": false
+  },
+  {
+    "name": "double_physical_crlf",
+    "text": "\"a\r\nb\"",
+    "valid": false
+  },
+  {
+    "name": "double_raw_physical_lf",
+    "text": "r\"a\nb\"",
+    "valid": false
+  },
+  {
+    "name": "double_unterminated",
+    "text": "\"a",
+    "valid": false
+  },
+  {
+    "name": "double_unterminated_triple",
+    "text": "\"\"\"a\"\"",
+    "valid": false
+  },
+  {
+    "name": "double_dangling_escape",
+    "text": "\"a\\",
+    "valid": false
+  },
+  {
+    "name": "double_raw_dangling_escape",
+    "text": "r\"a\\\"",
+    "valid": false
+  },
+  {
+    "name": "adjacent_without_space",
+    "text": "'a'\"b\"",
+    "valid": true,
+    "value": "ab"
+  },
+  {
+    "name": "adjacent_mixed_prefixes",
+    "text": "u'a' r'\\n' U'\\u0041' R'\\x42'",
+    "valid": true,
+    "value": "a\\nA\\x42"
+  },
+  {
+    "name": "adjacent_empty_atoms",
+    "text": "'' u'' R'' \"\"",
+    "valid": true,
+    "value": ""
+  },
+  {
+    "name": "adjacent_with_form_feed",
+    "text": "'a'\f'b'",
+    "valid": true,
+    "value": "ab"
+  },
+  {
+    "name": "adjacent_with_line_join",
+    "text": "'a'\\\n'b'",
+    "valid": true,
+    "value": "ab"
+  },
+  {
+    "name": "adjacent_triple",
+    "text": "'''a\nb''' r'''\\n'''",
+    "valid": true,
+    "value": "a\nb\\n"
+  },
+  {
+    "name": "grouped_adjacent",
+    "text": "('a' 'b')",
+    "valid": true,
+    "value": "ab"
+  },
+  {
+    "name": "grouped_multiline_adjacent",
+    "text": "('a'\n'b')",
+    "valid": true,
+    "value": "ab"
+  },
+  {
+    "name": "grouped_commented_adjacent",
+    "text": "('a' # ignored\n'b')",
+    "valid": true,
+    "value": "ab"
+  },
+  {
+    "name": "grouped_nested",
+    "text": "((r'a\\b'))",
+    "valid": true,
+    "value": "a\\b"
+  },
+  {
+    "name": "commented_root",
+    "text": "'a' # ignored\n",
+    "valid": true,
+    "value": "a",
+    "root_only": true
+  },
+  {
+    "name": "leading_comment",
+    "text": "# ignored\n'a'",
+    "valid": true,
+    "value": "a",
+    "root_only": true
+  },
+  {
+    "name": "adjacent_across_root_newline",
+    "text": "'a'\n'b'",
+    "valid": false,
+    "root_only": true
+  },
+  {
+    "name": "adjacent_across_root_comment",
+    "text": "'a' # ignored\n'b'",
+    "valid": false,
+    "root_only": true
+  },
+  {
+    "name": "adjacent_vertical_tab",
+    "text": "'a'\u000b'b'",
+    "valid": false
+  },
+  {
+    "name": "adjacent_nonbreaking_space",
+    "text": "'a'\u00a0'b'",
+    "valid": false
+  },
+  {
+    "name": "string_addition_is_not_literal",
+    "text": "'a' + 'b'",
+    "valid": false
+  },
+  {
+    "name": "interpolated_string",
+    "text": "f'a{1}'",
+    "valid": false
+  },
+  {
+    "name": "raw_interpolated_string",
+    "text": "rf'a{1}'",
+    "valid": false
+  },
+  {
+    "name": "python2_unicode_raw_prefix",
+    "text": "ur'a'",
+    "valid": false
+  },
+  {
+    "name": "repeated_raw_prefix",
+    "text": "rr'a'",
+    "valid": false
+  },
+  {
+    "name": "null_in_source",
+    "text": "'a\u0000b'",
+    "valid": false
+  },
+  {
+    "name": "unpaired_source_surrogate",
+    "text": "'a\ud800b'",
+    "valid": false
+  },
+  {
+    "name": "invalid_escape_\\x",
+    "text": "'\\x'",
+    "valid": false
+  },
+  {
+    "name": "invalid_escape_\\x1",
+    "text": "'\\x1'",
+    "valid": false
+  },
+  {
+    "name": "invalid_escape_\\xz0",
+    "text": "'\\xz0'",
+    "valid": false
+  },
+  {
+    "name": "invalid_escape_\\x0g",
+    "text": "'\\x0g'",
+    "valid": false
+  },
+  {
+    "name": "invalid_escape_\\u",
+    "text": "'\\u'",
+    "valid": false
+  },
+  {
+    "name": "invalid_escape_\\u123",
+    "text": "'\\u123'",
+    "valid": false
+  },
+  {
+    "name": "invalid_escape_\\u12g4",
+    "text": "'\\u12g4'",
+    "valid": false
+  },
+  {
+    "name": "invalid_escape_\\U0001234",
+    "text": "'\\U0001234'",
+    "valid": false
+  },
+  {
+    "name": "invalid_escape_\\U0000000z",
+    "text": "'\\U0000000z'",
+    "valid": false
+  },
+  {
+    "name": "invalid_escape_\\U00110000",
+    "text": "'\\U00110000'",
+    "valid": false
+  },
+  {
+    "name": "invalid_escape_\\Uffffffff",
+    "text": "'\\Uffffffff'",
+    "valid": false
+  },
+  {
+    "name": "invalid_escape_\\N",
+    "text": "'\\N'",
+    "valid": false
+  },
+  {
+    "name": "invalid_escape_\\N{}",
+    "text": "'\\N{}'",
+    "valid": false
+  },
+  {
+    "name": "invalid_escape_\\N{DOES NOT EXIST}",
+    "text": "'\\N{DOES NOT EXIST}'",
+    "valid": false
+  },
+  {
+    "name": "line_join_before_blank_line",
+    "text": "'a'\\\n\n",
+    "valid": true,
+    "value": "a",
+    "root_only": true
+  },
+  {
+    "name": "line_join_before_space",
+    "text": "'a'\\\n ",
+    "valid": true,
+    "value": "a",
+    "root_only": true
+  },
+  {
+    "name": "line_join_before_comment",
+    "text": "'a'\\\n# comment",
+    "valid": true,
+    "value": "a",
+    "root_only": true
+  },
+  {
+    "name": "leading_line_join",
+    "text": "\\\n'a'",
+    "valid": true,
+    "value": "a",
+    "root_only": true
+  },
+  {
+    "name": "leading_space_and_tab",
+    "text": " \t'a'",
+    "valid": true,
+    "value": "a",
+    "root_only": true
+  },
+  {
+    "name": "leading_form_feed",
+    "text": "\f'a'",
+    "valid": true,
+    "value": "a",
+    "root_only": true
+  },
+  {
+    "name": "form_feed_resets_indentation",
+    "text": "\n \f'a'",
+    "valid": true,
+    "value": "a",
+    "root_only": true
+  },
+  {
+    "name": "trailing_indented_comment",
+    "text": "'a'\n  # ignored\n",
+    "valid": true,
+    "value": "a",
+    "root_only": true
+  },
+  {
+    "name": "line_join_at_eof",
+    "text": "'a'\\\n",
+    "valid": false,
+    "root_only": true
+  },
+  {
+    "name": "repeated_line_join_at_eof",
+    "text": "'a'\\\n\\\n",
+    "valid": false,
+    "root_only": true
+  },
+  {
+    "name": "new_line_join_at_eof",
+    "text": "'a'\n\\\n",
+    "valid": false,
+    "root_only": true
+  },
+  {
+    "name": "indent_after_newline",
+    "text": "\n  'a'",
+    "valid": false,
+    "root_only": true
+  },
+  {
+    "name": "indent_after_comment",
+    "text": "# comment\n  'a'",
+    "valid": false,
+    "root_only": true
+  },
+  {
+    "name": "indent_after_leading_form_feed",
+    "text": "\f 'a'",
+    "valid": false,
+    "root_only": true
+  },
+  {
+    "name": "indent_before_line_join",
+    "text": "\n \\\n'a'",
+    "valid": false,
+    "root_only": true
+  },
+  {
+    "name": "indent_after_line_join",
+    "text": "\n\\\n  'a'",
+    "valid": false,
+    "root_only": true
+  }
+]

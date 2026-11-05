@@ -1,0 +1,1228 @@
+[
+  {
+    "name": "root-type",
+    "schema": {
+      "$id": "urn:outputguard:mutable-root",
+      "type": "integer"
+    },
+    "stages": [
+      {
+        "checks": [
+          {
+            "text": "1",
+            "expected": {
+              "valid": true,
+              "data": 1,
+              "paths": []
+            }
+          },
+          {
+            "text": "\"text\"",
+            "expected": {
+              "valid": false,
+              "data": "text",
+              "paths": [
+                "$"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "checks": [
+          {
+            "text": "1",
+            "expected": {
+              "valid": false,
+              "data": 1,
+              "paths": [
+                "$"
+              ]
+            }
+          },
+          {
+            "text": "\"text\"",
+            "expected": {
+              "valid": true,
+              "data": "text",
+              "paths": []
+            }
+          }
+        ],
+        "changes": [
+          {
+            "path": [
+              "type"
+            ],
+            "value": "string"
+          }
+        ]
+      },
+      {
+        "checks": [
+          {
+            "text": "1",
+            "expected": {
+              "valid": true,
+              "data": 1,
+              "paths": []
+            }
+          },
+          {
+            "text": "\"text\"",
+            "expected": {
+              "valid": false,
+              "data": "text",
+              "paths": [
+                "$"
+              ]
+            }
+          }
+        ],
+        "changes": [
+          {
+            "path": [
+              "type"
+            ],
+            "value": "integer"
+          }
+        ],
+        "invalidate": 2
+      }
+    ]
+  },
+  {
+    "name": "nested-property",
+    "schema": {
+      "properties": {
+        "value": {
+          "type": "integer"
+        }
+      }
+    },
+    "stages": [
+      {
+        "checks": [
+          {
+            "text": "{\"value\":1}",
+            "expected": {
+              "valid": true,
+              "data": {
+                "value": 1
+              },
+              "paths": []
+            }
+          },
+          {
+            "text": "{\"value\":\"text\"}",
+            "expected": {
+              "valid": false,
+              "data": {
+                "value": "text"
+              },
+              "paths": [
+                "$.value"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "checks": [
+          {
+            "text": "{\"value\":1}",
+            "expected": {
+              "valid": false,
+              "data": {
+                "value": 1
+              },
+              "paths": [
+                "$.value"
+              ]
+            }
+          },
+          {
+            "text": "{\"value\":\"text\"}",
+            "expected": {
+              "valid": true,
+              "data": {
+                "value": "text"
+              },
+              "paths": []
+            }
+          }
+        ],
+        "changes": [
+          {
+            "path": [
+              "properties",
+              "value",
+              "type"
+            ],
+            "value": "string"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "required-array",
+    "schema": {
+      "properties": {
+        "a": {
+          "type": "integer"
+        },
+        "b": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "a"
+      ]
+    },
+    "stages": [
+      {
+        "checks": [
+          {
+            "text": "{\"a\":1}",
+            "expected": {
+              "valid": true,
+              "data": {
+                "a": 1
+              },
+              "paths": []
+            }
+          },
+          {
+            "text": "{\"b\":1}",
+            "expected": {
+              "valid": false,
+              "data": {
+                "b": 1
+              },
+              "paths": [
+                "$"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "checks": [
+          {
+            "text": "{\"a\":1}",
+            "expected": {
+              "valid": false,
+              "data": {
+                "a": 1
+              },
+              "paths": [
+                "$"
+              ]
+            }
+          },
+          {
+            "text": "{\"b\":1}",
+            "expected": {
+              "valid": true,
+              "data": {
+                "b": 1
+              },
+              "paths": []
+            }
+          }
+        ],
+        "changes": [
+          {
+            "path": [
+              "required",
+              0
+            ],
+            "value": "b"
+          }
+        ]
+      },
+      {
+        "checks": [
+          {
+            "text": "{}",
+            "expected": {
+              "valid": true,
+              "data": {},
+              "paths": []
+            }
+          }
+        ],
+        "changes": [
+          {
+            "path": [
+              "required"
+            ],
+            "remove": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "numeric-bound",
+    "schema": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "stages": [
+      {
+        "checks": [
+          {
+            "text": "1",
+            "expected": {
+              "valid": true,
+              "data": 1,
+              "paths": []
+            }
+          }
+        ]
+      },
+      {
+        "checks": [
+          {
+            "text": "1",
+            "expected": {
+              "valid": false,
+              "data": 1,
+              "paths": [
+                "$"
+              ]
+            }
+          },
+          {
+            "text": "2",
+            "expected": {
+              "valid": true,
+              "data": 2,
+              "paths": []
+            }
+          }
+        ],
+        "changes": [
+          {
+            "path": [
+              "minimum"
+            ],
+            "value": 2
+          }
+        ]
+      },
+      {
+        "checks": [
+          {
+            "text": "1",
+            "expected": {
+              "valid": true,
+              "data": 1,
+              "paths": []
+            }
+          }
+        ],
+        "changes": [
+          {
+            "path": [
+              "minimum"
+            ],
+            "remove": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "remove-type",
+    "schema": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "stages": [
+      {
+        "checks": [
+          {
+            "text": "\"text\"",
+            "expected": {
+              "valid": false,
+              "data": "text",
+              "paths": [
+                "$"
+              ]
+            }
+          },
+          {
+            "text": "-1",
+            "expected": {
+              "valid": false,
+              "data": -1,
+              "paths": [
+                "$"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "checks": [
+          {
+            "text": "\"text\"",
+            "expected": {
+              "valid": true,
+              "data": "text",
+              "paths": []
+            }
+          },
+          {
+            "text": "-1",
+            "expected": {
+              "valid": false,
+              "data": -1,
+              "paths": [
+                "$"
+              ]
+            }
+          }
+        ],
+        "changes": [
+          {
+            "path": [
+              "type"
+            ],
+            "remove": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "enum-entry",
+    "schema": {
+      "enum": [
+        1,
+        3
+      ]
+    },
+    "stages": [
+      {
+        "checks": [
+          {
+            "text": "1",
+            "expected": {
+              "valid": true,
+              "data": 1,
+              "paths": []
+            }
+          },
+          {
+            "text": "2",
+            "expected": {
+              "valid": false,
+              "data": 2,
+              "paths": [
+                "$"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "checks": [
+          {
+            "text": "1",
+            "expected": {
+              "valid": false,
+              "data": 1,
+              "paths": [
+                "$"
+              ]
+            }
+          },
+          {
+            "text": "2",
+            "expected": {
+              "valid": true,
+              "data": 2,
+              "paths": []
+            }
+          }
+        ],
+        "changes": [
+          {
+            "path": [
+              "enum",
+              0
+            ],
+            "value": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "literal-const",
+    "schema": {
+      "const": {
+        "flag": 1
+      }
+    },
+    "stages": [
+      {
+        "checks": [
+          {
+            "text": "{\"flag\":1}",
+            "expected": {
+              "valid": true,
+              "data": {
+                "flag": 1
+              },
+              "paths": []
+            }
+          },
+          {
+            "text": "{\"flag\":2}",
+            "expected": {
+              "valid": false,
+              "data": {
+                "flag": 2
+              },
+              "paths": [
+                "$"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "checks": [
+          {
+            "text": "{\"flag\":1}",
+            "expected": {
+              "valid": false,
+              "data": {
+                "flag": 1
+              },
+              "paths": [
+                "$"
+              ]
+            }
+          },
+          {
+            "text": "{\"flag\":2}",
+            "expected": {
+              "valid": true,
+              "data": {
+                "flag": 2
+              },
+              "paths": []
+            }
+          }
+        ],
+        "changes": [
+          {
+            "path": [
+              "const",
+              "flag"
+            ],
+            "value": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "unicode-pattern",
+    "schema": {
+      "type": "string",
+      "pattern": "^\ud83d\ude00$"
+    },
+    "stages": [
+      {
+        "checks": [
+          {
+            "text": "\"\ud83d\ude00\"",
+            "expected": {
+              "valid": true,
+              "data": "\ud83d\ude00",
+              "paths": []
+            }
+          },
+          {
+            "text": "\"\ud83d\udc69\u200d\ud83d\udcbb\"",
+            "expected": {
+              "valid": false,
+              "data": "\ud83d\udc69\u200d\ud83d\udcbb",
+              "paths": [
+                "$"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "checks": [
+          {
+            "text": "\"\ud83d\ude00\"",
+            "expected": {
+              "valid": false,
+              "data": "\ud83d\ude00",
+              "paths": [
+                "$"
+              ]
+            }
+          },
+          {
+            "text": "\"\ud83d\udc69\u200d\ud83d\udcbb\"",
+            "expected": {
+              "valid": true,
+              "data": "\ud83d\udc69\u200d\ud83d\udcbb",
+              "paths": []
+            }
+          }
+        ],
+        "changes": [
+          {
+            "path": [
+              "pattern"
+            ],
+            "value": "^\ud83d\udc69\u200d\ud83d\udcbb$"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "boolean-property",
+    "schema": {
+      "properties": {
+        "blocked": false
+      }
+    },
+    "stages": [
+      {
+        "checks": [
+          {
+            "text": "{\"blocked\":1}",
+            "expected": {
+              "valid": false,
+              "data": {
+                "blocked": 1
+              },
+              "paths": [
+                "$.blocked"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "checks": [
+          {
+            "text": "{\"blocked\":1}",
+            "expected": {
+              "valid": true,
+              "data": {
+                "blocked": 1
+              },
+              "paths": []
+            }
+          }
+        ],
+        "changes": [
+          {
+            "path": [
+              "properties",
+              "blocked"
+            ],
+            "value": true
+          }
+        ]
+      },
+      {
+        "checks": [
+          {
+            "text": "{\"blocked\":1}",
+            "expected": {
+              "valid": false,
+              "data": {
+                "blocked": 1
+              },
+              "paths": [
+                "$.blocked"
+              ]
+            }
+          }
+        ],
+        "changes": [
+          {
+            "path": [
+              "properties",
+              "blocked"
+            ],
+            "value": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "prototype-property",
+    "schema": {
+      "properties": {
+        "__proto__": {
+          "type": "integer"
+        }
+      }
+    },
+    "stages": [
+      {
+        "checks": [
+          {
+            "text": "{\"__proto__\":1}",
+            "expected": {
+              "valid": true,
+              "data": {
+                "__proto__": 1
+              },
+              "paths": []
+            }
+          },
+          {
+            "text": "{\"__proto__\":\"text\"}",
+            "expected": {
+              "valid": false,
+              "data": {
+                "__proto__": "text"
+              },
+              "paths": [
+                "$.__proto__"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "checks": [
+          {
+            "text": "{\"__proto__\":1}",
+            "expected": {
+              "valid": false,
+              "data": {
+                "__proto__": 1
+              },
+              "paths": [
+                "$.__proto__"
+              ]
+            }
+          },
+          {
+            "text": "{\"__proto__\":\"text\"}",
+            "expected": {
+              "valid": true,
+              "data": {
+                "__proto__": "text"
+              },
+              "paths": []
+            }
+          }
+        ],
+        "changes": [
+          {
+            "path": [
+              "properties",
+              "__proto__",
+              "type"
+            ],
+            "value": "string"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "referenced-definition",
+    "schema": {
+      "definitions": {
+        "value": {
+          "type": "integer"
+        }
+      },
+      "$ref": "#/definitions/value"
+    },
+    "stages": [
+      {
+        "checks": [
+          {
+            "text": "1",
+            "expected": {
+              "valid": true,
+              "data": 1,
+              "paths": []
+            }
+          },
+          {
+            "text": "\"text\"",
+            "expected": {
+              "valid": false,
+              "data": "text",
+              "paths": [
+                "$"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "checks": [
+          {
+            "text": "1",
+            "expected": {
+              "valid": false,
+              "data": 1,
+              "paths": [
+                "$"
+              ]
+            }
+          },
+          {
+            "text": "\"text\"",
+            "expected": {
+              "valid": true,
+              "data": "text",
+              "paths": []
+            }
+          }
+        ],
+        "changes": [
+          {
+            "path": [
+              "definitions",
+              "value",
+              "type"
+            ],
+            "value": "string"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "literal-reference",
+    "schema": {
+      "default": {
+        "target": {
+          "type": "integer"
+        }
+      },
+      "$ref": "#/default/target"
+    },
+    "stages": [
+      {
+        "checks": [
+          {
+            "text": "1",
+            "expected": {
+              "valid": true,
+              "data": 1,
+              "paths": []
+            }
+          }
+        ]
+      },
+      {
+        "checks": [
+          {
+            "text": "1",
+            "expected": {
+              "valid": false,
+              "data": 1,
+              "paths": [
+                "$"
+              ]
+            }
+          },
+          {
+            "text": "\"text\"",
+            "expected": {
+              "valid": true,
+              "data": "text",
+              "paths": []
+            }
+          }
+        ],
+        "changes": [
+          {
+            "path": [
+              "default",
+              "target",
+              "type"
+            ],
+            "value": "string"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "renamed-resource",
+    "schema": {
+      "$id": "root.json",
+      "definitions": {
+        "part": {
+          "$id": "part.json",
+          "type": "integer"
+        }
+      },
+      "$ref": "part.json"
+    },
+    "stages": [
+      {
+        "checks": [
+          {
+            "text": "1",
+            "expected": {
+              "valid": true,
+              "data": 1,
+              "paths": []
+            }
+          }
+        ]
+      },
+      {
+        "checks": [
+          {
+            "text": "1",
+            "expected": {
+              "valid": false,
+              "data": 1,
+              "paths": [
+                "$"
+              ]
+            }
+          },
+          {
+            "text": "\"text\"",
+            "expected": {
+              "valid": true,
+              "data": "text",
+              "paths": []
+            }
+          }
+        ],
+        "changes": [
+          {
+            "path": [
+              "definitions",
+              "part",
+              "$id"
+            ],
+            "value": "next.json"
+          },
+          {
+            "path": [
+              "definitions",
+              "part",
+              "type"
+            ],
+            "value": "string"
+          },
+          {
+            "path": [
+              "$ref"
+            ],
+            "value": "next.json"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "missing-reference-recovery",
+    "schema": {
+      "definitions": {
+        "value": {
+          "type": "integer"
+        }
+      },
+      "$ref": "#/definitions/value"
+    },
+    "stages": [
+      {
+        "checks": [
+          {
+            "text": "1",
+            "expected": {
+              "valid": true,
+              "data": 1,
+              "paths": []
+            }
+          }
+        ]
+      },
+      {
+        "checks": [
+          {
+            "text": "1",
+            "expected": {
+              "lookup_error": true
+            }
+          }
+        ],
+        "changes": [
+          {
+            "path": [
+              "$ref"
+            ],
+            "value": "#/definitions/missing"
+          }
+        ]
+      },
+      {
+        "checks": [
+          {
+            "text": "1",
+            "expected": {
+              "valid": false,
+              "data": 1,
+              "paths": [
+                "$"
+              ]
+            }
+          },
+          {
+            "text": "\"text\"",
+            "expected": {
+              "valid": true,
+              "data": "text",
+              "paths": []
+            }
+          }
+        ],
+        "changes": [
+          {
+            "path": [
+              "definitions",
+              "missing"
+            ],
+            "value": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "boolean-true",
+    "schema": true,
+    "stages": [
+      {
+        "checks": [
+          {
+            "text": "1",
+            "expected": {
+              "valid": true,
+              "data": 1,
+              "paths": []
+            }
+          },
+          {
+            "text": "null",
+            "expected": {
+              "valid": true,
+              "data": null,
+              "paths": []
+            }
+          }
+        ],
+        "invalidate": 2
+      },
+      {
+        "checks": [
+          {
+            "text": "\"text\"",
+            "expected": {
+              "valid": true,
+              "data": "text",
+              "paths": []
+            }
+          }
+        ],
+        "invalidate": 1
+      }
+    ]
+  },
+  {
+    "name": "boolean-false",
+    "schema": false,
+    "stages": [
+      {
+        "checks": [
+          {
+            "text": "1",
+            "expected": {
+              "valid": false,
+              "data": 1,
+              "paths": [
+                "$"
+              ]
+            }
+          },
+          {
+            "text": "null",
+            "expected": {
+              "valid": false,
+              "data": null,
+              "paths": [
+                "$"
+              ]
+            }
+          }
+        ],
+        "invalidate": 2
+      },
+      {
+        "checks": [
+          {
+            "text": "\"text\"",
+            "expected": {
+              "valid": false,
+              "data": "text",
+              "paths": [
+                "$"
+              ]
+            }
+          }
+        ],
+        "invalidate": 1
+      }
+    ]
+  },
+  {
+    "name": "cross-format",
+    "schema": {
+      "properties": {
+        "value": {
+          "type": "integer"
+        }
+      }
+    },
+    "stages": [
+      {
+        "checks": [
+          {
+            "text": "{\"value\":1}",
+            "expected": {
+              "valid": true,
+              "data": {
+                "value": 1
+              },
+              "paths": []
+            }
+          }
+        ]
+      },
+      {
+        "checks": [
+          {
+            "text": "{\"value\":1}",
+            "expected": {
+              "valid": false,
+              "data": {
+                "value": 1
+              },
+              "paths": [
+                "$.value"
+              ]
+            }
+          },
+          {
+            "text": "value: 1",
+            "format": "yaml",
+            "expected": {
+              "valid": false,
+              "data": {
+                "value": 1
+              },
+              "paths": [
+                "$.value"
+              ]
+            }
+          },
+          {
+            "text": "value: text",
+            "format": "yaml",
+            "expected": {
+              "valid": true,
+              "data": {
+                "value": "text"
+              },
+              "paths": []
+            }
+          },
+          {
+            "text": "value=1",
+            "format": "toml",
+            "expected": {
+              "valid": false,
+              "data": {
+                "value": 1
+              },
+              "paths": [
+                "$.value"
+              ]
+            }
+          },
+          {
+            "text": "value=\"text\"",
+            "format": "toml",
+            "expected": {
+              "valid": true,
+              "data": {
+                "value": "text"
+              },
+              "paths": []
+            }
+          },
+          {
+            "text": "{'value':1}",
+            "format": "python",
+            "expected": {
+              "valid": false,
+              "data": {
+                "value": 1
+              },
+              "paths": [
+                "$.value"
+              ]
+            }
+          },
+          {
+            "text": "{'value':'text'}",
+            "format": "python",
+            "expected": {
+              "valid": true,
+              "data": {
+                "value": "text"
+              },
+              "paths": []
+            }
+          }
+        ],
+        "changes": [
+          {
+            "path": [
+              "properties",
+              "value",
+              "type"
+            ],
+            "value": "string"
+          }
+        ]
+      }
+    ]
+  }
+]

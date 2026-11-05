@@ -3,11 +3,15 @@ from __future__ import annotations
 import inspect
 from collections.abc import Awaitable, Callable
 from dataclasses import dataclass, field
-from typing import Any, TypeVar
+from types import CoroutineType, GeneratorType
+from typing import Any, TypeGuard, TypeVar
 
+from outputguard._inputs import is_text, require_schema, require_text
+from outputguard.configuration import attempt_limit, generation_callbacks, select_format
 from outputguard.exceptions import OutputGuardError
 from outputguard.guard import OutputGuard
-from outputguard.models import ValidationError, ValidationResult
+from outputguard.models import Schema, ValidationError, ValidationResult
+from outputguard.strategies import select_strategy_names
 
 T = TypeVar("T")
 
@@ -48,26 +52,61 @@ class GuardedGenerationError(OutputGuardError):
 
 
 GenerateFn = Callable[[str, GuardedGenerateContext], str]
-AsyncGenerateFn = Callable[[str, GuardedGenerateContext], Awaitable[str]]
+AsyncGenerateFn = Callable[[str, GuardedGenerateContext], Awaitable[str] | str]
 AttemptObserver = Callable[[GuardedGenerateAttempt], None]
-AsyncAttemptObserver = Callable[[GuardedGenerateAttempt], Awaitable[None]]
+AsyncAttemptObserver = Callable[[GuardedGenerateAttempt], Awaitable[None] | None]
+
+
+def _check_sync_callback(callback, name):
+    if inspect.iscoroutinefunction(callback) or inspect.iscoroutinefunction(
+        getattr(callback, "__call__", None)  # noqa: B004 - inspect async behavior, not callability
+    ):
+        raise TypeError(f"{name} is asynchronous; use guarded_generate_async")
+
+
+def _close_unstarted_coroutine(value):
+    if type(value) is CoroutineType and inspect.getcoroutinestate(value) == inspect.CORO_CREATED:
+        value.close()
+
+
+def _is_awaitable(value: object) -> TypeGuard[Awaitable[Any]]:
+    actual_type = type(value)
+    return issubclass(actual_type, Awaitable) or (
+        actual_type is GeneratorType and inspect.isawaitable(value)
+    )
+
+
+def _generated_text(value: object) -> str:
+    if not is_text(value):
+        _close_unstarted_coroutine(value)
+        raise TypeError("generate must return a string")
+    return value
 
 
 def guarded_generate(
     *,
     prompt: str,
-    schema: dict,
+    schema: Schema,
     generate: GenerateFn,
     guard: OutputGuard | None = None,
-    max_retries: int = 2,
+    max_retries: int | float = 2,
     format: str | None = None,
     repair: bool = True,
     include_message_history: bool = True,
     throw_on_failure: bool = False,
     on_attempt: AttemptObserver | None = None,
 ) -> GuardedGenerateResult:
-    active_guard = guard or OutputGuard(format=format or "json")
-    data_format = format or active_guard.format
+    max_retries = attempt_limit(max_retries, "max_retries")
+    generation_callbacks(generate, on_attempt)
+    _check_sync_callback(generate, "generate")
+    _check_sync_callback(on_attempt, "on_attempt")
+    active_guard = guard if guard is not None else OutputGuard()
+    data_format = select_format(format, active_guard.format)
+    require_text(prompt, "prompt")
+    require_schema(schema)
+    if repair:
+        attempt_limit(active_guard.max_repair_attempts, "max_repair_attempts")
+        select_strategy_names(active_guard.strategies)
     attempts: list[GuardedGenerateAttempt] = []
     current_prompt = prompt
     previous_text: str | None = None
@@ -80,7 +119,7 @@ def guarded_generate(
             previous_text=previous_text,
             previous_result=previous_result,
         )
-        raw_text = generate(current_prompt, context)
+        raw_text = _generated_text(generate(current_prompt, context))
         result = (
             active_guard.validate_and_repair(raw_text, schema, data_format)
             if repair
@@ -93,8 +132,11 @@ def guarded_generate(
             result=result,
         )
         attempts.append(attempt)
-        if on_attempt:
-            on_attempt(attempt)
+        if on_attempt is not None:
+            observed = on_attempt(attempt)
+            if _is_awaitable(observed):
+                _close_unstarted_coroutine(observed)
+                raise TypeError("on_attempt returned an awaitable; use guarded_generate_async")
 
         if result.valid:
             return GuardedGenerateResult(
@@ -140,18 +182,25 @@ def guarded_generate(
 async def guarded_generate_async(
     *,
     prompt: str,
-    schema: dict,
+    schema: Schema,
     generate: AsyncGenerateFn,
     guard: OutputGuard | None = None,
-    max_retries: int = 2,
+    max_retries: int | float = 2,
     format: str | None = None,
     repair: bool = True,
     include_message_history: bool = True,
     throw_on_failure: bool = False,
     on_attempt: AsyncAttemptObserver | None = None,
 ) -> GuardedGenerateResult:
-    active_guard = guard or OutputGuard(format=format or "json")
-    data_format = format or active_guard.format
+    max_retries = attempt_limit(max_retries, "max_retries")
+    generation_callbacks(generate, on_attempt)
+    active_guard = guard if guard is not None else OutputGuard()
+    data_format = select_format(format, active_guard.format)
+    require_text(prompt, "prompt")
+    require_schema(schema)
+    if repair:
+        attempt_limit(active_guard.max_repair_attempts, "max_repair_attempts")
+        select_strategy_names(active_guard.strategies)
     attempts: list[GuardedGenerateAttempt] = []
     current_prompt = prompt
     previous_text: str | None = None
@@ -164,7 +213,8 @@ async def guarded_generate_async(
             previous_text=previous_text,
             previous_result=previous_result,
         )
-        raw_text = await generate(current_prompt, context)
+        generated = generate(current_prompt, context)
+        raw_text = _generated_text(await generated if _is_awaitable(generated) else generated)
         result = (
             active_guard.validate_and_repair(raw_text, schema, data_format)
             if repair
@@ -177,9 +227,9 @@ async def guarded_generate_async(
             result=result,
         )
         attempts.append(attempt)
-        if on_attempt:
+        if on_attempt is not None:
             observed = on_attempt(attempt)
-            if inspect.isawaitable(observed):
+            if _is_awaitable(observed):
                 await observed
 
         if result.valid:

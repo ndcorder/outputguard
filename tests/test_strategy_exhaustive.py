@@ -278,10 +278,6 @@ class TestFixCommas:
     def test_comma_in_string_values_preserved(self):
         text = '{"a": "1,2,3,"}'
         result = fix_commas(text)
-        # The comma before } is inside a string, but fix_commas uses a simple
-        # regex so it doesn't distinguish. The key insight: ," is not ,}
-        # so the regex ,\s*} won't match inside the string since the comma
-        # is followed by " not }.
         assert json.loads(result) == {"a": "1,2,3,"}
 
     def test_no_trailing_comma_unchanged(self):
@@ -310,18 +306,14 @@ class TestFixCommas:
 
 class TestFixQuotes:
     def test_single_quoted_with_apostrophe(self):
-        text = "{\\x27it\\'s\\x27: \\x27value\\x27}"
-        # Actually test with real single quotes
         text = "{'it\\'s': 'value'}"
         result = fix_quotes(text)
-        assert '"it\'s"' in result
-        assert '"value"' in result
+        assert json.loads(result) == {"it's": "value"}
 
     def test_single_quoted_containing_double_quote(self):
         text = "{'key': 'say \"hello\"'}"
         result = fix_quotes(text)
-        assert '"key"' in result
-        assert '\\"hello\\"' in result or "say" in result
+        assert json.loads(result) == {"key": 'say "hello"'}
 
     def test_mixed_quoting_styles(self):
         text = "{'a': 1, \"b\": 2, 'c': 3}"
@@ -341,7 +333,7 @@ class TestFixQuotes:
     def test_single_quoted_with_backslash(self):
         text = "{'path': 'C:\\\\Users'}"
         result = fix_quotes(text)
-        assert '"path"' in result
+        assert json.loads(result) == {"path": "C:\\Users"}
 
     def test_nested_single_quoted_objects(self):
         text = "{'a': {'b': 'c'}}"
@@ -384,25 +376,18 @@ class TestFixQuotes:
 
 class TestFixKeys:
     @pytest.mark.parametrize(
-        "key,expected_key",
-        [
-            ("$id", '"$id"'),
-            ("_private", '"_private"'),
-            ("my.dotted.key", '"my.dotted.key"'),
-            ("hyphen-key", '"hyphen-key"'),
-        ],
+        "key",
+        ["$id", "_private", "my.dotted.key", "hyphen-key"],
     )
-    def test_keys_with_special_chars(self, key, expected_key):
+    def test_keys_with_special_chars(self, key):
         text = "{" + key + ": 1}"
         result = fix_keys(text)
-        assert expected_key in result
+        assert json.loads(result) == {key: 1}
 
     def test_js_keyword_keys(self):
         text = "{class: 1, function: 2, return: 3}"
         result = fix_keys(text)
-        assert '"class"' in result
-        assert '"function"' in result
-        assert '"return"' in result
+        assert json.loads(result) == {"class": 1, "function": 2, "return": 3}
 
     def test_number_keys(self):
         # The regex pattern requires keys starting with [a-zA-Z_$]
@@ -413,12 +398,9 @@ class TestFixKeys:
         assert result == text
 
     def test_unicode_key(self):
-        # café starts with 'c' which matches [a-zA-Z_$]
         text = "{café: 1}"
         result = fix_keys(text)
-        # The regex uses [a-zA-Z0-9_.$-]* for continuation
-        # so non-ASCII after first char won't fully match
-        assert result.startswith("{")
+        assert result == text
 
     def test_already_quoted_mixed_with_unquoted(self):
         text = '{"quoted": 1, unquoted: 2}'
@@ -429,9 +411,7 @@ class TestFixKeys:
     def test_deeply_nested_unquoted_keys(self):
         text = "{outer: {inner: {deep: 1}}}"
         result = fix_keys(text)
-        assert '"outer"' in result
-        assert '"inner"' in result
-        assert '"deep"' in result
+        assert json.loads(result) == {"outer": {"inner": {"deep": 1}}}
 
     def test_key_with_url_like_value(self):
         # Ensure colon in value doesn't confuse key detection
@@ -683,8 +663,7 @@ class TestFixNewlines:
         text = '{"text": "line1\r\nline2"}'
         result = fix_newlines(text)
         parsed = json.loads(result)
-        assert "line1" in parsed["text"]
-        assert "line2" in parsed["text"]
+        assert parsed["text"] == "line1\r\nline2"
 
     def test_tab_characters(self):
         text = '{"text": "col1\tcol2"}'
@@ -695,7 +674,7 @@ class TestFixNewlines:
         # Weird but possible
         text = '{"key\nwith\nnewline": "value"}'
         result = fix_newlines(text)
-        assert "\n" not in json.dumps(json.loads(result))
+        assert json.loads(result) == {"key\nwith\nnewline": "value"}
 
     def test_multiple_strings_with_newlines(self):
         text = '{"a": "line1\nline2", "b": "line3\nline4"}'
@@ -735,15 +714,13 @@ class TestFixEllipsis:
         text = "[1, ..., 3]"
         result = fix_ellipsis(text)
         parsed = json.loads(result)
-        assert 1 in parsed
-        assert 3 in parsed
+        assert parsed == [1, 3]
 
     def test_ellipsis_with_comment(self):
         text = "[1, 2, ... // more items\n]"
         result = fix_ellipsis(text)
         parsed = json.loads(result)
-        assert 1 in parsed
-        assert 2 in parsed
+        assert parsed == [1, 2]
 
     def test_ellipsis_in_string_preserved(self):
         text = '{"msg": "and so on..."}'
@@ -837,38 +814,37 @@ class TestFixInnerQuotes:
         text = '{"a": ""hello" world"}'
         result = fix_inner_quotes(text)
         parsed = json.loads(result)
-        assert "hello" in parsed["a"]
+        assert parsed["a"] == '"hello" world'
 
     def test_inner_quotes_at_end_of_value(self):
         text = '{"a": "say "goodbye""}'
         result = fix_inner_quotes(text)
         parsed = json.loads(result)
-        assert "goodbye" in parsed["a"]
+        assert parsed["a"] == 'say "goodbye"'
 
     def test_multiple_inner_quote_pairs(self):
         text = '{"a": "the "quick" brown "fox""}'
         result = fix_inner_quotes(text)
         parsed = json.loads(result)
-        assert "quick" in parsed["a"]
-        assert "fox" in parsed["a"]
+        assert parsed["a"] == 'the "quick" brown "fox"'
 
     def test_inner_quotes_with_special_chars(self):
         text = '{"a": "the "key" is {here}"}'
         result = fix_inner_quotes(text)
         parsed = json.loads(result)
-        assert "key" in parsed["a"]
+        assert parsed["a"] == 'the "key" is {here}'
 
     def test_value_entirely_inner_quoted(self):
         text = '{"a": ""text""}'
         result = fix_inner_quotes(text)
         parsed = json.loads(result)
-        assert "text" in parsed["a"]
+        assert parsed["a"] == '"text"'
 
     def test_adjacent_to_comma(self):
         text = '{"a": "say "hi"", "b": 1}'
         result = fix_inner_quotes(text)
         parsed = json.loads(result)
-        assert "hi" in parsed["a"]
+        assert parsed["a"] == 'say "hi"'
         assert parsed["b"] == 1
 
     def test_no_inner_quotes_unchanged(self):
@@ -880,7 +856,7 @@ class TestFixInnerQuotes:
         text = '{"normal_key": "has "inner" quotes"}'
         result = fix_inner_quotes(text)
         parsed = json.loads(result)
-        assert "inner" in parsed["normal_key"]
+        assert parsed["normal_key"] == 'has "inner" quotes'
 
     def test_empty_value_unchanged(self):
         text = '{"a": ""}'
@@ -891,5 +867,4 @@ class TestFixInnerQuotes:
         text = '{"x": "the "a" val", "y": "the "b" val"}'
         result = fix_inner_quotes(text)
         parsed = json.loads(result)
-        assert "a" in parsed["x"]
-        assert "b" in parsed["y"]
+        assert parsed == {"x": 'the "a" val', "y": 'the "b" val'}

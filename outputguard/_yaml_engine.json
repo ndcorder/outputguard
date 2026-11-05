@@ -1,0 +1,10 @@
+{
+  "yaml_version": "2.9.0",
+  "source_hashes": {
+    "src/yamlProfile.ts": "fb2dd8938307c7dd72c95ef896d7d2b71070faec8759d996e286a08e16910c58",
+    "src/yamlBridge.ts": "30ea08f9a9c75cc785bdf26bc2a832c84e7d2dc4c3497dcdafa1fa989bd86b3c",
+    "src/yamlPatterns.json": "cac49992663fd1032cce30aed8df2e87f7731a0bb09a043551d20d73f33e79a6",
+    "benchmarks/build_yaml_engine.mjs": "64d4e495469c59642ab05085e5850d55090a5ffee542a8884e09a4a33a9ed55b"
+  },
+  "bundle_sha256": "875a39a9e61a32c8e8b7e43d00d5cd6dfb46198dd1d400b8cb57d4cf82e0766f"
+}

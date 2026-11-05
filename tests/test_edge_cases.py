@@ -75,9 +75,6 @@ I hope this helps! Let me know if you need anything else."""
 
     def test_json_with_nan_and_infinity(self):
         text = '{"a": NaN, "b": Infinity, "c": -Infinity}'
-        # Python's json.loads accepts NaN/Infinity natively, so validate
-        # sees this as valid JSON.  The repair strategy correctly replaces
-        # them with null when invoked directly.
         from outputguard.strategies.fix_values import apply
 
         repaired = apply(text)
@@ -85,6 +82,9 @@ I hope this helps! Let me know if you need anything else."""
         assert data["a"] is None
         assert data["b"] is None
         assert data["c"] is None
+        result = outputguard.validate_and_repair(text, {})
+        assert result.repaired and result.valid
+        assert result.data == data
 
     def test_deeply_nested_repair(self):
         schema = {

@@ -2,35 +2,80 @@
 
 from __future__ import annotations
 
+import inspect
+from collections.abc import Sequence
+from types import CoroutineType
 from typing import Literal, overload
 
+from outputguard._inputs import is_text
 from outputguard.formats import FormatParseError, normalize_format, parse_document
 from outputguard.models import RepairResult
 from outputguard.report import RepairReport, StrategyApplication
-from outputguard.strategies import get_strategies
+from outputguard.strategies import Strategy, get_strategies, select_strategy_names
 
 
-@overload
-def repair(text: str, strategies: list[str] | None = ..., *, format: str = ...) -> RepairResult: ...
+def _apply_strategy(name: str, fn: Strategy, text: str) -> StrategyApplication:
+    """A faulty strategy cannot replace text with a non-string or abort later fixes."""
+    try:
+        output = fn(text)
+        if not is_text(output):
+            if (
+                type(output) is CoroutineType
+                and inspect.getcoroutinestate(output) == inspect.CORO_CREATED
+            ):
+                output.close()
+            raise TypeError("Strategy must return a string")
+        return StrategyApplication(name, output != text, text, output)
+    except Exception as error:
+        try:
+            message = str(error) or type(error).__name__
+        except Exception:
+            message = "Strategy failed"
+        return StrategyApplication(name, False, text, text, error=message)
 
 
 @overload
 def repair(
     text: str,
-    strategies: list[str] | None = ...,
+    strategies: Sequence[str] | None = ...,
+    *,
+    report: Literal[False] = False,
+    format: str = ...,
+) -> RepairResult: ...
+
+
+@overload
+def repair(
+    text: str,
+    strategies: Sequence[str] | None = ...,
     *,
     report: Literal[True],
     format: str = ...,
 ) -> tuple[RepairResult, RepairReport]: ...
 
 
+@overload
 def repair(
-    text: str, strategies: list[str] | None = None, *, report: bool = False, format: str = "json"
+    text: str,
+    strategies: Sequence[str] | None = ...,
+    *,
+    report: bool,
+    format: str = ...,
+) -> RepairResult | tuple[RepairResult, RepairReport]: ...
+
+
+def repair(
+    text: str,
+    strategies: Sequence[str] | None = None,
+    *,
+    report: bool = False,
+    format: str = "json",
 ) -> RepairResult | tuple[RepairResult, RepairReport]:
     """Apply repair strategies in order, try to parse after each one.
 
     If report=True, returns a (RepairResult, RepairReport) tuple.
     """
+    selected = select_strategy_names(strategies)
     try:
         parse_document(text, format)
         result = RepairResult(repaired=False, text=text, format=format)
@@ -42,7 +87,7 @@ def repair(
     except FormatParseError:
         pass
 
-    strategy_list = get_strategies(strategies)
+    strategy_list = get_strategies(selected)
     last_error: str = ""
     steps: list[StrategyApplication] = []
 
@@ -53,18 +98,10 @@ def repair(
         current = text
         pre_applied: list[str] = []
         for name, fn in strategy_list:
-            before = current
-            try:
-                current = fn(current)
-            except Exception:
-                current = before
-            changed = current != before
-            steps.append(
-                StrategyApplication(
-                    name=name, changed=changed, input_text=before, output_text=current
-                )
-            )
-            if changed:
+            step = _apply_strategy(name, fn, current)
+            steps.append(step)
+            current = step.output_text
+            if step.changed:
                 pre_applied.append(name)
             try:
                 parse_document(current, format)
@@ -89,16 +126,10 @@ def repair(
     current = text
     applied: list[str] = []
     for name, fn in strategy_list:
-        before = current
-        try:
-            current = fn(current)
-        except Exception:
-            current = before
-        changed = current != before
-        steps.append(
-            StrategyApplication(name=name, changed=changed, input_text=before, output_text=current)
-        )
-        if changed:
+        step = _apply_strategy(name, fn, current)
+        steps.append(step)
+        current = step.output_text
+        if step.changed:
             applied.append(name)
 
     try:
@@ -119,16 +150,10 @@ def repair(
     applied = []
     steps = []
     for name, fn in strategy_list:
-        before = current
-        try:
-            current = fn(current)
-        except Exception:
-            current = before
-        changed = current != before
-        steps.append(
-            StrategyApplication(name=name, changed=changed, input_text=before, output_text=current)
-        )
-        if changed:
+        step = _apply_strategy(name, fn, current)
+        steps.append(step)
+        current = step.output_text
+        if step.changed:
             applied.append(name)
         try:
             parse_document(current, format)

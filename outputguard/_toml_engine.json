@@ -1,0 +1,13 @@
+{
+  "smol_toml_version": "1.9.1",
+  "source_hashes": {
+    "src/tomlDate.ts": "d90e75c522e7bcd6b1aa24a82ded4ba82e761b5d52edee58cdbebf844868617f",
+    "src/tomlParserEntry.ts": "af56a474550f509d730ac383dd719ede0e9f20193a4d55469ab36322786dec7b",
+    "src/tomlProfile.ts": "0e58ecf65916019eb0b0caaf7c43d2abd40f4bcead6d5d46f49efa65d33825ac",
+    "src/tomlBridge.ts": "f4b0226c5968fd2c2f6e159885dc27c0981d75fef7ea93c9082cd60083511d7c",
+    "src/vendor/tomlParser.d.ts": "cd7c467ba25e159a1bc8b035e512eaa5ab0b4b034c596539de082b67bd029fde",
+    "benchmarks/build_toml_engine.mjs": "2fe555f500d1429ea5d3edd628bb1131403d9844ec332aebdc09a4502163d978"
+  },
+  "parser_sha256": "e803a5eae7d0a0ee777b38ddd43e49a57a9035c69acaebf95b5e0ecd53a1bb03",
+  "bundle_sha256": "5e5e46ca143fa06d3ca679b5188a548476092387e0146253e7c0e97530d36d9c"
+}

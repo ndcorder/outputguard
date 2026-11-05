@@ -114,7 +114,7 @@ def test_guarded_generate_uses_output_guard_defaults_and_observer() -> None:
 
 
 def test_guarded_generate_raises_structured_error_when_requested() -> None:
-    with pytest.raises(GuardedGenerationError) as exc_info:
+    with pytest.raises(outputguard.OutputGuardError) as exc_info:
         outputguard.guarded_generate(
             prompt="Return user JSON",
             schema=SIMPLE_SCHEMA,
@@ -123,6 +123,7 @@ def test_guarded_generate_raises_structured_error_when_requested() -> None:
             throw_on_failure=True,
         )
 
+    assert isinstance(exc_info.value, GuardedGenerationError)
     assert exc_info.value.result.valid is False
     assert exc_info.value.result.exhausted is True
 
@@ -146,3 +147,11 @@ def test_async_guarded_generate_supports_async_provider() -> None:
     assert result.valid is True
     assert result.data == {"name": "Alice", "age": 30}
     assert result.format == "yaml"
+
+
+def test_generation_error_preserves_the_supplied_result():
+    payload = outputguard.GuardedGenerateResult(valid=False, exhausted=True)
+    error = GuardedGenerationError("failed", payload)
+    assert isinstance(error, outputguard.OutputGuardError)
+    assert str(error) == "failed"
+    assert error.result is payload

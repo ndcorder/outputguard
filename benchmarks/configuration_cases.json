@@ -1,0 +1,1552 @@
+{
+  "formats": [
+    {
+      "name": "alias-json",
+      "value": "json",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "alias-JSON",
+      "value": "JSON",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "alias-Json",
+      "value": "Json",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "alias-yaml",
+      "value": "yaml",
+      "valid": true,
+      "canonical": "yaml"
+    },
+    {
+      "name": "alias-yml",
+      "value": "yml",
+      "valid": true,
+      "canonical": "yaml"
+    },
+    {
+      "name": "alias-YAML",
+      "value": "YAML",
+      "valid": true,
+      "canonical": "yaml"
+    },
+    {
+      "name": "alias-toml",
+      "value": "toml",
+      "valid": true,
+      "canonical": "toml"
+    },
+    {
+      "name": "alias-TOML",
+      "value": "TOML",
+      "valid": true,
+      "canonical": "toml"
+    },
+    {
+      "name": "alias-python",
+      "value": "python",
+      "valid": true,
+      "canonical": "python"
+    },
+    {
+      "name": "alias-Python",
+      "value": "Python",
+      "valid": true,
+      "canonical": "python"
+    },
+    {
+      "name": "alias-py",
+      "value": "py",
+      "valid": true,
+      "canonical": "python"
+    },
+    {
+      "name": "alias-literal",
+      "value": "literal",
+      "valid": true,
+      "canonical": "python"
+    },
+    {
+      "name": "alias-python-literal",
+      "value": "python-literal",
+      "valid": true,
+      "canonical": "python"
+    },
+    {
+      "name": "alias-PYTHON-LITERAL",
+      "value": "PYTHON-LITERAL",
+      "valid": true,
+      "canonical": "python"
+    },
+    {
+      "name": "alias-auto",
+      "value": "auto",
+      "valid": true,
+      "canonical": "auto"
+    },
+    {
+      "name": "alias-AUTO",
+      "value": "AUTO",
+      "valid": true,
+      "canonical": "auto"
+    },
+    {
+      "name": "alias-forced-json-off",
+      "value": "forced-json-off",
+      "valid": true,
+      "canonical": "auto"
+    },
+    {
+      "name": "alias-forced_json_off",
+      "value": "forced_json_off",
+      "valid": true,
+      "canonical": "auto"
+    },
+    {
+      "name": "alias-FORCED-JSON-OFF",
+      "value": "FORCED-JSON-OFF",
+      "valid": true,
+      "canonical": "auto"
+    },
+    {
+      "name": "trim-0009-prefix",
+      "value": "\tJSON",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "trim-0009-suffix",
+      "value": "JSON\t",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "trim-0009-both",
+      "value": "\tJSON\t",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "blank-0009",
+      "value": "\t",
+      "valid": false
+    },
+    {
+      "name": "inner-0009",
+      "value": "js\ton",
+      "valid": false
+    },
+    {
+      "name": "trim-000a-prefix",
+      "value": "\nJSON",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "trim-000a-suffix",
+      "value": "JSON\n",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "trim-000a-both",
+      "value": "\nJSON\n",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "blank-000a",
+      "value": "\n",
+      "valid": false
+    },
+    {
+      "name": "inner-000a",
+      "value": "js\non",
+      "valid": false
+    },
+    {
+      "name": "trim-000b-prefix",
+      "value": "\u000bJSON",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "trim-000b-suffix",
+      "value": "JSON\u000b",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "trim-000b-both",
+      "value": "\u000bJSON\u000b",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "blank-000b",
+      "value": "\u000b",
+      "valid": false
+    },
+    {
+      "name": "inner-000b",
+      "value": "js\u000bon",
+      "valid": false
+    },
+    {
+      "name": "trim-000c-prefix",
+      "value": "\fJSON",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "trim-000c-suffix",
+      "value": "JSON\f",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "trim-000c-both",
+      "value": "\fJSON\f",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "blank-000c",
+      "value": "\f",
+      "valid": false
+    },
+    {
+      "name": "inner-000c",
+      "value": "js\fon",
+      "valid": false
+    },
+    {
+      "name": "trim-000d-prefix",
+      "value": "\rJSON",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "trim-000d-suffix",
+      "value": "JSON\r",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "trim-000d-both",
+      "value": "\rJSON\r",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "blank-000d",
+      "value": "\r",
+      "valid": false
+    },
+    {
+      "name": "inner-000d",
+      "value": "js\ron",
+      "valid": false
+    },
+    {
+      "name": "trim-0020-prefix",
+      "value": " JSON",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "trim-0020-suffix",
+      "value": "JSON ",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "trim-0020-both",
+      "value": " JSON ",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "blank-0020",
+      "value": " ",
+      "valid": false
+    },
+    {
+      "name": "inner-0020",
+      "value": "js on",
+      "valid": false
+    },
+    {
+      "name": "trim-00a0-prefix",
+      "value": "\u00a0JSON",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "trim-00a0-suffix",
+      "value": "JSON\u00a0",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "trim-00a0-both",
+      "value": "\u00a0JSON\u00a0",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "blank-00a0",
+      "value": "\u00a0",
+      "valid": false
+    },
+    {
+      "name": "inner-00a0",
+      "value": "js\u00a0on",
+      "valid": false
+    },
+    {
+      "name": "trim-1680-prefix",
+      "value": "\u1680JSON",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "trim-1680-suffix",
+      "value": "JSON\u1680",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "trim-1680-both",
+      "value": "\u1680JSON\u1680",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "blank-1680",
+      "value": "\u1680",
+      "valid": false
+    },
+    {
+      "name": "inner-1680",
+      "value": "js\u1680on",
+      "valid": false
+    },
+    {
+      "name": "trim-2000-prefix",
+      "value": "\u2000JSON",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "trim-2000-suffix",
+      "value": "JSON\u2000",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "trim-2000-both",
+      "value": "\u2000JSON\u2000",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "blank-2000",
+      "value": "\u2000",
+      "valid": false
+    },
+    {
+      "name": "inner-2000",
+      "value": "js\u2000on",
+      "valid": false
+    },
+    {
+      "name": "trim-2001-prefix",
+      "value": "\u2001JSON",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "trim-2001-suffix",
+      "value": "JSON\u2001",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "trim-2001-both",
+      "value": "\u2001JSON\u2001",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "blank-2001",
+      "value": "\u2001",
+      "valid": false
+    },
+    {
+      "name": "inner-2001",
+      "value": "js\u2001on",
+      "valid": false
+    },
+    {
+      "name": "trim-2002-prefix",
+      "value": "\u2002JSON",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "trim-2002-suffix",
+      "value": "JSON\u2002",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "trim-2002-both",
+      "value": "\u2002JSON\u2002",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "blank-2002",
+      "value": "\u2002",
+      "valid": false
+    },
+    {
+      "name": "inner-2002",
+      "value": "js\u2002on",
+      "valid": false
+    },
+    {
+      "name": "trim-2003-prefix",
+      "value": "\u2003JSON",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "trim-2003-suffix",
+      "value": "JSON\u2003",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "trim-2003-both",
+      "value": "\u2003JSON\u2003",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "blank-2003",
+      "value": "\u2003",
+      "valid": false
+    },
+    {
+      "name": "inner-2003",
+      "value": "js\u2003on",
+      "valid": false
+    },
+    {
+      "name": "trim-2004-prefix",
+      "value": "\u2004JSON",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "trim-2004-suffix",
+      "value": "JSON\u2004",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "trim-2004-both",
+      "value": "\u2004JSON\u2004",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "blank-2004",
+      "value": "\u2004",
+      "valid": false
+    },
+    {
+      "name": "inner-2004",
+      "value": "js\u2004on",
+      "valid": false
+    },
+    {
+      "name": "trim-2005-prefix",
+      "value": "\u2005JSON",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "trim-2005-suffix",
+      "value": "JSON\u2005",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "trim-2005-both",
+      "value": "\u2005JSON\u2005",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "blank-2005",
+      "value": "\u2005",
+      "valid": false
+    },
+    {
+      "name": "inner-2005",
+      "value": "js\u2005on",
+      "valid": false
+    },
+    {
+      "name": "trim-2006-prefix",
+      "value": "\u2006JSON",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "trim-2006-suffix",
+      "value": "JSON\u2006",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "trim-2006-both",
+      "value": "\u2006JSON\u2006",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "blank-2006",
+      "value": "\u2006",
+      "valid": false
+    },
+    {
+      "name": "inner-2006",
+      "value": "js\u2006on",
+      "valid": false
+    },
+    {
+      "name": "trim-2007-prefix",
+      "value": "\u2007JSON",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "trim-2007-suffix",
+      "value": "JSON\u2007",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "trim-2007-both",
+      "value": "\u2007JSON\u2007",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "blank-2007",
+      "value": "\u2007",
+      "valid": false
+    },
+    {
+      "name": "inner-2007",
+      "value": "js\u2007on",
+      "valid": false
+    },
+    {
+      "name": "trim-2008-prefix",
+      "value": "\u2008JSON",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "trim-2008-suffix",
+      "value": "JSON\u2008",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "trim-2008-both",
+      "value": "\u2008JSON\u2008",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "blank-2008",
+      "value": "\u2008",
+      "valid": false
+    },
+    {
+      "name": "inner-2008",
+      "value": "js\u2008on",
+      "valid": false
+    },
+    {
+      "name": "trim-2009-prefix",
+      "value": "\u2009JSON",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "trim-2009-suffix",
+      "value": "JSON\u2009",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "trim-2009-both",
+      "value": "\u2009JSON\u2009",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "blank-2009",
+      "value": "\u2009",
+      "valid": false
+    },
+    {
+      "name": "inner-2009",
+      "value": "js\u2009on",
+      "valid": false
+    },
+    {
+      "name": "trim-200a-prefix",
+      "value": "\u200aJSON",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "trim-200a-suffix",
+      "value": "JSON\u200a",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "trim-200a-both",
+      "value": "\u200aJSON\u200a",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "blank-200a",
+      "value": "\u200a",
+      "valid": false
+    },
+    {
+      "name": "inner-200a",
+      "value": "js\u200aon",
+      "valid": false
+    },
+    {
+      "name": "trim-2028-prefix",
+      "value": "\u2028JSON",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "trim-2028-suffix",
+      "value": "JSON\u2028",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "trim-2028-both",
+      "value": "\u2028JSON\u2028",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "blank-2028",
+      "value": "\u2028",
+      "valid": false
+    },
+    {
+      "name": "inner-2028",
+      "value": "js\u2028on",
+      "valid": false
+    },
+    {
+      "name": "trim-2029-prefix",
+      "value": "\u2029JSON",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "trim-2029-suffix",
+      "value": "JSON\u2029",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "trim-2029-both",
+      "value": "\u2029JSON\u2029",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "blank-2029",
+      "value": "\u2029",
+      "valid": false
+    },
+    {
+      "name": "inner-2029",
+      "value": "js\u2029on",
+      "valid": false
+    },
+    {
+      "name": "trim-202f-prefix",
+      "value": "\u202fJSON",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "trim-202f-suffix",
+      "value": "JSON\u202f",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "trim-202f-both",
+      "value": "\u202fJSON\u202f",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "blank-202f",
+      "value": "\u202f",
+      "valid": false
+    },
+    {
+      "name": "inner-202f",
+      "value": "js\u202fon",
+      "valid": false
+    },
+    {
+      "name": "trim-205f-prefix",
+      "value": "\u205fJSON",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "trim-205f-suffix",
+      "value": "JSON\u205f",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "trim-205f-both",
+      "value": "\u205fJSON\u205f",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "blank-205f",
+      "value": "\u205f",
+      "valid": false
+    },
+    {
+      "name": "inner-205f",
+      "value": "js\u205fon",
+      "valid": false
+    },
+    {
+      "name": "trim-3000-prefix",
+      "value": "\u3000JSON",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "trim-3000-suffix",
+      "value": "JSON\u3000",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "trim-3000-both",
+      "value": "\u3000JSON\u3000",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "blank-3000",
+      "value": "\u3000",
+      "valid": false
+    },
+    {
+      "name": "inner-3000",
+      "value": "js\u3000on",
+      "valid": false
+    },
+    {
+      "name": "trim-feff-prefix",
+      "value": "\ufeffJSON",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "trim-feff-suffix",
+      "value": "JSON\ufeff",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "trim-feff-both",
+      "value": "\ufeffJSON\ufeff",
+      "valid": true,
+      "canonical": "json"
+    },
+    {
+      "name": "blank-feff",
+      "value": "\ufeff",
+      "valid": false
+    },
+    {
+      "name": "inner-feff",
+      "value": "js\ufeffon",
+      "valid": false
+    },
+    {
+      "name": "non-trim-0000-prefix",
+      "value": "\u0000json",
+      "valid": false
+    },
+    {
+      "name": "non-trim-0000-suffix",
+      "value": "json\u0000",
+      "valid": false
+    },
+    {
+      "name": "non-trim-0000-both",
+      "value": "\u0000json\u0000",
+      "valid": false
+    },
+    {
+      "name": "non-trim-001c-prefix",
+      "value": "\u001cjson",
+      "valid": false
+    },
+    {
+      "name": "non-trim-001c-suffix",
+      "value": "json\u001c",
+      "valid": false
+    },
+    {
+      "name": "non-trim-001c-both",
+      "value": "\u001cjson\u001c",
+      "valid": false
+    },
+    {
+      "name": "non-trim-001d-prefix",
+      "value": "\u001djson",
+      "valid": false
+    },
+    {
+      "name": "non-trim-001d-suffix",
+      "value": "json\u001d",
+      "valid": false
+    },
+    {
+      "name": "non-trim-001d-both",
+      "value": "\u001djson\u001d",
+      "valid": false
+    },
+    {
+      "name": "non-trim-001e-prefix",
+      "value": "\u001ejson",
+      "valid": false
+    },
+    {
+      "name": "non-trim-001e-suffix",
+      "value": "json\u001e",
+      "valid": false
+    },
+    {
+      "name": "non-trim-001e-both",
+      "value": "\u001ejson\u001e",
+      "valid": false
+    },
+    {
+      "name": "non-trim-001f-prefix",
+      "value": "\u001fjson",
+      "valid": false
+    },
+    {
+      "name": "non-trim-001f-suffix",
+      "value": "json\u001f",
+      "valid": false
+    },
+    {
+      "name": "non-trim-001f-both",
+      "value": "\u001fjson\u001f",
+      "valid": false
+    },
+    {
+      "name": "non-trim-0085-prefix",
+      "value": "\u0085json",
+      "valid": false
+    },
+    {
+      "name": "non-trim-0085-suffix",
+      "value": "json\u0085",
+      "valid": false
+    },
+    {
+      "name": "non-trim-0085-both",
+      "value": "\u0085json\u0085",
+      "valid": false
+    },
+    {
+      "name": "non-trim-180e-prefix",
+      "value": "\u180ejson",
+      "valid": false
+    },
+    {
+      "name": "non-trim-180e-suffix",
+      "value": "json\u180e",
+      "valid": false
+    },
+    {
+      "name": "non-trim-180e-both",
+      "value": "\u180ejson\u180e",
+      "valid": false
+    },
+    {
+      "name": "non-trim-200b-prefix",
+      "value": "\u200bjson",
+      "valid": false
+    },
+    {
+      "name": "non-trim-200b-suffix",
+      "value": "json\u200b",
+      "valid": false
+    },
+    {
+      "name": "non-trim-200b-both",
+      "value": "\u200bjson\u200b",
+      "valid": false
+    },
+    {
+      "name": "non-trim-2060-prefix",
+      "value": "\u2060json",
+      "valid": false
+    },
+    {
+      "name": "non-trim-2060-suffix",
+      "value": "json\u2060",
+      "valid": false
+    },
+    {
+      "name": "non-trim-2060-both",
+      "value": "\u2060json\u2060",
+      "valid": false
+    },
+    {
+      "name": "non-trim-d800-prefix",
+      "value": "\ud800json",
+      "valid": false
+    },
+    {
+      "name": "non-trim-d800-suffix",
+      "value": "json\ud800",
+      "valid": false
+    },
+    {
+      "name": "non-trim-d800-both",
+      "value": "\ud800json\ud800",
+      "valid": false
+    },
+    {
+      "name": "non-trim-dfff-prefix",
+      "value": "\udfffjson",
+      "valid": false
+    },
+    {
+      "name": "non-trim-dfff-suffix",
+      "value": "json\udfff",
+      "valid": false
+    },
+    {
+      "name": "non-trim-dfff-both",
+      "value": "\udfffjson\udfff",
+      "valid": false
+    },
+    {
+      "name": "unsupported-0",
+      "value": "",
+      "valid": false
+    },
+    {
+      "name": "unsupported-1",
+      "value": "    ",
+      "valid": false
+    },
+    {
+      "name": "unsupported-2",
+      "value": "j son",
+      "valid": false
+    },
+    {
+      "name": "unsupported-3",
+      "value": "json5",
+      "valid": false
+    },
+    {
+      "name": "unsupported-4",
+      "value": "jsonl",
+      "valid": false
+    },
+    {
+      "name": "unsupported-5",
+      "value": "js",
+      "valid": false
+    },
+    {
+      "name": "unsupported-6",
+      "value": "constructor",
+      "valid": false
+    },
+    {
+      "name": "unsupported-7",
+      "value": "__proto__",
+      "valid": false
+    },
+    {
+      "name": "unsupported-8",
+      "value": "toString",
+      "valid": false
+    },
+    {
+      "name": "unsupported-9",
+      "value": "hasOwnProperty",
+      "valid": false
+    },
+    {
+      "name": "unsupported-10",
+      "value": "yamlx",
+      "valid": false
+    },
+    {
+      "name": "unsupported-11",
+      "value": false,
+      "valid": false
+    },
+    {
+      "name": "unsupported-12",
+      "value": true,
+      "valid": false
+    },
+    {
+      "name": "unsupported-13",
+      "value": 0,
+      "valid": false
+    },
+    {
+      "name": "unsupported-14",
+      "value": 1,
+      "valid": false
+    },
+    {
+      "name": "unsupported-15",
+      "value": [],
+      "valid": false
+    },
+    {
+      "name": "unsupported-16",
+      "value": {},
+      "valid": false
+    },
+    {
+      "name": "unsupported-17",
+      "value": [
+        "json"
+      ],
+      "valid": false
+    }
+  ],
+  "attempt_limits": [
+    {
+      "name": "zero",
+      "value": 0,
+      "valid": true,
+      "normalized": 0
+    },
+    {
+      "name": "negative-zero",
+      "value": -0.0,
+      "valid": true,
+      "normalized": 0
+    },
+    {
+      "name": "one",
+      "value": 1,
+      "valid": true,
+      "normalized": 1
+    },
+    {
+      "name": "two",
+      "value": 2,
+      "valid": true,
+      "normalized": 2
+    },
+    {
+      "name": "three",
+      "value": 3,
+      "valid": true,
+      "normalized": 3
+    },
+    {
+      "name": "integral-float",
+      "value": 3.0,
+      "valid": true,
+      "normalized": 3
+    },
+    {
+      "name": "max-safe",
+      "value": 9007199254740991,
+      "valid": true,
+      "normalized": 9007199254740991
+    },
+    {
+      "name": "negative",
+      "value": -1,
+      "valid": false
+    },
+    {
+      "name": "negative-fraction",
+      "value": -0.5,
+      "valid": false
+    },
+    {
+      "name": "fraction",
+      "value": 0.5,
+      "valid": false
+    },
+    {
+      "name": "positive-fraction",
+      "value": 1.5,
+      "valid": false
+    },
+    {
+      "name": "unsafe",
+      "value": 9007199254740992,
+      "valid": false
+    },
+    {
+      "name": "unsafe-odd",
+      "value": 9007199254740993,
+      "valid": false
+    },
+    {
+      "name": "large",
+      "value": 1e+40,
+      "valid": false
+    },
+    {
+      "name": "false",
+      "value": false,
+      "valid": false
+    },
+    {
+      "name": "true",
+      "value": true,
+      "valid": false
+    },
+    {
+      "name": "null",
+      "value": null,
+      "valid": false
+    },
+    {
+      "name": "empty",
+      "value": "",
+      "valid": false
+    },
+    {
+      "name": "numeric-string",
+      "value": "2",
+      "valid": false
+    },
+    {
+      "name": "float-string",
+      "value": "2.0",
+      "valid": false
+    },
+    {
+      "name": "array",
+      "value": [],
+      "valid": false
+    },
+    {
+      "name": "object",
+      "value": {},
+      "valid": false
+    }
+  ],
+  "callback_values": [
+    {
+      "name": "null",
+      "value": null,
+      "observer_valid": true
+    },
+    {
+      "name": "false",
+      "value": false,
+      "observer_valid": false
+    },
+    {
+      "name": "true",
+      "value": true,
+      "observer_valid": false
+    },
+    {
+      "name": "zero",
+      "value": 0,
+      "observer_valid": false
+    },
+    {
+      "name": "one",
+      "value": 1,
+      "observer_valid": false
+    },
+    {
+      "name": "string",
+      "value": "callback",
+      "observer_valid": false
+    },
+    {
+      "name": "array",
+      "value": [],
+      "observer_valid": false
+    },
+    {
+      "name": "object",
+      "value": {},
+      "observer_valid": false
+    }
+  ],
+  "provider_results": [
+    {
+      "name": "null",
+      "value": null
+    },
+    {
+      "name": "false",
+      "value": false
+    },
+    {
+      "name": "true",
+      "value": true
+    },
+    {
+      "name": "zero",
+      "value": 0
+    },
+    {
+      "name": "one",
+      "value": 1
+    },
+    {
+      "name": "array",
+      "value": []
+    },
+    {
+      "name": "object",
+      "value": {}
+    }
+  ],
+  "strategy_selections": [
+    {
+      "name": "defaults",
+      "value": null,
+      "valid": true,
+      "selected": [
+        "fix_encoding",
+        "strip_fences",
+        "extract_json",
+        "remove_comments",
+        "fix_commas",
+        "fix_quotes",
+        "fix_keys",
+        "fix_values",
+        "fix_booleans",
+        "fix_truncated",
+        "fix_ellipsis",
+        "fix_unicode",
+        "fix_inner_quotes",
+        "fix_closers",
+        "fix_newlines"
+      ]
+    },
+    {
+      "name": "disabled",
+      "value": [],
+      "valid": true,
+      "selected": []
+    },
+    {
+      "name": "single",
+      "value": [
+        "fix_commas"
+      ],
+      "valid": true,
+      "selected": [
+        "fix_commas"
+      ]
+    },
+    {
+      "name": "duplicates",
+      "value": [
+        "fix_commas",
+        "fix_commas",
+        "fix_commas"
+      ],
+      "valid": true,
+      "selected": [
+        "fix_commas"
+      ]
+    },
+    {
+      "name": "registry-order",
+      "value": [
+        "fix_quotes",
+        "fix_commas",
+        "strip_fences",
+        "fix_commas"
+      ],
+      "valid": true,
+      "selected": [
+        "strip_fences",
+        "fix_commas",
+        "fix_quotes"
+      ]
+    },
+    {
+      "name": "without-required-fix",
+      "value": [
+        "strip_fences"
+      ],
+      "valid": true,
+      "selected": [
+        "strip_fences"
+      ]
+    },
+    {
+      "name": "all-reversed",
+      "value": [
+        "fix_newlines",
+        "fix_closers",
+        "fix_inner_quotes",
+        "fix_unicode",
+        "fix_ellipsis",
+        "fix_truncated",
+        "fix_booleans",
+        "fix_values",
+        "fix_keys",
+        "fix_quotes",
+        "fix_commas",
+        "remove_comments",
+        "extract_json",
+        "strip_fences",
+        "fix_encoding"
+      ],
+      "valid": true,
+      "selected": [
+        "fix_encoding",
+        "strip_fences",
+        "extract_json",
+        "remove_comments",
+        "fix_commas",
+        "fix_quotes",
+        "fix_keys",
+        "fix_values",
+        "fix_booleans",
+        "fix_truncated",
+        "fix_ellipsis",
+        "fix_unicode",
+        "fix_inner_quotes",
+        "fix_closers",
+        "fix_newlines"
+      ]
+    },
+    {
+      "name": "string",
+      "value": "fix_commas",
+      "valid": false,
+      "error": "strategy_type"
+    },
+    {
+      "name": "empty-string",
+      "value": "",
+      "valid": false,
+      "error": "strategy_type"
+    },
+    {
+      "name": "boolean",
+      "value": false,
+      "valid": false,
+      "error": "strategy_type"
+    },
+    {
+      "name": "integer",
+      "value": 1,
+      "valid": false,
+      "error": "strategy_type"
+    },
+    {
+      "name": "number",
+      "value": 1.5,
+      "valid": false,
+      "error": "strategy_type"
+    },
+    {
+      "name": "object",
+      "value": {},
+      "valid": false,
+      "error": "strategy_type"
+    },
+    {
+      "name": "array-like",
+      "value": {
+        "0": "fix_commas",
+        "length": 1
+      },
+      "valid": false,
+      "error": "strategy_type"
+    },
+    {
+      "name": "element-null",
+      "value": [
+        "fix_commas",
+        null
+      ],
+      "valid": false,
+      "error": "strategy_type"
+    },
+    {
+      "name": "element-boolean",
+      "value": [
+        "fix_commas",
+        true
+      ],
+      "valid": false,
+      "error": "strategy_type"
+    },
+    {
+      "name": "element-integer",
+      "value": [
+        "fix_commas",
+        0
+      ],
+      "valid": false,
+      "error": "strategy_type"
+    },
+    {
+      "name": "element-number",
+      "value": [
+        "fix_commas",
+        1.5
+      ],
+      "valid": false,
+      "error": "strategy_type"
+    },
+    {
+      "name": "element-object",
+      "value": [
+        "fix_commas",
+        {}
+      ],
+      "valid": false,
+      "error": "strategy_type"
+    },
+    {
+      "name": "element-array",
+      "value": [
+        "fix_commas",
+        []
+      ],
+      "valid": false,
+      "error": "strategy_type"
+    },
+    {
+      "name": "typo",
+      "value": [
+        "fix_commas",
+        "fix_comma"
+      ],
+      "valid": false,
+      "error": "strategy_name"
+    },
+    {
+      "name": "empty",
+      "value": [
+        "fix_commas",
+        ""
+      ],
+      "valid": false,
+      "error": "strategy_name"
+    },
+    {
+      "name": "case",
+      "value": [
+        "fix_commas",
+        "FIX_COMMAS"
+      ],
+      "valid": false,
+      "error": "strategy_name"
+    },
+    {
+      "name": "padded",
+      "value": [
+        "fix_commas",
+        " fix_commas "
+      ],
+      "valid": false,
+      "error": "strategy_name"
+    },
+    {
+      "name": "substring",
+      "value": [
+        "fix_commas",
+        "commas"
+      ],
+      "valid": false,
+      "error": "strategy_name"
+    },
+    {
+      "name": "prototype",
+      "value": [
+        "fix_commas",
+        "__proto__"
+      ],
+      "valid": false,
+      "error": "strategy_name"
+    },
+    {
+      "name": "constructor",
+      "value": [
+        "fix_commas",
+        "constructor"
+      ],
+      "valid": false,
+      "error": "strategy_name"
+    },
+    {
+      "name": "newline",
+      "value": [
+        "fix_commas",
+        "fix_commas\n"
+      ],
+      "valid": false,
+      "error": "strategy_name"
+    }
+  ]
+}

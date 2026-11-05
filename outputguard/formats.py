@@ -4,13 +4,9 @@ import ast
 import json
 from typing import Any, Literal, TypeAlias
 
-import yaml
-
-try:  # pragma: no cover - Python version dependent import
-    import tomllib  # type: ignore[import-not-found]
-except ModuleNotFoundError:  # pragma: no cover - covered on Python 3.10
-    import tomli as tomllib  # type: ignore[no-redef]
-
+from outputguard._inputs import require_text
+from outputguard.toml_profile import load_toml
+from outputguard.yaml_profile import load_yaml
 
 Format: TypeAlias = Literal["json", "yaml", "toml", "python", "auto", "forced-json-off"]
 CanonicalFormat: TypeAlias = Literal["json", "yaml", "toml", "python", "auto"]
@@ -22,10 +18,12 @@ CLI_FORMAT_CHOICES = (
     "yml",
     "toml",
     "python",
+    "py",
     "python-literal",
     "literal",
     "auto",
     "forced-json-off",
+    "forced_json_off",
 )
 
 _ALIASES: dict[str, CanonicalFormat] = {
@@ -47,8 +45,25 @@ class FormatParseError(ValueError):
     """Raised when a document cannot be parsed as the requested structured format."""
 
 
+def _invalid_json_constant(value: str) -> None:
+    raise ValueError(f"Non-standard JSON constant: {value}")
+
+
+# Reuse a decoder just as json.loads does for its default settings. A callback
+# rejects only bare constants; strings and ordinary number syntax stay native.
+_JSON_DECODER = json.JSONDecoder(parse_constant=_invalid_json_constant)
+
+# ECMAScript TrimString: WhiteSpace plus LineTerminator. Python's default
+# strip() also removes NEL/control separators, and does not remove a BOM.
+_FORMAT_WHITESPACE = "\t\n\v\f\r \xa0\u1680\u2028\u2029\u202f\u205f\u3000\ufeff" + "".join(
+    chr(codepoint) for codepoint in range(0x2000, 0x200B)
+)
+
+
 def normalize_format(format_name: str) -> CanonicalFormat:
-    key = format_name.lower().strip()
+    if not isinstance(format_name, str):
+        raise TypeError("Format must be a string")
+    key = format_name.strip(_FORMAT_WHITESPACE).lower()
     try:
         return _ALIASES[key]
     except KeyError as exc:
@@ -74,6 +89,7 @@ def format_label(format_name: str) -> str:
 
 def parse_document(text: str, format_name: str = "json") -> Any:
     canonical = normalize_format(format_name)
+    require_text(text)
     if canonical == "auto":
         return _parse_auto(text)
     return _parse_with_format(text, canonical)
@@ -92,11 +108,11 @@ def _parse_auto(text: str) -> Any:
 def _parse_with_format(text: str, format_name: CanonicalFormat) -> Any:
     try:
         if format_name == "json":
-            return json.loads(text)
+            return _JSON_DECODER.decode(text)
         if format_name == "yaml":
-            return yaml.safe_load(text)
+            return load_yaml(text)
         if format_name == "toml":
-            return tomllib.loads(text)
+            return load_toml(text)
         if format_name == "python":
             return ast.literal_eval(text)
     except Exception as exc:

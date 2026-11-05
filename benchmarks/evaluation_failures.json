@@ -1,0 +1,611 @@
+[
+  {
+    "name": "root-json",
+    "schema": {
+      "$ref": "#"
+    },
+    "format": "json",
+    "text": "{}",
+    "data": {}
+  },
+  {
+    "name": "root-yaml",
+    "schema": {
+      "$ref": "#"
+    },
+    "format": "yaml",
+    "text": "{}",
+    "data": {}
+  },
+  {
+    "name": "root-toml",
+    "schema": {
+      "$ref": "#"
+    },
+    "format": "toml",
+    "text": "",
+    "data": {}
+  },
+  {
+    "name": "root-python",
+    "schema": {
+      "$ref": "#"
+    },
+    "format": "python",
+    "text": "{}",
+    "data": {}
+  },
+  {
+    "name": "root-auto",
+    "schema": {
+      "$ref": "#"
+    },
+    "format": "auto",
+    "text": "{}",
+    "data": {}
+  },
+  {
+    "name": "root-forced-json-off",
+    "schema": {
+      "$ref": "#"
+    },
+    "format": "forced-json-off",
+    "text": "{}",
+    "data": {}
+  },
+  {
+    "name": "root- PY ",
+    "schema": {
+      "$ref": "#"
+    },
+    "format": " PY ",
+    "text": "{}",
+    "data": {}
+  },
+  {
+    "name": "definition-json",
+    "schema": {
+      "definitions": {
+        "loop": {
+          "$ref": "#/definitions/loop"
+        }
+      },
+      "$ref": "#/definitions/loop"
+    },
+    "format": "json",
+    "text": "{}",
+    "data": {}
+  },
+  {
+    "name": "definition-yaml",
+    "schema": {
+      "definitions": {
+        "loop": {
+          "$ref": "#/definitions/loop"
+        }
+      },
+      "$ref": "#/definitions/loop"
+    },
+    "format": "yaml",
+    "text": "{}",
+    "data": {}
+  },
+  {
+    "name": "definition-toml",
+    "schema": {
+      "definitions": {
+        "loop": {
+          "$ref": "#/definitions/loop"
+        }
+      },
+      "$ref": "#/definitions/loop"
+    },
+    "format": "toml",
+    "text": "",
+    "data": {}
+  },
+  {
+    "name": "definition-python",
+    "schema": {
+      "definitions": {
+        "loop": {
+          "$ref": "#/definitions/loop"
+        }
+      },
+      "$ref": "#/definitions/loop"
+    },
+    "format": "python",
+    "text": "{}",
+    "data": {}
+  },
+  {
+    "name": "definition-auto",
+    "schema": {
+      "definitions": {
+        "loop": {
+          "$ref": "#/definitions/loop"
+        }
+      },
+      "$ref": "#/definitions/loop"
+    },
+    "format": "auto",
+    "text": "{}",
+    "data": {}
+  },
+  {
+    "name": "definition-forced-json-off",
+    "schema": {
+      "definitions": {
+        "loop": {
+          "$ref": "#/definitions/loop"
+        }
+      },
+      "$ref": "#/definitions/loop"
+    },
+    "format": "forced-json-off",
+    "text": "{}",
+    "data": {}
+  },
+  {
+    "name": "definition- PY ",
+    "schema": {
+      "definitions": {
+        "loop": {
+          "$ref": "#/definitions/loop"
+        }
+      },
+      "$ref": "#/definitions/loop"
+    },
+    "format": " PY ",
+    "text": "{}",
+    "data": {}
+  },
+  {
+    "name": "mutual-json",
+    "schema": {
+      "definitions": {
+        "a": {
+          "$ref": "#/definitions/b"
+        },
+        "b": {
+          "$ref": "#/definitions/a"
+        }
+      },
+      "$ref": "#/definitions/a"
+    },
+    "format": "json",
+    "text": "{}",
+    "data": {}
+  },
+  {
+    "name": "mutual-yaml",
+    "schema": {
+      "definitions": {
+        "a": {
+          "$ref": "#/definitions/b"
+        },
+        "b": {
+          "$ref": "#/definitions/a"
+        }
+      },
+      "$ref": "#/definitions/a"
+    },
+    "format": "yaml",
+    "text": "{}",
+    "data": {}
+  },
+  {
+    "name": "mutual-toml",
+    "schema": {
+      "definitions": {
+        "a": {
+          "$ref": "#/definitions/b"
+        },
+        "b": {
+          "$ref": "#/definitions/a"
+        }
+      },
+      "$ref": "#/definitions/a"
+    },
+    "format": "toml",
+    "text": "",
+    "data": {}
+  },
+  {
+    "name": "mutual-python",
+    "schema": {
+      "definitions": {
+        "a": {
+          "$ref": "#/definitions/b"
+        },
+        "b": {
+          "$ref": "#/definitions/a"
+        }
+      },
+      "$ref": "#/definitions/a"
+    },
+    "format": "python",
+    "text": "{}",
+    "data": {}
+  },
+  {
+    "name": "mutual-auto",
+    "schema": {
+      "definitions": {
+        "a": {
+          "$ref": "#/definitions/b"
+        },
+        "b": {
+          "$ref": "#/definitions/a"
+        }
+      },
+      "$ref": "#/definitions/a"
+    },
+    "format": "auto",
+    "text": "{}",
+    "data": {}
+  },
+  {
+    "name": "mutual-forced-json-off",
+    "schema": {
+      "definitions": {
+        "a": {
+          "$ref": "#/definitions/b"
+        },
+        "b": {
+          "$ref": "#/definitions/a"
+        }
+      },
+      "$ref": "#/definitions/a"
+    },
+    "format": "forced-json-off",
+    "text": "{}",
+    "data": {}
+  },
+  {
+    "name": "mutual- PY ",
+    "schema": {
+      "definitions": {
+        "a": {
+          "$ref": "#/definitions/b"
+        },
+        "b": {
+          "$ref": "#/definitions/a"
+        }
+      },
+      "$ref": "#/definitions/a"
+    },
+    "format": " PY ",
+    "text": "{}",
+    "data": {}
+  },
+  {
+    "name": "allof-json",
+    "schema": {
+      "allOf": [
+        {
+          "$ref": "#"
+        }
+      ]
+    },
+    "format": "json",
+    "text": "{}",
+    "data": {}
+  },
+  {
+    "name": "allof-yaml",
+    "schema": {
+      "allOf": [
+        {
+          "$ref": "#"
+        }
+      ]
+    },
+    "format": "yaml",
+    "text": "{}",
+    "data": {}
+  },
+  {
+    "name": "allof-toml",
+    "schema": {
+      "allOf": [
+        {
+          "$ref": "#"
+        }
+      ]
+    },
+    "format": "toml",
+    "text": "",
+    "data": {}
+  },
+  {
+    "name": "allof-python",
+    "schema": {
+      "allOf": [
+        {
+          "$ref": "#"
+        }
+      ]
+    },
+    "format": "python",
+    "text": "{}",
+    "data": {}
+  },
+  {
+    "name": "allof-auto",
+    "schema": {
+      "allOf": [
+        {
+          "$ref": "#"
+        }
+      ]
+    },
+    "format": "auto",
+    "text": "{}",
+    "data": {}
+  },
+  {
+    "name": "allof-forced-json-off",
+    "schema": {
+      "allOf": [
+        {
+          "$ref": "#"
+        }
+      ]
+    },
+    "format": "forced-json-off",
+    "text": "{}",
+    "data": {}
+  },
+  {
+    "name": "allof- PY ",
+    "schema": {
+      "allOf": [
+        {
+          "$ref": "#"
+        }
+      ]
+    },
+    "format": " PY ",
+    "text": "{}",
+    "data": {}
+  },
+  {
+    "name": "anyof-json",
+    "schema": {
+      "anyOf": [
+        {
+          "$ref": "#"
+        }
+      ]
+    },
+    "format": "json",
+    "text": "{}",
+    "data": {}
+  },
+  {
+    "name": "anyof-yaml",
+    "schema": {
+      "anyOf": [
+        {
+          "$ref": "#"
+        }
+      ]
+    },
+    "format": "yaml",
+    "text": "{}",
+    "data": {}
+  },
+  {
+    "name": "anyof-toml",
+    "schema": {
+      "anyOf": [
+        {
+          "$ref": "#"
+        }
+      ]
+    },
+    "format": "toml",
+    "text": "",
+    "data": {}
+  },
+  {
+    "name": "anyof-python",
+    "schema": {
+      "anyOf": [
+        {
+          "$ref": "#"
+        }
+      ]
+    },
+    "format": "python",
+    "text": "{}",
+    "data": {}
+  },
+  {
+    "name": "anyof-auto",
+    "schema": {
+      "anyOf": [
+        {
+          "$ref": "#"
+        }
+      ]
+    },
+    "format": "auto",
+    "text": "{}",
+    "data": {}
+  },
+  {
+    "name": "anyof-forced-json-off",
+    "schema": {
+      "anyOf": [
+        {
+          "$ref": "#"
+        }
+      ]
+    },
+    "format": "forced-json-off",
+    "text": "{}",
+    "data": {}
+  },
+  {
+    "name": "anyof- PY ",
+    "schema": {
+      "anyOf": [
+        {
+          "$ref": "#"
+        }
+      ]
+    },
+    "format": " PY ",
+    "text": "{}",
+    "data": {}
+  },
+  {
+    "name": "not-json",
+    "schema": {
+      "not": {
+        "$ref": "#"
+      }
+    },
+    "format": "json",
+    "text": "{}",
+    "data": {}
+  },
+  {
+    "name": "not-yaml",
+    "schema": {
+      "not": {
+        "$ref": "#"
+      }
+    },
+    "format": "yaml",
+    "text": "{}",
+    "data": {}
+  },
+  {
+    "name": "not-toml",
+    "schema": {
+      "not": {
+        "$ref": "#"
+      }
+    },
+    "format": "toml",
+    "text": "",
+    "data": {}
+  },
+  {
+    "name": "not-python",
+    "schema": {
+      "not": {
+        "$ref": "#"
+      }
+    },
+    "format": "python",
+    "text": "{}",
+    "data": {}
+  },
+  {
+    "name": "not-auto",
+    "schema": {
+      "not": {
+        "$ref": "#"
+      }
+    },
+    "format": "auto",
+    "text": "{}",
+    "data": {}
+  },
+  {
+    "name": "not-forced-json-off",
+    "schema": {
+      "not": {
+        "$ref": "#"
+      }
+    },
+    "format": "forced-json-off",
+    "text": "{}",
+    "data": {}
+  },
+  {
+    "name": "not- PY ",
+    "schema": {
+      "not": {
+        "$ref": "#"
+      }
+    },
+    "format": " PY ",
+    "text": "{}",
+    "data": {}
+  },
+  {
+    "name": "dialect-json",
+    "schema": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$ref": "#"
+    },
+    "format": "json",
+    "text": "{}",
+    "data": {}
+  },
+  {
+    "name": "dialect-yaml",
+    "schema": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$ref": "#"
+    },
+    "format": "yaml",
+    "text": "{}",
+    "data": {}
+  },
+  {
+    "name": "dialect-toml",
+    "schema": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$ref": "#"
+    },
+    "format": "toml",
+    "text": "",
+    "data": {}
+  },
+  {
+    "name": "dialect-python",
+    "schema": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$ref": "#"
+    },
+    "format": "python",
+    "text": "{}",
+    "data": {}
+  },
+  {
+    "name": "dialect-auto",
+    "schema": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$ref": "#"
+    },
+    "format": "auto",
+    "text": "{}",
+    "data": {}
+  },
+  {
+    "name": "dialect-forced-json-off",
+    "schema": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$ref": "#"
+    },
+    "format": "forced-json-off",
+    "text": "{}",
+    "data": {}
+  },
+  {
+    "name": "dialect- PY ",
+    "schema": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$ref": "#"
+    },
+    "format": " PY ",
+    "text": "{}",
+    "data": {}
+  }
+]

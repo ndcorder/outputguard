@@ -35,9 +35,8 @@ classifiers = [
 dependencies = [
     "click>=8.1",
     "jsonschema>=4.20",
-    "pyyaml>=6.0",
+    "quickjs-ng>=0.17.0.2,<0.18",
     "rich>=13.0",
-    "tomli>=2.0; python_version < '3.11'",
 ]
 
 [project.urls]
@@ -52,6 +51,7 @@ outputguard = "outputguard.cli:cli"
 
 [dependency-groups]
 dev = [
+    "pyyaml>=6.0",
     "pytest>=8.0",
     "pytest-cov>=5.0",
     "ruff>=0.8",

@@ -1,0 +1,6313 @@
+[
+  {
+    "name": "hex-value-00",
+    "text": "{\"v\":\"\\x00\"}",
+    "expected_text": "{\"v\":\"\\u0000\"}",
+    "valid": true,
+    "data": {
+      "v": "\u0000"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-00",
+    "text": "{\"\\x00\":1}",
+    "expected_text": "{\"\\u0000\":1}",
+    "valid": true,
+    "data": {
+      "\u0000": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-01",
+    "text": "{\"v\":\"\\x01\"}",
+    "expected_text": "{\"v\":\"\\u0001\"}",
+    "valid": true,
+    "data": {
+      "v": "\u0001"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-01",
+    "text": "{\"\\x01\":1}",
+    "expected_text": "{\"\\u0001\":1}",
+    "valid": true,
+    "data": {
+      "\u0001": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-02",
+    "text": "{\"v\":\"\\x02\"}",
+    "expected_text": "{\"v\":\"\\u0002\"}",
+    "valid": true,
+    "data": {
+      "v": "\u0002"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-02",
+    "text": "{\"\\x02\":1}",
+    "expected_text": "{\"\\u0002\":1}",
+    "valid": true,
+    "data": {
+      "\u0002": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-03",
+    "text": "{\"v\":\"\\x03\"}",
+    "expected_text": "{\"v\":\"\\u0003\"}",
+    "valid": true,
+    "data": {
+      "v": "\u0003"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-03",
+    "text": "{\"\\x03\":1}",
+    "expected_text": "{\"\\u0003\":1}",
+    "valid": true,
+    "data": {
+      "\u0003": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-04",
+    "text": "{\"v\":\"\\x04\"}",
+    "expected_text": "{\"v\":\"\\u0004\"}",
+    "valid": true,
+    "data": {
+      "v": "\u0004"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-04",
+    "text": "{\"\\x04\":1}",
+    "expected_text": "{\"\\u0004\":1}",
+    "valid": true,
+    "data": {
+      "\u0004": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-05",
+    "text": "{\"v\":\"\\x05\"}",
+    "expected_text": "{\"v\":\"\\u0005\"}",
+    "valid": true,
+    "data": {
+      "v": "\u0005"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-05",
+    "text": "{\"\\x05\":1}",
+    "expected_text": "{\"\\u0005\":1}",
+    "valid": true,
+    "data": {
+      "\u0005": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-06",
+    "text": "{\"v\":\"\\x06\"}",
+    "expected_text": "{\"v\":\"\\u0006\"}",
+    "valid": true,
+    "data": {
+      "v": "\u0006"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-06",
+    "text": "{\"\\x06\":1}",
+    "expected_text": "{\"\\u0006\":1}",
+    "valid": true,
+    "data": {
+      "\u0006": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-07",
+    "text": "{\"v\":\"\\x07\"}",
+    "expected_text": "{\"v\":\"\\u0007\"}",
+    "valid": true,
+    "data": {
+      "v": "\u0007"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-07",
+    "text": "{\"\\x07\":1}",
+    "expected_text": "{\"\\u0007\":1}",
+    "valid": true,
+    "data": {
+      "\u0007": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-08",
+    "text": "{\"v\":\"\\x08\"}",
+    "expected_text": "{\"v\":\"\\u0008\"}",
+    "valid": true,
+    "data": {
+      "v": "\b"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-08",
+    "text": "{\"\\x08\":1}",
+    "expected_text": "{\"\\u0008\":1}",
+    "valid": true,
+    "data": {
+      "\b": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-09",
+    "text": "{\"v\":\"\\x09\"}",
+    "expected_text": "{\"v\":\"\\u0009\"}",
+    "valid": true,
+    "data": {
+      "v": "\t"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-09",
+    "text": "{\"\\x09\":1}",
+    "expected_text": "{\"\\u0009\":1}",
+    "valid": true,
+    "data": {
+      "\t": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-0a",
+    "text": "{\"v\":\"\\x0a\"}",
+    "expected_text": "{\"v\":\"\\u000a\"}",
+    "valid": true,
+    "data": {
+      "v": "\n"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-0a",
+    "text": "{\"\\x0a\":1}",
+    "expected_text": "{\"\\u000a\":1}",
+    "valid": true,
+    "data": {
+      "\n": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-0b",
+    "text": "{\"v\":\"\\x0b\"}",
+    "expected_text": "{\"v\":\"\\u000b\"}",
+    "valid": true,
+    "data": {
+      "v": "\u000b"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-0b",
+    "text": "{\"\\x0b\":1}",
+    "expected_text": "{\"\\u000b\":1}",
+    "valid": true,
+    "data": {
+      "\u000b": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-0c",
+    "text": "{\"v\":\"\\x0c\"}",
+    "expected_text": "{\"v\":\"\\u000c\"}",
+    "valid": true,
+    "data": {
+      "v": "\f"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-0c",
+    "text": "{\"\\x0c\":1}",
+    "expected_text": "{\"\\u000c\":1}",
+    "valid": true,
+    "data": {
+      "\f": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-0d",
+    "text": "{\"v\":\"\\x0d\"}",
+    "expected_text": "{\"v\":\"\\u000d\"}",
+    "valid": true,
+    "data": {
+      "v": "\r"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-0d",
+    "text": "{\"\\x0d\":1}",
+    "expected_text": "{\"\\u000d\":1}",
+    "valid": true,
+    "data": {
+      "\r": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-0e",
+    "text": "{\"v\":\"\\x0e\"}",
+    "expected_text": "{\"v\":\"\\u000e\"}",
+    "valid": true,
+    "data": {
+      "v": "\u000e"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-0e",
+    "text": "{\"\\x0e\":1}",
+    "expected_text": "{\"\\u000e\":1}",
+    "valid": true,
+    "data": {
+      "\u000e": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-0f",
+    "text": "{\"v\":\"\\x0f\"}",
+    "expected_text": "{\"v\":\"\\u000f\"}",
+    "valid": true,
+    "data": {
+      "v": "\u000f"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-0f",
+    "text": "{\"\\x0f\":1}",
+    "expected_text": "{\"\\u000f\":1}",
+    "valid": true,
+    "data": {
+      "\u000f": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-10",
+    "text": "{\"v\":\"\\x10\"}",
+    "expected_text": "{\"v\":\"\\u0010\"}",
+    "valid": true,
+    "data": {
+      "v": "\u0010"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-10",
+    "text": "{\"\\x10\":1}",
+    "expected_text": "{\"\\u0010\":1}",
+    "valid": true,
+    "data": {
+      "\u0010": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-11",
+    "text": "{\"v\":\"\\x11\"}",
+    "expected_text": "{\"v\":\"\\u0011\"}",
+    "valid": true,
+    "data": {
+      "v": "\u0011"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-11",
+    "text": "{\"\\x11\":1}",
+    "expected_text": "{\"\\u0011\":1}",
+    "valid": true,
+    "data": {
+      "\u0011": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-12",
+    "text": "{\"v\":\"\\x12\"}",
+    "expected_text": "{\"v\":\"\\u0012\"}",
+    "valid": true,
+    "data": {
+      "v": "\u0012"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-12",
+    "text": "{\"\\x12\":1}",
+    "expected_text": "{\"\\u0012\":1}",
+    "valid": true,
+    "data": {
+      "\u0012": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-13",
+    "text": "{\"v\":\"\\x13\"}",
+    "expected_text": "{\"v\":\"\\u0013\"}",
+    "valid": true,
+    "data": {
+      "v": "\u0013"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-13",
+    "text": "{\"\\x13\":1}",
+    "expected_text": "{\"\\u0013\":1}",
+    "valid": true,
+    "data": {
+      "\u0013": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-14",
+    "text": "{\"v\":\"\\x14\"}",
+    "expected_text": "{\"v\":\"\\u0014\"}",
+    "valid": true,
+    "data": {
+      "v": "\u0014"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-14",
+    "text": "{\"\\x14\":1}",
+    "expected_text": "{\"\\u0014\":1}",
+    "valid": true,
+    "data": {
+      "\u0014": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-15",
+    "text": "{\"v\":\"\\x15\"}",
+    "expected_text": "{\"v\":\"\\u0015\"}",
+    "valid": true,
+    "data": {
+      "v": "\u0015"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-15",
+    "text": "{\"\\x15\":1}",
+    "expected_text": "{\"\\u0015\":1}",
+    "valid": true,
+    "data": {
+      "\u0015": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-16",
+    "text": "{\"v\":\"\\x16\"}",
+    "expected_text": "{\"v\":\"\\u0016\"}",
+    "valid": true,
+    "data": {
+      "v": "\u0016"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-16",
+    "text": "{\"\\x16\":1}",
+    "expected_text": "{\"\\u0016\":1}",
+    "valid": true,
+    "data": {
+      "\u0016": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-17",
+    "text": "{\"v\":\"\\x17\"}",
+    "expected_text": "{\"v\":\"\\u0017\"}",
+    "valid": true,
+    "data": {
+      "v": "\u0017"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-17",
+    "text": "{\"\\x17\":1}",
+    "expected_text": "{\"\\u0017\":1}",
+    "valid": true,
+    "data": {
+      "\u0017": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-18",
+    "text": "{\"v\":\"\\x18\"}",
+    "expected_text": "{\"v\":\"\\u0018\"}",
+    "valid": true,
+    "data": {
+      "v": "\u0018"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-18",
+    "text": "{\"\\x18\":1}",
+    "expected_text": "{\"\\u0018\":1}",
+    "valid": true,
+    "data": {
+      "\u0018": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-19",
+    "text": "{\"v\":\"\\x19\"}",
+    "expected_text": "{\"v\":\"\\u0019\"}",
+    "valid": true,
+    "data": {
+      "v": "\u0019"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-19",
+    "text": "{\"\\x19\":1}",
+    "expected_text": "{\"\\u0019\":1}",
+    "valid": true,
+    "data": {
+      "\u0019": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-1a",
+    "text": "{\"v\":\"\\x1a\"}",
+    "expected_text": "{\"v\":\"\\u001a\"}",
+    "valid": true,
+    "data": {
+      "v": "\u001a"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-1a",
+    "text": "{\"\\x1a\":1}",
+    "expected_text": "{\"\\u001a\":1}",
+    "valid": true,
+    "data": {
+      "\u001a": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-1b",
+    "text": "{\"v\":\"\\x1b\"}",
+    "expected_text": "{\"v\":\"\\u001b\"}",
+    "valid": true,
+    "data": {
+      "v": "\u001b"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-1b",
+    "text": "{\"\\x1b\":1}",
+    "expected_text": "{\"\\u001b\":1}",
+    "valid": true,
+    "data": {
+      "\u001b": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-1c",
+    "text": "{\"v\":\"\\x1c\"}",
+    "expected_text": "{\"v\":\"\\u001c\"}",
+    "valid": true,
+    "data": {
+      "v": "\u001c"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-1c",
+    "text": "{\"\\x1c\":1}",
+    "expected_text": "{\"\\u001c\":1}",
+    "valid": true,
+    "data": {
+      "\u001c": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-1d",
+    "text": "{\"v\":\"\\x1d\"}",
+    "expected_text": "{\"v\":\"\\u001d\"}",
+    "valid": true,
+    "data": {
+      "v": "\u001d"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-1d",
+    "text": "{\"\\x1d\":1}",
+    "expected_text": "{\"\\u001d\":1}",
+    "valid": true,
+    "data": {
+      "\u001d": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-1e",
+    "text": "{\"v\":\"\\x1e\"}",
+    "expected_text": "{\"v\":\"\\u001e\"}",
+    "valid": true,
+    "data": {
+      "v": "\u001e"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-1e",
+    "text": "{\"\\x1e\":1}",
+    "expected_text": "{\"\\u001e\":1}",
+    "valid": true,
+    "data": {
+      "\u001e": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-1f",
+    "text": "{\"v\":\"\\x1f\"}",
+    "expected_text": "{\"v\":\"\\u001f\"}",
+    "valid": true,
+    "data": {
+      "v": "\u001f"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-1f",
+    "text": "{\"\\x1f\":1}",
+    "expected_text": "{\"\\u001f\":1}",
+    "valid": true,
+    "data": {
+      "\u001f": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-20",
+    "text": "{\"v\":\"\\x20\"}",
+    "expected_text": "{\"v\":\" \"}",
+    "valid": true,
+    "data": {
+      "v": " "
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-20",
+    "text": "{\"\\x20\":1}",
+    "expected_text": "{\" \":1}",
+    "valid": true,
+    "data": {
+      " ": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-21",
+    "text": "{\"v\":\"\\x21\"}",
+    "expected_text": "{\"v\":\"!\"}",
+    "valid": true,
+    "data": {
+      "v": "!"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-21",
+    "text": "{\"\\x21\":1}",
+    "expected_text": "{\"!\":1}",
+    "valid": true,
+    "data": {
+      "!": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-22",
+    "text": "{\"v\":\"\\x22\"}",
+    "expected_text": "{\"v\":\"\\\"\"}",
+    "valid": true,
+    "data": {
+      "v": "\""
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-22",
+    "text": "{\"\\x22\":1}",
+    "expected_text": "{\"\\\"\":1}",
+    "valid": true,
+    "data": {
+      "\"": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-23",
+    "text": "{\"v\":\"\\x23\"}",
+    "expected_text": "{\"v\":\"#\"}",
+    "valid": true,
+    "data": {
+      "v": "#"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-23",
+    "text": "{\"\\x23\":1}",
+    "expected_text": "{\"#\":1}",
+    "valid": true,
+    "data": {
+      "#": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-24",
+    "text": "{\"v\":\"\\x24\"}",
+    "expected_text": "{\"v\":\"$\"}",
+    "valid": true,
+    "data": {
+      "v": "$"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-24",
+    "text": "{\"\\x24\":1}",
+    "expected_text": "{\"$\":1}",
+    "valid": true,
+    "data": {
+      "$": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-25",
+    "text": "{\"v\":\"\\x25\"}",
+    "expected_text": "{\"v\":\"%\"}",
+    "valid": true,
+    "data": {
+      "v": "%"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-25",
+    "text": "{\"\\x25\":1}",
+    "expected_text": "{\"%\":1}",
+    "valid": true,
+    "data": {
+      "%": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-26",
+    "text": "{\"v\":\"\\x26\"}",
+    "expected_text": "{\"v\":\"&\"}",
+    "valid": true,
+    "data": {
+      "v": "&"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-26",
+    "text": "{\"\\x26\":1}",
+    "expected_text": "{\"&\":1}",
+    "valid": true,
+    "data": {
+      "&": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-27",
+    "text": "{\"v\":\"\\x27\"}",
+    "expected_text": "{\"v\":\"'\"}",
+    "valid": true,
+    "data": {
+      "v": "'"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-27",
+    "text": "{\"\\x27\":1}",
+    "expected_text": "{\"'\":1}",
+    "valid": true,
+    "data": {
+      "'": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-28",
+    "text": "{\"v\":\"\\x28\"}",
+    "expected_text": "{\"v\":\"(\"}",
+    "valid": true,
+    "data": {
+      "v": "("
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-28",
+    "text": "{\"\\x28\":1}",
+    "expected_text": "{\"(\":1}",
+    "valid": true,
+    "data": {
+      "(": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-29",
+    "text": "{\"v\":\"\\x29\"}",
+    "expected_text": "{\"v\":\")\"}",
+    "valid": true,
+    "data": {
+      "v": ")"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-29",
+    "text": "{\"\\x29\":1}",
+    "expected_text": "{\")\":1}",
+    "valid": true,
+    "data": {
+      ")": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-2a",
+    "text": "{\"v\":\"\\x2a\"}",
+    "expected_text": "{\"v\":\"*\"}",
+    "valid": true,
+    "data": {
+      "v": "*"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-2a",
+    "text": "{\"\\x2a\":1}",
+    "expected_text": "{\"*\":1}",
+    "valid": true,
+    "data": {
+      "*": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-2b",
+    "text": "{\"v\":\"\\x2b\"}",
+    "expected_text": "{\"v\":\"+\"}",
+    "valid": true,
+    "data": {
+      "v": "+"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-2b",
+    "text": "{\"\\x2b\":1}",
+    "expected_text": "{\"+\":1}",
+    "valid": true,
+    "data": {
+      "+": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-2c",
+    "text": "{\"v\":\"\\x2c\"}",
+    "expected_text": "{\"v\":\",\"}",
+    "valid": true,
+    "data": {
+      "v": ","
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-2c",
+    "text": "{\"\\x2c\":1}",
+    "expected_text": "{\",\":1}",
+    "valid": true,
+    "data": {
+      ",": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-2d",
+    "text": "{\"v\":\"\\x2d\"}",
+    "expected_text": "{\"v\":\"-\"}",
+    "valid": true,
+    "data": {
+      "v": "-"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-2d",
+    "text": "{\"\\x2d\":1}",
+    "expected_text": "{\"-\":1}",
+    "valid": true,
+    "data": {
+      "-": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-2e",
+    "text": "{\"v\":\"\\x2e\"}",
+    "expected_text": "{\"v\":\".\"}",
+    "valid": true,
+    "data": {
+      "v": "."
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-2e",
+    "text": "{\"\\x2e\":1}",
+    "expected_text": "{\".\":1}",
+    "valid": true,
+    "data": {
+      ".": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-2f",
+    "text": "{\"v\":\"\\x2f\"}",
+    "expected_text": "{\"v\":\"/\"}",
+    "valid": true,
+    "data": {
+      "v": "/"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-2f",
+    "text": "{\"\\x2f\":1}",
+    "expected_text": "{\"/\":1}",
+    "valid": true,
+    "data": {
+      "/": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-30",
+    "text": "{\"v\":\"\\x30\"}",
+    "expected_text": "{\"v\":\"0\"}",
+    "valid": true,
+    "data": {
+      "v": "0"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-30",
+    "text": "{\"\\x30\":1}",
+    "expected_text": "{\"0\":1}",
+    "valid": true,
+    "data": {
+      "0": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-31",
+    "text": "{\"v\":\"\\x31\"}",
+    "expected_text": "{\"v\":\"1\"}",
+    "valid": true,
+    "data": {
+      "v": "1"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-31",
+    "text": "{\"\\x31\":1}",
+    "expected_text": "{\"1\":1}",
+    "valid": true,
+    "data": {
+      "1": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-32",
+    "text": "{\"v\":\"\\x32\"}",
+    "expected_text": "{\"v\":\"2\"}",
+    "valid": true,
+    "data": {
+      "v": "2"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-32",
+    "text": "{\"\\x32\":1}",
+    "expected_text": "{\"2\":1}",
+    "valid": true,
+    "data": {
+      "2": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-33",
+    "text": "{\"v\":\"\\x33\"}",
+    "expected_text": "{\"v\":\"3\"}",
+    "valid": true,
+    "data": {
+      "v": "3"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-33",
+    "text": "{\"\\x33\":1}",
+    "expected_text": "{\"3\":1}",
+    "valid": true,
+    "data": {
+      "3": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-34",
+    "text": "{\"v\":\"\\x34\"}",
+    "expected_text": "{\"v\":\"4\"}",
+    "valid": true,
+    "data": {
+      "v": "4"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-34",
+    "text": "{\"\\x34\":1}",
+    "expected_text": "{\"4\":1}",
+    "valid": true,
+    "data": {
+      "4": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-35",
+    "text": "{\"v\":\"\\x35\"}",
+    "expected_text": "{\"v\":\"5\"}",
+    "valid": true,
+    "data": {
+      "v": "5"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-35",
+    "text": "{\"\\x35\":1}",
+    "expected_text": "{\"5\":1}",
+    "valid": true,
+    "data": {
+      "5": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-36",
+    "text": "{\"v\":\"\\x36\"}",
+    "expected_text": "{\"v\":\"6\"}",
+    "valid": true,
+    "data": {
+      "v": "6"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-36",
+    "text": "{\"\\x36\":1}",
+    "expected_text": "{\"6\":1}",
+    "valid": true,
+    "data": {
+      "6": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-37",
+    "text": "{\"v\":\"\\x37\"}",
+    "expected_text": "{\"v\":\"7\"}",
+    "valid": true,
+    "data": {
+      "v": "7"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-37",
+    "text": "{\"\\x37\":1}",
+    "expected_text": "{\"7\":1}",
+    "valid": true,
+    "data": {
+      "7": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-38",
+    "text": "{\"v\":\"\\x38\"}",
+    "expected_text": "{\"v\":\"8\"}",
+    "valid": true,
+    "data": {
+      "v": "8"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-38",
+    "text": "{\"\\x38\":1}",
+    "expected_text": "{\"8\":1}",
+    "valid": true,
+    "data": {
+      "8": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-39",
+    "text": "{\"v\":\"\\x39\"}",
+    "expected_text": "{\"v\":\"9\"}",
+    "valid": true,
+    "data": {
+      "v": "9"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-39",
+    "text": "{\"\\x39\":1}",
+    "expected_text": "{\"9\":1}",
+    "valid": true,
+    "data": {
+      "9": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-3a",
+    "text": "{\"v\":\"\\x3a\"}",
+    "expected_text": "{\"v\":\":\"}",
+    "valid": true,
+    "data": {
+      "v": ":"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-3a",
+    "text": "{\"\\x3a\":1}",
+    "expected_text": "{\":\":1}",
+    "valid": true,
+    "data": {
+      ":": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-3b",
+    "text": "{\"v\":\"\\x3b\"}",
+    "expected_text": "{\"v\":\";\"}",
+    "valid": true,
+    "data": {
+      "v": ";"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-3b",
+    "text": "{\"\\x3b\":1}",
+    "expected_text": "{\";\":1}",
+    "valid": true,
+    "data": {
+      ";": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-3c",
+    "text": "{\"v\":\"\\x3c\"}",
+    "expected_text": "{\"v\":\"<\"}",
+    "valid": true,
+    "data": {
+      "v": "<"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-3c",
+    "text": "{\"\\x3c\":1}",
+    "expected_text": "{\"<\":1}",
+    "valid": true,
+    "data": {
+      "<": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-3d",
+    "text": "{\"v\":\"\\x3d\"}",
+    "expected_text": "{\"v\":\"=\"}",
+    "valid": true,
+    "data": {
+      "v": "="
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-3d",
+    "text": "{\"\\x3d\":1}",
+    "expected_text": "{\"=\":1}",
+    "valid": true,
+    "data": {
+      "=": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-3e",
+    "text": "{\"v\":\"\\x3e\"}",
+    "expected_text": "{\"v\":\">\"}",
+    "valid": true,
+    "data": {
+      "v": ">"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-3e",
+    "text": "{\"\\x3e\":1}",
+    "expected_text": "{\">\":1}",
+    "valid": true,
+    "data": {
+      ">": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-3f",
+    "text": "{\"v\":\"\\x3f\"}",
+    "expected_text": "{\"v\":\"?\"}",
+    "valid": true,
+    "data": {
+      "v": "?"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-3f",
+    "text": "{\"\\x3f\":1}",
+    "expected_text": "{\"?\":1}",
+    "valid": true,
+    "data": {
+      "?": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-40",
+    "text": "{\"v\":\"\\x40\"}",
+    "expected_text": "{\"v\":\"@\"}",
+    "valid": true,
+    "data": {
+      "v": "@"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-40",
+    "text": "{\"\\x40\":1}",
+    "expected_text": "{\"@\":1}",
+    "valid": true,
+    "data": {
+      "@": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-41",
+    "text": "{\"v\":\"\\x41\"}",
+    "expected_text": "{\"v\":\"A\"}",
+    "valid": true,
+    "data": {
+      "v": "A"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-41",
+    "text": "{\"\\x41\":1}",
+    "expected_text": "{\"A\":1}",
+    "valid": true,
+    "data": {
+      "A": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-42",
+    "text": "{\"v\":\"\\x42\"}",
+    "expected_text": "{\"v\":\"B\"}",
+    "valid": true,
+    "data": {
+      "v": "B"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-42",
+    "text": "{\"\\x42\":1}",
+    "expected_text": "{\"B\":1}",
+    "valid": true,
+    "data": {
+      "B": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-43",
+    "text": "{\"v\":\"\\x43\"}",
+    "expected_text": "{\"v\":\"C\"}",
+    "valid": true,
+    "data": {
+      "v": "C"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-43",
+    "text": "{\"\\x43\":1}",
+    "expected_text": "{\"C\":1}",
+    "valid": true,
+    "data": {
+      "C": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-44",
+    "text": "{\"v\":\"\\x44\"}",
+    "expected_text": "{\"v\":\"D\"}",
+    "valid": true,
+    "data": {
+      "v": "D"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-44",
+    "text": "{\"\\x44\":1}",
+    "expected_text": "{\"D\":1}",
+    "valid": true,
+    "data": {
+      "D": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-45",
+    "text": "{\"v\":\"\\x45\"}",
+    "expected_text": "{\"v\":\"E\"}",
+    "valid": true,
+    "data": {
+      "v": "E"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-45",
+    "text": "{\"\\x45\":1}",
+    "expected_text": "{\"E\":1}",
+    "valid": true,
+    "data": {
+      "E": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-46",
+    "text": "{\"v\":\"\\x46\"}",
+    "expected_text": "{\"v\":\"F\"}",
+    "valid": true,
+    "data": {
+      "v": "F"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-46",
+    "text": "{\"\\x46\":1}",
+    "expected_text": "{\"F\":1}",
+    "valid": true,
+    "data": {
+      "F": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-47",
+    "text": "{\"v\":\"\\x47\"}",
+    "expected_text": "{\"v\":\"G\"}",
+    "valid": true,
+    "data": {
+      "v": "G"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-47",
+    "text": "{\"\\x47\":1}",
+    "expected_text": "{\"G\":1}",
+    "valid": true,
+    "data": {
+      "G": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-48",
+    "text": "{\"v\":\"\\x48\"}",
+    "expected_text": "{\"v\":\"H\"}",
+    "valid": true,
+    "data": {
+      "v": "H"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-48",
+    "text": "{\"\\x48\":1}",
+    "expected_text": "{\"H\":1}",
+    "valid": true,
+    "data": {
+      "H": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-49",
+    "text": "{\"v\":\"\\x49\"}",
+    "expected_text": "{\"v\":\"I\"}",
+    "valid": true,
+    "data": {
+      "v": "I"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-49",
+    "text": "{\"\\x49\":1}",
+    "expected_text": "{\"I\":1}",
+    "valid": true,
+    "data": {
+      "I": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-4a",
+    "text": "{\"v\":\"\\x4a\"}",
+    "expected_text": "{\"v\":\"J\"}",
+    "valid": true,
+    "data": {
+      "v": "J"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-4a",
+    "text": "{\"\\x4a\":1}",
+    "expected_text": "{\"J\":1}",
+    "valid": true,
+    "data": {
+      "J": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-4b",
+    "text": "{\"v\":\"\\x4b\"}",
+    "expected_text": "{\"v\":\"K\"}",
+    "valid": true,
+    "data": {
+      "v": "K"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-4b",
+    "text": "{\"\\x4b\":1}",
+    "expected_text": "{\"K\":1}",
+    "valid": true,
+    "data": {
+      "K": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-4c",
+    "text": "{\"v\":\"\\x4c\"}",
+    "expected_text": "{\"v\":\"L\"}",
+    "valid": true,
+    "data": {
+      "v": "L"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-4c",
+    "text": "{\"\\x4c\":1}",
+    "expected_text": "{\"L\":1}",
+    "valid": true,
+    "data": {
+      "L": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-4d",
+    "text": "{\"v\":\"\\x4d\"}",
+    "expected_text": "{\"v\":\"M\"}",
+    "valid": true,
+    "data": {
+      "v": "M"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-4d",
+    "text": "{\"\\x4d\":1}",
+    "expected_text": "{\"M\":1}",
+    "valid": true,
+    "data": {
+      "M": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-4e",
+    "text": "{\"v\":\"\\x4e\"}",
+    "expected_text": "{\"v\":\"N\"}",
+    "valid": true,
+    "data": {
+      "v": "N"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-4e",
+    "text": "{\"\\x4e\":1}",
+    "expected_text": "{\"N\":1}",
+    "valid": true,
+    "data": {
+      "N": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-4f",
+    "text": "{\"v\":\"\\x4f\"}",
+    "expected_text": "{\"v\":\"O\"}",
+    "valid": true,
+    "data": {
+      "v": "O"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-4f",
+    "text": "{\"\\x4f\":1}",
+    "expected_text": "{\"O\":1}",
+    "valid": true,
+    "data": {
+      "O": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-50",
+    "text": "{\"v\":\"\\x50\"}",
+    "expected_text": "{\"v\":\"P\"}",
+    "valid": true,
+    "data": {
+      "v": "P"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-50",
+    "text": "{\"\\x50\":1}",
+    "expected_text": "{\"P\":1}",
+    "valid": true,
+    "data": {
+      "P": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-51",
+    "text": "{\"v\":\"\\x51\"}",
+    "expected_text": "{\"v\":\"Q\"}",
+    "valid": true,
+    "data": {
+      "v": "Q"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-51",
+    "text": "{\"\\x51\":1}",
+    "expected_text": "{\"Q\":1}",
+    "valid": true,
+    "data": {
+      "Q": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-52",
+    "text": "{\"v\":\"\\x52\"}",
+    "expected_text": "{\"v\":\"R\"}",
+    "valid": true,
+    "data": {
+      "v": "R"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-52",
+    "text": "{\"\\x52\":1}",
+    "expected_text": "{\"R\":1}",
+    "valid": true,
+    "data": {
+      "R": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-53",
+    "text": "{\"v\":\"\\x53\"}",
+    "expected_text": "{\"v\":\"S\"}",
+    "valid": true,
+    "data": {
+      "v": "S"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-53",
+    "text": "{\"\\x53\":1}",
+    "expected_text": "{\"S\":1}",
+    "valid": true,
+    "data": {
+      "S": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-54",
+    "text": "{\"v\":\"\\x54\"}",
+    "expected_text": "{\"v\":\"T\"}",
+    "valid": true,
+    "data": {
+      "v": "T"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-54",
+    "text": "{\"\\x54\":1}",
+    "expected_text": "{\"T\":1}",
+    "valid": true,
+    "data": {
+      "T": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-55",
+    "text": "{\"v\":\"\\x55\"}",
+    "expected_text": "{\"v\":\"U\"}",
+    "valid": true,
+    "data": {
+      "v": "U"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-55",
+    "text": "{\"\\x55\":1}",
+    "expected_text": "{\"U\":1}",
+    "valid": true,
+    "data": {
+      "U": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-56",
+    "text": "{\"v\":\"\\x56\"}",
+    "expected_text": "{\"v\":\"V\"}",
+    "valid": true,
+    "data": {
+      "v": "V"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-56",
+    "text": "{\"\\x56\":1}",
+    "expected_text": "{\"V\":1}",
+    "valid": true,
+    "data": {
+      "V": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-57",
+    "text": "{\"v\":\"\\x57\"}",
+    "expected_text": "{\"v\":\"W\"}",
+    "valid": true,
+    "data": {
+      "v": "W"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-57",
+    "text": "{\"\\x57\":1}",
+    "expected_text": "{\"W\":1}",
+    "valid": true,
+    "data": {
+      "W": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-58",
+    "text": "{\"v\":\"\\x58\"}",
+    "expected_text": "{\"v\":\"X\"}",
+    "valid": true,
+    "data": {
+      "v": "X"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-58",
+    "text": "{\"\\x58\":1}",
+    "expected_text": "{\"X\":1}",
+    "valid": true,
+    "data": {
+      "X": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-59",
+    "text": "{\"v\":\"\\x59\"}",
+    "expected_text": "{\"v\":\"Y\"}",
+    "valid": true,
+    "data": {
+      "v": "Y"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-59",
+    "text": "{\"\\x59\":1}",
+    "expected_text": "{\"Y\":1}",
+    "valid": true,
+    "data": {
+      "Y": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-5a",
+    "text": "{\"v\":\"\\x5a\"}",
+    "expected_text": "{\"v\":\"Z\"}",
+    "valid": true,
+    "data": {
+      "v": "Z"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-5a",
+    "text": "{\"\\x5a\":1}",
+    "expected_text": "{\"Z\":1}",
+    "valid": true,
+    "data": {
+      "Z": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-5b",
+    "text": "{\"v\":\"\\x5b\"}",
+    "expected_text": "{\"v\":\"[\"}",
+    "valid": true,
+    "data": {
+      "v": "["
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-5b",
+    "text": "{\"\\x5b\":1}",
+    "expected_text": "{\"[\":1}",
+    "valid": true,
+    "data": {
+      "[": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-5c",
+    "text": "{\"v\":\"\\x5c\"}",
+    "expected_text": "{\"v\":\"\\\\\"}",
+    "valid": true,
+    "data": {
+      "v": "\\"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-5c",
+    "text": "{\"\\x5c\":1}",
+    "expected_text": "{\"\\\\\":1}",
+    "valid": true,
+    "data": {
+      "\\": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-5d",
+    "text": "{\"v\":\"\\x5d\"}",
+    "expected_text": "{\"v\":\"]\"}",
+    "valid": true,
+    "data": {
+      "v": "]"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-5d",
+    "text": "{\"\\x5d\":1}",
+    "expected_text": "{\"]\":1}",
+    "valid": true,
+    "data": {
+      "]": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-5e",
+    "text": "{\"v\":\"\\x5e\"}",
+    "expected_text": "{\"v\":\"^\"}",
+    "valid": true,
+    "data": {
+      "v": "^"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-5e",
+    "text": "{\"\\x5e\":1}",
+    "expected_text": "{\"^\":1}",
+    "valid": true,
+    "data": {
+      "^": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-5f",
+    "text": "{\"v\":\"\\x5f\"}",
+    "expected_text": "{\"v\":\"_\"}",
+    "valid": true,
+    "data": {
+      "v": "_"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-5f",
+    "text": "{\"\\x5f\":1}",
+    "expected_text": "{\"_\":1}",
+    "valid": true,
+    "data": {
+      "_": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-60",
+    "text": "{\"v\":\"\\x60\"}",
+    "expected_text": "{\"v\":\"`\"}",
+    "valid": true,
+    "data": {
+      "v": "`"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-60",
+    "text": "{\"\\x60\":1}",
+    "expected_text": "{\"`\":1}",
+    "valid": true,
+    "data": {
+      "`": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-61",
+    "text": "{\"v\":\"\\x61\"}",
+    "expected_text": "{\"v\":\"a\"}",
+    "valid": true,
+    "data": {
+      "v": "a"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-61",
+    "text": "{\"\\x61\":1}",
+    "expected_text": "{\"a\":1}",
+    "valid": true,
+    "data": {
+      "a": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-62",
+    "text": "{\"v\":\"\\x62\"}",
+    "expected_text": "{\"v\":\"b\"}",
+    "valid": true,
+    "data": {
+      "v": "b"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-62",
+    "text": "{\"\\x62\":1}",
+    "expected_text": "{\"b\":1}",
+    "valid": true,
+    "data": {
+      "b": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-63",
+    "text": "{\"v\":\"\\x63\"}",
+    "expected_text": "{\"v\":\"c\"}",
+    "valid": true,
+    "data": {
+      "v": "c"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-63",
+    "text": "{\"\\x63\":1}",
+    "expected_text": "{\"c\":1}",
+    "valid": true,
+    "data": {
+      "c": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-64",
+    "text": "{\"v\":\"\\x64\"}",
+    "expected_text": "{\"v\":\"d\"}",
+    "valid": true,
+    "data": {
+      "v": "d"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-64",
+    "text": "{\"\\x64\":1}",
+    "expected_text": "{\"d\":1}",
+    "valid": true,
+    "data": {
+      "d": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-65",
+    "text": "{\"v\":\"\\x65\"}",
+    "expected_text": "{\"v\":\"e\"}",
+    "valid": true,
+    "data": {
+      "v": "e"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-65",
+    "text": "{\"\\x65\":1}",
+    "expected_text": "{\"e\":1}",
+    "valid": true,
+    "data": {
+      "e": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-66",
+    "text": "{\"v\":\"\\x66\"}",
+    "expected_text": "{\"v\":\"f\"}",
+    "valid": true,
+    "data": {
+      "v": "f"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-66",
+    "text": "{\"\\x66\":1}",
+    "expected_text": "{\"f\":1}",
+    "valid": true,
+    "data": {
+      "f": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-67",
+    "text": "{\"v\":\"\\x67\"}",
+    "expected_text": "{\"v\":\"g\"}",
+    "valid": true,
+    "data": {
+      "v": "g"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-67",
+    "text": "{\"\\x67\":1}",
+    "expected_text": "{\"g\":1}",
+    "valid": true,
+    "data": {
+      "g": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-68",
+    "text": "{\"v\":\"\\x68\"}",
+    "expected_text": "{\"v\":\"h\"}",
+    "valid": true,
+    "data": {
+      "v": "h"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-68",
+    "text": "{\"\\x68\":1}",
+    "expected_text": "{\"h\":1}",
+    "valid": true,
+    "data": {
+      "h": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-69",
+    "text": "{\"v\":\"\\x69\"}",
+    "expected_text": "{\"v\":\"i\"}",
+    "valid": true,
+    "data": {
+      "v": "i"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-69",
+    "text": "{\"\\x69\":1}",
+    "expected_text": "{\"i\":1}",
+    "valid": true,
+    "data": {
+      "i": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-6a",
+    "text": "{\"v\":\"\\x6a\"}",
+    "expected_text": "{\"v\":\"j\"}",
+    "valid": true,
+    "data": {
+      "v": "j"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-6a",
+    "text": "{\"\\x6a\":1}",
+    "expected_text": "{\"j\":1}",
+    "valid": true,
+    "data": {
+      "j": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-6b",
+    "text": "{\"v\":\"\\x6b\"}",
+    "expected_text": "{\"v\":\"k\"}",
+    "valid": true,
+    "data": {
+      "v": "k"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-6b",
+    "text": "{\"\\x6b\":1}",
+    "expected_text": "{\"k\":1}",
+    "valid": true,
+    "data": {
+      "k": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-6c",
+    "text": "{\"v\":\"\\x6c\"}",
+    "expected_text": "{\"v\":\"l\"}",
+    "valid": true,
+    "data": {
+      "v": "l"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-6c",
+    "text": "{\"\\x6c\":1}",
+    "expected_text": "{\"l\":1}",
+    "valid": true,
+    "data": {
+      "l": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-6d",
+    "text": "{\"v\":\"\\x6d\"}",
+    "expected_text": "{\"v\":\"m\"}",
+    "valid": true,
+    "data": {
+      "v": "m"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-6d",
+    "text": "{\"\\x6d\":1}",
+    "expected_text": "{\"m\":1}",
+    "valid": true,
+    "data": {
+      "m": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-6e",
+    "text": "{\"v\":\"\\x6e\"}",
+    "expected_text": "{\"v\":\"n\"}",
+    "valid": true,
+    "data": {
+      "v": "n"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-6e",
+    "text": "{\"\\x6e\":1}",
+    "expected_text": "{\"n\":1}",
+    "valid": true,
+    "data": {
+      "n": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-6f",
+    "text": "{\"v\":\"\\x6f\"}",
+    "expected_text": "{\"v\":\"o\"}",
+    "valid": true,
+    "data": {
+      "v": "o"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-6f",
+    "text": "{\"\\x6f\":1}",
+    "expected_text": "{\"o\":1}",
+    "valid": true,
+    "data": {
+      "o": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-70",
+    "text": "{\"v\":\"\\x70\"}",
+    "expected_text": "{\"v\":\"p\"}",
+    "valid": true,
+    "data": {
+      "v": "p"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-70",
+    "text": "{\"\\x70\":1}",
+    "expected_text": "{\"p\":1}",
+    "valid": true,
+    "data": {
+      "p": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-71",
+    "text": "{\"v\":\"\\x71\"}",
+    "expected_text": "{\"v\":\"q\"}",
+    "valid": true,
+    "data": {
+      "v": "q"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-71",
+    "text": "{\"\\x71\":1}",
+    "expected_text": "{\"q\":1}",
+    "valid": true,
+    "data": {
+      "q": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-72",
+    "text": "{\"v\":\"\\x72\"}",
+    "expected_text": "{\"v\":\"r\"}",
+    "valid": true,
+    "data": {
+      "v": "r"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-72",
+    "text": "{\"\\x72\":1}",
+    "expected_text": "{\"r\":1}",
+    "valid": true,
+    "data": {
+      "r": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-73",
+    "text": "{\"v\":\"\\x73\"}",
+    "expected_text": "{\"v\":\"s\"}",
+    "valid": true,
+    "data": {
+      "v": "s"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-73",
+    "text": "{\"\\x73\":1}",
+    "expected_text": "{\"s\":1}",
+    "valid": true,
+    "data": {
+      "s": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-74",
+    "text": "{\"v\":\"\\x74\"}",
+    "expected_text": "{\"v\":\"t\"}",
+    "valid": true,
+    "data": {
+      "v": "t"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-74",
+    "text": "{\"\\x74\":1}",
+    "expected_text": "{\"t\":1}",
+    "valid": true,
+    "data": {
+      "t": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-75",
+    "text": "{\"v\":\"\\x75\"}",
+    "expected_text": "{\"v\":\"u\"}",
+    "valid": true,
+    "data": {
+      "v": "u"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-75",
+    "text": "{\"\\x75\":1}",
+    "expected_text": "{\"u\":1}",
+    "valid": true,
+    "data": {
+      "u": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-76",
+    "text": "{\"v\":\"\\x76\"}",
+    "expected_text": "{\"v\":\"v\"}",
+    "valid": true,
+    "data": {
+      "v": "v"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-76",
+    "text": "{\"\\x76\":1}",
+    "expected_text": "{\"v\":1}",
+    "valid": true,
+    "data": {
+      "v": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-77",
+    "text": "{\"v\":\"\\x77\"}",
+    "expected_text": "{\"v\":\"w\"}",
+    "valid": true,
+    "data": {
+      "v": "w"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-77",
+    "text": "{\"\\x77\":1}",
+    "expected_text": "{\"w\":1}",
+    "valid": true,
+    "data": {
+      "w": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-78",
+    "text": "{\"v\":\"\\x78\"}",
+    "expected_text": "{\"v\":\"x\"}",
+    "valid": true,
+    "data": {
+      "v": "x"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-78",
+    "text": "{\"\\x78\":1}",
+    "expected_text": "{\"x\":1}",
+    "valid": true,
+    "data": {
+      "x": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-79",
+    "text": "{\"v\":\"\\x79\"}",
+    "expected_text": "{\"v\":\"y\"}",
+    "valid": true,
+    "data": {
+      "v": "y"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-79",
+    "text": "{\"\\x79\":1}",
+    "expected_text": "{\"y\":1}",
+    "valid": true,
+    "data": {
+      "y": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-7a",
+    "text": "{\"v\":\"\\x7a\"}",
+    "expected_text": "{\"v\":\"z\"}",
+    "valid": true,
+    "data": {
+      "v": "z"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-7a",
+    "text": "{\"\\x7a\":1}",
+    "expected_text": "{\"z\":1}",
+    "valid": true,
+    "data": {
+      "z": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-7b",
+    "text": "{\"v\":\"\\x7b\"}",
+    "expected_text": "{\"v\":\"{\"}",
+    "valid": true,
+    "data": {
+      "v": "{"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-7b",
+    "text": "{\"\\x7b\":1}",
+    "expected_text": "{\"{\":1}",
+    "valid": true,
+    "data": {
+      "{": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-7c",
+    "text": "{\"v\":\"\\x7c\"}",
+    "expected_text": "{\"v\":\"|\"}",
+    "valid": true,
+    "data": {
+      "v": "|"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-7c",
+    "text": "{\"\\x7c\":1}",
+    "expected_text": "{\"|\":1}",
+    "valid": true,
+    "data": {
+      "|": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-7d",
+    "text": "{\"v\":\"\\x7d\"}",
+    "expected_text": "{\"v\":\"}\"}",
+    "valid": true,
+    "data": {
+      "v": "}"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-7d",
+    "text": "{\"\\x7d\":1}",
+    "expected_text": "{\"}\":1}",
+    "valid": true,
+    "data": {
+      "}": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-7e",
+    "text": "{\"v\":\"\\x7e\"}",
+    "expected_text": "{\"v\":\"~\"}",
+    "valid": true,
+    "data": {
+      "v": "~"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-7e",
+    "text": "{\"\\x7e\":1}",
+    "expected_text": "{\"~\":1}",
+    "valid": true,
+    "data": {
+      "~": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-7f",
+    "text": "{\"v\":\"\\x7f\"}",
+    "expected_text": "{\"v\":\"\u007f\"}",
+    "valid": true,
+    "data": {
+      "v": "\u007f"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-7f",
+    "text": "{\"\\x7f\":1}",
+    "expected_text": "{\"\u007f\":1}",
+    "valid": true,
+    "data": {
+      "\u007f": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-80",
+    "text": "{\"v\":\"\\x80\"}",
+    "expected_text": "{\"v\":\"\u0080\"}",
+    "valid": true,
+    "data": {
+      "v": "\u0080"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-80",
+    "text": "{\"\\x80\":1}",
+    "expected_text": "{\"\u0080\":1}",
+    "valid": true,
+    "data": {
+      "\u0080": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-81",
+    "text": "{\"v\":\"\\x81\"}",
+    "expected_text": "{\"v\":\"\u0081\"}",
+    "valid": true,
+    "data": {
+      "v": "\u0081"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-81",
+    "text": "{\"\\x81\":1}",
+    "expected_text": "{\"\u0081\":1}",
+    "valid": true,
+    "data": {
+      "\u0081": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-82",
+    "text": "{\"v\":\"\\x82\"}",
+    "expected_text": "{\"v\":\"\u0082\"}",
+    "valid": true,
+    "data": {
+      "v": "\u0082"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-82",
+    "text": "{\"\\x82\":1}",
+    "expected_text": "{\"\u0082\":1}",
+    "valid": true,
+    "data": {
+      "\u0082": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-83",
+    "text": "{\"v\":\"\\x83\"}",
+    "expected_text": "{\"v\":\"\u0083\"}",
+    "valid": true,
+    "data": {
+      "v": "\u0083"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-83",
+    "text": "{\"\\x83\":1}",
+    "expected_text": "{\"\u0083\":1}",
+    "valid": true,
+    "data": {
+      "\u0083": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-84",
+    "text": "{\"v\":\"\\x84\"}",
+    "expected_text": "{\"v\":\"\u0084\"}",
+    "valid": true,
+    "data": {
+      "v": "\u0084"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-84",
+    "text": "{\"\\x84\":1}",
+    "expected_text": "{\"\u0084\":1}",
+    "valid": true,
+    "data": {
+      "\u0084": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-85",
+    "text": "{\"v\":\"\\x85\"}",
+    "expected_text": "{\"v\":\"\u0085\"}",
+    "valid": true,
+    "data": {
+      "v": "\u0085"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-85",
+    "text": "{\"\\x85\":1}",
+    "expected_text": "{\"\u0085\":1}",
+    "valid": true,
+    "data": {
+      "\u0085": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-86",
+    "text": "{\"v\":\"\\x86\"}",
+    "expected_text": "{\"v\":\"\u0086\"}",
+    "valid": true,
+    "data": {
+      "v": "\u0086"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-86",
+    "text": "{\"\\x86\":1}",
+    "expected_text": "{\"\u0086\":1}",
+    "valid": true,
+    "data": {
+      "\u0086": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-87",
+    "text": "{\"v\":\"\\x87\"}",
+    "expected_text": "{\"v\":\"\u0087\"}",
+    "valid": true,
+    "data": {
+      "v": "\u0087"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-87",
+    "text": "{\"\\x87\":1}",
+    "expected_text": "{\"\u0087\":1}",
+    "valid": true,
+    "data": {
+      "\u0087": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-88",
+    "text": "{\"v\":\"\\x88\"}",
+    "expected_text": "{\"v\":\"\u0088\"}",
+    "valid": true,
+    "data": {
+      "v": "\u0088"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-88",
+    "text": "{\"\\x88\":1}",
+    "expected_text": "{\"\u0088\":1}",
+    "valid": true,
+    "data": {
+      "\u0088": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-89",
+    "text": "{\"v\":\"\\x89\"}",
+    "expected_text": "{\"v\":\"\u0089\"}",
+    "valid": true,
+    "data": {
+      "v": "\u0089"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-89",
+    "text": "{\"\\x89\":1}",
+    "expected_text": "{\"\u0089\":1}",
+    "valid": true,
+    "data": {
+      "\u0089": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-8a",
+    "text": "{\"v\":\"\\x8a\"}",
+    "expected_text": "{\"v\":\"\u008a\"}",
+    "valid": true,
+    "data": {
+      "v": "\u008a"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-8a",
+    "text": "{\"\\x8a\":1}",
+    "expected_text": "{\"\u008a\":1}",
+    "valid": true,
+    "data": {
+      "\u008a": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-8b",
+    "text": "{\"v\":\"\\x8b\"}",
+    "expected_text": "{\"v\":\"\u008b\"}",
+    "valid": true,
+    "data": {
+      "v": "\u008b"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-8b",
+    "text": "{\"\\x8b\":1}",
+    "expected_text": "{\"\u008b\":1}",
+    "valid": true,
+    "data": {
+      "\u008b": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-8c",
+    "text": "{\"v\":\"\\x8c\"}",
+    "expected_text": "{\"v\":\"\u008c\"}",
+    "valid": true,
+    "data": {
+      "v": "\u008c"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-8c",
+    "text": "{\"\\x8c\":1}",
+    "expected_text": "{\"\u008c\":1}",
+    "valid": true,
+    "data": {
+      "\u008c": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-8d",
+    "text": "{\"v\":\"\\x8d\"}",
+    "expected_text": "{\"v\":\"\u008d\"}",
+    "valid": true,
+    "data": {
+      "v": "\u008d"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-8d",
+    "text": "{\"\\x8d\":1}",
+    "expected_text": "{\"\u008d\":1}",
+    "valid": true,
+    "data": {
+      "\u008d": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-8e",
+    "text": "{\"v\":\"\\x8e\"}",
+    "expected_text": "{\"v\":\"\u008e\"}",
+    "valid": true,
+    "data": {
+      "v": "\u008e"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-8e",
+    "text": "{\"\\x8e\":1}",
+    "expected_text": "{\"\u008e\":1}",
+    "valid": true,
+    "data": {
+      "\u008e": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-8f",
+    "text": "{\"v\":\"\\x8f\"}",
+    "expected_text": "{\"v\":\"\u008f\"}",
+    "valid": true,
+    "data": {
+      "v": "\u008f"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-8f",
+    "text": "{\"\\x8f\":1}",
+    "expected_text": "{\"\u008f\":1}",
+    "valid": true,
+    "data": {
+      "\u008f": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-90",
+    "text": "{\"v\":\"\\x90\"}",
+    "expected_text": "{\"v\":\"\u0090\"}",
+    "valid": true,
+    "data": {
+      "v": "\u0090"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-90",
+    "text": "{\"\\x90\":1}",
+    "expected_text": "{\"\u0090\":1}",
+    "valid": true,
+    "data": {
+      "\u0090": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-91",
+    "text": "{\"v\":\"\\x91\"}",
+    "expected_text": "{\"v\":\"\u0091\"}",
+    "valid": true,
+    "data": {
+      "v": "\u0091"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-91",
+    "text": "{\"\\x91\":1}",
+    "expected_text": "{\"\u0091\":1}",
+    "valid": true,
+    "data": {
+      "\u0091": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-92",
+    "text": "{\"v\":\"\\x92\"}",
+    "expected_text": "{\"v\":\"\u0092\"}",
+    "valid": true,
+    "data": {
+      "v": "\u0092"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-92",
+    "text": "{\"\\x92\":1}",
+    "expected_text": "{\"\u0092\":1}",
+    "valid": true,
+    "data": {
+      "\u0092": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-93",
+    "text": "{\"v\":\"\\x93\"}",
+    "expected_text": "{\"v\":\"\u0093\"}",
+    "valid": true,
+    "data": {
+      "v": "\u0093"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-93",
+    "text": "{\"\\x93\":1}",
+    "expected_text": "{\"\u0093\":1}",
+    "valid": true,
+    "data": {
+      "\u0093": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-94",
+    "text": "{\"v\":\"\\x94\"}",
+    "expected_text": "{\"v\":\"\u0094\"}",
+    "valid": true,
+    "data": {
+      "v": "\u0094"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-94",
+    "text": "{\"\\x94\":1}",
+    "expected_text": "{\"\u0094\":1}",
+    "valid": true,
+    "data": {
+      "\u0094": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-95",
+    "text": "{\"v\":\"\\x95\"}",
+    "expected_text": "{\"v\":\"\u0095\"}",
+    "valid": true,
+    "data": {
+      "v": "\u0095"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-95",
+    "text": "{\"\\x95\":1}",
+    "expected_text": "{\"\u0095\":1}",
+    "valid": true,
+    "data": {
+      "\u0095": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-96",
+    "text": "{\"v\":\"\\x96\"}",
+    "expected_text": "{\"v\":\"\u0096\"}",
+    "valid": true,
+    "data": {
+      "v": "\u0096"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-96",
+    "text": "{\"\\x96\":1}",
+    "expected_text": "{\"\u0096\":1}",
+    "valid": true,
+    "data": {
+      "\u0096": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-97",
+    "text": "{\"v\":\"\\x97\"}",
+    "expected_text": "{\"v\":\"\u0097\"}",
+    "valid": true,
+    "data": {
+      "v": "\u0097"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-97",
+    "text": "{\"\\x97\":1}",
+    "expected_text": "{\"\u0097\":1}",
+    "valid": true,
+    "data": {
+      "\u0097": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-98",
+    "text": "{\"v\":\"\\x98\"}",
+    "expected_text": "{\"v\":\"\u0098\"}",
+    "valid": true,
+    "data": {
+      "v": "\u0098"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-98",
+    "text": "{\"\\x98\":1}",
+    "expected_text": "{\"\u0098\":1}",
+    "valid": true,
+    "data": {
+      "\u0098": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-99",
+    "text": "{\"v\":\"\\x99\"}",
+    "expected_text": "{\"v\":\"\u0099\"}",
+    "valid": true,
+    "data": {
+      "v": "\u0099"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-99",
+    "text": "{\"\\x99\":1}",
+    "expected_text": "{\"\u0099\":1}",
+    "valid": true,
+    "data": {
+      "\u0099": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-9a",
+    "text": "{\"v\":\"\\x9a\"}",
+    "expected_text": "{\"v\":\"\u009a\"}",
+    "valid": true,
+    "data": {
+      "v": "\u009a"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-9a",
+    "text": "{\"\\x9a\":1}",
+    "expected_text": "{\"\u009a\":1}",
+    "valid": true,
+    "data": {
+      "\u009a": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-9b",
+    "text": "{\"v\":\"\\x9b\"}",
+    "expected_text": "{\"v\":\"\u009b\"}",
+    "valid": true,
+    "data": {
+      "v": "\u009b"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-9b",
+    "text": "{\"\\x9b\":1}",
+    "expected_text": "{\"\u009b\":1}",
+    "valid": true,
+    "data": {
+      "\u009b": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-9c",
+    "text": "{\"v\":\"\\x9c\"}",
+    "expected_text": "{\"v\":\"\u009c\"}",
+    "valid": true,
+    "data": {
+      "v": "\u009c"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-9c",
+    "text": "{\"\\x9c\":1}",
+    "expected_text": "{\"\u009c\":1}",
+    "valid": true,
+    "data": {
+      "\u009c": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-9d",
+    "text": "{\"v\":\"\\x9d\"}",
+    "expected_text": "{\"v\":\"\u009d\"}",
+    "valid": true,
+    "data": {
+      "v": "\u009d"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-9d",
+    "text": "{\"\\x9d\":1}",
+    "expected_text": "{\"\u009d\":1}",
+    "valid": true,
+    "data": {
+      "\u009d": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-9e",
+    "text": "{\"v\":\"\\x9e\"}",
+    "expected_text": "{\"v\":\"\u009e\"}",
+    "valid": true,
+    "data": {
+      "v": "\u009e"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-9e",
+    "text": "{\"\\x9e\":1}",
+    "expected_text": "{\"\u009e\":1}",
+    "valid": true,
+    "data": {
+      "\u009e": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-9f",
+    "text": "{\"v\":\"\\x9f\"}",
+    "expected_text": "{\"v\":\"\u009f\"}",
+    "valid": true,
+    "data": {
+      "v": "\u009f"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-9f",
+    "text": "{\"\\x9f\":1}",
+    "expected_text": "{\"\u009f\":1}",
+    "valid": true,
+    "data": {
+      "\u009f": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-a0",
+    "text": "{\"v\":\"\\xa0\"}",
+    "expected_text": "{\"v\":\"\u00a0\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00a0"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-a0",
+    "text": "{\"\\xa0\":1}",
+    "expected_text": "{\"\u00a0\":1}",
+    "valid": true,
+    "data": {
+      "\u00a0": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-a1",
+    "text": "{\"v\":\"\\xa1\"}",
+    "expected_text": "{\"v\":\"\u00a1\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00a1"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-a1",
+    "text": "{\"\\xa1\":1}",
+    "expected_text": "{\"\u00a1\":1}",
+    "valid": true,
+    "data": {
+      "\u00a1": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-a2",
+    "text": "{\"v\":\"\\xa2\"}",
+    "expected_text": "{\"v\":\"\u00a2\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00a2"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-a2",
+    "text": "{\"\\xa2\":1}",
+    "expected_text": "{\"\u00a2\":1}",
+    "valid": true,
+    "data": {
+      "\u00a2": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-a3",
+    "text": "{\"v\":\"\\xa3\"}",
+    "expected_text": "{\"v\":\"\u00a3\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00a3"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-a3",
+    "text": "{\"\\xa3\":1}",
+    "expected_text": "{\"\u00a3\":1}",
+    "valid": true,
+    "data": {
+      "\u00a3": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-a4",
+    "text": "{\"v\":\"\\xa4\"}",
+    "expected_text": "{\"v\":\"\u00a4\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00a4"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-a4",
+    "text": "{\"\\xa4\":1}",
+    "expected_text": "{\"\u00a4\":1}",
+    "valid": true,
+    "data": {
+      "\u00a4": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-a5",
+    "text": "{\"v\":\"\\xa5\"}",
+    "expected_text": "{\"v\":\"\u00a5\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00a5"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-a5",
+    "text": "{\"\\xa5\":1}",
+    "expected_text": "{\"\u00a5\":1}",
+    "valid": true,
+    "data": {
+      "\u00a5": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-a6",
+    "text": "{\"v\":\"\\xa6\"}",
+    "expected_text": "{\"v\":\"\u00a6\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00a6"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-a6",
+    "text": "{\"\\xa6\":1}",
+    "expected_text": "{\"\u00a6\":1}",
+    "valid": true,
+    "data": {
+      "\u00a6": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-a7",
+    "text": "{\"v\":\"\\xa7\"}",
+    "expected_text": "{\"v\":\"\u00a7\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00a7"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-a7",
+    "text": "{\"\\xa7\":1}",
+    "expected_text": "{\"\u00a7\":1}",
+    "valid": true,
+    "data": {
+      "\u00a7": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-a8",
+    "text": "{\"v\":\"\\xa8\"}",
+    "expected_text": "{\"v\":\"\u00a8\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00a8"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-a8",
+    "text": "{\"\\xa8\":1}",
+    "expected_text": "{\"\u00a8\":1}",
+    "valid": true,
+    "data": {
+      "\u00a8": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-a9",
+    "text": "{\"v\":\"\\xa9\"}",
+    "expected_text": "{\"v\":\"\u00a9\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00a9"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-a9",
+    "text": "{\"\\xa9\":1}",
+    "expected_text": "{\"\u00a9\":1}",
+    "valid": true,
+    "data": {
+      "\u00a9": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-aa",
+    "text": "{\"v\":\"\\xaa\"}",
+    "expected_text": "{\"v\":\"\u00aa\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00aa"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-aa",
+    "text": "{\"\\xaa\":1}",
+    "expected_text": "{\"\u00aa\":1}",
+    "valid": true,
+    "data": {
+      "\u00aa": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-ab",
+    "text": "{\"v\":\"\\xab\"}",
+    "expected_text": "{\"v\":\"\u00ab\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00ab"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-ab",
+    "text": "{\"\\xab\":1}",
+    "expected_text": "{\"\u00ab\":1}",
+    "valid": true,
+    "data": {
+      "\u00ab": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-ac",
+    "text": "{\"v\":\"\\xac\"}",
+    "expected_text": "{\"v\":\"\u00ac\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00ac"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-ac",
+    "text": "{\"\\xac\":1}",
+    "expected_text": "{\"\u00ac\":1}",
+    "valid": true,
+    "data": {
+      "\u00ac": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-ad",
+    "text": "{\"v\":\"\\xad\"}",
+    "expected_text": "{\"v\":\"\u00ad\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00ad"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-ad",
+    "text": "{\"\\xad\":1}",
+    "expected_text": "{\"\u00ad\":1}",
+    "valid": true,
+    "data": {
+      "\u00ad": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-ae",
+    "text": "{\"v\":\"\\xae\"}",
+    "expected_text": "{\"v\":\"\u00ae\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00ae"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-ae",
+    "text": "{\"\\xae\":1}",
+    "expected_text": "{\"\u00ae\":1}",
+    "valid": true,
+    "data": {
+      "\u00ae": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-af",
+    "text": "{\"v\":\"\\xaf\"}",
+    "expected_text": "{\"v\":\"\u00af\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00af"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-af",
+    "text": "{\"\\xaf\":1}",
+    "expected_text": "{\"\u00af\":1}",
+    "valid": true,
+    "data": {
+      "\u00af": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-b0",
+    "text": "{\"v\":\"\\xb0\"}",
+    "expected_text": "{\"v\":\"\u00b0\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00b0"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-b0",
+    "text": "{\"\\xb0\":1}",
+    "expected_text": "{\"\u00b0\":1}",
+    "valid": true,
+    "data": {
+      "\u00b0": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-b1",
+    "text": "{\"v\":\"\\xb1\"}",
+    "expected_text": "{\"v\":\"\u00b1\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00b1"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-b1",
+    "text": "{\"\\xb1\":1}",
+    "expected_text": "{\"\u00b1\":1}",
+    "valid": true,
+    "data": {
+      "\u00b1": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-b2",
+    "text": "{\"v\":\"\\xb2\"}",
+    "expected_text": "{\"v\":\"\u00b2\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00b2"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-b2",
+    "text": "{\"\\xb2\":1}",
+    "expected_text": "{\"\u00b2\":1}",
+    "valid": true,
+    "data": {
+      "\u00b2": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-b3",
+    "text": "{\"v\":\"\\xb3\"}",
+    "expected_text": "{\"v\":\"\u00b3\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00b3"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-b3",
+    "text": "{\"\\xb3\":1}",
+    "expected_text": "{\"\u00b3\":1}",
+    "valid": true,
+    "data": {
+      "\u00b3": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-b4",
+    "text": "{\"v\":\"\\xb4\"}",
+    "expected_text": "{\"v\":\"\u00b4\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00b4"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-b4",
+    "text": "{\"\\xb4\":1}",
+    "expected_text": "{\"\u00b4\":1}",
+    "valid": true,
+    "data": {
+      "\u00b4": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-b5",
+    "text": "{\"v\":\"\\xb5\"}",
+    "expected_text": "{\"v\":\"\u00b5\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00b5"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-b5",
+    "text": "{\"\\xb5\":1}",
+    "expected_text": "{\"\u00b5\":1}",
+    "valid": true,
+    "data": {
+      "\u00b5": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-b6",
+    "text": "{\"v\":\"\\xb6\"}",
+    "expected_text": "{\"v\":\"\u00b6\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00b6"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-b6",
+    "text": "{\"\\xb6\":1}",
+    "expected_text": "{\"\u00b6\":1}",
+    "valid": true,
+    "data": {
+      "\u00b6": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-b7",
+    "text": "{\"v\":\"\\xb7\"}",
+    "expected_text": "{\"v\":\"\u00b7\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00b7"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-b7",
+    "text": "{\"\\xb7\":1}",
+    "expected_text": "{\"\u00b7\":1}",
+    "valid": true,
+    "data": {
+      "\u00b7": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-b8",
+    "text": "{\"v\":\"\\xb8\"}",
+    "expected_text": "{\"v\":\"\u00b8\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00b8"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-b8",
+    "text": "{\"\\xb8\":1}",
+    "expected_text": "{\"\u00b8\":1}",
+    "valid": true,
+    "data": {
+      "\u00b8": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-b9",
+    "text": "{\"v\":\"\\xb9\"}",
+    "expected_text": "{\"v\":\"\u00b9\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00b9"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-b9",
+    "text": "{\"\\xb9\":1}",
+    "expected_text": "{\"\u00b9\":1}",
+    "valid": true,
+    "data": {
+      "\u00b9": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-ba",
+    "text": "{\"v\":\"\\xba\"}",
+    "expected_text": "{\"v\":\"\u00ba\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00ba"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-ba",
+    "text": "{\"\\xba\":1}",
+    "expected_text": "{\"\u00ba\":1}",
+    "valid": true,
+    "data": {
+      "\u00ba": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-bb",
+    "text": "{\"v\":\"\\xbb\"}",
+    "expected_text": "{\"v\":\"\u00bb\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00bb"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-bb",
+    "text": "{\"\\xbb\":1}",
+    "expected_text": "{\"\u00bb\":1}",
+    "valid": true,
+    "data": {
+      "\u00bb": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-bc",
+    "text": "{\"v\":\"\\xbc\"}",
+    "expected_text": "{\"v\":\"\u00bc\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00bc"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-bc",
+    "text": "{\"\\xbc\":1}",
+    "expected_text": "{\"\u00bc\":1}",
+    "valid": true,
+    "data": {
+      "\u00bc": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-bd",
+    "text": "{\"v\":\"\\xbd\"}",
+    "expected_text": "{\"v\":\"\u00bd\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00bd"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-bd",
+    "text": "{\"\\xbd\":1}",
+    "expected_text": "{\"\u00bd\":1}",
+    "valid": true,
+    "data": {
+      "\u00bd": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-be",
+    "text": "{\"v\":\"\\xbe\"}",
+    "expected_text": "{\"v\":\"\u00be\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00be"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-be",
+    "text": "{\"\\xbe\":1}",
+    "expected_text": "{\"\u00be\":1}",
+    "valid": true,
+    "data": {
+      "\u00be": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-bf",
+    "text": "{\"v\":\"\\xbf\"}",
+    "expected_text": "{\"v\":\"\u00bf\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00bf"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-bf",
+    "text": "{\"\\xbf\":1}",
+    "expected_text": "{\"\u00bf\":1}",
+    "valid": true,
+    "data": {
+      "\u00bf": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-c0",
+    "text": "{\"v\":\"\\xc0\"}",
+    "expected_text": "{\"v\":\"\u00c0\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00c0"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-c0",
+    "text": "{\"\\xc0\":1}",
+    "expected_text": "{\"\u00c0\":1}",
+    "valid": true,
+    "data": {
+      "\u00c0": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-c1",
+    "text": "{\"v\":\"\\xc1\"}",
+    "expected_text": "{\"v\":\"\u00c1\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00c1"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-c1",
+    "text": "{\"\\xc1\":1}",
+    "expected_text": "{\"\u00c1\":1}",
+    "valid": true,
+    "data": {
+      "\u00c1": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-c2",
+    "text": "{\"v\":\"\\xc2\"}",
+    "expected_text": "{\"v\":\"\u00c2\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00c2"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-c2",
+    "text": "{\"\\xc2\":1}",
+    "expected_text": "{\"\u00c2\":1}",
+    "valid": true,
+    "data": {
+      "\u00c2": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-c3",
+    "text": "{\"v\":\"\\xc3\"}",
+    "expected_text": "{\"v\":\"\u00c3\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00c3"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-c3",
+    "text": "{\"\\xc3\":1}",
+    "expected_text": "{\"\u00c3\":1}",
+    "valid": true,
+    "data": {
+      "\u00c3": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-c4",
+    "text": "{\"v\":\"\\xc4\"}",
+    "expected_text": "{\"v\":\"\u00c4\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00c4"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-c4",
+    "text": "{\"\\xc4\":1}",
+    "expected_text": "{\"\u00c4\":1}",
+    "valid": true,
+    "data": {
+      "\u00c4": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-c5",
+    "text": "{\"v\":\"\\xc5\"}",
+    "expected_text": "{\"v\":\"\u00c5\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00c5"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-c5",
+    "text": "{\"\\xc5\":1}",
+    "expected_text": "{\"\u00c5\":1}",
+    "valid": true,
+    "data": {
+      "\u00c5": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-c6",
+    "text": "{\"v\":\"\\xc6\"}",
+    "expected_text": "{\"v\":\"\u00c6\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00c6"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-c6",
+    "text": "{\"\\xc6\":1}",
+    "expected_text": "{\"\u00c6\":1}",
+    "valid": true,
+    "data": {
+      "\u00c6": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-c7",
+    "text": "{\"v\":\"\\xc7\"}",
+    "expected_text": "{\"v\":\"\u00c7\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00c7"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-c7",
+    "text": "{\"\\xc7\":1}",
+    "expected_text": "{\"\u00c7\":1}",
+    "valid": true,
+    "data": {
+      "\u00c7": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-c8",
+    "text": "{\"v\":\"\\xc8\"}",
+    "expected_text": "{\"v\":\"\u00c8\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00c8"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-c8",
+    "text": "{\"\\xc8\":1}",
+    "expected_text": "{\"\u00c8\":1}",
+    "valid": true,
+    "data": {
+      "\u00c8": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-c9",
+    "text": "{\"v\":\"\\xc9\"}",
+    "expected_text": "{\"v\":\"\u00c9\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00c9"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-c9",
+    "text": "{\"\\xc9\":1}",
+    "expected_text": "{\"\u00c9\":1}",
+    "valid": true,
+    "data": {
+      "\u00c9": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-ca",
+    "text": "{\"v\":\"\\xca\"}",
+    "expected_text": "{\"v\":\"\u00ca\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00ca"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-ca",
+    "text": "{\"\\xca\":1}",
+    "expected_text": "{\"\u00ca\":1}",
+    "valid": true,
+    "data": {
+      "\u00ca": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-cb",
+    "text": "{\"v\":\"\\xcb\"}",
+    "expected_text": "{\"v\":\"\u00cb\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00cb"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-cb",
+    "text": "{\"\\xcb\":1}",
+    "expected_text": "{\"\u00cb\":1}",
+    "valid": true,
+    "data": {
+      "\u00cb": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-cc",
+    "text": "{\"v\":\"\\xcc\"}",
+    "expected_text": "{\"v\":\"\u00cc\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00cc"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-cc",
+    "text": "{\"\\xcc\":1}",
+    "expected_text": "{\"\u00cc\":1}",
+    "valid": true,
+    "data": {
+      "\u00cc": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-cd",
+    "text": "{\"v\":\"\\xcd\"}",
+    "expected_text": "{\"v\":\"\u00cd\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00cd"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-cd",
+    "text": "{\"\\xcd\":1}",
+    "expected_text": "{\"\u00cd\":1}",
+    "valid": true,
+    "data": {
+      "\u00cd": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-ce",
+    "text": "{\"v\":\"\\xce\"}",
+    "expected_text": "{\"v\":\"\u00ce\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00ce"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-ce",
+    "text": "{\"\\xce\":1}",
+    "expected_text": "{\"\u00ce\":1}",
+    "valid": true,
+    "data": {
+      "\u00ce": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-cf",
+    "text": "{\"v\":\"\\xcf\"}",
+    "expected_text": "{\"v\":\"\u00cf\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00cf"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-cf",
+    "text": "{\"\\xcf\":1}",
+    "expected_text": "{\"\u00cf\":1}",
+    "valid": true,
+    "data": {
+      "\u00cf": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-d0",
+    "text": "{\"v\":\"\\xd0\"}",
+    "expected_text": "{\"v\":\"\u00d0\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00d0"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-d0",
+    "text": "{\"\\xd0\":1}",
+    "expected_text": "{\"\u00d0\":1}",
+    "valid": true,
+    "data": {
+      "\u00d0": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-d1",
+    "text": "{\"v\":\"\\xd1\"}",
+    "expected_text": "{\"v\":\"\u00d1\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00d1"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-d1",
+    "text": "{\"\\xd1\":1}",
+    "expected_text": "{\"\u00d1\":1}",
+    "valid": true,
+    "data": {
+      "\u00d1": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-d2",
+    "text": "{\"v\":\"\\xd2\"}",
+    "expected_text": "{\"v\":\"\u00d2\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00d2"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-d2",
+    "text": "{\"\\xd2\":1}",
+    "expected_text": "{\"\u00d2\":1}",
+    "valid": true,
+    "data": {
+      "\u00d2": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-d3",
+    "text": "{\"v\":\"\\xd3\"}",
+    "expected_text": "{\"v\":\"\u00d3\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00d3"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-d3",
+    "text": "{\"\\xd3\":1}",
+    "expected_text": "{\"\u00d3\":1}",
+    "valid": true,
+    "data": {
+      "\u00d3": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-d4",
+    "text": "{\"v\":\"\\xd4\"}",
+    "expected_text": "{\"v\":\"\u00d4\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00d4"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-d4",
+    "text": "{\"\\xd4\":1}",
+    "expected_text": "{\"\u00d4\":1}",
+    "valid": true,
+    "data": {
+      "\u00d4": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-d5",
+    "text": "{\"v\":\"\\xd5\"}",
+    "expected_text": "{\"v\":\"\u00d5\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00d5"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-d5",
+    "text": "{\"\\xd5\":1}",
+    "expected_text": "{\"\u00d5\":1}",
+    "valid": true,
+    "data": {
+      "\u00d5": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-d6",
+    "text": "{\"v\":\"\\xd6\"}",
+    "expected_text": "{\"v\":\"\u00d6\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00d6"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-d6",
+    "text": "{\"\\xd6\":1}",
+    "expected_text": "{\"\u00d6\":1}",
+    "valid": true,
+    "data": {
+      "\u00d6": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-d7",
+    "text": "{\"v\":\"\\xd7\"}",
+    "expected_text": "{\"v\":\"\u00d7\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00d7"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-d7",
+    "text": "{\"\\xd7\":1}",
+    "expected_text": "{\"\u00d7\":1}",
+    "valid": true,
+    "data": {
+      "\u00d7": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-d8",
+    "text": "{\"v\":\"\\xd8\"}",
+    "expected_text": "{\"v\":\"\u00d8\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00d8"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-d8",
+    "text": "{\"\\xd8\":1}",
+    "expected_text": "{\"\u00d8\":1}",
+    "valid": true,
+    "data": {
+      "\u00d8": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-d9",
+    "text": "{\"v\":\"\\xd9\"}",
+    "expected_text": "{\"v\":\"\u00d9\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00d9"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-d9",
+    "text": "{\"\\xd9\":1}",
+    "expected_text": "{\"\u00d9\":1}",
+    "valid": true,
+    "data": {
+      "\u00d9": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-da",
+    "text": "{\"v\":\"\\xda\"}",
+    "expected_text": "{\"v\":\"\u00da\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00da"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-da",
+    "text": "{\"\\xda\":1}",
+    "expected_text": "{\"\u00da\":1}",
+    "valid": true,
+    "data": {
+      "\u00da": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-db",
+    "text": "{\"v\":\"\\xdb\"}",
+    "expected_text": "{\"v\":\"\u00db\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00db"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-db",
+    "text": "{\"\\xdb\":1}",
+    "expected_text": "{\"\u00db\":1}",
+    "valid": true,
+    "data": {
+      "\u00db": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-dc",
+    "text": "{\"v\":\"\\xdc\"}",
+    "expected_text": "{\"v\":\"\u00dc\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00dc"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-dc",
+    "text": "{\"\\xdc\":1}",
+    "expected_text": "{\"\u00dc\":1}",
+    "valid": true,
+    "data": {
+      "\u00dc": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-dd",
+    "text": "{\"v\":\"\\xdd\"}",
+    "expected_text": "{\"v\":\"\u00dd\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00dd"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-dd",
+    "text": "{\"\\xdd\":1}",
+    "expected_text": "{\"\u00dd\":1}",
+    "valid": true,
+    "data": {
+      "\u00dd": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-de",
+    "text": "{\"v\":\"\\xde\"}",
+    "expected_text": "{\"v\":\"\u00de\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00de"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-de",
+    "text": "{\"\\xde\":1}",
+    "expected_text": "{\"\u00de\":1}",
+    "valid": true,
+    "data": {
+      "\u00de": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-df",
+    "text": "{\"v\":\"\\xdf\"}",
+    "expected_text": "{\"v\":\"\u00df\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00df"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-df",
+    "text": "{\"\\xdf\":1}",
+    "expected_text": "{\"\u00df\":1}",
+    "valid": true,
+    "data": {
+      "\u00df": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-e0",
+    "text": "{\"v\":\"\\xe0\"}",
+    "expected_text": "{\"v\":\"\u00e0\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00e0"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-e0",
+    "text": "{\"\\xe0\":1}",
+    "expected_text": "{\"\u00e0\":1}",
+    "valid": true,
+    "data": {
+      "\u00e0": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-e1",
+    "text": "{\"v\":\"\\xe1\"}",
+    "expected_text": "{\"v\":\"\u00e1\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00e1"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-e1",
+    "text": "{\"\\xe1\":1}",
+    "expected_text": "{\"\u00e1\":1}",
+    "valid": true,
+    "data": {
+      "\u00e1": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-e2",
+    "text": "{\"v\":\"\\xe2\"}",
+    "expected_text": "{\"v\":\"\u00e2\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00e2"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-e2",
+    "text": "{\"\\xe2\":1}",
+    "expected_text": "{\"\u00e2\":1}",
+    "valid": true,
+    "data": {
+      "\u00e2": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-e3",
+    "text": "{\"v\":\"\\xe3\"}",
+    "expected_text": "{\"v\":\"\u00e3\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00e3"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-e3",
+    "text": "{\"\\xe3\":1}",
+    "expected_text": "{\"\u00e3\":1}",
+    "valid": true,
+    "data": {
+      "\u00e3": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-e4",
+    "text": "{\"v\":\"\\xe4\"}",
+    "expected_text": "{\"v\":\"\u00e4\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00e4"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-e4",
+    "text": "{\"\\xe4\":1}",
+    "expected_text": "{\"\u00e4\":1}",
+    "valid": true,
+    "data": {
+      "\u00e4": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-e5",
+    "text": "{\"v\":\"\\xe5\"}",
+    "expected_text": "{\"v\":\"\u00e5\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00e5"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-e5",
+    "text": "{\"\\xe5\":1}",
+    "expected_text": "{\"\u00e5\":1}",
+    "valid": true,
+    "data": {
+      "\u00e5": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-e6",
+    "text": "{\"v\":\"\\xe6\"}",
+    "expected_text": "{\"v\":\"\u00e6\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00e6"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-e6",
+    "text": "{\"\\xe6\":1}",
+    "expected_text": "{\"\u00e6\":1}",
+    "valid": true,
+    "data": {
+      "\u00e6": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-e7",
+    "text": "{\"v\":\"\\xe7\"}",
+    "expected_text": "{\"v\":\"\u00e7\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00e7"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-e7",
+    "text": "{\"\\xe7\":1}",
+    "expected_text": "{\"\u00e7\":1}",
+    "valid": true,
+    "data": {
+      "\u00e7": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-e8",
+    "text": "{\"v\":\"\\xe8\"}",
+    "expected_text": "{\"v\":\"\u00e8\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00e8"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-e8",
+    "text": "{\"\\xe8\":1}",
+    "expected_text": "{\"\u00e8\":1}",
+    "valid": true,
+    "data": {
+      "\u00e8": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-e9",
+    "text": "{\"v\":\"\\xe9\"}",
+    "expected_text": "{\"v\":\"\u00e9\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00e9"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-e9",
+    "text": "{\"\\xe9\":1}",
+    "expected_text": "{\"\u00e9\":1}",
+    "valid": true,
+    "data": {
+      "\u00e9": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-ea",
+    "text": "{\"v\":\"\\xea\"}",
+    "expected_text": "{\"v\":\"\u00ea\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00ea"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-ea",
+    "text": "{\"\\xea\":1}",
+    "expected_text": "{\"\u00ea\":1}",
+    "valid": true,
+    "data": {
+      "\u00ea": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-eb",
+    "text": "{\"v\":\"\\xeb\"}",
+    "expected_text": "{\"v\":\"\u00eb\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00eb"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-eb",
+    "text": "{\"\\xeb\":1}",
+    "expected_text": "{\"\u00eb\":1}",
+    "valid": true,
+    "data": {
+      "\u00eb": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-ec",
+    "text": "{\"v\":\"\\xec\"}",
+    "expected_text": "{\"v\":\"\u00ec\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00ec"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-ec",
+    "text": "{\"\\xec\":1}",
+    "expected_text": "{\"\u00ec\":1}",
+    "valid": true,
+    "data": {
+      "\u00ec": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-ed",
+    "text": "{\"v\":\"\\xed\"}",
+    "expected_text": "{\"v\":\"\u00ed\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00ed"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-ed",
+    "text": "{\"\\xed\":1}",
+    "expected_text": "{\"\u00ed\":1}",
+    "valid": true,
+    "data": {
+      "\u00ed": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-ee",
+    "text": "{\"v\":\"\\xee\"}",
+    "expected_text": "{\"v\":\"\u00ee\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00ee"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-ee",
+    "text": "{\"\\xee\":1}",
+    "expected_text": "{\"\u00ee\":1}",
+    "valid": true,
+    "data": {
+      "\u00ee": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-ef",
+    "text": "{\"v\":\"\\xef\"}",
+    "expected_text": "{\"v\":\"\u00ef\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00ef"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-ef",
+    "text": "{\"\\xef\":1}",
+    "expected_text": "{\"\u00ef\":1}",
+    "valid": true,
+    "data": {
+      "\u00ef": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-f0",
+    "text": "{\"v\":\"\\xf0\"}",
+    "expected_text": "{\"v\":\"\u00f0\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00f0"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-f0",
+    "text": "{\"\\xf0\":1}",
+    "expected_text": "{\"\u00f0\":1}",
+    "valid": true,
+    "data": {
+      "\u00f0": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-f1",
+    "text": "{\"v\":\"\\xf1\"}",
+    "expected_text": "{\"v\":\"\u00f1\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00f1"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-f1",
+    "text": "{\"\\xf1\":1}",
+    "expected_text": "{\"\u00f1\":1}",
+    "valid": true,
+    "data": {
+      "\u00f1": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-f2",
+    "text": "{\"v\":\"\\xf2\"}",
+    "expected_text": "{\"v\":\"\u00f2\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00f2"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-f2",
+    "text": "{\"\\xf2\":1}",
+    "expected_text": "{\"\u00f2\":1}",
+    "valid": true,
+    "data": {
+      "\u00f2": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-f3",
+    "text": "{\"v\":\"\\xf3\"}",
+    "expected_text": "{\"v\":\"\u00f3\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00f3"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-f3",
+    "text": "{\"\\xf3\":1}",
+    "expected_text": "{\"\u00f3\":1}",
+    "valid": true,
+    "data": {
+      "\u00f3": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-f4",
+    "text": "{\"v\":\"\\xf4\"}",
+    "expected_text": "{\"v\":\"\u00f4\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00f4"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-f4",
+    "text": "{\"\\xf4\":1}",
+    "expected_text": "{\"\u00f4\":1}",
+    "valid": true,
+    "data": {
+      "\u00f4": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-f5",
+    "text": "{\"v\":\"\\xf5\"}",
+    "expected_text": "{\"v\":\"\u00f5\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00f5"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-f5",
+    "text": "{\"\\xf5\":1}",
+    "expected_text": "{\"\u00f5\":1}",
+    "valid": true,
+    "data": {
+      "\u00f5": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-f6",
+    "text": "{\"v\":\"\\xf6\"}",
+    "expected_text": "{\"v\":\"\u00f6\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00f6"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-f6",
+    "text": "{\"\\xf6\":1}",
+    "expected_text": "{\"\u00f6\":1}",
+    "valid": true,
+    "data": {
+      "\u00f6": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-f7",
+    "text": "{\"v\":\"\\xf7\"}",
+    "expected_text": "{\"v\":\"\u00f7\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00f7"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-f7",
+    "text": "{\"\\xf7\":1}",
+    "expected_text": "{\"\u00f7\":1}",
+    "valid": true,
+    "data": {
+      "\u00f7": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-f8",
+    "text": "{\"v\":\"\\xf8\"}",
+    "expected_text": "{\"v\":\"\u00f8\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00f8"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-f8",
+    "text": "{\"\\xf8\":1}",
+    "expected_text": "{\"\u00f8\":1}",
+    "valid": true,
+    "data": {
+      "\u00f8": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-f9",
+    "text": "{\"v\":\"\\xf9\"}",
+    "expected_text": "{\"v\":\"\u00f9\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00f9"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-f9",
+    "text": "{\"\\xf9\":1}",
+    "expected_text": "{\"\u00f9\":1}",
+    "valid": true,
+    "data": {
+      "\u00f9": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-fa",
+    "text": "{\"v\":\"\\xfa\"}",
+    "expected_text": "{\"v\":\"\u00fa\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00fa"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-fa",
+    "text": "{\"\\xfa\":1}",
+    "expected_text": "{\"\u00fa\":1}",
+    "valid": true,
+    "data": {
+      "\u00fa": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-fb",
+    "text": "{\"v\":\"\\xfb\"}",
+    "expected_text": "{\"v\":\"\u00fb\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00fb"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-fb",
+    "text": "{\"\\xfb\":1}",
+    "expected_text": "{\"\u00fb\":1}",
+    "valid": true,
+    "data": {
+      "\u00fb": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-fc",
+    "text": "{\"v\":\"\\xfc\"}",
+    "expected_text": "{\"v\":\"\u00fc\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00fc"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-fc",
+    "text": "{\"\\xfc\":1}",
+    "expected_text": "{\"\u00fc\":1}",
+    "valid": true,
+    "data": {
+      "\u00fc": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-fd",
+    "text": "{\"v\":\"\\xfd\"}",
+    "expected_text": "{\"v\":\"\u00fd\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00fd"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-fd",
+    "text": "{\"\\xfd\":1}",
+    "expected_text": "{\"\u00fd\":1}",
+    "valid": true,
+    "data": {
+      "\u00fd": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-fe",
+    "text": "{\"v\":\"\\xfe\"}",
+    "expected_text": "{\"v\":\"\u00fe\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00fe"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-fe",
+    "text": "{\"\\xfe\":1}",
+    "expected_text": "{\"\u00fe\":1}",
+    "valid": true,
+    "data": {
+      "\u00fe": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-value-ff",
+    "text": "{\"v\":\"\\xff\"}",
+    "expected_text": "{\"v\":\"\u00ff\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00ff"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "hex-key-ff",
+    "text": "{\"\\xff\":1}",
+    "expected_text": "{\"\u00ff\":1}",
+    "valid": true,
+    "data": {
+      "\u00ff": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "partial-value-0",
+    "text": "{\"v\":\"\\u0\"}",
+    "expected_text": "{\"v\":\"\\u0000\"}",
+    "valid": true,
+    "data": {
+      "v": "\u0000"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "partial-key-0",
+    "text": "{\"\\u0\":1}",
+    "expected_text": "{\"\\u0000\":1}",
+    "valid": true,
+    "data": {
+      "\u0000": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "partial-value-1",
+    "text": "{\"v\":\"\\u1\"}",
+    "expected_text": "{\"v\":\"\\u0001\"}",
+    "valid": true,
+    "data": {
+      "v": "\u0001"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "partial-key-1",
+    "text": "{\"\\u1\":1}",
+    "expected_text": "{\"\\u0001\":1}",
+    "valid": true,
+    "data": {
+      "\u0001": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "partial-value-E",
+    "text": "{\"v\":\"\\uE\"}",
+    "expected_text": "{\"v\":\"\\u000E\"}",
+    "valid": true,
+    "data": {
+      "v": "\u000e"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "partial-key-E",
+    "text": "{\"\\uE\":1}",
+    "expected_text": "{\"\\u000E\":1}",
+    "valid": true,
+    "data": {
+      "\u000e": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "partial-value-f",
+    "text": "{\"v\":\"\\uf\"}",
+    "expected_text": "{\"v\":\"\\u000f\"}",
+    "valid": true,
+    "data": {
+      "v": "\u000f"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "partial-key-f",
+    "text": "{\"\\uf\":1}",
+    "expected_text": "{\"\\u000f\":1}",
+    "valid": true,
+    "data": {
+      "\u000f": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "partial-value-00",
+    "text": "{\"v\":\"\\u00\"}",
+    "expected_text": "{\"v\":\"\\u0000\"}",
+    "valid": true,
+    "data": {
+      "v": "\u0000"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "partial-key-00",
+    "text": "{\"\\u00\":1}",
+    "expected_text": "{\"\\u0000\":1}",
+    "valid": true,
+    "data": {
+      "\u0000": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "partial-value-41",
+    "text": "{\"v\":\"\\u41\"}",
+    "expected_text": "{\"v\":\"\\u0041\"}",
+    "valid": true,
+    "data": {
+      "v": "A"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "partial-key-41",
+    "text": "{\"\\u41\":1}",
+    "expected_text": "{\"\\u0041\":1}",
+    "valid": true,
+    "data": {
+      "A": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "partial-value-E9",
+    "text": "{\"v\":\"\\uE9\"}",
+    "expected_text": "{\"v\":\"\\u00E9\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00e9"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "partial-key-E9",
+    "text": "{\"\\uE9\":1}",
+    "expected_text": "{\"\\u00E9\":1}",
+    "valid": true,
+    "data": {
+      "\u00e9": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "partial-value-aB",
+    "text": "{\"v\":\"\\uaB\"}",
+    "expected_text": "{\"v\":\"\\u00aB\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00ab"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "partial-key-aB",
+    "text": "{\"\\uaB\":1}",
+    "expected_text": "{\"\\u00aB\":1}",
+    "valid": true,
+    "data": {
+      "\u00ab": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "partial-value-000",
+    "text": "{\"v\":\"\\u000\"}",
+    "expected_text": "{\"v\":\"\\u0000\"}",
+    "valid": true,
+    "data": {
+      "v": "\u0000"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "partial-key-000",
+    "text": "{\"\\u000\":1}",
+    "expected_text": "{\"\\u0000\":1}",
+    "valid": true,
+    "data": {
+      "\u0000": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "partial-value-00A",
+    "text": "{\"v\":\"\\u00A\"}",
+    "expected_text": "{\"v\":\"\\u000A\"}",
+    "valid": true,
+    "data": {
+      "v": "\n"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "partial-key-00A",
+    "text": "{\"\\u00A\":1}",
+    "expected_text": "{\"\\u000A\":1}",
+    "valid": true,
+    "data": {
+      "\n": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "partial-value-123",
+    "text": "{\"v\":\"\\u123\"}",
+    "expected_text": "{\"v\":\"\\u0123\"}",
+    "valid": true,
+    "data": {
+      "v": "\u0123"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "partial-key-123",
+    "text": "{\"\\u123\":1}",
+    "expected_text": "{\"\\u0123\":1}",
+    "valid": true,
+    "data": {
+      "\u0123": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "partial-value-f60",
+    "text": "{\"v\":\"\\uf60\"}",
+    "expected_text": "{\"v\":\"\\u0f60\"}",
+    "valid": true,
+    "data": {
+      "v": "\u0f60"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "partial-key-f60",
+    "text": "{\"\\uf60\":1}",
+    "expected_text": "{\"\\u0f60\":1}",
+    "valid": true,
+    "data": {
+      "\u0f60": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "no-hex-empty",
+    "text": "{\"v\":\"\\u\"}",
+    "expected_text": "{\"v\":\"\"}",
+    "valid": true,
+    "data": {
+      "v": ""
+    },
+    "source_valid": false
+  },
+  {
+    "name": "no-hex-four",
+    "text": "{\"v\":\"\\uGGGG\"}",
+    "expected_text": "{\"v\":\"\"}",
+    "valid": true,
+    "data": {
+      "v": ""
+    },
+    "source_valid": false
+  },
+  {
+    "name": "no-hex-short",
+    "text": "{\"v\":\"\\uxyz\"}",
+    "expected_text": "{\"v\":\"\"}",
+    "valid": true,
+    "data": {
+      "v": ""
+    },
+    "source_valid": false
+  },
+  {
+    "name": "no-hex-suffix",
+    "text": "{\"v\":\"\\uGGGGrest\"}",
+    "expected_text": "{\"v\":\"rest\"}",
+    "valid": true,
+    "data": {
+      "v": "rest"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "no-hex-hex-stop",
+    "text": "{\"v\":\"\\uG1rest\"}",
+    "expected_text": "{\"v\":\"1rest\"}",
+    "valid": true,
+    "data": {
+      "v": "1rest"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "no-hex-emoji-four",
+    "text": "{\"v\":\"\\u\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00Z\"}",
+    "expected_text": "{\"v\":\"Z\"}",
+    "valid": true,
+    "data": {
+      "v": "Z"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "no-hex-emoji-hex-stop",
+    "text": "{\"v\":\"\\u\ud83d\ude00G1z\"}",
+    "expected_text": "{\"v\":\"1z\"}",
+    "valid": true,
+    "data": {
+      "v": "1z"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "no-hex-escape-stop",
+    "text": "{\"v\":\"\\uGG\\nend\"}",
+    "expected_text": "{\"v\":\"\\nend\"}",
+    "valid": true,
+    "data": {
+      "v": "\nend"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "no-hex-space-stop",
+    "text": "{\"v\":\"\\uGG text\"}",
+    "expected_text": "{\"v\":\" text\"}",
+    "valid": true,
+    "data": {
+      "v": " text"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "no-hex-bom-is-not-space",
+    "text": "{\"v\":\"\\uGG\ufeffhi\"}",
+    "expected_text": "{\"v\":\"i\"}",
+    "valid": true,
+    "data": {
+      "v": "i"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "no-hex-zwsp-is-not-space",
+    "text": "{\"v\":\"\\uGG\u200bhi\"}",
+    "expected_text": "{\"v\":\"i\"}",
+    "valid": true,
+    "data": {
+      "v": "i"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "whitespace-stop-9",
+    "text": "{\"v\":\"\\uGG\ttail\"}",
+    "expected_text": "{\"v\":\"\ttail\"}",
+    "valid": false,
+    "data": null,
+    "source_valid": false
+  },
+  {
+    "name": "whitespace-stop-a",
+    "text": "{\"v\":\"\\uGG\ntail\"}",
+    "expected_text": "{\"v\":\"\ntail\"}",
+    "valid": false,
+    "data": null,
+    "source_valid": false
+  },
+  {
+    "name": "whitespace-stop-b",
+    "text": "{\"v\":\"\\uGG\u000btail\"}",
+    "expected_text": "{\"v\":\"\u000btail\"}",
+    "valid": false,
+    "data": null,
+    "source_valid": false
+  },
+  {
+    "name": "whitespace-stop-c",
+    "text": "{\"v\":\"\\uGG\ftail\"}",
+    "expected_text": "{\"v\":\"\ftail\"}",
+    "valid": false,
+    "data": null,
+    "source_valid": false
+  },
+  {
+    "name": "whitespace-stop-d",
+    "text": "{\"v\":\"\\uGG\rtail\"}",
+    "expected_text": "{\"v\":\"\rtail\"}",
+    "valid": false,
+    "data": null,
+    "source_valid": false
+  },
+  {
+    "name": "whitespace-stop-1c",
+    "text": "{\"v\":\"\\uGG\u001ctail\"}",
+    "expected_text": "{\"v\":\"\u001ctail\"}",
+    "valid": false,
+    "data": null,
+    "source_valid": false
+  },
+  {
+    "name": "whitespace-stop-1d",
+    "text": "{\"v\":\"\\uGG\u001dtail\"}",
+    "expected_text": "{\"v\":\"\u001dtail\"}",
+    "valid": false,
+    "data": null,
+    "source_valid": false
+  },
+  {
+    "name": "whitespace-stop-1e",
+    "text": "{\"v\":\"\\uGG\u001etail\"}",
+    "expected_text": "{\"v\":\"\u001etail\"}",
+    "valid": false,
+    "data": null,
+    "source_valid": false
+  },
+  {
+    "name": "whitespace-stop-1f",
+    "text": "{\"v\":\"\\uGG\u001ftail\"}",
+    "expected_text": "{\"v\":\"\u001ftail\"}",
+    "valid": false,
+    "data": null,
+    "source_valid": false
+  },
+  {
+    "name": "whitespace-stop-20",
+    "text": "{\"v\":\"\\uGG tail\"}",
+    "expected_text": "{\"v\":\" tail\"}",
+    "valid": true,
+    "data": {
+      "v": " tail"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "whitespace-stop-85",
+    "text": "{\"v\":\"\\uGG\u0085tail\"}",
+    "expected_text": "{\"v\":\"\u0085tail\"}",
+    "valid": true,
+    "data": {
+      "v": "\u0085tail"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "whitespace-stop-a0",
+    "text": "{\"v\":\"\\uGG\u00a0tail\"}",
+    "expected_text": "{\"v\":\"\u00a0tail\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00a0tail"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "whitespace-stop-1680",
+    "text": "{\"v\":\"\\uGG\u1680tail\"}",
+    "expected_text": "{\"v\":\"\u1680tail\"}",
+    "valid": true,
+    "data": {
+      "v": "\u1680tail"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "whitespace-stop-2000",
+    "text": "{\"v\":\"\\uGG\u2000tail\"}",
+    "expected_text": "{\"v\":\"\u2000tail\"}",
+    "valid": true,
+    "data": {
+      "v": "\u2000tail"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "whitespace-stop-2001",
+    "text": "{\"v\":\"\\uGG\u2001tail\"}",
+    "expected_text": "{\"v\":\"\u2001tail\"}",
+    "valid": true,
+    "data": {
+      "v": "\u2001tail"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "whitespace-stop-2002",
+    "text": "{\"v\":\"\\uGG\u2002tail\"}",
+    "expected_text": "{\"v\":\"\u2002tail\"}",
+    "valid": true,
+    "data": {
+      "v": "\u2002tail"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "whitespace-stop-2003",
+    "text": "{\"v\":\"\\uGG\u2003tail\"}",
+    "expected_text": "{\"v\":\"\u2003tail\"}",
+    "valid": true,
+    "data": {
+      "v": "\u2003tail"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "whitespace-stop-2004",
+    "text": "{\"v\":\"\\uGG\u2004tail\"}",
+    "expected_text": "{\"v\":\"\u2004tail\"}",
+    "valid": true,
+    "data": {
+      "v": "\u2004tail"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "whitespace-stop-2005",
+    "text": "{\"v\":\"\\uGG\u2005tail\"}",
+    "expected_text": "{\"v\":\"\u2005tail\"}",
+    "valid": true,
+    "data": {
+      "v": "\u2005tail"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "whitespace-stop-2006",
+    "text": "{\"v\":\"\\uGG\u2006tail\"}",
+    "expected_text": "{\"v\":\"\u2006tail\"}",
+    "valid": true,
+    "data": {
+      "v": "\u2006tail"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "whitespace-stop-2007",
+    "text": "{\"v\":\"\\uGG\u2007tail\"}",
+    "expected_text": "{\"v\":\"\u2007tail\"}",
+    "valid": true,
+    "data": {
+      "v": "\u2007tail"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "whitespace-stop-2008",
+    "text": "{\"v\":\"\\uGG\u2008tail\"}",
+    "expected_text": "{\"v\":\"\u2008tail\"}",
+    "valid": true,
+    "data": {
+      "v": "\u2008tail"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "whitespace-stop-2009",
+    "text": "{\"v\":\"\\uGG\u2009tail\"}",
+    "expected_text": "{\"v\":\"\u2009tail\"}",
+    "valid": true,
+    "data": {
+      "v": "\u2009tail"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "whitespace-stop-200a",
+    "text": "{\"v\":\"\\uGG\u200atail\"}",
+    "expected_text": "{\"v\":\"\u200atail\"}",
+    "valid": true,
+    "data": {
+      "v": "\u200atail"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "whitespace-stop-2028",
+    "text": "{\"v\":\"\\uGG\u2028tail\"}",
+    "expected_text": "{\"v\":\"\u2028tail\"}",
+    "valid": true,
+    "data": {
+      "v": "\u2028tail"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "whitespace-stop-2029",
+    "text": "{\"v\":\"\\uGG\u2029tail\"}",
+    "expected_text": "{\"v\":\"\u2029tail\"}",
+    "valid": true,
+    "data": {
+      "v": "\u2029tail"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "whitespace-stop-202f",
+    "text": "{\"v\":\"\\uGG\u202ftail\"}",
+    "expected_text": "{\"v\":\"\u202ftail\"}",
+    "valid": true,
+    "data": {
+      "v": "\u202ftail"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "whitespace-stop-205f",
+    "text": "{\"v\":\"\\uGG\u205ftail\"}",
+    "expected_text": "{\"v\":\"\u205ftail\"}",
+    "valid": true,
+    "data": {
+      "v": "\u205ftail"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "whitespace-stop-3000",
+    "text": "{\"v\":\"\\uGG\u3000tail\"}",
+    "expected_text": "{\"v\":\"\u3000tail\"}",
+    "valid": true,
+    "data": {
+      "v": "\u3000tail"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "null-marker-empty",
+    "text": "{\"v\":\"\\0\"}",
+    "expected_text": "{\"v\":\"\"}",
+    "valid": true,
+    "data": {
+      "v": ""
+    },
+    "source_valid": false
+  },
+  {
+    "name": "null-marker-0",
+    "text": "{\"v\":\"\\00\"}",
+    "expected_text": "{\"v\":\"0\"}",
+    "valid": true,
+    "data": {
+      "v": "0"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "null-marker-1",
+    "text": "{\"v\":\"\\01\"}",
+    "expected_text": "{\"v\":\"1\"}",
+    "valid": true,
+    "data": {
+      "v": "1"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "null-marker-2",
+    "text": "{\"v\":\"\\02\"}",
+    "expected_text": "{\"v\":\"2\"}",
+    "valid": true,
+    "data": {
+      "v": "2"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "null-marker-3",
+    "text": "{\"v\":\"\\03\"}",
+    "expected_text": "{\"v\":\"3\"}",
+    "valid": true,
+    "data": {
+      "v": "3"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "null-marker-4",
+    "text": "{\"v\":\"\\04\"}",
+    "expected_text": "{\"v\":\"4\"}",
+    "valid": true,
+    "data": {
+      "v": "4"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "null-marker-5",
+    "text": "{\"v\":\"\\05\"}",
+    "expected_text": "{\"v\":\"5\"}",
+    "valid": true,
+    "data": {
+      "v": "5"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "null-marker-6",
+    "text": "{\"v\":\"\\06\"}",
+    "expected_text": "{\"v\":\"6\"}",
+    "valid": true,
+    "data": {
+      "v": "6"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "null-marker-7",
+    "text": "{\"v\":\"\\07\"}",
+    "expected_text": "{\"v\":\"7\"}",
+    "valid": true,
+    "data": {
+      "v": "7"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "null-marker-8",
+    "text": "{\"v\":\"\\08\"}",
+    "expected_text": "{\"v\":\"8\"}",
+    "valid": true,
+    "data": {
+      "v": "8"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "null-marker-9",
+    "text": "{\"v\":\"\\09\"}",
+    "expected_text": "{\"v\":\"9\"}",
+    "valid": true,
+    "data": {
+      "v": "9"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "null-marker-12",
+    "text": "{\"v\":\"\\012\"}",
+    "expected_text": "{\"v\":\"12\"}",
+    "valid": true,
+    "data": {
+      "v": "12"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "null-marker-001",
+    "text": "{\"v\":\"\\0001\"}",
+    "expected_text": "{\"v\":\"001\"}",
+    "valid": true,
+    "data": {
+      "v": "001"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "null-marker-after",
+    "text": "{\"v\":\"\\0after\"}",
+    "expected_text": "{\"v\":\"after\"}",
+    "valid": true,
+    "data": {
+      "v": "after"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "unknown-x",
+    "text": "{\"v\":\"\\x\"}",
+    "expected_text": "{\"v\":\"\\x\"}",
+    "valid": false,
+    "data": null,
+    "source_valid": false
+  },
+  {
+    "name": "unknown-x0",
+    "text": "{\"v\":\"\\x0\"}",
+    "expected_text": "{\"v\":\"\\x0\"}",
+    "valid": false,
+    "data": null,
+    "source_valid": false
+  },
+  {
+    "name": "unknown-xGG",
+    "text": "{\"v\":\"\\xGG\"}",
+    "expected_text": "{\"v\":\"\\xGG\"}",
+    "valid": false,
+    "data": null,
+    "source_valid": false
+  },
+  {
+    "name": "unknown-x4G",
+    "text": "{\"v\":\"\\x4G\"}",
+    "expected_text": "{\"v\":\"\\x4G\"}",
+    "valid": false,
+    "data": null,
+    "source_valid": false
+  },
+  {
+    "name": "unknown-q",
+    "text": "{\"v\":\"\\q\"}",
+    "expected_text": "{\"v\":\"\\q\"}",
+    "valid": false,
+    "data": null,
+    "source_valid": false
+  },
+  {
+    "name": "unknown-U0041",
+    "text": "{\"v\":\"\\U0041\"}",
+    "expected_text": "{\"v\":\"\\U0041\"}",
+    "valid": false,
+    "data": null,
+    "source_valid": false
+  },
+  {
+    "name": "backslash-boundary-0-key-False",
+    "text": "{\"before\":\"\",\"v\":\"\\u41\"}",
+    "expected_text": "{\"before\":\"\",\"v\":\"\\u0041\"}",
+    "valid": true,
+    "data": {
+      "before": "",
+      "v": "A"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "backslash-boundary-0-key-True",
+    "text": "{\"\":\"before\",\"v\":\"\\u41\"}",
+    "expected_text": "{\"\":\"before\",\"v\":\"\\u0041\"}",
+    "valid": true,
+    "data": {
+      "": "before",
+      "v": "A"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "backslash-boundary-1-key-False",
+    "text": "{\"before\":\"\\\\\",\"v\":\"\\u41\"}",
+    "expected_text": "{\"before\":\"\\\\\",\"v\":\"\\u0041\"}",
+    "valid": true,
+    "data": {
+      "before": "\\",
+      "v": "A"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "backslash-boundary-1-key-True",
+    "text": "{\"\\\\\":\"before\",\"v\":\"\\u41\"}",
+    "expected_text": "{\"\\\\\":\"before\",\"v\":\"\\u0041\"}",
+    "valid": true,
+    "data": {
+      "\\": "before",
+      "v": "A"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "backslash-boundary-2-key-False",
+    "text": "{\"before\":\"\\\\\\\\\",\"v\":\"\\u41\"}",
+    "expected_text": "{\"before\":\"\\\\\\\\\",\"v\":\"\\u0041\"}",
+    "valid": true,
+    "data": {
+      "before": "\\\\",
+      "v": "A"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "backslash-boundary-2-key-True",
+    "text": "{\"\\\\\\\\\":\"before\",\"v\":\"\\u41\"}",
+    "expected_text": "{\"\\\\\\\\\":\"before\",\"v\":\"\\u0041\"}",
+    "valid": true,
+    "data": {
+      "\\\\": "before",
+      "v": "A"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "backslash-boundary-3-key-False",
+    "text": "{\"before\":\"\\\\\\\\\\\\\",\"v\":\"\\u41\"}",
+    "expected_text": "{\"before\":\"\\\\\\\\\\\\\",\"v\":\"\\u0041\"}",
+    "valid": true,
+    "data": {
+      "before": "\\\\\\",
+      "v": "A"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "backslash-boundary-3-key-True",
+    "text": "{\"\\\\\\\\\\\\\":\"before\",\"v\":\"\\u41\"}",
+    "expected_text": "{\"\\\\\\\\\\\\\":\"before\",\"v\":\"\\u0041\"}",
+    "valid": true,
+    "data": {
+      "\\\\\\": "before",
+      "v": "A"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "backslash-boundary-4-key-False",
+    "text": "{\"before\":\"\\\\\\\\\\\\\\\\\",\"v\":\"\\u41\"}",
+    "expected_text": "{\"before\":\"\\\\\\\\\\\\\\\\\",\"v\":\"\\u0041\"}",
+    "valid": true,
+    "data": {
+      "before": "\\\\\\\\",
+      "v": "A"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "backslash-boundary-4-key-True",
+    "text": "{\"\\\\\\\\\\\\\\\\\":\"before\",\"v\":\"\\u41\"}",
+    "expected_text": "{\"\\\\\\\\\\\\\\\\\":\"before\",\"v\":\"\\u0041\"}",
+    "valid": true,
+    "data": {
+      "\\\\\\\\": "before",
+      "v": "A"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "backslash-boundary-7-key-False",
+    "text": "{\"before\":\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\"v\":\"\\u41\"}",
+    "expected_text": "{\"before\":\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\"v\":\"\\u0041\"}",
+    "valid": true,
+    "data": {
+      "before": "\\\\\\\\\\\\\\",
+      "v": "A"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "backslash-boundary-7-key-True",
+    "text": "{\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":\"before\",\"v\":\"\\u41\"}",
+    "expected_text": "{\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":\"before\",\"v\":\"\\u0041\"}",
+    "valid": true,
+    "data": {
+      "\\\\\\\\\\\\\\": "before",
+      "v": "A"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "backslash-boundary-8-key-False",
+    "text": "{\"before\":\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\"v\":\"\\u41\"}",
+    "expected_text": "{\"before\":\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\"v\":\"\\u0041\"}",
+    "valid": true,
+    "data": {
+      "before": "\\\\\\\\\\\\\\\\",
+      "v": "A"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "backslash-boundary-8-key-True",
+    "text": "{\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":\"before\",\"v\":\"\\u41\"}",
+    "expected_text": "{\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":\"before\",\"v\":\"\\u0041\"}",
+    "valid": true,
+    "data": {
+      "\\\\\\\\\\\\\\\\": "before",
+      "v": "A"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "backslash-boundary-16-key-False",
+    "text": "{\"before\":\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\"v\":\"\\u41\"}",
+    "expected_text": "{\"before\":\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\"v\":\"\\u0041\"}",
+    "valid": true,
+    "data": {
+      "before": "\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",
+      "v": "A"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "backslash-boundary-16-key-True",
+    "text": "{\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":\"before\",\"v\":\"\\u41\"}",
+    "expected_text": "{\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":\"before\",\"v\":\"\\u0041\"}",
+    "valid": true,
+    "data": {
+      "\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\": "before",
+      "v": "A"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "preserved-612",
+    "text": "{\"v\":\"\\u0000\"}",
+    "expected_text": "{\"v\":\"\\u0000\"}",
+    "valid": true,
+    "data": {
+      "v": "\u0000"
+    },
+    "source_valid": true
+  },
+  {
+    "name": "preserved-613",
+    "text": "{\"v\":\"\\u0041\"}",
+    "expected_text": "{\"v\":\"\\u0041\"}",
+    "valid": true,
+    "data": {
+      "v": "A"
+    },
+    "source_valid": true
+  },
+  {
+    "name": "preserved-614",
+    "text": "{\"v\":\"\\u00e9\"}",
+    "expected_text": "{\"v\":\"\\u00e9\"}",
+    "valid": true,
+    "data": {
+      "v": "\u00e9"
+    },
+    "source_valid": true
+  },
+  {
+    "name": "preserved-615",
+    "text": "{\"v\":\"\\uD800\"}",
+    "expected_text": "{\"v\":\"\\uD800\"}",
+    "valid": true,
+    "data": {
+      "v": "\ud800"
+    },
+    "source_valid": true
+  },
+  {
+    "name": "preserved-616",
+    "text": "{\"v\":\"\\udc00\"}",
+    "expected_text": "{\"v\":\"\\udc00\"}",
+    "valid": true,
+    "data": {
+      "v": "\udc00"
+    },
+    "source_valid": true
+  },
+  {
+    "name": "preserved-617",
+    "text": "{\"v\":\"\\ud83d\\ude00\"}",
+    "expected_text": "{\"v\":\"\\ud83d\\ude00\"}",
+    "valid": true,
+    "data": {
+      "v": "\ud83d\ude00"
+    },
+    "source_valid": true
+  },
+  {
+    "name": "preserved-618",
+    "text": "{\"v\":\"\\\\u41\"}",
+    "expected_text": "{\"v\":\"\\\\u41\"}",
+    "valid": true,
+    "data": {
+      "v": "\\u41"
+    },
+    "source_valid": true
+  },
+  {
+    "name": "preserved-619",
+    "text": "{\"v\":\"\\\\x22\"}",
+    "expected_text": "{\"v\":\"\\\\x22\"}",
+    "valid": true,
+    "data": {
+      "v": "\\x22"
+    },
+    "source_valid": true
+  },
+  {
+    "name": "preserved-620",
+    "text": "{\"v\":\"\\\\0\"}",
+    "expected_text": "{\"v\":\"\\\\0\"}",
+    "valid": true,
+    "data": {
+      "v": "\\0"
+    },
+    "source_valid": true
+  },
+  {
+    "name": "preserved-621",
+    "text": "{\"v\":\"\\\"\\\\\\/\\b\\f\\n\\r\\t\"}",
+    "expected_text": "{\"v\":\"\\\"\\\\\\/\\b\\f\\n\\r\\t\"}",
+    "valid": true,
+    "data": {
+      "v": "\"\\/\b\f\n\r\t"
+    },
+    "source_valid": true
+  },
+  {
+    "name": "preserved-622",
+    "text": "{\"v\":\"\ud83d\ude00\u03bb\u00e9\"}",
+    "expected_text": "{\"v\":\"\ud83d\ude00\u03bb\u00e9\"}",
+    "valid": true,
+    "data": {
+      "v": "\ud83d\ude00\u03bb\u00e9"
+    },
+    "source_valid": true
+  },
+  {
+    "name": "preserved-623",
+    "text": "{\"v\":\"\\\\\",\"next\":\"literal \\\\uGGGG\"}",
+    "expected_text": "{\"v\":\"\\\\\",\"next\":\"literal \\\\uGGGG\"}",
+    "valid": true,
+    "data": {
+      "v": "\\",
+      "next": "literal \\uGGGG"
+    },
+    "source_valid": true
+  },
+  {
+    "name": "prototype-key-__proto__",
+    "text": "{\"\\x5f\\x5f\\x70\\x72\\x6f\\x74\\x6f\\x5f\\x5f\":1}",
+    "expected_text": "{\"__proto__\":1}",
+    "valid": true,
+    "data": {
+      "__proto__": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "prototype-key-constructor",
+    "text": "{\"\\x63\\x6f\\x6e\\x73\\x74\\x72\\x75\\x63\\x74\\x6f\\x72\":1}",
+    "expected_text": "{\"constructor\":1}",
+    "valid": true,
+    "data": {
+      "constructor": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "prototype-key-toString",
+    "text": "{\"\\x74\\x6f\\x53\\x74\\x72\\x69\\x6e\\x67\":1}",
+    "expected_text": "{\"toString\":1}",
+    "valid": true,
+    "data": {
+      "toString": 1
+    },
+    "source_valid": false
+  },
+  {
+    "name": "literal-unicode",
+    "text": "{\"v\":\"\\x5cu0022\"}",
+    "expected_text": "{\"v\":\"\\\\u0022\"}",
+    "valid": true,
+    "data": {
+      "v": "\\u0022"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "literal-hex",
+    "text": "{\"v\":\"\\x5cx22\"}",
+    "expected_text": "{\"v\":\"\\\\x22\"}",
+    "valid": true,
+    "data": {
+      "v": "\\x22"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "property-looking",
+    "text": "{\"v\":\"\\x22\\x7d\\x2c\\x22admin\\x22:true\"}",
+    "expected_text": "{\"v\":\"\\\"},\\\"admin\\\":true\"}",
+    "valid": true,
+    "data": {
+      "v": "\"},\"admin\":true"
+    },
+    "source_valid": false
+  },
+  {
+    "name": "outside",
+    "text": "\\u41 {\"v\":1}",
+    "expected_text": "\\u41 {\"v\":1}",
+    "valid": false,
+    "data": null,
+    "source_valid": false
+  },
+  {
+    "name": "unclosed-hex",
+    "text": "\"\\x41",
+    "expected_text": "\"A",
+    "valid": false,
+    "data": null,
+    "source_valid": false
+  },
+  {
+    "name": "trailing-backslash",
+    "text": "\"a\\",
+    "expected_text": "\"a\\",
+    "valid": false,
+    "data": null,
+    "source_valid": false
+  }
+]

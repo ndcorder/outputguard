@@ -5,6 +5,10 @@ callable. OutputGuard validates the response against your schema, optionally
 repairs it, and retries with structured feedback when the output is still
 invalid.
 
+The prompt must be a string. Its type is checked before the provider or observer
+is called, including when repair is disabled. Provider results must be strings
+(or supported async results resolving to strings).
+
 ## When to Use It
 
 Use guarded generation when:
@@ -98,6 +102,29 @@ For each attempt, OutputGuard:
 The original prompt remains yours. OutputGuard only builds retry feedback when
 an attempt fails validation or repair.
 
+## Configuration and Retry Limits
+
+`max_retries` counts retries after the first call: zero permits one generation
+attempt, and two permits at most three. `max_repair_attempts` on `OutputGuard`
+counts repair passes; zero disables them. Both limits must be nonnegative whole
+numbers from 0 to 9007199254740991. Integral floats such as `3.0` mean three;
+fractions, booleans, strings, negative values, and non-finite numbers are rejected.
+
+The wrapper checks retry limits, selected format, schema-root type, and callback
+callability before invoking the provider or observer. Invalid configuration
+raises directly and does not produce an exhausted result or consume model calls.
+An omitted format or `None` inherits the guard; an empty string is invalid.
+
+Providers must return text. A non-string result raises `TypeError` after that
+provider call, before validation or observer notification, and causes no retry.
+Exceptions from providers and observers also propagate directly.
+
+The async wrapper accepts synchronous or asynchronous providers and observers.
+Use `guarded_generate_async()` for async callbacks. The synchronous wrapper
+rejects declared async callbacks before invoking the provider; if a synchronous
+callback returns an awaitable, it raises rather than silently discarding it.
+Fresh, unstarted coroutines returned in that situation are closed.
+
 ## Message History in Retry Prompts
 
 Retry prompts include the previous model output by default. That gives the model
@@ -113,6 +140,11 @@ result = guarded_generate(
     include_message_history=False,
 )
 ```
+
+Schema evaluation failures raise `SchemaEvaluationError` with the parsed data,
+schema, format, and underlying cause. They abort the wrapper before observer
+notification or any retry, even when ordinary exhaustion is configured to return
+a result. Update the schema or reduce the recursion before another call.
 
 ## Result Fields
 
@@ -144,6 +176,15 @@ If generation fails after all attempts, you have two choices:
 Use throwing behavior for request/response paths where invalid data cannot
 continue. Use non-throwing behavior for batch jobs, evals, and logging.
 
+`GuardedGenerationError` derives from `OutputGuardError`, so a common library
+error handler catches exhausted generation too. Its `result` contains the full
+failed result, including every attempt, final errors, and repair metadata.
+
+The failure flag controls exhausted validation attempts. Provider and observer
+failures propagate unchanged and stop the loop immediately; they do not consume
+additional retries. Cancellation also propagates without being converted to a
+generation failure.
+
 ## Repair Behavior
 
 `repair=True` is useful for normal LLM output, where small syntax mistakes are
@@ -151,6 +192,21 @@ common. `repair=False` is useful when you want failed attempts to produce direct
 validation feedback instead of repaired output.
 
 Guarded generation validates against your schema either way.
+
+When syntax repair succeeds but schema validation fails, the next attempt
+receives the repaired text and the remaining schema errors. Attempt history
+retains both the raw output and the repaired validation result, and repair
+statistics include repairs from invalid attempts.
+
+Retry prompts include the previous output by default. The excerpt preserves
+up to 500 Unicode code points; longer text keeps the first and last 250 points
+with an ellipsis line between them. The full previous text stays in attempt
+records and the next call's context. Disabling message history omits this
+excerpt; validation messages can still include offending values.
+
+Retry feedback includes applicable object and array details for nullable or
+typeless containers. Schema summaries stop after two nested container levels
+and leave referenced constraints to validation errors.
 
 ## Observing Attempts
 

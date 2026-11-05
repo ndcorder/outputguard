@@ -1,0 +1,188 @@
+[
+  {
+    "name": "tenths",
+    "text": "0.3",
+    "divisor": 0.1,
+    "valid": true
+  },
+  {
+    "name": "fifths",
+    "text": "0.6",
+    "divisor": 0.2,
+    "valid": true
+  },
+  {
+    "name": "hundredths",
+    "text": "2.01",
+    "divisor": 0.01,
+    "valid": true
+  },
+  {
+    "name": "thousandths",
+    "text": "4.02",
+    "divisor": 0.001,
+    "valid": true
+  },
+  {
+    "name": "seven_hundredths",
+    "text": "0.07",
+    "divisor": 0.01,
+    "valid": true
+  },
+  {
+    "name": "twentieths",
+    "text": "0.15",
+    "divisor": 0.05,
+    "valid": true
+  },
+  {
+    "name": "not_fifths",
+    "text": "0.3",
+    "divisor": 0.2,
+    "valid": false
+  },
+  {
+    "name": "off_tenths",
+    "text": "0.31",
+    "divisor": 0.1,
+    "valid": false
+  },
+  {
+    "name": "above_tenth",
+    "text": "0.30000000000000004",
+    "divisor": 0.1,
+    "valid": false
+  },
+  {
+    "name": "below_tenth",
+    "text": "0.29999999999999993",
+    "divisor": 0.1,
+    "valid": false
+  },
+  {
+    "name": "negative_tenths",
+    "text": "-0.3",
+    "divisor": 0.1,
+    "valid": true
+  },
+  {
+    "name": "negative_hundredths",
+    "text": "-2.01",
+    "divisor": 0.01,
+    "valid": true
+  },
+  {
+    "name": "negative_off_tenths",
+    "text": "-0.31",
+    "divisor": 0.1,
+    "valid": false
+  },
+  {
+    "name": "zero",
+    "text": "0",
+    "divisor": 0.0001,
+    "valid": true
+  },
+  {
+    "name": "negative_zero",
+    "text": "-0.0",
+    "divisor": 0.001,
+    "valid": true
+  },
+  {
+    "name": "overflowing_quotient",
+    "text": "1e308",
+    "divisor": 1e-308,
+    "valid": true
+  },
+  {
+    "name": "underflowing_quotient",
+    "text": "1e-308",
+    "divisor": 1e+308,
+    "valid": false
+  },
+  {
+    "name": "huge_nonmultiple",
+    "text": "1e308",
+    "divisor": 3,
+    "valid": false
+  },
+  {
+    "name": "large_integer_nonmultiple",
+    "text": "1e20",
+    "divisor": 3.0,
+    "valid": false
+  },
+  {
+    "name": "tiny_nonmultiple",
+    "text": "1e-300",
+    "divisor": 1e+300,
+    "valid": false
+  },
+  {
+    "name": "subnormal_step",
+    "text": "5e-324",
+    "divisor": 5e-324,
+    "valid": true
+  },
+  {
+    "name": "subnormal_multiple",
+    "text": "1e-323",
+    "divisor": 5e-324,
+    "valid": true
+  },
+  {
+    "name": "subnormal_nonmultiple",
+    "text": "1.5e-323",
+    "divisor": 1e-323,
+    "valid": false
+  },
+  {
+    "name": "small_step",
+    "text": "1e-20",
+    "divisor": 1e-21,
+    "valid": true
+  },
+  {
+    "name": "small_nonmultiple",
+    "text": "1e-20",
+    "divisor": 3e-21,
+    "valid": false
+  },
+  {
+    "name": "safe_integer_nonmultiple",
+    "text": "9007199254740991",
+    "divisor": 3,
+    "valid": false
+  },
+  {
+    "name": "safe_integer",
+    "text": "9007199254740991",
+    "divisor": 1,
+    "valid": true
+  },
+  {
+    "name": "rounded_large_integer",
+    "text": "1.0000000000000001e18",
+    "divisor": 100,
+    "valid": false
+  },
+  {
+    "name": "integer_multiple",
+    "text": "42",
+    "divisor": 2,
+    "valid": true
+  },
+  {
+    "name": "large_integer_multiple",
+    "text": "2.0000000000000003e18",
+    "divisor": 1.0000000000000001e+18,
+    "valid": true
+  },
+  {
+    "name": "large_exact_integer_nonmultiple",
+    "text": "1000000000000000128",
+    "divisor": 100,
+    "valid": false
+  }
+]

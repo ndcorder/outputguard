@@ -156,11 +156,16 @@ def test_parse_returns_data_for_supported_format(format_case: FormatCase) -> Non
     assert data == {"name": "Alice", "age": 30}
 
 
-def test_parse_raises_parse_error_for_supported_format(format_case: FormatCase) -> None:
-    with pytest.raises(ParseError) as exc_info:
+def test_parse_raises_for_invalid_supported_format(format_case: FormatCase) -> None:
+    # The truncated YAML sequence is repairable, but still fails the schema.
+    error_type = SchemaValidationError if format_case.name == "yaml" else ParseError
+    with pytest.raises(error_type) as exc_info:
         outputguard.parse(format_case.garbage, SIMPLE_SCHEMA, format=format_case.name)
 
-    assert exc_info.value.original_text == format_case.garbage
+    if isinstance(exc_info.value, ParseError):
+        assert exc_info.value.original_text == format_case.garbage
+    else:
+        assert exc_info.value.data is not None
     assert exc_info.value.format == format_case.name
 
 

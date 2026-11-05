@@ -45,7 +45,7 @@ jobs:
       - name: Lint
         run: uv run ruff check .
       - name: Type check
-        run: uv run mypy outputguard/ --ignore-missing-imports
+        run: uv run mypy outputguard/ tests/type_contracts.py --ignore-missing-imports
 
   build:
     runs-on: ubuntu-latest

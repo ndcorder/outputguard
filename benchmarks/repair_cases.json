@@ -1,0 +1,4116 @@
+[
+  {
+    "name": "clean-default",
+    "text": "{}",
+    "format": "json",
+    "strategies": null,
+    "custom": [],
+    "expected": {
+      "result": {
+        "repaired": false,
+        "text": "{}",
+        "strategies": [],
+        "parse_failure": false,
+        "format": "json"
+      },
+      "report": {
+        "success": true,
+        "original_text": "{}",
+        "final_text": "{}",
+        "candidate_text": "{}",
+        "parse_failure": false,
+        "steps": [],
+        "strategies_changed": [],
+        "confidence": 1,
+        "summary": "No repair needed — JSON was already valid",
+        "has_diff": false,
+        "diff": "",
+        "step_diffs": "",
+        "strategies_tried": [],
+        "format": "json"
+      },
+      "calls": {}
+    }
+  },
+  {
+    "name": "clean-disabled",
+    "text": "{}",
+    "format": "json",
+    "strategies": [],
+    "custom": [],
+    "expected": {
+      "result": {
+        "repaired": false,
+        "text": "{}",
+        "strategies": [],
+        "parse_failure": false,
+        "format": "json"
+      },
+      "report": {
+        "success": true,
+        "original_text": "{}",
+        "final_text": "{}",
+        "candidate_text": "{}",
+        "parse_failure": false,
+        "steps": [],
+        "strategies_changed": [],
+        "confidence": 1,
+        "summary": "No repair needed — JSON was already valid",
+        "has_diff": false,
+        "diff": "",
+        "step_diffs": "",
+        "strategies_tried": [],
+        "format": "json"
+      },
+      "calls": {}
+    }
+  },
+  {
+    "name": "clean-does-not-execute-faults",
+    "text": "{}",
+    "format": "json",
+    "strategies": [
+      "fault"
+    ],
+    "custom": [
+      {
+        "name": "fault",
+        "action": "throw",
+        "value": "boom"
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": false,
+        "text": "{}",
+        "strategies": [],
+        "parse_failure": false,
+        "format": "json"
+      },
+      "report": {
+        "success": true,
+        "original_text": "{}",
+        "final_text": "{}",
+        "candidate_text": "{}",
+        "parse_failure": false,
+        "steps": [],
+        "strategies_changed": [],
+        "confidence": 1,
+        "summary": "No repair needed — JSON was already valid",
+        "has_diff": false,
+        "diff": "",
+        "step_diffs": "",
+        "strategies_tried": [],
+        "format": "json"
+      },
+      "calls": {
+        "fault": 0
+      }
+    }
+  },
+  {
+    "name": "disabled-json",
+    "text": "{bad",
+    "format": "json",
+    "strategies": [],
+    "custom": [],
+    "expected": {
+      "result": {
+        "repaired": false,
+        "text": "{bad",
+        "strategies": [],
+        "parse_failure": true,
+        "format": "json"
+      },
+      "report": {
+        "success": false,
+        "original_text": "{bad",
+        "final_text": "{bad",
+        "candidate_text": "{bad",
+        "parse_failure": true,
+        "steps": [],
+        "strategies_changed": [],
+        "confidence": 0,
+        "summary": "Repair failed after trying 0 strategies",
+        "has_diff": false,
+        "diff": "",
+        "step_diffs": "",
+        "strategies_tried": [],
+        "format": "json"
+      },
+      "calls": {}
+    }
+  },
+  {
+    "name": "disabled-yaml",
+    "text": "{bad",
+    "format": "yaml",
+    "strategies": [],
+    "custom": [],
+    "expected": {
+      "result": {
+        "repaired": false,
+        "text": "{bad",
+        "strategies": [],
+        "parse_failure": true,
+        "format": "yaml"
+      },
+      "report": {
+        "success": false,
+        "original_text": "{bad",
+        "final_text": "{bad",
+        "candidate_text": "{bad",
+        "parse_failure": true,
+        "steps": [],
+        "strategies_changed": [],
+        "confidence": 0,
+        "summary": "Repair failed after trying 0 strategies",
+        "has_diff": false,
+        "diff": "",
+        "step_diffs": "",
+        "strategies_tried": [],
+        "format": "yaml"
+      },
+      "calls": {}
+    }
+  },
+  {
+    "name": "disabled-toml",
+    "text": "{bad",
+    "format": "toml",
+    "strategies": [],
+    "custom": [],
+    "expected": {
+      "result": {
+        "repaired": false,
+        "text": "{bad",
+        "strategies": [],
+        "parse_failure": true,
+        "format": "toml"
+      },
+      "report": {
+        "success": false,
+        "original_text": "{bad",
+        "final_text": "{bad",
+        "candidate_text": "{bad",
+        "parse_failure": true,
+        "steps": [],
+        "strategies_changed": [],
+        "confidence": 0,
+        "summary": "Repair failed after trying 0 strategies",
+        "has_diff": false,
+        "diff": "",
+        "step_diffs": "",
+        "strategies_tried": [],
+        "format": "toml"
+      },
+      "calls": {}
+    }
+  },
+  {
+    "name": "disabled-python",
+    "text": "{bad",
+    "format": "python",
+    "strategies": [],
+    "custom": [],
+    "expected": {
+      "result": {
+        "repaired": false,
+        "text": "{bad",
+        "strategies": [],
+        "parse_failure": true,
+        "format": "python"
+      },
+      "report": {
+        "success": false,
+        "original_text": "{bad",
+        "final_text": "{bad",
+        "candidate_text": "{bad",
+        "parse_failure": true,
+        "steps": [],
+        "strategies_changed": [],
+        "confidence": 0,
+        "summary": "Repair failed after trying 0 strategies",
+        "has_diff": false,
+        "diff": "",
+        "step_diffs": "",
+        "strategies_tried": [],
+        "format": "python"
+      },
+      "calls": {}
+    }
+  },
+  {
+    "name": "disabled-auto",
+    "text": "{bad",
+    "format": "auto",
+    "strategies": [],
+    "custom": [],
+    "expected": {
+      "result": {
+        "repaired": false,
+        "text": "{bad",
+        "strategies": [],
+        "parse_failure": true,
+        "format": "auto"
+      },
+      "report": {
+        "success": false,
+        "original_text": "{bad",
+        "final_text": "{bad",
+        "candidate_text": "{bad",
+        "parse_failure": true,
+        "steps": [],
+        "strategies_changed": [],
+        "confidence": 0,
+        "summary": "Repair failed after trying 0 strategies",
+        "has_diff": false,
+        "diff": "",
+        "step_diffs": "",
+        "strategies_tried": [],
+        "format": "auto"
+      },
+      "calls": {}
+    }
+  },
+  {
+    "name": "disabled-py",
+    "text": "{bad",
+    "format": " PY ",
+    "strategies": [],
+    "custom": [],
+    "expected": {
+      "result": {
+        "repaired": false,
+        "text": "{bad",
+        "strategies": [],
+        "parse_failure": true,
+        "format": " PY "
+      },
+      "report": {
+        "success": false,
+        "original_text": "{bad",
+        "final_text": "{bad",
+        "candidate_text": "{bad",
+        "parse_failure": true,
+        "steps": [],
+        "strategies_changed": [],
+        "confidence": 0,
+        "summary": "Repair failed after trying 0 strategies",
+        "has_diff": false,
+        "diff": "",
+        "step_diffs": "",
+        "strategies_tried": [],
+        "format": " PY "
+      },
+      "calls": {}
+    }
+  },
+  {
+    "name": "discard-fence-json",
+    "text": "```json\n{\"v\":??? ,}\n```",
+    "format": "json",
+    "strategies": [
+      "strip_fences"
+    ],
+    "custom": [],
+    "expected": {
+      "result": {
+        "repaired": false,
+        "text": "```json\n{\"v\":??? ,}\n```",
+        "strategies": [],
+        "parse_failure": true,
+        "format": "json"
+      },
+      "report": {
+        "success": false,
+        "original_text": "```json\n{\"v\":??? ,}\n```",
+        "final_text": "```json\n{\"v\":??? ,}\n```",
+        "candidate_text": "{\"v\":??? ,}",
+        "parse_failure": true,
+        "steps": [
+          {
+            "name": "strip_fences",
+            "changed": true,
+            "input_text": "```json\n{\"v\":??? ,}\n```",
+            "output_text": "{\"v\":??? ,}",
+            "error": null
+          }
+        ],
+        "strategies_changed": [
+          "strip_fences"
+        ],
+        "confidence": 0,
+        "summary": "Repair failed after trying 1 strategies",
+        "has_diff": false,
+        "diff": "",
+        "step_diffs": "=== strip_fences ===\n--- before_strip_fences\n+++ after_strip_fences\n@@ -1,3 +1 @@\n-```json\n-{\"v\":??? ,}\n-```\n\\ No newline at end of file\n+{\"v\":??? ,}\n\\ No newline at end of file\n",
+        "strategies_tried": [
+          "strip_fences"
+        ],
+        "format": "json"
+      },
+      "calls": {}
+    }
+  },
+  {
+    "name": "discard-fence-yaml",
+    "text": "```yaml\nv: [:\n```",
+    "format": "yaml",
+    "strategies": [
+      "strip_fences"
+    ],
+    "custom": [],
+    "expected": {
+      "result": {
+        "repaired": false,
+        "text": "```yaml\nv: [:\n```",
+        "strategies": [],
+        "parse_failure": true,
+        "format": "yaml"
+      },
+      "report": {
+        "success": false,
+        "original_text": "```yaml\nv: [:\n```",
+        "final_text": "```yaml\nv: [:\n```",
+        "candidate_text": "v: [:",
+        "parse_failure": true,
+        "steps": [
+          {
+            "name": "strip_fences",
+            "changed": true,
+            "input_text": "```yaml\nv: [:\n```",
+            "output_text": "v: [:",
+            "error": null
+          }
+        ],
+        "strategies_changed": [
+          "strip_fences"
+        ],
+        "confidence": 0,
+        "summary": "Repair failed after trying 1 strategies",
+        "has_diff": false,
+        "diff": "",
+        "step_diffs": "=== strip_fences ===\n--- before_strip_fences\n+++ after_strip_fences\n@@ -1,3 +1 @@\n-```yaml\n-v: [:\n-```\n\\ No newline at end of file\n+v: [:\n\\ No newline at end of file\n",
+        "strategies_tried": [
+          "strip_fences"
+        ],
+        "format": "yaml"
+      },
+      "calls": {}
+    }
+  },
+  {
+    "name": "discard-fence-toml",
+    "text": "```toml\nv = [nope\n```",
+    "format": "toml",
+    "strategies": [
+      "strip_fences"
+    ],
+    "custom": [],
+    "expected": {
+      "result": {
+        "repaired": false,
+        "text": "```toml\nv = [nope\n```",
+        "strategies": [],
+        "parse_failure": true,
+        "format": "toml"
+      },
+      "report": {
+        "success": false,
+        "original_text": "```toml\nv = [nope\n```",
+        "final_text": "```toml\nv = [nope\n```",
+        "candidate_text": "v = [nope",
+        "parse_failure": true,
+        "steps": [
+          {
+            "name": "strip_fences",
+            "changed": true,
+            "input_text": "```toml\nv = [nope\n```",
+            "output_text": "v = [nope",
+            "error": null
+          }
+        ],
+        "strategies_changed": [
+          "strip_fences"
+        ],
+        "confidence": 0,
+        "summary": "Repair failed after trying 1 strategies",
+        "has_diff": false,
+        "diff": "",
+        "step_diffs": "=== strip_fences ===\n--- before_strip_fences\n+++ after_strip_fences\n@@ -1,3 +1 @@\n-```toml\n-v = [nope\n-```\n\\ No newline at end of file\n+v = [nope\n\\ No newline at end of file\n",
+        "strategies_tried": [
+          "strip_fences"
+        ],
+        "format": "toml"
+      },
+      "calls": {}
+    }
+  },
+  {
+    "name": "discard-fence-python",
+    "text": "```python\n{'v':???}\n```",
+    "format": "python",
+    "strategies": [
+      "strip_fences"
+    ],
+    "custom": [],
+    "expected": {
+      "result": {
+        "repaired": false,
+        "text": "```python\n{'v':???}\n```",
+        "strategies": [],
+        "parse_failure": true,
+        "format": "python"
+      },
+      "report": {
+        "success": false,
+        "original_text": "```python\n{'v':???}\n```",
+        "final_text": "```python\n{'v':???}\n```",
+        "candidate_text": "{'v':???}",
+        "parse_failure": true,
+        "steps": [
+          {
+            "name": "strip_fences",
+            "changed": true,
+            "input_text": "```python\n{'v':???}\n```",
+            "output_text": "{'v':???}",
+            "error": null
+          }
+        ],
+        "strategies_changed": [
+          "strip_fences"
+        ],
+        "confidence": 0,
+        "summary": "Repair failed after trying 1 strategies",
+        "has_diff": false,
+        "diff": "",
+        "step_diffs": "=== strip_fences ===\n--- before_strip_fences\n+++ after_strip_fences\n@@ -1,3 +1 @@\n-```python\n-{'v':???}\n-```\n\\ No newline at end of file\n+{'v':???}\n\\ No newline at end of file\n",
+        "strategies_tried": [
+          "strip_fences"
+        ],
+        "format": "python"
+      },
+      "calls": {}
+    }
+  },
+  {
+    "name": "discard-fence-auto",
+    "text": "```auto\n{bad\n```",
+    "format": "auto",
+    "strategies": [
+      "strip_fences"
+    ],
+    "custom": [],
+    "expected": {
+      "result": {
+        "repaired": false,
+        "text": "```auto\n{bad\n```",
+        "strategies": [],
+        "parse_failure": true,
+        "format": "auto"
+      },
+      "report": {
+        "success": false,
+        "original_text": "```auto\n{bad\n```",
+        "final_text": "```auto\n{bad\n```",
+        "candidate_text": "{bad",
+        "parse_failure": true,
+        "steps": [
+          {
+            "name": "strip_fences",
+            "changed": true,
+            "input_text": "```auto\n{bad\n```",
+            "output_text": "{bad",
+            "error": null
+          }
+        ],
+        "strategies_changed": [
+          "strip_fences"
+        ],
+        "confidence": 0,
+        "summary": "Repair failed after trying 1 strategies",
+        "has_diff": false,
+        "diff": "",
+        "step_diffs": "=== strip_fences ===\n--- before_strip_fences\n+++ after_strip_fences\n@@ -1,3 +1 @@\n-```auto\n-{bad\n-```\n\\ No newline at end of file\n+{bad\n\\ No newline at end of file\n",
+        "strategies_tried": [
+          "strip_fences"
+        ],
+        "format": "auto"
+      },
+      "calls": {}
+    }
+  },
+  {
+    "name": "discard-multiple-changes",
+    "text": "```json\n{\"v\":??? ,}\n```",
+    "format": "json",
+    "strategies": [
+      "fix_commas",
+      "strip_fences"
+    ],
+    "custom": [],
+    "expected": {
+      "result": {
+        "repaired": false,
+        "text": "```json\n{\"v\":??? ,}\n```",
+        "strategies": [],
+        "parse_failure": true,
+        "format": "json"
+      },
+      "report": {
+        "success": false,
+        "original_text": "```json\n{\"v\":??? ,}\n```",
+        "final_text": "```json\n{\"v\":??? ,}\n```",
+        "candidate_text": "{\"v\":??? }",
+        "parse_failure": true,
+        "steps": [
+          {
+            "name": "strip_fences",
+            "changed": true,
+            "input_text": "```json\n{\"v\":??? ,}\n```",
+            "output_text": "{\"v\":??? ,}",
+            "error": null
+          },
+          {
+            "name": "fix_commas",
+            "changed": true,
+            "input_text": "{\"v\":??? ,}",
+            "output_text": "{\"v\":??? }",
+            "error": null
+          }
+        ],
+        "strategies_changed": [
+          "strip_fences",
+          "fix_commas"
+        ],
+        "confidence": 0,
+        "summary": "Repair failed after trying 2 strategies",
+        "has_diff": false,
+        "diff": "",
+        "step_diffs": "=== strip_fences ===\n--- before_strip_fences\n+++ after_strip_fences\n@@ -1,3 +1 @@\n-```json\n-{\"v\":??? ,}\n-```\n\\ No newline at end of file\n+{\"v\":??? ,}\n\\ No newline at end of file\n\n=== fix_commas ===\n--- before_fix_commas\n+++ after_fix_commas\n@@ -1 +1 @@\n-{\"v\":??? ,}\n\\ No newline at end of file\n+{\"v\":??? }\n\\ No newline at end of file\n",
+        "strategies_tried": [
+          "strip_fences",
+          "fix_commas"
+        ],
+        "format": "json"
+      },
+      "calls": {}
+    }
+  },
+  {
+    "name": "invalid-return-0",
+    "text": "{bad",
+    "format": "json",
+    "strategies": [
+      "bad",
+      "fix"
+    ],
+    "custom": [
+      {
+        "name": "bad",
+        "action": "return",
+        "value": null
+      },
+      {
+        "name": "fix",
+        "action": "return",
+        "value": "{}"
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": true,
+        "text": "{}",
+        "strategies": [
+          "fix"
+        ],
+        "parse_failure": false,
+        "format": "json"
+      },
+      "report": {
+        "success": true,
+        "original_text": "{bad",
+        "final_text": "{}",
+        "candidate_text": "{}",
+        "parse_failure": false,
+        "steps": [
+          {
+            "name": "bad",
+            "changed": false,
+            "input_text": "{bad",
+            "output_text": "{bad",
+            "error": "Strategy must return a string"
+          },
+          {
+            "name": "fix",
+            "changed": true,
+            "input_text": "{bad",
+            "output_text": "{}",
+            "error": null
+          }
+        ],
+        "strategies_changed": [
+          "fix"
+        ],
+        "confidence": 0.65,
+        "summary": "Repaired using 1 strategy(ies): fix",
+        "has_diff": true,
+        "diff": "--- original\n+++ repaired\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+{}\n\\ No newline at end of file\n",
+        "step_diffs": "=== bad ===\nError: Strategy must return a string\n\n=== fix ===\n--- before_fix\n+++ after_fix\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+{}\n\\ No newline at end of file\n",
+        "strategies_tried": [
+          "bad",
+          "fix"
+        ],
+        "format": "json"
+      },
+      "calls": {
+        "bad": 1,
+        "fix": 1
+      }
+    }
+  },
+  {
+    "name": "invalid-return-1",
+    "text": "{bad",
+    "format": "json",
+    "strategies": [
+      "bad",
+      "fix"
+    ],
+    "custom": [
+      {
+        "name": "bad",
+        "action": "return",
+        "value": false
+      },
+      {
+        "name": "fix",
+        "action": "return",
+        "value": "{}"
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": true,
+        "text": "{}",
+        "strategies": [
+          "fix"
+        ],
+        "parse_failure": false,
+        "format": "json"
+      },
+      "report": {
+        "success": true,
+        "original_text": "{bad",
+        "final_text": "{}",
+        "candidate_text": "{}",
+        "parse_failure": false,
+        "steps": [
+          {
+            "name": "bad",
+            "changed": false,
+            "input_text": "{bad",
+            "output_text": "{bad",
+            "error": "Strategy must return a string"
+          },
+          {
+            "name": "fix",
+            "changed": true,
+            "input_text": "{bad",
+            "output_text": "{}",
+            "error": null
+          }
+        ],
+        "strategies_changed": [
+          "fix"
+        ],
+        "confidence": 0.65,
+        "summary": "Repaired using 1 strategy(ies): fix",
+        "has_diff": true,
+        "diff": "--- original\n+++ repaired\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+{}\n\\ No newline at end of file\n",
+        "step_diffs": "=== bad ===\nError: Strategy must return a string\n\n=== fix ===\n--- before_fix\n+++ after_fix\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+{}\n\\ No newline at end of file\n",
+        "strategies_tried": [
+          "bad",
+          "fix"
+        ],
+        "format": "json"
+      },
+      "calls": {
+        "bad": 1,
+        "fix": 1
+      }
+    }
+  },
+  {
+    "name": "invalid-return-2",
+    "text": "{bad",
+    "format": "json",
+    "strategies": [
+      "bad",
+      "fix"
+    ],
+    "custom": [
+      {
+        "name": "bad",
+        "action": "return",
+        "value": 0
+      },
+      {
+        "name": "fix",
+        "action": "return",
+        "value": "{}"
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": true,
+        "text": "{}",
+        "strategies": [
+          "fix"
+        ],
+        "parse_failure": false,
+        "format": "json"
+      },
+      "report": {
+        "success": true,
+        "original_text": "{bad",
+        "final_text": "{}",
+        "candidate_text": "{}",
+        "parse_failure": false,
+        "steps": [
+          {
+            "name": "bad",
+            "changed": false,
+            "input_text": "{bad",
+            "output_text": "{bad",
+            "error": "Strategy must return a string"
+          },
+          {
+            "name": "fix",
+            "changed": true,
+            "input_text": "{bad",
+            "output_text": "{}",
+            "error": null
+          }
+        ],
+        "strategies_changed": [
+          "fix"
+        ],
+        "confidence": 0.65,
+        "summary": "Repaired using 1 strategy(ies): fix",
+        "has_diff": true,
+        "diff": "--- original\n+++ repaired\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+{}\n\\ No newline at end of file\n",
+        "step_diffs": "=== bad ===\nError: Strategy must return a string\n\n=== fix ===\n--- before_fix\n+++ after_fix\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+{}\n\\ No newline at end of file\n",
+        "strategies_tried": [
+          "bad",
+          "fix"
+        ],
+        "format": "json"
+      },
+      "calls": {
+        "bad": 1,
+        "fix": 1
+      }
+    }
+  },
+  {
+    "name": "invalid-return-3",
+    "text": "{bad",
+    "format": "json",
+    "strategies": [
+      "bad",
+      "fix"
+    ],
+    "custom": [
+      {
+        "name": "bad",
+        "action": "return",
+        "value": 1.5
+      },
+      {
+        "name": "fix",
+        "action": "return",
+        "value": "{}"
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": true,
+        "text": "{}",
+        "strategies": [
+          "fix"
+        ],
+        "parse_failure": false,
+        "format": "json"
+      },
+      "report": {
+        "success": true,
+        "original_text": "{bad",
+        "final_text": "{}",
+        "candidate_text": "{}",
+        "parse_failure": false,
+        "steps": [
+          {
+            "name": "bad",
+            "changed": false,
+            "input_text": "{bad",
+            "output_text": "{bad",
+            "error": "Strategy must return a string"
+          },
+          {
+            "name": "fix",
+            "changed": true,
+            "input_text": "{bad",
+            "output_text": "{}",
+            "error": null
+          }
+        ],
+        "strategies_changed": [
+          "fix"
+        ],
+        "confidence": 0.65,
+        "summary": "Repaired using 1 strategy(ies): fix",
+        "has_diff": true,
+        "diff": "--- original\n+++ repaired\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+{}\n\\ No newline at end of file\n",
+        "step_diffs": "=== bad ===\nError: Strategy must return a string\n\n=== fix ===\n--- before_fix\n+++ after_fix\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+{}\n\\ No newline at end of file\n",
+        "strategies_tried": [
+          "bad",
+          "fix"
+        ],
+        "format": "json"
+      },
+      "calls": {
+        "bad": 1,
+        "fix": 1
+      }
+    }
+  },
+  {
+    "name": "invalid-return-4",
+    "text": "{bad",
+    "format": "json",
+    "strategies": [
+      "bad",
+      "fix"
+    ],
+    "custom": [
+      {
+        "name": "bad",
+        "action": "return",
+        "value": []
+      },
+      {
+        "name": "fix",
+        "action": "return",
+        "value": "{}"
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": true,
+        "text": "{}",
+        "strategies": [
+          "fix"
+        ],
+        "parse_failure": false,
+        "format": "json"
+      },
+      "report": {
+        "success": true,
+        "original_text": "{bad",
+        "final_text": "{}",
+        "candidate_text": "{}",
+        "parse_failure": false,
+        "steps": [
+          {
+            "name": "bad",
+            "changed": false,
+            "input_text": "{bad",
+            "output_text": "{bad",
+            "error": "Strategy must return a string"
+          },
+          {
+            "name": "fix",
+            "changed": true,
+            "input_text": "{bad",
+            "output_text": "{}",
+            "error": null
+          }
+        ],
+        "strategies_changed": [
+          "fix"
+        ],
+        "confidence": 0.65,
+        "summary": "Repaired using 1 strategy(ies): fix",
+        "has_diff": true,
+        "diff": "--- original\n+++ repaired\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+{}\n\\ No newline at end of file\n",
+        "step_diffs": "=== bad ===\nError: Strategy must return a string\n\n=== fix ===\n--- before_fix\n+++ after_fix\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+{}\n\\ No newline at end of file\n",
+        "strategies_tried": [
+          "bad",
+          "fix"
+        ],
+        "format": "json"
+      },
+      "calls": {
+        "bad": 1,
+        "fix": 1
+      }
+    }
+  },
+  {
+    "name": "invalid-return-5",
+    "text": "{bad",
+    "format": "json",
+    "strategies": [
+      "bad",
+      "fix"
+    ],
+    "custom": [
+      {
+        "name": "bad",
+        "action": "return",
+        "value": {}
+      },
+      {
+        "name": "fix",
+        "action": "return",
+        "value": "{}"
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": true,
+        "text": "{}",
+        "strategies": [
+          "fix"
+        ],
+        "parse_failure": false,
+        "format": "json"
+      },
+      "report": {
+        "success": true,
+        "original_text": "{bad",
+        "final_text": "{}",
+        "candidate_text": "{}",
+        "parse_failure": false,
+        "steps": [
+          {
+            "name": "bad",
+            "changed": false,
+            "input_text": "{bad",
+            "output_text": "{bad",
+            "error": "Strategy must return a string"
+          },
+          {
+            "name": "fix",
+            "changed": true,
+            "input_text": "{bad",
+            "output_text": "{}",
+            "error": null
+          }
+        ],
+        "strategies_changed": [
+          "fix"
+        ],
+        "confidence": 0.65,
+        "summary": "Repaired using 1 strategy(ies): fix",
+        "has_diff": true,
+        "diff": "--- original\n+++ repaired\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+{}\n\\ No newline at end of file\n",
+        "step_diffs": "=== bad ===\nError: Strategy must return a string\n\n=== fix ===\n--- before_fix\n+++ after_fix\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+{}\n\\ No newline at end of file\n",
+        "strategies_tried": [
+          "bad",
+          "fix"
+        ],
+        "format": "json"
+      },
+      "calls": {
+        "bad": 1,
+        "fix": 1
+      }
+    }
+  },
+  {
+    "name": "invalid-return-6",
+    "text": "{bad",
+    "format": "json",
+    "strategies": [
+      "bad",
+      "fix"
+    ],
+    "custom": [
+      {
+        "name": "bad",
+        "action": "return",
+        "value": [
+          "{}"
+        ]
+      },
+      {
+        "name": "fix",
+        "action": "return",
+        "value": "{}"
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": true,
+        "text": "{}",
+        "strategies": [
+          "fix"
+        ],
+        "parse_failure": false,
+        "format": "json"
+      },
+      "report": {
+        "success": true,
+        "original_text": "{bad",
+        "final_text": "{}",
+        "candidate_text": "{}",
+        "parse_failure": false,
+        "steps": [
+          {
+            "name": "bad",
+            "changed": false,
+            "input_text": "{bad",
+            "output_text": "{bad",
+            "error": "Strategy must return a string"
+          },
+          {
+            "name": "fix",
+            "changed": true,
+            "input_text": "{bad",
+            "output_text": "{}",
+            "error": null
+          }
+        ],
+        "strategies_changed": [
+          "fix"
+        ],
+        "confidence": 0.65,
+        "summary": "Repaired using 1 strategy(ies): fix",
+        "has_diff": true,
+        "diff": "--- original\n+++ repaired\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+{}\n\\ No newline at end of file\n",
+        "step_diffs": "=== bad ===\nError: Strategy must return a string\n\n=== fix ===\n--- before_fix\n+++ after_fix\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+{}\n\\ No newline at end of file\n",
+        "strategies_tried": [
+          "bad",
+          "fix"
+        ],
+        "format": "json"
+      },
+      "calls": {
+        "bad": 1,
+        "fix": 1
+      }
+    }
+  },
+  {
+    "name": "throw-then-fix-json",
+    "text": "{bad",
+    "format": "json",
+    "strategies": [
+      "bad",
+      "fix"
+    ],
+    "custom": [
+      {
+        "name": "bad",
+        "action": "throw",
+        "value": "boom"
+      },
+      {
+        "name": "fix",
+        "action": "return",
+        "value": "{}"
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": true,
+        "text": "{}",
+        "strategies": [
+          "fix"
+        ],
+        "parse_failure": false,
+        "format": "json"
+      },
+      "report": {
+        "success": true,
+        "original_text": "{bad",
+        "final_text": "{}",
+        "candidate_text": "{}",
+        "parse_failure": false,
+        "steps": [
+          {
+            "name": "bad",
+            "changed": false,
+            "input_text": "{bad",
+            "output_text": "{bad",
+            "error": "boom"
+          },
+          {
+            "name": "fix",
+            "changed": true,
+            "input_text": "{bad",
+            "output_text": "{}",
+            "error": null
+          }
+        ],
+        "strategies_changed": [
+          "fix"
+        ],
+        "confidence": 0.65,
+        "summary": "Repaired using 1 strategy(ies): fix",
+        "has_diff": true,
+        "diff": "--- original\n+++ repaired\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+{}\n\\ No newline at end of file\n",
+        "step_diffs": "=== bad ===\nError: boom\n\n=== fix ===\n--- before_fix\n+++ after_fix\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+{}\n\\ No newline at end of file\n",
+        "strategies_tried": [
+          "bad",
+          "fix"
+        ],
+        "format": "json"
+      },
+      "calls": {
+        "bad": 1,
+        "fix": 1
+      }
+    }
+  },
+  {
+    "name": "throw-then-fix-yaml",
+    "text": "{bad",
+    "format": "yaml",
+    "strategies": [
+      "bad",
+      "fix"
+    ],
+    "custom": [
+      {
+        "name": "bad",
+        "action": "throw",
+        "value": "boom"
+      },
+      {
+        "name": "fix",
+        "action": "return",
+        "value": "v: 1"
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": true,
+        "text": "v: 1",
+        "strategies": [
+          "fix"
+        ],
+        "parse_failure": false,
+        "format": "yaml"
+      },
+      "report": {
+        "success": true,
+        "original_text": "{bad",
+        "final_text": "v: 1",
+        "candidate_text": "v: 1",
+        "parse_failure": false,
+        "steps": [
+          {
+            "name": "bad",
+            "changed": false,
+            "input_text": "{bad",
+            "output_text": "{bad",
+            "error": "boom"
+          },
+          {
+            "name": "fix",
+            "changed": true,
+            "input_text": "{bad",
+            "output_text": "v: 1",
+            "error": null
+          }
+        ],
+        "strategies_changed": [
+          "fix"
+        ],
+        "confidence": 0.9,
+        "summary": "Repaired using 1 strategy(ies): fix",
+        "has_diff": true,
+        "diff": "--- original\n+++ repaired\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+v: 1\n\\ No newline at end of file\n",
+        "step_diffs": "=== bad ===\nError: boom\n\n=== fix ===\n--- before_fix\n+++ after_fix\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+v: 1\n\\ No newline at end of file\n",
+        "strategies_tried": [
+          "bad",
+          "fix"
+        ],
+        "format": "yaml"
+      },
+      "calls": {
+        "bad": 1,
+        "fix": 1
+      }
+    }
+  },
+  {
+    "name": "throw-then-fix-toml",
+    "text": "{bad",
+    "format": "toml",
+    "strategies": [
+      "bad",
+      "fix"
+    ],
+    "custom": [
+      {
+        "name": "bad",
+        "action": "throw",
+        "value": "boom"
+      },
+      {
+        "name": "fix",
+        "action": "return",
+        "value": "v=1"
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": true,
+        "text": "v=1",
+        "strategies": [
+          "fix"
+        ],
+        "parse_failure": false,
+        "format": "toml"
+      },
+      "report": {
+        "success": true,
+        "original_text": "{bad",
+        "final_text": "v=1",
+        "candidate_text": "v=1",
+        "parse_failure": false,
+        "steps": [
+          {
+            "name": "bad",
+            "changed": false,
+            "input_text": "{bad",
+            "output_text": "{bad",
+            "error": "boom"
+          },
+          {
+            "name": "fix",
+            "changed": true,
+            "input_text": "{bad",
+            "output_text": "v=1",
+            "error": null
+          }
+        ],
+        "strategies_changed": [
+          "fix"
+        ],
+        "confidence": 0.78,
+        "summary": "Repaired using 1 strategy(ies): fix",
+        "has_diff": true,
+        "diff": "--- original\n+++ repaired\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+v=1\n\\ No newline at end of file\n",
+        "step_diffs": "=== bad ===\nError: boom\n\n=== fix ===\n--- before_fix\n+++ after_fix\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+v=1\n\\ No newline at end of file\n",
+        "strategies_tried": [
+          "bad",
+          "fix"
+        ],
+        "format": "toml"
+      },
+      "calls": {
+        "bad": 1,
+        "fix": 1
+      }
+    }
+  },
+  {
+    "name": "throw-then-fix-python",
+    "text": "{bad",
+    "format": "python",
+    "strategies": [
+      "bad",
+      "fix"
+    ],
+    "custom": [
+      {
+        "name": "bad",
+        "action": "throw",
+        "value": "boom"
+      },
+      {
+        "name": "fix",
+        "action": "return",
+        "value": "{'v':1}"
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": true,
+        "text": "{'v':1}",
+        "strategies": [
+          "fix"
+        ],
+        "parse_failure": false,
+        "format": "python"
+      },
+      "report": {
+        "success": true,
+        "original_text": "{bad",
+        "final_text": "{'v':1}",
+        "candidate_text": "{'v':1}",
+        "parse_failure": false,
+        "steps": [
+          {
+            "name": "bad",
+            "changed": false,
+            "input_text": "{bad",
+            "output_text": "{bad",
+            "error": "boom"
+          },
+          {
+            "name": "fix",
+            "changed": true,
+            "input_text": "{bad",
+            "output_text": "{'v':1}",
+            "error": null
+          }
+        ],
+        "strategies_changed": [
+          "fix"
+        ],
+        "confidence": 0.69,
+        "summary": "Repaired using 1 strategy(ies): fix",
+        "has_diff": true,
+        "diff": "--- original\n+++ repaired\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+{'v':1}\n\\ No newline at end of file\n",
+        "step_diffs": "=== bad ===\nError: boom\n\n=== fix ===\n--- before_fix\n+++ after_fix\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+{'v':1}\n\\ No newline at end of file\n",
+        "strategies_tried": [
+          "bad",
+          "fix"
+        ],
+        "format": "python"
+      },
+      "calls": {
+        "bad": 1,
+        "fix": 1
+      }
+    }
+  },
+  {
+    "name": "throw-then-fix-auto",
+    "text": "{bad",
+    "format": "auto",
+    "strategies": [
+      "bad",
+      "fix"
+    ],
+    "custom": [
+      {
+        "name": "bad",
+        "action": "throw",
+        "value": "boom"
+      },
+      {
+        "name": "fix",
+        "action": "return",
+        "value": "{}"
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": true,
+        "text": "{}",
+        "strategies": [
+          "fix"
+        ],
+        "parse_failure": false,
+        "format": "auto"
+      },
+      "report": {
+        "success": true,
+        "original_text": "{bad",
+        "final_text": "{}",
+        "candidate_text": "{}",
+        "parse_failure": false,
+        "steps": [
+          {
+            "name": "bad",
+            "changed": false,
+            "input_text": "{bad",
+            "output_text": "{bad",
+            "error": "boom"
+          },
+          {
+            "name": "fix",
+            "changed": true,
+            "input_text": "{bad",
+            "output_text": "{}",
+            "error": null
+          }
+        ],
+        "strategies_changed": [
+          "fix"
+        ],
+        "confidence": 0.65,
+        "summary": "Repaired using 1 strategy(ies): fix",
+        "has_diff": true,
+        "diff": "--- original\n+++ repaired\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+{}\n\\ No newline at end of file\n",
+        "step_diffs": "=== bad ===\nError: boom\n\n=== fix ===\n--- before_fix\n+++ after_fix\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+{}\n\\ No newline at end of file\n",
+        "strategies_tried": [
+          "bad",
+          "fix"
+        ],
+        "format": "auto"
+      },
+      "calls": {
+        "bad": 1,
+        "fix": 1
+      }
+    }
+  },
+  {
+    "name": "async_return-then-fix-json",
+    "text": "{bad",
+    "format": "json",
+    "strategies": [
+      "bad",
+      "fix"
+    ],
+    "custom": [
+      {
+        "name": "bad",
+        "action": "async_return",
+        "value": "{}"
+      },
+      {
+        "name": "fix",
+        "action": "return",
+        "value": "{}"
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": true,
+        "text": "{}",
+        "strategies": [
+          "fix"
+        ],
+        "parse_failure": false,
+        "format": "json"
+      },
+      "report": {
+        "success": true,
+        "original_text": "{bad",
+        "final_text": "{}",
+        "candidate_text": "{}",
+        "parse_failure": false,
+        "steps": [
+          {
+            "name": "bad",
+            "changed": false,
+            "input_text": "{bad",
+            "output_text": "{bad",
+            "error": "Strategy must return a string"
+          },
+          {
+            "name": "fix",
+            "changed": true,
+            "input_text": "{bad",
+            "output_text": "{}",
+            "error": null
+          }
+        ],
+        "strategies_changed": [
+          "fix"
+        ],
+        "confidence": 0.65,
+        "summary": "Repaired using 1 strategy(ies): fix",
+        "has_diff": true,
+        "diff": "--- original\n+++ repaired\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+{}\n\\ No newline at end of file\n",
+        "step_diffs": "=== bad ===\nError: Strategy must return a string\n\n=== fix ===\n--- before_fix\n+++ after_fix\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+{}\n\\ No newline at end of file\n",
+        "strategies_tried": [
+          "bad",
+          "fix"
+        ],
+        "format": "json"
+      },
+      "calls": {
+        "bad": 1,
+        "fix": 1
+      }
+    }
+  },
+  {
+    "name": "async_return-then-fix-yaml",
+    "text": "{bad",
+    "format": "yaml",
+    "strategies": [
+      "bad",
+      "fix"
+    ],
+    "custom": [
+      {
+        "name": "bad",
+        "action": "async_return",
+        "value": "{}"
+      },
+      {
+        "name": "fix",
+        "action": "return",
+        "value": "v: 1"
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": true,
+        "text": "v: 1",
+        "strategies": [
+          "fix"
+        ],
+        "parse_failure": false,
+        "format": "yaml"
+      },
+      "report": {
+        "success": true,
+        "original_text": "{bad",
+        "final_text": "v: 1",
+        "candidate_text": "v: 1",
+        "parse_failure": false,
+        "steps": [
+          {
+            "name": "bad",
+            "changed": false,
+            "input_text": "{bad",
+            "output_text": "{bad",
+            "error": "Strategy must return a string"
+          },
+          {
+            "name": "fix",
+            "changed": true,
+            "input_text": "{bad",
+            "output_text": "v: 1",
+            "error": null
+          }
+        ],
+        "strategies_changed": [
+          "fix"
+        ],
+        "confidence": 0.9,
+        "summary": "Repaired using 1 strategy(ies): fix",
+        "has_diff": true,
+        "diff": "--- original\n+++ repaired\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+v: 1\n\\ No newline at end of file\n",
+        "step_diffs": "=== bad ===\nError: Strategy must return a string\n\n=== fix ===\n--- before_fix\n+++ after_fix\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+v: 1\n\\ No newline at end of file\n",
+        "strategies_tried": [
+          "bad",
+          "fix"
+        ],
+        "format": "yaml"
+      },
+      "calls": {
+        "bad": 1,
+        "fix": 1
+      }
+    }
+  },
+  {
+    "name": "async_return-then-fix-toml",
+    "text": "{bad",
+    "format": "toml",
+    "strategies": [
+      "bad",
+      "fix"
+    ],
+    "custom": [
+      {
+        "name": "bad",
+        "action": "async_return",
+        "value": "{}"
+      },
+      {
+        "name": "fix",
+        "action": "return",
+        "value": "v=1"
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": true,
+        "text": "v=1",
+        "strategies": [
+          "fix"
+        ],
+        "parse_failure": false,
+        "format": "toml"
+      },
+      "report": {
+        "success": true,
+        "original_text": "{bad",
+        "final_text": "v=1",
+        "candidate_text": "v=1",
+        "parse_failure": false,
+        "steps": [
+          {
+            "name": "bad",
+            "changed": false,
+            "input_text": "{bad",
+            "output_text": "{bad",
+            "error": "Strategy must return a string"
+          },
+          {
+            "name": "fix",
+            "changed": true,
+            "input_text": "{bad",
+            "output_text": "v=1",
+            "error": null
+          }
+        ],
+        "strategies_changed": [
+          "fix"
+        ],
+        "confidence": 0.78,
+        "summary": "Repaired using 1 strategy(ies): fix",
+        "has_diff": true,
+        "diff": "--- original\n+++ repaired\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+v=1\n\\ No newline at end of file\n",
+        "step_diffs": "=== bad ===\nError: Strategy must return a string\n\n=== fix ===\n--- before_fix\n+++ after_fix\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+v=1\n\\ No newline at end of file\n",
+        "strategies_tried": [
+          "bad",
+          "fix"
+        ],
+        "format": "toml"
+      },
+      "calls": {
+        "bad": 1,
+        "fix": 1
+      }
+    }
+  },
+  {
+    "name": "async_return-then-fix-python",
+    "text": "{bad",
+    "format": "python",
+    "strategies": [
+      "bad",
+      "fix"
+    ],
+    "custom": [
+      {
+        "name": "bad",
+        "action": "async_return",
+        "value": "{}"
+      },
+      {
+        "name": "fix",
+        "action": "return",
+        "value": "{'v':1}"
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": true,
+        "text": "{'v':1}",
+        "strategies": [
+          "fix"
+        ],
+        "parse_failure": false,
+        "format": "python"
+      },
+      "report": {
+        "success": true,
+        "original_text": "{bad",
+        "final_text": "{'v':1}",
+        "candidate_text": "{'v':1}",
+        "parse_failure": false,
+        "steps": [
+          {
+            "name": "bad",
+            "changed": false,
+            "input_text": "{bad",
+            "output_text": "{bad",
+            "error": "Strategy must return a string"
+          },
+          {
+            "name": "fix",
+            "changed": true,
+            "input_text": "{bad",
+            "output_text": "{'v':1}",
+            "error": null
+          }
+        ],
+        "strategies_changed": [
+          "fix"
+        ],
+        "confidence": 0.69,
+        "summary": "Repaired using 1 strategy(ies): fix",
+        "has_diff": true,
+        "diff": "--- original\n+++ repaired\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+{'v':1}\n\\ No newline at end of file\n",
+        "step_diffs": "=== bad ===\nError: Strategy must return a string\n\n=== fix ===\n--- before_fix\n+++ after_fix\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+{'v':1}\n\\ No newline at end of file\n",
+        "strategies_tried": [
+          "bad",
+          "fix"
+        ],
+        "format": "python"
+      },
+      "calls": {
+        "bad": 1,
+        "fix": 1
+      }
+    }
+  },
+  {
+    "name": "async_return-then-fix-auto",
+    "text": "{bad",
+    "format": "auto",
+    "strategies": [
+      "bad",
+      "fix"
+    ],
+    "custom": [
+      {
+        "name": "bad",
+        "action": "async_return",
+        "value": "{}"
+      },
+      {
+        "name": "fix",
+        "action": "return",
+        "value": "{}"
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": true,
+        "text": "{}",
+        "strategies": [
+          "fix"
+        ],
+        "parse_failure": false,
+        "format": "auto"
+      },
+      "report": {
+        "success": true,
+        "original_text": "{bad",
+        "final_text": "{}",
+        "candidate_text": "{}",
+        "parse_failure": false,
+        "steps": [
+          {
+            "name": "bad",
+            "changed": false,
+            "input_text": "{bad",
+            "output_text": "{bad",
+            "error": "Strategy must return a string"
+          },
+          {
+            "name": "fix",
+            "changed": true,
+            "input_text": "{bad",
+            "output_text": "{}",
+            "error": null
+          }
+        ],
+        "strategies_changed": [
+          "fix"
+        ],
+        "confidence": 0.65,
+        "summary": "Repaired using 1 strategy(ies): fix",
+        "has_diff": true,
+        "diff": "--- original\n+++ repaired\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+{}\n\\ No newline at end of file\n",
+        "step_diffs": "=== bad ===\nError: Strategy must return a string\n\n=== fix ===\n--- before_fix\n+++ after_fix\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+{}\n\\ No newline at end of file\n",
+        "strategies_tried": [
+          "bad",
+          "fix"
+        ],
+        "format": "auto"
+      },
+      "calls": {
+        "bad": 1,
+        "fix": 1
+      }
+    }
+  },
+  {
+    "name": "async_throw-then-fix-json",
+    "text": "{bad",
+    "format": "json",
+    "strategies": [
+      "bad",
+      "fix"
+    ],
+    "custom": [
+      {
+        "name": "bad",
+        "action": "async_throw",
+        "value": "boom"
+      },
+      {
+        "name": "fix",
+        "action": "return",
+        "value": "{}"
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": true,
+        "text": "{}",
+        "strategies": [
+          "fix"
+        ],
+        "parse_failure": false,
+        "format": "json"
+      },
+      "report": {
+        "success": true,
+        "original_text": "{bad",
+        "final_text": "{}",
+        "candidate_text": "{}",
+        "parse_failure": false,
+        "steps": [
+          {
+            "name": "bad",
+            "changed": false,
+            "input_text": "{bad",
+            "output_text": "{bad",
+            "error": "Strategy must return a string"
+          },
+          {
+            "name": "fix",
+            "changed": true,
+            "input_text": "{bad",
+            "output_text": "{}",
+            "error": null
+          }
+        ],
+        "strategies_changed": [
+          "fix"
+        ],
+        "confidence": 0.65,
+        "summary": "Repaired using 1 strategy(ies): fix",
+        "has_diff": true,
+        "diff": "--- original\n+++ repaired\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+{}\n\\ No newline at end of file\n",
+        "step_diffs": "=== bad ===\nError: Strategy must return a string\n\n=== fix ===\n--- before_fix\n+++ after_fix\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+{}\n\\ No newline at end of file\n",
+        "strategies_tried": [
+          "bad",
+          "fix"
+        ],
+        "format": "json"
+      },
+      "calls": {
+        "bad": 1,
+        "fix": 1
+      }
+    }
+  },
+  {
+    "name": "async_throw-then-fix-yaml",
+    "text": "{bad",
+    "format": "yaml",
+    "strategies": [
+      "bad",
+      "fix"
+    ],
+    "custom": [
+      {
+        "name": "bad",
+        "action": "async_throw",
+        "value": "boom"
+      },
+      {
+        "name": "fix",
+        "action": "return",
+        "value": "v: 1"
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": true,
+        "text": "v: 1",
+        "strategies": [
+          "fix"
+        ],
+        "parse_failure": false,
+        "format": "yaml"
+      },
+      "report": {
+        "success": true,
+        "original_text": "{bad",
+        "final_text": "v: 1",
+        "candidate_text": "v: 1",
+        "parse_failure": false,
+        "steps": [
+          {
+            "name": "bad",
+            "changed": false,
+            "input_text": "{bad",
+            "output_text": "{bad",
+            "error": "Strategy must return a string"
+          },
+          {
+            "name": "fix",
+            "changed": true,
+            "input_text": "{bad",
+            "output_text": "v: 1",
+            "error": null
+          }
+        ],
+        "strategies_changed": [
+          "fix"
+        ],
+        "confidence": 0.9,
+        "summary": "Repaired using 1 strategy(ies): fix",
+        "has_diff": true,
+        "diff": "--- original\n+++ repaired\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+v: 1\n\\ No newline at end of file\n",
+        "step_diffs": "=== bad ===\nError: Strategy must return a string\n\n=== fix ===\n--- before_fix\n+++ after_fix\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+v: 1\n\\ No newline at end of file\n",
+        "strategies_tried": [
+          "bad",
+          "fix"
+        ],
+        "format": "yaml"
+      },
+      "calls": {
+        "bad": 1,
+        "fix": 1
+      }
+    }
+  },
+  {
+    "name": "async_throw-then-fix-toml",
+    "text": "{bad",
+    "format": "toml",
+    "strategies": [
+      "bad",
+      "fix"
+    ],
+    "custom": [
+      {
+        "name": "bad",
+        "action": "async_throw",
+        "value": "boom"
+      },
+      {
+        "name": "fix",
+        "action": "return",
+        "value": "v=1"
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": true,
+        "text": "v=1",
+        "strategies": [
+          "fix"
+        ],
+        "parse_failure": false,
+        "format": "toml"
+      },
+      "report": {
+        "success": true,
+        "original_text": "{bad",
+        "final_text": "v=1",
+        "candidate_text": "v=1",
+        "parse_failure": false,
+        "steps": [
+          {
+            "name": "bad",
+            "changed": false,
+            "input_text": "{bad",
+            "output_text": "{bad",
+            "error": "Strategy must return a string"
+          },
+          {
+            "name": "fix",
+            "changed": true,
+            "input_text": "{bad",
+            "output_text": "v=1",
+            "error": null
+          }
+        ],
+        "strategies_changed": [
+          "fix"
+        ],
+        "confidence": 0.78,
+        "summary": "Repaired using 1 strategy(ies): fix",
+        "has_diff": true,
+        "diff": "--- original\n+++ repaired\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+v=1\n\\ No newline at end of file\n",
+        "step_diffs": "=== bad ===\nError: Strategy must return a string\n\n=== fix ===\n--- before_fix\n+++ after_fix\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+v=1\n\\ No newline at end of file\n",
+        "strategies_tried": [
+          "bad",
+          "fix"
+        ],
+        "format": "toml"
+      },
+      "calls": {
+        "bad": 1,
+        "fix": 1
+      }
+    }
+  },
+  {
+    "name": "async_throw-then-fix-python",
+    "text": "{bad",
+    "format": "python",
+    "strategies": [
+      "bad",
+      "fix"
+    ],
+    "custom": [
+      {
+        "name": "bad",
+        "action": "async_throw",
+        "value": "boom"
+      },
+      {
+        "name": "fix",
+        "action": "return",
+        "value": "{'v':1}"
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": true,
+        "text": "{'v':1}",
+        "strategies": [
+          "fix"
+        ],
+        "parse_failure": false,
+        "format": "python"
+      },
+      "report": {
+        "success": true,
+        "original_text": "{bad",
+        "final_text": "{'v':1}",
+        "candidate_text": "{'v':1}",
+        "parse_failure": false,
+        "steps": [
+          {
+            "name": "bad",
+            "changed": false,
+            "input_text": "{bad",
+            "output_text": "{bad",
+            "error": "Strategy must return a string"
+          },
+          {
+            "name": "fix",
+            "changed": true,
+            "input_text": "{bad",
+            "output_text": "{'v':1}",
+            "error": null
+          }
+        ],
+        "strategies_changed": [
+          "fix"
+        ],
+        "confidence": 0.69,
+        "summary": "Repaired using 1 strategy(ies): fix",
+        "has_diff": true,
+        "diff": "--- original\n+++ repaired\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+{'v':1}\n\\ No newline at end of file\n",
+        "step_diffs": "=== bad ===\nError: Strategy must return a string\n\n=== fix ===\n--- before_fix\n+++ after_fix\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+{'v':1}\n\\ No newline at end of file\n",
+        "strategies_tried": [
+          "bad",
+          "fix"
+        ],
+        "format": "python"
+      },
+      "calls": {
+        "bad": 1,
+        "fix": 1
+      }
+    }
+  },
+  {
+    "name": "async_throw-then-fix-auto",
+    "text": "{bad",
+    "format": "auto",
+    "strategies": [
+      "bad",
+      "fix"
+    ],
+    "custom": [
+      {
+        "name": "bad",
+        "action": "async_throw",
+        "value": "boom"
+      },
+      {
+        "name": "fix",
+        "action": "return",
+        "value": "{}"
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": true,
+        "text": "{}",
+        "strategies": [
+          "fix"
+        ],
+        "parse_failure": false,
+        "format": "auto"
+      },
+      "report": {
+        "success": true,
+        "original_text": "{bad",
+        "final_text": "{}",
+        "candidate_text": "{}",
+        "parse_failure": false,
+        "steps": [
+          {
+            "name": "bad",
+            "changed": false,
+            "input_text": "{bad",
+            "output_text": "{bad",
+            "error": "Strategy must return a string"
+          },
+          {
+            "name": "fix",
+            "changed": true,
+            "input_text": "{bad",
+            "output_text": "{}",
+            "error": null
+          }
+        ],
+        "strategies_changed": [
+          "fix"
+        ],
+        "confidence": 0.65,
+        "summary": "Repaired using 1 strategy(ies): fix",
+        "has_diff": true,
+        "diff": "--- original\n+++ repaired\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+{}\n\\ No newline at end of file\n",
+        "step_diffs": "=== bad ===\nError: Strategy must return a string\n\n=== fix ===\n--- before_fix\n+++ after_fix\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+{}\n\\ No newline at end of file\n",
+        "strategies_tried": [
+          "bad",
+          "fix"
+        ],
+        "format": "auto"
+      },
+      "calls": {
+        "bad": 1,
+        "fix": 1
+      }
+    }
+  },
+  {
+    "name": "exception-only-json",
+    "text": "{bad",
+    "format": "json",
+    "strategies": [
+      "bad"
+    ],
+    "custom": [
+      {
+        "name": "bad",
+        "action": "throw",
+        "value": "boom"
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": false,
+        "text": "{bad",
+        "strategies": [],
+        "parse_failure": true,
+        "format": "json"
+      },
+      "report": {
+        "success": false,
+        "original_text": "{bad",
+        "final_text": "{bad",
+        "candidate_text": "{bad",
+        "parse_failure": true,
+        "steps": [
+          {
+            "name": "bad",
+            "changed": false,
+            "input_text": "{bad",
+            "output_text": "{bad",
+            "error": "boom"
+          }
+        ],
+        "strategies_changed": [],
+        "confidence": 0,
+        "summary": "Repair failed after trying 1 strategies",
+        "has_diff": false,
+        "diff": "",
+        "step_diffs": "=== bad ===\nError: boom\n",
+        "strategies_tried": [
+          "bad"
+        ],
+        "format": "json"
+      },
+      "calls": {
+        "bad": 2
+      }
+    }
+  },
+  {
+    "name": "exception-only-yaml",
+    "text": "{bad",
+    "format": "yaml",
+    "strategies": [
+      "bad"
+    ],
+    "custom": [
+      {
+        "name": "bad",
+        "action": "throw",
+        "value": "boom"
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": false,
+        "text": "{bad",
+        "strategies": [],
+        "parse_failure": true,
+        "format": "yaml"
+      },
+      "report": {
+        "success": false,
+        "original_text": "{bad",
+        "final_text": "{bad",
+        "candidate_text": "{bad",
+        "parse_failure": true,
+        "steps": [
+          {
+            "name": "bad",
+            "changed": false,
+            "input_text": "{bad",
+            "output_text": "{bad",
+            "error": "boom"
+          }
+        ],
+        "strategies_changed": [],
+        "confidence": 0,
+        "summary": "Repair failed after trying 1 strategies",
+        "has_diff": false,
+        "diff": "",
+        "step_diffs": "=== bad ===\nError: boom\n",
+        "strategies_tried": [
+          "bad"
+        ],
+        "format": "yaml"
+      },
+      "calls": {
+        "bad": 3
+      }
+    }
+  },
+  {
+    "name": "exception-only-toml",
+    "text": "{bad",
+    "format": "toml",
+    "strategies": [
+      "bad"
+    ],
+    "custom": [
+      {
+        "name": "bad",
+        "action": "throw",
+        "value": "boom"
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": false,
+        "text": "{bad",
+        "strategies": [],
+        "parse_failure": true,
+        "format": "toml"
+      },
+      "report": {
+        "success": false,
+        "original_text": "{bad",
+        "final_text": "{bad",
+        "candidate_text": "{bad",
+        "parse_failure": true,
+        "steps": [
+          {
+            "name": "bad",
+            "changed": false,
+            "input_text": "{bad",
+            "output_text": "{bad",
+            "error": "boom"
+          }
+        ],
+        "strategies_changed": [],
+        "confidence": 0,
+        "summary": "Repair failed after trying 1 strategies",
+        "has_diff": false,
+        "diff": "",
+        "step_diffs": "=== bad ===\nError: boom\n",
+        "strategies_tried": [
+          "bad"
+        ],
+        "format": "toml"
+      },
+      "calls": {
+        "bad": 3
+      }
+    }
+  },
+  {
+    "name": "exception-only-python",
+    "text": "{bad",
+    "format": "python",
+    "strategies": [
+      "bad"
+    ],
+    "custom": [
+      {
+        "name": "bad",
+        "action": "throw",
+        "value": "boom"
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": false,
+        "text": "{bad",
+        "strategies": [],
+        "parse_failure": true,
+        "format": "python"
+      },
+      "report": {
+        "success": false,
+        "original_text": "{bad",
+        "final_text": "{bad",
+        "candidate_text": "{bad",
+        "parse_failure": true,
+        "steps": [
+          {
+            "name": "bad",
+            "changed": false,
+            "input_text": "{bad",
+            "output_text": "{bad",
+            "error": "boom"
+          }
+        ],
+        "strategies_changed": [],
+        "confidence": 0,
+        "summary": "Repair failed after trying 1 strategies",
+        "has_diff": false,
+        "diff": "",
+        "step_diffs": "=== bad ===\nError: boom\n",
+        "strategies_tried": [
+          "bad"
+        ],
+        "format": "python"
+      },
+      "calls": {
+        "bad": 3
+      }
+    }
+  },
+  {
+    "name": "exception-only-auto",
+    "text": "{bad",
+    "format": "auto",
+    "strategies": [
+      "bad"
+    ],
+    "custom": [
+      {
+        "name": "bad",
+        "action": "throw",
+        "value": "boom"
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": false,
+        "text": "{bad",
+        "strategies": [],
+        "parse_failure": true,
+        "format": "auto"
+      },
+      "report": {
+        "success": false,
+        "original_text": "{bad",
+        "final_text": "{bad",
+        "candidate_text": "{bad",
+        "parse_failure": true,
+        "steps": [
+          {
+            "name": "bad",
+            "changed": false,
+            "input_text": "{bad",
+            "output_text": "{bad",
+            "error": "boom"
+          }
+        ],
+        "strategies_changed": [],
+        "confidence": 0,
+        "summary": "Repair failed after trying 1 strategies",
+        "has_diff": false,
+        "diff": "",
+        "step_diffs": "=== bad ===\nError: boom\n",
+        "strategies_tried": [
+          "bad"
+        ],
+        "format": "auto"
+      },
+      "calls": {
+        "bad": 2
+      }
+    }
+  },
+  {
+    "name": "fallback-success-json",
+    "text": "{bad",
+    "format": "json",
+    "strategies": [
+      "bad",
+      "fix",
+      "spoil"
+    ],
+    "custom": [
+      {
+        "name": "bad",
+        "action": "throw",
+        "value": "boom"
+      },
+      {
+        "name": "fix",
+        "action": "return",
+        "value": "{}"
+      },
+      {
+        "name": "spoil",
+        "action": "return",
+        "value": "{bad"
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": true,
+        "text": "{}",
+        "strategies": [
+          "fix"
+        ],
+        "parse_failure": false,
+        "format": "json"
+      },
+      "report": {
+        "success": true,
+        "original_text": "{bad",
+        "final_text": "{}",
+        "candidate_text": "{}",
+        "parse_failure": false,
+        "steps": [
+          {
+            "name": "bad",
+            "changed": false,
+            "input_text": "{bad",
+            "output_text": "{bad",
+            "error": "boom"
+          },
+          {
+            "name": "fix",
+            "changed": true,
+            "input_text": "{bad",
+            "output_text": "{}",
+            "error": null
+          }
+        ],
+        "strategies_changed": [
+          "fix"
+        ],
+        "confidence": 0.65,
+        "summary": "Repaired using 1 strategy(ies): fix",
+        "has_diff": true,
+        "diff": "--- original\n+++ repaired\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+{}\n\\ No newline at end of file\n",
+        "step_diffs": "=== bad ===\nError: boom\n\n=== fix ===\n--- before_fix\n+++ after_fix\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+{}\n\\ No newline at end of file\n",
+        "strategies_tried": [
+          "bad",
+          "fix"
+        ],
+        "format": "json"
+      },
+      "calls": {
+        "bad": 2,
+        "fix": 2,
+        "spoil": 1
+      }
+    }
+  },
+  {
+    "name": "fallback-success-auto",
+    "text": "{bad",
+    "format": "auto",
+    "strategies": [
+      "bad",
+      "fix",
+      "spoil"
+    ],
+    "custom": [
+      {
+        "name": "bad",
+        "action": "throw",
+        "value": "boom"
+      },
+      {
+        "name": "fix",
+        "action": "return",
+        "value": "{}"
+      },
+      {
+        "name": "spoil",
+        "action": "return",
+        "value": "{bad"
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": true,
+        "text": "{}",
+        "strategies": [
+          "fix"
+        ],
+        "parse_failure": false,
+        "format": "auto"
+      },
+      "report": {
+        "success": true,
+        "original_text": "{bad",
+        "final_text": "{}",
+        "candidate_text": "{}",
+        "parse_failure": false,
+        "steps": [
+          {
+            "name": "bad",
+            "changed": false,
+            "input_text": "{bad",
+            "output_text": "{bad",
+            "error": "boom"
+          },
+          {
+            "name": "fix",
+            "changed": true,
+            "input_text": "{bad",
+            "output_text": "{}",
+            "error": null
+          }
+        ],
+        "strategies_changed": [
+          "fix"
+        ],
+        "confidence": 0.65,
+        "summary": "Repaired using 1 strategy(ies): fix",
+        "has_diff": true,
+        "diff": "--- original\n+++ repaired\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+{}\n\\ No newline at end of file\n",
+        "step_diffs": "=== bad ===\nError: boom\n\n=== fix ===\n--- before_fix\n+++ after_fix\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+{}\n\\ No newline at end of file\n",
+        "strategies_tried": [
+          "bad",
+          "fix"
+        ],
+        "format": "auto"
+      },
+      "calls": {
+        "bad": 2,
+        "fix": 2,
+        "spoil": 1
+      }
+    }
+  },
+  {
+    "name": "preserve-syntax-yaml",
+    "text": "{bad",
+    "format": "yaml",
+    "strategies": [
+      "fix",
+      "spoil"
+    ],
+    "custom": [
+      {
+        "name": "fix",
+        "action": "return",
+        "value": "v: 1"
+      },
+      {
+        "name": "spoil",
+        "action": "throw",
+        "value": "should not run"
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": true,
+        "text": "v: 1",
+        "strategies": [
+          "fix"
+        ],
+        "parse_failure": false,
+        "format": "yaml"
+      },
+      "report": {
+        "success": true,
+        "original_text": "{bad",
+        "final_text": "v: 1",
+        "candidate_text": "v: 1",
+        "parse_failure": false,
+        "steps": [
+          {
+            "name": "fix",
+            "changed": true,
+            "input_text": "{bad",
+            "output_text": "v: 1",
+            "error": null
+          }
+        ],
+        "strategies_changed": [
+          "fix"
+        ],
+        "confidence": 0.9,
+        "summary": "Repaired using 1 strategy(ies): fix",
+        "has_diff": true,
+        "diff": "--- original\n+++ repaired\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+v: 1\n\\ No newline at end of file\n",
+        "step_diffs": "=== fix ===\n--- before_fix\n+++ after_fix\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+v: 1\n\\ No newline at end of file\n",
+        "strategies_tried": [
+          "fix"
+        ],
+        "format": "yaml"
+      },
+      "calls": {
+        "fix": 1,
+        "spoil": 0
+      }
+    }
+  },
+  {
+    "name": "preserve-syntax-toml",
+    "text": "{bad",
+    "format": "toml",
+    "strategies": [
+      "fix",
+      "spoil"
+    ],
+    "custom": [
+      {
+        "name": "fix",
+        "action": "return",
+        "value": "v=1"
+      },
+      {
+        "name": "spoil",
+        "action": "throw",
+        "value": "should not run"
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": true,
+        "text": "v=1",
+        "strategies": [
+          "fix"
+        ],
+        "parse_failure": false,
+        "format": "toml"
+      },
+      "report": {
+        "success": true,
+        "original_text": "{bad",
+        "final_text": "v=1",
+        "candidate_text": "v=1",
+        "parse_failure": false,
+        "steps": [
+          {
+            "name": "fix",
+            "changed": true,
+            "input_text": "{bad",
+            "output_text": "v=1",
+            "error": null
+          }
+        ],
+        "strategies_changed": [
+          "fix"
+        ],
+        "confidence": 0.78,
+        "summary": "Repaired using 1 strategy(ies): fix",
+        "has_diff": true,
+        "diff": "--- original\n+++ repaired\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+v=1\n\\ No newline at end of file\n",
+        "step_diffs": "=== fix ===\n--- before_fix\n+++ after_fix\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+v=1\n\\ No newline at end of file\n",
+        "strategies_tried": [
+          "fix"
+        ],
+        "format": "toml"
+      },
+      "calls": {
+        "fix": 1,
+        "spoil": 0
+      }
+    }
+  },
+  {
+    "name": "preserve-syntax-python",
+    "text": "{bad",
+    "format": "python",
+    "strategies": [
+      "fix",
+      "spoil"
+    ],
+    "custom": [
+      {
+        "name": "fix",
+        "action": "return",
+        "value": "{'v':1}"
+      },
+      {
+        "name": "spoil",
+        "action": "throw",
+        "value": "should not run"
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": true,
+        "text": "{'v':1}",
+        "strategies": [
+          "fix"
+        ],
+        "parse_failure": false,
+        "format": "python"
+      },
+      "report": {
+        "success": true,
+        "original_text": "{bad",
+        "final_text": "{'v':1}",
+        "candidate_text": "{'v':1}",
+        "parse_failure": false,
+        "steps": [
+          {
+            "name": "fix",
+            "changed": true,
+            "input_text": "{bad",
+            "output_text": "{'v':1}",
+            "error": null
+          }
+        ],
+        "strategies_changed": [
+          "fix"
+        ],
+        "confidence": 0.69,
+        "summary": "Repaired using 1 strategy(ies): fix",
+        "has_diff": true,
+        "diff": "--- original\n+++ repaired\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+{'v':1}\n\\ No newline at end of file\n",
+        "step_diffs": "=== fix ===\n--- before_fix\n+++ after_fix\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+{'v':1}\n\\ No newline at end of file\n",
+        "strategies_tried": [
+          "fix"
+        ],
+        "format": "python"
+      },
+      "calls": {
+        "fix": 1,
+        "spoil": 0
+      }
+    }
+  },
+  {
+    "name": "empty-string-is-a-string",
+    "text": "{bad",
+    "format": "json",
+    "strategies": [
+      "empty"
+    ],
+    "custom": [
+      {
+        "name": "empty",
+        "action": "return",
+        "value": ""
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": false,
+        "text": "{bad",
+        "strategies": [],
+        "parse_failure": true,
+        "format": "json"
+      },
+      "report": {
+        "success": false,
+        "original_text": "{bad",
+        "final_text": "{bad",
+        "candidate_text": "",
+        "parse_failure": true,
+        "steps": [
+          {
+            "name": "empty",
+            "changed": true,
+            "input_text": "{bad",
+            "output_text": "",
+            "error": null
+          }
+        ],
+        "strategies_changed": [
+          "empty"
+        ],
+        "confidence": 0,
+        "summary": "Repair failed after trying 1 strategies",
+        "has_diff": false,
+        "diff": "",
+        "step_diffs": "=== empty ===\n--- before_empty\n+++ after_empty\n@@ -1 +0,0 @@\n-{bad\n\\ No newline at end of file\n",
+        "strategies_tried": [
+          "empty"
+        ],
+        "format": "json"
+      },
+      "calls": {
+        "empty": 2
+      }
+    }
+  },
+  {
+    "name": "unicode-confidence",
+    "text": "oops😀x",
+    "format": "json",
+    "strategies": [
+      "fix"
+    ],
+    "custom": [
+      {
+        "name": "fix",
+        "action": "return",
+        "value": "{\"x\":\"😀\"}"
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": true,
+        "text": "{\"x\":\"😀\"}",
+        "strategies": [
+          "fix"
+        ],
+        "parse_failure": false,
+        "format": "json"
+      },
+      "report": {
+        "success": true,
+        "original_text": "oops😀x",
+        "final_text": "{\"x\":\"😀\"}",
+        "candidate_text": "{\"x\":\"😀\"}",
+        "parse_failure": false,
+        "steps": [
+          {
+            "name": "fix",
+            "changed": true,
+            "input_text": "oops😀x",
+            "output_text": "{\"x\":\"😀\"}",
+            "error": null
+          }
+        ],
+        "strategies_changed": [
+          "fix"
+        ],
+        "confidence": 0.73,
+        "summary": "Repaired using 1 strategy(ies): fix",
+        "has_diff": true,
+        "diff": "--- original\n+++ repaired\n@@ -1 +1 @@\n-oops😀x\n\\ No newline at end of file\n+{\"x\":\"😀\"}\n\\ No newline at end of file\n",
+        "step_diffs": "=== fix ===\n--- before_fix\n+++ after_fix\n@@ -1 +1 @@\n-oops😀x\n\\ No newline at end of file\n+{\"x\":\"😀\"}\n\\ No newline at end of file\n",
+        "strategies_tried": [
+          "fix"
+        ],
+        "format": "json"
+      },
+      "calls": {
+        "fix": 1
+      }
+    }
+  },
+  {
+    "name": "half-up-confidence",
+    "text": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "format": "json",
+    "strategies": [
+      "fix"
+    ],
+    "custom": [
+      {
+        "name": "fix",
+        "action": "return",
+        "value": "\"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\""
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": true,
+        "text": "\"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"",
+        "strategies": [
+          "fix"
+        ],
+        "parse_failure": false,
+        "format": "json"
+      },
+      "report": {
+        "success": true,
+        "original_text": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "final_text": "\"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"",
+        "candidate_text": "\"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"",
+        "parse_failure": false,
+        "steps": [
+          {
+            "name": "fix",
+            "changed": true,
+            "input_text": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "output_text": "\"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"",
+            "error": null
+          }
+        ],
+        "strategies_changed": [
+          "fix"
+        ],
+        "confidence": 0.87,
+        "summary": "Repaired using 1 strategy(ies): fix",
+        "has_diff": true,
+        "diff": "--- original\n+++ repaired\n@@ -1 +1 @@\n-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n\\ No newline at end of file\n+\"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"\n\\ No newline at end of file\n",
+        "step_diffs": "=== fix ===\n--- before_fix\n+++ after_fix\n@@ -1 +1 @@\n-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n\\ No newline at end of file\n+\"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"\n\\ No newline at end of file\n",
+        "strategies_tried": [
+          "fix"
+        ],
+        "format": "json"
+      },
+      "calls": {
+        "fix": 1
+      }
+    }
+  },
+  {
+    "name": "typed-strategy-clean-does-not-execute-faults",
+    "text": "{}",
+    "format": "json",
+    "strategies": [
+      "fault"
+    ],
+    "custom": [
+      {
+        "name": "fault",
+        "action": "strategy_throw",
+        "value": "boom"
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": false,
+        "text": "{}",
+        "strategies": [],
+        "parse_failure": false,
+        "format": "json"
+      },
+      "report": {
+        "success": true,
+        "original_text": "{}",
+        "final_text": "{}",
+        "candidate_text": "{}",
+        "parse_failure": false,
+        "steps": [],
+        "strategies_changed": [],
+        "confidence": 1,
+        "summary": "No repair needed — JSON was already valid",
+        "has_diff": false,
+        "diff": "",
+        "step_diffs": "",
+        "strategies_tried": [],
+        "format": "json"
+      },
+      "calls": {
+        "fault": 0
+      }
+    }
+  },
+  {
+    "name": "typed-strategy-throw-then-fix-json",
+    "text": "{bad",
+    "format": "json",
+    "strategies": [
+      "bad",
+      "fix"
+    ],
+    "custom": [
+      {
+        "name": "bad",
+        "action": "strategy_throw",
+        "value": "boom"
+      },
+      {
+        "name": "fix",
+        "action": "return",
+        "value": "{}"
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": true,
+        "text": "{}",
+        "strategies": [
+          "fix"
+        ],
+        "parse_failure": false,
+        "format": "json"
+      },
+      "report": {
+        "success": true,
+        "original_text": "{bad",
+        "final_text": "{}",
+        "candidate_text": "{}",
+        "parse_failure": false,
+        "steps": [
+          {
+            "name": "bad",
+            "changed": false,
+            "input_text": "{bad",
+            "output_text": "{bad",
+            "error": "boom"
+          },
+          {
+            "name": "fix",
+            "changed": true,
+            "input_text": "{bad",
+            "output_text": "{}",
+            "error": null
+          }
+        ],
+        "strategies_changed": [
+          "fix"
+        ],
+        "confidence": 0.65,
+        "summary": "Repaired using 1 strategy(ies): fix",
+        "has_diff": true,
+        "diff": "--- original\n+++ repaired\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+{}\n\\ No newline at end of file\n",
+        "step_diffs": "=== bad ===\nError: boom\n\n=== fix ===\n--- before_fix\n+++ after_fix\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+{}\n\\ No newline at end of file\n",
+        "strategies_tried": [
+          "bad",
+          "fix"
+        ],
+        "format": "json"
+      },
+      "calls": {
+        "bad": 1,
+        "fix": 1
+      }
+    }
+  },
+  {
+    "name": "typed-strategy-throw-then-fix-yaml",
+    "text": "{bad",
+    "format": "yaml",
+    "strategies": [
+      "bad",
+      "fix"
+    ],
+    "custom": [
+      {
+        "name": "bad",
+        "action": "strategy_throw",
+        "value": "boom"
+      },
+      {
+        "name": "fix",
+        "action": "return",
+        "value": "v: 1"
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": true,
+        "text": "v: 1",
+        "strategies": [
+          "fix"
+        ],
+        "parse_failure": false,
+        "format": "yaml"
+      },
+      "report": {
+        "success": true,
+        "original_text": "{bad",
+        "final_text": "v: 1",
+        "candidate_text": "v: 1",
+        "parse_failure": false,
+        "steps": [
+          {
+            "name": "bad",
+            "changed": false,
+            "input_text": "{bad",
+            "output_text": "{bad",
+            "error": "boom"
+          },
+          {
+            "name": "fix",
+            "changed": true,
+            "input_text": "{bad",
+            "output_text": "v: 1",
+            "error": null
+          }
+        ],
+        "strategies_changed": [
+          "fix"
+        ],
+        "confidence": 0.9,
+        "summary": "Repaired using 1 strategy(ies): fix",
+        "has_diff": true,
+        "diff": "--- original\n+++ repaired\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+v: 1\n\\ No newline at end of file\n",
+        "step_diffs": "=== bad ===\nError: boom\n\n=== fix ===\n--- before_fix\n+++ after_fix\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+v: 1\n\\ No newline at end of file\n",
+        "strategies_tried": [
+          "bad",
+          "fix"
+        ],
+        "format": "yaml"
+      },
+      "calls": {
+        "bad": 1,
+        "fix": 1
+      }
+    }
+  },
+  {
+    "name": "typed-strategy-throw-then-fix-toml",
+    "text": "{bad",
+    "format": "toml",
+    "strategies": [
+      "bad",
+      "fix"
+    ],
+    "custom": [
+      {
+        "name": "bad",
+        "action": "strategy_throw",
+        "value": "boom"
+      },
+      {
+        "name": "fix",
+        "action": "return",
+        "value": "v=1"
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": true,
+        "text": "v=1",
+        "strategies": [
+          "fix"
+        ],
+        "parse_failure": false,
+        "format": "toml"
+      },
+      "report": {
+        "success": true,
+        "original_text": "{bad",
+        "final_text": "v=1",
+        "candidate_text": "v=1",
+        "parse_failure": false,
+        "steps": [
+          {
+            "name": "bad",
+            "changed": false,
+            "input_text": "{bad",
+            "output_text": "{bad",
+            "error": "boom"
+          },
+          {
+            "name": "fix",
+            "changed": true,
+            "input_text": "{bad",
+            "output_text": "v=1",
+            "error": null
+          }
+        ],
+        "strategies_changed": [
+          "fix"
+        ],
+        "confidence": 0.78,
+        "summary": "Repaired using 1 strategy(ies): fix",
+        "has_diff": true,
+        "diff": "--- original\n+++ repaired\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+v=1\n\\ No newline at end of file\n",
+        "step_diffs": "=== bad ===\nError: boom\n\n=== fix ===\n--- before_fix\n+++ after_fix\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+v=1\n\\ No newline at end of file\n",
+        "strategies_tried": [
+          "bad",
+          "fix"
+        ],
+        "format": "toml"
+      },
+      "calls": {
+        "bad": 1,
+        "fix": 1
+      }
+    }
+  },
+  {
+    "name": "typed-strategy-throw-then-fix-python",
+    "text": "{bad",
+    "format": "python",
+    "strategies": [
+      "bad",
+      "fix"
+    ],
+    "custom": [
+      {
+        "name": "bad",
+        "action": "strategy_throw",
+        "value": "boom"
+      },
+      {
+        "name": "fix",
+        "action": "return",
+        "value": "{'v':1}"
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": true,
+        "text": "{'v':1}",
+        "strategies": [
+          "fix"
+        ],
+        "parse_failure": false,
+        "format": "python"
+      },
+      "report": {
+        "success": true,
+        "original_text": "{bad",
+        "final_text": "{'v':1}",
+        "candidate_text": "{'v':1}",
+        "parse_failure": false,
+        "steps": [
+          {
+            "name": "bad",
+            "changed": false,
+            "input_text": "{bad",
+            "output_text": "{bad",
+            "error": "boom"
+          },
+          {
+            "name": "fix",
+            "changed": true,
+            "input_text": "{bad",
+            "output_text": "{'v':1}",
+            "error": null
+          }
+        ],
+        "strategies_changed": [
+          "fix"
+        ],
+        "confidence": 0.69,
+        "summary": "Repaired using 1 strategy(ies): fix",
+        "has_diff": true,
+        "diff": "--- original\n+++ repaired\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+{'v':1}\n\\ No newline at end of file\n",
+        "step_diffs": "=== bad ===\nError: boom\n\n=== fix ===\n--- before_fix\n+++ after_fix\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+{'v':1}\n\\ No newline at end of file\n",
+        "strategies_tried": [
+          "bad",
+          "fix"
+        ],
+        "format": "python"
+      },
+      "calls": {
+        "bad": 1,
+        "fix": 1
+      }
+    }
+  },
+  {
+    "name": "typed-strategy-throw-then-fix-auto",
+    "text": "{bad",
+    "format": "auto",
+    "strategies": [
+      "bad",
+      "fix"
+    ],
+    "custom": [
+      {
+        "name": "bad",
+        "action": "strategy_throw",
+        "value": "boom"
+      },
+      {
+        "name": "fix",
+        "action": "return",
+        "value": "{}"
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": true,
+        "text": "{}",
+        "strategies": [
+          "fix"
+        ],
+        "parse_failure": false,
+        "format": "auto"
+      },
+      "report": {
+        "success": true,
+        "original_text": "{bad",
+        "final_text": "{}",
+        "candidate_text": "{}",
+        "parse_failure": false,
+        "steps": [
+          {
+            "name": "bad",
+            "changed": false,
+            "input_text": "{bad",
+            "output_text": "{bad",
+            "error": "boom"
+          },
+          {
+            "name": "fix",
+            "changed": true,
+            "input_text": "{bad",
+            "output_text": "{}",
+            "error": null
+          }
+        ],
+        "strategies_changed": [
+          "fix"
+        ],
+        "confidence": 0.65,
+        "summary": "Repaired using 1 strategy(ies): fix",
+        "has_diff": true,
+        "diff": "--- original\n+++ repaired\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+{}\n\\ No newline at end of file\n",
+        "step_diffs": "=== bad ===\nError: boom\n\n=== fix ===\n--- before_fix\n+++ after_fix\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+{}\n\\ No newline at end of file\n",
+        "strategies_tried": [
+          "bad",
+          "fix"
+        ],
+        "format": "auto"
+      },
+      "calls": {
+        "bad": 1,
+        "fix": 1
+      }
+    }
+  },
+  {
+    "name": "typed-strategy-exception-only-json",
+    "text": "{bad",
+    "format": "json",
+    "strategies": [
+      "bad"
+    ],
+    "custom": [
+      {
+        "name": "bad",
+        "action": "strategy_throw",
+        "value": "boom"
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": false,
+        "text": "{bad",
+        "strategies": [],
+        "parse_failure": true,
+        "format": "json"
+      },
+      "report": {
+        "success": false,
+        "original_text": "{bad",
+        "final_text": "{bad",
+        "candidate_text": "{bad",
+        "parse_failure": true,
+        "steps": [
+          {
+            "name": "bad",
+            "changed": false,
+            "input_text": "{bad",
+            "output_text": "{bad",
+            "error": "boom"
+          }
+        ],
+        "strategies_changed": [],
+        "confidence": 0,
+        "summary": "Repair failed after trying 1 strategies",
+        "has_diff": false,
+        "diff": "",
+        "step_diffs": "=== bad ===\nError: boom\n",
+        "strategies_tried": [
+          "bad"
+        ],
+        "format": "json"
+      },
+      "calls": {
+        "bad": 2
+      }
+    }
+  },
+  {
+    "name": "typed-strategy-exception-only-yaml",
+    "text": "{bad",
+    "format": "yaml",
+    "strategies": [
+      "bad"
+    ],
+    "custom": [
+      {
+        "name": "bad",
+        "action": "strategy_throw",
+        "value": "boom"
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": false,
+        "text": "{bad",
+        "strategies": [],
+        "parse_failure": true,
+        "format": "yaml"
+      },
+      "report": {
+        "success": false,
+        "original_text": "{bad",
+        "final_text": "{bad",
+        "candidate_text": "{bad",
+        "parse_failure": true,
+        "steps": [
+          {
+            "name": "bad",
+            "changed": false,
+            "input_text": "{bad",
+            "output_text": "{bad",
+            "error": "boom"
+          }
+        ],
+        "strategies_changed": [],
+        "confidence": 0,
+        "summary": "Repair failed after trying 1 strategies",
+        "has_diff": false,
+        "diff": "",
+        "step_diffs": "=== bad ===\nError: boom\n",
+        "strategies_tried": [
+          "bad"
+        ],
+        "format": "yaml"
+      },
+      "calls": {
+        "bad": 3
+      }
+    }
+  },
+  {
+    "name": "typed-strategy-exception-only-toml",
+    "text": "{bad",
+    "format": "toml",
+    "strategies": [
+      "bad"
+    ],
+    "custom": [
+      {
+        "name": "bad",
+        "action": "strategy_throw",
+        "value": "boom"
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": false,
+        "text": "{bad",
+        "strategies": [],
+        "parse_failure": true,
+        "format": "toml"
+      },
+      "report": {
+        "success": false,
+        "original_text": "{bad",
+        "final_text": "{bad",
+        "candidate_text": "{bad",
+        "parse_failure": true,
+        "steps": [
+          {
+            "name": "bad",
+            "changed": false,
+            "input_text": "{bad",
+            "output_text": "{bad",
+            "error": "boom"
+          }
+        ],
+        "strategies_changed": [],
+        "confidence": 0,
+        "summary": "Repair failed after trying 1 strategies",
+        "has_diff": false,
+        "diff": "",
+        "step_diffs": "=== bad ===\nError: boom\n",
+        "strategies_tried": [
+          "bad"
+        ],
+        "format": "toml"
+      },
+      "calls": {
+        "bad": 3
+      }
+    }
+  },
+  {
+    "name": "typed-strategy-exception-only-python",
+    "text": "{bad",
+    "format": "python",
+    "strategies": [
+      "bad"
+    ],
+    "custom": [
+      {
+        "name": "bad",
+        "action": "strategy_throw",
+        "value": "boom"
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": false,
+        "text": "{bad",
+        "strategies": [],
+        "parse_failure": true,
+        "format": "python"
+      },
+      "report": {
+        "success": false,
+        "original_text": "{bad",
+        "final_text": "{bad",
+        "candidate_text": "{bad",
+        "parse_failure": true,
+        "steps": [
+          {
+            "name": "bad",
+            "changed": false,
+            "input_text": "{bad",
+            "output_text": "{bad",
+            "error": "boom"
+          }
+        ],
+        "strategies_changed": [],
+        "confidence": 0,
+        "summary": "Repair failed after trying 1 strategies",
+        "has_diff": false,
+        "diff": "",
+        "step_diffs": "=== bad ===\nError: boom\n",
+        "strategies_tried": [
+          "bad"
+        ],
+        "format": "python"
+      },
+      "calls": {
+        "bad": 3
+      }
+    }
+  },
+  {
+    "name": "typed-strategy-exception-only-auto",
+    "text": "{bad",
+    "format": "auto",
+    "strategies": [
+      "bad"
+    ],
+    "custom": [
+      {
+        "name": "bad",
+        "action": "strategy_throw",
+        "value": "boom"
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": false,
+        "text": "{bad",
+        "strategies": [],
+        "parse_failure": true,
+        "format": "auto"
+      },
+      "report": {
+        "success": false,
+        "original_text": "{bad",
+        "final_text": "{bad",
+        "candidate_text": "{bad",
+        "parse_failure": true,
+        "steps": [
+          {
+            "name": "bad",
+            "changed": false,
+            "input_text": "{bad",
+            "output_text": "{bad",
+            "error": "boom"
+          }
+        ],
+        "strategies_changed": [],
+        "confidence": 0,
+        "summary": "Repair failed after trying 1 strategies",
+        "has_diff": false,
+        "diff": "",
+        "step_diffs": "=== bad ===\nError: boom\n",
+        "strategies_tried": [
+          "bad"
+        ],
+        "format": "auto"
+      },
+      "calls": {
+        "bad": 2
+      }
+    }
+  },
+  {
+    "name": "typed-strategy-fallback-success-json",
+    "text": "{bad",
+    "format": "json",
+    "strategies": [
+      "bad",
+      "fix",
+      "spoil"
+    ],
+    "custom": [
+      {
+        "name": "bad",
+        "action": "strategy_throw",
+        "value": "boom"
+      },
+      {
+        "name": "fix",
+        "action": "return",
+        "value": "{}"
+      },
+      {
+        "name": "spoil",
+        "action": "return",
+        "value": "{bad"
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": true,
+        "text": "{}",
+        "strategies": [
+          "fix"
+        ],
+        "parse_failure": false,
+        "format": "json"
+      },
+      "report": {
+        "success": true,
+        "original_text": "{bad",
+        "final_text": "{}",
+        "candidate_text": "{}",
+        "parse_failure": false,
+        "steps": [
+          {
+            "name": "bad",
+            "changed": false,
+            "input_text": "{bad",
+            "output_text": "{bad",
+            "error": "boom"
+          },
+          {
+            "name": "fix",
+            "changed": true,
+            "input_text": "{bad",
+            "output_text": "{}",
+            "error": null
+          }
+        ],
+        "strategies_changed": [
+          "fix"
+        ],
+        "confidence": 0.65,
+        "summary": "Repaired using 1 strategy(ies): fix",
+        "has_diff": true,
+        "diff": "--- original\n+++ repaired\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+{}\n\\ No newline at end of file\n",
+        "step_diffs": "=== bad ===\nError: boom\n\n=== fix ===\n--- before_fix\n+++ after_fix\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+{}\n\\ No newline at end of file\n",
+        "strategies_tried": [
+          "bad",
+          "fix"
+        ],
+        "format": "json"
+      },
+      "calls": {
+        "bad": 2,
+        "fix": 2,
+        "spoil": 1
+      }
+    }
+  },
+  {
+    "name": "typed-strategy-fallback-success-auto",
+    "text": "{bad",
+    "format": "auto",
+    "strategies": [
+      "bad",
+      "fix",
+      "spoil"
+    ],
+    "custom": [
+      {
+        "name": "bad",
+        "action": "strategy_throw",
+        "value": "boom"
+      },
+      {
+        "name": "fix",
+        "action": "return",
+        "value": "{}"
+      },
+      {
+        "name": "spoil",
+        "action": "return",
+        "value": "{bad"
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": true,
+        "text": "{}",
+        "strategies": [
+          "fix"
+        ],
+        "parse_failure": false,
+        "format": "auto"
+      },
+      "report": {
+        "success": true,
+        "original_text": "{bad",
+        "final_text": "{}",
+        "candidate_text": "{}",
+        "parse_failure": false,
+        "steps": [
+          {
+            "name": "bad",
+            "changed": false,
+            "input_text": "{bad",
+            "output_text": "{bad",
+            "error": "boom"
+          },
+          {
+            "name": "fix",
+            "changed": true,
+            "input_text": "{bad",
+            "output_text": "{}",
+            "error": null
+          }
+        ],
+        "strategies_changed": [
+          "fix"
+        ],
+        "confidence": 0.65,
+        "summary": "Repaired using 1 strategy(ies): fix",
+        "has_diff": true,
+        "diff": "--- original\n+++ repaired\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+{}\n\\ No newline at end of file\n",
+        "step_diffs": "=== bad ===\nError: boom\n\n=== fix ===\n--- before_fix\n+++ after_fix\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+{}\n\\ No newline at end of file\n",
+        "strategies_tried": [
+          "bad",
+          "fix"
+        ],
+        "format": "auto"
+      },
+      "calls": {
+        "bad": 2,
+        "fix": 2,
+        "spoil": 1
+      }
+    }
+  },
+  {
+    "name": "typed-strategy-preserve-syntax-yaml",
+    "text": "{bad",
+    "format": "yaml",
+    "strategies": [
+      "fix",
+      "spoil"
+    ],
+    "custom": [
+      {
+        "name": "fix",
+        "action": "return",
+        "value": "v: 1"
+      },
+      {
+        "name": "spoil",
+        "action": "strategy_throw",
+        "value": "should not run"
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": true,
+        "text": "v: 1",
+        "strategies": [
+          "fix"
+        ],
+        "parse_failure": false,
+        "format": "yaml"
+      },
+      "report": {
+        "success": true,
+        "original_text": "{bad",
+        "final_text": "v: 1",
+        "candidate_text": "v: 1",
+        "parse_failure": false,
+        "steps": [
+          {
+            "name": "fix",
+            "changed": true,
+            "input_text": "{bad",
+            "output_text": "v: 1",
+            "error": null
+          }
+        ],
+        "strategies_changed": [
+          "fix"
+        ],
+        "confidence": 0.9,
+        "summary": "Repaired using 1 strategy(ies): fix",
+        "has_diff": true,
+        "diff": "--- original\n+++ repaired\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+v: 1\n\\ No newline at end of file\n",
+        "step_diffs": "=== fix ===\n--- before_fix\n+++ after_fix\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+v: 1\n\\ No newline at end of file\n",
+        "strategies_tried": [
+          "fix"
+        ],
+        "format": "yaml"
+      },
+      "calls": {
+        "fix": 1,
+        "spoil": 0
+      }
+    }
+  },
+  {
+    "name": "typed-strategy-preserve-syntax-toml",
+    "text": "{bad",
+    "format": "toml",
+    "strategies": [
+      "fix",
+      "spoil"
+    ],
+    "custom": [
+      {
+        "name": "fix",
+        "action": "return",
+        "value": "v=1"
+      },
+      {
+        "name": "spoil",
+        "action": "strategy_throw",
+        "value": "should not run"
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": true,
+        "text": "v=1",
+        "strategies": [
+          "fix"
+        ],
+        "parse_failure": false,
+        "format": "toml"
+      },
+      "report": {
+        "success": true,
+        "original_text": "{bad",
+        "final_text": "v=1",
+        "candidate_text": "v=1",
+        "parse_failure": false,
+        "steps": [
+          {
+            "name": "fix",
+            "changed": true,
+            "input_text": "{bad",
+            "output_text": "v=1",
+            "error": null
+          }
+        ],
+        "strategies_changed": [
+          "fix"
+        ],
+        "confidence": 0.78,
+        "summary": "Repaired using 1 strategy(ies): fix",
+        "has_diff": true,
+        "diff": "--- original\n+++ repaired\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+v=1\n\\ No newline at end of file\n",
+        "step_diffs": "=== fix ===\n--- before_fix\n+++ after_fix\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+v=1\n\\ No newline at end of file\n",
+        "strategies_tried": [
+          "fix"
+        ],
+        "format": "toml"
+      },
+      "calls": {
+        "fix": 1,
+        "spoil": 0
+      }
+    }
+  },
+  {
+    "name": "typed-strategy-preserve-syntax-python",
+    "text": "{bad",
+    "format": "python",
+    "strategies": [
+      "fix",
+      "spoil"
+    ],
+    "custom": [
+      {
+        "name": "fix",
+        "action": "return",
+        "value": "{'v':1}"
+      },
+      {
+        "name": "spoil",
+        "action": "strategy_throw",
+        "value": "should not run"
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": true,
+        "text": "{'v':1}",
+        "strategies": [
+          "fix"
+        ],
+        "parse_failure": false,
+        "format": "python"
+      },
+      "report": {
+        "success": true,
+        "original_text": "{bad",
+        "final_text": "{'v':1}",
+        "candidate_text": "{'v':1}",
+        "parse_failure": false,
+        "steps": [
+          {
+            "name": "fix",
+            "changed": true,
+            "input_text": "{bad",
+            "output_text": "{'v':1}",
+            "error": null
+          }
+        ],
+        "strategies_changed": [
+          "fix"
+        ],
+        "confidence": 0.69,
+        "summary": "Repaired using 1 strategy(ies): fix",
+        "has_diff": true,
+        "diff": "--- original\n+++ repaired\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+{'v':1}\n\\ No newline at end of file\n",
+        "step_diffs": "=== fix ===\n--- before_fix\n+++ after_fix\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+{'v':1}\n\\ No newline at end of file\n",
+        "strategies_tried": [
+          "fix"
+        ],
+        "format": "python"
+      },
+      "calls": {
+        "fix": 1,
+        "spoil": 0
+      }
+    }
+  },
+  {
+    "name": "typed-strategy-empty-message",
+    "text": "{bad",
+    "format": "json",
+    "strategies": [
+      "bad"
+    ],
+    "custom": [
+      {
+        "name": "bad",
+        "action": "strategy_throw",
+        "value": "",
+        "strategy_name": ""
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": false,
+        "text": "{bad",
+        "strategies": [],
+        "parse_failure": true,
+        "format": "json"
+      },
+      "report": {
+        "success": false,
+        "original_text": "{bad",
+        "final_text": "{bad",
+        "candidate_text": "{bad",
+        "parse_failure": true,
+        "steps": [
+          {
+            "name": "bad",
+            "changed": false,
+            "input_text": "{bad",
+            "output_text": "{bad",
+            "error": "StrategyError"
+          }
+        ],
+        "strategies_changed": [],
+        "confidence": 0,
+        "summary": "Repair failed after trying 1 strategies",
+        "has_diff": false,
+        "diff": "",
+        "step_diffs": "=== bad ===\nError: StrategyError\n",
+        "strategies_tried": [
+          "bad"
+        ],
+        "format": "json"
+      },
+      "calls": {
+        "bad": 2
+      }
+    }
+  },
+  {
+    "name": "typed-strategy-unicode-message",
+    "text": "{bad",
+    "format": "json",
+    "strategies": [
+      "bad",
+      "fix"
+    ],
+    "custom": [
+      {
+        "name": "bad",
+        "action": "strategy_throw",
+        "value": "  λ 🚀\nline: \"failure\"\\tail  ",
+        "strategy_name": "__proto__"
+      },
+      {
+        "name": "fix",
+        "action": "return",
+        "value": "{}"
+      }
+    ],
+    "expected": {
+      "result": {
+        "repaired": true,
+        "text": "{}",
+        "strategies": [
+          "fix"
+        ],
+        "parse_failure": false,
+        "format": "json"
+      },
+      "report": {
+        "success": true,
+        "original_text": "{bad",
+        "final_text": "{}",
+        "candidate_text": "{}",
+        "parse_failure": false,
+        "steps": [
+          {
+            "name": "bad",
+            "changed": false,
+            "input_text": "{bad",
+            "output_text": "{bad",
+            "error": "  λ 🚀\nline: \"failure\"\\tail  "
+          },
+          {
+            "name": "fix",
+            "changed": true,
+            "input_text": "{bad",
+            "output_text": "{}",
+            "error": null
+          }
+        ],
+        "strategies_changed": [
+          "fix"
+        ],
+        "confidence": 0.65,
+        "summary": "Repaired using 1 strategy(ies): fix",
+        "has_diff": true,
+        "diff": "--- original\n+++ repaired\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+{}\n\\ No newline at end of file\n",
+        "step_diffs": "=== bad ===\nError:   λ 🚀\nline: \"failure\"\\tail  \n\n=== fix ===\n--- before_fix\n+++ after_fix\n@@ -1 +1 @@\n-{bad\n\\ No newline at end of file\n+{}\n\\ No newline at end of file\n",
+        "strategies_tried": [
+          "bad",
+          "fix"
+        ],
+        "format": "json"
+      },
+      "calls": {
+        "bad": 1,
+        "fix": 1
+      }
+    }
+  }
+]

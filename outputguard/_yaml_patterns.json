@@ -1,0 +1,6 @@
+{
+  "null": "(?:~|null|Null|NULL)?",
+  "bool": "(?:true|True|TRUE|false|False|FALSE)",
+  "int": "(?:[-+]?[0-9]+|0o[0-7]+|0x[0-9a-fA-F]+)",
+  "float": "(?:[-+]?(?:\\.[0-9]+|[0-9]+(?:\\.[0-9]*)?)(?:[eE][-+]?[0-9]+)?|[-+]?\\.(?:inf|Inf|INF)|\\.(?:nan|NaN|NAN))"
+}

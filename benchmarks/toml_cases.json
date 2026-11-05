@@ -1,0 +1,1257 @@
+[
+  {
+    "name": "date",
+    "text": "value = 2026-11-04",
+    "valid": true,
+    "value": {
+      "value": "2026-11-04"
+    }
+  },
+  {
+    "name": "year-zero",
+    "text": "value = 0000-02-29",
+    "valid": true,
+    "value": {
+      "value": "0000-02-29"
+    }
+  },
+  {
+    "name": "year-one",
+    "text": "value = 0001-01-01",
+    "valid": true,
+    "value": {
+      "value": "0001-01-01"
+    }
+  },
+  {
+    "name": "year-last",
+    "text": "value = 9999-12-31",
+    "valid": true,
+    "value": {
+      "value": "9999-12-31"
+    }
+  },
+  {
+    "name": "leap-century",
+    "text": "value = 2000-02-29",
+    "valid": true,
+    "value": {
+      "value": "2000-02-29"
+    }
+  },
+  {
+    "name": "time",
+    "text": "value = 12:34:56",
+    "valid": true,
+    "value": {
+      "value": "12:34:56"
+    }
+  },
+  {
+    "name": "short-time",
+    "text": "value = 12:34",
+    "valid": true,
+    "value": {
+      "value": "12:34:00"
+    }
+  },
+  {
+    "name": "time-midnight",
+    "text": "value = 00:00:00",
+    "valid": true,
+    "value": {
+      "value": "00:00:00"
+    }
+  },
+  {
+    "name": "time-last",
+    "text": "value = 23:59:59",
+    "valid": true,
+    "value": {
+      "value": "23:59:59"
+    }
+  },
+  {
+    "name": "time-fraction",
+    "text": "value = 12:34:56.12345678901234567890",
+    "valid": true,
+    "value": {
+      "value": "12:34:56.12345678901234567890"
+    }
+  },
+  {
+    "name": "fraction-zero",
+    "text": "value = 12:34:56.000000",
+    "valid": true,
+    "value": {
+      "value": "12:34:56.000000"
+    }
+  },
+  {
+    "name": "fraction-one-digit",
+    "text": "value = 12:34:56.6",
+    "valid": true,
+    "value": {
+      "value": "12:34:56.6"
+    }
+  },
+  {
+    "name": "local-datetime",
+    "text": "value = 2026-11-04T12:34:56",
+    "valid": true,
+    "value": {
+      "value": "2026-11-04T12:34:56"
+    }
+  },
+  {
+    "name": "short-local",
+    "text": "value = 2026-11-04 12:34",
+    "valid": true,
+    "value": {
+      "value": "2026-11-04T12:34:00"
+    }
+  },
+  {
+    "name": "short-offset",
+    "text": "value = 2026-11-04t12:34z",
+    "valid": true,
+    "value": {
+      "value": "2026-11-04T12:34:00Z"
+    }
+  },
+  {
+    "name": "timestamp",
+    "text": "value = 2026-11-04T12:34:56Z",
+    "valid": true,
+    "value": {
+      "value": "2026-11-04T12:34:56Z"
+    }
+  },
+  {
+    "name": "lowercase",
+    "text": "value = 2026-11-04t12:34:56z",
+    "valid": true,
+    "value": {
+      "value": "2026-11-04T12:34:56Z"
+    }
+  },
+  {
+    "name": "space",
+    "text": "value = 2026-11-04 12:34:56+03:30",
+    "valid": true,
+    "value": {
+      "value": "2026-11-04T12:34:56+03:30"
+    }
+  },
+  {
+    "name": "negative-offset",
+    "text": "value = 2026-11-04T12:34:56-07:00",
+    "valid": true,
+    "value": {
+      "value": "2026-11-04T12:34:56-07:00"
+    }
+  },
+  {
+    "name": "offset-positive-zero",
+    "text": "value = 2026-11-04T12:34:56+00:00",
+    "valid": true,
+    "value": {
+      "value": "2026-11-04T12:34:56+00:00"
+    }
+  },
+  {
+    "name": "offset-negative-zero",
+    "text": "value = 2026-11-04T12:34:56-00:00",
+    "valid": true,
+    "value": {
+      "value": "2026-11-04T12:34:56-00:00"
+    }
+  },
+  {
+    "name": "offset-max",
+    "text": "value = 2026-11-04T12:34:56+23:59",
+    "valid": true,
+    "value": {
+      "value": "2026-11-04T12:34:56+23:59"
+    }
+  },
+  {
+    "name": "offset-fraction",
+    "text": "value = 2026-11-04T12:34:56.12345678901234567890-03:30",
+    "valid": true,
+    "value": {
+      "value": "2026-11-04T12:34:56.12345678901234567890-03:30"
+    }
+  },
+  {
+    "name": "leap-second",
+    "text": "value = 2016-12-31T23:59:60Z",
+    "valid": true,
+    "value": {
+      "value": "2016-12-31T23:59:60Z"
+    }
+  },
+  {
+    "name": "leap-second-offset",
+    "text": "value = 2017-01-01T00:59:60.000001+01:00",
+    "valid": true,
+    "value": {
+      "value": "2017-01-01T00:59:60.000001+01:00"
+    }
+  },
+  {
+    "name": "leap-second-local",
+    "text": "value = 23:59:60",
+    "valid": true,
+    "value": {
+      "value": "23:59:60"
+    }
+  },
+  {
+    "name": "date-in-string",
+    "text": "value = \"2026-02-30\"",
+    "valid": true,
+    "value": {
+      "value": "2026-02-30"
+    }
+  },
+  {
+    "name": "time-in-literal",
+    "text": "value = '12:99:99'",
+    "valid": true,
+    "value": {
+      "value": "12:99:99"
+    }
+  },
+  {
+    "name": "date-comment",
+    "text": "value = \"ok\" # 2026-02-30",
+    "valid": true,
+    "value": {
+      "value": "ok"
+    }
+  },
+  {
+    "name": "basic-escape",
+    "text": "value = \"\\t\\n\\r\\b\\f\\\"\\\\\"",
+    "valid": true,
+    "value": {
+      "value": "\t\n\r\b\f\"\\"
+    }
+  },
+  {
+    "name": "escape-escape",
+    "text": "value = \"\\e\"",
+    "valid": true,
+    "value": {
+      "value": "\u001b"
+    }
+  },
+  {
+    "name": "hex-escape",
+    "text": "value = \"\\x41\\x1b\\xFF\"",
+    "valid": true,
+    "value": {
+      "value": "A\u001b\u00ff"
+    }
+  },
+  {
+    "name": "unicode-escape",
+    "text": "value = \"\\u03A9\\U0001F600\"",
+    "valid": true,
+    "value": {
+      "value": "\u03a9\ud83d\ude00"
+    }
+  },
+  {
+    "name": "astral-source",
+    "text": "value = \"\ud83d\ude00\"",
+    "valid": true,
+    "value": {
+      "value": "\ud83d\ude00"
+    }
+  },
+  {
+    "name": "multiline",
+    "text": "value = \"\"\"\nhello\nworld\"\"\"",
+    "valid": true,
+    "value": {
+      "value": "hello\nworld"
+    }
+  },
+  {
+    "name": "multiline-literal",
+    "text": "value = '''\nhello\nworld'''",
+    "valid": true,
+    "value": {
+      "value": "hello\nworld"
+    }
+  },
+  {
+    "name": "literal-backslash",
+    "text": "value = '\\x41\\n'",
+    "valid": true,
+    "value": {
+      "value": "\\x41\\n"
+    }
+  },
+  {
+    "name": "multiline-continuation",
+    "text": "value = \"\"\"hello\\\n   world\"\"\"",
+    "valid": true,
+    "value": {
+      "value": "helloworld"
+    }
+  },
+  {
+    "name": "brackets-in-string",
+    "text": "value = \"# [] {} = 2026-11-04\"",
+    "valid": true,
+    "value": {
+      "value": "# [] {} = 2026-11-04"
+    }
+  },
+  {
+    "name": "true",
+    "text": "value = true",
+    "valid": true,
+    "value": {
+      "value": true
+    }
+  },
+  {
+    "name": "false",
+    "text": "value = false",
+    "valid": true,
+    "value": {
+      "value": false
+    }
+  },
+  {
+    "name": "int",
+    "text": "value = 42",
+    "valid": true,
+    "value": {
+      "value": 42
+    }
+  },
+  {
+    "name": "int-sign",
+    "text": "value = +42",
+    "valid": true,
+    "value": {
+      "value": 42
+    }
+  },
+  {
+    "name": "int-negative",
+    "text": "value = -42",
+    "valid": true,
+    "value": {
+      "value": -42
+    }
+  },
+  {
+    "name": "int-underscore",
+    "text": "value = 1_000_001",
+    "valid": true,
+    "value": {
+      "value": 1000001
+    }
+  },
+  {
+    "name": "hex",
+    "text": "value = 0x2a",
+    "valid": true,
+    "value": {
+      "value": 42
+    }
+  },
+  {
+    "name": "octal",
+    "text": "value = 0o52",
+    "valid": true,
+    "value": {
+      "value": 42
+    }
+  },
+  {
+    "name": "binary",
+    "text": "value = 0b101010",
+    "valid": true,
+    "value": {
+      "value": 42
+    }
+  },
+  {
+    "name": "safe-max",
+    "text": "value = 9007199254740991",
+    "valid": true,
+    "value": {
+      "value": 9007199254740991
+    }
+  },
+  {
+    "name": "safe-min",
+    "text": "value = -9007199254740991",
+    "valid": true,
+    "value": {
+      "value": -9007199254740991
+    }
+  },
+  {
+    "name": "array",
+    "text": "value = [1, true, \"x\", 2026-11-04]",
+    "valid": true,
+    "value": {
+      "value": [
+        1,
+        true,
+        "x",
+        "2026-11-04"
+      ]
+    }
+  },
+  {
+    "name": "inline-table",
+    "text": "value = {a=1, b=2026-11-04}",
+    "valid": true,
+    "value": {
+      "value": {
+        "a": 1,
+        "b": "2026-11-04"
+      }
+    }
+  },
+  {
+    "name": "inline-multiline",
+    "text": "value = {\n a=1, # comment\n b=12:34,\n}",
+    "valid": true,
+    "value": {
+      "value": {
+        "a": 1,
+        "b": "12:34:00"
+      }
+    }
+  },
+  {
+    "name": "inline-trailing-comma",
+    "text": "value = {a=1,}",
+    "valid": true,
+    "value": {
+      "value": {
+        "a": 1
+      }
+    }
+  },
+  {
+    "name": "nested",
+    "text": "value = [{date=2026-11-04, times=[12:34, 12:35]}]",
+    "valid": true,
+    "value": {
+      "value": [
+        {
+          "date": "2026-11-04",
+          "times": [
+            "12:34:00",
+            "12:35:00"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "int-zero",
+    "text": "value = -0",
+    "valid": true,
+    "value": {
+      "value": 0
+    },
+    "number_type": "integer"
+  },
+  {
+    "name": "float-zero",
+    "text": "value = -0.0",
+    "valid": true,
+    "value": {
+      "value": -0.0
+    },
+    "number_type": "float"
+  },
+  {
+    "name": "float-whole",
+    "text": "value = 1.0",
+    "valid": true,
+    "value": {
+      "value": 1.0
+    },
+    "number_type": "float"
+  },
+  {
+    "name": "float-exponent",
+    "text": "value = 1e0",
+    "valid": true,
+    "value": {
+      "value": 1.0
+    },
+    "number_type": "float"
+  },
+  {
+    "name": "float-underflow",
+    "text": "value = -1e-999",
+    "valid": true,
+    "value": {
+      "value": -0.0
+    },
+    "number_type": "float"
+  },
+  {
+    "name": "float-underscore",
+    "text": "value = 1_000.2_5e+0_1",
+    "valid": true,
+    "value": {
+      "value": 10002.5
+    },
+    "number_type": "float"
+  },
+  {
+    "name": "nan",
+    "text": "value = nan",
+    "valid": true,
+    "value": {
+      "value": null
+    },
+    "value_kind": "nan"
+  },
+  {
+    "name": "nan-plus",
+    "text": "value = +nan",
+    "valid": true,
+    "value": {
+      "value": null
+    },
+    "value_kind": "nan"
+  },
+  {
+    "name": "nan-minus",
+    "text": "value = -nan",
+    "valid": true,
+    "value": {
+      "value": null
+    },
+    "value_kind": "nan"
+  },
+  {
+    "name": "inf",
+    "text": "value = inf",
+    "valid": true,
+    "value": {
+      "value": null
+    },
+    "value_kind": "positive_infinity"
+  },
+  {
+    "name": "inf-plus",
+    "text": "value = +inf",
+    "valid": true,
+    "value": {
+      "value": null
+    },
+    "value_kind": "positive_infinity"
+  },
+  {
+    "name": "inf-minus",
+    "text": "value = -inf",
+    "valid": true,
+    "value": {
+      "value": null
+    },
+    "value_kind": "negative_infinity"
+  },
+  {
+    "name": "overflow",
+    "text": "value = 1e999",
+    "valid": true,
+    "value": {
+      "value": null
+    },
+    "value_kind": "positive_infinity"
+  },
+  {
+    "name": "unsafe-int",
+    "text": "value = 9007199254740993",
+    "valid": true,
+    "value": {
+      "value": 9007199254740993
+    },
+    "js_valid": false,
+    "number_type": "integer"
+  },
+  {
+    "name": "unsafe-negative",
+    "text": "value = -9007199254740993",
+    "valid": true,
+    "value": {
+      "value": -9007199254740993
+    },
+    "js_valid": false,
+    "number_type": "integer"
+  },
+  {
+    "name": "unsafe-hex",
+    "text": "value = 0x20000000000001",
+    "valid": true,
+    "value": {
+      "value": 9007199254740993
+    },
+    "js_valid": false,
+    "number_type": "integer"
+  },
+  {
+    "name": "int64-max",
+    "text": "value = 9223372036854775807",
+    "valid": true,
+    "value": {
+      "value": 9223372036854775807
+    },
+    "js_valid": false,
+    "number_type": "integer"
+  },
+  {
+    "name": "int64-min",
+    "text": "value = -9223372036854775808",
+    "valid": true,
+    "value": {
+      "value": -9223372036854775808
+    },
+    "js_valid": false,
+    "number_type": "integer"
+  },
+  {
+    "name": "invalid-atom-0",
+    "text": "value = 2026-02-29",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-1",
+    "text": "value = 1900-02-29",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-2",
+    "text": "value = 2026-02-30",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-3",
+    "text": "value = 2026-04-31",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-4",
+    "text": "value = 2026-00-01",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-5",
+    "text": "value = 2026-13-01",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-6",
+    "text": "value = 2026-01-00",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-7",
+    "text": "value = 2026-01-32",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-8",
+    "text": "value = 026-01-01",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-9",
+    "text": "value = 10000-01-01",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-10",
+    "text": "value = 2026-1-01",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-11",
+    "text": "value = 2026-01-1",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-12",
+    "text": "value = 2026-01-01T",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-13",
+    "text": "value = 2026-01-01Z",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-14",
+    "text": "value = 2026-01-01+01:00",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-15",
+    "text": "value = 2026-01-01_12:34:56",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-16",
+    "text": "value = 2026-01-01  12:34:56",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-17",
+    "text": "value = 2026-01-01\t12:34:56",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-18",
+    "text": "value = 2026-01-01T24:00:00Z",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-19",
+    "text": "value = 2026-01-01T12:60:00Z",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-20",
+    "text": "value = 2026-01-01T12:34:61Z",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-21",
+    "text": "value = 2026-01-01T12:34:60Z",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-22",
+    "text": "value = 2026-01-01T12:34:56+24:00",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-23",
+    "text": "value = 2026-01-01T12:34:56+00:60",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-24",
+    "text": "value = 2026-01-01T12:34:56+1:00",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-25",
+    "text": "value = 2026-01-01T12:34:56+01",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-26",
+    "text": "value = 2026-01-01T12:34:56.",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-27",
+    "text": "value = 2026-01-01T12:34:56.Z",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-28",
+    "text": "value = 2026-01-01T12:34.5Z",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-29",
+    "text": "value = 2026-01-01T12:34:56ZZ",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-30",
+    "text": "value = 2026-01-01TT12:34:56Z",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-31",
+    "text": "value = 24:00:00",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-32",
+    "text": "value = 12:60:00",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-33",
+    "text": "value = 12:34:61",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-34",
+    "text": "value = 12:34:60",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-35",
+    "text": "value = 1:34:56",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-36",
+    "text": "value = 12:3:56",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-37",
+    "text": "value = 12:34:5",
+    "valid": false
+  },
+  {
+    "name": "integer-twelve",
+    "text": "value = 12",
+    "valid": true,
+    "value": {
+      "value": 12
+    }
+  },
+  {
+    "name": "invalid-atom-39",
+    "text": "value = 12:",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-40",
+    "text": "value = 12:34.5",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-41",
+    "text": "value = 12:34:56.",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-42",
+    "text": "value = 12:34:56z",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-43",
+    "text": "value = 12:34:56+01:00",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-44",
+    "text": "value = 12:34:56-01:00",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-45",
+    "text": "value = 12:34:56_123",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-46",
+    "text": "value = 01",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-47",
+    "text": "value = -01",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-48",
+    "text": "value = +01",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-49",
+    "text": "value = 0_1",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-50",
+    "text": "value = _1",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-51",
+    "text": "value = 1_",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-52",
+    "text": "value = 1__0",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-53",
+    "text": "value = 0x_1",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-54",
+    "text": "value = 0X1",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-55",
+    "text": "value = -0x1",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-56",
+    "text": "value = 0o8",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-57",
+    "text": "value = 0b2",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-58",
+    "text": "value = 1.",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-59",
+    "text": "value = 1.e2",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-60",
+    "text": "value = .1",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-61",
+    "text": "value = 1e",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-62",
+    "text": "value = 1e+",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-63",
+    "text": "value = 1_.0",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-64",
+    "text": "value = 1._0",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-65",
+    "text": "value = 1e_2",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-66",
+    "text": "value = NaN",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-67",
+    "text": "value = Infinity",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-68",
+    "text": "value = True",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-69",
+    "text": "value = False",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-70",
+    "text": "value = null",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-71",
+    "text": "value = None",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-72",
+    "text": "value = \"\\q\"",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-73",
+    "text": "value = \"\\x1\"",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-74",
+    "text": "value = \"\\uD800\"",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-75",
+    "text": "value = \"\\U00110000\"",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-76",
+    "text": "value = 'unterminated",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-77",
+    "text": "value = \"a\nb\"",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-78",
+    "text": "value = [1 2]",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-79",
+    "text": "value = [1,,2]",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-80",
+    "text": "value = {a=1,,}",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-81",
+    "text": "value = {a=1 b=2}",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-82",
+    "text": "value = {a=1,a=2}",
+    "valid": false
+  },
+  {
+    "name": "invalid-atom-83",
+    "text": "value = ",
+    "valid": false
+  },
+  {
+    "name": "empty",
+    "text": "",
+    "valid": true,
+    "value": {}
+  },
+  {
+    "name": "comments",
+    "text": "# 2026-02-30\n",
+    "valid": true,
+    "value": {}
+  },
+  {
+    "name": "crlf",
+    "text": "value = \"ok\"\r\nother=12:34\r\n",
+    "valid": true,
+    "value": {
+      "value": "ok",
+      "other": "12:34:00"
+    }
+  },
+  {
+    "name": "multiline-crlf",
+    "text": "value = \"\"\"\r\nx\r\ny\"\"\"",
+    "valid": true,
+    "value": {
+      "value": "x\ny"
+    }
+  },
+  {
+    "name": "unicode-key",
+    "text": "\"\u03a9\" = 2026-11-04",
+    "valid": true,
+    "value": {
+      "\u03a9": "2026-11-04"
+    }
+  },
+  {
+    "name": "quoted-key",
+    "text": "\"2026-02-30\" = 12:34",
+    "valid": true,
+    "value": {
+      "2026-02-30": "12:34:00"
+    }
+  },
+  {
+    "name": "empty-key",
+    "text": "\"\" = true",
+    "valid": true,
+    "value": {
+      "": true
+    }
+  },
+  {
+    "name": "prototype-keys",
+    "text": "__proto__ = {constructor = {prototype = 12:34}}\ntoString = 42",
+    "valid": true,
+    "value": {
+      "__proto__": {
+        "constructor": {
+          "prototype": "12:34:00"
+        }
+      },
+      "toString": 42
+    }
+  },
+  {
+    "name": "dotted-key",
+    "text": "a.b.date = 2026-11-04",
+    "valid": true,
+    "value": {
+      "a": {
+        "b": {
+          "date": "2026-11-04"
+        }
+      }
+    }
+  },
+  {
+    "name": "table",
+    "text": "[a]\ndate=2026-11-04\n[a.b]\ntime=12:34",
+    "valid": true,
+    "value": {
+      "a": {
+        "date": "2026-11-04",
+        "b": {
+          "time": "12:34:00"
+        }
+      }
+    }
+  },
+  {
+    "name": "array-of-tables",
+    "text": "[[a]]\ndate=2026-11-04\n[[a]]\ndate=2026-11-05",
+    "valid": true,
+    "value": {
+      "a": [
+        {
+          "date": "2026-11-04"
+        },
+        {
+          "date": "2026-11-05"
+        }
+      ]
+    }
+  },
+  {
+    "name": "implicit-parent",
+    "text": "[a.b]\nx=1\n[a]\ny=2",
+    "valid": true,
+    "value": {
+      "a": {
+        "b": {
+          "x": 1
+        },
+        "y": 2
+      }
+    }
+  },
+  {
+    "name": "duplicate-key",
+    "text": "a=1\na=2",
+    "valid": false
+  },
+  {
+    "name": "duplicate-dotted",
+    "text": "a.b=1\na.b=2",
+    "valid": false
+  },
+  {
+    "name": "duplicate-table",
+    "text": "[a]\n[a]",
+    "valid": false
+  },
+  {
+    "name": "scalar-table",
+    "text": "a=1\n[a]",
+    "valid": false
+  },
+  {
+    "name": "extend-inline",
+    "text": "a={b=1}\na.c=2",
+    "valid": false
+  },
+  {
+    "name": "table-array-conflict",
+    "text": "a=[]\n[[a]]",
+    "valid": false
+  },
+  {
+    "name": "missing-equals",
+    "text": "a 1",
+    "valid": false
+  },
+  {
+    "name": "bare-cr",
+    "text": "\r",
+    "valid": false
+  },
+  {
+    "name": "comment-cr",
+    "text": "#a\rb=1",
+    "valid": false
+  },
+  {
+    "name": "multiline-cr",
+    "text": "a=\"\"\"x\ry\"\"\"",
+    "valid": false
+  },
+  {
+    "name": "rawmulti-cr",
+    "text": "a='''x\ry'''",
+    "valid": false
+  },
+  {
+    "name": "nul-comment",
+    "text": "#\u0000",
+    "valid": false
+  },
+  {
+    "name": "nul-string",
+    "text": "a=\"\u0000\"",
+    "valid": false
+  },
+  {
+    "name": "surrogate-comment",
+    "text": "#\ud800",
+    "valid": false
+  },
+  {
+    "name": "surrogate-string",
+    "text": "a=\"\udfff\"",
+    "valid": false
+  },
+  {
+    "name": "surrogate-key",
+    "text": "\"\ud800\"=1",
+    "valid": false
+  },
+  {
+    "name": "invalid-unquoted-unicode-key",
+    "text": "\u03a9 = 2026-11-04",
+    "valid": false
+  }
+]

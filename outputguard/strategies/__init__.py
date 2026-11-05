@@ -1,6 +1,6 @@
 """Strategy registry for JSON repair strategies."""
 
-from collections.abc import Callable
+from collections.abc import Callable, Sequence
 
 from outputguard.strategies import (
     extract_json,
@@ -60,13 +60,33 @@ STRATEGY_DESCRIPTIONS: dict[str, str] = {
 
 
 def get_strategy(name: str) -> Strategy:
+    if not isinstance(name, str):
+        raise TypeError("strategy name must be a string")
     for n, fn in ALL_STRATEGIES:
         if n == name:
             return fn
-    raise ValueError(f"Unknown strategy: {name}")
+    raise ValueError(f"Unknown strategy: {name!r}")
 
 
-def get_strategies(names: list[str] | None = None) -> list[tuple[str, Strategy]]:
+def select_strategy_names(names: Sequence[str] | None) -> list[str] | None:
+    """Validate a selection and copy it so callers retain ownership of their input."""
     if names is None:
+        return None
+    if isinstance(names, (str, bytes, bytearray)) or not isinstance(names, Sequence):
+        raise TypeError("strategies must be a sequence of strategy names")
+    selected = list(names)
+    known = {name for name, _ in ALL_STRATEGIES}
+    for name in selected:
+        if not isinstance(name, str):
+            raise TypeError("strategy name must be a string")
+        if name not in known:
+            raise ValueError(f"Unknown strategy: {name!r}")
+    return selected
+
+
+def get_strategies(names: Sequence[str] | None = None) -> list[tuple[str, Strategy]]:
+    selected = select_strategy_names(names)
+    if selected is None:
         return list(ALL_STRATEGIES)
-    return [(n, fn) for n, fn in ALL_STRATEGIES if n in names]
+    requested = set(selected)
+    return [(n, fn) for n, fn in ALL_STRATEGIES if n in requested]

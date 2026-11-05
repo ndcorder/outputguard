@@ -770,18 +770,12 @@ class TestLocalModelPatterns:
         assert data["status"] == "success"
 
     def test_local_model_negative_infinity(self):
-        """Local model using -Infinity.
-
-        Python's json.loads accepts -Infinity/Infinity natively (returns
-        float('-inf')/float('inf')), so the repairer considers it already
-        valid and does NOT replace them with null.
-        """
+        """Nonstandard numeric constants are repaired to JSON nulls."""
         text = '{"min": -Infinity, "max": Infinity}'
         result = repair(text)
         data = json.loads(result.text)
-        # Python parses these as float('-inf') / float('inf')
-        assert data["min"] == float("-inf")
-        assert data["max"] == float("inf")
+        assert result.repaired
+        assert data == {"min": None, "max": None}
 
     def test_local_model_truncated_deeply_nested(self):
         """Deeply nested truncation."""

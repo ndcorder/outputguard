@@ -67,8 +67,14 @@ def _fix_string_content(s: str) -> str:
                 else:
                     break
             if len(hex_chars) == 2:
-                char = chr(int("".join(hex_chars), 16))
-                result.append(char)
+                value = int("".join(hex_chars), 16)
+                char = chr(value)
+                if value < 0x20:
+                    result.append(f"\\u{value:04x}")
+                elif char in '"\\':
+                    result.append("\\" + char)
+                else:
+                    result.append(char)
                 i = hex_start + 2
             else:
                 # Malformed \x — just remove it

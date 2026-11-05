@@ -1,0 +1,3130 @@
+[
+  {
+    "name": "mixed_workloads",
+    "before": {
+      "runtime": "Test runtime",
+      "platform": "Test platform",
+      "iterations": 100,
+      "samples": 5,
+      "warmup_iterations": 50,
+      "measurements": [
+        {
+          "name": "reused",
+          "schema_mode": "reused",
+          "median_us": 10,
+          "min_us": 10
+        },
+        {
+          "name": "fresh",
+          "schema_mode": "fresh",
+          "median_us": 20,
+          "min_us": 20
+        },
+        {
+          "name": "none",
+          "schema_mode": "none",
+          "median_us": 5,
+          "min_us": 5
+        },
+        {
+          "name": "zero",
+          "schema_mode": "reused",
+          "median_us": 0,
+          "min_us": 0
+        },
+        {
+          "name": "removed",
+          "schema_mode": "reused",
+          "median_us": 7,
+          "min_us": 7
+        },
+        {
+          "name": "mode",
+          "schema_mode": "reused",
+          "median_us": 3,
+          "min_us": 3
+        }
+      ]
+    },
+    "after": {
+      "runtime": "Test runtime",
+      "platform": "Test platform",
+      "iterations": 200,
+      "samples": 7,
+      "warmup_iterations": 50,
+      "measurements": [
+        {
+          "name": "fresh",
+          "schema_mode": "fresh",
+          "median_us": 15,
+          "min_us": 15
+        },
+        {
+          "name": "reused",
+          "schema_mode": "reused",
+          "median_us": 12,
+          "min_us": 12
+        },
+        {
+          "name": "none",
+          "schema_mode": "none",
+          "median_us": 5,
+          "min_us": 5
+        },
+        {
+          "name": "zero",
+          "schema_mode": "reused",
+          "median_us": 1,
+          "min_us": 1
+        },
+        {
+          "name": "added",
+          "schema_mode": "reused",
+          "median_us": 1,
+          "min_us": 1
+        },
+        {
+          "name": "mode",
+          "schema_mode": "fresh",
+          "median_us": 6,
+          "min_us": 6
+        }
+      ]
+    },
+    "threshold": 5,
+    "expected": {
+      "threshold_percent": 5,
+      "conditions": {
+        "before": {
+          "runtime": "Test runtime",
+          "platform": "Test platform",
+          "iterations": 100,
+          "samples": 5,
+          "warmup_iterations": 50,
+          "clock": "wall"
+        },
+        "after": {
+          "runtime": "Test runtime",
+          "platform": "Test platform",
+          "iterations": 200,
+          "samples": 7,
+          "warmup_iterations": 50,
+          "clock": "wall"
+        },
+        "changed": [
+          "iterations",
+          "samples"
+        ]
+      },
+      "before_count": 6,
+      "after_count": 6,
+      "added": [
+        "added"
+      ],
+      "removed": [
+        "removed"
+      ],
+      "summary": {
+        "count": 5,
+        "compared": 3,
+        "regressed": 1,
+        "improved": 1,
+        "unchanged": 1,
+        "unmeasurable": 1,
+        "incomparable": 1,
+        "median_ratio": 1,
+        "median_change_percent": 0
+      },
+      "by_schema_mode": {
+        "reused": {
+          "count": 2,
+          "compared": 1,
+          "regressed": 1,
+          "improved": 0,
+          "unchanged": 0,
+          "unmeasurable": 1,
+          "incomparable": 0,
+          "median_ratio": 1.2,
+          "median_change_percent": 20
+        },
+        "fresh": {
+          "count": 1,
+          "compared": 1,
+          "regressed": 0,
+          "improved": 1,
+          "unchanged": 0,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": 0.75,
+          "median_change_percent": -25
+        },
+        "none": {
+          "count": 1,
+          "compared": 1,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 1,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": 1,
+          "median_change_percent": 0
+        }
+      },
+      "measurements": [
+        {
+          "name": "fresh",
+          "schema_mode": "fresh",
+          "before_us": 20,
+          "after_us": 15,
+          "ratio": 0.75,
+          "change_percent": -25,
+          "status": "improved"
+        },
+        {
+          "name": "reused",
+          "schema_mode": "reused",
+          "before_us": 10,
+          "after_us": 12,
+          "ratio": 1.2,
+          "change_percent": 20,
+          "status": "regressed"
+        },
+        {
+          "name": "none",
+          "schema_mode": "none",
+          "before_us": 5,
+          "after_us": 5,
+          "ratio": 1,
+          "change_percent": 0,
+          "status": "unchanged"
+        },
+        {
+          "name": "zero",
+          "schema_mode": "reused",
+          "before_us": 0,
+          "after_us": 1,
+          "ratio": null,
+          "change_percent": null,
+          "status": "unmeasurable"
+        },
+        {
+          "name": "mode",
+          "schema_mode": null,
+          "before_us": 3,
+          "after_us": 6,
+          "ratio": null,
+          "change_percent": null,
+          "status": "incomparable",
+          "before_schema_mode": "reused",
+          "after_schema_mode": "fresh"
+        }
+      ],
+      "environment": {
+        "before": null,
+        "after": null
+      }
+    }
+  },
+  {
+    "name": "empty_reports",
+    "before": {
+      "runtime": "Test runtime",
+      "platform": "Test platform",
+      "iterations": 100,
+      "samples": 5,
+      "warmup_iterations": 50,
+      "measurements": []
+    },
+    "after": {
+      "runtime": "Test runtime",
+      "platform": "Test platform",
+      "iterations": 100,
+      "samples": 5,
+      "warmup_iterations": 50,
+      "measurements": []
+    },
+    "threshold": 5,
+    "expected": {
+      "threshold_percent": 5,
+      "conditions": {
+        "before": {
+          "runtime": "Test runtime",
+          "platform": "Test platform",
+          "iterations": 100,
+          "samples": 5,
+          "warmup_iterations": 50,
+          "clock": "wall"
+        },
+        "after": {
+          "runtime": "Test runtime",
+          "platform": "Test platform",
+          "iterations": 100,
+          "samples": 5,
+          "warmup_iterations": 50,
+          "clock": "wall"
+        },
+        "changed": []
+      },
+      "before_count": 0,
+      "after_count": 0,
+      "added": [],
+      "removed": [],
+      "summary": {
+        "count": 0,
+        "compared": 0,
+        "regressed": 0,
+        "improved": 0,
+        "unchanged": 0,
+        "unmeasurable": 0,
+        "incomparable": 0,
+        "median_ratio": null,
+        "median_change_percent": null
+      },
+      "by_schema_mode": {
+        "reused": {
+          "count": 0,
+          "compared": 0,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 0,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": null,
+          "median_change_percent": null
+        },
+        "fresh": {
+          "count": 0,
+          "compared": 0,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 0,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": null,
+          "median_change_percent": null
+        },
+        "none": {
+          "count": 0,
+          "compared": 0,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 0,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": null,
+          "median_change_percent": null
+        }
+      },
+      "measurements": [],
+      "environment": {
+        "before": null,
+        "after": null
+      }
+    }
+  },
+  {
+    "name": "disjoint_names",
+    "before": {
+      "runtime": "Test runtime",
+      "platform": "Test platform",
+      "iterations": 100,
+      "samples": 5,
+      "warmup_iterations": 50,
+      "measurements": [
+        {
+          "name": "old",
+          "schema_mode": "reused",
+          "median_us": 1,
+          "min_us": 1
+        }
+      ]
+    },
+    "after": {
+      "runtime": "Test runtime",
+      "platform": "Test platform",
+      "iterations": 100,
+      "samples": 5,
+      "warmup_iterations": 50,
+      "measurements": [
+        {
+          "name": "new",
+          "schema_mode": "reused",
+          "median_us": 1,
+          "min_us": 1
+        }
+      ]
+    },
+    "threshold": 5,
+    "expected": {
+      "threshold_percent": 5,
+      "conditions": {
+        "before": {
+          "runtime": "Test runtime",
+          "platform": "Test platform",
+          "iterations": 100,
+          "samples": 5,
+          "warmup_iterations": 50,
+          "clock": "wall"
+        },
+        "after": {
+          "runtime": "Test runtime",
+          "platform": "Test platform",
+          "iterations": 100,
+          "samples": 5,
+          "warmup_iterations": 50,
+          "clock": "wall"
+        },
+        "changed": []
+      },
+      "before_count": 1,
+      "after_count": 1,
+      "added": [
+        "new"
+      ],
+      "removed": [
+        "old"
+      ],
+      "summary": {
+        "count": 0,
+        "compared": 0,
+        "regressed": 0,
+        "improved": 0,
+        "unchanged": 0,
+        "unmeasurable": 0,
+        "incomparable": 0,
+        "median_ratio": null,
+        "median_change_percent": null
+      },
+      "by_schema_mode": {
+        "reused": {
+          "count": 0,
+          "compared": 0,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 0,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": null,
+          "median_change_percent": null
+        },
+        "fresh": {
+          "count": 0,
+          "compared": 0,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 0,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": null,
+          "median_change_percent": null
+        },
+        "none": {
+          "count": 0,
+          "compared": 0,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 0,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": null,
+          "median_change_percent": null
+        }
+      },
+      "measurements": [],
+      "environment": {
+        "before": null,
+        "after": null
+      }
+    }
+  },
+  {
+    "name": "threshold_boundaries",
+    "before": {
+      "runtime": "Test runtime",
+      "platform": "Test platform",
+      "iterations": 100,
+      "samples": 5,
+      "warmup_iterations": 50,
+      "measurements": [
+        {
+          "name": "0",
+          "schema_mode": "reused",
+          "median_us": 100,
+          "min_us": 100
+        },
+        {
+          "name": "1",
+          "schema_mode": "reused",
+          "median_us": 100,
+          "min_us": 100
+        },
+        {
+          "name": "2",
+          "schema_mode": "reused",
+          "median_us": 100,
+          "min_us": 100
+        },
+        {
+          "name": "3",
+          "schema_mode": "reused",
+          "median_us": 100,
+          "min_us": 100
+        }
+      ]
+    },
+    "after": {
+      "runtime": "Test runtime",
+      "platform": "Test platform",
+      "iterations": 100,
+      "samples": 5,
+      "warmup_iterations": 50,
+      "measurements": [
+        {
+          "name": "0",
+          "schema_mode": "reused",
+          "median_us": 105,
+          "min_us": 105
+        },
+        {
+          "name": "1",
+          "schema_mode": "reused",
+          "median_us": 95,
+          "min_us": 95
+        },
+        {
+          "name": "2",
+          "schema_mode": "reused",
+          "median_us": 105.001,
+          "min_us": 105.001
+        },
+        {
+          "name": "3",
+          "schema_mode": "reused",
+          "median_us": 94.999,
+          "min_us": 94.999
+        }
+      ]
+    },
+    "threshold": 5,
+    "expected": {
+      "threshold_percent": 5,
+      "conditions": {
+        "before": {
+          "runtime": "Test runtime",
+          "platform": "Test platform",
+          "iterations": 100,
+          "samples": 5,
+          "warmup_iterations": 50,
+          "clock": "wall"
+        },
+        "after": {
+          "runtime": "Test runtime",
+          "platform": "Test platform",
+          "iterations": 100,
+          "samples": 5,
+          "warmup_iterations": 50,
+          "clock": "wall"
+        },
+        "changed": []
+      },
+      "before_count": 4,
+      "after_count": 4,
+      "added": [],
+      "removed": [],
+      "summary": {
+        "count": 4,
+        "compared": 4,
+        "regressed": 1,
+        "improved": 1,
+        "unchanged": 2,
+        "unmeasurable": 0,
+        "incomparable": 0,
+        "median_ratio": 1,
+        "median_change_percent": 0
+      },
+      "by_schema_mode": {
+        "reused": {
+          "count": 4,
+          "compared": 4,
+          "regressed": 1,
+          "improved": 1,
+          "unchanged": 2,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": 1,
+          "median_change_percent": 0
+        },
+        "fresh": {
+          "count": 0,
+          "compared": 0,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 0,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": null,
+          "median_change_percent": null
+        },
+        "none": {
+          "count": 0,
+          "compared": 0,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 0,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": null,
+          "median_change_percent": null
+        }
+      },
+      "measurements": [
+        {
+          "name": "0",
+          "schema_mode": "reused",
+          "before_us": 100,
+          "after_us": 105,
+          "ratio": 1.05,
+          "change_percent": 5,
+          "status": "unchanged"
+        },
+        {
+          "name": "1",
+          "schema_mode": "reused",
+          "before_us": 100,
+          "after_us": 95,
+          "ratio": 0.95,
+          "change_percent": -5,
+          "status": "unchanged"
+        },
+        {
+          "name": "2",
+          "schema_mode": "reused",
+          "before_us": 100,
+          "after_us": 105.001,
+          "ratio": 1.05001,
+          "change_percent": 5.001,
+          "status": "regressed"
+        },
+        {
+          "name": "3",
+          "schema_mode": "reused",
+          "before_us": 100,
+          "after_us": 94.999,
+          "ratio": 0.94999,
+          "change_percent": -5.001,
+          "status": "improved"
+        }
+      ],
+      "environment": {
+        "before": null,
+        "after": null
+      }
+    }
+  },
+  {
+    "name": "strict_threshold",
+    "before": {
+      "runtime": "Test runtime",
+      "platform": "Test platform",
+      "iterations": 100,
+      "samples": 5,
+      "warmup_iterations": 50,
+      "measurements": [
+        {
+          "name": "0",
+          "schema_mode": "reused",
+          "median_us": 100,
+          "min_us": 100
+        },
+        {
+          "name": "1",
+          "schema_mode": "reused",
+          "median_us": 100,
+          "min_us": 100
+        },
+        {
+          "name": "2",
+          "schema_mode": "reused",
+          "median_us": 100,
+          "min_us": 100
+        }
+      ]
+    },
+    "after": {
+      "runtime": "Test runtime",
+      "platform": "Test platform",
+      "iterations": 100,
+      "samples": 5,
+      "warmup_iterations": 50,
+      "measurements": [
+        {
+          "name": "0",
+          "schema_mode": "reused",
+          "median_us": 100.001,
+          "min_us": 100.001
+        },
+        {
+          "name": "1",
+          "schema_mode": "reused",
+          "median_us": 99.999,
+          "min_us": 99.999
+        },
+        {
+          "name": "2",
+          "schema_mode": "reused",
+          "median_us": 100,
+          "min_us": 100
+        }
+      ]
+    },
+    "threshold": 0,
+    "expected": {
+      "threshold_percent": 0,
+      "conditions": {
+        "before": {
+          "runtime": "Test runtime",
+          "platform": "Test platform",
+          "iterations": 100,
+          "samples": 5,
+          "warmup_iterations": 50,
+          "clock": "wall"
+        },
+        "after": {
+          "runtime": "Test runtime",
+          "platform": "Test platform",
+          "iterations": 100,
+          "samples": 5,
+          "warmup_iterations": 50,
+          "clock": "wall"
+        },
+        "changed": []
+      },
+      "before_count": 3,
+      "after_count": 3,
+      "added": [],
+      "removed": [],
+      "summary": {
+        "count": 3,
+        "compared": 3,
+        "regressed": 1,
+        "improved": 1,
+        "unchanged": 1,
+        "unmeasurable": 0,
+        "incomparable": 0,
+        "median_ratio": 1,
+        "median_change_percent": 0
+      },
+      "by_schema_mode": {
+        "reused": {
+          "count": 3,
+          "compared": 3,
+          "regressed": 1,
+          "improved": 1,
+          "unchanged": 1,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": 1,
+          "median_change_percent": 0
+        },
+        "fresh": {
+          "count": 0,
+          "compared": 0,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 0,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": null,
+          "median_change_percent": null
+        },
+        "none": {
+          "count": 0,
+          "compared": 0,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 0,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": null,
+          "median_change_percent": null
+        }
+      },
+      "measurements": [
+        {
+          "name": "0",
+          "schema_mode": "reused",
+          "before_us": 100,
+          "after_us": 100.001,
+          "ratio": 1.00001,
+          "change_percent": 0.001,
+          "status": "regressed"
+        },
+        {
+          "name": "1",
+          "schema_mode": "reused",
+          "before_us": 100,
+          "after_us": 99.999,
+          "ratio": 0.99999,
+          "change_percent": -0.001,
+          "status": "improved"
+        },
+        {
+          "name": "2",
+          "schema_mode": "reused",
+          "before_us": 100,
+          "after_us": 100,
+          "ratio": 1,
+          "change_percent": 0,
+          "status": "unchanged"
+        }
+      ],
+      "environment": {
+        "before": null,
+        "after": null
+      }
+    }
+  },
+  {
+    "name": "even_median",
+    "before": {
+      "runtime": "Test runtime",
+      "platform": "Test platform",
+      "iterations": 100,
+      "samples": 5,
+      "warmup_iterations": 50,
+      "measurements": [
+        {
+          "name": "0",
+          "schema_mode": "reused",
+          "median_us": 100,
+          "min_us": 100
+        },
+        {
+          "name": "1",
+          "schema_mode": "reused",
+          "median_us": 100,
+          "min_us": 100
+        },
+        {
+          "name": "2",
+          "schema_mode": "reused",
+          "median_us": 100,
+          "min_us": 100
+        },
+        {
+          "name": "3",
+          "schema_mode": "reused",
+          "median_us": 100,
+          "min_us": 100
+        }
+      ]
+    },
+    "after": {
+      "runtime": "Test runtime",
+      "platform": "Test platform",
+      "iterations": 100,
+      "samples": 5,
+      "warmup_iterations": 50,
+      "measurements": [
+        {
+          "name": "0",
+          "schema_mode": "reused",
+          "median_us": 100,
+          "min_us": 100
+        },
+        {
+          "name": "1",
+          "schema_mode": "reused",
+          "median_us": 200,
+          "min_us": 200
+        },
+        {
+          "name": "2",
+          "schema_mode": "reused",
+          "median_us": 400,
+          "min_us": 400
+        },
+        {
+          "name": "3",
+          "schema_mode": "reused",
+          "median_us": 800,
+          "min_us": 800
+        }
+      ]
+    },
+    "threshold": 5,
+    "expected": {
+      "threshold_percent": 5,
+      "conditions": {
+        "before": {
+          "runtime": "Test runtime",
+          "platform": "Test platform",
+          "iterations": 100,
+          "samples": 5,
+          "warmup_iterations": 50,
+          "clock": "wall"
+        },
+        "after": {
+          "runtime": "Test runtime",
+          "platform": "Test platform",
+          "iterations": 100,
+          "samples": 5,
+          "warmup_iterations": 50,
+          "clock": "wall"
+        },
+        "changed": []
+      },
+      "before_count": 4,
+      "after_count": 4,
+      "added": [],
+      "removed": [],
+      "summary": {
+        "count": 4,
+        "compared": 4,
+        "regressed": 3,
+        "improved": 0,
+        "unchanged": 1,
+        "unmeasurable": 0,
+        "incomparable": 0,
+        "median_ratio": 3,
+        "median_change_percent": 200
+      },
+      "by_schema_mode": {
+        "reused": {
+          "count": 4,
+          "compared": 4,
+          "regressed": 3,
+          "improved": 0,
+          "unchanged": 1,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": 3,
+          "median_change_percent": 200
+        },
+        "fresh": {
+          "count": 0,
+          "compared": 0,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 0,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": null,
+          "median_change_percent": null
+        },
+        "none": {
+          "count": 0,
+          "compared": 0,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 0,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": null,
+          "median_change_percent": null
+        }
+      },
+      "measurements": [
+        {
+          "name": "0",
+          "schema_mode": "reused",
+          "before_us": 100,
+          "after_us": 100,
+          "ratio": 1,
+          "change_percent": 0,
+          "status": "unchanged"
+        },
+        {
+          "name": "1",
+          "schema_mode": "reused",
+          "before_us": 100,
+          "after_us": 200,
+          "ratio": 2,
+          "change_percent": 100,
+          "status": "regressed"
+        },
+        {
+          "name": "2",
+          "schema_mode": "reused",
+          "before_us": 100,
+          "after_us": 400,
+          "ratio": 4,
+          "change_percent": 300,
+          "status": "regressed"
+        },
+        {
+          "name": "3",
+          "schema_mode": "reused",
+          "before_us": 100,
+          "after_us": 800,
+          "ratio": 8,
+          "change_percent": 700,
+          "status": "regressed"
+        }
+      ],
+      "environment": {
+        "before": null,
+        "after": null
+      }
+    }
+  },
+  {
+    "name": "odd_median",
+    "before": {
+      "runtime": "Test runtime",
+      "platform": "Test platform",
+      "iterations": 100,
+      "samples": 5,
+      "warmup_iterations": 50,
+      "measurements": [
+        {
+          "name": "0",
+          "schema_mode": "reused",
+          "median_us": 100,
+          "min_us": 100
+        },
+        {
+          "name": "1",
+          "schema_mode": "reused",
+          "median_us": 100,
+          "min_us": 100
+        },
+        {
+          "name": "2",
+          "schema_mode": "reused",
+          "median_us": 100,
+          "min_us": 100
+        },
+        {
+          "name": "3",
+          "schema_mode": "reused",
+          "median_us": 100,
+          "min_us": 100
+        },
+        {
+          "name": "4",
+          "schema_mode": "reused",
+          "median_us": 100,
+          "min_us": 100
+        }
+      ]
+    },
+    "after": {
+      "runtime": "Test runtime",
+      "platform": "Test platform",
+      "iterations": 100,
+      "samples": 5,
+      "warmup_iterations": 50,
+      "measurements": [
+        {
+          "name": "0",
+          "schema_mode": "reused",
+          "median_us": 100,
+          "min_us": 100
+        },
+        {
+          "name": "1",
+          "schema_mode": "reused",
+          "median_us": 200,
+          "min_us": 200
+        },
+        {
+          "name": "2",
+          "schema_mode": "reused",
+          "median_us": 300,
+          "min_us": 300
+        },
+        {
+          "name": "3",
+          "schema_mode": "reused",
+          "median_us": 400,
+          "min_us": 400
+        },
+        {
+          "name": "4",
+          "schema_mode": "reused",
+          "median_us": 500,
+          "min_us": 500
+        }
+      ]
+    },
+    "threshold": 5,
+    "expected": {
+      "threshold_percent": 5,
+      "conditions": {
+        "before": {
+          "runtime": "Test runtime",
+          "platform": "Test platform",
+          "iterations": 100,
+          "samples": 5,
+          "warmup_iterations": 50,
+          "clock": "wall"
+        },
+        "after": {
+          "runtime": "Test runtime",
+          "platform": "Test platform",
+          "iterations": 100,
+          "samples": 5,
+          "warmup_iterations": 50,
+          "clock": "wall"
+        },
+        "changed": []
+      },
+      "before_count": 5,
+      "after_count": 5,
+      "added": [],
+      "removed": [],
+      "summary": {
+        "count": 5,
+        "compared": 5,
+        "regressed": 4,
+        "improved": 0,
+        "unchanged": 1,
+        "unmeasurable": 0,
+        "incomparable": 0,
+        "median_ratio": 3,
+        "median_change_percent": 200
+      },
+      "by_schema_mode": {
+        "reused": {
+          "count": 5,
+          "compared": 5,
+          "regressed": 4,
+          "improved": 0,
+          "unchanged": 1,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": 3,
+          "median_change_percent": 200
+        },
+        "fresh": {
+          "count": 0,
+          "compared": 0,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 0,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": null,
+          "median_change_percent": null
+        },
+        "none": {
+          "count": 0,
+          "compared": 0,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 0,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": null,
+          "median_change_percent": null
+        }
+      },
+      "measurements": [
+        {
+          "name": "0",
+          "schema_mode": "reused",
+          "before_us": 100,
+          "after_us": 100,
+          "ratio": 1,
+          "change_percent": 0,
+          "status": "unchanged"
+        },
+        {
+          "name": "1",
+          "schema_mode": "reused",
+          "before_us": 100,
+          "after_us": 200,
+          "ratio": 2,
+          "change_percent": 100,
+          "status": "regressed"
+        },
+        {
+          "name": "2",
+          "schema_mode": "reused",
+          "before_us": 100,
+          "after_us": 300,
+          "ratio": 3,
+          "change_percent": 200,
+          "status": "regressed"
+        },
+        {
+          "name": "3",
+          "schema_mode": "reused",
+          "before_us": 100,
+          "after_us": 400,
+          "ratio": 4,
+          "change_percent": 300,
+          "status": "regressed"
+        },
+        {
+          "name": "4",
+          "schema_mode": "reused",
+          "before_us": 100,
+          "after_us": 500,
+          "ratio": 5,
+          "change_percent": 400,
+          "status": "regressed"
+        }
+      ],
+      "environment": {
+        "before": null,
+        "after": null
+      }
+    }
+  },
+  {
+    "name": "zero_timings",
+    "before": {
+      "runtime": "Test runtime",
+      "platform": "Test platform",
+      "iterations": 100,
+      "samples": 5,
+      "warmup_iterations": 50,
+      "measurements": [
+        {
+          "name": "both",
+          "schema_mode": "reused",
+          "median_us": 0,
+          "min_us": 0
+        },
+        {
+          "name": "before",
+          "schema_mode": "reused",
+          "median_us": 0,
+          "min_us": 0
+        },
+        {
+          "name": "after",
+          "schema_mode": "reused",
+          "median_us": 1,
+          "min_us": 1
+        }
+      ]
+    },
+    "after": {
+      "runtime": "Test runtime",
+      "platform": "Test platform",
+      "iterations": 100,
+      "samples": 5,
+      "warmup_iterations": 50,
+      "measurements": [
+        {
+          "name": "both",
+          "schema_mode": "reused",
+          "median_us": 0,
+          "min_us": 0
+        },
+        {
+          "name": "before",
+          "schema_mode": "reused",
+          "median_us": 1,
+          "min_us": 1
+        },
+        {
+          "name": "after",
+          "schema_mode": "reused",
+          "median_us": 0,
+          "min_us": 0
+        }
+      ]
+    },
+    "threshold": 5,
+    "expected": {
+      "threshold_percent": 5,
+      "conditions": {
+        "before": {
+          "runtime": "Test runtime",
+          "platform": "Test platform",
+          "iterations": 100,
+          "samples": 5,
+          "warmup_iterations": 50,
+          "clock": "wall"
+        },
+        "after": {
+          "runtime": "Test runtime",
+          "platform": "Test platform",
+          "iterations": 100,
+          "samples": 5,
+          "warmup_iterations": 50,
+          "clock": "wall"
+        },
+        "changed": []
+      },
+      "before_count": 3,
+      "after_count": 3,
+      "added": [],
+      "removed": [],
+      "summary": {
+        "count": 3,
+        "compared": 0,
+        "regressed": 0,
+        "improved": 0,
+        "unchanged": 0,
+        "unmeasurable": 3,
+        "incomparable": 0,
+        "median_ratio": null,
+        "median_change_percent": null
+      },
+      "by_schema_mode": {
+        "reused": {
+          "count": 3,
+          "compared": 0,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 0,
+          "unmeasurable": 3,
+          "incomparable": 0,
+          "median_ratio": null,
+          "median_change_percent": null
+        },
+        "fresh": {
+          "count": 0,
+          "compared": 0,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 0,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": null,
+          "median_change_percent": null
+        },
+        "none": {
+          "count": 0,
+          "compared": 0,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 0,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": null,
+          "median_change_percent": null
+        }
+      },
+      "measurements": [
+        {
+          "name": "both",
+          "schema_mode": "reused",
+          "before_us": 0,
+          "after_us": 0,
+          "ratio": null,
+          "change_percent": null,
+          "status": "unmeasurable"
+        },
+        {
+          "name": "before",
+          "schema_mode": "reused",
+          "before_us": 0,
+          "after_us": 1,
+          "ratio": null,
+          "change_percent": null,
+          "status": "unmeasurable"
+        },
+        {
+          "name": "after",
+          "schema_mode": "reused",
+          "before_us": 1,
+          "after_us": 0,
+          "ratio": null,
+          "change_percent": null,
+          "status": "unmeasurable"
+        }
+      ],
+      "environment": {
+        "before": null,
+        "after": null
+      }
+    }
+  },
+  {
+    "name": "prototype_names_and_order",
+    "before": {
+      "runtime": "Test runtime",
+      "platform": "Test platform",
+      "iterations": 100,
+      "samples": 5,
+      "warmup_iterations": 50,
+      "measurements": [
+        {
+          "name": "__proto__",
+          "schema_mode": "reused",
+          "median_us": 1,
+          "min_us": 1
+        },
+        {
+          "name": "constructor",
+          "schema_mode": "reused",
+          "median_us": 1,
+          "min_us": 1
+        },
+        {
+          "name": "toString",
+          "schema_mode": "reused",
+          "median_us": 1,
+          "min_us": 1
+        }
+      ]
+    },
+    "after": {
+      "runtime": "Test runtime",
+      "platform": "Test platform",
+      "iterations": 100,
+      "samples": 5,
+      "warmup_iterations": 50,
+      "measurements": [
+        {
+          "name": "toString",
+          "schema_mode": "reused",
+          "median_us": 1,
+          "min_us": 1
+        },
+        {
+          "name": "constructor",
+          "schema_mode": "reused",
+          "median_us": 1,
+          "min_us": 1
+        },
+        {
+          "name": "__proto__",
+          "schema_mode": "reused",
+          "median_us": 1,
+          "min_us": 1
+        }
+      ]
+    },
+    "threshold": 5,
+    "expected": {
+      "threshold_percent": 5,
+      "conditions": {
+        "before": {
+          "runtime": "Test runtime",
+          "platform": "Test platform",
+          "iterations": 100,
+          "samples": 5,
+          "warmup_iterations": 50,
+          "clock": "wall"
+        },
+        "after": {
+          "runtime": "Test runtime",
+          "platform": "Test platform",
+          "iterations": 100,
+          "samples": 5,
+          "warmup_iterations": 50,
+          "clock": "wall"
+        },
+        "changed": []
+      },
+      "before_count": 3,
+      "after_count": 3,
+      "added": [],
+      "removed": [],
+      "summary": {
+        "count": 3,
+        "compared": 3,
+        "regressed": 0,
+        "improved": 0,
+        "unchanged": 3,
+        "unmeasurable": 0,
+        "incomparable": 0,
+        "median_ratio": 1,
+        "median_change_percent": 0
+      },
+      "by_schema_mode": {
+        "reused": {
+          "count": 3,
+          "compared": 3,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 3,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": 1,
+          "median_change_percent": 0
+        },
+        "fresh": {
+          "count": 0,
+          "compared": 0,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 0,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": null,
+          "median_change_percent": null
+        },
+        "none": {
+          "count": 0,
+          "compared": 0,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 0,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": null,
+          "median_change_percent": null
+        }
+      },
+      "measurements": [
+        {
+          "name": "toString",
+          "schema_mode": "reused",
+          "before_us": 1,
+          "after_us": 1,
+          "ratio": 1,
+          "change_percent": 0,
+          "status": "unchanged"
+        },
+        {
+          "name": "constructor",
+          "schema_mode": "reused",
+          "before_us": 1,
+          "after_us": 1,
+          "ratio": 1,
+          "change_percent": 0,
+          "status": "unchanged"
+        },
+        {
+          "name": "__proto__",
+          "schema_mode": "reused",
+          "before_us": 1,
+          "after_us": 1,
+          "ratio": 1,
+          "change_percent": 0,
+          "status": "unchanged"
+        }
+      ],
+      "environment": {
+        "before": null,
+        "after": null
+      }
+    }
+  },
+  {
+    "name": "fraction_rounding",
+    "before": {
+      "runtime": "Test runtime",
+      "platform": "Test platform",
+      "iterations": 100,
+      "samples": 5,
+      "warmup_iterations": 50,
+      "measurements": [
+        {
+          "name": "third",
+          "schema_mode": "reused",
+          "median_us": 3,
+          "min_us": 3
+        },
+        {
+          "name": "two_thirds",
+          "schema_mode": "reused",
+          "median_us": 3,
+          "min_us": 3
+        }
+      ]
+    },
+    "after": {
+      "runtime": "Test runtime",
+      "platform": "Test platform",
+      "iterations": 100,
+      "samples": 5,
+      "warmup_iterations": 50,
+      "measurements": [
+        {
+          "name": "third",
+          "schema_mode": "reused",
+          "median_us": 1,
+          "min_us": 1
+        },
+        {
+          "name": "two_thirds",
+          "schema_mode": "reused",
+          "median_us": 2,
+          "min_us": 2
+        }
+      ]
+    },
+    "threshold": 5,
+    "expected": {
+      "threshold_percent": 5,
+      "conditions": {
+        "before": {
+          "runtime": "Test runtime",
+          "platform": "Test platform",
+          "iterations": 100,
+          "samples": 5,
+          "warmup_iterations": 50,
+          "clock": "wall"
+        },
+        "after": {
+          "runtime": "Test runtime",
+          "platform": "Test platform",
+          "iterations": 100,
+          "samples": 5,
+          "warmup_iterations": 50,
+          "clock": "wall"
+        },
+        "changed": []
+      },
+      "before_count": 2,
+      "after_count": 2,
+      "added": [],
+      "removed": [],
+      "summary": {
+        "count": 2,
+        "compared": 2,
+        "regressed": 0,
+        "improved": 2,
+        "unchanged": 0,
+        "unmeasurable": 0,
+        "incomparable": 0,
+        "median_ratio": 0.5,
+        "median_change_percent": -50
+      },
+      "by_schema_mode": {
+        "reused": {
+          "count": 2,
+          "compared": 2,
+          "regressed": 0,
+          "improved": 2,
+          "unchanged": 0,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": 0.5,
+          "median_change_percent": -50
+        },
+        "fresh": {
+          "count": 0,
+          "compared": 0,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 0,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": null,
+          "median_change_percent": null
+        },
+        "none": {
+          "count": 0,
+          "compared": 0,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 0,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": null,
+          "median_change_percent": null
+        }
+      },
+      "measurements": [
+        {
+          "name": "third",
+          "schema_mode": "reused",
+          "before_us": 3,
+          "after_us": 1,
+          "ratio": 0.333333,
+          "change_percent": -66.667,
+          "status": "improved"
+        },
+        {
+          "name": "two_thirds",
+          "schema_mode": "reused",
+          "before_us": 3,
+          "after_us": 2,
+          "ratio": 0.666667,
+          "change_percent": -33.333,
+          "status": "improved"
+        }
+      ],
+      "environment": {
+        "before": null,
+        "after": null
+      }
+    }
+  },
+  {
+    "name": "changed_conditions",
+    "before": {
+      "runtime": "Test runtime",
+      "platform": "Test platform",
+      "iterations": 100,
+      "samples": 5,
+      "warmup_iterations": 50,
+      "measurements": []
+    },
+    "after": {
+      "runtime": "Other runtime",
+      "platform": "Other platform",
+      "iterations": 1.0,
+      "samples": 1,
+      "warmup_iterations": 0,
+      "measurements": []
+    },
+    "threshold": 5,
+    "expected": {
+      "threshold_percent": 5,
+      "conditions": {
+        "before": {
+          "runtime": "Test runtime",
+          "platform": "Test platform",
+          "iterations": 100,
+          "samples": 5,
+          "warmup_iterations": 50,
+          "clock": "wall"
+        },
+        "after": {
+          "runtime": "Other runtime",
+          "platform": "Other platform",
+          "iterations": 1.0,
+          "samples": 1,
+          "warmup_iterations": 0,
+          "clock": "wall"
+        },
+        "changed": [
+          "runtime",
+          "platform",
+          "iterations",
+          "samples",
+          "warmup_iterations"
+        ]
+      },
+      "before_count": 0,
+      "after_count": 0,
+      "added": [],
+      "removed": [],
+      "summary": {
+        "count": 0,
+        "compared": 0,
+        "regressed": 0,
+        "improved": 0,
+        "unchanged": 0,
+        "unmeasurable": 0,
+        "incomparable": 0,
+        "median_ratio": null,
+        "median_change_percent": null
+      },
+      "by_schema_mode": {
+        "reused": {
+          "count": 0,
+          "compared": 0,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 0,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": null,
+          "median_change_percent": null
+        },
+        "fresh": {
+          "count": 0,
+          "compared": 0,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 0,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": null,
+          "median_change_percent": null
+        },
+        "none": {
+          "count": 0,
+          "compared": 0,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 0,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": null,
+          "median_change_percent": null
+        }
+      },
+      "measurements": [],
+      "environment": {
+        "before": null,
+        "after": null
+      }
+    }
+  },
+  {
+    "name": "legacy_wall_matches_explicit_wall",
+    "before": {
+      "runtime": "Test runtime",
+      "platform": "Test platform",
+      "iterations": 100,
+      "samples": 5,
+      "warmup_iterations": 50,
+      "measurements": [
+        {
+          "name": "probe",
+          "schema_mode": "reused",
+          "median_us": 10,
+          "min_us": 0
+        }
+      ]
+    },
+    "after": {
+      "runtime": "Test runtime",
+      "platform": "Test platform",
+      "iterations": 100,
+      "samples": 5,
+      "warmup_iterations": 50,
+      "measurements": [
+        {
+          "name": "probe",
+          "schema_mode": "reused",
+          "median_us": 12,
+          "min_us": 0
+        }
+      ],
+      "clock": "wall",
+      "environment": {
+        "start": {
+          "logical_cpus": 8,
+          "load_average": [
+            1,
+            2,
+            3
+          ]
+        },
+        "end": {
+          "logical_cpus": 8,
+          "load_average": [
+            4,
+            5,
+            6
+          ]
+        }
+      }
+    },
+    "threshold": 5,
+    "expected": {
+      "threshold_percent": 5,
+      "conditions": {
+        "before": {
+          "runtime": "Test runtime",
+          "platform": "Test platform",
+          "iterations": 100,
+          "samples": 5,
+          "warmup_iterations": 50,
+          "clock": "wall"
+        },
+        "after": {
+          "runtime": "Test runtime",
+          "platform": "Test platform",
+          "iterations": 100,
+          "samples": 5,
+          "warmup_iterations": 50,
+          "clock": "wall"
+        },
+        "changed": []
+      },
+      "environment": {
+        "before": null,
+        "after": {
+          "start": {
+            "logical_cpus": 8,
+            "load_average": [
+              1,
+              2,
+              3
+            ]
+          },
+          "end": {
+            "logical_cpus": 8,
+            "load_average": [
+              4,
+              5,
+              6
+            ]
+          }
+        }
+      },
+      "before_count": 1,
+      "after_count": 1,
+      "added": [],
+      "removed": [],
+      "summary": {
+        "count": 1,
+        "compared": 1,
+        "regressed": 1,
+        "improved": 0,
+        "unchanged": 0,
+        "unmeasurable": 0,
+        "incomparable": 0,
+        "median_ratio": 1.2,
+        "median_change_percent": 20
+      },
+      "by_schema_mode": {
+        "reused": {
+          "count": 1,
+          "compared": 1,
+          "regressed": 1,
+          "improved": 0,
+          "unchanged": 0,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": 1.2,
+          "median_change_percent": 20
+        },
+        "fresh": {
+          "count": 0,
+          "compared": 0,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 0,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": null,
+          "median_change_percent": null
+        },
+        "none": {
+          "count": 0,
+          "compared": 0,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 0,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": null,
+          "median_change_percent": null
+        }
+      },
+      "measurements": [
+        {
+          "name": "probe",
+          "schema_mode": "reused",
+          "before_us": 10,
+          "after_us": 12,
+          "ratio": 1.2,
+          "change_percent": 20,
+          "status": "regressed"
+        }
+      ]
+    }
+  },
+  {
+    "name": "cpu_reports_compare_cpu_cost",
+    "before": {
+      "runtime": "Test runtime",
+      "platform": "Test platform",
+      "iterations": 100,
+      "samples": 5,
+      "warmup_iterations": 50,
+      "measurements": [
+        {
+          "name": "probe",
+          "schema_mode": "reused",
+          "median_us": 10,
+          "min_us": 0
+        }
+      ],
+      "clock": "cpu",
+      "environment": {
+        "start": {
+          "logical_cpus": 8,
+          "load_average": [
+            1,
+            2,
+            3
+          ]
+        },
+        "end": {
+          "logical_cpus": 8,
+          "load_average": [
+            4,
+            5,
+            6
+          ]
+        }
+      }
+    },
+    "after": {
+      "runtime": "Test runtime",
+      "platform": "Test platform",
+      "iterations": 100,
+      "samples": 5,
+      "warmup_iterations": 50,
+      "measurements": [
+        {
+          "name": "probe",
+          "schema_mode": "reused",
+          "median_us": 8,
+          "min_us": 0
+        }
+      ],
+      "clock": "cpu",
+      "environment": {
+        "start": {
+          "logical_cpus": 8,
+          "load_average": [
+            4,
+            5,
+            6
+          ]
+        },
+        "end": {
+          "logical_cpus": 8,
+          "load_average": [
+            1,
+            2,
+            3
+          ]
+        }
+      }
+    },
+    "threshold": 5,
+    "expected": {
+      "threshold_percent": 5,
+      "conditions": {
+        "before": {
+          "runtime": "Test runtime",
+          "platform": "Test platform",
+          "iterations": 100,
+          "samples": 5,
+          "warmup_iterations": 50,
+          "clock": "cpu"
+        },
+        "after": {
+          "runtime": "Test runtime",
+          "platform": "Test platform",
+          "iterations": 100,
+          "samples": 5,
+          "warmup_iterations": 50,
+          "clock": "cpu"
+        },
+        "changed": []
+      },
+      "environment": {
+        "before": {
+          "start": {
+            "logical_cpus": 8,
+            "load_average": [
+              1,
+              2,
+              3
+            ]
+          },
+          "end": {
+            "logical_cpus": 8,
+            "load_average": [
+              4,
+              5,
+              6
+            ]
+          }
+        },
+        "after": {
+          "start": {
+            "logical_cpus": 8,
+            "load_average": [
+              4,
+              5,
+              6
+            ]
+          },
+          "end": {
+            "logical_cpus": 8,
+            "load_average": [
+              1,
+              2,
+              3
+            ]
+          }
+        }
+      },
+      "before_count": 1,
+      "after_count": 1,
+      "added": [],
+      "removed": [],
+      "summary": {
+        "count": 1,
+        "compared": 1,
+        "regressed": 0,
+        "improved": 1,
+        "unchanged": 0,
+        "unmeasurable": 0,
+        "incomparable": 0,
+        "median_ratio": 0.8,
+        "median_change_percent": -20
+      },
+      "by_schema_mode": {
+        "reused": {
+          "count": 1,
+          "compared": 1,
+          "regressed": 0,
+          "improved": 1,
+          "unchanged": 0,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": 0.8,
+          "median_change_percent": -20
+        },
+        "fresh": {
+          "count": 0,
+          "compared": 0,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 0,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": null,
+          "median_change_percent": null
+        },
+        "none": {
+          "count": 0,
+          "compared": 0,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 0,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": null,
+          "median_change_percent": null
+        }
+      },
+      "measurements": [
+        {
+          "name": "probe",
+          "schema_mode": "reused",
+          "before_us": 10,
+          "after_us": 8,
+          "ratio": 0.8,
+          "change_percent": -20,
+          "status": "improved"
+        }
+      ]
+    }
+  },
+  {
+    "name": "wall_and_cpu_are_incomparable",
+    "before": {
+      "runtime": "Test runtime",
+      "platform": "Test platform",
+      "iterations": 100,
+      "samples": 5,
+      "warmup_iterations": 50,
+      "measurements": [
+        {
+          "name": "probe",
+          "schema_mode": "reused",
+          "median_us": 10,
+          "min_us": 0
+        }
+      ],
+      "clock": "wall"
+    },
+    "after": {
+      "runtime": "Test runtime",
+      "platform": "Test platform",
+      "iterations": 100,
+      "samples": 5,
+      "warmup_iterations": 50,
+      "measurements": [
+        {
+          "name": "probe",
+          "schema_mode": "reused",
+          "median_us": 20,
+          "min_us": 0
+        }
+      ],
+      "clock": "cpu"
+    },
+    "threshold": 5,
+    "expected": {
+      "threshold_percent": 5,
+      "conditions": {
+        "before": {
+          "runtime": "Test runtime",
+          "platform": "Test platform",
+          "iterations": 100,
+          "samples": 5,
+          "warmup_iterations": 50,
+          "clock": "wall"
+        },
+        "after": {
+          "runtime": "Test runtime",
+          "platform": "Test platform",
+          "iterations": 100,
+          "samples": 5,
+          "warmup_iterations": 50,
+          "clock": "cpu"
+        },
+        "changed": [
+          "clock"
+        ]
+      },
+      "environment": {
+        "before": null,
+        "after": null
+      },
+      "before_count": 1,
+      "after_count": 1,
+      "added": [],
+      "removed": [],
+      "summary": {
+        "count": 1,
+        "compared": 0,
+        "regressed": 0,
+        "improved": 0,
+        "unchanged": 0,
+        "unmeasurable": 0,
+        "incomparable": 1,
+        "median_ratio": null,
+        "median_change_percent": null
+      },
+      "by_schema_mode": {
+        "reused": {
+          "count": 1,
+          "compared": 0,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 0,
+          "unmeasurable": 0,
+          "incomparable": 1,
+          "median_ratio": null,
+          "median_change_percent": null
+        },
+        "fresh": {
+          "count": 0,
+          "compared": 0,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 0,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": null,
+          "median_change_percent": null
+        },
+        "none": {
+          "count": 0,
+          "compared": 0,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 0,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": null,
+          "median_change_percent": null
+        }
+      },
+      "measurements": [
+        {
+          "name": "probe",
+          "schema_mode": "reused",
+          "before_us": 10,
+          "after_us": 20,
+          "ratio": null,
+          "change_percent": null,
+          "status": "incomparable",
+          "before_clock": "wall",
+          "after_clock": "cpu"
+        }
+      ]
+    }
+  },
+  {
+    "name": "cpu_and_legacy_wall_are_incomparable",
+    "before": {
+      "runtime": "Test runtime",
+      "platform": "Test platform",
+      "iterations": 100,
+      "samples": 5,
+      "warmup_iterations": 50,
+      "measurements": [
+        {
+          "name": "probe",
+          "schema_mode": "reused",
+          "median_us": 10,
+          "min_us": 0
+        }
+      ],
+      "clock": "cpu"
+    },
+    "after": {
+      "runtime": "Test runtime",
+      "platform": "Test platform",
+      "iterations": 100,
+      "samples": 5,
+      "warmup_iterations": 50,
+      "measurements": [
+        {
+          "name": "probe",
+          "schema_mode": "reused",
+          "median_us": 20,
+          "min_us": 0
+        }
+      ]
+    },
+    "threshold": 5,
+    "expected": {
+      "threshold_percent": 5,
+      "conditions": {
+        "before": {
+          "runtime": "Test runtime",
+          "platform": "Test platform",
+          "iterations": 100,
+          "samples": 5,
+          "warmup_iterations": 50,
+          "clock": "cpu"
+        },
+        "after": {
+          "runtime": "Test runtime",
+          "platform": "Test platform",
+          "iterations": 100,
+          "samples": 5,
+          "warmup_iterations": 50,
+          "clock": "wall"
+        },
+        "changed": [
+          "clock"
+        ]
+      },
+      "environment": {
+        "before": null,
+        "after": null
+      },
+      "before_count": 1,
+      "after_count": 1,
+      "added": [],
+      "removed": [],
+      "summary": {
+        "count": 1,
+        "compared": 0,
+        "regressed": 0,
+        "improved": 0,
+        "unchanged": 0,
+        "unmeasurable": 0,
+        "incomparable": 1,
+        "median_ratio": null,
+        "median_change_percent": null
+      },
+      "by_schema_mode": {
+        "reused": {
+          "count": 1,
+          "compared": 0,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 0,
+          "unmeasurable": 0,
+          "incomparable": 1,
+          "median_ratio": null,
+          "median_change_percent": null
+        },
+        "fresh": {
+          "count": 0,
+          "compared": 0,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 0,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": null,
+          "median_change_percent": null
+        },
+        "none": {
+          "count": 0,
+          "compared": 0,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 0,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": null,
+          "median_change_percent": null
+        }
+      },
+      "measurements": [
+        {
+          "name": "probe",
+          "schema_mode": "reused",
+          "before_us": 10,
+          "after_us": 20,
+          "ratio": null,
+          "change_percent": null,
+          "status": "incomparable",
+          "before_clock": "cpu",
+          "after_clock": "wall"
+        }
+      ]
+    }
+  },
+  {
+    "name": "clock_change_precedes_zero_timing",
+    "before": {
+      "runtime": "Test runtime",
+      "platform": "Test platform",
+      "iterations": 100,
+      "samples": 5,
+      "warmup_iterations": 50,
+      "measurements": [
+        {
+          "name": "probe",
+          "schema_mode": "reused",
+          "median_us": 0,
+          "min_us": 0
+        }
+      ]
+    },
+    "after": {
+      "runtime": "Test runtime",
+      "platform": "Test platform",
+      "iterations": 100,
+      "samples": 5,
+      "warmup_iterations": 50,
+      "measurements": [
+        {
+          "name": "probe",
+          "schema_mode": "reused",
+          "median_us": 20,
+          "min_us": 0
+        }
+      ],
+      "clock": "cpu"
+    },
+    "threshold": 5,
+    "expected": {
+      "threshold_percent": 5,
+      "conditions": {
+        "before": {
+          "runtime": "Test runtime",
+          "platform": "Test platform",
+          "iterations": 100,
+          "samples": 5,
+          "warmup_iterations": 50,
+          "clock": "wall"
+        },
+        "after": {
+          "runtime": "Test runtime",
+          "platform": "Test platform",
+          "iterations": 100,
+          "samples": 5,
+          "warmup_iterations": 50,
+          "clock": "cpu"
+        },
+        "changed": [
+          "clock"
+        ]
+      },
+      "environment": {
+        "before": null,
+        "after": null
+      },
+      "before_count": 1,
+      "after_count": 1,
+      "added": [],
+      "removed": [],
+      "summary": {
+        "count": 1,
+        "compared": 0,
+        "regressed": 0,
+        "improved": 0,
+        "unchanged": 0,
+        "unmeasurable": 0,
+        "incomparable": 1,
+        "median_ratio": null,
+        "median_change_percent": null
+      },
+      "by_schema_mode": {
+        "reused": {
+          "count": 1,
+          "compared": 0,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 0,
+          "unmeasurable": 0,
+          "incomparable": 1,
+          "median_ratio": null,
+          "median_change_percent": null
+        },
+        "fresh": {
+          "count": 0,
+          "compared": 0,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 0,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": null,
+          "median_change_percent": null
+        },
+        "none": {
+          "count": 0,
+          "compared": 0,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 0,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": null,
+          "median_change_percent": null
+        }
+      },
+      "measurements": [
+        {
+          "name": "probe",
+          "schema_mode": "reused",
+          "before_us": 0,
+          "after_us": 20,
+          "ratio": null,
+          "change_percent": null,
+          "status": "incomparable",
+          "before_clock": "wall",
+          "after_clock": "cpu"
+        }
+      ]
+    }
+  },
+  {
+    "name": "clock_and_schema_mode_both_change",
+    "before": {
+      "runtime": "Test runtime",
+      "platform": "Test platform",
+      "iterations": 100,
+      "samples": 5,
+      "warmup_iterations": 50,
+      "measurements": [
+        {
+          "name": "probe",
+          "schema_mode": "fresh",
+          "median_us": 10,
+          "min_us": 0
+        }
+      ],
+      "clock": "wall"
+    },
+    "after": {
+      "runtime": "Test runtime",
+      "platform": "Test platform",
+      "iterations": 100,
+      "samples": 5,
+      "warmup_iterations": 50,
+      "measurements": [
+        {
+          "name": "probe",
+          "schema_mode": "reused",
+          "median_us": 20,
+          "min_us": 0
+        }
+      ],
+      "clock": "cpu"
+    },
+    "threshold": 5,
+    "expected": {
+      "threshold_percent": 5,
+      "conditions": {
+        "before": {
+          "runtime": "Test runtime",
+          "platform": "Test platform",
+          "iterations": 100,
+          "samples": 5,
+          "warmup_iterations": 50,
+          "clock": "wall"
+        },
+        "after": {
+          "runtime": "Test runtime",
+          "platform": "Test platform",
+          "iterations": 100,
+          "samples": 5,
+          "warmup_iterations": 50,
+          "clock": "cpu"
+        },
+        "changed": [
+          "clock"
+        ]
+      },
+      "environment": {
+        "before": null,
+        "after": null
+      },
+      "before_count": 1,
+      "after_count": 1,
+      "added": [],
+      "removed": [],
+      "summary": {
+        "count": 1,
+        "compared": 0,
+        "regressed": 0,
+        "improved": 0,
+        "unchanged": 0,
+        "unmeasurable": 0,
+        "incomparable": 1,
+        "median_ratio": null,
+        "median_change_percent": null
+      },
+      "by_schema_mode": {
+        "reused": {
+          "count": 0,
+          "compared": 0,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 0,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": null,
+          "median_change_percent": null
+        },
+        "fresh": {
+          "count": 0,
+          "compared": 0,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 0,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": null,
+          "median_change_percent": null
+        },
+        "none": {
+          "count": 0,
+          "compared": 0,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 0,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": null,
+          "median_change_percent": null
+        }
+      },
+      "measurements": [
+        {
+          "name": "probe",
+          "schema_mode": null,
+          "before_us": 10,
+          "after_us": 20,
+          "ratio": null,
+          "change_percent": null,
+          "status": "incomparable",
+          "before_schema_mode": "fresh",
+          "after_schema_mode": "reused",
+          "before_clock": "wall",
+          "after_clock": "cpu"
+        }
+      ]
+    }
+  },
+  {
+    "name": "cpu_schema_mode_change",
+    "before": {
+      "runtime": "Test runtime",
+      "platform": "Test platform",
+      "iterations": 100,
+      "samples": 5,
+      "warmup_iterations": 50,
+      "measurements": [
+        {
+          "name": "probe",
+          "schema_mode": "fresh",
+          "median_us": 10,
+          "min_us": 0
+        }
+      ],
+      "clock": "cpu"
+    },
+    "after": {
+      "runtime": "Test runtime",
+      "platform": "Test platform",
+      "iterations": 100,
+      "samples": 5,
+      "warmup_iterations": 50,
+      "measurements": [
+        {
+          "name": "probe",
+          "schema_mode": "reused",
+          "median_us": 20,
+          "min_us": 0
+        }
+      ],
+      "clock": "cpu"
+    },
+    "threshold": 5,
+    "expected": {
+      "threshold_percent": 5,
+      "conditions": {
+        "before": {
+          "runtime": "Test runtime",
+          "platform": "Test platform",
+          "iterations": 100,
+          "samples": 5,
+          "warmup_iterations": 50,
+          "clock": "cpu"
+        },
+        "after": {
+          "runtime": "Test runtime",
+          "platform": "Test platform",
+          "iterations": 100,
+          "samples": 5,
+          "warmup_iterations": 50,
+          "clock": "cpu"
+        },
+        "changed": []
+      },
+      "environment": {
+        "before": null,
+        "after": null
+      },
+      "before_count": 1,
+      "after_count": 1,
+      "added": [],
+      "removed": [],
+      "summary": {
+        "count": 1,
+        "compared": 0,
+        "regressed": 0,
+        "improved": 0,
+        "unchanged": 0,
+        "unmeasurable": 0,
+        "incomparable": 1,
+        "median_ratio": null,
+        "median_change_percent": null
+      },
+      "by_schema_mode": {
+        "reused": {
+          "count": 0,
+          "compared": 0,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 0,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": null,
+          "median_change_percent": null
+        },
+        "fresh": {
+          "count": 0,
+          "compared": 0,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 0,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": null,
+          "median_change_percent": null
+        },
+        "none": {
+          "count": 0,
+          "compared": 0,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 0,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": null,
+          "median_change_percent": null
+        }
+      },
+      "measurements": [
+        {
+          "name": "probe",
+          "schema_mode": null,
+          "before_us": 10,
+          "after_us": 20,
+          "ratio": null,
+          "change_percent": null,
+          "status": "incomparable",
+          "before_schema_mode": "fresh",
+          "after_schema_mode": "reused"
+        }
+      ]
+    }
+  },
+  {
+    "name": "cpu_zero_timing_is_unmeasurable",
+    "before": {
+      "runtime": "Test runtime",
+      "platform": "Test platform",
+      "iterations": 100,
+      "samples": 5,
+      "warmup_iterations": 50,
+      "measurements": [
+        {
+          "name": "probe",
+          "schema_mode": "reused",
+          "median_us": 0,
+          "min_us": 0
+        }
+      ],
+      "clock": "cpu"
+    },
+    "after": {
+      "runtime": "Test runtime",
+      "platform": "Test platform",
+      "iterations": 100,
+      "samples": 5,
+      "warmup_iterations": 50,
+      "measurements": [
+        {
+          "name": "probe",
+          "schema_mode": "reused",
+          "median_us": 20,
+          "min_us": 0
+        }
+      ],
+      "clock": "cpu"
+    },
+    "threshold": 5,
+    "expected": {
+      "threshold_percent": 5,
+      "conditions": {
+        "before": {
+          "runtime": "Test runtime",
+          "platform": "Test platform",
+          "iterations": 100,
+          "samples": 5,
+          "warmup_iterations": 50,
+          "clock": "cpu"
+        },
+        "after": {
+          "runtime": "Test runtime",
+          "platform": "Test platform",
+          "iterations": 100,
+          "samples": 5,
+          "warmup_iterations": 50,
+          "clock": "cpu"
+        },
+        "changed": []
+      },
+      "environment": {
+        "before": null,
+        "after": null
+      },
+      "before_count": 1,
+      "after_count": 1,
+      "added": [],
+      "removed": [],
+      "summary": {
+        "count": 1,
+        "compared": 0,
+        "regressed": 0,
+        "improved": 0,
+        "unchanged": 0,
+        "unmeasurable": 1,
+        "incomparable": 0,
+        "median_ratio": null,
+        "median_change_percent": null
+      },
+      "by_schema_mode": {
+        "reused": {
+          "count": 1,
+          "compared": 0,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 0,
+          "unmeasurable": 1,
+          "incomparable": 0,
+          "median_ratio": null,
+          "median_change_percent": null
+        },
+        "fresh": {
+          "count": 0,
+          "compared": 0,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 0,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": null,
+          "median_change_percent": null
+        },
+        "none": {
+          "count": 0,
+          "compared": 0,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 0,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": null,
+          "median_change_percent": null
+        }
+      },
+      "measurements": [
+        {
+          "name": "probe",
+          "schema_mode": "reused",
+          "before_us": 0,
+          "after_us": 20,
+          "ratio": null,
+          "change_percent": null,
+          "status": "unmeasurable"
+        }
+      ]
+    }
+  },
+  {
+    "name": "missing_environment_is_not_zero_load",
+    "before": {
+      "runtime": "Test runtime",
+      "platform": "Test platform",
+      "iterations": 100,
+      "samples": 5,
+      "warmup_iterations": 50,
+      "measurements": [
+        {
+          "name": "probe",
+          "schema_mode": "reused",
+          "median_us": 10,
+          "min_us": 0
+        }
+      ]
+    },
+    "after": {
+      "runtime": "Test runtime",
+      "platform": "Test platform",
+      "iterations": 100,
+      "samples": 5,
+      "warmup_iterations": 50,
+      "measurements": [
+        {
+          "name": "probe",
+          "schema_mode": "reused",
+          "median_us": 10,
+          "min_us": 0
+        }
+      ],
+      "clock": "wall",
+      "environment": {
+        "start": {
+          "logical_cpus": null,
+          "load_average": null
+        },
+        "end": null
+      }
+    },
+    "threshold": 5,
+    "expected": {
+      "threshold_percent": 5,
+      "conditions": {
+        "before": {
+          "runtime": "Test runtime",
+          "platform": "Test platform",
+          "iterations": 100,
+          "samples": 5,
+          "warmup_iterations": 50,
+          "clock": "wall"
+        },
+        "after": {
+          "runtime": "Test runtime",
+          "platform": "Test platform",
+          "iterations": 100,
+          "samples": 5,
+          "warmup_iterations": 50,
+          "clock": "wall"
+        },
+        "changed": []
+      },
+      "environment": {
+        "before": null,
+        "after": {
+          "start": {
+            "logical_cpus": null,
+            "load_average": null
+          },
+          "end": null
+        }
+      },
+      "before_count": 1,
+      "after_count": 1,
+      "added": [],
+      "removed": [],
+      "summary": {
+        "count": 1,
+        "compared": 1,
+        "regressed": 0,
+        "improved": 0,
+        "unchanged": 1,
+        "unmeasurable": 0,
+        "incomparable": 0,
+        "median_ratio": 1,
+        "median_change_percent": 0
+      },
+      "by_schema_mode": {
+        "reused": {
+          "count": 1,
+          "compared": 1,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 1,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": 1,
+          "median_change_percent": 0
+        },
+        "fresh": {
+          "count": 0,
+          "compared": 0,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 0,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": null,
+          "median_change_percent": null
+        },
+        "none": {
+          "count": 0,
+          "compared": 0,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 0,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": null,
+          "median_change_percent": null
+        }
+      },
+      "measurements": [
+        {
+          "name": "probe",
+          "schema_mode": "reused",
+          "before_us": 10,
+          "after_us": 10,
+          "ratio": 1,
+          "change_percent": 0,
+          "status": "unchanged"
+        }
+      ]
+    }
+  },
+  {
+    "name": "partial_environment_leaves_missing_values_unknown",
+    "before": {
+      "runtime": "Test runtime",
+      "platform": "Test platform",
+      "iterations": 100,
+      "samples": 5,
+      "warmup_iterations": 50,
+      "measurements": [
+        {
+          "name": "probe",
+          "schema_mode": "reused",
+          "median_us": 10,
+          "min_us": 0
+        }
+      ],
+      "clock": "wall",
+      "environment": {
+        "start": {
+          "load_average": [
+            0,
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "after": {
+      "runtime": "Test runtime",
+      "platform": "Test platform",
+      "iterations": 100,
+      "samples": 5,
+      "warmup_iterations": 50,
+      "measurements": [
+        {
+          "name": "probe",
+          "schema_mode": "reused",
+          "median_us": 10,
+          "min_us": 0
+        }
+      ],
+      "clock": "wall"
+    },
+    "threshold": 5,
+    "expected": {
+      "threshold_percent": 5,
+      "conditions": {
+        "before": {
+          "runtime": "Test runtime",
+          "platform": "Test platform",
+          "iterations": 100,
+          "samples": 5,
+          "warmup_iterations": 50,
+          "clock": "wall"
+        },
+        "after": {
+          "runtime": "Test runtime",
+          "platform": "Test platform",
+          "iterations": 100,
+          "samples": 5,
+          "warmup_iterations": 50,
+          "clock": "wall"
+        },
+        "changed": []
+      },
+      "environment": {
+        "before": {
+          "start": {
+            "logical_cpus": null,
+            "load_average": [
+              0,
+              0,
+              0
+            ]
+          },
+          "end": null
+        },
+        "after": null
+      },
+      "before_count": 1,
+      "after_count": 1,
+      "added": [],
+      "removed": [],
+      "summary": {
+        "count": 1,
+        "compared": 1,
+        "regressed": 0,
+        "improved": 0,
+        "unchanged": 1,
+        "unmeasurable": 0,
+        "incomparable": 0,
+        "median_ratio": 1,
+        "median_change_percent": 0
+      },
+      "by_schema_mode": {
+        "reused": {
+          "count": 1,
+          "compared": 1,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 1,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": 1,
+          "median_change_percent": 0
+        },
+        "fresh": {
+          "count": 0,
+          "compared": 0,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 0,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": null,
+          "median_change_percent": null
+        },
+        "none": {
+          "count": 0,
+          "compared": 0,
+          "regressed": 0,
+          "improved": 0,
+          "unchanged": 0,
+          "unmeasurable": 0,
+          "incomparable": 0,
+          "median_ratio": null,
+          "median_change_percent": null
+        }
+      },
+      "measurements": [
+        {
+          "name": "probe",
+          "schema_mode": "reused",
+          "before_us": 10,
+          "after_us": 10,
+          "ratio": 1,
+          "change_percent": 0,
+          "status": "unchanged"
+        }
+      ]
+    }
+  }
+]
