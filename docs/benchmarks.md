@@ -178,6 +178,11 @@ compare clean objects, repeated object/array repairs, dense root quotes, long
 values, existing escapes, comments, and quote-free arrays from 1 to 1,000
 entries or repetitions. The scanner copies unchanged spans and joins once.
 
+Encoding contracts preserve literal marker characters while repairing bare
+keys, single quotes, truncation, and comments. Separate framing-marker cases
+check whole-document decoding. Workloads scale clean input, quoted literals,
+comments, and early/late framing signals from 1 to 1,000 repetitions.
+
 Comparisons preserve JSON types: booleans never equal numbers. Numbers compare
 by value, so `1` equals `1.0` and `0` equals `-0`. Object property order is
 ignored; array order is preserved. Non-JSON values such as non-finite numbers

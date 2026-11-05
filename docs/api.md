@@ -520,6 +520,15 @@ This bounds search work and trace memory for dissimilar or repetitive output.
 Report diffs are empty for identical texts. Strategy diffs are also empty for
 a step marked unchanged.
 
+### Tokenizer artifacts
+
+`fix_encoding` preserves characters such as `Ġ`, `Ċ`, `ĉ`, and `č` when they
+appear only inside quoted strings or comments. An unquoted marker signals an
+encoded document; the strategy then decodes those markers throughout the text,
+including quoted content. Both quote styles and escaped quotes are recognized.
+This preserves literal Unicode while repairing unrelated syntax such as bare
+keys or missing closing delimiters.
+
 ### Inner quotes
 
 `fix_inner_quotes` escapes unescaped double quotes inside object values, array

@@ -9,23 +9,23 @@ from outputguard.strategies.fix_newlines import apply as fix_newlines
 from outputguard.strategies.fix_unicode import apply as fix_unicode
 from outputguard.strategies.fix_values import apply as fix_values
 
-# ─── fix_encoding (lines 19-21: BPE replacement loop) ────────────────────────
+# ─── fix_encoding: framing markers and literal Unicode ──────────────────────
 
 
 class TestFixEncodingBPEReplacement:
-    """Lines 20-21: the replacement loop body when BPE chars ARE present."""
+    """Decode framing artifacts without treating quoted Unicode as evidence."""
 
     def test_space_token(self):
         assert fix_encoding('{"key":Ġ"val"}') == '{"key": "val"}'
 
-    def test_newline_token(self):
-        assert fix_encoding('"line1Ċline2"') == '"line1\nline2"'
+    def test_newline_literal_preserved(self):
+        assert fix_encoding('"line1Ċline2"') == '"line1Ċline2"'
 
-    def test_tab_token(self):
-        assert fix_encoding('"col1ĉcol2"') == '"col1\tcol2"'
+    def test_tab_literal_preserved(self):
+        assert fix_encoding('"col1ĉcol2"') == '"col1ĉcol2"'
 
-    def test_cr_token(self):
-        assert fix_encoding('"ačb"') == '"a\rb"'
+    def test_cr_literal_preserved(self):
+        assert fix_encoding('"ačb"') == '"ačb"'
 
     def test_all_bpe_tokens_together(self):
         assert fix_encoding("ĠĊĉč") == " \n\t\r"

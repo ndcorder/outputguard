@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Preserve literal Unicode during encoding repair when marker characters occur
+  only in quoted strings or comments. Require an unquoted marker before
+  decoding the document, retain whole-document artifact repair, and add shared
+  data-preservation contracts and scaling benchmarks.
 - Repair inner double quotes in array items and root strings as well as object
   values. Preserve comments, quoted keys, single-quoted literals, and existing
   escape pairs; align repair padding across ports. Replace repeated prefix

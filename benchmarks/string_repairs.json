@@ -93652,5 +93652,6349 @@
         }
       }
     }
+  },
+  {
+    "name": "encoding-literal-0-root",
+    "strategy": "fix_encoding",
+    "text": "\"\u0120word\"",
+    "expected_text": "\"\u0120word\"",
+    "source_valid": true,
+    "valid": true,
+    "data": "\u0120word",
+    "public": {
+      "valid": true,
+      "data": "\u0120word",
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-0-object",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\"\u0120word\"}",
+    "expected_text": "{\"word\":\"\u0120word\"}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "word": "\u0120word"
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u0120word"
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-0-array",
+    "strategy": "fix_encoding",
+    "text": "[\"\u0120word\"]",
+    "expected_text": "[\"\u0120word\"]",
+    "source_valid": true,
+    "valid": true,
+    "data": [
+      "\u0120word"
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        "\u0120word"
+      ],
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-0-key",
+    "strategy": "fix_encoding",
+    "text": "{\"\u0120word\":1}",
+    "expected_text": "{\"\u0120word\":1}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "\u0120word": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "\u0120word": 1
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-bare-0",
+    "strategy": "fix_encoding",
+    "text": "{word:\"\u0120word\"}",
+    "expected_text": "{word:\"\u0120word\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u0120word"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\u0120word\"}",
+      "strategies": [
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-single-0",
+    "strategy": "fix_encoding",
+    "text": "{'word':'\u0120word'}",
+    "expected_text": "{'word':'\u0120word'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u0120word"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\u0120word\"}",
+      "strategies": [
+        "fix_quotes"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-combined-0",
+    "strategy": "fix_encoding",
+    "text": "{word:'\u0120word'}",
+    "expected_text": "{word:'\u0120word'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u0120word"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\u0120word\"}",
+      "strategies": [
+        "fix_quotes",
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-1-root",
+    "strategy": "fix_encoding",
+    "text": "\"a\u0120b\"",
+    "expected_text": "\"a\u0120b\"",
+    "source_valid": true,
+    "valid": true,
+    "data": "a\u0120b",
+    "public": {
+      "valid": true,
+      "data": "a\u0120b",
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-1-object",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\"a\u0120b\"}",
+    "expected_text": "{\"word\":\"a\u0120b\"}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "word": "a\u0120b"
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "a\u0120b"
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-1-array",
+    "strategy": "fix_encoding",
+    "text": "[\"a\u0120b\"]",
+    "expected_text": "[\"a\u0120b\"]",
+    "source_valid": true,
+    "valid": true,
+    "data": [
+      "a\u0120b"
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        "a\u0120b"
+      ],
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-1-key",
+    "strategy": "fix_encoding",
+    "text": "{\"a\u0120b\":1}",
+    "expected_text": "{\"a\u0120b\":1}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "a\u0120b": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a\u0120b": 1
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-bare-1",
+    "strategy": "fix_encoding",
+    "text": "{word:\"a\u0120b\"}",
+    "expected_text": "{word:\"a\u0120b\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "a\u0120b"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"a\u0120b\"}",
+      "strategies": [
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-single-1",
+    "strategy": "fix_encoding",
+    "text": "{'word':'a\u0120b'}",
+    "expected_text": "{'word':'a\u0120b'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "a\u0120b"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"a\u0120b\"}",
+      "strategies": [
+        "fix_quotes"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-combined-1",
+    "strategy": "fix_encoding",
+    "text": "{word:'a\u0120b'}",
+    "expected_text": "{word:'a\u0120b'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "a\u0120b"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"a\u0120b\"}",
+      "strategies": [
+        "fix_quotes",
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-2-root",
+    "strategy": "fix_encoding",
+    "text": "\"\u0120\u0120\u0120\u0120\"",
+    "expected_text": "\"\u0120\u0120\u0120\u0120\"",
+    "source_valid": true,
+    "valid": true,
+    "data": "\u0120\u0120\u0120\u0120",
+    "public": {
+      "valid": true,
+      "data": "\u0120\u0120\u0120\u0120",
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-2-object",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\"\u0120\u0120\u0120\u0120\"}",
+    "expected_text": "{\"word\":\"\u0120\u0120\u0120\u0120\"}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "word": "\u0120\u0120\u0120\u0120"
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u0120\u0120\u0120\u0120"
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-2-array",
+    "strategy": "fix_encoding",
+    "text": "[\"\u0120\u0120\u0120\u0120\"]",
+    "expected_text": "[\"\u0120\u0120\u0120\u0120\"]",
+    "source_valid": true,
+    "valid": true,
+    "data": [
+      "\u0120\u0120\u0120\u0120"
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        "\u0120\u0120\u0120\u0120"
+      ],
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-2-key",
+    "strategy": "fix_encoding",
+    "text": "{\"\u0120\u0120\u0120\u0120\":1}",
+    "expected_text": "{\"\u0120\u0120\u0120\u0120\":1}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "\u0120\u0120\u0120\u0120": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "\u0120\u0120\u0120\u0120": 1
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-bare-2",
+    "strategy": "fix_encoding",
+    "text": "{word:\"\u0120\u0120\u0120\u0120\"}",
+    "expected_text": "{word:\"\u0120\u0120\u0120\u0120\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u0120\u0120\u0120\u0120"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\u0120\u0120\u0120\u0120\"}",
+      "strategies": [
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-single-2",
+    "strategy": "fix_encoding",
+    "text": "{'word':'\u0120\u0120\u0120\u0120'}",
+    "expected_text": "{'word':'\u0120\u0120\u0120\u0120'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u0120\u0120\u0120\u0120"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\u0120\u0120\u0120\u0120\"}",
+      "strategies": [
+        "fix_quotes"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-combined-2",
+    "strategy": "fix_encoding",
+    "text": "{word:'\u0120\u0120\u0120\u0120'}",
+    "expected_text": "{word:'\u0120\u0120\u0120\u0120'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u0120\u0120\u0120\u0120"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\u0120\u0120\u0120\u0120\"}",
+      "strategies": [
+        "fix_quotes",
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-3-root",
+    "strategy": "fix_encoding",
+    "text": "\"https://example.test/\u0120\"",
+    "expected_text": "\"https://example.test/\u0120\"",
+    "source_valid": true,
+    "valid": true,
+    "data": "https://example.test/\u0120",
+    "public": {
+      "valid": true,
+      "data": "https://example.test/\u0120",
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-3-object",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\"https://example.test/\u0120\"}",
+    "expected_text": "{\"word\":\"https://example.test/\u0120\"}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "word": "https://example.test/\u0120"
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "https://example.test/\u0120"
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-3-array",
+    "strategy": "fix_encoding",
+    "text": "[\"https://example.test/\u0120\"]",
+    "expected_text": "[\"https://example.test/\u0120\"]",
+    "source_valid": true,
+    "valid": true,
+    "data": [
+      "https://example.test/\u0120"
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        "https://example.test/\u0120"
+      ],
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-3-key",
+    "strategy": "fix_encoding",
+    "text": "{\"https://example.test/\u0120\":1}",
+    "expected_text": "{\"https://example.test/\u0120\":1}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "https://example.test/\u0120": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "https://example.test/\u0120": 1
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-bare-3",
+    "strategy": "fix_encoding",
+    "text": "{word:\"https://example.test/\u0120\"}",
+    "expected_text": "{word:\"https://example.test/\u0120\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "https://example.test/\u0120"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"https://example.test/\u0120\"}",
+      "strategies": [
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-single-3",
+    "strategy": "fix_encoding",
+    "text": "{'word':'https://example.test/\u0120'}",
+    "expected_text": "{'word':'https://example.test/\u0120'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "https://example.test/\u0120"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"https://example.test/\u0120\"}",
+      "strategies": [
+        "fix_quotes"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-combined-3",
+    "strategy": "fix_encoding",
+    "text": "{word:'https://example.test/\u0120'}",
+    "expected_text": "{word:'https://example.test/\u0120'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "https://example.test/\u0120"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"https://example.test/\u0120\"}",
+      "strategies": [
+        "fix_quotes",
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-4-root",
+    "strategy": "fix_encoding",
+    "text": "\"say \\\"\u0120\\\"\"",
+    "expected_text": "\"say \\\"\u0120\\\"\"",
+    "source_valid": true,
+    "valid": true,
+    "data": "say \"\u0120\"",
+    "public": {
+      "valid": true,
+      "data": "say \"\u0120\"",
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-4-object",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\"say \\\"\u0120\\\"\"}",
+    "expected_text": "{\"word\":\"say \\\"\u0120\\\"\"}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "word": "say \"\u0120\""
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "say \"\u0120\""
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-4-array",
+    "strategy": "fix_encoding",
+    "text": "[\"say \\\"\u0120\\\"\"]",
+    "expected_text": "[\"say \\\"\u0120\\\"\"]",
+    "source_valid": true,
+    "valid": true,
+    "data": [
+      "say \"\u0120\""
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        "say \"\u0120\""
+      ],
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-4-key",
+    "strategy": "fix_encoding",
+    "text": "{\"say \\\"\u0120\\\"\":1}",
+    "expected_text": "{\"say \\\"\u0120\\\"\":1}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "say \"\u0120\"": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "say \"\u0120\"": 1
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-bare-4",
+    "strategy": "fix_encoding",
+    "text": "{word:\"say \\\"\u0120\\\"\"}",
+    "expected_text": "{word:\"say \\\"\u0120\\\"\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "say \"\u0120\""
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"say \\\"\u0120\\\"\"}",
+      "strategies": [
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-single-4",
+    "strategy": "fix_encoding",
+    "text": "{'word':'say \\\"\u0120\\\"'}",
+    "expected_text": "{'word':'say \\\"\u0120\\\"'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "say \"\u0120\""
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"say \\\"\u0120\\\"\"}",
+      "strategies": [
+        "fix_quotes"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-combined-4",
+    "strategy": "fix_encoding",
+    "text": "{word:'say \\\"\u0120\\\"'}",
+    "expected_text": "{word:'say \\\"\u0120\\\"'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "say \"\u0120\""
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"say \\\"\u0120\\\"\"}",
+      "strategies": [
+        "fix_quotes",
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-5-root",
+    "strategy": "fix_encoding",
+    "text": "\"it's \u0120\"",
+    "expected_text": "\"it's \u0120\"",
+    "source_valid": true,
+    "valid": true,
+    "data": "it's \u0120",
+    "public": {
+      "valid": true,
+      "data": "it's \u0120",
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-5-object",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\"it's \u0120\"}",
+    "expected_text": "{\"word\":\"it's \u0120\"}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "word": "it's \u0120"
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "it's \u0120"
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-5-array",
+    "strategy": "fix_encoding",
+    "text": "[\"it's \u0120\"]",
+    "expected_text": "[\"it's \u0120\"]",
+    "source_valid": true,
+    "valid": true,
+    "data": [
+      "it's \u0120"
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        "it's \u0120"
+      ],
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-5-key",
+    "strategy": "fix_encoding",
+    "text": "{\"it's \u0120\":1}",
+    "expected_text": "{\"it's \u0120\":1}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "it's \u0120": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "it's \u0120": 1
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-bare-5",
+    "strategy": "fix_encoding",
+    "text": "{word:\"it's \u0120\"}",
+    "expected_text": "{word:\"it's \u0120\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "it's \u0120"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"it's \u0120\"}",
+      "strategies": [
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-single-5",
+    "strategy": "fix_encoding",
+    "text": "{'word':'it\\'s \u0120'}",
+    "expected_text": "{'word':'it\\'s \u0120'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "it's \u0120"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"it's \u0120\"}",
+      "strategies": [
+        "fix_quotes"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-combined-5",
+    "strategy": "fix_encoding",
+    "text": "{word:'it\\'s \u0120'}",
+    "expected_text": "{word:'it\\'s \u0120'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "it's \u0120"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"it's \u0120\"}",
+      "strategies": [
+        "fix_quotes",
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-6-root",
+    "strategy": "fix_encoding",
+    "text": "\"path\\\\\u0120\\\\\"",
+    "expected_text": "\"path\\\\\u0120\\\\\"",
+    "source_valid": true,
+    "valid": true,
+    "data": "path\\\u0120\\",
+    "public": {
+      "valid": true,
+      "data": "path\\\u0120\\",
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-6-object",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\"path\\\\\u0120\\\\\"}",
+    "expected_text": "{\"word\":\"path\\\\\u0120\\\\\"}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "word": "path\\\u0120\\"
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "path\\\u0120\\"
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-6-array",
+    "strategy": "fix_encoding",
+    "text": "[\"path\\\\\u0120\\\\\"]",
+    "expected_text": "[\"path\\\\\u0120\\\\\"]",
+    "source_valid": true,
+    "valid": true,
+    "data": [
+      "path\\\u0120\\"
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        "path\\\u0120\\"
+      ],
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-6-key",
+    "strategy": "fix_encoding",
+    "text": "{\"path\\\\\u0120\\\\\":1}",
+    "expected_text": "{\"path\\\\\u0120\\\\\":1}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "path\\\u0120\\": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "path\\\u0120\\": 1
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-bare-6",
+    "strategy": "fix_encoding",
+    "text": "{word:\"path\\\\\u0120\\\\\"}",
+    "expected_text": "{word:\"path\\\\\u0120\\\\\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "path\\\u0120\\"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"path\\\\\u0120\\\\\"}",
+      "strategies": [
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-single-6",
+    "strategy": "fix_encoding",
+    "text": "{'word':'path\\\\\u0120\\\\'}",
+    "expected_text": "{'word':'path\\\\\u0120\\\\'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "path\\\u0120\\"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"path\\\\\u0120\\\\\"}",
+      "strategies": [
+        "fix_quotes"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-combined-6",
+    "strategy": "fix_encoding",
+    "text": "{word:'path\\\\\u0120\\\\'}",
+    "expected_text": "{word:'path\\\\\u0120\\\\'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "path\\\u0120\\"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"path\\\\\u0120\\\\\"}",
+      "strategies": [
+        "fix_quotes",
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-7-root",
+    "strategy": "fix_encoding",
+    "text": "\"\\n\u0120\\t\"",
+    "expected_text": "\"\\n\u0120\\t\"",
+    "source_valid": true,
+    "valid": true,
+    "data": "\n\u0120\t",
+    "public": {
+      "valid": true,
+      "data": "\n\u0120\t",
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-7-object",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\"\\n\u0120\\t\"}",
+    "expected_text": "{\"word\":\"\\n\u0120\\t\"}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "word": "\n\u0120\t"
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\n\u0120\t"
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-7-array",
+    "strategy": "fix_encoding",
+    "text": "[\"\\n\u0120\\t\"]",
+    "expected_text": "[\"\\n\u0120\\t\"]",
+    "source_valid": true,
+    "valid": true,
+    "data": [
+      "\n\u0120\t"
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        "\n\u0120\t"
+      ],
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-7-key",
+    "strategy": "fix_encoding",
+    "text": "{\"\\n\u0120\\t\":1}",
+    "expected_text": "{\"\\n\u0120\\t\":1}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "\n\u0120\t": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "\n\u0120\t": 1
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-bare-7",
+    "strategy": "fix_encoding",
+    "text": "{word:\"\\n\u0120\\t\"}",
+    "expected_text": "{word:\"\\n\u0120\\t\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\n\u0120\t"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\\n\u0120\\t\"}",
+      "strategies": [
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-single-7",
+    "strategy": "fix_encoding",
+    "text": "{'word':'\\n\u0120\\t'}",
+    "expected_text": "{'word':'\\n\u0120\\t'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\n\u0120\t"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\\n\u0120\\t\"}",
+      "strategies": [
+        "fix_quotes"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-combined-7",
+    "strategy": "fix_encoding",
+    "text": "{word:'\\n\u0120\\t'}",
+    "expected_text": "{word:'\\n\u0120\\t'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\n\u0120\t"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\\n\u0120\\t\"}",
+      "strategies": [
+        "fix_quotes",
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-8-root",
+    "strategy": "fix_encoding",
+    "text": "\"\u010aword\"",
+    "expected_text": "\"\u010aword\"",
+    "source_valid": true,
+    "valid": true,
+    "data": "\u010aword",
+    "public": {
+      "valid": true,
+      "data": "\u010aword",
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-8-object",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\"\u010aword\"}",
+    "expected_text": "{\"word\":\"\u010aword\"}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "word": "\u010aword"
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u010aword"
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-8-array",
+    "strategy": "fix_encoding",
+    "text": "[\"\u010aword\"]",
+    "expected_text": "[\"\u010aword\"]",
+    "source_valid": true,
+    "valid": true,
+    "data": [
+      "\u010aword"
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        "\u010aword"
+      ],
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-8-key",
+    "strategy": "fix_encoding",
+    "text": "{\"\u010aword\":1}",
+    "expected_text": "{\"\u010aword\":1}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "\u010aword": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "\u010aword": 1
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-bare-8",
+    "strategy": "fix_encoding",
+    "text": "{word:\"\u010aword\"}",
+    "expected_text": "{word:\"\u010aword\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u010aword"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\u010aword\"}",
+      "strategies": [
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-single-8",
+    "strategy": "fix_encoding",
+    "text": "{'word':'\u010aword'}",
+    "expected_text": "{'word':'\u010aword'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u010aword"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\u010aword\"}",
+      "strategies": [
+        "fix_quotes"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-combined-8",
+    "strategy": "fix_encoding",
+    "text": "{word:'\u010aword'}",
+    "expected_text": "{word:'\u010aword'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u010aword"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\u010aword\"}",
+      "strategies": [
+        "fix_quotes",
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-9-root",
+    "strategy": "fix_encoding",
+    "text": "\"a\u010ab\"",
+    "expected_text": "\"a\u010ab\"",
+    "source_valid": true,
+    "valid": true,
+    "data": "a\u010ab",
+    "public": {
+      "valid": true,
+      "data": "a\u010ab",
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-9-object",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\"a\u010ab\"}",
+    "expected_text": "{\"word\":\"a\u010ab\"}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "word": "a\u010ab"
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "a\u010ab"
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-9-array",
+    "strategy": "fix_encoding",
+    "text": "[\"a\u010ab\"]",
+    "expected_text": "[\"a\u010ab\"]",
+    "source_valid": true,
+    "valid": true,
+    "data": [
+      "a\u010ab"
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        "a\u010ab"
+      ],
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-9-key",
+    "strategy": "fix_encoding",
+    "text": "{\"a\u010ab\":1}",
+    "expected_text": "{\"a\u010ab\":1}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "a\u010ab": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a\u010ab": 1
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-bare-9",
+    "strategy": "fix_encoding",
+    "text": "{word:\"a\u010ab\"}",
+    "expected_text": "{word:\"a\u010ab\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "a\u010ab"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"a\u010ab\"}",
+      "strategies": [
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-single-9",
+    "strategy": "fix_encoding",
+    "text": "{'word':'a\u010ab'}",
+    "expected_text": "{'word':'a\u010ab'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "a\u010ab"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"a\u010ab\"}",
+      "strategies": [
+        "fix_quotes"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-combined-9",
+    "strategy": "fix_encoding",
+    "text": "{word:'a\u010ab'}",
+    "expected_text": "{word:'a\u010ab'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "a\u010ab"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"a\u010ab\"}",
+      "strategies": [
+        "fix_quotes",
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-10-root",
+    "strategy": "fix_encoding",
+    "text": "\"\u010a\u010a\u010a\u010a\"",
+    "expected_text": "\"\u010a\u010a\u010a\u010a\"",
+    "source_valid": true,
+    "valid": true,
+    "data": "\u010a\u010a\u010a\u010a",
+    "public": {
+      "valid": true,
+      "data": "\u010a\u010a\u010a\u010a",
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-10-object",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\"\u010a\u010a\u010a\u010a\"}",
+    "expected_text": "{\"word\":\"\u010a\u010a\u010a\u010a\"}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "word": "\u010a\u010a\u010a\u010a"
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u010a\u010a\u010a\u010a"
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-10-array",
+    "strategy": "fix_encoding",
+    "text": "[\"\u010a\u010a\u010a\u010a\"]",
+    "expected_text": "[\"\u010a\u010a\u010a\u010a\"]",
+    "source_valid": true,
+    "valid": true,
+    "data": [
+      "\u010a\u010a\u010a\u010a"
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        "\u010a\u010a\u010a\u010a"
+      ],
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-10-key",
+    "strategy": "fix_encoding",
+    "text": "{\"\u010a\u010a\u010a\u010a\":1}",
+    "expected_text": "{\"\u010a\u010a\u010a\u010a\":1}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "\u010a\u010a\u010a\u010a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "\u010a\u010a\u010a\u010a": 1
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-bare-10",
+    "strategy": "fix_encoding",
+    "text": "{word:\"\u010a\u010a\u010a\u010a\"}",
+    "expected_text": "{word:\"\u010a\u010a\u010a\u010a\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u010a\u010a\u010a\u010a"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\u010a\u010a\u010a\u010a\"}",
+      "strategies": [
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-single-10",
+    "strategy": "fix_encoding",
+    "text": "{'word':'\u010a\u010a\u010a\u010a'}",
+    "expected_text": "{'word':'\u010a\u010a\u010a\u010a'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u010a\u010a\u010a\u010a"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\u010a\u010a\u010a\u010a\"}",
+      "strategies": [
+        "fix_quotes"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-combined-10",
+    "strategy": "fix_encoding",
+    "text": "{word:'\u010a\u010a\u010a\u010a'}",
+    "expected_text": "{word:'\u010a\u010a\u010a\u010a'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u010a\u010a\u010a\u010a"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\u010a\u010a\u010a\u010a\"}",
+      "strategies": [
+        "fix_quotes",
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-11-root",
+    "strategy": "fix_encoding",
+    "text": "\"https://example.test/\u010a\"",
+    "expected_text": "\"https://example.test/\u010a\"",
+    "source_valid": true,
+    "valid": true,
+    "data": "https://example.test/\u010a",
+    "public": {
+      "valid": true,
+      "data": "https://example.test/\u010a",
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-11-object",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\"https://example.test/\u010a\"}",
+    "expected_text": "{\"word\":\"https://example.test/\u010a\"}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "word": "https://example.test/\u010a"
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "https://example.test/\u010a"
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-11-array",
+    "strategy": "fix_encoding",
+    "text": "[\"https://example.test/\u010a\"]",
+    "expected_text": "[\"https://example.test/\u010a\"]",
+    "source_valid": true,
+    "valid": true,
+    "data": [
+      "https://example.test/\u010a"
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        "https://example.test/\u010a"
+      ],
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-11-key",
+    "strategy": "fix_encoding",
+    "text": "{\"https://example.test/\u010a\":1}",
+    "expected_text": "{\"https://example.test/\u010a\":1}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "https://example.test/\u010a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "https://example.test/\u010a": 1
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-bare-11",
+    "strategy": "fix_encoding",
+    "text": "{word:\"https://example.test/\u010a\"}",
+    "expected_text": "{word:\"https://example.test/\u010a\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "https://example.test/\u010a"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"https://example.test/\u010a\"}",
+      "strategies": [
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-single-11",
+    "strategy": "fix_encoding",
+    "text": "{'word':'https://example.test/\u010a'}",
+    "expected_text": "{'word':'https://example.test/\u010a'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "https://example.test/\u010a"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"https://example.test/\u010a\"}",
+      "strategies": [
+        "fix_quotes"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-combined-11",
+    "strategy": "fix_encoding",
+    "text": "{word:'https://example.test/\u010a'}",
+    "expected_text": "{word:'https://example.test/\u010a'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "https://example.test/\u010a"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"https://example.test/\u010a\"}",
+      "strategies": [
+        "fix_quotes",
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-12-root",
+    "strategy": "fix_encoding",
+    "text": "\"say \\\"\u010a\\\"\"",
+    "expected_text": "\"say \\\"\u010a\\\"\"",
+    "source_valid": true,
+    "valid": true,
+    "data": "say \"\u010a\"",
+    "public": {
+      "valid": true,
+      "data": "say \"\u010a\"",
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-12-object",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\"say \\\"\u010a\\\"\"}",
+    "expected_text": "{\"word\":\"say \\\"\u010a\\\"\"}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "word": "say \"\u010a\""
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "say \"\u010a\""
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-12-array",
+    "strategy": "fix_encoding",
+    "text": "[\"say \\\"\u010a\\\"\"]",
+    "expected_text": "[\"say \\\"\u010a\\\"\"]",
+    "source_valid": true,
+    "valid": true,
+    "data": [
+      "say \"\u010a\""
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        "say \"\u010a\""
+      ],
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-12-key",
+    "strategy": "fix_encoding",
+    "text": "{\"say \\\"\u010a\\\"\":1}",
+    "expected_text": "{\"say \\\"\u010a\\\"\":1}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "say \"\u010a\"": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "say \"\u010a\"": 1
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-bare-12",
+    "strategy": "fix_encoding",
+    "text": "{word:\"say \\\"\u010a\\\"\"}",
+    "expected_text": "{word:\"say \\\"\u010a\\\"\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "say \"\u010a\""
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"say \\\"\u010a\\\"\"}",
+      "strategies": [
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-single-12",
+    "strategy": "fix_encoding",
+    "text": "{'word':'say \\\"\u010a\\\"'}",
+    "expected_text": "{'word':'say \\\"\u010a\\\"'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "say \"\u010a\""
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"say \\\"\u010a\\\"\"}",
+      "strategies": [
+        "fix_quotes"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-combined-12",
+    "strategy": "fix_encoding",
+    "text": "{word:'say \\\"\u010a\\\"'}",
+    "expected_text": "{word:'say \\\"\u010a\\\"'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "say \"\u010a\""
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"say \\\"\u010a\\\"\"}",
+      "strategies": [
+        "fix_quotes",
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-13-root",
+    "strategy": "fix_encoding",
+    "text": "\"it's \u010a\"",
+    "expected_text": "\"it's \u010a\"",
+    "source_valid": true,
+    "valid": true,
+    "data": "it's \u010a",
+    "public": {
+      "valid": true,
+      "data": "it's \u010a",
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-13-object",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\"it's \u010a\"}",
+    "expected_text": "{\"word\":\"it's \u010a\"}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "word": "it's \u010a"
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "it's \u010a"
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-13-array",
+    "strategy": "fix_encoding",
+    "text": "[\"it's \u010a\"]",
+    "expected_text": "[\"it's \u010a\"]",
+    "source_valid": true,
+    "valid": true,
+    "data": [
+      "it's \u010a"
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        "it's \u010a"
+      ],
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-13-key",
+    "strategy": "fix_encoding",
+    "text": "{\"it's \u010a\":1}",
+    "expected_text": "{\"it's \u010a\":1}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "it's \u010a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "it's \u010a": 1
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-bare-13",
+    "strategy": "fix_encoding",
+    "text": "{word:\"it's \u010a\"}",
+    "expected_text": "{word:\"it's \u010a\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "it's \u010a"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"it's \u010a\"}",
+      "strategies": [
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-single-13",
+    "strategy": "fix_encoding",
+    "text": "{'word':'it\\'s \u010a'}",
+    "expected_text": "{'word':'it\\'s \u010a'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "it's \u010a"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"it's \u010a\"}",
+      "strategies": [
+        "fix_quotes"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-combined-13",
+    "strategy": "fix_encoding",
+    "text": "{word:'it\\'s \u010a'}",
+    "expected_text": "{word:'it\\'s \u010a'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "it's \u010a"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"it's \u010a\"}",
+      "strategies": [
+        "fix_quotes",
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-14-root",
+    "strategy": "fix_encoding",
+    "text": "\"path\\\\\u010a\\\\\"",
+    "expected_text": "\"path\\\\\u010a\\\\\"",
+    "source_valid": true,
+    "valid": true,
+    "data": "path\\\u010a\\",
+    "public": {
+      "valid": true,
+      "data": "path\\\u010a\\",
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-14-object",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\"path\\\\\u010a\\\\\"}",
+    "expected_text": "{\"word\":\"path\\\\\u010a\\\\\"}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "word": "path\\\u010a\\"
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "path\\\u010a\\"
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-14-array",
+    "strategy": "fix_encoding",
+    "text": "[\"path\\\\\u010a\\\\\"]",
+    "expected_text": "[\"path\\\\\u010a\\\\\"]",
+    "source_valid": true,
+    "valid": true,
+    "data": [
+      "path\\\u010a\\"
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        "path\\\u010a\\"
+      ],
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-14-key",
+    "strategy": "fix_encoding",
+    "text": "{\"path\\\\\u010a\\\\\":1}",
+    "expected_text": "{\"path\\\\\u010a\\\\\":1}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "path\\\u010a\\": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "path\\\u010a\\": 1
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-bare-14",
+    "strategy": "fix_encoding",
+    "text": "{word:\"path\\\\\u010a\\\\\"}",
+    "expected_text": "{word:\"path\\\\\u010a\\\\\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "path\\\u010a\\"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"path\\\\\u010a\\\\\"}",
+      "strategies": [
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-single-14",
+    "strategy": "fix_encoding",
+    "text": "{'word':'path\\\\\u010a\\\\'}",
+    "expected_text": "{'word':'path\\\\\u010a\\\\'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "path\\\u010a\\"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"path\\\\\u010a\\\\\"}",
+      "strategies": [
+        "fix_quotes"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-combined-14",
+    "strategy": "fix_encoding",
+    "text": "{word:'path\\\\\u010a\\\\'}",
+    "expected_text": "{word:'path\\\\\u010a\\\\'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "path\\\u010a\\"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"path\\\\\u010a\\\\\"}",
+      "strategies": [
+        "fix_quotes",
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-15-root",
+    "strategy": "fix_encoding",
+    "text": "\"\\n\u010a\\t\"",
+    "expected_text": "\"\\n\u010a\\t\"",
+    "source_valid": true,
+    "valid": true,
+    "data": "\n\u010a\t",
+    "public": {
+      "valid": true,
+      "data": "\n\u010a\t",
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-15-object",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\"\\n\u010a\\t\"}",
+    "expected_text": "{\"word\":\"\\n\u010a\\t\"}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "word": "\n\u010a\t"
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\n\u010a\t"
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-15-array",
+    "strategy": "fix_encoding",
+    "text": "[\"\\n\u010a\\t\"]",
+    "expected_text": "[\"\\n\u010a\\t\"]",
+    "source_valid": true,
+    "valid": true,
+    "data": [
+      "\n\u010a\t"
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        "\n\u010a\t"
+      ],
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-15-key",
+    "strategy": "fix_encoding",
+    "text": "{\"\\n\u010a\\t\":1}",
+    "expected_text": "{\"\\n\u010a\\t\":1}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "\n\u010a\t": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "\n\u010a\t": 1
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-bare-15",
+    "strategy": "fix_encoding",
+    "text": "{word:\"\\n\u010a\\t\"}",
+    "expected_text": "{word:\"\\n\u010a\\t\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\n\u010a\t"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\\n\u010a\\t\"}",
+      "strategies": [
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-single-15",
+    "strategy": "fix_encoding",
+    "text": "{'word':'\\n\u010a\\t'}",
+    "expected_text": "{'word':'\\n\u010a\\t'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\n\u010a\t"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\\n\u010a\\t\"}",
+      "strategies": [
+        "fix_quotes"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-combined-15",
+    "strategy": "fix_encoding",
+    "text": "{word:'\\n\u010a\\t'}",
+    "expected_text": "{word:'\\n\u010a\\t'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\n\u010a\t"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\\n\u010a\\t\"}",
+      "strategies": [
+        "fix_quotes",
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-16-root",
+    "strategy": "fix_encoding",
+    "text": "\"\u0109word\"",
+    "expected_text": "\"\u0109word\"",
+    "source_valid": true,
+    "valid": true,
+    "data": "\u0109word",
+    "public": {
+      "valid": true,
+      "data": "\u0109word",
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-16-object",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\"\u0109word\"}",
+    "expected_text": "{\"word\":\"\u0109word\"}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "word": "\u0109word"
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u0109word"
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-16-array",
+    "strategy": "fix_encoding",
+    "text": "[\"\u0109word\"]",
+    "expected_text": "[\"\u0109word\"]",
+    "source_valid": true,
+    "valid": true,
+    "data": [
+      "\u0109word"
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        "\u0109word"
+      ],
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-16-key",
+    "strategy": "fix_encoding",
+    "text": "{\"\u0109word\":1}",
+    "expected_text": "{\"\u0109word\":1}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "\u0109word": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "\u0109word": 1
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-bare-16",
+    "strategy": "fix_encoding",
+    "text": "{word:\"\u0109word\"}",
+    "expected_text": "{word:\"\u0109word\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u0109word"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\u0109word\"}",
+      "strategies": [
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-single-16",
+    "strategy": "fix_encoding",
+    "text": "{'word':'\u0109word'}",
+    "expected_text": "{'word':'\u0109word'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u0109word"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\u0109word\"}",
+      "strategies": [
+        "fix_quotes"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-combined-16",
+    "strategy": "fix_encoding",
+    "text": "{word:'\u0109word'}",
+    "expected_text": "{word:'\u0109word'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u0109word"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\u0109word\"}",
+      "strategies": [
+        "fix_quotes",
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-17-root",
+    "strategy": "fix_encoding",
+    "text": "\"a\u0109b\"",
+    "expected_text": "\"a\u0109b\"",
+    "source_valid": true,
+    "valid": true,
+    "data": "a\u0109b",
+    "public": {
+      "valid": true,
+      "data": "a\u0109b",
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-17-object",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\"a\u0109b\"}",
+    "expected_text": "{\"word\":\"a\u0109b\"}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "word": "a\u0109b"
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "a\u0109b"
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-17-array",
+    "strategy": "fix_encoding",
+    "text": "[\"a\u0109b\"]",
+    "expected_text": "[\"a\u0109b\"]",
+    "source_valid": true,
+    "valid": true,
+    "data": [
+      "a\u0109b"
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        "a\u0109b"
+      ],
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-17-key",
+    "strategy": "fix_encoding",
+    "text": "{\"a\u0109b\":1}",
+    "expected_text": "{\"a\u0109b\":1}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "a\u0109b": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a\u0109b": 1
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-bare-17",
+    "strategy": "fix_encoding",
+    "text": "{word:\"a\u0109b\"}",
+    "expected_text": "{word:\"a\u0109b\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "a\u0109b"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"a\u0109b\"}",
+      "strategies": [
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-single-17",
+    "strategy": "fix_encoding",
+    "text": "{'word':'a\u0109b'}",
+    "expected_text": "{'word':'a\u0109b'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "a\u0109b"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"a\u0109b\"}",
+      "strategies": [
+        "fix_quotes"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-combined-17",
+    "strategy": "fix_encoding",
+    "text": "{word:'a\u0109b'}",
+    "expected_text": "{word:'a\u0109b'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "a\u0109b"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"a\u0109b\"}",
+      "strategies": [
+        "fix_quotes",
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-18-root",
+    "strategy": "fix_encoding",
+    "text": "\"\u0109\u0109\u0109\u0109\"",
+    "expected_text": "\"\u0109\u0109\u0109\u0109\"",
+    "source_valid": true,
+    "valid": true,
+    "data": "\u0109\u0109\u0109\u0109",
+    "public": {
+      "valid": true,
+      "data": "\u0109\u0109\u0109\u0109",
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-18-object",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\"\u0109\u0109\u0109\u0109\"}",
+    "expected_text": "{\"word\":\"\u0109\u0109\u0109\u0109\"}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "word": "\u0109\u0109\u0109\u0109"
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u0109\u0109\u0109\u0109"
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-18-array",
+    "strategy": "fix_encoding",
+    "text": "[\"\u0109\u0109\u0109\u0109\"]",
+    "expected_text": "[\"\u0109\u0109\u0109\u0109\"]",
+    "source_valid": true,
+    "valid": true,
+    "data": [
+      "\u0109\u0109\u0109\u0109"
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        "\u0109\u0109\u0109\u0109"
+      ],
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-18-key",
+    "strategy": "fix_encoding",
+    "text": "{\"\u0109\u0109\u0109\u0109\":1}",
+    "expected_text": "{\"\u0109\u0109\u0109\u0109\":1}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "\u0109\u0109\u0109\u0109": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "\u0109\u0109\u0109\u0109": 1
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-bare-18",
+    "strategy": "fix_encoding",
+    "text": "{word:\"\u0109\u0109\u0109\u0109\"}",
+    "expected_text": "{word:\"\u0109\u0109\u0109\u0109\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u0109\u0109\u0109\u0109"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\u0109\u0109\u0109\u0109\"}",
+      "strategies": [
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-single-18",
+    "strategy": "fix_encoding",
+    "text": "{'word':'\u0109\u0109\u0109\u0109'}",
+    "expected_text": "{'word':'\u0109\u0109\u0109\u0109'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u0109\u0109\u0109\u0109"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\u0109\u0109\u0109\u0109\"}",
+      "strategies": [
+        "fix_quotes"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-combined-18",
+    "strategy": "fix_encoding",
+    "text": "{word:'\u0109\u0109\u0109\u0109'}",
+    "expected_text": "{word:'\u0109\u0109\u0109\u0109'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u0109\u0109\u0109\u0109"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\u0109\u0109\u0109\u0109\"}",
+      "strategies": [
+        "fix_quotes",
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-19-root",
+    "strategy": "fix_encoding",
+    "text": "\"https://example.test/\u0109\"",
+    "expected_text": "\"https://example.test/\u0109\"",
+    "source_valid": true,
+    "valid": true,
+    "data": "https://example.test/\u0109",
+    "public": {
+      "valid": true,
+      "data": "https://example.test/\u0109",
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-19-object",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\"https://example.test/\u0109\"}",
+    "expected_text": "{\"word\":\"https://example.test/\u0109\"}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "word": "https://example.test/\u0109"
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "https://example.test/\u0109"
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-19-array",
+    "strategy": "fix_encoding",
+    "text": "[\"https://example.test/\u0109\"]",
+    "expected_text": "[\"https://example.test/\u0109\"]",
+    "source_valid": true,
+    "valid": true,
+    "data": [
+      "https://example.test/\u0109"
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        "https://example.test/\u0109"
+      ],
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-19-key",
+    "strategy": "fix_encoding",
+    "text": "{\"https://example.test/\u0109\":1}",
+    "expected_text": "{\"https://example.test/\u0109\":1}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "https://example.test/\u0109": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "https://example.test/\u0109": 1
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-bare-19",
+    "strategy": "fix_encoding",
+    "text": "{word:\"https://example.test/\u0109\"}",
+    "expected_text": "{word:\"https://example.test/\u0109\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "https://example.test/\u0109"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"https://example.test/\u0109\"}",
+      "strategies": [
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-single-19",
+    "strategy": "fix_encoding",
+    "text": "{'word':'https://example.test/\u0109'}",
+    "expected_text": "{'word':'https://example.test/\u0109'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "https://example.test/\u0109"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"https://example.test/\u0109\"}",
+      "strategies": [
+        "fix_quotes"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-combined-19",
+    "strategy": "fix_encoding",
+    "text": "{word:'https://example.test/\u0109'}",
+    "expected_text": "{word:'https://example.test/\u0109'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "https://example.test/\u0109"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"https://example.test/\u0109\"}",
+      "strategies": [
+        "fix_quotes",
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-20-root",
+    "strategy": "fix_encoding",
+    "text": "\"say \\\"\u0109\\\"\"",
+    "expected_text": "\"say \\\"\u0109\\\"\"",
+    "source_valid": true,
+    "valid": true,
+    "data": "say \"\u0109\"",
+    "public": {
+      "valid": true,
+      "data": "say \"\u0109\"",
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-20-object",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\"say \\\"\u0109\\\"\"}",
+    "expected_text": "{\"word\":\"say \\\"\u0109\\\"\"}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "word": "say \"\u0109\""
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "say \"\u0109\""
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-20-array",
+    "strategy": "fix_encoding",
+    "text": "[\"say \\\"\u0109\\\"\"]",
+    "expected_text": "[\"say \\\"\u0109\\\"\"]",
+    "source_valid": true,
+    "valid": true,
+    "data": [
+      "say \"\u0109\""
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        "say \"\u0109\""
+      ],
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-20-key",
+    "strategy": "fix_encoding",
+    "text": "{\"say \\\"\u0109\\\"\":1}",
+    "expected_text": "{\"say \\\"\u0109\\\"\":1}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "say \"\u0109\"": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "say \"\u0109\"": 1
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-bare-20",
+    "strategy": "fix_encoding",
+    "text": "{word:\"say \\\"\u0109\\\"\"}",
+    "expected_text": "{word:\"say \\\"\u0109\\\"\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "say \"\u0109\""
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"say \\\"\u0109\\\"\"}",
+      "strategies": [
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-single-20",
+    "strategy": "fix_encoding",
+    "text": "{'word':'say \\\"\u0109\\\"'}",
+    "expected_text": "{'word':'say \\\"\u0109\\\"'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "say \"\u0109\""
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"say \\\"\u0109\\\"\"}",
+      "strategies": [
+        "fix_quotes"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-combined-20",
+    "strategy": "fix_encoding",
+    "text": "{word:'say \\\"\u0109\\\"'}",
+    "expected_text": "{word:'say \\\"\u0109\\\"'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "say \"\u0109\""
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"say \\\"\u0109\\\"\"}",
+      "strategies": [
+        "fix_quotes",
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-21-root",
+    "strategy": "fix_encoding",
+    "text": "\"it's \u0109\"",
+    "expected_text": "\"it's \u0109\"",
+    "source_valid": true,
+    "valid": true,
+    "data": "it's \u0109",
+    "public": {
+      "valid": true,
+      "data": "it's \u0109",
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-21-object",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\"it's \u0109\"}",
+    "expected_text": "{\"word\":\"it's \u0109\"}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "word": "it's \u0109"
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "it's \u0109"
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-21-array",
+    "strategy": "fix_encoding",
+    "text": "[\"it's \u0109\"]",
+    "expected_text": "[\"it's \u0109\"]",
+    "source_valid": true,
+    "valid": true,
+    "data": [
+      "it's \u0109"
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        "it's \u0109"
+      ],
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-21-key",
+    "strategy": "fix_encoding",
+    "text": "{\"it's \u0109\":1}",
+    "expected_text": "{\"it's \u0109\":1}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "it's \u0109": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "it's \u0109": 1
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-bare-21",
+    "strategy": "fix_encoding",
+    "text": "{word:\"it's \u0109\"}",
+    "expected_text": "{word:\"it's \u0109\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "it's \u0109"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"it's \u0109\"}",
+      "strategies": [
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-single-21",
+    "strategy": "fix_encoding",
+    "text": "{'word':'it\\'s \u0109'}",
+    "expected_text": "{'word':'it\\'s \u0109'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "it's \u0109"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"it's \u0109\"}",
+      "strategies": [
+        "fix_quotes"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-combined-21",
+    "strategy": "fix_encoding",
+    "text": "{word:'it\\'s \u0109'}",
+    "expected_text": "{word:'it\\'s \u0109'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "it's \u0109"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"it's \u0109\"}",
+      "strategies": [
+        "fix_quotes",
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-22-root",
+    "strategy": "fix_encoding",
+    "text": "\"path\\\\\u0109\\\\\"",
+    "expected_text": "\"path\\\\\u0109\\\\\"",
+    "source_valid": true,
+    "valid": true,
+    "data": "path\\\u0109\\",
+    "public": {
+      "valid": true,
+      "data": "path\\\u0109\\",
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-22-object",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\"path\\\\\u0109\\\\\"}",
+    "expected_text": "{\"word\":\"path\\\\\u0109\\\\\"}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "word": "path\\\u0109\\"
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "path\\\u0109\\"
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-22-array",
+    "strategy": "fix_encoding",
+    "text": "[\"path\\\\\u0109\\\\\"]",
+    "expected_text": "[\"path\\\\\u0109\\\\\"]",
+    "source_valid": true,
+    "valid": true,
+    "data": [
+      "path\\\u0109\\"
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        "path\\\u0109\\"
+      ],
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-22-key",
+    "strategy": "fix_encoding",
+    "text": "{\"path\\\\\u0109\\\\\":1}",
+    "expected_text": "{\"path\\\\\u0109\\\\\":1}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "path\\\u0109\\": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "path\\\u0109\\": 1
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-bare-22",
+    "strategy": "fix_encoding",
+    "text": "{word:\"path\\\\\u0109\\\\\"}",
+    "expected_text": "{word:\"path\\\\\u0109\\\\\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "path\\\u0109\\"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"path\\\\\u0109\\\\\"}",
+      "strategies": [
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-single-22",
+    "strategy": "fix_encoding",
+    "text": "{'word':'path\\\\\u0109\\\\'}",
+    "expected_text": "{'word':'path\\\\\u0109\\\\'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "path\\\u0109\\"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"path\\\\\u0109\\\\\"}",
+      "strategies": [
+        "fix_quotes"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-combined-22",
+    "strategy": "fix_encoding",
+    "text": "{word:'path\\\\\u0109\\\\'}",
+    "expected_text": "{word:'path\\\\\u0109\\\\'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "path\\\u0109\\"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"path\\\\\u0109\\\\\"}",
+      "strategies": [
+        "fix_quotes",
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-23-root",
+    "strategy": "fix_encoding",
+    "text": "\"\\n\u0109\\t\"",
+    "expected_text": "\"\\n\u0109\\t\"",
+    "source_valid": true,
+    "valid": true,
+    "data": "\n\u0109\t",
+    "public": {
+      "valid": true,
+      "data": "\n\u0109\t",
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-23-object",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\"\\n\u0109\\t\"}",
+    "expected_text": "{\"word\":\"\\n\u0109\\t\"}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "word": "\n\u0109\t"
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\n\u0109\t"
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-23-array",
+    "strategy": "fix_encoding",
+    "text": "[\"\\n\u0109\\t\"]",
+    "expected_text": "[\"\\n\u0109\\t\"]",
+    "source_valid": true,
+    "valid": true,
+    "data": [
+      "\n\u0109\t"
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        "\n\u0109\t"
+      ],
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-23-key",
+    "strategy": "fix_encoding",
+    "text": "{\"\\n\u0109\\t\":1}",
+    "expected_text": "{\"\\n\u0109\\t\":1}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "\n\u0109\t": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "\n\u0109\t": 1
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-bare-23",
+    "strategy": "fix_encoding",
+    "text": "{word:\"\\n\u0109\\t\"}",
+    "expected_text": "{word:\"\\n\u0109\\t\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\n\u0109\t"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\\n\u0109\\t\"}",
+      "strategies": [
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-single-23",
+    "strategy": "fix_encoding",
+    "text": "{'word':'\\n\u0109\\t'}",
+    "expected_text": "{'word':'\\n\u0109\\t'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\n\u0109\t"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\\n\u0109\\t\"}",
+      "strategies": [
+        "fix_quotes"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-combined-23",
+    "strategy": "fix_encoding",
+    "text": "{word:'\\n\u0109\\t'}",
+    "expected_text": "{word:'\\n\u0109\\t'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\n\u0109\t"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\\n\u0109\\t\"}",
+      "strategies": [
+        "fix_quotes",
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-24-root",
+    "strategy": "fix_encoding",
+    "text": "\"\u010dword\"",
+    "expected_text": "\"\u010dword\"",
+    "source_valid": true,
+    "valid": true,
+    "data": "\u010dword",
+    "public": {
+      "valid": true,
+      "data": "\u010dword",
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-24-object",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\"\u010dword\"}",
+    "expected_text": "{\"word\":\"\u010dword\"}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "word": "\u010dword"
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u010dword"
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-24-array",
+    "strategy": "fix_encoding",
+    "text": "[\"\u010dword\"]",
+    "expected_text": "[\"\u010dword\"]",
+    "source_valid": true,
+    "valid": true,
+    "data": [
+      "\u010dword"
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        "\u010dword"
+      ],
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-24-key",
+    "strategy": "fix_encoding",
+    "text": "{\"\u010dword\":1}",
+    "expected_text": "{\"\u010dword\":1}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "\u010dword": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "\u010dword": 1
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-bare-24",
+    "strategy": "fix_encoding",
+    "text": "{word:\"\u010dword\"}",
+    "expected_text": "{word:\"\u010dword\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u010dword"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\u010dword\"}",
+      "strategies": [
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-single-24",
+    "strategy": "fix_encoding",
+    "text": "{'word':'\u010dword'}",
+    "expected_text": "{'word':'\u010dword'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u010dword"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\u010dword\"}",
+      "strategies": [
+        "fix_quotes"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-combined-24",
+    "strategy": "fix_encoding",
+    "text": "{word:'\u010dword'}",
+    "expected_text": "{word:'\u010dword'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u010dword"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\u010dword\"}",
+      "strategies": [
+        "fix_quotes",
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-25-root",
+    "strategy": "fix_encoding",
+    "text": "\"a\u010db\"",
+    "expected_text": "\"a\u010db\"",
+    "source_valid": true,
+    "valid": true,
+    "data": "a\u010db",
+    "public": {
+      "valid": true,
+      "data": "a\u010db",
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-25-object",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\"a\u010db\"}",
+    "expected_text": "{\"word\":\"a\u010db\"}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "word": "a\u010db"
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "a\u010db"
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-25-array",
+    "strategy": "fix_encoding",
+    "text": "[\"a\u010db\"]",
+    "expected_text": "[\"a\u010db\"]",
+    "source_valid": true,
+    "valid": true,
+    "data": [
+      "a\u010db"
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        "a\u010db"
+      ],
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-25-key",
+    "strategy": "fix_encoding",
+    "text": "{\"a\u010db\":1}",
+    "expected_text": "{\"a\u010db\":1}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "a\u010db": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a\u010db": 1
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-bare-25",
+    "strategy": "fix_encoding",
+    "text": "{word:\"a\u010db\"}",
+    "expected_text": "{word:\"a\u010db\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "a\u010db"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"a\u010db\"}",
+      "strategies": [
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-single-25",
+    "strategy": "fix_encoding",
+    "text": "{'word':'a\u010db'}",
+    "expected_text": "{'word':'a\u010db'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "a\u010db"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"a\u010db\"}",
+      "strategies": [
+        "fix_quotes"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-combined-25",
+    "strategy": "fix_encoding",
+    "text": "{word:'a\u010db'}",
+    "expected_text": "{word:'a\u010db'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "a\u010db"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"a\u010db\"}",
+      "strategies": [
+        "fix_quotes",
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-26-root",
+    "strategy": "fix_encoding",
+    "text": "\"\u010d\u010d\u010d\u010d\"",
+    "expected_text": "\"\u010d\u010d\u010d\u010d\"",
+    "source_valid": true,
+    "valid": true,
+    "data": "\u010d\u010d\u010d\u010d",
+    "public": {
+      "valid": true,
+      "data": "\u010d\u010d\u010d\u010d",
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-26-object",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\"\u010d\u010d\u010d\u010d\"}",
+    "expected_text": "{\"word\":\"\u010d\u010d\u010d\u010d\"}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "word": "\u010d\u010d\u010d\u010d"
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u010d\u010d\u010d\u010d"
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-26-array",
+    "strategy": "fix_encoding",
+    "text": "[\"\u010d\u010d\u010d\u010d\"]",
+    "expected_text": "[\"\u010d\u010d\u010d\u010d\"]",
+    "source_valid": true,
+    "valid": true,
+    "data": [
+      "\u010d\u010d\u010d\u010d"
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        "\u010d\u010d\u010d\u010d"
+      ],
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-26-key",
+    "strategy": "fix_encoding",
+    "text": "{\"\u010d\u010d\u010d\u010d\":1}",
+    "expected_text": "{\"\u010d\u010d\u010d\u010d\":1}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "\u010d\u010d\u010d\u010d": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "\u010d\u010d\u010d\u010d": 1
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-bare-26",
+    "strategy": "fix_encoding",
+    "text": "{word:\"\u010d\u010d\u010d\u010d\"}",
+    "expected_text": "{word:\"\u010d\u010d\u010d\u010d\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u010d\u010d\u010d\u010d"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\u010d\u010d\u010d\u010d\"}",
+      "strategies": [
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-single-26",
+    "strategy": "fix_encoding",
+    "text": "{'word':'\u010d\u010d\u010d\u010d'}",
+    "expected_text": "{'word':'\u010d\u010d\u010d\u010d'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u010d\u010d\u010d\u010d"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\u010d\u010d\u010d\u010d\"}",
+      "strategies": [
+        "fix_quotes"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-combined-26",
+    "strategy": "fix_encoding",
+    "text": "{word:'\u010d\u010d\u010d\u010d'}",
+    "expected_text": "{word:'\u010d\u010d\u010d\u010d'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u010d\u010d\u010d\u010d"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\u010d\u010d\u010d\u010d\"}",
+      "strategies": [
+        "fix_quotes",
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-27-root",
+    "strategy": "fix_encoding",
+    "text": "\"https://example.test/\u010d\"",
+    "expected_text": "\"https://example.test/\u010d\"",
+    "source_valid": true,
+    "valid": true,
+    "data": "https://example.test/\u010d",
+    "public": {
+      "valid": true,
+      "data": "https://example.test/\u010d",
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-27-object",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\"https://example.test/\u010d\"}",
+    "expected_text": "{\"word\":\"https://example.test/\u010d\"}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "word": "https://example.test/\u010d"
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "https://example.test/\u010d"
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-27-array",
+    "strategy": "fix_encoding",
+    "text": "[\"https://example.test/\u010d\"]",
+    "expected_text": "[\"https://example.test/\u010d\"]",
+    "source_valid": true,
+    "valid": true,
+    "data": [
+      "https://example.test/\u010d"
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        "https://example.test/\u010d"
+      ],
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-27-key",
+    "strategy": "fix_encoding",
+    "text": "{\"https://example.test/\u010d\":1}",
+    "expected_text": "{\"https://example.test/\u010d\":1}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "https://example.test/\u010d": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "https://example.test/\u010d": 1
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-bare-27",
+    "strategy": "fix_encoding",
+    "text": "{word:\"https://example.test/\u010d\"}",
+    "expected_text": "{word:\"https://example.test/\u010d\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "https://example.test/\u010d"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"https://example.test/\u010d\"}",
+      "strategies": [
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-single-27",
+    "strategy": "fix_encoding",
+    "text": "{'word':'https://example.test/\u010d'}",
+    "expected_text": "{'word':'https://example.test/\u010d'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "https://example.test/\u010d"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"https://example.test/\u010d\"}",
+      "strategies": [
+        "fix_quotes"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-combined-27",
+    "strategy": "fix_encoding",
+    "text": "{word:'https://example.test/\u010d'}",
+    "expected_text": "{word:'https://example.test/\u010d'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "https://example.test/\u010d"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"https://example.test/\u010d\"}",
+      "strategies": [
+        "fix_quotes",
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-28-root",
+    "strategy": "fix_encoding",
+    "text": "\"say \\\"\u010d\\\"\"",
+    "expected_text": "\"say \\\"\u010d\\\"\"",
+    "source_valid": true,
+    "valid": true,
+    "data": "say \"\u010d\"",
+    "public": {
+      "valid": true,
+      "data": "say \"\u010d\"",
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-28-object",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\"say \\\"\u010d\\\"\"}",
+    "expected_text": "{\"word\":\"say \\\"\u010d\\\"\"}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "word": "say \"\u010d\""
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "say \"\u010d\""
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-28-array",
+    "strategy": "fix_encoding",
+    "text": "[\"say \\\"\u010d\\\"\"]",
+    "expected_text": "[\"say \\\"\u010d\\\"\"]",
+    "source_valid": true,
+    "valid": true,
+    "data": [
+      "say \"\u010d\""
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        "say \"\u010d\""
+      ],
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-28-key",
+    "strategy": "fix_encoding",
+    "text": "{\"say \\\"\u010d\\\"\":1}",
+    "expected_text": "{\"say \\\"\u010d\\\"\":1}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "say \"\u010d\"": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "say \"\u010d\"": 1
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-bare-28",
+    "strategy": "fix_encoding",
+    "text": "{word:\"say \\\"\u010d\\\"\"}",
+    "expected_text": "{word:\"say \\\"\u010d\\\"\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "say \"\u010d\""
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"say \\\"\u010d\\\"\"}",
+      "strategies": [
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-single-28",
+    "strategy": "fix_encoding",
+    "text": "{'word':'say \\\"\u010d\\\"'}",
+    "expected_text": "{'word':'say \\\"\u010d\\\"'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "say \"\u010d\""
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"say \\\"\u010d\\\"\"}",
+      "strategies": [
+        "fix_quotes"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-combined-28",
+    "strategy": "fix_encoding",
+    "text": "{word:'say \\\"\u010d\\\"'}",
+    "expected_text": "{word:'say \\\"\u010d\\\"'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "say \"\u010d\""
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"say \\\"\u010d\\\"\"}",
+      "strategies": [
+        "fix_quotes",
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-29-root",
+    "strategy": "fix_encoding",
+    "text": "\"it's \u010d\"",
+    "expected_text": "\"it's \u010d\"",
+    "source_valid": true,
+    "valid": true,
+    "data": "it's \u010d",
+    "public": {
+      "valid": true,
+      "data": "it's \u010d",
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-29-object",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\"it's \u010d\"}",
+    "expected_text": "{\"word\":\"it's \u010d\"}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "word": "it's \u010d"
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "it's \u010d"
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-29-array",
+    "strategy": "fix_encoding",
+    "text": "[\"it's \u010d\"]",
+    "expected_text": "[\"it's \u010d\"]",
+    "source_valid": true,
+    "valid": true,
+    "data": [
+      "it's \u010d"
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        "it's \u010d"
+      ],
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-29-key",
+    "strategy": "fix_encoding",
+    "text": "{\"it's \u010d\":1}",
+    "expected_text": "{\"it's \u010d\":1}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "it's \u010d": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "it's \u010d": 1
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-bare-29",
+    "strategy": "fix_encoding",
+    "text": "{word:\"it's \u010d\"}",
+    "expected_text": "{word:\"it's \u010d\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "it's \u010d"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"it's \u010d\"}",
+      "strategies": [
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-single-29",
+    "strategy": "fix_encoding",
+    "text": "{'word':'it\\'s \u010d'}",
+    "expected_text": "{'word':'it\\'s \u010d'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "it's \u010d"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"it's \u010d\"}",
+      "strategies": [
+        "fix_quotes"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-combined-29",
+    "strategy": "fix_encoding",
+    "text": "{word:'it\\'s \u010d'}",
+    "expected_text": "{word:'it\\'s \u010d'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "it's \u010d"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"it's \u010d\"}",
+      "strategies": [
+        "fix_quotes",
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-30-root",
+    "strategy": "fix_encoding",
+    "text": "\"path\\\\\u010d\\\\\"",
+    "expected_text": "\"path\\\\\u010d\\\\\"",
+    "source_valid": true,
+    "valid": true,
+    "data": "path\\\u010d\\",
+    "public": {
+      "valid": true,
+      "data": "path\\\u010d\\",
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-30-object",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\"path\\\\\u010d\\\\\"}",
+    "expected_text": "{\"word\":\"path\\\\\u010d\\\\\"}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "word": "path\\\u010d\\"
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "path\\\u010d\\"
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-30-array",
+    "strategy": "fix_encoding",
+    "text": "[\"path\\\\\u010d\\\\\"]",
+    "expected_text": "[\"path\\\\\u010d\\\\\"]",
+    "source_valid": true,
+    "valid": true,
+    "data": [
+      "path\\\u010d\\"
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        "path\\\u010d\\"
+      ],
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-30-key",
+    "strategy": "fix_encoding",
+    "text": "{\"path\\\\\u010d\\\\\":1}",
+    "expected_text": "{\"path\\\\\u010d\\\\\":1}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "path\\\u010d\\": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "path\\\u010d\\": 1
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-bare-30",
+    "strategy": "fix_encoding",
+    "text": "{word:\"path\\\\\u010d\\\\\"}",
+    "expected_text": "{word:\"path\\\\\u010d\\\\\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "path\\\u010d\\"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"path\\\\\u010d\\\\\"}",
+      "strategies": [
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-single-30",
+    "strategy": "fix_encoding",
+    "text": "{'word':'path\\\\\u010d\\\\'}",
+    "expected_text": "{'word':'path\\\\\u010d\\\\'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "path\\\u010d\\"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"path\\\\\u010d\\\\\"}",
+      "strategies": [
+        "fix_quotes"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-combined-30",
+    "strategy": "fix_encoding",
+    "text": "{word:'path\\\\\u010d\\\\'}",
+    "expected_text": "{word:'path\\\\\u010d\\\\'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "path\\\u010d\\"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"path\\\\\u010d\\\\\"}",
+      "strategies": [
+        "fix_quotes",
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-31-root",
+    "strategy": "fix_encoding",
+    "text": "\"\\n\u010d\\t\"",
+    "expected_text": "\"\\n\u010d\\t\"",
+    "source_valid": true,
+    "valid": true,
+    "data": "\n\u010d\t",
+    "public": {
+      "valid": true,
+      "data": "\n\u010d\t",
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-31-object",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\"\\n\u010d\\t\"}",
+    "expected_text": "{\"word\":\"\\n\u010d\\t\"}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "word": "\n\u010d\t"
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\n\u010d\t"
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-31-array",
+    "strategy": "fix_encoding",
+    "text": "[\"\\n\u010d\\t\"]",
+    "expected_text": "[\"\\n\u010d\\t\"]",
+    "source_valid": true,
+    "valid": true,
+    "data": [
+      "\n\u010d\t"
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        "\n\u010d\t"
+      ],
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-31-key",
+    "strategy": "fix_encoding",
+    "text": "{\"\\n\u010d\\t\":1}",
+    "expected_text": "{\"\\n\u010d\\t\":1}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "\n\u010d\t": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "\n\u010d\t": 1
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-bare-31",
+    "strategy": "fix_encoding",
+    "text": "{word:\"\\n\u010d\\t\"}",
+    "expected_text": "{word:\"\\n\u010d\\t\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\n\u010d\t"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\\n\u010d\\t\"}",
+      "strategies": [
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-single-31",
+    "strategy": "fix_encoding",
+    "text": "{'word':'\\n\u010d\\t'}",
+    "expected_text": "{'word':'\\n\u010d\\t'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\n\u010d\t"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\\n\u010d\\t\"}",
+      "strategies": [
+        "fix_quotes"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-combined-31",
+    "strategy": "fix_encoding",
+    "text": "{word:'\\n\u010d\\t'}",
+    "expected_text": "{word:'\\n\u010d\\t'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\n\u010d\t"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\\n\u010d\\t\"}",
+      "strategies": [
+        "fix_quotes",
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-32-root",
+    "strategy": "fix_encoding",
+    "text": "\"\u0120\u010a\u0109\u010d\"",
+    "expected_text": "\"\u0120\u010a\u0109\u010d\"",
+    "source_valid": true,
+    "valid": true,
+    "data": "\u0120\u010a\u0109\u010d",
+    "public": {
+      "valid": true,
+      "data": "\u0120\u010a\u0109\u010d",
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-32-object",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\"\u0120\u010a\u0109\u010d\"}",
+    "expected_text": "{\"word\":\"\u0120\u010a\u0109\u010d\"}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "word": "\u0120\u010a\u0109\u010d"
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u0120\u010a\u0109\u010d"
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-32-array",
+    "strategy": "fix_encoding",
+    "text": "[\"\u0120\u010a\u0109\u010d\"]",
+    "expected_text": "[\"\u0120\u010a\u0109\u010d\"]",
+    "source_valid": true,
+    "valid": true,
+    "data": [
+      "\u0120\u010a\u0109\u010d"
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        "\u0120\u010a\u0109\u010d"
+      ],
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-32-key",
+    "strategy": "fix_encoding",
+    "text": "{\"\u0120\u010a\u0109\u010d\":1}",
+    "expected_text": "{\"\u0120\u010a\u0109\u010d\":1}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "\u0120\u010a\u0109\u010d": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "\u0120\u010a\u0109\u010d": 1
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-bare-32",
+    "strategy": "fix_encoding",
+    "text": "{word:\"\u0120\u010a\u0109\u010d\"}",
+    "expected_text": "{word:\"\u0120\u010a\u0109\u010d\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u0120\u010a\u0109\u010d"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\u0120\u010a\u0109\u010d\"}",
+      "strategies": [
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-single-32",
+    "strategy": "fix_encoding",
+    "text": "{'word':'\u0120\u010a\u0109\u010d'}",
+    "expected_text": "{'word':'\u0120\u010a\u0109\u010d'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u0120\u010a\u0109\u010d"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\u0120\u010a\u0109\u010d\"}",
+      "strategies": [
+        "fix_quotes"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-combined-32",
+    "strategy": "fix_encoding",
+    "text": "{word:'\u0120\u010a\u0109\u010d'}",
+    "expected_text": "{word:'\u0120\u010a\u0109\u010d'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u0120\u010a\u0109\u010d"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\u0120\u010a\u0109\u010d\"}",
+      "strategies": [
+        "fix_quotes",
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-33-root",
+    "strategy": "fix_encoding",
+    "text": "\"literal : {key: \\\"\u0120\\\"}\"",
+    "expected_text": "\"literal : {key: \\\"\u0120\\\"}\"",
+    "source_valid": true,
+    "valid": true,
+    "data": "literal : {key: \"\u0120\"}",
+    "public": {
+      "valid": true,
+      "data": "literal : {key: \"\u0120\"}",
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-33-object",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\"literal : {key: \\\"\u0120\\\"}\"}",
+    "expected_text": "{\"word\":\"literal : {key: \\\"\u0120\\\"}\"}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "word": "literal : {key: \"\u0120\"}"
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "literal : {key: \"\u0120\"}"
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-33-array",
+    "strategy": "fix_encoding",
+    "text": "[\"literal : {key: \\\"\u0120\\\"}\"]",
+    "expected_text": "[\"literal : {key: \\\"\u0120\\\"}\"]",
+    "source_valid": true,
+    "valid": true,
+    "data": [
+      "literal : {key: \"\u0120\"}"
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        "literal : {key: \"\u0120\"}"
+      ],
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-33-key",
+    "strategy": "fix_encoding",
+    "text": "{\"literal : {key: \\\"\u0120\\\"}\":1}",
+    "expected_text": "{\"literal : {key: \\\"\u0120\\\"}\":1}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "literal : {key: \"\u0120\"}": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "literal : {key: \"\u0120\"}": 1
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-bare-33",
+    "strategy": "fix_encoding",
+    "text": "{word:\"literal : {key: \\\"\u0120\\\"}\"}",
+    "expected_text": "{word:\"literal : {key: \\\"\u0120\\\"}\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "literal : {key: \"\u0120\"}"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"literal : {key: \\\"\u0120\\\"}\"}",
+      "strategies": [
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-single-33",
+    "strategy": "fix_encoding",
+    "text": "{'word':'literal : {key: \\\"\u0120\\\"}'}",
+    "expected_text": "{'word':'literal : {key: \\\"\u0120\\\"}'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "literal : {key: \"\u0120\"}"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"literal : {key: \\\"\u0120\\\"}\"}",
+      "strategies": [
+        "fix_quotes"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-combined-33",
+    "strategy": "fix_encoding",
+    "text": "{word:'literal : {key: \\\"\u0120\\\"}'}",
+    "expected_text": "{word:'literal : {key: \\\"\u0120\\\"}'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "literal : {key: \"\u0120\"}"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"literal : {key: \\\"\u0120\\\"}\"}",
+      "strategies": [
+        "fix_quotes",
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-34-root",
+    "strategy": "fix_encoding",
+    "text": "\"\\\\\\\"\u010a\\\\\\\"\"",
+    "expected_text": "\"\\\\\\\"\u010a\\\\\\\"\"",
+    "source_valid": true,
+    "valid": true,
+    "data": "\\\"\u010a\\\"",
+    "public": {
+      "valid": true,
+      "data": "\\\"\u010a\\\"",
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-34-object",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\"\\\\\\\"\u010a\\\\\\\"\"}",
+    "expected_text": "{\"word\":\"\\\\\\\"\u010a\\\\\\\"\"}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "word": "\\\"\u010a\\\""
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\\\"\u010a\\\""
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-34-array",
+    "strategy": "fix_encoding",
+    "text": "[\"\\\\\\\"\u010a\\\\\\\"\"]",
+    "expected_text": "[\"\\\\\\\"\u010a\\\\\\\"\"]",
+    "source_valid": true,
+    "valid": true,
+    "data": [
+      "\\\"\u010a\\\""
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        "\\\"\u010a\\\""
+      ],
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-34-key",
+    "strategy": "fix_encoding",
+    "text": "{\"\\\\\\\"\u010a\\\\\\\"\":1}",
+    "expected_text": "{\"\\\\\\\"\u010a\\\\\\\"\":1}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "\\\"\u010a\\\"": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "\\\"\u010a\\\"": 1
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-bare-34",
+    "strategy": "fix_encoding",
+    "text": "{word:\"\\\\\\\"\u010a\\\\\\\"\"}",
+    "expected_text": "{word:\"\\\\\\\"\u010a\\\\\\\"\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\\\"\u010a\\\""
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\\\\\\\"\u010a\\\\\\\"\"}",
+      "strategies": [
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-single-34",
+    "strategy": "fix_encoding",
+    "text": "{'word':'\\\\\\\"\u010a\\\\\\\"'}",
+    "expected_text": "{'word':'\\\\\\\"\u010a\\\\\\\"'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\\\"\u010a\\\""
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\\\\\\\"\u010a\\\\\\\"\"}",
+      "strategies": [
+        "fix_quotes"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-combined-34",
+    "strategy": "fix_encoding",
+    "text": "{word:'\\\\\\\"\u010a\\\\\\\"'}",
+    "expected_text": "{word:'\\\\\\\"\u010a\\\\\\\"'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\\\"\u010a\\\""
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\\\\\\\"\u010a\\\\\\\"\"}",
+      "strategies": [
+        "fix_quotes",
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-35-root",
+    "strategy": "fix_encoding",
+    "text": "\"\u03bb \ud83d\ude80 \u0120 \u0109 \u010d \u010a\"",
+    "expected_text": "\"\u03bb \ud83d\ude80 \u0120 \u0109 \u010d \u010a\"",
+    "source_valid": true,
+    "valid": true,
+    "data": "\u03bb \ud83d\ude80 \u0120 \u0109 \u010d \u010a",
+    "public": {
+      "valid": true,
+      "data": "\u03bb \ud83d\ude80 \u0120 \u0109 \u010d \u010a",
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-35-object",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\"\u03bb \ud83d\ude80 \u0120 \u0109 \u010d \u010a\"}",
+    "expected_text": "{\"word\":\"\u03bb \ud83d\ude80 \u0120 \u0109 \u010d \u010a\"}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "word": "\u03bb \ud83d\ude80 \u0120 \u0109 \u010d \u010a"
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u03bb \ud83d\ude80 \u0120 \u0109 \u010d \u010a"
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-35-array",
+    "strategy": "fix_encoding",
+    "text": "[\"\u03bb \ud83d\ude80 \u0120 \u0109 \u010d \u010a\"]",
+    "expected_text": "[\"\u03bb \ud83d\ude80 \u0120 \u0109 \u010d \u010a\"]",
+    "source_valid": true,
+    "valid": true,
+    "data": [
+      "\u03bb \ud83d\ude80 \u0120 \u0109 \u010d \u010a"
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        "\u03bb \ud83d\ude80 \u0120 \u0109 \u010d \u010a"
+      ],
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-literal-35-key",
+    "strategy": "fix_encoding",
+    "text": "{\"\u03bb \ud83d\ude80 \u0120 \u0109 \u010d \u010a\":1}",
+    "expected_text": "{\"\u03bb \ud83d\ude80 \u0120 \u0109 \u010d \u010a\":1}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "\u03bb \ud83d\ude80 \u0120 \u0109 \u010d \u010a": 1
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "\u03bb \ud83d\ude80 \u0120 \u0109 \u010d \u010a": 1
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-bare-35",
+    "strategy": "fix_encoding",
+    "text": "{word:\"\u03bb \ud83d\ude80 \u0120 \u0109 \u010d \u010a\"}",
+    "expected_text": "{word:\"\u03bb \ud83d\ude80 \u0120 \u0109 \u010d \u010a\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u03bb \ud83d\ude80 \u0120 \u0109 \u010d \u010a"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\u03bb \ud83d\ude80 \u0120 \u0109 \u010d \u010a\"}",
+      "strategies": [
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-single-35",
+    "strategy": "fix_encoding",
+    "text": "{'word':'\u03bb \ud83d\ude80 \u0120 \u0109 \u010d \u010a'}",
+    "expected_text": "{'word':'\u03bb \ud83d\ude80 \u0120 \u0109 \u010d \u010a'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u03bb \ud83d\ude80 \u0120 \u0109 \u010d \u010a"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\u03bb \ud83d\ude80 \u0120 \u0109 \u010d \u010a\"}",
+      "strategies": [
+        "fix_quotes"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-combined-35",
+    "strategy": "fix_encoding",
+    "text": "{word:'\u03bb \ud83d\ude80 \u0120 \u0109 \u010d \u010a'}",
+    "expected_text": "{word:'\u03bb \ud83d\ude80 \u0120 \u0109 \u010d \u010a'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u03bb \ud83d\ude80 \u0120 \u0109 \u010d \u010a"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\u03bb \ud83d\ude80 \u0120 \u0109 \u010d \u010a\"}",
+      "strategies": [
+        "fix_quotes",
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-truncated-0",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\"a\u0120b",
+    "expected_text": "{\"word\":\"a\u0120b",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "a\u0120b"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"a\u0120b\"}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-truncated-1",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\"a\u010ab",
+    "expected_text": "{\"word\":\"a\u010ab",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "a\u010ab"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"a\u010ab\"}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-truncated-2",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\"a\u0109b",
+    "expected_text": "{\"word\":\"a\u0109b",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "a\u0109b"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"a\u0109b\"}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-truncated-3",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\"a\u010db",
+    "expected_text": "{\"word\":\"a\u010db",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "a\u010db"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"a\u010db\"}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-comment-0-before",
+    "strategy": "fix_encoding",
+    "text": "{/* \u0120\u010a\u0109\u010d \" */\"word\":\"\u0120\"}",
+    "expected_text": "{/* \u0120\u010a\u0109\u010d \" */\"word\":\"\u0120\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u0120"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\u0120\"}",
+      "strategies": [
+        "remove_comments"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-comment-0-after",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\"\u0120\"/* \u0120\u010a\u0109\u010d \" */}",
+    "expected_text": "{\"word\":\"\u0120\"/* \u0120\u010a\u0109\u010d \" */}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u0120"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\u0120\"}",
+      "strategies": [
+        "remove_comments"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-comment-0-leading",
+    "strategy": "fix_encoding",
+    "text": "/* \u0120\u010a\u0109\u010d \" */{\"word\":\"\u0120\"}",
+    "expected_text": "/* \u0120\u010a\u0109\u010d \" */{\"word\":\"\u0120\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u0120"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\u0120\"}",
+      "strategies": [
+        "extract_json"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-comment-0-only",
+    "strategy": "fix_encoding",
+    "text": "/* \u0120\u010a\u0109\u010d \" */",
+    "expected_text": "/* \u0120\u010a\u0109\u010d \" */",
+    "source_valid": false,
+    "valid": false,
+    "data": null
+  },
+  {
+    "name": "encoding-comment-1-before",
+    "strategy": "fix_encoding",
+    "text": "{// \u0120\u010a\u0109\u010d \"\n\"word\":\"\u0120\"}",
+    "expected_text": "{// \u0120\u010a\u0109\u010d \"\n\"word\":\"\u0120\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u0120"
+      },
+      "repaired": true,
+      "repaired_text": "{\n\"word\":\"\u0120\"}",
+      "strategies": [
+        "remove_comments"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-comment-1-after",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\"\u0120\"// \u0120\u010a\u0109\u010d \"\n}",
+    "expected_text": "{\"word\":\"\u0120\"// \u0120\u010a\u0109\u010d \"\n}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u0120"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\u0120\"\n}",
+      "strategies": [
+        "remove_comments"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-comment-1-leading",
+    "strategy": "fix_encoding",
+    "text": "// \u0120\u010a\u0109\u010d \"\n{\"word\":\"\u0120\"}",
+    "expected_text": "// \u0120\u010a\u0109\u010d \"\n{\"word\":\"\u0120\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u0120"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\u0120\"}",
+      "strategies": [
+        "extract_json"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-comment-1-only",
+    "strategy": "fix_encoding",
+    "text": "// \u0120\u010a\u0109\u010d \"\n",
+    "expected_text": "// \u0120\u010a\u0109\u010d \"\n",
+    "source_valid": false,
+    "valid": false,
+    "data": null
+  },
+  {
+    "name": "encoding-comment-2-before",
+    "strategy": "fix_encoding",
+    "text": "{// \u0120\u010a\u0109\u010d \"\r\"word\":\"\u0120\"}",
+    "expected_text": "{// \u0120\u010a\u0109\u010d \"\r\"word\":\"\u0120\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u0120"
+      },
+      "repaired": true,
+      "repaired_text": "{\r\"word\":\"\u0120\"}",
+      "strategies": [
+        "remove_comments"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-comment-2-after",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\"\u0120\"// \u0120\u010a\u0109\u010d \"\r}",
+    "expected_text": "{\"word\":\"\u0120\"// \u0120\u010a\u0109\u010d \"\r}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u0120"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\u0120\"\r}",
+      "strategies": [
+        "remove_comments"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-comment-2-leading",
+    "strategy": "fix_encoding",
+    "text": "// \u0120\u010a\u0109\u010d \"\r{\"word\":\"\u0120\"}",
+    "expected_text": "// \u0120\u010a\u0109\u010d \"\r{\"word\":\"\u0120\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u0120"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\u0120\"}",
+      "strategies": [
+        "extract_json"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-comment-2-only",
+    "strategy": "fix_encoding",
+    "text": "// \u0120\u010a\u0109\u010d \"\r",
+    "expected_text": "// \u0120\u010a\u0109\u010d \"\r",
+    "source_valid": false,
+    "valid": false,
+    "data": null
+  },
+  {
+    "name": "encoding-comment-3-before",
+    "strategy": "fix_encoding",
+    "text": "{// \u0120\u010a\u0109\u010d \"\u2028\"word\":\"\u0120\"}",
+    "expected_text": "{// \u0120\u010a\u0109\u010d \"\u2028\"word\":\"\u0120\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u0120"
+      },
+      "repaired": true,
+      "repaired_text": "{\n\"word\":\"\u0120\"}",
+      "strategies": [
+        "remove_comments"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-comment-3-after",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\"\u0120\"// \u0120\u010a\u0109\u010d \"\u2028}",
+    "expected_text": "{\"word\":\"\u0120\"// \u0120\u010a\u0109\u010d \"\u2028}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u0120"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\u0120\"\n}",
+      "strategies": [
+        "remove_comments"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-comment-3-leading",
+    "strategy": "fix_encoding",
+    "text": "// \u0120\u010a\u0109\u010d \"\u2028{\"word\":\"\u0120\"}",
+    "expected_text": "// \u0120\u010a\u0109\u010d \"\u2028{\"word\":\"\u0120\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u0120"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\u0120\"}",
+      "strategies": [
+        "extract_json"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-comment-3-only",
+    "strategy": "fix_encoding",
+    "text": "// \u0120\u010a\u0109\u010d \"\u2028",
+    "expected_text": "// \u0120\u010a\u0109\u010d \"\u2028",
+    "source_valid": false,
+    "valid": false,
+    "data": null
+  },
+  {
+    "name": "encoding-comment-4-before",
+    "strategy": "fix_encoding",
+    "text": "{// \u0120\u010a\u0109\u010d \"\u2029\"word\":\"\u0120\"}",
+    "expected_text": "{// \u0120\u010a\u0109\u010d \"\u2029\"word\":\"\u0120\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u0120"
+      },
+      "repaired": true,
+      "repaired_text": "{\n\"word\":\"\u0120\"}",
+      "strategies": [
+        "remove_comments"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-comment-4-after",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\"\u0120\"// \u0120\u010a\u0109\u010d \"\u2029}",
+    "expected_text": "{\"word\":\"\u0120\"// \u0120\u010a\u0109\u010d \"\u2029}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u0120"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\u0120\"\n}",
+      "strategies": [
+        "remove_comments"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-comment-4-leading",
+    "strategy": "fix_encoding",
+    "text": "// \u0120\u010a\u0109\u010d \"\u2029{\"word\":\"\u0120\"}",
+    "expected_text": "// \u0120\u010a\u0109\u010d \"\u2029{\"word\":\"\u0120\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "\u0120"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"\u0120\"}",
+      "strategies": [
+        "extract_json"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-comment-4-only",
+    "strategy": "fix_encoding",
+    "text": "// \u0120\u010a\u0109\u010d \"\u2029",
+    "expected_text": "// \u0120\u010a\u0109\u010d \"\u2029",
+    "source_valid": false,
+    "valid": false,
+    "data": null
+  },
+  {
+    "name": "encoding-signal-0-before",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\u0120\"a\u0120b\"}",
+    "expected_text": "{\"word\": \"a b\"}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "word": "a b"
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "a b"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\": \"a b\"}",
+      "strategies": [
+        "fix_encoding"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-signal-0-after",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\"a\u0120b\"}\u0120",
+    "expected_text": "{\"word\":\"a b\"} ",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "word": "a b"
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "a b"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"a b\"}",
+      "strategies": [
+        "fix_encoding",
+        "extract_json"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-signal-0-prefix",
+    "strategy": "fix_encoding",
+    "text": "\u0120{\"word\":\"a\u0120b\"}",
+    "expected_text": " {\"word\":\"a b\"}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "word": "a b"
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "a b"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"a b\"}",
+      "strategies": [
+        "fix_encoding",
+        "extract_json"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-signal-1-before",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\u010a\"a\u010ab\"}",
+    "expected_text": "{\"word\":\n\"a\nb\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "a\nb"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\n\"a\\nb\"}",
+      "strategies": [
+        "fix_encoding",
+        "fix_newlines"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-signal-1-after",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\"a\u010ab\"}\u010a",
+    "expected_text": "{\"word\":\"a\nb\"}\n",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "a\nb"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"a\\nb\"}",
+      "strategies": [
+        "fix_encoding",
+        "extract_json",
+        "fix_newlines"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-signal-1-prefix",
+    "strategy": "fix_encoding",
+    "text": "\u010a{\"word\":\"a\u010ab\"}",
+    "expected_text": "\n{\"word\":\"a\nb\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "a\nb"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"a\\nb\"}",
+      "strategies": [
+        "fix_encoding",
+        "extract_json",
+        "fix_newlines"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-signal-2-before",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\u0109\"a\u0109b\"}",
+    "expected_text": "{\"word\":\t\"a\tb\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "a\tb"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\t\"a\\tb\"}",
+      "strategies": [
+        "fix_encoding",
+        "fix_newlines"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-signal-2-after",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\"a\u0109b\"}\u0109",
+    "expected_text": "{\"word\":\"a\tb\"}\t",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "a\tb"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"a\\tb\"}",
+      "strategies": [
+        "fix_encoding",
+        "extract_json",
+        "fix_newlines"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-signal-2-prefix",
+    "strategy": "fix_encoding",
+    "text": "\u0109{\"word\":\"a\u0109b\"}",
+    "expected_text": "\t{\"word\":\"a\tb\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "a\tb"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"a\\tb\"}",
+      "strategies": [
+        "fix_encoding",
+        "extract_json",
+        "fix_newlines"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-signal-3-before",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\u010d\"a\u010db\"}",
+    "expected_text": "{\"word\":\r\"a\rb\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "a\rb"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\r\"a\\rb\"}",
+      "strategies": [
+        "fix_encoding",
+        "fix_newlines"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-signal-3-after",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\"a\u010db\"}\u010d",
+    "expected_text": "{\"word\":\"a\rb\"}\r",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "a\rb"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"a\\rb\"}",
+      "strategies": [
+        "fix_encoding",
+        "extract_json",
+        "fix_newlines"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-signal-3-prefix",
+    "strategy": "fix_encoding",
+    "text": "\u010d{\"word\":\"a\u010db\"}",
+    "expected_text": "\r{\"word\":\"a\rb\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "a\rb"
+      },
+      "repaired": true,
+      "repaired_text": "{\"word\":\"a\\rb\"}",
+      "strategies": [
+        "fix_encoding",
+        "extract_json",
+        "fix_newlines"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-unfinished-0",
+    "strategy": "fix_encoding",
+    "text": "\"unfinished \u0120",
+    "expected_text": "\"unfinished \u0120",
+    "source_valid": false,
+    "valid": false,
+    "data": null
+  },
+  {
+    "name": "encoding-unfinished-1",
+    "strategy": "fix_encoding",
+    "text": "'unfinished \u0109",
+    "expected_text": "'unfinished \u0109",
+    "source_valid": false,
+    "valid": false,
+    "data": null
+  },
+  {
+    "name": "encoding-unfinished-2",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\"\u010a\\\"",
+    "expected_text": "{\"word\":\"\u010a\\\"",
+    "source_valid": false,
+    "valid": false,
+    "data": null
+  },
+  {
+    "name": "encoding-unfinished-3",
+    "strategy": "fix_encoding",
+    "text": "{'word':'\u010d\\'",
+    "expected_text": "{'word':'\u010d\\'",
+    "source_valid": false,
+    "valid": false,
+    "data": null
+  },
+  {
+    "name": "encoding-unfinished-4",
+    "strategy": "fix_encoding",
+    "text": "/* unfinished \u0120",
+    "expected_text": "/* unfinished \u0120",
+    "source_valid": false,
+    "valid": false,
+    "data": null
+  },
+  {
+    "name": "encoding-unfinished-5",
+    "strategy": "fix_encoding",
+    "text": "// unfinished \u010a",
+    "expected_text": "// unfinished \u010a",
+    "source_valid": false,
+    "valid": false,
+    "data": null
+  },
+  {
+    "name": "encoding-clean-0",
+    "strategy": "fix_encoding",
+    "text": "plain text",
+    "expected_text": "plain text",
+    "source_valid": false,
+    "valid": false,
+    "data": null
+  },
+  {
+    "name": "encoding-clean-1",
+    "strategy": "fix_encoding",
+    "text": "{\"word\":\"lambda \u03bb\"}",
+    "expected_text": "{\"word\":\"lambda \u03bb\"}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "word": "lambda \u03bb"
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "word": "lambda \u03bb"
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-clean-2",
+    "strategy": "fix_encoding",
+    "text": "\"\\u0120\\u010a\\u0109\\u010d\"",
+    "expected_text": "\"\\u0120\\u010a\\u0109\\u010d\"",
+    "source_valid": true,
+    "valid": true,
+    "data": "\u0120\u010a\u0109\u010d",
+    "public": {
+      "valid": true,
+      "data": "\u0120\u010a\u0109\u010d",
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-clean-3",
+    "strategy": "fix_encoding",
+    "text": "[\"a/b\",\"c\\\\d\"]",
+    "expected_text": "[\"a/b\",\"c\\\\d\"]",
+    "source_valid": true,
+    "valid": true,
+    "data": [
+      "a/b",
+      "c\\d"
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        "a/b",
+        "c\\d"
+      ],
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "encoding-schema-failure",
+    "strategy": "fix_encoding",
+    "text": "{age:\"\u010d\"}",
+    "expected_text": "{age:\"\u010d\"}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": false,
+      "data": {
+        "age": "\u010d"
+      },
+      "repaired": true,
+      "repaired_text": "{\"age\":\"\u010d\"}",
+      "strategies": [
+        "fix_keys"
+      ],
+      "parse_failure": false,
+      "error_paths": [
+        "$.age"
+      ]
+    },
+    "schema": {
+      "properties": {
+        "age": {
+          "type": "integer"
+        }
+      }
+    }
   }
 ]
