@@ -99996,5 +99996,9767 @@
         }
       }
     }
+  },
+  {
+    "name": "closers-nesting-0-1-1-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[0",
+    "expected_text": "[0]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      0
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        0
+      ],
+      "repaired": true,
+      "repaired_text": "[0]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-1-1-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[0",
+    "expected_text": "[0]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      0
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        0
+      ],
+      "repaired": true,
+      "repaired_text": "[0]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-2-1-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":0]",
+    "expected_text": "[{\"a\":0}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": 0
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": 0
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":0}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-2-1-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":0]",
+    "expected_text": "[{\"a\":0}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": 0
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": 0
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":0}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-2-2-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":0}",
+    "expected_text": "[{\"a\":0}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": 0
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": 0
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":0}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-2-2-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":0}",
+    "expected_text": "[{\"a\":0}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": 0
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": 0
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":0}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-2-3-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":0",
+    "expected_text": "[{\"a\":0}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": 0
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": 0
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":0}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-2-3-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":0",
+    "expected_text": "[{\"a\":0}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": 0
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": 0
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":0}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-3-1-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":[0}]",
+    "expected_text": "[{\"a\":[0]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          0
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            0
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[0]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-3-1-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":[0}]",
+    "expected_text": "[{\"a\":[0]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          0
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            0
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[0]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-3-2-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":[0]]",
+    "expected_text": "[{\"a\":[0]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          0
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            0
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[0]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-3-2-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":[0]]",
+    "expected_text": "[{\"a\":[0]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          0
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            0
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[0]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-3-3-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":[0]",
+    "expected_text": "[{\"a\":[0]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          0
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            0
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[0]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-3-3-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":[0]",
+    "expected_text": "[{\"a\":[0]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          0
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            0
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[0]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-3-4-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":[0]}",
+    "expected_text": "[{\"a\":[0]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          0
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            0
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[0]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-3-4-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":[0]}",
+    "expected_text": "[{\"a\":[0]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          0
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            0
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[0]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-3-5-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":[0}",
+    "expected_text": "[{\"a\":[0]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          0
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            0
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[0]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-3-5-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":[0}",
+    "expected_text": "[{\"a\":[0]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          0
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            0
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[0]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-3-6-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":[0]",
+    "expected_text": "[{\"a\":[0]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          0
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            0
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[0]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-3-6-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":[0]",
+    "expected_text": "[{\"a\":[0]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          0
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            0
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[0]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-3-7-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":[0",
+    "expected_text": "[{\"a\":[0]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          0
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            0
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[0]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-3-7-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":[0",
+    "expected_text": "[{\"a\":[0]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          0
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            0
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[0]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-4-1-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":[{\"a\":0]}]",
+    "expected_text": "[{\"a\":[{\"a\":0}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": 0
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":0}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-4-1-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":[{\"a\":0]}]",
+    "expected_text": "[{\"a\":[{\"a\":0}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": 0
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":0}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-4-2-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":[{\"a\":0}}]",
+    "expected_text": "[{\"a\":[{\"a\":0}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": 0
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":0}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-4-2-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":[{\"a\":0}}]",
+    "expected_text": "[{\"a\":[{\"a\":0}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": 0
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":0}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-4-3-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":[{\"a\":0}]",
+    "expected_text": "[{\"a\":[{\"a\":0}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": 0
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":0}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-4-3-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":[{\"a\":0}]",
+    "expected_text": "[{\"a\":[{\"a\":0}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": 0
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":0}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-4-4-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":[{\"a\":0}]]",
+    "expected_text": "[{\"a\":[{\"a\":0}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": 0
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":0}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-4-4-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":[{\"a\":0}]]",
+    "expected_text": "[{\"a\":[{\"a\":0}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": 0
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":0}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-4-5-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":[{\"a\":0]]",
+    "expected_text": "[{\"a\":[{\"a\":0}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": 0
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":0}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-4-5-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":[{\"a\":0]]",
+    "expected_text": "[{\"a\":[{\"a\":0}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": 0
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":0}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-4-6-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":[{\"a\":0}]",
+    "expected_text": "[{\"a\":[{\"a\":0}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": 0
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":0}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-4-6-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":[{\"a\":0}]",
+    "expected_text": "[{\"a\":[{\"a\":0}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": 0
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":0}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-4-7-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":[{\"a\":0]",
+    "expected_text": "[{\"a\":[{\"a\":0}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": 0
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":0}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-4-7-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":[{\"a\":0]",
+    "expected_text": "[{\"a\":[{\"a\":0}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": 0
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":0}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-4-8-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":[{\"a\":0}]}",
+    "expected_text": "[{\"a\":[{\"a\":0}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": 0
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":0}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-4-8-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":[{\"a\":0}]}",
+    "expected_text": "[{\"a\":[{\"a\":0}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": 0
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":0}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-4-9-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":[{\"a\":0]}",
+    "expected_text": "[{\"a\":[{\"a\":0}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": 0
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":0}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-4-9-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":[{\"a\":0]}",
+    "expected_text": "[{\"a\":[{\"a\":0}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": 0
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":0}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-4-10-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":[{\"a\":0}}",
+    "expected_text": "[{\"a\":[{\"a\":0}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": 0
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":0}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-4-10-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":[{\"a\":0}}",
+    "expected_text": "[{\"a\":[{\"a\":0}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": 0
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":0}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-4-11-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":[{\"a\":0}",
+    "expected_text": "[{\"a\":[{\"a\":0}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": 0
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":0}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-4-11-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":[{\"a\":0}",
+    "expected_text": "[{\"a\":[{\"a\":0}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": 0
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":0}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-4-12-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":[{\"a\":0}]",
+    "expected_text": "[{\"a\":[{\"a\":0}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": 0
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":0}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-4-12-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":[{\"a\":0}]",
+    "expected_text": "[{\"a\":[{\"a\":0}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": 0
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":0}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-4-13-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":[{\"a\":0]",
+    "expected_text": "[{\"a\":[{\"a\":0}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": 0
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":0}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-4-13-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":[{\"a\":0]",
+    "expected_text": "[{\"a\":[{\"a\":0}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": 0
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":0}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-4-14-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":[{\"a\":0}",
+    "expected_text": "[{\"a\":[{\"a\":0}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": 0
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":0}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-4-14-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":[{\"a\":0}",
+    "expected_text": "[{\"a\":[{\"a\":0}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": 0
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":0}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-4-15-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":[{\"a\":0",
+    "expected_text": "[{\"a\":[{\"a\":0}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": 0
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":0}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-4-15-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":[{\"a\":0",
+    "expected_text": "[{\"a\":[{\"a\":0}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": 0
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":0}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-1-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":[{\"a\":[0}]}]",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-1-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":[{\"a\":[0}]}]",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-2-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":[{\"a\":[0]]}]",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-2-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":[{\"a\":[0]]}]",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-3-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":[{\"a\":[0]}]",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-3-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":[{\"a\":[0]}]",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-4-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":[{\"a\":[0]}}]",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-4-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":[{\"a\":[0]}}]",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-5-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":[{\"a\":[0}}]",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-5-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":[{\"a\":[0}}]",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-6-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":[{\"a\":[0]}]",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-6-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":[{\"a\":[0]}]",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-7-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":[{\"a\":[0}]",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-7-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":[{\"a\":[0}]",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-8-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":[{\"a\":[0]}]]",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-8-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":[{\"a\":[0]}]]",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-9-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":[{\"a\":[0}]]",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-9-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":[{\"a\":[0}]]",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-10-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":[{\"a\":[0]]]",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-10-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":[{\"a\":[0]]]",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-11-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":[{\"a\":[0]]",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-11-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":[{\"a\":[0]]",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-12-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":[{\"a\":[0]}]",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-12-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":[{\"a\":[0]}]",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-13-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":[{\"a\":[0}]",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-13-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":[{\"a\":[0}]",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-14-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":[{\"a\":[0]]",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-14-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":[{\"a\":[0]]",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-15-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":[{\"a\":[0]",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-15-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":[{\"a\":[0]",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-16-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":[{\"a\":[0]}]}",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-16-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":[{\"a\":[0]}]}",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-17-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":[{\"a\":[0}]}",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-17-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":[{\"a\":[0}]}",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-18-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":[{\"a\":[0]]}",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-18-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":[{\"a\":[0]]}",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-19-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":[{\"a\":[0]}",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-19-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":[{\"a\":[0]}",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-20-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":[{\"a\":[0]}}",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-20-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":[{\"a\":[0]}}",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-21-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":[{\"a\":[0}}",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-21-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":[{\"a\":[0}}",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-22-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":[{\"a\":[0]}",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-22-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":[{\"a\":[0]}",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-23-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":[{\"a\":[0}",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-23-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":[{\"a\":[0}",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-24-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":[{\"a\":[0]}]",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-24-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":[{\"a\":[0]}]",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-25-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":[{\"a\":[0}]",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-25-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":[{\"a\":[0}]",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-26-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":[{\"a\":[0]]",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-26-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":[{\"a\":[0]]",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-27-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":[{\"a\":[0]",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-27-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":[{\"a\":[0]",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-28-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":[{\"a\":[0]}",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-28-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":[{\"a\":[0]}",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-29-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":[{\"a\":[0}",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-29-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":[{\"a\":[0}",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-30-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":[{\"a\":[0]",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-30-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":[{\"a\":[0]",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-31-fix_closers",
+    "strategy": "fix_closers",
+    "text": "[{\"a\":[{\"a\":[0",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-0-5-31-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "[{\"a\":[{\"a\":[0",
+    "expected_text": "[{\"a\":[{\"a\":[0]}]}]",
+    "source_valid": false,
+    "valid": true,
+    "data": [
+      {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "public": {
+      "valid": true,
+      "data": [
+        {
+          "a": [
+            {
+              "a": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "repaired": true,
+      "repaired_text": "[{\"a\":[{\"a\":[0]}]}]",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-1-1-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":0",
+    "expected_text": "{\"a\":0}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 0
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 0
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":0}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-1-1-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":0",
+    "expected_text": "{\"a\":0}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": 0
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": 0
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":0}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-2-1-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[0}",
+    "expected_text": "{\"a\":[0]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        0
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          0
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[0]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-2-1-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[0}",
+    "expected_text": "{\"a\":[0]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        0
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          0
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[0]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-2-2-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[0]",
+    "expected_text": "{\"a\":[0]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        0
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          0
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[0]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-2-2-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[0]",
+    "expected_text": "{\"a\":[0]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        0
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          0
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[0]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-2-3-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[0",
+    "expected_text": "{\"a\":[0]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        0
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          0
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[0]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-2-3-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[0",
+    "expected_text": "{\"a\":[0]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        0
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          0
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[0]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-3-1-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[{\"a\":0]}",
+    "expected_text": "{\"a\":[{\"a\":0}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": 0
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": 0
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":0}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-3-1-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[{\"a\":0]}",
+    "expected_text": "{\"a\":[{\"a\":0}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": 0
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": 0
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":0}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-3-2-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[{\"a\":0}}",
+    "expected_text": "{\"a\":[{\"a\":0}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": 0
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": 0
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":0}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-3-2-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[{\"a\":0}}",
+    "expected_text": "{\"a\":[{\"a\":0}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": 0
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": 0
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":0}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-3-3-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[{\"a\":0}",
+    "expected_text": "{\"a\":[{\"a\":0}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": 0
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": 0
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":0}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-3-3-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[{\"a\":0}",
+    "expected_text": "{\"a\":[{\"a\":0}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": 0
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": 0
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":0}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-3-4-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[{\"a\":0}]",
+    "expected_text": "{\"a\":[{\"a\":0}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": 0
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": 0
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":0}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-3-4-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[{\"a\":0}]",
+    "expected_text": "{\"a\":[{\"a\":0}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": 0
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": 0
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":0}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-3-5-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[{\"a\":0]",
+    "expected_text": "{\"a\":[{\"a\":0}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": 0
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": 0
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":0}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-3-5-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[{\"a\":0]",
+    "expected_text": "{\"a\":[{\"a\":0}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": 0
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": 0
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":0}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-3-6-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[{\"a\":0}",
+    "expected_text": "{\"a\":[{\"a\":0}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": 0
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": 0
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":0}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-3-6-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[{\"a\":0}",
+    "expected_text": "{\"a\":[{\"a\":0}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": 0
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": 0
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":0}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-3-7-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[{\"a\":0",
+    "expected_text": "{\"a\":[{\"a\":0}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": 0
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": 0
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":0}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-3-7-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[{\"a\":0",
+    "expected_text": "{\"a\":[{\"a\":0}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": 0
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": 0
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":0}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-4-1-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[{\"a\":[0}]}",
+    "expected_text": "{\"a\":[{\"a\":[0]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            0
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[0]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-4-1-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[{\"a\":[0}]}",
+    "expected_text": "{\"a\":[{\"a\":[0]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            0
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[0]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-4-2-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[{\"a\":[0]]}",
+    "expected_text": "{\"a\":[{\"a\":[0]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            0
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[0]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-4-2-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[{\"a\":[0]]}",
+    "expected_text": "{\"a\":[{\"a\":[0]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            0
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[0]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-4-3-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[{\"a\":[0]}",
+    "expected_text": "{\"a\":[{\"a\":[0]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            0
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[0]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-4-3-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[{\"a\":[0]}",
+    "expected_text": "{\"a\":[{\"a\":[0]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            0
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[0]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-4-4-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[{\"a\":[0]}}",
+    "expected_text": "{\"a\":[{\"a\":[0]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            0
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[0]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-4-4-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[{\"a\":[0]}}",
+    "expected_text": "{\"a\":[{\"a\":[0]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            0
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[0]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-4-5-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[{\"a\":[0}}",
+    "expected_text": "{\"a\":[{\"a\":[0]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            0
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[0]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-4-5-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[{\"a\":[0}}",
+    "expected_text": "{\"a\":[{\"a\":[0]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            0
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[0]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-4-6-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[{\"a\":[0]}",
+    "expected_text": "{\"a\":[{\"a\":[0]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            0
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[0]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-4-6-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[{\"a\":[0]}",
+    "expected_text": "{\"a\":[{\"a\":[0]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            0
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[0]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-4-7-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[{\"a\":[0}",
+    "expected_text": "{\"a\":[{\"a\":[0]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            0
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[0]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-4-7-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[{\"a\":[0}",
+    "expected_text": "{\"a\":[{\"a\":[0]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            0
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[0]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-4-8-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[{\"a\":[0]}]",
+    "expected_text": "{\"a\":[{\"a\":[0]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            0
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[0]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-4-8-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[{\"a\":[0]}]",
+    "expected_text": "{\"a\":[{\"a\":[0]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            0
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[0]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-4-9-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[{\"a\":[0}]",
+    "expected_text": "{\"a\":[{\"a\":[0]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            0
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[0]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-4-9-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[{\"a\":[0}]",
+    "expected_text": "{\"a\":[{\"a\":[0]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            0
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[0]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-4-10-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[{\"a\":[0]]",
+    "expected_text": "{\"a\":[{\"a\":[0]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            0
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[0]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-4-10-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[{\"a\":[0]]",
+    "expected_text": "{\"a\":[{\"a\":[0]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            0
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[0]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-4-11-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[{\"a\":[0]",
+    "expected_text": "{\"a\":[{\"a\":[0]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            0
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[0]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-4-11-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[{\"a\":[0]",
+    "expected_text": "{\"a\":[{\"a\":[0]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            0
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[0]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-4-12-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[{\"a\":[0]}",
+    "expected_text": "{\"a\":[{\"a\":[0]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            0
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[0]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-4-12-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[{\"a\":[0]}",
+    "expected_text": "{\"a\":[{\"a\":[0]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            0
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[0]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-4-13-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[{\"a\":[0}",
+    "expected_text": "{\"a\":[{\"a\":[0]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            0
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[0]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-4-13-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[{\"a\":[0}",
+    "expected_text": "{\"a\":[{\"a\":[0]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            0
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[0]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-4-14-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[{\"a\":[0]",
+    "expected_text": "{\"a\":[{\"a\":[0]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            0
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[0]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-4-14-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[{\"a\":[0]",
+    "expected_text": "{\"a\":[{\"a\":[0]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            0
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[0]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-4-15-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[{\"a\":[0",
+    "expected_text": "{\"a\":[{\"a\":[0]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            0
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[0]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-4-15-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[{\"a\":[0",
+    "expected_text": "{\"a\":[{\"a\":[0]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            0
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              0
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[0]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-1-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[{\"a\":[{\"a\":0]}]}",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-1-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[{\"a\":[{\"a\":0]}]}",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-2-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[{\"a\":[{\"a\":0}}]}",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-2-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[{\"a\":[{\"a\":0}}]}",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-3-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[{\"a\":[{\"a\":0}]}",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-3-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[{\"a\":[{\"a\":0}]}",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-4-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[{\"a\":[{\"a\":0}]]}",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-4-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[{\"a\":[{\"a\":0}]]}",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-5-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[{\"a\":[{\"a\":0]]}",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-5-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[{\"a\":[{\"a\":0]]}",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-6-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[{\"a\":[{\"a\":0}]}",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-6-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[{\"a\":[{\"a\":0}]}",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-7-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[{\"a\":[{\"a\":0]}",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-7-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[{\"a\":[{\"a\":0]}",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-8-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[{\"a\":[{\"a\":0}]}}",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-8-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[{\"a\":[{\"a\":0}]}}",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-9-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[{\"a\":[{\"a\":0]}}",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-9-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[{\"a\":[{\"a\":0]}}",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-10-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[{\"a\":[{\"a\":0}}}",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-10-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[{\"a\":[{\"a\":0}}}",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-11-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[{\"a\":[{\"a\":0}}",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-11-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[{\"a\":[{\"a\":0}}",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-12-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[{\"a\":[{\"a\":0}]}",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-12-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[{\"a\":[{\"a\":0}]}",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-13-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[{\"a\":[{\"a\":0]}",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-13-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[{\"a\":[{\"a\":0]}",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-14-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[{\"a\":[{\"a\":0}}",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-14-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[{\"a\":[{\"a\":0}}",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-15-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[{\"a\":[{\"a\":0}",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-15-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[{\"a\":[{\"a\":0}",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-16-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[{\"a\":[{\"a\":0}]}]",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-16-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[{\"a\":[{\"a\":0}]}]",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-17-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[{\"a\":[{\"a\":0]}]",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-17-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[{\"a\":[{\"a\":0]}]",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-18-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[{\"a\":[{\"a\":0}}]",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-18-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[{\"a\":[{\"a\":0}}]",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-19-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[{\"a\":[{\"a\":0}]",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-19-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[{\"a\":[{\"a\":0}]",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-20-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[{\"a\":[{\"a\":0}]]",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-20-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[{\"a\":[{\"a\":0}]]",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-21-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[{\"a\":[{\"a\":0]]",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-21-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[{\"a\":[{\"a\":0]]",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-22-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[{\"a\":[{\"a\":0}]",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-22-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[{\"a\":[{\"a\":0}]",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-23-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[{\"a\":[{\"a\":0]",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-23-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[{\"a\":[{\"a\":0]",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-24-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[{\"a\":[{\"a\":0}]}",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-24-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[{\"a\":[{\"a\":0}]}",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-25-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[{\"a\":[{\"a\":0]}",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-25-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[{\"a\":[{\"a\":0]}",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-26-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[{\"a\":[{\"a\":0}}",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-26-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[{\"a\":[{\"a\":0}}",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-27-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[{\"a\":[{\"a\":0}",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-27-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[{\"a\":[{\"a\":0}",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-28-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[{\"a\":[{\"a\":0}]",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-28-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[{\"a\":[{\"a\":0}]",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-29-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[{\"a\":[{\"a\":0]",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-29-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[{\"a\":[{\"a\":0]",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-30-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[{\"a\":[{\"a\":0}",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-30-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[{\"a\":[{\"a\":0}",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-31-fix_closers",
+    "strategy": "fix_closers",
+    "text": "{\"a\":[{\"a\":[{\"a\":0",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-nesting-1-5-31-fix_truncated",
+    "strategy": "fix_truncated",
+    "text": "{\"a\":[{\"a\":[{\"a\":0",
+    "expected_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "a": [
+        {
+          "a": [
+            {
+              "a": 0
+            }
+          ]
+        }
+      ]
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          {
+            "a": [
+              {
+                "a": 0
+              }
+            ]
+          }
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[{\"a\":[{\"a\":0}]}]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-literal-0-double-0",
+    "strategy": "fix_closers",
+    "text": "{\"v\":\"literal [ { } ]\"",
+    "expected_text": "{\"v\":\"literal [ { } ]\"}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "v": "literal [ { } ]"
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "literal [ { } ]"
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"literal [ { } ]\"}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-literal-0-double-1",
+    "strategy": "fix_closers",
+    "text": "{\"v\":\"literal [ { } ]\"}",
+    "expected_text": "{\"v\":\"literal [ { } ]\"}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "v": "literal [ { } ]"
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "literal [ { } ]"
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-literal-0-single-0",
+    "strategy": "fix_closers",
+    "text": "{\"v\":'literal [ { } ]'",
+    "expected_text": "{\"v\":'literal [ { } ]'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "literal [ { } ]"
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"literal [ { } ]\"}",
+      "strategies": [
+        "fix_quotes",
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-literal-0-single-1",
+    "strategy": "fix_closers",
+    "text": "{\"v\":'literal [ { } ]'}",
+    "expected_text": "{\"v\":'literal [ { } ]'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "literal [ { } ]"
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"literal [ { } ]\"}",
+      "strategies": [
+        "fix_quotes"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-literal-1-double-0",
+    "strategy": "fix_closers",
+    "text": "{\"v\":\"say \\\"[\\\"\"",
+    "expected_text": "{\"v\":\"say \\\"[\\\"\"}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "v": "say \"[\""
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "say \"[\""
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"say \\\"[\\\"\"}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-literal-1-double-1",
+    "strategy": "fix_closers",
+    "text": "{\"v\":\"say \\\"[\\\"\"}",
+    "expected_text": "{\"v\":\"say \\\"[\\\"\"}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "v": "say \"[\""
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "say \"[\""
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-literal-1-single-0",
+    "strategy": "fix_closers",
+    "text": "{\"v\":'say \\\"[\\\"'",
+    "expected_text": "{\"v\":'say \\\"[\\\"'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "say \"[\""
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"say \\\"[\\\"\"}",
+      "strategies": [
+        "fix_quotes",
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-literal-1-single-1",
+    "strategy": "fix_closers",
+    "text": "{\"v\":'say \\\"[\\\"'}",
+    "expected_text": "{\"v\":'say \\\"[\\\"'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "say \"[\""
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"say \\\"[\\\"\"}",
+      "strategies": [
+        "fix_quotes"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-literal-2-double-0",
+    "strategy": "fix_closers",
+    "text": "{\"v\":\"it's { [\"",
+    "expected_text": "{\"v\":\"it's { [\"}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "v": "it's { ["
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "it's { ["
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"it's { [\"}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-literal-2-double-1",
+    "strategy": "fix_closers",
+    "text": "{\"v\":\"it's { [\"}",
+    "expected_text": "{\"v\":\"it's { [\"}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "v": "it's { ["
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "it's { ["
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-literal-2-single-0",
+    "strategy": "fix_closers",
+    "text": "{\"v\":'it\\'s { ['",
+    "expected_text": "{\"v\":'it\\'s { ['}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "it's { ["
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"it's { [\"}",
+      "strategies": [
+        "fix_quotes",
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-literal-2-single-1",
+    "strategy": "fix_closers",
+    "text": "{\"v\":'it\\'s { ['}",
+    "expected_text": "{\"v\":'it\\'s { ['}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "it's { ["
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"it's { [\"}",
+      "strategies": [
+        "fix_quotes"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-literal-3-double-0",
+    "strategy": "fix_closers",
+    "text": "{\"v\":\"path\\\\[\\\\\"",
+    "expected_text": "{\"v\":\"path\\\\[\\\\\"}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "v": "path\\[\\"
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "path\\[\\"
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"path\\\\[\\\\\"}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-literal-3-double-1",
+    "strategy": "fix_closers",
+    "text": "{\"v\":\"path\\\\[\\\\\"}",
+    "expected_text": "{\"v\":\"path\\\\[\\\\\"}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "v": "path\\[\\"
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "path\\[\\"
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-literal-3-single-0",
+    "strategy": "fix_closers",
+    "text": "{\"v\":'path\\\\[\\\\'",
+    "expected_text": "{\"v\":'path\\\\[\\\\'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "path\\[\\"
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"path\\\\[\\\\\"}",
+      "strategies": [
+        "fix_quotes",
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-literal-3-single-1",
+    "strategy": "fix_closers",
+    "text": "{\"v\":'path\\\\[\\\\'}",
+    "expected_text": "{\"v\":'path\\\\[\\\\'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "path\\[\\"
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"path\\\\[\\\\\"}",
+      "strategies": [
+        "fix_quotes"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-literal-4-double-0",
+    "strategy": "fix_closers",
+    "text": "{\"v\":\"\\n\\t{}[]\"",
+    "expected_text": "{\"v\":\"\\n\\t{}[]\"}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "v": "\n\t{}[]"
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "\n\t{}[]"
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"\\n\\t{}[]\"}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-literal-4-double-1",
+    "strategy": "fix_closers",
+    "text": "{\"v\":\"\\n\\t{}[]\"}",
+    "expected_text": "{\"v\":\"\\n\\t{}[]\"}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "v": "\n\t{}[]"
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "\n\t{}[]"
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-literal-4-single-0",
+    "strategy": "fix_closers",
+    "text": "{\"v\":'\\n\\t{}[]'",
+    "expected_text": "{\"v\":'\\n\\t{}[]'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "\n\t{}[]"
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"\\n\\t{}[]\"}",
+      "strategies": [
+        "fix_quotes",
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-literal-4-single-1",
+    "strategy": "fix_closers",
+    "text": "{\"v\":'\\n\\t{}[]'}",
+    "expected_text": "{\"v\":'\\n\\t{}[]'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "\n\t{}[]"
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"\\n\\t{}[]\"}",
+      "strategies": [
+        "fix_quotes"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-literal-5-double-0",
+    "strategy": "fix_closers",
+    "text": "{\"v\":\"\u03bb \ud83d\ude80 [{\"",
+    "expected_text": "{\"v\":\"\u03bb \ud83d\ude80 [{\"}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "v": "\u03bb \ud83d\ude80 [{"
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "\u03bb \ud83d\ude80 [{"
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"\u03bb \ud83d\ude80 [{\"}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-literal-5-double-1",
+    "strategy": "fix_closers",
+    "text": "{\"v\":\"\u03bb \ud83d\ude80 [{\"}",
+    "expected_text": "{\"v\":\"\u03bb \ud83d\ude80 [{\"}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "v": "\u03bb \ud83d\ude80 [{"
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "\u03bb \ud83d\ude80 [{"
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-literal-5-single-0",
+    "strategy": "fix_closers",
+    "text": "{\"v\":'\u03bb \ud83d\ude80 [{'",
+    "expected_text": "{\"v\":'\u03bb \ud83d\ude80 [{'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "\u03bb \ud83d\ude80 [{"
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"\u03bb \ud83d\ude80 [{\"}",
+      "strategies": [
+        "fix_quotes",
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-literal-5-single-1",
+    "strategy": "fix_closers",
+    "text": "{\"v\":'\u03bb \ud83d\ude80 [{'}",
+    "expected_text": "{\"v\":'\u03bb \ud83d\ude80 [{'}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "\u03bb \ud83d\ude80 [{"
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"\u03bb \ud83d\ude80 [{\"}",
+      "strategies": [
+        "fix_quotes"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-literal-6-double-0",
+    "strategy": "fix_closers",
+    "text": "{\"v\":\"\u0120\u0109\u010d\u010a[\"",
+    "expected_text": "{\"v\":\"\u0120\u0109\u010d\u010a[\"}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "v": "\u0120\u0109\u010d\u010a["
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "\u0120\u0109\u010d\u010a["
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"\u0120\u0109\u010d\u010a[\"}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-literal-6-double-1",
+    "strategy": "fix_closers",
+    "text": "{\"v\":\"\u0120\u0109\u010d\u010a[\"}",
+    "expected_text": "{\"v\":\"\u0120\u0109\u010d\u010a[\"}",
+    "source_valid": true,
+    "valid": true,
+    "data": {
+      "v": "\u0120\u0109\u010d\u010a["
+    },
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "\u0120\u0109\u010d\u010a["
+      },
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-literal-6-single-0",
+    "strategy": "fix_closers",
+    "text": "{\"v\":'\u0120\u0109\u010d\u010a['",
+    "expected_text": "{\"v\":'\u0120\u0109\u010d\u010a['}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "\u0120\u0109\u010d\u010a["
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"\u0120\u0109\u010d\u010a[\"}",
+      "strategies": [
+        "fix_quotes",
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-literal-6-single-1",
+    "strategy": "fix_closers",
+    "text": "{\"v\":'\u0120\u0109\u010d\u010a['}",
+    "expected_text": "{\"v\":'\u0120\u0109\u010d\u010a['}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": "\u0120\u0109\u010d\u010a["
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":\"\u0120\u0109\u010d\u010a[\"}",
+      "strategies": [
+        "fix_quotes"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-comment-0-balanced",
+    "strategy": "fix_closers",
+    "text": "{\"v\":1/* [ { } ] \" */}",
+    "expected_text": "{\"v\":1/* [ { } ] \" */}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":1}",
+      "strategies": [
+        "remove_comments"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-comment-0-tail-0",
+    "strategy": "fix_closers",
+    "text": "{\"v\":1 /* [ { } ] \" */",
+    "expected_text": "{\"v\":1 }/* [ { } ] \" */",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":1}",
+      "strategies": [
+        "remove_comments",
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-comment-0-tail-2",
+    "strategy": "fix_closers",
+    "text": "{\"v\":1 /* [ { } ] \" */ \t",
+    "expected_text": "{\"v\":1 }/* [ { } ] \" */ \t",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":1}",
+      "strategies": [
+        "remove_comments",
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-comment-0-tail-4",
+    "strategy": "fix_closers",
+    "text": "{\"v\":1 /* [ { } ] \" *//**/",
+    "expected_text": "{\"v\":1 }/* [ { } ] \" *//**/",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":1}",
+      "strategies": [
+        "remove_comments",
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-comment-1-balanced",
+    "strategy": "fix_closers",
+    "text": "{\"v\":1// [ { } ] \"\n}",
+    "expected_text": "{\"v\":1// [ { } ] \"\n}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":1\n}",
+      "strategies": [
+        "remove_comments"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-comment-1-tail-0",
+    "strategy": "fix_closers",
+    "text": "{\"v\":1 // [ { } ] \"\n",
+    "expected_text": "{\"v\":1 }// [ { } ] \"\n",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":1}",
+      "strategies": [
+        "remove_comments",
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-comment-1-tail-2",
+    "strategy": "fix_closers",
+    "text": "{\"v\":1 // [ { } ] \"\n \t",
+    "expected_text": "{\"v\":1 }// [ { } ] \"\n \t",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":1}",
+      "strategies": [
+        "remove_comments",
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-comment-1-tail-4",
+    "strategy": "fix_closers",
+    "text": "{\"v\":1 // [ { } ] \"\n/**/",
+    "expected_text": "{\"v\":1 }// [ { } ] \"\n/**/",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":1}",
+      "strategies": [
+        "remove_comments",
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-comment-2-balanced",
+    "strategy": "fix_closers",
+    "text": "{\"v\":1// [ { } ] \"\r}",
+    "expected_text": "{\"v\":1// [ { } ] \"\r}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":1\r}",
+      "strategies": [
+        "remove_comments"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-comment-2-tail-0",
+    "strategy": "fix_closers",
+    "text": "{\"v\":1 // [ { } ] \"\r",
+    "expected_text": "{\"v\":1 }// [ { } ] \"\r",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":1}",
+      "strategies": [
+        "remove_comments",
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-comment-2-tail-2",
+    "strategy": "fix_closers",
+    "text": "{\"v\":1 // [ { } ] \"\r \t",
+    "expected_text": "{\"v\":1 }// [ { } ] \"\r \t",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":1}",
+      "strategies": [
+        "remove_comments",
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-comment-2-tail-4",
+    "strategy": "fix_closers",
+    "text": "{\"v\":1 // [ { } ] \"\r/**/",
+    "expected_text": "{\"v\":1 }// [ { } ] \"\r/**/",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":1}",
+      "strategies": [
+        "remove_comments",
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-comment-3-balanced",
+    "strategy": "fix_closers",
+    "text": "{\"v\":1// [ { } ] \"\u2028}",
+    "expected_text": "{\"v\":1// [ { } ] \"\u2028}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":1\n}",
+      "strategies": [
+        "remove_comments"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-comment-3-tail-0",
+    "strategy": "fix_closers",
+    "text": "{\"v\":1 // [ { } ] \"\u2028",
+    "expected_text": "{\"v\":1 }// [ { } ] \"\u2028",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":1}",
+      "strategies": [
+        "remove_comments",
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-comment-3-tail-2",
+    "strategy": "fix_closers",
+    "text": "{\"v\":1 // [ { } ] \"\u2028 \t",
+    "expected_text": "{\"v\":1 }// [ { } ] \"\u2028 \t",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":1}",
+      "strategies": [
+        "remove_comments",
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-comment-3-tail-4",
+    "strategy": "fix_closers",
+    "text": "{\"v\":1 // [ { } ] \"\u2028/**/",
+    "expected_text": "{\"v\":1 }// [ { } ] \"\u2028/**/",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":1}",
+      "strategies": [
+        "remove_comments",
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-comment-4-balanced",
+    "strategy": "fix_closers",
+    "text": "{\"v\":1// [ { } ] \"\u2029}",
+    "expected_text": "{\"v\":1// [ { } ] \"\u2029}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":1\n}",
+      "strategies": [
+        "remove_comments"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-comment-4-tail-0",
+    "strategy": "fix_closers",
+    "text": "{\"v\":1 // [ { } ] \"\u2029",
+    "expected_text": "{\"v\":1 }// [ { } ] \"\u2029",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":1}",
+      "strategies": [
+        "remove_comments",
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-comment-4-tail-2",
+    "strategy": "fix_closers",
+    "text": "{\"v\":1 // [ { } ] \"\u2029 \t",
+    "expected_text": "{\"v\":1 }// [ { } ] \"\u2029 \t",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":1}",
+      "strategies": [
+        "remove_comments",
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-comment-4-tail-4",
+    "strategy": "fix_closers",
+    "text": "{\"v\":1 // [ { } ] \"\u2029/**/",
+    "expected_text": "{\"v\":1 }// [ { } ] \"\u2029/**/",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": 1
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":1}",
+      "strategies": [
+        "remove_comments",
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-unfinished-comment-0",
+    "strategy": "fix_closers",
+    "text": "{\"v\":[1 /* unfinished [ { \"",
+    "expected_text": "{\"v\":[1 ]}/* unfinished [ { \"",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": [
+          1
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":[1]}",
+      "strategies": [
+        "remove_comments",
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-unfinished-comment-1",
+    "strategy": "fix_closers",
+    "text": "{\"v\":[1 // unfinished [ { \"",
+    "expected_text": "{\"v\":[1 ]}// unfinished [ { \"",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": [
+          1
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":[1]}",
+      "strategies": [
+        "remove_comments",
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-unfinished-string-0",
+    "strategy": "fix_closers",
+    "text": "{\"v\":\"unfinished [",
+    "expected_text": "{\"v\":\"unfinished [",
+    "source_valid": false,
+    "valid": false,
+    "data": null
+  },
+  {
+    "name": "closers-unfinished-string-1",
+    "strategy": "fix_closers",
+    "text": "{\"v\":\"escaped \\\"",
+    "expected_text": "{\"v\":\"escaped \\\"",
+    "source_valid": false,
+    "valid": false,
+    "data": null
+  },
+  {
+    "name": "closers-unfinished-string-2",
+    "strategy": "fix_closers",
+    "text": "{'v':'unfinished [",
+    "expected_text": "{'v':'unfinished [",
+    "source_valid": false,
+    "valid": false,
+    "data": null
+  },
+  {
+    "name": "closers-unfinished-string-3",
+    "strategy": "fix_closers",
+    "text": "{'v':'escaped \\'",
+    "expected_text": "{'v':'escaped \\'",
+    "source_valid": false,
+    "valid": false,
+    "data": null
+  },
+  {
+    "name": "closers-unmatched-0",
+    "strategy": "fix_closers",
+    "text": "[1}",
+    "expected_text": "[1}",
+    "source_valid": false,
+    "valid": false,
+    "data": null
+  },
+  {
+    "name": "closers-unmatched-1",
+    "strategy": "fix_closers",
+    "text": "{]",
+    "expected_text": "{]",
+    "source_valid": false,
+    "valid": false,
+    "data": null
+  },
+  {
+    "name": "closers-unmatched-2",
+    "strategy": "fix_closers",
+    "text": "[}",
+    "expected_text": "[}",
+    "source_valid": false,
+    "valid": false,
+    "data": null
+  },
+  {
+    "name": "closers-unmatched-3",
+    "strategy": "fix_closers",
+    "text": "{\"a\":1}}",
+    "expected_text": "{\"a\":1}}",
+    "source_valid": false,
+    "valid": false,
+    "data": null
+  },
+  {
+    "name": "closers-unmatched-4",
+    "strategy": "fix_closers",
+    "text": "]",
+    "expected_text": "]",
+    "source_valid": false,
+    "valid": false,
+    "data": null
+  },
+  {
+    "name": "closers-unmatched-5",
+    "strategy": "fix_closers",
+    "text": "}",
+    "expected_text": "}",
+    "source_valid": false,
+    "valid": false,
+    "data": null
+  },
+  {
+    "name": "closers-unmatched-public",
+    "strategy": "fix_closers",
+    "text": "[1}",
+    "expected_text": "[1}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": false,
+      "data": null,
+      "repaired": false,
+      "repaired_text": "",
+      "strategies": [],
+      "parse_failure": true,
+      "error_paths": [
+        "$"
+      ]
+    }
+  },
+  {
+    "name": "closers-trailing-comma",
+    "strategy": "fix_closers",
+    "text": "{\"v\":[1,}",
+    "expected_text": "{\"v\":[1,]}",
+    "source_valid": false,
+    "valid": false,
+    "data": null,
+    "public": {
+      "valid": true,
+      "data": {
+        "v": [
+          1
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"v\":[1]}",
+      "strategies": [
+        "fix_commas",
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
+  },
+  {
+    "name": "closers-schema-failure",
+    "strategy": "fix_closers",
+    "text": "{\"age\":[1}",
+    "expected_text": "{\"age\":[1]}",
+    "source_valid": false,
+    "valid": true,
+    "data": {
+      "age": [
+        1
+      ]
+    },
+    "public": {
+      "valid": false,
+      "data": {
+        "age": [
+          1
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"age\":[1]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": [
+        "$.age"
+      ]
+    },
+    "schema": {
+      "properties": {
+        "age": {
+          "type": "integer"
+        }
+      }
+    }
   }
 ]

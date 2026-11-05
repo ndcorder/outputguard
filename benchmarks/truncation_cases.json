@@ -4969,12 +4969,31 @@
     "source_valid": false
   },
   {
-    "name": "unsupported-176",
+    "name": "missing-inner-array-176",
     "text": "{\"a\":[1}",
-    "expected_text": "{\"a\":[1}]}",
-    "valid": false,
-    "data": null,
-    "source_valid": false
+    "expected_text": "{\"a\":[1]}",
+    "valid": true,
+    "data": {
+      "a": [
+        1
+      ]
+    },
+    "source_valid": false,
+    "public": {
+      "valid": true,
+      "data": {
+        "a": [
+          1
+        ]
+      },
+      "repaired": true,
+      "repaired_text": "{\"a\":[1]}",
+      "strategies": [
+        "fix_truncated"
+      ],
+      "parse_failure": false,
+      "error_paths": []
+    }
   },
   {
     "name": "unsupported-177",

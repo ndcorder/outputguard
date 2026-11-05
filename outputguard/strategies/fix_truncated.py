@@ -3,6 +3,8 @@
 from dataclasses import dataclass
 from typing import Literal
 
+from outputguard.strategies.fix_closers import apply as _fix_closers
+
 NAME = "fix_truncated"
 DESCRIPTION = "Recover truncated JSON from token-limit cutoffs"
 
@@ -34,6 +36,7 @@ def apply(text: str) -> str:
         # Arrays need only a closing bracket; object members need key/value state.
         stack: list[_Object | None] = []
         in_string = escaped = False
+        closers_checked = False
         key_owner: _Object | None = None
         i = start
         while i < len(text):
@@ -69,6 +72,11 @@ def apply(text: str) -> str:
             elif ch in "}]":
                 if stack and ("}" if frame is not None else "]") == ch:
                     stack.pop()
+                elif stack and not closers_checked:
+                    closers_checked = True
+                    balanced = _fix_closers(text)
+                    if balanced != text:
+                        return apply(balanced)
             elif ch == ":":
                 if frame is not None:
                     frame.phase = "value" if frame.phase == "colon" else "other"

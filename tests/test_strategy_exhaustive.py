@@ -614,9 +614,7 @@ class TestFixClosers:
     def test_missing_bracket_but_not_brace(self):
         text = '{"arr": [1, 2, 3}'
         result = fix_closers(text)
-        # The ] is missing but } closes the brace — this is structural
-        # The closer strategy adds missing closers at the end
-        assert '{"arr": [1, 2, 3}' in result
+        assert json.loads(result) == {"arr": [1, 2, 3]}
 
     def test_missing_brace_but_not_bracket(self):
         text = '{"a": 1'

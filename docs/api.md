@@ -520,6 +520,17 @@ This bounds search work and trace memory for dissimilar or repetitive output.
 Report diffs are empty for identical texts. Strategy diffs are also empty for
 a step marked unchanged.
 
+### Closing delimiters
+
+`fix_closers` balances braces and brackets while preserving both quote styles
+and comment contents. Missing inner closers are inserted before an existing
+outer closer: `{"a":[1}` becomes `{"a":[1]}`. `fix_truncated` uses this balancing
+step when it encounters that mismatch, then handles incomplete keys or values.
+
+Closing delimiters at EOF are placed before trailing comments. Unmatched
+closing delimiters and unfinished quoted strings are left to other strategies;
+balancing does not append syntax inside a string value.
+
 ### Tokenizer artifacts
 
 `fix_encoding` preserves characters such as `Ġ`, `Ċ`, `ĉ`, and `č` when they

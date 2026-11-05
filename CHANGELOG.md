@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Balance missing inner delimiters before existing outer closers, and reuse
+  that recovery in truncation repair. Preserve both quote styles and comments,
+  place EOF closers before trailing comments, and retain unfinished strings
+  and unmatched closers. Add shared structural contracts and scaling workloads.
 - Preserve literal Unicode during encoding repair when marker characters occur
   only in quoted strings or comments. Require an unquoted marker before
   decoding the document, retain whole-document artifact repair, and add shared
